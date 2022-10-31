@@ -5344,6 +5344,226 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _layouts_SignInComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./layouts/SignInComponent.vue */ "./resources/js/components/Auth/layouts/SignInComponent.vue");
+/* harmony import */ var _layouts_SignUpComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./layouts/SignUpComponent.vue */ "./resources/js/components/Auth/layouts/SignUpComponent.vue");
+/* harmony import */ var _layouts_ForgotPassword_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./layouts/ForgotPassword.vue */ "./resources/js/components/Auth/layouts/ForgotPassword.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "Auth",
+  components: {
+    SignInComponent: _layouts_SignInComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    SignUpComponent: _layouts_SignUpComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    ForgotPassword: _layouts_ForgotPassword_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  mounted: function mounted() {
+    $('.ui.checkbox').checkbox();
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Auth/layouts/ForgotPassword.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Auth/layouts/ForgotPassword.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "ForgotPassword"
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Auth/layouts/SignInComponent.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Auth/layouts/SignInComponent.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "SignInComponent",
+  mounted: function mounted() {
+    $('.ui.checkbox').checkbox();
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Auth/layouts/SignUpComponent.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Auth/layouts/SignUpComponent.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -5422,7 +5642,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "Auth",
+  name: "SignUpComponent",
   mounted: function mounted() {
     $('.ui.checkbox').checkbox();
   }
@@ -28962,6 +29182,123 @@ component.options.__file = "resources/js/components/Auth/index.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/Auth/layouts/ForgotPassword.vue":
+/*!*****************************************************************!*\
+  !*** ./resources/js/components/Auth/layouts/ForgotPassword.vue ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ForgotPassword_vue_vue_type_template_id_12cdfaf0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ForgotPassword.vue?vue&type=template&id=12cdfaf0& */ "./resources/js/components/Auth/layouts/ForgotPassword.vue?vue&type=template&id=12cdfaf0&");
+/* harmony import */ var _ForgotPassword_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ForgotPassword.vue?vue&type=script&lang=js& */ "./resources/js/components/Auth/layouts/ForgotPassword.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ForgotPassword_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ForgotPassword_vue_vue_type_template_id_12cdfaf0___WEBPACK_IMPORTED_MODULE_0__.render,
+  _ForgotPassword_vue_vue_type_template_id_12cdfaf0___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Auth/layouts/ForgotPassword.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Auth/layouts/SignInComponent.vue":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/Auth/layouts/SignInComponent.vue ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _SignInComponent_vue_vue_type_template_id_7f04cf39___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SignInComponent.vue?vue&type=template&id=7f04cf39& */ "./resources/js/components/Auth/layouts/SignInComponent.vue?vue&type=template&id=7f04cf39&");
+/* harmony import */ var _SignInComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SignInComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/Auth/layouts/SignInComponent.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SignInComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SignInComponent_vue_vue_type_template_id_7f04cf39___WEBPACK_IMPORTED_MODULE_0__.render,
+  _SignInComponent_vue_vue_type_template_id_7f04cf39___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Auth/layouts/SignInComponent.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Auth/layouts/SignUpComponent.vue":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/Auth/layouts/SignUpComponent.vue ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _SignUpComponent_vue_vue_type_template_id_79095d83___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SignUpComponent.vue?vue&type=template&id=79095d83& */ "./resources/js/components/Auth/layouts/SignUpComponent.vue?vue&type=template&id=79095d83&");
+/* harmony import */ var _SignUpComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SignUpComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/Auth/layouts/SignUpComponent.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SignUpComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SignUpComponent_vue_vue_type_template_id_79095d83___WEBPACK_IMPORTED_MODULE_0__.render,
+  _SignUpComponent_vue_vue_type_template_id_79095d83___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Auth/layouts/SignUpComponent.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/dashboard/components/Analytics.vue":
 /*!********************************************************************!*\
   !*** ./resources/js/components/dashboard/components/Analytics.vue ***!
@@ -29228,6 +29565,54 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Auth/layouts/ForgotPassword.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/Auth/layouts/ForgotPassword.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ForgotPassword_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ForgotPassword.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Auth/layouts/ForgotPassword.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ForgotPassword_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Auth/layouts/SignInComponent.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/components/Auth/layouts/SignInComponent.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SignInComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./SignInComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Auth/layouts/SignInComponent.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SignInComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Auth/layouts/SignUpComponent.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/components/Auth/layouts/SignUpComponent.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SignUpComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./SignUpComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Auth/layouts/SignUpComponent.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SignUpComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/dashboard/components/Analytics.vue?vue&type=script&lang=js&":
 /*!*********************************************************************************************!*\
   !*** ./resources/js/components/dashboard/components/Analytics.vue?vue&type=script&lang=js& ***!
@@ -29354,6 +29739,57 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_75626654___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_75626654___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=template&id=75626654& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Auth/index.vue?vue&type=template&id=75626654&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Auth/layouts/ForgotPassword.vue?vue&type=template&id=12cdfaf0&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/components/Auth/layouts/ForgotPassword.vue?vue&type=template&id=12cdfaf0& ***!
+  \************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ForgotPassword_vue_vue_type_template_id_12cdfaf0___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ForgotPassword_vue_vue_type_template_id_12cdfaf0___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ForgotPassword_vue_vue_type_template_id_12cdfaf0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ForgotPassword.vue?vue&type=template&id=12cdfaf0& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Auth/layouts/ForgotPassword.vue?vue&type=template&id=12cdfaf0&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Auth/layouts/SignInComponent.vue?vue&type=template&id=7f04cf39&":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/components/Auth/layouts/SignInComponent.vue?vue&type=template&id=7f04cf39& ***!
+  \*************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SignInComponent_vue_vue_type_template_id_7f04cf39___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SignInComponent_vue_vue_type_template_id_7f04cf39___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SignInComponent_vue_vue_type_template_id_7f04cf39___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./SignInComponent.vue?vue&type=template&id=7f04cf39& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Auth/layouts/SignInComponent.vue?vue&type=template&id=7f04cf39&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Auth/layouts/SignUpComponent.vue?vue&type=template&id=79095d83&":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/components/Auth/layouts/SignUpComponent.vue?vue&type=template&id=79095d83& ***!
+  \*************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SignUpComponent_vue_vue_type_template_id_79095d83___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SignUpComponent_vue_vue_type_template_id_79095d83___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SignUpComponent_vue_vue_type_template_id_79095d83___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./SignUpComponent.vue?vue&type=template&id=79095d83& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Auth/layouts/SignUpComponent.vue?vue&type=template&id=79095d83&");
 
 
 /***/ }),
@@ -29501,6 +29937,33 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "sign_in_up_bg" }, [
+    _c("div", { staticClass: "container" }, [_c("ForgotPassword")], 1),
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Auth/layouts/ForgotPassword.vue?vue&type=template&id=12cdfaf0&":
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Auth/layouts/ForgotPassword.vue?vue&type=template&id=12cdfaf0& ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
   return _vm._m(0)
 }
 var staticRenderFns = [
@@ -29508,128 +29971,392 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "sign_in_up_bg" }, [
-      _c("div", { staticClass: "container" }, [
-        _c(
-          "div",
-          {
-            staticClass:
-              "row justify-content-lg-center justify-content-md-center",
-          },
-          [
-            _c("div", { staticClass: "col-lg-12" }, [
-              _c("div", { staticClass: "main_logo25", attrs: { id: "logo" } }, [
-                _c("a", { attrs: { href: "index.html" } }, [
-                  _c("img", {
-                    attrs: { src: "images/gamify.png", alt: "", width: "150" },
+    return _c(
+      "div",
+      {
+        staticClass: "row justify-content-lg-center justify-content-md-center",
+      },
+      [
+        _c("div", { staticClass: "col-lg-12" }, [
+          _c("div", { staticClass: "main_logo25", attrs: { id: "logo" } }, [
+            _c("a", { attrs: { href: "index.html" } }, [
+              _c("img", {
+                attrs: { src: "images/gamify.png", alt: "", width: "150" },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("a", { attrs: { href: "index.html" } }, [
+              _c("img", {
+                staticClass: "logo-inverse",
+                attrs: { src: "images/gamifyfavv.png", alt: "" },
+              }),
+            ]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-6 col-md-8" }, [
+          _c("div", { staticClass: "sign_form" }, [
+            _c("h2", [_vm._v("Request a Password Reset")]),
+            _vm._v(" "),
+            _c("form", [
+              _c("div", { staticClass: "ui search focus mt-50" }, [
+                _c("div", { staticClass: "ui left icon input swdh95" }, [
+                  _c("input", {
+                    staticClass: "prompt srch_explore",
+                    attrs: {
+                      type: "email",
+                      name: "emailaddress",
+                      value: "",
+                      id: "id_email",
+                      required: "",
+                      maxlength: "64",
+                      placeholder: "Email Address",
+                    },
                   }),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "uil uil-envelope icon icon2" }),
                 ]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "index.html" } }, [
-                  _c("img", {
-                    staticClass: "logo-inverse",
-                    attrs: { src: "images/gamifyfavv.png", alt: "" },
+              ]),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "login-btn", attrs: { type: "submit" } },
+                [_vm._v("Reset Password")]
+              ),
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "mb-0 mt-30" }, [
+              _vm._v("Go Back "),
+              _c("a", { attrs: { href: "sign_up.html" } }, [_vm._v("Sign In")]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "sign_footer" }, [
+            _c("img", { attrs: { src: "images/gamifyfavv.png", alt: "" } }),
+            _vm._v("© 2022\n          "),
+            _c("strong", [_vm._v("Gamify")]),
+            _vm._v(". All Rights Reserved.\n        "),
+          ]),
+        ]),
+      ]
+    )
+  },
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Auth/layouts/SignInComponent.vue?vue&type=template&id=7f04cf39&":
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Auth/layouts/SignInComponent.vue?vue&type=template&id=7f04cf39& ***!
+  \****************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "row justify-content-lg-center justify-content-md-center",
+      },
+      [
+        _c("div", { staticClass: "col-lg-12" }, [
+          _c("div", { staticClass: "main_logo25", attrs: { id: "logo" } }, [
+            _c("a", { attrs: { href: "index.html" } }, [
+              _c("img", {
+                attrs: { src: "images/gamify.png", alt: "", width: "150" },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("a", { attrs: { href: "index.html" } }, [
+              _c("img", {
+                staticClass: "logo-inverse",
+                attrs: { src: "images/gamifyfavv.png", alt: "" },
+              }),
+            ]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-6 col-md-8" }, [
+          _c("div", { staticClass: "sign_form" }, [
+            _c("h2", [_vm._v("Welcome Back")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("Log In to Your Gamify Account!")]),
+            _vm._v(" "),
+            _c("form", [
+              _c("div", { staticClass: "ui search focus mt-15" }, [
+                _c("div", { staticClass: "ui left icon input swdh95" }, [
+                  _c("input", {
+                    staticClass: "prompt srch_explore",
+                    attrs: {
+                      type: "email",
+                      name: "emailaddress",
+                      value: "",
+                      id: "id_email",
+                      required: "",
+                      maxlength: "64",
+                      placeholder: "Email Address",
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "uil uil-envelope icon icon2" }),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "ui search focus mt-15" }, [
+                _c("div", { staticClass: "ui left icon input swdh95" }, [
+                  _c("input", {
+                    staticClass: "prompt srch_explore",
+                    attrs: {
+                      type: "password",
+                      name: "password",
+                      value: "",
+                      id: "id_password",
+                      required: "",
+                      maxlength: "64",
+                      placeholder: "Password",
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("i", {
+                    staticClass: "uil uil-key-skeleton-alt icon icon2",
                   }),
                 ]),
               ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-6 col-md-8" }, [
-              _c("div", { staticClass: "sign_form" }, [
-                _c("h2", [_vm._v("Welcome Back")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Log In to Your Gamify Account!")]),
-                _vm._v(" "),
-                _c("form", [
-                  _c("div", { staticClass: "ui search focus mt-15" }, [
-                    _c("div", { staticClass: "ui left icon input swdh95" }, [
-                      _c("input", {
-                        staticClass: "prompt srch_explore",
-                        attrs: {
-                          type: "email",
-                          name: "emailaddress",
-                          value: "",
-                          id: "id_email",
-                          required: "",
-                          maxlength: "64",
-                          placeholder: "Email Address",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("i", { staticClass: "uil uil-envelope icon icon2" }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "ui search focus mt-15" }, [
-                    _c("div", { staticClass: "ui left icon input swdh95" }, [
-                      _c("input", {
-                        staticClass: "prompt srch_explore",
-                        attrs: {
-                          type: "password",
-                          name: "password",
-                          value: "",
-                          id: "id_password",
-                          required: "",
-                          maxlength: "64",
-                          placeholder: "Password",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("i", {
-                        staticClass: "uil uil-key-skeleton-alt icon icon2",
-                      }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "ui form mt-30 checkbox_sign" }, [
-                    _c("div", { staticClass: "inline field" }, [
-                      _c("div", { staticClass: "ui checkbox mncheck" }, [
-                        _c("input", {
-                          staticClass: "hidden",
-                          attrs: { type: "checkbox", tabindex: "0" },
-                        }),
-                        _vm._v(" "),
-                        _c("label", [_vm._v("Remember Me")]),
-                      ]),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("a", { attrs: { href: "instructor_dashboard.html" } }, [
-                    _c(
-                      "button",
-                      { staticClass: "login-btn", attrs: { type: "button" } },
-                      [_vm._v("Sign In")]
-                    ),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "sgntrm145" }, [
-                  _vm._v("\n              Or "),
-                  _c("a", { attrs: { href: "forgot_password.html" } }, [
-                    _vm._v("Forgot Password"),
-                  ]),
-                  _vm._v(".\n            "),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "mb-0 mt-30 hvsng145" }, [
-                  _vm._v("\n              Don't have an account? "),
-                  _c("a", { attrs: { href: "sign_up.html" } }, [
-                    _vm._v("Sign Up"),
+              _vm._v(" "),
+              _c("div", { staticClass: "ui form mt-30 checkbox_sign" }, [
+                _c("div", { staticClass: "inline field" }, [
+                  _c("div", { staticClass: "ui checkbox mncheck" }, [
+                    _c("input", {
+                      staticClass: "hidden",
+                      attrs: { type: "checkbox", tabindex: "0" },
+                    }),
+                    _vm._v(" "),
+                    _c("label", [_vm._v("Remember Me")]),
                   ]),
                 ]),
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "sign_footer" }, [
-                _c("img", { attrs: { src: "images/gamifyfavv.png", alt: "" } }),
-                _vm._v("© 2022\n            "),
-                _c("strong", [_vm._v("Gamify")]),
-                _vm._v(". All Rights Reserved.\n          "),
+              _c("a", { attrs: { href: "instructor_dashboard.html" } }, [
+                _c(
+                  "button",
+                  { staticClass: "login-btn", attrs: { type: "button" } },
+                  [_vm._v("Sign In")]
+                ),
               ]),
             ]),
-          ]
-        ),
-      ]),
-    ])
+            _vm._v(" "),
+            _c("p", { staticClass: "sgntrm145" }, [
+              _vm._v("\n              Or "),
+              _c("a", { attrs: { href: "forgot_password.html" } }, [
+                _vm._v("Forgot Password"),
+              ]),
+              _vm._v(".\n            "),
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "mb-0 mt-30 hvsng145" }, [
+              _vm._v("\n              Don't have an account? "),
+              _c("a", { attrs: { href: "sign_up.html" } }, [_vm._v("Sign Up")]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "sign_footer" }, [
+            _c("img", { attrs: { src: "images/gamifyfavv.png", alt: "" } }),
+            _vm._v("© 2022\n            "),
+            _c("strong", [_vm._v("Gamify")]),
+            _vm._v(". All Rights Reserved.\n          "),
+          ]),
+        ]),
+      ]
+    )
+  },
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Auth/layouts/SignUpComponent.vue?vue&type=template&id=79095d83&":
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Auth/layouts/SignUpComponent.vue?vue&type=template&id=79095d83& ***!
+  \****************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "row justify-content-lg-center justify-content-md-center",
+      },
+      [
+        _c("div", { staticClass: "col-lg-12" }, [
+          _c("div", { staticClass: "main_logo25", attrs: { id: "logo" } }, [
+            _c("a", { attrs: { href: "index.html" } }, [
+              _c("img", {
+                attrs: { src: "images/gamify.png", alt: "", width: "150" },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("a", { attrs: { href: "index.html" } }, [
+              _c("img", {
+                staticClass: "logo-inverse",
+                attrs: { src: "images/gamifyfavv.png", alt: "" },
+              }),
+            ]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-6 col-md-8" }, [
+          _c("div", { staticClass: "sign_form" }, [
+            _c("h2", [_vm._v("Welcome to Gamify")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("Sign Up and Start Learning!")]),
+            _vm._v(" "),
+            _c("form", [
+              _c("div", { staticClass: "ui search focus" }, [
+                _c("div", { staticClass: "ui left icon input swdh11 swdh19" }, [
+                  _c("input", {
+                    staticClass: "prompt srch_explore",
+                    attrs: {
+                      type: "text",
+                      name: "fullname",
+                      value: "",
+                      id: "id_fullname",
+                      required: "",
+                      maxlength: "64",
+                      placeholder: "Full Name",
+                    },
+                  }),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "ui search focus mt-15" }, [
+                _c("div", { staticClass: "ui left icon input swdh11 swdh19" }, [
+                  _c("input", {
+                    staticClass: "prompt srch_explore",
+                    attrs: {
+                      type: "email",
+                      name: "emailaddress",
+                      value: "",
+                      id: "id_email",
+                      required: "",
+                      maxlength: "64",
+                      placeholder: "Email Address",
+                    },
+                  }),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "ui search focus mt-15" }, [
+                _c("div", { staticClass: "ui left icon input swdh11 swdh19" }, [
+                  _c("input", {
+                    staticClass: "prompt srch_explore",
+                    attrs: {
+                      type: "password",
+                      name: "password",
+                      value: "",
+                      id: "id_password",
+                      required: "",
+                      maxlength: "64",
+                      placeholder: "Password",
+                    },
+                  }),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "ui form mt-30 checkbox_sign" }, [
+                _c("div", { staticClass: "inline field" }, [
+                  _c("div", { staticClass: "ui checkbox mncheck" }, [
+                    _c("input", {
+                      staticClass: "hidden",
+                      attrs: { type: "checkbox", tabindex: "0" },
+                    }),
+                    _vm._v(" "),
+                    _c("label", [
+                      _vm._v(
+                        "I’m in for emails with exciting discounts\n                                and personalized recommendations"
+                      ),
+                    ]),
+                  ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("a", { attrs: { href: "sign_up_steps.html" } }, [
+                _c(
+                  "button",
+                  { staticClass: "login-btn", attrs: { type: "button" } },
+                  [
+                    _vm._v(
+                      "\n                        Next\n                    "
+                    ),
+                  ]
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "sgntrm145" }, [
+              _vm._v(
+                "\n                By signing up, you agree to our\n                "
+              ),
+              _c("a", { attrs: { href: "terms_of_use.html" } }, [
+                _vm._v("Terms of Use"),
+              ]),
+              _vm._v(" and\n                "),
+              _c("a", { attrs: { href: "terms_of_use.html" } }, [
+                _vm._v("Privacy Policy"),
+              ]),
+              _vm._v(".\n            "),
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "mb-0 mt-30" }, [
+              _vm._v("\n                Already have an account? "),
+              _c("a", { attrs: { href: "sign_in.html" } }, [_vm._v("Log In")]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "sign_footer" }, [
+            _c("img", { attrs: { src: "images/gamifyfavv.png", alt: "" } }),
+            _vm._v("© 2022\n            "),
+            _c("strong", [_vm._v("Gamify")]),
+            _vm._v(". All Rights Reserved.\n        "),
+          ]),
+        ]),
+      ]
+    )
   },
 ]
 render._withStripped = true
