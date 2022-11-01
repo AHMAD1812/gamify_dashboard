@@ -14,3 +14,6 @@ use App\Http\Controllers\PageController;
 */
 
 Route::get('/', [PageController::class, 'index']);
+Route::get('/login', [PageController::class, 'index']);
+Route::get('/register', [PageController::class, 'index']);
+Route::get('/forgot_password', [PageController::class, 'index']);

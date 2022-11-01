@@ -93,10 +93,10 @@
                 </div>
             </li>
             <li class="ui dropdown">
-                <a href="#" class="opts_account" title="Account">
+                <div class="opts_account new-dropdown" title="Account">
                     <img src="images/hd_dp.jpg" alt="" />
-                </a>
-                <div class="menu dropdown_account">
+                </div>
+                <div class="menu dropdown_account left visible">
                     <div class="channel_my">
                         <div class="profile_link justify-content-center">
                             <img src="images/hd_dp.jpg" alt="" />
@@ -134,6 +134,15 @@
 <script>
 export default {
     name:"Header",
+    mounted(){
+        $('.new-dropdown').click(function(){
+            if($('.dropdown_account').css('display')=='none'){
+                $('.dropdown_account').show();
+            }else{
+                $('.dropdown_account').hide();
+            }
+        });
+    }
 }
 </script>
 

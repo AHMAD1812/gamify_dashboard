@@ -6,8 +6,12 @@
 
 require('./bootstrap');
 
+import router from "./Router/index";
 window.Vue = require('vue').default;
 
+
+import VueRouter from "vue-router";
+Vue.use(VueRouter);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -27,6 +31,10 @@ Vue.component('main-app', require('./App.vue').default);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app',
+ window.addEventListener("load", function () {
+    //your script
+    const app = new Vue({
+        el: "#app",
+        router,
+    });
 });
