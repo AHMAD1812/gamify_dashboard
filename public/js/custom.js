@@ -1,8 +1,8 @@
 // === Dropdown === //
 
-$('.ui.dropdown')
-  .dropdown()
-;
+// $('.ui.dropdown')
+//   .dropdown()
+// ;
 
 // === Model === //
 $('.ui.modal')

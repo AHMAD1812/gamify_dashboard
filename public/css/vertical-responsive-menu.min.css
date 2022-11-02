@@ -79,7 +79,7 @@
 	color: #3AAAD1 !important;
 }
 
-.menu--link.active {
+.menu--link.active,.menu--link.router-link-exact-active {
 	background: #ebf8fc;
 	color: #3AAAD1;
 }

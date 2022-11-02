@@ -17,13 +17,13 @@
                   <li>
                     <a href="index.html">
                       <div class="footer_logo">
-                        <img src="images/gamifyfavv.png" alt="" />
+                        <img src="images/gamify-favicon.png" alt="" />
                       </div>
                     </a>
                   </li>
                   <li>
                     <p>
-                      © 2022 <strong>Gamify Us</strong>. All Rights
+                      © 2022 <strong>Gamify US</strong>. All Rights
                       Reserved.
                     </p>
                   </li>

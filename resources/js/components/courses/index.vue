@@ -1,0 +1,575 @@
+<template>
+    <div class="sa4d25">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="st_title">
+                        <i class="uil uil-book-alt"></i>Courses
+                    </h2>
+                </div>
+                <div class="col-md-12">
+                    <div class="card_dash1">
+                        <div class="card_dash_left1">
+                            <i class="uil uil-book-alt"></i>
+                            <h1>Jump Into Interactive Video Creation</h1>
+                        </div>
+                        <div class="card_dash_right1">
+                            <button
+                                class="create_btn_dash"
+                                onclick="window.location.href = 'create_new_course.html';"
+                            >
+                                Create Your Video
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="my_courses_tabs">
+                        <ul
+                            class="nav nav-pills my_crse_nav"
+                            id="pills-tab"
+                            role="tablist"
+                        >
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link active"
+                                    id="pills-my-courses-tab"
+                                    data-toggle="pill"
+                                    href="#pills-my-courses"
+                                    role="tab"
+                                    aria-controls="pills-my-courses"
+                                    aria-selected="true"
+                                    ><i class="uil uil-book-alt"></i>My
+                                    Courses</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    id="pills-upcoming-courses-tab"
+                                    data-toggle="pill"
+                                    href="#pills-upcoming-courses"
+                                    role="tab"
+                                    aria-controls="pills-upcoming-courses"
+                                    aria-selected="false"
+                                    ><i class="uil uil-upload-alt"></i>Expired
+                                    Courses</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    id="pills-promotions-tab"
+                                    data-toggle="pill"
+                                    href="#pills-promotions"
+                                    role="tab"
+                                    aria-controls="pills-promotions"
+                                    aria-selected="false"
+                                    ><i class="uil uil-megaphone"></i
+                                    >Promotions</a
+                                >
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div
+                                class="tab-pane fade show active"
+                                id="pills-my-courses"
+                                role="tabpanel"
+                            >
+                                <div class="table-responsive mt-30">
+                                    <table class="table ucp-table">
+                                        <thead class="thead-s">
+                                            <tr>
+                                                <th
+                                                    class="text-center"
+                                                    scope="col"
+                                                >
+                                                    Item No.
+                                                </th>
+                                                <th>Title</th>
+                                                <th
+                                                    class="text-center"
+                                                    scope="col"
+                                                >
+                                                    Publish Date
+                                                </th>
+                                                <th
+                                                    class="text-center"
+                                                    scope="col"
+                                                >
+                                                    Sales
+                                                </th>
+                                                <th
+                                                    class="text-center"
+                                                    scope="col"
+                                                >
+                                                    Parts
+                                                </th>
+                                                <th
+                                                    class="text-center"
+                                                    scope="col"
+                                                >
+                                                    Category
+                                                </th>
+                                                <th
+                                                    class="text-center"
+                                                    scope="col"
+                                                >
+                                                    Status
+                                                </th>
+                                                <th
+                                                    class="text-center"
+                                                    scope="col"
+                                                >
+                                                    Action
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center">
+                                                    IT-001
+                                                </td>
+                                                <td>Course Title Here</td>
+                                                <td class="text-center">
+                                                    06 April 2020 | 08:31
+                                                </td>
+                                                <td class="text-center">15</td>
+                                                <td class="text-center">5</td>
+                                                <td class="text-center">
+                                                    <a href="#"
+                                                        >Web Development</a
+                                                    >
+                                                </td>
+                                                <td class="text-center">
+                                                    <b class="course_active"
+                                                        >Active</b
+                                                    >
+                                                </td>
+                                                <td class="text-center">
+                                                    <a
+                                                        href="#"
+                                                        title="Edit"
+                                                        class="gray-s"
+                                                        ><i
+                                                            class="uil uil-edit-alt"
+                                                        ></i
+                                                    ></a>
+                                                    <a
+                                                        href="course_detail_view.html"
+                                                        title="Edit"
+                                                        class="gray-s"
+                                                        ><i
+                                                            class="uil uil-eye"
+                                                        ></i
+                                                    ></a>
+                                                    <a
+                                                        href="#"
+                                                        title="Delete"
+                                                        class="gray-s"
+                                                        ><i
+                                                            class="uil uil-trash-alt"
+                                                        ></i
+                                                    ></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    IT-002
+                                                </td>
+                                                <td>Course Title Here</td>
+                                                <td class="text-center">
+                                                    05 April 2020 | 05:15
+                                                </td>
+                                                <td class="text-center">30</td>
+                                                <td class="text-center">3</td>
+                                                <td class="text-center">
+                                                    <a href="#"
+                                                        >Graphic Design</a
+                                                    >
+                                                </td>
+                                                <td class="text-center">
+                                                    <b class="course_active"
+                                                        >Active</b
+                                                    >
+                                                </td>
+                                                <td class="text-center">
+                                                    <a
+                                                        href="#"
+                                                        title="Edit"
+                                                        class="gray-s"
+                                                        ><i
+                                                            class="uil uil-edit-alt"
+                                                        ></i
+                                                    ></a>
+                                                    <a
+                                                        href="course_detail_view.html"
+                                                        title="Edit"
+                                                        class="gray-s"
+                                                        ><i
+                                                            class="uil uil-eye"
+                                                        ></i
+                                                    ></a>
+                                                    <a
+                                                        href="#"
+                                                        title="Delete"
+                                                        class="gray-s"
+                                                        ><i
+                                                            class="uil uil-trash-alt"
+                                                        ></i
+                                                    ></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    IT-003
+                                                </td>
+                                                <td>Course Title</td>
+                                                <td class="text-center">
+                                                    03 April 2020 | 01:30
+                                                </td>
+                                                <td class="text-center">14</td>
+                                                <td class="text-center">5</td>
+                                                <td class="text-center">
+                                                    <a href="#">Bootstrap</a>
+                                                </td>
+                                                <td class="text-center">
+                                                    <b class="course_active"
+                                                        >Active</b
+                                                    >
+                                                </td>
+                                                <td class="text-center">
+                                                    <a
+                                                        href="#"
+                                                        title="Edit"
+                                                        class="gray-s"
+                                                        ><i
+                                                            class="uil uil-edit-alt"
+                                                        ></i
+                                                    ></a>
+                                                    <a
+                                                        href="course_detail_view.html"
+                                                        title="Edit"
+                                                        class="gray-s"
+                                                        ><i
+                                                            class="uil uil-eye"
+                                                        ></i
+                                                    ></a>
+                                                    <a
+                                                        href="#"
+                                                        title="Delete"
+                                                        class="gray-s"
+                                                        ><i
+                                                            class="uil uil-trash-alt"
+                                                        ></i
+                                                    ></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    IT-004
+                                                </td>
+                                                <td>Course Title Here</td>
+                                                <td class="text-center">
+                                                    02 April 2020 | 05:15
+                                                </td>
+                                                <td class="text-center">110</td>
+                                                <td class="text-center">9</td>
+                                                <td class="text-center">
+                                                    <a href="#"
+                                                        >Game Development</a
+                                                    >
+                                                </td>
+                                                <td class="text-center">
+                                                    <b class="course_active"
+                                                        >Active</b
+                                                    >
+                                                </td>
+                                                <td class="text-center">
+                                                    <a
+                                                        href="#"
+                                                        title="Edit"
+                                                        class="gray-s"
+                                                        ><i
+                                                            class="uil uil-edit-alt"
+                                                        ></i
+                                                    ></a>
+                                                    <a
+                                                        href="course_detail_view.html"
+                                                        title="Edit"
+                                                        class="gray-s"
+                                                        ><i
+                                                            class="uil uil-eye"
+                                                        ></i
+                                                    ></a>
+                                                    <a
+                                                        href="#"
+                                                        title="Delete"
+                                                        class="gray-s"
+                                                        ><i
+                                                            class="uil uil-trash-alt"
+                                                        ></i
+                                                    ></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    IT-002
+                                                </td>
+                                                <td>Course Title Here</td>
+                                                <td class="text-center">
+                                                    28 March 2020 | 05:15
+                                                </td>
+                                                <td class="text-center">185</td>
+                                                <td class="text-center">10</td>
+                                                <td class="text-center">
+                                                    <a href="#">C++</a>
+                                                </td>
+                                                <td class="text-center">
+                                                    <b class="course_active"
+                                                        >Active</b
+                                                    >
+                                                </td>
+                                                <td class="text-center">
+                                                    <a
+                                                        href="#"
+                                                        title="Edit"
+                                                        class="gray-s"
+                                                        ><i
+                                                            class="uil uil-edit-alt"
+                                                        ></i
+                                                    ></a>
+                                                    <a
+                                                        href="course_detail_view.html"
+                                                        title="Edit"
+                                                        class="gray-s"
+                                                        ><i
+                                                            class="uil uil-eye"
+                                                        ></i
+                                                    ></a>
+                                                    <a
+                                                        href="#"
+                                                        title="Delete"
+                                                        class="gray-s"
+                                                        ><i
+                                                            class="uil uil-trash-alt"
+                                                        ></i
+                                                    ></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div
+                                class="tab-pane fade"
+                                id="pills-upcoming-courses"
+                                role="tabpanel"
+                            >
+                                <div class="table-responsive mt-30">
+                                    <table class="table ucp-table">
+                                        <thead class="thead-s">
+                                            <tr>
+                                                <th
+                                                    class="text-center"
+                                                    scope="col"
+                                                >
+                                                    Item No.
+                                                </th>
+                                                <th class="cell-ta">Title</th>
+                                                <th
+                                                    class="text-center"
+                                                    scope="col"
+                                                >
+                                                    Thumbnail
+                                                </th>
+                                                <th class="text-center">
+                                                    Category
+                                                </th>
+                                                <th class="text-center">
+                                                    Price
+                                                </th>
+                                                <th class="text-center">
+                                                    Date
+                                                </th>
+                                                <th
+                                                    class="text-center"
+                                                    scope="col"
+                                                >
+                                                    Status
+                                                </th>
+                                                <th
+                                                    class="text-center"
+                                                    scope="col"
+                                                >
+                                                    Actions
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center">01</td>
+                                                <td class="cell-ta">
+                                                    Course Title Here
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="#">View</a>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="#"
+                                                        >Web Development</a
+                                                    >
+                                                </td>
+                                                <td class="text-center">$15</td>
+                                                <td class="text-center">
+                                                    9 April 2020
+                                                </td>
+                                                <td class="text-center">
+                                                    <b class="course_active"
+                                                        >Pending</b
+                                                    >
+                                                </td>
+                                                <td class="text-center">
+                                                    <a
+                                                        href="#"
+                                                        title="Edit"
+                                                        class="gray-s"
+                                                        ><i
+                                                            class="uil uil-edit-alt"
+                                                        ></i
+                                                    ></a>
+                                                    <a
+                                                        href="#"
+                                                        title="Delete"
+                                                        class="gray-s"
+                                                        ><i
+                                                            class="uil uil-trash-alt"
+                                                        ></i
+                                                    ></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">02</td>
+                                                <td class="cell-ta">
+                                                    Course Title Here
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="#">View</a>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="#"
+                                                        >Graphic Design</a
+                                                    >
+                                                </td>
+                                                <td class="text-center">$12</td>
+                                                <td class="text-center">
+                                                    8 April 2020
+                                                </td>
+                                                <td class="text-center">
+                                                    <b class="course_active"
+                                                        >Pending</b
+                                                    >
+                                                </td>
+                                                <td class="text-center">
+                                                    <a
+                                                        href="#"
+                                                        title="Edit"
+                                                        class="gray-s"
+                                                        ><i
+                                                            class="uil uil-edit-alt"
+                                                        ></i
+                                                    ></a>
+                                                    <a
+                                                        href="#"
+                                                        title="Delete"
+                                                        class="gray-s"
+                                                        ><i
+                                                            class="uil uil-trash-alt"
+                                                        ></i
+                                                    ></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">03</td>
+                                                <td class="cell-ta">
+                                                    Course Title Here
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="#">View</a>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="#">Photography</a>
+                                                </td>
+                                                <td class="text-center">$6</td>
+                                                <td class="text-center">
+                                                    7 April 2020
+                                                </td>
+                                                <td class="text-center">
+                                                    <b class="course_active"
+                                                        >Pending</b
+                                                    >
+                                                </td>
+                                                <td class="text-center">
+                                                    <a
+                                                        href="#"
+                                                        title="Edit"
+                                                        class="gray-s"
+                                                        ><i
+                                                            class="uil uil-edit-alt"
+                                                        ></i
+                                                    ></a>
+                                                    <a
+                                                        href="#"
+                                                        title="Delete"
+                                                        class="gray-s"
+                                                        ><i
+                                                            class="uil uil-trash-alt"
+                                                        ></i
+                                                    ></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div
+                                class="tab-pane fade"
+                                id="pills-promotions"
+                                role="tabpanel"
+                                aria-labelledby="pills-promotions-tab"
+                            >
+                                <div class="promotion_tab mb-10">
+                                    <img
+                                        src="images/dashboard/promotion.svg"
+                                        alt=""
+                                    />
+                                    <h4>Baby promotion plan is activated!</h4>
+                                    <p>
+                                        By activating promotion plans you can
+                                        improve course views and sales.
+                                    </p>
+                                    <button
+                                        class="plan_link_btn"
+                                        onclick="window.location.href = '#';"
+                                    >
+                                        Change New Plan
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    name:"Courses",
+};
+</script>
+
+<style></style>

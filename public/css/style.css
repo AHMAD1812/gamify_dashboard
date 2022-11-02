@@ -317,7 +317,7 @@ input[type=text] {
   }
 
   .wrapper__minify {
-    margin-left: 0;
+    margin-left: 50px;
   }
 
 }
@@ -393,15 +393,9 @@ header {
 
 .main_logo {
     float: left;
-    width: 135px;
     margin-left: 10px;
     margin-right: 10px;
 }
-
-.logo-inverse {
-    display: none;
-}
-
 .search120 {
     float: left;
     margin-left: 50px;
@@ -736,7 +730,6 @@ i.icon1 {
     width: 100%;
   }
   th {
-    background-color:  #3AAAD1;
     text-align: left;
     padding: 18px;
     font-weight: bold;
@@ -748,7 +741,7 @@ i.icon1 {
     padding: 18px;
   }
   
-  tr:nth-child(odd) {background-color: #EBF8FC;
+  tr:nth-child(odd) {background-color: #fcfcfc;
   }
 
 .stream_1 {
@@ -5822,10 +5815,9 @@ a.rmv-btn i {
 
 .main_logo25 {
     float: none;
-    width: 135px;
     text-align: center;
     margin: auto !important;
-	padding: 50px 0;
+	padding: 30px 0;
 }
 
 .sign_in_up_bg {
