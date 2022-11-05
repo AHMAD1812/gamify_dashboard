@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AppController;
 use App\Http\Controllers\PageController;
 /*
 |--------------------------------------------------------------------------
@@ -13,13 +14,18 @@ use App\Http\Controllers\PageController;
 |
 */
 
-Route::get('/', [PageController::class, 'index']);
-Route::get('/login', [PageController::class, 'index']);
-Route::get('/register', [PageController::class, 'index']);
-Route::get('/forgot_password', [PageController::class, 'index']);
-Route::get('/courses', [PageController::class, 'index']);
-Route::get('/create_video', [PageController::class, 'index']);
-Route::get('/messages', [PageController::class, 'index']);
-Route::get('/notification', [PageController::class, 'index']);
-Route::get('/reviews', [PageController::class, 'index']);
-Route::get('/profile', [PageController::class, 'index']);
+Route::get('/', [AppController::class, 'index'])->name('app');
+Route::get('/about-us', [AppController::class, 'about'])->name('about');
+
+Route::prefix('instructor')->group(function () {
+    Route::get('/dashboard', [PageController::class, 'index']);
+    Route::get('/login', [PageController::class, 'index'])->name('instructor.login');
+    Route::get('/register', [PageController::class, 'index'])->name('instructor.register');
+    Route::get('/forgot_password', [PageController::class, 'index']);
+    Route::get('/courses', [PageController::class, 'index']);
+    Route::get('/create_video', [PageController::class, 'index']);
+    Route::get('/messages', [PageController::class, 'index']);
+    Route::get('/notification', [PageController::class, 'index']);
+    Route::get('/reviews', [PageController::class, 'index']);
+    Route::get('/profile', [PageController::class, 'index']);
+});

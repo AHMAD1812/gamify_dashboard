@@ -13346,47 +13346,47 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routes = [{
-  path: "/register",
+  path: "/instructor/register",
   component: _components_Auth_index_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
   name: "Register"
 }, {
-  path: "/login",
+  path: "/instructor/login",
   component: _components_Auth_index_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
   name: "Login"
 }, {
-  path: "/forgot_password",
+  path: "/instructor/forgot_password",
   component: _components_Auth_index_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
   name: "ForgotPassword"
 }, {
-  path: "/",
+  path: "/instructor/dashboard",
   component: _components_layouts_BodyComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
   name: "Dashboard"
 }, {
-  path: "/courses",
+  path: "/instructor/courses",
   component: _components_layouts_BodyComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
   name: "Courses"
 }, {
-  path: "/create_video",
+  path: "/instructor/create_video",
   component: _components_layouts_BodyComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
   name: "CreateVideo"
 }, {
-  path: "/messages",
+  path: "/instructor/messages",
   component: _components_layouts_BodyComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
   name: "Messages"
 }, {
-  path: "/notification",
+  path: "/instructor/notification",
   component: _components_layouts_BodyComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
   name: "Notification"
 }, {
-  path: "/reviews",
+  path: "/instructor/reviews",
   component: _components_layouts_BodyComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
   name: "Review"
 }, {
-  path: "/setting",
+  path: "/instructor/setting",
   component: _components_layouts_BodyComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
   name: "Setting"
 }, {
-  path: "/profile",
+  path: "/instructor/profile",
   component: _components_layouts_BodyComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
   name: "Profile"
 }];

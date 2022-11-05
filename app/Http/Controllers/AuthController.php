@@ -20,7 +20,7 @@ class AuthController extends Controller
         }
         return $this->sendSuccess('Email not found');
     }
-    
+                                            
     public function Register(Request $request)
     {
         $validator = Validator::make($request->all(), [

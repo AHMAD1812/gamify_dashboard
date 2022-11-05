@@ -2,57 +2,57 @@ import Auth from '../components/Auth/index.vue';
 import Body from '../components/layouts/BodyComponent.vue';
 
 const routes = [{
-        path: "/register",
+        path: "/instructor/register",
         component: Auth,
         name: "Register",
     },
     {
-        path: "/login",
+        path: "/instructor/login",
         component: Auth,
         name: "Login",
     },
     {
-        path: "/forgot_password",
+        path: "/instructor/forgot_password",
         component: Auth,
         name: "ForgotPassword",
     },
     {
-        path: "/",
+        path: "/instructor/dashboard",
         component: Body,
         name: "Dashboard",
     },
     {
-        path: "/courses",
+        path: "/instructor/courses",
         component: Body,
         name: "Courses",
     },
     {
-        path: "/create_video",
+        path: "/instructor/create_video",
         component: Body,
         name: "CreateVideo",
     },
     {
-        path: "/messages",
+        path: "/instructor/messages",
         component: Body,
         name: "Messages",
     },
     {
-        path: "/notification",
+        path: "/instructor/notification",
         component: Body,
         name: "Notification",
     },
     {
-        path: "/reviews",
+        path: "/instructor/reviews",
         component: Body,
         name: "Review",
     },
     {
-        path: "/setting",
+        path: "/instructor/setting",
         component: Body,
         name: "Setting",
     },
     {
-        path: "/profile",
+        path: "/instructor/profile",
         component: Body,
         name: "Profile",
     },
