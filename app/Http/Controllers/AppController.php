@@ -13,4 +13,8 @@ class AppController extends Controller
     public function about(){
         return view('app.about.index');
     }
+
+    public function contact(){
+        return view('app.contact.index');
+    }
 }

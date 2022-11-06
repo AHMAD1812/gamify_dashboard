@@ -10,7 +10,7 @@
                         <h1 class="breadcrumb-title">Who We Are?</h1>
                         <nav class="transparent">
                             <ol class="breadcrumb p-0">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="{{route('app')}}">Home</a></li>
                                 <li class="breadcrumb-item active theme-cl" aria-current="page">About Us</li>
                             </ol>
                         </nav>
@@ -48,7 +48,7 @@
                                     class="rounded-circle bg-light-success theme-cl p-2 small d-flex align-items-center justify-content-center">
                                     <i class="fas fa-check"></i>
                                 </div>
-                                <h6 class="mb-0 ml-3">20+ downloadable resources</h6>
+                                <h6 class="mb-0 ml-3">Interactive Videos</h6>
                             </div>
                         </div>
                         <div class="mb-3 mr-4 ml-lg-0 mr-lg-4">
@@ -57,10 +57,10 @@
                                     class="rounded-circle bg-light-success theme-cl p-2 small d-flex align-items-center justify-content-center">
                                     <i class="fas fa-check"></i>
                                 </div>
-                                <h6 class="mb-0 ml-3">Certificate of completion</h6>
+                                <h6 class="mb-0 ml-3">Rewards</h6>
                             </div>
                         </div>
-                        <div class="mb-3 mr-4 ml-lg-0 mr-lg-4">
+                        {{-- <div class="mb-3 mr-4 ml-lg-0 mr-lg-4">
                             <div class="d-flex align-items-center">
                                 <div
                                     class="rounded-circle bg-light-success theme-cl p-2 small d-flex align-items-center justify-content-center">
@@ -70,13 +70,13 @@
                             </div>
                         </div>
                         <div class="text-left mt-4"><a href="#" class="btn btn-md text-light theme-bg">Enrolled
-                                Today</a></div>
+                                Today</a></div> --}}
                     </div>
                 </div>
 
                 <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">
                     <div class="lmp_thumb">
-                        <img src="assets/img/img7.png" class="img-fluid" alt="" />
+                        <img src="{{asset('main/img/img7.png')}}" class="img-fluid" alt="" />
                     </div>
                 </div>
             </div>
@@ -104,7 +104,7 @@
                 <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
                     <div class="crs_partn">
                         <div class="p-3">
-                            <img src="assets/img/lg-1.png" class="img-fluid" alt="" />
+                            <img src="{{asset('main/img/lg-1.png')}}" class="img-fluid" alt="" />
                         </div>
                     </div>
                 </div>
@@ -113,7 +113,7 @@
                 <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
                     <div class="crs_partn">
                         <div class="p-3">
-                            <img src="assets/img/lg-2.png" class="img-fluid" alt="" />
+                            <img src="{{asset('main/img/lg-2.png')}}" class="img-fluid" alt="" />
                         </div>
                     </div>
                 </div>
@@ -122,7 +122,7 @@
                 <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
                     <div class="crs_partn">
                         <div class="p-3">
-                            <img src="assets/img/lg-3.png" class="img-fluid" alt="" />
+                            <img src="{{asset('main/img/lg-3.png')}}" class="img-fluid" alt="" />
                         </div>
                     </div>
                 </div>
@@ -131,7 +131,7 @@
                 <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
                     <div class="crs_partn">
                         <div class="p-3">
-                            <img src="assets/img/lg-4.png" class="img-fluid" alt="" />
+                            <img src="{{asset('main/img/lg-4.png')}}" class="img-fluid" alt="" />
                         </div>
                     </div>
                 </div>
@@ -140,7 +140,7 @@
                 <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
                     <div class="crs_partn">
                         <div class="p-3">
-                            <img src="assets/img/lg-5.png" class="img-fluid" alt="" />
+                            <img src="{{asset('main/img/lg-5.png')}}" class="img-fluid" alt="" />
                         </div>
                     </div>
                 </div>
@@ -149,7 +149,7 @@
                 <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
                     <div class="crs_partn">
                         <div class="p-3">
-                            <img src="assets/img/lg-6.png" class="img-fluid" alt="" />
+                            <img src="{{asset('main/img/lg-6.png')}}" class="img-fluid" alt="" />
                         </div>
                     </div>
                 </div>
@@ -158,7 +158,7 @@
                 <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
                     <div class="crs_partn">
                         <div class="p-3">
-                            <img src="assets/img/lg-7.png" class="img-fluid" alt="" />
+                            <img src="{{asset('main/img/lg-7.png')}}" class="img-fluid" alt="" />
                         </div>
                     </div>
                 </div>
@@ -167,7 +167,7 @@
                 <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
                     <div class="crs_partn">
                         <div class="p-3">
-                            <img src="assets/img/lg-8.png" class="img-fluid" alt="" />
+                            <img src="{{asset('main/img/lg-8.png')}}" class="img-fluid" alt="" />
                         </div>
                     </div>
                 </div>
@@ -176,7 +176,7 @@
                 <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
                     <div class="crs_partn">
                         <div class="p-3">
-                            <img src="assets/img/lg-9.png" class="img-fluid" alt="" />
+                            <img src="{{asset('main/img/lg-9.png')}}" class="img-fluid" alt="" />
                         </div>
                     </div>
                 </div>
@@ -213,7 +213,7 @@
                                 <div class="_testimonial_flex">
                                     <div class="_testimonial_flex_first">
                                         <div class="_tsl_flex_thumb">
-                                            <img src="assets/img/user-1.jpg" class="img-fluid" alt="">
+                                            <img src="{{asset('main/img/user-1.jpg')}}" class="img-fluid" alt="">
                                         </div>
                                         <div class="_tsl_flex_capst">
                                             <h5>Susan D. Murphy</h5>
@@ -223,7 +223,7 @@
                                     </div>
                                     <div class="_testimonial_flex_first_last">
                                         <div class="_tsl_flex_thumb">
-                                            <img src="assets/img/c-1.png" class="img-fluid" alt="">
+                                            <img src="{{asset('main/img/c-1.png')}}" class="img-fluid" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -241,7 +241,7 @@
                                 <div class="_testimonial_flex">
                                     <div class="_testimonial_flex_first">
                                         <div class="_tsl_flex_thumb">
-                                            <img src="assets/img/user-2.jpg" class="img-fluid" alt="">
+                                            <img src="{{asset('main/img/user-2.jpg')}}" class="img-fluid" alt="">
                                         </div>
                                         <div class="_tsl_flex_capst">
                                             <h5>Maxine E. Gagliardi</h5>
@@ -269,7 +269,7 @@
                                 <div class="_testimonial_flex">
                                     <div class="_testimonial_flex_first">
                                         <div class="_tsl_flex_thumb">
-                                            <img src="assets/img/user-3.jpg" class="img-fluid" alt="">
+                                            <img src="{{asset('main/img/user-3.jpg')}}" class="img-fluid" alt="">
                                         </div>
                                         <div class="_tsl_flex_capst">
                                             <h5>Roy M. Cardona</h5>
@@ -279,7 +279,7 @@
                                     </div>
                                     <div class="_testimonial_flex_first_last">
                                         <div class="_tsl_flex_thumb">
-                                            <img src="assets/img/c-3.png" class="img-fluid" alt="">
+                                            <img src="{{asset('main/img/c-3.png')}}" class="img-fluid" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -297,7 +297,7 @@
                                 <div class="_testimonial_flex">
                                     <div class="_testimonial_flex_first">
                                         <div class="_tsl_flex_thumb">
-                                            <img src="assets/img/user-4.jpg" class="img-fluid" alt="">
+                                            <img src="{{asset('main/img/user-4.jpg')}}" class="img-fluid" alt="">
                                         </div>
                                         <div class="_tsl_flex_capst">
                                             <h5>Dorothy K. Shipton</h5>
@@ -325,7 +325,7 @@
                                 <div class="_testimonial_flex">
                                     <div class="_testimonial_flex_first">
                                         <div class="_tsl_flex_thumb">
-                                            <img src="assets/img/user-5.jpg" class="img-fluid" alt="">
+                                            <img src="{{asset('main/img/user-5.jpg')}}" class="img-fluid" alt="">
                                         </div>
                                         <div class="_tsl_flex_capst">
                                             <h5>Robert P. McKissack</h5>
@@ -335,7 +335,7 @@
                                     </div>
                                     <div class="_testimonial_flex_first_last">
                                         <div class="_tsl_flex_thumb">
-                                            <img src="assets/img/c-5.png" class="img-fluid" alt="">
+                                            <img src="{{asset('main/img/c-5.png')}}" class="img-fluid" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -357,21 +357,4 @@
     <!-- ============================ Students Reviews End ================================== -->
 
     <!-- ============================ Call To Action ================================== -->
-    <section class="theme-bg call_action_wrap-wrap">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-
-                    <div class="call_action_wrap">
-                        <div class="call_action_wrap-head">
-                            <h3>Do You Have Questions ?</h3>
-                            <span>We'll help you to grow your career and growth.</span>
-                        </div>
-                        <a href="#" class="btn btn-call_action_wrap">Contact Us Today</a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
 @endsection

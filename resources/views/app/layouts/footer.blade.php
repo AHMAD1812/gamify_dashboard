@@ -1,3 +1,20 @@
+<section class="theme-bg call_action_wrap-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="call_action_wrap">
+                    <div class="call_action_wrap-head">
+                        <h3>Do You Have Questions ?</h3>
+                        <span>We'll help you to grow your career and growth.</span>
+                    </div>
+                    <a href="{{route('contact')}}" class="btn btn-call_action_wrap">Contact Us Today</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
 <footer class="dark-footer skin-dark-footer style-2">
     <div class="footer-middle">
         <div class="container">
@@ -5,7 +22,7 @@
 
                 <div class="col-lg-5 col-md-5">
                     <div class="footer_widget">
-                        <img src="assets/img/gamify.png" class="img-footer small mb-2" alt="" />
+                        <img src="{{asset('images/gamify-logo.png')}}" class="img-footer small mb-2" alt="" />
                         <h4 class="extream mb-3">Do you need help with<br>anything?</h4>
                         <p>Receive updates, hot deals, tutorials, discounts sent straignt in your inbox every month</p>
                         <div class="foot-news-last">

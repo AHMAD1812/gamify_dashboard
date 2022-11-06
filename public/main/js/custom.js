@@ -311,103 +311,103 @@ $(function() {
 	});
 	
 	// Summernote
-	$('.summernote').summernote();
+	// $('.summernote').summernote();
 	
 	// Choose Category
-	$('#cates').select2({
-		placeholder: "Choose Category",
-		allowClear: true
-	});
+	// $('#cates').select2({
+	// 	placeholder: "Choose Category",
+	// 	allowClear: true
+	// });
 	
 	// Choose Currency
-	$('#crn').select2({
-		placeholder: "Choose Currency",
-		allowClear: true
-	});
+	// $('#crn').select2({
+	// 	placeholder: "Choose Currency",
+	// 	allowClear: true
+	// });
 	
-	// Currency Position
-	$('#psst').select2({
-		placeholder: "Position",
-		allowClear: true
-	});
+	// // Currency Position
+	// $('#psst').select2({
+	// 	placeholder: "Position",
+	// 	allowClear: true
+	// });
 	
-	// Level
-	$('#lvl').select2({
-		placeholder: "Choose Level",
-		allowClear: true
-	});
+	// // Level
+	// $('#lvl').select2({
+	// 	placeholder: "Choose Level",
+	// 	allowClear: true
+	// });
 	
-	// Select User
-	$('#user').select2({
-		placeholder: "Select a User",
-		allowClear: true
-	});
+	// // Select User
+	// $('#user').select2({
+	// 	placeholder: "Select a User",
+	// 	allowClear: true
+	// });
 	
-	// Select City
-	$('#town').select2({
-		placeholder: "Select City",
-		allowClear: true
-	});
+	// // Select City
+	// $('#town').select2({
+	// 	placeholder: "Select City",
+	// 	allowClear: true
+	// });
 	
-	// Select Country
-	$('#country').select2({
-		placeholder: "Select Country",
-		allowClear: true
-	});
+	// // Select Country
+	// $('#country').select2({
+	// 	placeholder: "Select Country",
+	// 	allowClear: true
+	// });
 	
-	// Select Course
-	$('#crss').select2({
-		placeholder: "Choose Course",
-		allowClear: true
-	});
+	// // Select Course
+	// $('#crss').select2({
+	// 	placeholder: "Choose Course",
+	// 	allowClear: true
+	// });
 	
-	// Language
-	$('#lgu').select2({
-		placeholder: "Choose Language",
-		allowClear: true
-	});
+	// // Language
+	// $('#lgu').select2({
+	// 	placeholder: "Choose Language",
+	// 	allowClear: true
+	// });
 	
-	// Virification
-	$('#yn').select2({
-		placeholder: "Select Option",
-		allowClear: true
-	});
+	// // Virification
+	// $('#yn').select2({
+	// 	placeholder: "Select Option",
+	// 	allowClear: true
+	// });
 	
-	// Video Provider
-	$('#vid').select2({
-		placeholder: "Choose Channel",
-		allowClear: true
-	});
+	// // Video Provider
+	// $('#vid').select2({
+	// 	placeholder: "Choose Channel",
+	// 	allowClear: true
+	// });
 	
-	// Price
-	$('#prc').select2({
-		placeholder: "All",
-		allowClear: true
-	});
+	// // Price
+	// $('#prc').select2({
+	// 	placeholder: "All",
+	// 	allowClear: true
+	// });
 	
-	// Parent
-	$('#prt').select2({
-		placeholder: "Parent",
-		allowClear: true
-	});
+	// // Parent
+	// $('#prt').select2({
+	// 	placeholder: "Parent",
+	// 	allowClear: true
+	// });
 	
-	// Course Status
-	$('#sts').select2({
-		placeholder: "All",
-		allowClear: true
-	});
+	// // Course Status
+	// $('#sts').select2({
+	// 	placeholder: "All",
+	// 	allowClear: true
+	// });
 	
-	// Course Instructor
-	$('#ins').select2({
-		placeholder: "All",
-		allowClear: true
-	});
+	// // Course Instructor
+	// $('#ins').select2({
+	// 	placeholder: "All",
+	// 	allowClear: true
+	// });
 	
-	// Show
-	$('#show').select2({
-		placeholder: "10",
-		allowClear: true
-	});
+	// // Show
+	// $('#show').select2({
+	// 	placeholder: "10",
+	// 	allowClear: true
+	// });
 	
 	// Home Slider
 	$('.home-slider').slick({

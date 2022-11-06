@@ -6,7 +6,7 @@
                     <img src="{{asset('images/gamify-logo.png')}}" class="logo" alt="" />
                 </a>
                 <div class="nav-toggle"></div>
-                <div class="mobile_nav">
+                {{-- <div class="mobile_nav">
                     <ul>
                         <li class="account-drop">
                             <a href="javascript:void(0);" class="crs_yuo12" data-toggle="dropdown" aria-haspopup="true"
@@ -142,16 +142,17 @@
                             </a>
                         </li>
                     </ul>
-                </div>
+                </div> --}}
             </div>
             <div class="nav-menus-wrapper">
                 <ul class="nav-menu">
 
-                    <li class="active"><a href="{{route('app')}}">Home<span class="submenu-indicator"></span></a>
-
+                    <li class="{{request()->is('/') ? 'active' : ''}}">
+                        <a href="{{route('app')}}">Home<span class="submenu-indicator"></span></a>
                     </li>
 
-                    <li><a href="{{route('about')}}">About Us<span class="submenu-indicator"></span></a>
+                    <li class="{{request()->is('about-us') ? 'active' : ''}}">
+                        <a href="{{route('about')}}">About Us<span class="submenu-indicator"></span></a>
                     </li>
 
                     <li><a href="grid-layout-with-sidebar-5.html">Interactive Videos<span
@@ -161,7 +162,8 @@
                     <li><a href="find-instructor.html">Find Instructor<span class="submenu-indicator"></span></a>
                     </li>
 
-                    <li><a href="contact.html">Contact Us<span class="submenu-indicator"></span></a>
+                    <li class="{{request()->is('contact-us') ? 'active' : ''}}">
+                        <a href="{{route('contact')}}">Contact Us<span class="submenu-indicator"></span></a>
                     </li>
 
 

@@ -8,11 +8,11 @@
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="simple-search-wrap text-left">
                     <div class="hero_search-2">
-                        <h1 class="banner_title mb-4">The Best<br>E-Learning Gamification Platform<br><span class="light"> For Brighten Future</span></h1>
-                        <p class="font-lg mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                        <h1 class="banner_title mb-4">The Best<br>E-learning Gamification Platform<br><span class="light"> For Brighten Future</span></h1>
+                        <p class="font-lg mb-4">Learn from videos by interacting with the online courses and earn rewards.</p>
                         <div class="inline_btn">
-                            <a href="explore-category.html" class="btn theme-bg text-white">Get Started</a>
-                            <a href="explore-category.html" class="btn light_btn">Become An Instructor</a>
+                            <a href="{{route('instructor.register')}}" class="btn theme-bg text-white">Get Started</a>
+                            <a href="{{route('instructor.login')}}" class="btn light_btn">Become An Instructor</a>
                         </div>
                     </div>
                 </div>
@@ -43,8 +43,8 @@
                             <div class="dro_140">
                                 <div class="dro_141 de"><i class="fa fa-journal-whills"></i></div>
                                 <div class="dro_142">
-                                    <h6>200+ Cources</h6>
-                                    <p>Duis aute irure dolor in voluptate velit esse cillum labore .</p>
+                                    <h6>Interactive Cources</h6>
+                                    <p>Interactive video which will engage students into the course.</p>
                                 </div>
                             </div>
                         </div>
@@ -53,16 +53,16 @@
                                 <div class="dro_141 de"><i class="fa fa-business-time"></i></div>
                                 <div class="dro_142">
                                     <h6>Lifetime Access</h6>
-                                    <p>Duis aute irure dolor in voluptate velit esse cillum labore .</p>
+                                    <p>Just register and create interactive videos.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                             <div class="dro_140">
-                                <div class="dro_141 de"><i class="fa fa-user-shield"></i></div>
+                                <div class="dro_141 de"><i class="fa fa-medal"></i></div>
                                 <div class="dro_142">
-                                    <h6>800k+ Enrolled</h6>
-                                    <p>Duis aute irure dolor in voluptate velit esse cillum labore .</p>
+                                    <h6>Rewards</h6>
+                                    <p>When students engage in video, it gets rewards.</p>
                                 </div>
                             </div>
                         </div>
@@ -82,8 +82,8 @@
         <div class="row justify-content-center">
             <div class="col-lg-7 col-md-8">
                 <div class="sec-heading center">
-                    <h2>Explore Interactive <span class="theme-cl">Videos</span></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    <h2>Create and Explore Interactive <span class="theme-cl">Videos</span></h2>
+                    <p>Instructor can create make there video interactive and can engage there students which will enhance learning from the videos.</p>
                 </div>
             </div>
         </div>
@@ -94,7 +94,7 @@
                 <div class="crs_grid_list">
                     
                     <div class="crs_grid_list_thumb">
-                        <a href="course-detail.html"><img src="assets/img/cr-2.jpg" class="img-fluid rounded" alt=""></a>
+                        <a href="course-detail.html"><img src="{{asset('main/img/cr-2.jpg')}}" class="img-fluid rounded" alt=""></a>
                         <div class="crs_video_ico">
                             <i class="fa fa-play"></i>
                         </div>
@@ -106,7 +106,7 @@
                     <div class="crs_grid_list_caption">
                         <div class="crs_lt_101">
                             <span class="est st_1">Development</span>
-                            <span class="est st_2">PHP</span>
+                            {{-- <span class="est st_2">PHP</span> --}}
                         </div>
                         <div class="crs_lt_102">
                             <h4 class="crs_tit">Advance PHP knowledge with laravel to make smart web</h4>
@@ -115,20 +115,20 @@
                         <div class="crs_lt_103">
                             <div class="crs_info_detail">
                                 <ul>
-                                    <li><i class="fa fa-video"></i><span>24 Videos</span></li>
+                                    {{-- <li><i class="fa fa-video"></i><span>24 Videos</span></li> --}}
                                     <li><i class="fa fa-user"></i><span>10k User</span></li>
                                     <li><i class="fa fa-eye"></i><span>92k Views</span></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="crs_flex">
+                        {{-- <div class="crs_flex">
                             <div class="crs_fl_first">
                                 <div class="crs_price"><h2><span class="currency">$</span><span class="theme-cl">99</span></h2></div>
                             </div>
                             <div class="crs_fl_last">
                                 <div class="crs_linkview"><a href="course-detail.html" class="btn btn_view_detail theme-bg text-light">Buy Now</a></div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     
                 </div>
@@ -138,7 +138,7 @@
                 <div class="crs_grid_list">
                     
                     <div class="crs_grid_list_thumb">
-                        <a href="course-detail.html"><img src="assets/img/cr-3.jpg" class="img-fluid rounded" alt=""></a>
+                        <a href="course-detail.html"><img src="{{asset('main/img/cr-3.jpg')}}" class="img-fluid rounded" alt=""></a>
                         <div class="crs_video_ico">
                             <i class="fa fa-play"></i>
                         </div>
@@ -159,29 +159,30 @@
                         <div class="crs_lt_103">
                             <div class="crs_info_detail">
                                 <ul>
-                                    <li><i class="fa fa-video"></i><span>24 Videos</span></li>
+                                    {{-- <li><i class="fa fa-video"></i><span>24 Videos</span></li> --}}
                                     <li><i class="fa fa-user"></i><span>10k User</span></li>
                                     <li><i class="fa fa-eye"></i><span>92k Views</span></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="crs_flex">
+                        {{-- <div class="crs_flex">
                             <div class="crs_fl_first">
                                 <div class="crs_price"><h2><span class="currency">$</span><span class="theme-cl">139</span></h2></div>
                             </div>
                             <div class="crs_fl_last">
                                 <div class="crs_linkview"><a href="course-detail.html" class="btn btn_view_detail theme-bg text-light">Buy Now</a></div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     
                 </div>
             </div>
+
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                 <div class="crs_grid_list">
                     
                     <div class="crs_grid_list_thumb">
-                        <a href="course-detail.html"><img src="assets/img/cr-4.jpg" class="img-fluid rounded" alt=""></a>
+                        <a href="course-detail.html"><img src="{{asset('main/img/cr-4.jpg')}}" class="img-fluid rounded" alt=""></a>
                         <div class="crs_video_ico">
                             <i class="fa fa-play"></i>
                         </div>
@@ -202,20 +203,20 @@
                         <div class="crs_lt_103">
                             <div class="crs_info_detail">
                                 <ul>
-                                    <li><i class="fa fa-video"></i><span>24 Videos</span></li>
+                                    {{-- <li><i class="fa fa-video"></i><span>24 Videos</span></li> --}}
                                     <li><i class="fa fa-user"></i><span>10k User</span></li>
                                     <li><i class="fa fa-eye"></i><span>92k Views</span></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="crs_flex">
+                        {{-- <div class="crs_flex">
                             <div class="crs_fl_first">
                                 <div class="crs_price"><h2><span class="currency">$</span><span class="theme-cl">77.99</span></h2></div>
                             </div>
                             <div class="crs_fl_last">
                                 <div class="crs_linkview"><a href="course-detail.html" class="btn btn_view_detail theme-bg text-light">Buy Now</a></div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     
                 </div>
@@ -224,7 +225,7 @@
                 <div class="crs_grid_list">
                     
                     <div class="crs_grid_list_thumb">
-                        <a href="course-detail.html"><img src="assets/img/cr-5.jpg" class="img-fluid rounded" alt=""></a>
+                        <a href="course-detail.html"><img src="{{asset('main/img/cr-5.jpg')}}" class="img-fluid rounded" alt=""></a>
                         <div class="crs_video_ico">
                             <i class="fa fa-play"></i>
                         </div>
@@ -245,20 +246,20 @@
                         <div class="crs_lt_103">
                             <div class="crs_info_detail">
                                 <ul>
-                                    <li><i class="fa fa-video"></i><span>24 Videos</span></li>
+                                    {{-- <li><i class="fa fa-video"></i><span>24 Videos</span></li> --}}
                                     <li><i class="fa fa-user"></i><span>10k User</span></li>
                                     <li><i class="fa fa-eye"></i><span>92k Views</span></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="crs_flex">
+                        {{-- <div class="crs_flex">
                             <div class="crs_fl_first">
                                 <div class="crs_price"><h2><span class="currency">$</span><span class="theme-cl">129</span></h2></div>
                             </div>
                             <div class="crs_fl_last">
                                 <div class="crs_linkview"><a href="course-detail.html" class="btn btn_view_detail theme-bg text-light">Buy Now</a></div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     
                 </div>
@@ -268,7 +269,7 @@
         
         <div class="row justify-content-center">
             <div class="col-lg-7 col-md-8 mt-2">
-                <div class="text-center"><a href="grid-layout-with-sidebar-5.html" class="btn btn-md theme-bg-light theme-cl">Explore More Cources</a></div>
+                <div class="text-center"><a href="grid-layout-with-sidebar-5.html" class="btn btn-md theme-bg-light theme-cl">Explore More Videos</a></div>
             </div>
         </div>
         
@@ -284,8 +285,8 @@
         <div class="row justify-content-center">
             <div class="col-lg-7 col-md-8">
                 <div class="sec-heading center">
-                    <h2>Select Your <span class="theme-cl">Gamification Categories</span></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    <h2>Select Your <span class="theme-cl">Category to Gamify Video</span></h2>
+                    {{-- <p>.</p> --}}
                 </div>
             </div>
         </div>
@@ -410,7 +411,7 @@
             <div class="col-lg-7 col-md-10 text-center">
                 <div class="sec-heading center mb-4">
                     <h2>Meet Top <span class="theme-cl">Instructors</span></h2>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores</p>
+                    <p>Instructor with high ratings have used platform to gamify their video to engage students.</p>
                 </div>
             </div>
         </div>
@@ -423,7 +424,7 @@
                     <div class="lios_item">	
                         <div class="crs_trt_grid theme-light shadow_none">
                             <div class="crs_trt_thumb">
-                                <a href="instructor-detail.html" class="crs_trt_thum_link"><img src="assets/img/t-1.png" class="img-fluid" alt=""></a>
+                                <a href="instructor-detail.html" class="crs_trt_thum_link"><img src="{{asset('main/img/t-1.png')}}" class="img-fluid" alt=""></a>
                             </div>
                             <div class="crs_trt_caption large">
                                 <div class="instructor_tag dark"><span>Sanskrit Teacher</span></div>
@@ -444,7 +445,7 @@
                     <div class="lios_item">	
                         <div class="crs_trt_grid theme-light shadow_none">
                             <div class="crs_trt_thumb">
-                                <a href="instructor-detail.html" class="crs_trt_thum_link"><img src="assets/img/t-2.png" class="img-fluid" alt=""></a>
+                                <a href="instructor-detail.html" class="crs_trt_thum_link"><img src="{{asset('main/img/t-2.png')}}" class="img-fluid" alt=""></a>
                             </div>
                             <div class="crs_trt_caption large">
                                 <div class="instructor_tag dark"><span>Math Teacher</span></div>
@@ -465,7 +466,7 @@
                     <div class="lios_item">	
                         <div class="crs_trt_grid theme-light shadow_none">
                             <div class="crs_trt_thumb">
-                                <a href="instructor-detail.html" class="crs_trt_thum_link"><img src="assets/img/t-3.png" class="img-fluid" alt=""></a>
+                                <a href="instructor-detail.html" class="crs_trt_thum_link"><img src="{{asset('main/img/t-3.png')}}" class="img-fluid" alt=""></a>
                             </div>
                             <div class="crs_trt_caption large">
                                 <div class="instructor_tag dark"><span>History Teacher</span></div>
@@ -486,7 +487,7 @@
                     <div class="lios_item">	
                         <div class="crs_trt_grid theme-light shadow_none">
                             <div class="crs_trt_thumb">
-                                <a href="instructor-detail.html" class="crs_trt_thum_link"><img src="assets/img/t-4.png" class="img-fluid" alt=""></a>
+                                <a href="instructor-detail.html" class="crs_trt_thum_link"><img src="{{asset('main/img/t-4.png')}}" class="img-fluid" alt=""></a>
                             </div>
                             <div class="crs_trt_caption large">
                                 <div class="instructor_tag dark"><span>Physics Teacher</span></div>
@@ -507,7 +508,7 @@
                     <div class="lios_item">	
                         <div class="crs_trt_grid theme-light shadow_none">
                             <div class="crs_trt_thumb">
-                                <a href="instructor-detail.html" class="crs_trt_thum_link"><img src="assets/img/t-5.png" class="img-fluid" alt=""></a>
+                                <a href="instructor-detail.html" class="crs_trt_thum_link"><img src="{{asset('main/img/t-5.png')}}" class="img-fluid" alt=""></a>
                             </div>
                             <div class="crs_trt_caption large">
                                 <div class="instructor_tag dark"><span>PHP Developer</span></div>
@@ -528,7 +529,7 @@
                     <div class="lios_item">	
                         <div class="crs_trt_grid theme-light shadow_none">
                             <div class="crs_trt_thumb">
-                                <a href="instructor-detail.html" class="crs_trt_thum_link"><img src="assets/img/t-6.png" class="img-fluid" alt=""></a>
+                                <a href="instructor-detail.html" class="crs_trt_thum_link"><img src="{{asset('main/img/t-6.png')}}" class="img-fluid" alt=""></a>
                             </div>
                             <div class="crs_trt_caption large">
                                 <div class="instructor_tag dark"><span>Chemistry Expert</span></div>
@@ -561,7 +562,7 @@
             <div class="col-lg-7 col-md-8">
                 <div class="sec-heading center">
                     <h2>How It <span class="theme-cl">Works?</span></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    {{-- <p></p> --}}
                 </div>
             </div>
         </div>
@@ -575,8 +576,8 @@
                         <i class="fa fa-search-location"></i>
                     </div>
                     <div class="wrk_caption">
-                        <h4>Find Interactive Videos</h4>
-                        <p>We have helped over 3,400 new students to get into the most popular tech teams.</p>
+                        <h4>Make Interactive Video</h4>
+                        <p>Add video and make it interactive by adding questions.</p>
                     </div>
                 </div>
             </div>
@@ -588,8 +589,8 @@
                         <i class="fa fa-calendar-week"></i>
                     </div>
                     <div class="wrk_caption">
-                        <h4>Gamify Yourself</h4>
-                        <p>We have helped over 3,400 new students to get into the most popular tech teams.</p>
+                        <h4>Gamify Learning</h4>
+                        <p>By adding question, students will engage in a competition which will increase learning.</p>
                     </div>
                 </div>
             </div>
@@ -601,8 +602,8 @@
                         <i class="fa fa-award"></i>
                     </div>
                     <div class="wrk_caption">
-                        <h4>Get Certificate</h4>
-                        <p>We have helped over 3,400 new students to get into the most popular tech teams.</p>
+                        <h4>Get Rewarded </h4>
+                        <p>Students will be rewarded on their performancs. Instructor will get in top instructor based on their ratings.</p>
                     </div>
                 </div>
             </div>
@@ -633,7 +634,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="blg_grid_box">
                     <div class="blg_grid_thumb">
-                        <a href="blogs.html"><img src="assets/img/img2.png" class="img-fluid" alt=""></a>
+                        <a href="blogs.html"><img src="{{asset('main/img/img2.png')}}" class="img-fluid" alt=""></a>
                     </div>
                     <div class="blg_grid_caption">
                         <div class="blg_tag dark"><span>Marketing</span></div>
@@ -648,7 +649,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="blg_grid_box">
                     <div class="blg_grid_thumb">
-                        <a href="blogs.html"><img src="assets/img/img5.png" class="img-fluid" alt=""></a>
+                        <a href="blogs.html"><img src="{{asset('main/img/img5.png')}}" class="img-fluid" alt=""></a>
                     </div>
                     <div class="blg_grid_caption">
                         <div class="blg_tag dark"><span>Marketing</span></div>
@@ -663,7 +664,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="blg_grid_box">
                     <div class="blg_grid_thumb">
-                        <a href="blogs.html"><img src="assets/img/img7.png" height="140px" class="img-fluid" alt=""></a>
+                        <a href="blogs.html"><img src="{{asset('main/img/img7.png')}}" height="140px" class="img-fluid" alt=""></a>
                     </div>
                     <div class="blg_grid_caption">
                         <div class="blg_tag dark"><span>Marketing</span></div>
@@ -699,7 +700,7 @@
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                 <div class="blg_grid_box">
                     <div class="blg_grid_thumb">
-                        <a href="blogs.html"><img src="assets/img/b-1.png" class="img-fluid" alt="" /></a>
+                        <a href="blogs.html"><img src="{{asset('main/img/b-1.png')}}" class="img-fluid" alt="" /></a>
                     </div>
                     <div class="blg_grid_caption">
                         <div class="blg_tag"><span>Marketing</span></div>
@@ -710,7 +711,7 @@
                         <div class="crs_flex">
                             <div class="crs_fl_first">
                                 <div class="crs_tutor">
-                                    <div class="crs_tutor_thumb"><a href="instructor-detail.html"><img src="assets/img/team-5.jpg" class="img-fluid circle" alt="" /></a></div>
+                                    <div class="crs_tutor_thumb"><a href="instructor-detail.html"><img src="{{asset('main/img/team-5.jpg')}}" class="img-fluid circle" alt="" /></a></div>
                                 </div>
                             </div>
                             <div class="crs_fl_last">
@@ -730,7 +731,7 @@
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                 <div class="blg_grid_box">
                     <div class="blg_grid_thumb">
-                        <a href="blogs.html"><img src="assets/img/b-2.png" class="img-fluid" alt="" /></a>
+                        <a href="blogs.html"><img src="{{asset('main/img/b-2.png')}}" class="img-fluid" alt="" /></a>
                     </div>
                     <div class="blg_grid_caption">
                         <div class="blg_tag"><span>Business</span></div>
@@ -741,7 +742,7 @@
                         <div class="crs_flex">
                             <div class="crs_fl_first">
                                 <div class="crs_tutor">
-                                    <div class="crs_tutor_thumb"><a href="instructor-detail.html"><img src="assets/img/team-5.jpg" class="img-fluid circle" alt="" /></a></div>
+                                    <div class="crs_tutor_thumb"><a href="instructor-detail.html"><img src="{{asset('main/img/team-5.jpg')}}" class="img-fluid circle" alt="" /></a></div>
                                 </div>
                             </div>
                             <div class="crs_fl_last">
@@ -761,7 +762,7 @@
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                 <div class="blg_grid_box">
                     <div class="blg_grid_thumb">
-                        <a href="blogs.html"><img src="assets/img/b-3.png" class="img-fluid" alt="" /></a>
+                        <a href="blogs.html"><img src="{{asset('main/img/b-3.png')}}" class="img-fluid" alt="" /></a>
                     </div>
                     <div class="blg_grid_caption">
                         <div class="blg_tag"><span>Accounting</span></div>
@@ -772,7 +773,7 @@
                         <div class="crs_flex">
                             <div class="crs_fl_first">
                                 <div class="crs_tutor">
-                                    <div class="crs_tutor_thumb"><a href="instructor-detail.html"><img src="assets/img/team-5.jpg" class="img-fluid circle" alt="" /></a></div>
+                                    <div class="crs_tutor_thumb"><a href="instructor-detail.html"><img src="{{asset('main/img/team-5.jpg')}}" class="img-fluid circle" alt="" /></a></div>
                                 </div>
                             </div>
                             <div class="crs_fl_last">
@@ -796,21 +797,4 @@
 <!-- ============================ article End ================================== -->
 
 <!-- ============================ Call To Action ================================== -->
-<section class="theme-bg call_action_wrap-wrap">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                
-                <div class="call_action_wrap">
-                    <div class="call_action_wrap-head">
-                        <h3>Do You Have Questions ?</h3>
-                        <span>We'll help you to grow your career and growth.</span>
-                    </div>
-                    <a href="#" class="btn btn-call_action_wrap">Contact Us Today</a>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-</section>
 @endsection

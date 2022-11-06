@@ -16,6 +16,7 @@ use App\Http\Controllers\PageController;
 
 Route::get('/', [AppController::class, 'index'])->name('app');
 Route::get('/about-us', [AppController::class, 'about'])->name('about');
+Route::get('/contact-us', [AppController::class, 'contact'])->name('contact');
 
 Route::prefix('instructor')->group(function () {
     Route::get('/dashboard', [PageController::class, 'index']);
