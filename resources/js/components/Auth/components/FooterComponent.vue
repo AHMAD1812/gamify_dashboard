@@ -1,6 +1,6 @@
 <template>
     <div class="sign_footer">
-        <img src="images/gamify-favicon.png" alt="" />© 2022
+        <img :src="`${globalBaseUrl}images/gamify-favicon.png`" alt="" />© 2022
         <strong>Gamify US</strong>. All Rights Reserved.
     </div>
 </template>

@@ -7,10 +7,18 @@
 require('./bootstrap');
 
 import router from "./Router/index";
+import config from "./config";
+
 window.Vue = require('vue').default;
 
+window.globalAssetUrl = config.ASSET_URL;
+window.globalBaseUrl = config.SITE_URL;
 
 import VueRouter from "vue-router";
+import SuiVue from 'semantic-ui-vue';
+ 
+ 
+Vue.use(SuiVue);
 Vue.use(VueRouter);
 /**
  * The following block of code may be used to automatically register your
@@ -24,6 +32,19 @@ Vue.use(VueRouter);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('main-app', require('./App.vue').default);
+
+Vue.mixin({
+    data: function () {
+        return {
+            get globalBaseUrl() {
+                return config.SITE_URL;
+            },
+            get globalAssetUrl() {
+                return config.ASSET_URL;
+            },
+        };
+    },
+});
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

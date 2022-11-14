@@ -9,9 +9,6 @@
                         <input
                             class="prompt srch_explore"
                             type="text"
-                            name="fullname"
-                            value=""
-                            id="id_fullname"
                             required=""
                             maxlength="64"
                             placeholder="Full Name"
@@ -61,10 +58,17 @@
                         </div>
                     </div>
                 </div>
-                <button class="login-btn" type="button" @click="showStep()">Next</button>
+                <button class="login-btn mt-3" type="button" @click="showStep()">Next</button>
             </form>
             <form v-if="step_2">
-                <select class="ui hj145 dropdown cntry152 prompt srch_explore" data-toggle='dropdown'>
+                <sui-dropdown
+                    placeholder="Select Category"
+                    class="cntry152 hj145 prompt srch_explore"
+                    selection
+                    :options="categoryOptions"
+                    v-model="category"
+                />
+                <!-- <select class="ui hj145 dropdown cntry152 prompt srch_explore" data-toggle='dropdown'>
                     <option value="">Select Category</option>
                     <option value="1">Development</option>
                     <option value="2">Business</option>
@@ -79,7 +83,7 @@
                     <option value="11">Health & Fitness</option>
                     <option value="12">Music</option>
                     <option value="13">Teaching & Academics</option>
-                </select>
+                </select> -->
                 <div class="ui search focus mt-15">
                     <div class="ui form swdh30">
                         <div class="field">
@@ -91,20 +95,20 @@
                             ></textarea>
                         </div>
                     </div>
-                    <div class="help-block">
-                        Your biography should have at least 12000 characters.
-                    </div>
+                    <!-- <div class="help-block">
+                        Your biography should have .
+                    </div> -->
                 </div>
                 <router-link :to="{name:'Dashboard'}">
-                    <button class="login-btn" type="button">
+                    <button class="login-btn mt-3" type="button">
                         Instructor Register Now
                     </button>
                 </router-link>
             </form>
             <p class="sgntrm145">
                 By signing up, you agree to our
-                <a href="terms_of_use.html">Terms of Use</a> and
-                <a href="terms_of_use.html">Privacy Policy</a>.
+                <a href="#">Terms of Use</a> and
+                <a href="#">Privacy Policy</a>.
             </p>
             <p class="mb-0 mt-30">
                 Already have an account?
@@ -121,11 +125,26 @@ export default {
         return{
             step_1:true,
             step_2:false,
+            category:null,
+            categoryOptions:[
+                {
+                    text:'Development',
+                    value:'development',
+                },{
+                    text:'Business',
+                    value:'business',
+                },{
+                    text:'IT & Software',
+                    value:'it & software',
+                },{
+                    text:'Health & Fitness',
+                    value:'health & fitness',
+                },
+            ]
         }
     },
     mounted() {
         $(".ui.checkbox").checkbox();
-        $(".select-dropdown").dropdown();
     },
     methods:{
         showStep(){

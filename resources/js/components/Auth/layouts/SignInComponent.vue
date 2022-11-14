@@ -9,10 +9,6 @@
                         class="prompt srch_explore"
                         type="email"
                         name="emailaddress"
-                        value=""
-                        id="id_email"
-                        required=""
-                        maxlength="64"
                         placeholder="Email Address"
                     />
                     <i class="uil uil-envelope icon icon2"></i>
@@ -42,7 +38,7 @@
                 </div>
             </div>
             <router-link :to="{ name: 'Dashboard' }"
-                ><button class="login-btn" type="button">
+                ><button class="login-btn mt-3" type="button">
                     Sign In
                 </button></router-link
             >
