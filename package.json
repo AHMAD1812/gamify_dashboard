@@ -26,6 +26,7 @@
     "dependencies": {
         "semantic-ui-vue": "^0.11.0",
         "vue-owl-carousel": "^2.0.3",
-        "vue-router": "^3.5.3"
+        "vue-router": "^3.5.3",
+        "vue2-timepicker": "^1.1.6"
     }
 }

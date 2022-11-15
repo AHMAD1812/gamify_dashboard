@@ -1157,220 +1157,11 @@
                                                                 ></i
                                                                 >Curriculum
                                                             </h4>
-                                                            <button
-                                                                class="main-btn color btn-hover ml-left add-section-title"
-                                                                data-toggle="modal"
-                                                                data-target="#add_section_model"
-                                                            >
-                                                                New Section
-                                                            </button>
                                                         </div>
                                                         <div
                                                             class="added-section-item mb-30"
                                                         >
-                                                            <div
-                                                                class="section-header"
-                                                            >
-                                                                <h4>
-                                                                    <i
-                                                                        class="fas fa-bars mr-2"
-                                                                    ></i
-                                                                    >Introduction
-                                                                </h4>
-                                                                <div
-                                                                    class="section-edit-options"
-                                                                >
-                                                                    <button
-                                                                        class="btn-152"
-                                                                        type="button"
-                                                                        data-toggle="collapse"
-                                                                        data-target="#edit-section"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-edit"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        class="btn-152"
-                                                                        type="button"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-trash-alt"
-                                                                        ></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                id="edit-section"
-                                                                class="collapse"
-                                                            >
-                                                                <div
-                                                                    class="new-section smt-25"
-                                                                >
-                                                                    <div
-                                                                        class="form_group"
-                                                                    >
-                                                                        <div
-                                                                            class="ui search focus mt-30 lbel25"
-                                                                        >
-                                                                            <label
-                                                                                >Section
-                                                                                Name*</label
-                                                                            >
-                                                                            <div
-                                                                                class="ui left icon input swdh19"
-                                                                            >
-                                                                                <input
-                                                                                    class="prompt srch_explore"
-                                                                                    type="text"
-                                                                                    placeholder=""
-                                                                                    name="title"
-                                                                                    maxlength="60"
-                                                                                    id="main[title]"
-                                                                                    value="Introduction"
-                                                                                />
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div
-                                                                        class="share-submit-btns pl-0"
-                                                                    >
-                                                                        <button
-                                                                            class="main-btn color btn-hover"
-                                                                        >
-                                                                            <i
-                                                                                class="fas fa-save mr-2"
-                                                                            ></i
-                                                                            >Update
-                                                                            Section
-                                                                        </button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                class="section-group-list sortable"
-                                                            >
-                                                                <div
-                                                                    class="section-list-item"
-                                                                >
-                                                                    <div
-                                                                        class="section-item-title"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-file-alt mr-2"
-                                                                        ></i>
-                                                                        <span
-                                                                            class="section-item-title-text"
-                                                                            >lecture
-                                                                            Title</span
-                                                                        >
-                                                                    </div>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-edit"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-trash-alt"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools ml-auto"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-bars"
-                                                                        ></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div
-                                                                    class="section-list-item"
-                                                                >
-                                                                    <div
-                                                                        class="section-item-title"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-stream mr-2"
-                                                                        ></i>
-                                                                        <span
-                                                                            class="section-item-title-text"
-                                                                            >Quiz
-                                                                            Title</span
-                                                                        >
-                                                                    </div>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-edit"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-trash-alt"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools ml-auto"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-bars"
-                                                                        ></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div
-                                                                    class="section-list-item"
-                                                                >
-                                                                    <div
-                                                                        class="section-item-title"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-clipboard-list mr-2"
-                                                                        ></i>
-                                                                        <span
-                                                                            class="section-item-title-text"
-                                                                            >Assignment
-                                                                            Title</span
-                                                                        >
-                                                                    </div>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-edit"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-trash-alt"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools ml-auto"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-bars"
-                                                                        ></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
+                                                        
                                                             <div
                                                                 class="section-add-item-wrap p-3"
                                                             >
@@ -1424,17 +1215,17 @@
                                             </div>
                                             <div class="lecture-video-dt mb-30">
                                                 <span class="video-info"
-                                                    >Intro Course overview
+                                                    >Video overview
                                                     provider type. (.mp4,
-                                                    YouTube, Vimeo etc.)</span
+                                                    YouTube)</span
                                                 >
                                                 <div class="video-category">
                                                     <label
                                                         ><input
                                                             type="radio"
                                                             name="colorRadio"
-                                                            value="mp4"
-                                                            checked
+                                                            :value="'mp4'"
+                                                            v-model="video_type"
                                                         /><span
                                                             >HTML5(mp4)</span
                                                         ></label
@@ -1443,41 +1234,15 @@
                                                         ><input
                                                             type="radio"
                                                             name="colorRadio"
-                                                            value="url"
+                                                            :value="'url'"
+                                                            v-model="video_type"
                                                         /><span
                                                             >External URL</span
                                                         ></label
                                                     >
-                                                    <label
-                                                        ><input
-                                                            type="radio"
-                                                            name="colorRadio"
-                                                            value="youtube"
-                                                        /><span
-                                                            >YouTube</span
-                                                        ></label
-                                                    >
-                                                    <label
-                                                        ><input
-                                                            type="radio"
-                                                            name="colorRadio"
-                                                            value="vimeo"
-                                                        /><span
-                                                            >Vimeo</span
-                                                        ></label
-                                                    >
-                                                    <label
-                                                        ><input
-                                                            type="radio"
-                                                            name="colorRadio"
-                                                            value="embedded"
-                                                        /><span
-                                                            >embedded</span
-                                                        ></label
-                                                    >
                                                     <div
-                                                        class="mp4 intro-box"
-                                                        style="display: block"
+                                                        class="intro-box"
+                                                        :class="[video_type=='mp4'?'d-block':'']"
                                                     >
                                                         <div class="row">
                                                             <div
@@ -1514,7 +1279,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="url intro-box">
+                                                    <div class="intro-box" :class="[video_type=='url'?'d-block':'']">
                                                         <div
                                                             class="new-section"
                                                         >
@@ -1540,92 +1305,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div
-                                                        class="youtube intro-box"
-                                                    >
-                                                        <div
-                                                            class="new-section"
-                                                        >
-                                                            <div
-                                                                class="ui search focus mt-30 lbel25"
-                                                            >
-                                                                <label
-                                                                    >Youtube
-                                                                    URL*</label
-                                                                >
-                                                                <div
-                                                                    class="ui left icon input swdh19"
-                                                                >
-                                                                    <input
-                                                                        class="prompt srch_explore"
-                                                                        type="text"
-                                                                        placeholder="Youtube Video URL"
-                                                                        name=""
-                                                                        id=""
-                                                                        value=""
-                                                                    />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div
-                                                        class="vimeo intro-box"
-                                                    >
-                                                        <div
-                                                            class="new-section"
-                                                        >
-                                                            <div
-                                                                class="ui search focus mt-30 lbel25"
-                                                            >
-                                                                <label
-                                                                    >Vimeo
-                                                                    URL*</label
-                                                                >
-                                                                <div
-                                                                    class="ui left icon input swdh19"
-                                                                >
-                                                                    <input
-                                                                        class="prompt srch_explore"
-                                                                        type="text"
-                                                                        placeholder="Vimeo Video URL"
-                                                                        name=""
-                                                                        id=""
-                                                                        value=""
-                                                                    />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div
-                                                        class="embedded intro-box"
-                                                    >
-                                                        <div
-                                                            class="new-section"
-                                                        >
-                                                            <div
-                                                                class="ui search focus mt-30 lbel25"
-                                                            >
-                                                                <label
-                                                                    >Embedded
-                                                                    Code*</label
-                                                                >
-                                                                <div
-                                                                    class="ui form swdh30"
-                                                                >
-                                                                    <div
-                                                                        class="field"
-                                                                    >
-                                                                        <textarea
-                                                                            rows="3"
-                                                                            name=""
-                                                                            id=""
-                                                                            placeholder="Place your embedded code here"
-                                                                        ></textarea>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="thumbnail-into">
@@ -1640,7 +1319,7 @@
                                                         >
                                                         <div class="thumb-item">
                                                             <img
-                                                                src="images/thumbnail-demo.jpg"
+                                                                :src="`${globalBaseUrl}images/thumbnail-demo.jpg`"
                                                                 alt=""
                                                             />
                                                             <div
@@ -2727,17 +2406,6 @@
                                             <a
                                                 class="flex-sm-fill text-sm-center nav-link active"
                                                 data-toggle="tab"
-                                                href="#nav-quizbasic"
-                                                role="tab"
-                                                aria-selected="true"
-                                                ><i
-                                                    class="fas fa-file-alt mr-2"
-                                                ></i
-                                                >Basic</a
-                                            >
-                                            <a
-                                                class="flex-sm-fill text-sm-center nav-link"
-                                                data-toggle="tab"
                                                 href="#nav-questions"
                                                 role="tab"
                                                 aria-selected="false"
@@ -2758,42 +2426,7 @@
                                         </div>
                                         <div class="tab-content">
                                             <div
-                                                class="tab-pane fade show active"
-                                                id="nav-quizbasic"
-                                                role="tabpanel"
-                                            >
-                                                <div class="new-section">
-                                                    <div
-                                                        class="form_group mt-30"
-                                                    >
-                                                        <label class="label25"
-                                                            >Quiz Title*</label
-                                                        >
-                                                        <input
-                                                            class="form_input_1"
-                                                            type="text"
-                                                            placeholder="Title here"
-                                                        />
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="ui search focus lbel25 mt-30"
-                                                >
-                                                    <label>Description*</label>
-                                                    <div class="ui form swdh30">
-                                                        <div class="field">
-                                                            <textarea
-                                                                rows="3"
-                                                                name="description"
-                                                                id=""
-                                                                placeholder="description here..."
-                                                            ></textarea>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="tab-pane fade"
+                                                class="tab-pane fade active show"
                                                 id="nav-questions"
                                                 role="tabpanel"
                                             >
@@ -2831,20 +2464,8 @@
                                                                         ><input
                                                                             type="radio"
                                                                             name="colorRadio"
-                                                                            value="schoice"
-                                                                        /><span
-                                                                            ><i
-                                                                                class="far fa-dot-circle mr-2"
-                                                                            ></i
-                                                                            >Single
-                                                                            Choice</span
-                                                                        ></label
-                                                                    >
-                                                                    <label
-                                                                        ><input
-                                                                            type="radio"
-                                                                            name="colorRadio"
-                                                                            value="mchoice"
+                                                                            :value="1"
+                                                                            v-model="question_type"
                                                                         /><span
                                                                             ><i
                                                                                 class="far fa-check-circle mr-2"
@@ -2857,21 +2478,8 @@
                                                                         ><input
                                                                             type="radio"
                                                                             name="colorRadio"
-                                                                            value="sline"
-                                                                        /><span
-                                                                            ><i
-                                                                                class="far fa-edit mr-2"
-                                                                            ></i
-                                                                            >Single
-                                                                            Line
-                                                                            Text</span
-                                                                        ></label
-                                                                    >
-                                                                    <label
-                                                                        ><input
-                                                                            type="radio"
-                                                                            name="colorRadio"
-                                                                            value="mline"
+                                                                            :value="2"
+                                                                            v-model="question_type"
                                                                         /><span
                                                                             ><i
                                                                                 class="far fa-file-alt mr-2"
@@ -2882,7 +2490,8 @@
                                                                         ></label
                                                                     >
                                                                     <div
-                                                                        class="schoice quiz-box"
+                                                                        class="mchoice"
+                                                                        v-if="question_type == 1"
                                                                     >
                                                                         <div
                                                                             class="ques-box"
@@ -2891,38 +2500,7 @@
                                                                                 class="row"
                                                                             >
                                                                                 <div
-                                                                                    class="col-lg-2 col-md-2"
-                                                                                >
-                                                                                    <div
-                                                                                        class="form_group mt-30"
-                                                                                    >
-                                                                                        <label
-                                                                                            class="label25 text-left"
-                                                                                            >Image*</label
-                                                                                        >
-                                                                                        <div
-                                                                                            class="upload-thumb"
-                                                                                        >
-                                                                                            <input
-                                                                                                class="uploadBtn-input-preview"
-                                                                                                type="file"
-                                                                                                accept="image/png"
-                                                                                                id="thumbnail_source"
-                                                                                            />
-                                                                                            <label
-                                                                                                class="mx-0 my-0"
-                                                                                                for="thumbnail_source"
-                                                                                                title="Image"
-                                                                                                ><img
-                                                                                                    class="img-thumbnail"
-                                                                                                    src="images/placeholder-image.png"
-                                                                                                    alt=""
-                                                                                            /></label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="col-lg-7 col-md-9"
+                                                                                    class="col-lg-6 col-md-12"
                                                                                 >
                                                                                     <div
                                                                                         class="form_group mt-30"
@@ -2939,8 +2517,22 @@
                                                                                         />
                                                                                     </div>
                                                                                 </div>
+                                                                               
                                                                                 <div
-                                                                                    class="col-lg-3 col-md-12"
+                                                                                    class="col-lg-3 col-md-6"
+                                                                                >
+                                                                                    <div
+                                                                                        class="form_group mt-30"
+                                                                                    >
+                                                                                        <label
+                                                                                            class="label25 text-left"
+                                                                                            >Time</label
+                                                                                        >
+                                                                                        <vue-timepicker format="mm:ss"></vue-timepicker>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="col-lg-3 col-md-6"
                                                                                 >
                                                                                     <div
                                                                                         class="form_group mt-30"
@@ -2969,6 +2561,7 @@
                                                                                 >
                                                                                     <button
                                                                                         class="main-btn color btn-hover mt-30"
+                                                                                        @click="addOption()"
                                                                                     >
                                                                                         Add
                                                                                         Option
@@ -2979,16 +2572,19 @@
                                                                                 >
                                                                                     <div
                                                                                         class="option-item"
+                                                                                        :key="`option_${index}`"
+                                                                                        v-for="(option,index) in question_option"
                                                                                     >
                                                                                         <div
                                                                                             class="opt-title"
                                                                                         >
                                                                                             <h4>
-                                                                                                1.
+                                                                                                {{index+1}}.
                                                                                                 Option
                                                                                             </h4>
                                                                                             <span
                                                                                                 class="opt-del"
+                                                                                                @click="deleteOption(index)"
                                                                                                 ><i
                                                                                                     class="fas fa-trash-alt"
                                                                                                 ></i
@@ -3009,6 +2605,7 @@
                                                                                                     class="form_input_1"
                                                                                                     type="text"
                                                                                                     placeholder="Option title"
+                                                                                                    v-model="option.name"
                                                                                                 />
                                                                                             </div>
                                                                                             <div
@@ -3016,10 +2613,13 @@
                                                                                             >
                                                                                                 <input
                                                                                                     type="checkbox"
-                                                                                                    id="check1"
+                                                                                                    :value="true"
+                                                                                                    :id="`check_${index}`"
+                                                                                                    v-model="option.isCorrect"
+                                                                                                    name="correct_answer"
                                                                                                 />
                                                                                                 <label
-                                                                                                    for="check1"
+                                                                                                    :for="`check_${index}`"
                                                                                                     >Correct
                                                                                                     answer</label
                                                                                                 >
@@ -3031,156 +2631,8 @@
                                                                         </div>
                                                                     </div>
                                                                     <div
-                                                                        class="mchoice quiz-box"
-                                                                    >
-                                                                        <div
-                                                                            class="ques-box"
-                                                                        >
-                                                                            <div
-                                                                                class="row"
-                                                                            >
-                                                                                <div
-                                                                                    class="col-lg-2 col-md-2"
-                                                                                >
-                                                                                    <div
-                                                                                        class="form_group mt-30"
-                                                                                    >
-                                                                                        <label
-                                                                                            class="label25 text-left"
-                                                                                            >Image*</label
-                                                                                        >
-                                                                                        <div
-                                                                                            class="upload-thumb"
-                                                                                        >
-                                                                                            <input
-                                                                                                class="uploadBtn-input-preview"
-                                                                                                type="file"
-                                                                                                accept="image/png"
-                                                                                                id="thumbnail_source1"
-                                                                                            />
-                                                                                            <label
-                                                                                                class="mx-0 my-0"
-                                                                                                for="thumbnail_source1"
-                                                                                                title="Image"
-                                                                                                ><img
-                                                                                                    class="img-thumbnail"
-                                                                                                    src="images/placeholder-image.png"
-                                                                                                    alt=""
-                                                                                            /></label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="col-lg-7 col-md-9"
-                                                                                >
-                                                                                    <div
-                                                                                        class="form_group mt-30"
-                                                                                    >
-                                                                                        <label
-                                                                                            class="label25 text-left"
-                                                                                            >Question
-                                                                                            Title*</label
-                                                                                        >
-                                                                                        <input
-                                                                                            class="form_input_1"
-                                                                                            type="text"
-                                                                                            placeholder="Write question title"
-                                                                                        />
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="col-lg-3 col-md-12"
-                                                                                >
-                                                                                    <div
-                                                                                        class="form_group mt-30"
-                                                                                    >
-                                                                                        <label
-                                                                                            class="label25 text-left"
-                                                                                            >Score*</label
-                                                                                        >
-                                                                                        <input
-                                                                                            class="form_input_1"
-                                                                                            type="number"
-                                                                                            placeholder="Score"
-                                                                                        />
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div
-                                                                            class="ans-box"
-                                                                        >
-                                                                            <div
-                                                                                class="row"
-                                                                            >
-                                                                                <div
-                                                                                    class="col-lg-12 col-md-12"
-                                                                                >
-                                                                                    <button
-                                                                                        class="main-btn color btn-hover mt-30"
-                                                                                    >
-                                                                                        Add
-                                                                                        Option
-                                                                                    </button>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="col-lg-12 col-md-12"
-                                                                                >
-                                                                                    <div
-                                                                                        class="option-item"
-                                                                                    >
-                                                                                        <div
-                                                                                            class="opt-title"
-                                                                                        >
-                                                                                            <h4>
-                                                                                                1.
-                                                                                                Option
-                                                                                            </h4>
-                                                                                            <span
-                                                                                                class="opt-del"
-                                                                                                ><i
-                                                                                                    class="fas fa-trash-alt"
-                                                                                                ></i
-                                                                                            ></span>
-                                                                                        </div>
-                                                                                        <div
-                                                                                            class="option-wrap"
-                                                                                        >
-                                                                                            <div
-                                                                                                class="form_group"
-                                                                                            >
-                                                                                                <label
-                                                                                                    class="label25 text-left"
-                                                                                                    >Option
-                                                                                                    Title*</label
-                                                                                                >
-                                                                                                <input
-                                                                                                    class="form_input_1"
-                                                                                                    type="text"
-                                                                                                    placeholder="Option title"
-                                                                                                />
-                                                                                            </div>
-                                                                                            <div
-                                                                                                class="agree_checkbox"
-                                                                                            >
-                                                                                                <input
-                                                                                                    type="checkbox"
-                                                                                                    id="check2"
-                                                                                                />
-                                                                                                <label
-                                                                                                    for="check2"
-                                                                                                    >Correct
-                                                                                                    answer</label
-                                                                                                >
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div
-                                                                        class="sline quiz-box"
+                                                                        class="sline"
+                                                                        v-if="question_type == 2"
                                                                     >
                                                                         <div
                                                                             class="ques-box"
@@ -3257,84 +2709,6 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div
-                                                                        class="mline quiz-box"
-                                                                    >
-                                                                        <div
-                                                                            class="ques-box"
-                                                                        >
-                                                                            <div
-                                                                                class="row"
-                                                                            >
-                                                                                <div
-                                                                                    class="col-lg-2 col-md-2"
-                                                                                >
-                                                                                    <div
-                                                                                        class="form_group mt-30"
-                                                                                    >
-                                                                                        <label
-                                                                                            class="label25 text-left"
-                                                                                            >Image*</label
-                                                                                        >
-                                                                                        <div
-                                                                                            class="upload-thumb"
-                                                                                        >
-                                                                                            <input
-                                                                                                class="uploadBtn-input-preview"
-                                                                                                type="file"
-                                                                                                accept="image/png"
-                                                                                                id="thumbnail_source3"
-                                                                                            />
-                                                                                            <label
-                                                                                                class="mx-0 my-0"
-                                                                                                for="thumbnail_source3"
-                                                                                                title="Image"
-                                                                                                ><img
-                                                                                                    class="img-thumbnail"
-                                                                                                    src="images/placeholder-image.png"
-                                                                                                    alt=""
-                                                                                            /></label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="col-lg-7 col-md-9"
-                                                                                >
-                                                                                    <div
-                                                                                        class="form_group mt-30"
-                                                                                    >
-                                                                                        <label
-                                                                                            class="label25 text-left"
-                                                                                            >Question
-                                                                                            Title*</label
-                                                                                        >
-                                                                                        <input
-                                                                                            class="form_input_1"
-                                                                                            type="text"
-                                                                                            placeholder="Write question title"
-                                                                                        />
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="col-lg-3 col-md-12"
-                                                                                >
-                                                                                    <div
-                                                                                        class="form_group mt-30"
-                                                                                    >
-                                                                                        <label
-                                                                                            class="label25 text-left"
-                                                                                            >Score*</label
-                                                                                        >
-                                                                                        <input
-                                                                                            class="form_input_1"
-                                                                                            type="number"
-                                                                                            placeholder="Score"
-                                                                                        />
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <div
@@ -3363,126 +2737,6 @@
                                                                     >
                                                                         <i
                                                                             class="far fa-dot-circle mr-2"
-                                                                        ></i>
-                                                                        <span
-                                                                            class="section-item-title-text"
-                                                                            >Question
-                                                                            Title</span
-                                                                        >
-                                                                    </div>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-edit"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-trash-alt"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools ml-auto"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-bars"
-                                                                        ></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div
-                                                                    class="section-list-item"
-                                                                >
-                                                                    <div
-                                                                        class="section-item-title"
-                                                                    >
-                                                                        <i
-                                                                            class="far fa-check-circle mr-2"
-                                                                        ></i>
-                                                                        <span
-                                                                            class="section-item-title-text"
-                                                                            >Question
-                                                                            Title</span
-                                                                        >
-                                                                    </div>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-edit"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-trash-alt"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools ml-auto"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-bars"
-                                                                        ></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div
-                                                                    class="section-list-item"
-                                                                >
-                                                                    <div
-                                                                        class="section-item-title"
-                                                                    >
-                                                                        <i
-                                                                            class="far fa-edit mr-2"
-                                                                        ></i>
-                                                                        <span
-                                                                            class="section-item-title-text"
-                                                                            >Question
-                                                                            Title</span
-                                                                        >
-                                                                    </div>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-edit"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-trash-alt"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools ml-auto"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-bars"
-                                                                        ></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div
-                                                                    class="section-list-item"
-                                                                >
-                                                                    <div
-                                                                        class="section-item-title"
-                                                                    >
-                                                                        <i
-                                                                            class="far fa-file-alt mr-2"
                                                                         ></i>
                                                                         <span
                                                                             class="section-item-title-text"
@@ -3940,6 +3194,13 @@
 
 export default {
     name: "CreateVideo",
+    data(){
+        return{
+            question_type:1,
+            question_option:[],
+            video_type:'mp4',
+        }
+    },
     mounted() {
         $(document).ready(function(){
             $('.ui.dropdown')
@@ -3953,8 +3214,28 @@ export default {
             $(".sortable").disableSelection();
         });
     },
+    methods:{
+        addOption(){
+            this.question_option.push({name:'',isCorrect:false});
+        },
+        deleteOption(index){
+            this.question_option.splice(index,1);
+        }
+    }
     
 };
 </script>
 
-<style></style>
+<style>
+.vue__time-picker input{
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    width: 100% !important; 
+    border: 1px solid #efefef !important;
+    height: 40px !important;
+    padding: 0 16px !important;
+    background: #fff !important;
+    border-radius: 3px !important;
+    box-shadow: inset 0px 1px 4px rgb(0 0 0 / 2%) !important;
+}
+</style>

@@ -62,9 +62,13 @@
             </form>
             <form v-if="step_2">
                 <sui-dropdown
+                    multiple
+                    fluid
                     placeholder="Select Category"
-                    class="cntry152 hj145 prompt srch_explore"
+                    class="cntry152 prompt srch_explore"
+                    search
                     selection
+                    allow-additions
                     :options="categoryOptions"
                     v-model="category"
                 />

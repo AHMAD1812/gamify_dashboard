@@ -16,7 +16,10 @@ window.globalBaseUrl = config.SITE_URL;
 
 import VueRouter from "vue-router";
 import SuiVue from 'semantic-ui-vue';
- 
+import VueTimepicker from 'vue2-timepicker'
+// CSS
+import 'vue2-timepicker/dist/VueTimepicker.css'
+
  
 Vue.use(SuiVue);
 Vue.use(VueRouter);
@@ -32,6 +35,7 @@ Vue.use(VueRouter);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('main-app', require('./App.vue').default);
+Vue.component('vue-timepicker', VueTimepicker);
 
 Vue.mixin({
     data: function () {

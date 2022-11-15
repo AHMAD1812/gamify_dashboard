@@ -254,7 +254,7 @@
                                         <div class="st_group">
                                             <div class="stud_img">
                                                 <img
-                                                    src="images/left-imgs/img-4.jpg"
+                                                    :src="`${globalBaseUrl}images/left-imgs/img-4.jpg`"
                                                     alt=""
                                                 />
                                             </div>
@@ -277,7 +277,7 @@
                                         <div class="st_group">
                                             <div class="stud_img">
                                                 <img
-                                                    src="images/left-imgs/img-1.jpg"
+                                                    :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`"
                                                     alt=""
                                                 />
                                             </div>
@@ -300,7 +300,7 @@
                                         <div class="st_group">
                                             <div class="stud_img">
                                                 <img
-                                                    src="images/left-imgs/img-7.jpg"
+                                                    :src="`${globalBaseUrl}images/left-imgs/img-7.jpg`"
                                                     alt=""
                                                 />
                                             </div>
@@ -323,7 +323,7 @@
                                         <div class="st_group">
                                             <div class="stud_img">
                                                 <img
-                                                    src="images/left-imgs/img-6.jpg"
+                                                    :src="`${globalBaseUrl}images/left-imgs/img-6.jpg`"
                                                     alt=""
                                                 />
                                             </div>
@@ -346,7 +346,7 @@
                                         <div class="st_group">
                                             <div class="stud_img">
                                                 <img
-                                                    src="images/left-imgs/img-3.jpg"
+                                                    :src="`${globalBaseUrl}images/left-imgs/img-3.jpg`"
                                                     alt=""
                                                 />
                                             </div>

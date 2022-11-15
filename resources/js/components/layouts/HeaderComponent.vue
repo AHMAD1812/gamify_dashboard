@@ -8,7 +8,7 @@
             <span class="collapse_menu--label"></span>
         </button>
         <div class="main_logo" id="logo">
-            <img src="images/gamify-logo.png" alt="" width="160" />
+            <img :src="`${globalBaseUrl}images/gamify-logo.png`" alt="" width="160" />
         </div>
         <div class="top-category">
             <div class="ui compact menu cate-dpdwn">
@@ -72,7 +72,7 @@
                     <div class="menu dropdown_mn">
                         <a href="#" class="channel_my item">
                             <div class="profile_link">
-                                <img src="images/left-imgs/img-1.jpg" alt="" />
+                                <img :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`" alt="" />
                                 <div class="pd_content">
                                     <h6>Rock William</h6>
                                     <p>
@@ -87,7 +87,7 @@
                         </a>
                         <a href="#" class="channel_my item">
                             <div class="profile_link">
-                                <img src="images/left-imgs/img-2.jpg" alt="" />
+                                <img :src="`${globalBaseUrl}images/left-imgs/img-2.jpg`" alt="" />
                                 <div class="pd_content">
                                     <h6>Jassica Smith</h6>
                                     <p>
@@ -101,7 +101,7 @@
                         </a>
                         <a href="#" class="channel_my item">
                             <div class="profile_link">
-                                <img src="images/left-imgs/img-9.jpg" alt="" />
+                                <img :src="`${globalBaseUrl}images/left-imgs/img-9.jpg`" alt="" />
                                 <div class="pd_content">
                                     <p>
                                         Your Membership Approved
@@ -118,12 +118,12 @@
                 </li>
                 <li class="ui dropdown">
                     <div class="opts_account new-dropdown" title="Account">
-                        <img src="images/hd_dp.jpg" alt="" />
+                        <img :src="`${globalBaseUrl}images/hd_dp.jpg`" alt="" />
                     </div>
                     <div class="menu dropdown_account left visible">
                         <div class="channel_my">
                             <div class="profile_link justify-content-center">
-                                <img src="images/hd_dp.jpg" alt="" />
+                                <img :src="`${globalBaseUrl}images/hd_dp.jpg`" alt="" />
                             </div>
                             <div class="rhte85 mt-2 justify-content-center">
                                 <h6>Joginder Singh</h6>
