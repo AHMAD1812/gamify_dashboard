@@ -5,7 +5,7 @@
     <meta name="description" content="Gambolthemes" />
     <meta name="author" content="Gambolthemes" />
     <title>Gamify US - Dashboard</title>
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" type="image/png" href="{{asset('images/gamify-favicon.png')}}" />
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,600,700,500" rel="stylesheet" />
@@ -21,5 +21,6 @@
     <link href="{{asset('vendor/OwlCarousel/assets/owl.theme.default.min.css')}}" rel="stylesheet" />
     <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" />
     <link href="{{asset('vendor/jquery-ui-1.12.1/jquery-ui.css')}}" rel="stylesheet" />
+    
     <link rel="stylesheet" type="text/css" href="{{asset('vendor/semantic/semantic.min.css')}}" />
 </head>

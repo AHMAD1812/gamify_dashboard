@@ -25,8 +25,11 @@
     },
     "dependencies": {
         "semantic-ui-vue": "^0.11.0",
+        "vue-axios": "^3.4.1",
+        "vue-element-loading": "^2.0.2",
         "vue-owl-carousel": "^2.0.3",
         "vue-router": "^3.5.3",
+        "vue-toast-notification": "^0.6.2",
         "vue2-timepicker": "^1.1.6"
     }
 }

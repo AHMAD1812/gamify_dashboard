@@ -2,8 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\UserCategory;
 use Illuminate\Http\Request;
 use App\Http\Traits\CommonTrait;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
@@ -30,7 +37,7 @@ class AuthController extends Controller
                 'required',
                 'min:8',
             ],
-            'categories' => 'required',
+            'category' => 'required',
             'bio' => 'required',
         ]);
         if ($validator->fails()) {
@@ -51,6 +58,13 @@ class AuthController extends Controller
             $user->status = 'inactive';
 
             $user->save();
+
+            foreach($request->category as $category_id){
+                $category=new UserCategory;
+                $category->user_id=$user->id;
+                $category->category_id=$category_id;
+                $category->save();
+            }
 
             // $data['email'] = $user->email;
             // $data['subject'] = 'Welcome Email';
@@ -127,61 +141,20 @@ class AuthController extends Controller
         $validator = Validator::make($request->all(), [
             'email' => 'required',
             'password' => 'required',
-            'remember_me' => 'required',
         ]);
         if ($validator->fails()) {
             return $this->sendError($validator->messages()->first(), null);
         }
 
         try {
-            DB::beginTransaction();
 
-            $user = User::where('email', '=', $request->email)->where('role', '=', 'business')->first();
-
-            if ($user != null) {
-                if ($user->status == 'active') {
-                    if (Hash::check($request->password, $user->password)) {
-                        if ($user->email_verified_at == null) {
-                            $code = mt_rand(100000, 999999);
-                            $user->otp = $code;
-                            $user->update();
-                            $data['email'] = $user->email;
-                            $data['subject'] = 'Welcome Email';
-                            $data['msg'] = 'Welcome to Snapwork: Verify your Email Using This Code:' . $code;
-                            $data['full_name'] = $user->name;
-                            try {
-                                Mail::send('emails.welcome_mail', $data, function ($message) use ($data) {
-
-                                    $message->to($data['email'], $data['full_name'])
-                                        ->subject($data['subject']);
-                                    $message->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
-                                });
-
-                            } catch (\Exception$e) {
-                                $user->forceDelete();
-                                return $this->sendError($e->getMessage(), null);
-                            }
-                            return $this->sendWarning("Not Verified", $user->id);
-                        } else {
-                            $remember= $request->remember_me=='true' ? true:false ;
-                            if (Auth::attempt($request->only('email', 'password'),$remember)) {
-                                return $this->sendSuccess('Login Successfully', $user->id);
-                            }
-                        }
-                    } else {
-                        return $this->sendError("Password is incorrect", null);
-                    }
-                } else {
-                    return $this->sendError("Blocked By Admin", null);
-                }
+            if (Auth::attempt($request->only('email', 'password'))) {
+                return $this->sendSuccess('Login Successfully', null);
             } else {
-                return $this->sendError("Email not found", null);
+                return $this->sendError("Invalid Credentials", null);
             }
 
-            DB::commit();
-
         } catch (\Exception$exception) {
-            DB::rollback();
             if (('APP_ENV') == 'local') {
                 dd($exception);
             } else {

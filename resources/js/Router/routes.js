@@ -17,6 +17,11 @@ const routes = [{
         name: "ForgotPassword",
     },
     {
+        path: "/instructor/otp_verification",
+        component: Auth,
+        name: "OtpVerification",
+    },
+    {
         path: "/instructor/dashboard",
         component: Body,
         name: "Dashboard",
