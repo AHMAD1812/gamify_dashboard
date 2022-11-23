@@ -12920,7 +12920,7 @@ var routes = [{
   component: _components_Auth_index_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
   name: "OtpVerification"
 }, {
-  path: "/instructor/dashboard",
+  path: "/instructor/",
   component: _components_layouts_BodyComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
   name: "Dashboard"
 }, {
@@ -38252,10 +38252,10 @@ var staticRenderFns = [
           _c("div", { staticClass: "ui left icon input swdh95" }, [
             _c("input", {
               staticClass: "prompt srch_explore",
-              attrs: { type: "text", placeholder: "OTP" },
+              attrs: { type: "number", placeholder: "OTP" },
             }),
             _vm._v(" "),
-            _c("i", { staticClass: "uil uil-envelope icon icon2" }),
+            _c("i", { staticClass: "uil uil-comment-alt-verify icon icon2" }),
           ]),
         ]),
         _vm._v(" "),

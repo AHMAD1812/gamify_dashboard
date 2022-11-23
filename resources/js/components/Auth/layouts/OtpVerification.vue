@@ -6,10 +6,10 @@
                 <div class="ui left icon input swdh95">
                     <input
                         class="prompt srch_explore"
-                        type="text"
+                        type="number"
                         placeholder="OTP"
                     />
-                    <i class="uil uil-envelope icon icon2"></i>
+                    <i class="uil uil-comment-alt-verify icon icon2"></i>
                 </div>
             </div>
             <button class="login-btn" type="button">Verify</button>

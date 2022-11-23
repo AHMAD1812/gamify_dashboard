@@ -21,7 +21,7 @@ Route::get('/about-us', [AppController::class, 'about'])->name('about');
 Route::get('/contact-us', [AppController::class, 'contact'])->name('contact');
 
 Route::prefix('instructor')->group(function () {
-    Route::get('/dashboard', [PageController::class, 'index']);
+    Route::get('/', [PageController::class, 'index']);
     Route::get('/login', [PageController::class, 'index'])->name('instructor.login');
     Route::get('/register', [PageController::class, 'index'])->name('instructor.register');
     Route::post('/register_process', [AuthController::class, 'Register']);

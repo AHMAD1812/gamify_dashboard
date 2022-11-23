@@ -22,7 +22,7 @@ const routes = [{
         name: "OtpVerification",
     },
     {
-        path: "/instructor/dashboard",
+        path: "/instructor/",
         component: Body,
         name: "Dashboard",
     },
