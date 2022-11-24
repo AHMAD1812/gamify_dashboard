@@ -32,6 +32,11 @@ const routes = [{
         name: "Courses",
     },
     {
+        path: "/instructor/course_detail",
+        component: Body,
+        name: "CourseDetail",
+    },
+    {
         path: "/instructor/create_video",
         component: Body,
         name: "CreateVideo",

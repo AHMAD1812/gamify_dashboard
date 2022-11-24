@@ -52,7 +52,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="tab-content" id="pills-tabContent">
+              <div class="tab-content setting-content" id="pills-tabContent">
                 <div
                   class="tab-pane fade show active"
                   id="pills-account"
@@ -60,11 +60,9 @@
                   aria-labelledby="pills-account-tab"
                 >
                   <div class="account_setting">
-                    <h4>Your Cursus Account</h4>
+                    <h4>Your Gamify Account</h4>
                     <p>
-                      This is your public presence on Cursus. You need a account
-                      to upload your paid courses, comment on courses, purchased
-                      by students, or earning.
+                      This is your public presence on Gamify US.
                     </p>
                     <div class="basic_profile">
                       <div class="basic_ptitle">

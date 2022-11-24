@@ -31,7 +31,7 @@ trait CommonTrait
     {
         //return Response::json(array('status' => 400, 'errorMessage' => $error_message), 400);
         return response()->json([
-            'status' => 400,
+            'status' => 320,
             'message' => $error_message,
             'data' => $data,
         ]);

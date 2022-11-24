@@ -1,6 +1,7 @@
 <template>
   <span>
-    <Header></Header>
+    <FullScreenLoader :active="loading"></FullScreenLoader>
+    <Header @toggle-loader="toggleLoader"></Header>
     <Sidebar></Sidebar>
     <div class="wrapper">
         <Dashboard v-if="$route.name=='Dashboard'"></Dashboard>
@@ -11,6 +12,7 @@
         <Review v-if="$route.name == 'Review'"></Review>
         <Setting v-if="$route.name == 'Setting'"></Setting>
         <Profile v-if="$route.name == 'Profile'"></Profile>
+        <CourseDetail v-if="$route.name == 'CourseDetail'"></CourseDetail>
         <Footer></Footer>
     </div>
   </span>
@@ -28,6 +30,7 @@ import Notification from '../notification/index.vue';
 import Review from '../review/index.vue';
 import Setting from '../setting/index.vue';
 import Profile from '../profile/index.vue';
+import CourseDetail from '../courses/detail.vue';
 
 export default {
     name:"Body",
@@ -42,7 +45,18 @@ export default {
         Notification,
         Review,
         Setting,
-        Profile
+        Profile,
+        CourseDetail,
+    },
+    data(){
+      return{
+        loading:false,
+      }
+    },
+    methods:{
+      toggleLoader(){
+        this.loading=!this.loading;
+      }
     }
 }
 </script>

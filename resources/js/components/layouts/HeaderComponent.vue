@@ -120,7 +120,7 @@
                     <div class="opts_account new-dropdown" title="Account">
                         <img :src="`${globalBaseUrl}images/hd_dp.jpg`" alt="" />
                     </div>
-                    <div class="menu dropdown_account left visible">
+                    <div class="menu dropdown_account left visible" @click="closeDropdown()">
                         <div class="channel_my">
                             <div class="profile_link justify-content-center">
                                 <img :src="`${globalBaseUrl}images/hd_dp.jpg`" alt="" />
@@ -135,20 +135,20 @@
                                 class="dp_link_12 mt-2 text-center"
                                 >View Instructor Profile</router-link>
                         </div>
-                        <a
-                            href="instructor_dashboard.html"
+                        <router-link :to="{name : 'Dashboard'}"
                             class="item channel_item"
-                            >Gamify Us dashboard</a
+                            >Dashboard</router-link
                         >
-                        <a href="setting.html" class="item channel_item"
-                            >Setting</a
-                        >
+                        <router-link :to="{name : 'Setting'}" class="item channel_item">
+                            Setting
+                        </router-link>
                         <a href="help.html" class="item channel_item">Help</a>
                         <a href="feedback.html" class="item channel_item"
                             >Send Feedback</a
                         >
-                        <router-link :to="{name : 'Login'}" class="item channel_item"
-                            >Sign Out</router-link>
+                        <div class="item channel_item" @click="signOut()">
+                            Sign Out
+                        </div>
                     </div>
                 </li>
             </ul>
@@ -204,6 +204,42 @@ export default {
             }
         }, 100);
     },
+    methods:{
+        signOut(){
+            this.$emit('toggle-loader');
+            axios
+                .post(`${globalBaseUrl}instructor/logout`)
+                .then((response) => {
+                    this.$emit('toggle-loader');
+                    if (response.data.status == 200) {
+                        Vue.$toast.open({
+                            message: "Logout",
+                            type: "error",
+                            position: "top-right",
+                        });
+                        this.$router.push({
+                            name: "Login",
+                        });
+                    }
+                })
+                .catch((e) => {
+                    this.$emit('toggle-loader');
+                    Vue.$toast.open({
+                        message: "Something Went Wrong",
+                        type: "error",
+                        position: "top-right",
+                    });
+                    console.log(e);
+                });
+        },
+        closeDropdown(){
+            if ($(".dropdown_account").css("display") == "none") {
+                $(".dropdown_account").show();
+            } else {
+                $(".dropdown_account").hide();
+            }
+        }
+    }
 };
 </script>
 

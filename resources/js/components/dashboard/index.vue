@@ -156,20 +156,20 @@
                 <div class="col-xl-4 col-lg-6 col-md-6">
                     <div class="fcrse_3 mt-30">
                         <div class="cater_ttle">
-                            <h4>Live Streaming</h4>
+                            <h4>Share Interactive course</h4>
                         </div>
                         <div class="live_text">
                             <div class="live_icon">
-                                <i class="uil uil-kayak"></i>
+                                <i class="uil uil-video"></i>
                             </div>
                             <div class="live-content">
                                 <p>
-                                    Set up your channel and stream live to your
+                                    Set up your video and share to your
                                     students
                                 </p>
                                 <button
                                     class="live_link"
-                                    onclick="window.location.href = 'add_streaming.html';"
+                                    @click="$router.push({name:'CreateVideo'})"
                                 >
                                     Get Started
                                 </button>

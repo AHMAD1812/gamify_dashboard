@@ -101,6 +101,13 @@
                 <a href="#">Terms of Use</a> and
                 <a href="#">Privacy Policy</a>.
             </p>
+            <p class="mb-0 mt-10 hvsng145">
+                Or Register with
+            </p>
+            <div class="social-auth">
+                <img :src="`${globalBaseUrl}images/facebook.png`" class="social-img"/>
+                <img :src="`${globalBaseUrl}images/google.png`" class="social-img"/>
+            </div>
             <p class="mb-0 mt-30">
                 Already have an account?
                 <router-link :to="{ name: 'Login' }">Log In</router-link>
@@ -196,7 +203,10 @@ export default {
                                 position: "top-right",
                             });
                             this.$router.push({
-                                name: "Login",
+                                name: "OtpVerification",
+                                params: {
+                                    id: response.data.data,
+                                },
                             });
                         }
                         if (response.data.status == 400) {

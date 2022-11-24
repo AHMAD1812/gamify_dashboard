@@ -30,7 +30,7 @@
                         <div class="chat__message__dt active">
                           <div class="user-status">
                             <div class="user-avatar">
-                              <img src="images/left-imgs/img-1.jpg" alt="" />
+                              <img :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`" alt="" />
                               <div class="msg__badge">2</div>
                             </div>
                             <p class="user-status-title">
@@ -46,7 +46,7 @@
                         <div class="chat__message__dt">
                           <div class="user-status">
                             <div class="user-avatar">
-                              <img src="images/left-imgs/img-2.jpg" alt="" />
+                              <img :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`" alt="" />
                               <div class="msg__badge">3</div>
                             </div>
                             <p class="user-status-title">
@@ -62,7 +62,7 @@
                         <div class="chat__message__dt">
                           <div class="user-status">
                             <div class="user-avatar">
-                              <img src="images/left-imgs/img-3.jpg" alt="" />
+                              <img :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`" alt="" />
                               <div class="msg__badge">1</div>
                             </div>
                             <p class="user-status-title">
@@ -77,7 +77,7 @@
                         <div class="chat__message__dt">
                           <div class="user-status">
                             <div class="user-avatar">
-                              <img src="images/left-imgs/img-4.jpg" alt="" />
+                              <img :src="`${globalBaseUrl}images/left-imgs/img-4.jpg`" alt="" />
                               <div class="msg__badge">7</div>
                             </div>
                             <p class="user-status-title">
@@ -92,7 +92,7 @@
                         <div class="chat__message__dt">
                           <div class="user-status">
                             <div class="user-avatar">
-                              <img src="images/left-imgs/img-5.jpg" alt="" />
+                              <img :src="`${globalBaseUrl}images/left-imgs/img-5.jpg`" alt="" />
                               <div class="msg__badge">12</div>
                             </div>
                             <p class="user-status-title">
@@ -107,7 +107,7 @@
                         <div class="chat__message__dt">
                           <div class="user-status">
                             <div class="user-avatar">
-                              <img src="images/left-imgs/img-6.jpg" alt="" />
+                              <img :src="`${globalBaseUrl}images/left-imgs/img-6.jpg`" alt="" />
                             </div>
                             <p class="user-status-title">
                               <span class="bold">Eli Natoli</span>
@@ -122,7 +122,7 @@
                         <div class="chat__message__dt">
                           <div class="user-status">
                             <div class="user-avatar">
-                              <img src="images/left-imgs/img-7.jpg" alt="" />
+                              <img :src="`${globalBaseUrl}images/left-imgs/img-7.jpg`" alt="" />
                               <div class="msg__badge">6</div>
                             </div>
                             <p class="user-status-title">
@@ -135,7 +135,7 @@
                         <div class="chat__message__dt">
                           <div class="user-status">
                             <div class="user-avatar">
-                              <img src="images/left-imgs/img-8.jpg" alt="" />
+                              <img :src="`${globalBaseUrl}images/left-imgs/img-8.jpg`" alt="" />
                               <div class="msg__badge">1</div>
                             </div>
                             <p class="user-status-title">
@@ -153,7 +153,7 @@
                       <div class="chat_header">
                         <div class="user-status">
                           <div class="user-avatar">
-                            <img src="images/left-imgs/img-1.jpg" alt="" />
+                            <img :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`" alt="" />
                           </div>
                           <p class="user-status-title">
                             <span class="bold">John Doe</span>

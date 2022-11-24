@@ -93,10 +93,10 @@ class AuthController extends Controller
         }
     }
 
-    public function otpVerification(Request $request)
+    public function OtpVerification(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'code' => 'required',
+            'otp' => 'required',
             'id' => 'required',
         ]);
         if ($validator->fails()) {
@@ -106,25 +106,22 @@ class AuthController extends Controller
 
             DB::beginTransaction();
 
-            $user = User::find($request->id);
+            $user = User::where('id',$request->id)->where('otp',$request->otp)->first();
 
-            if ($user != null) {
-                if ($user->otp == $request->code) {
-                    $user->otp = null;
-                    $user->email_verified_at = date("Y-m-d H:i:s", strtotime('now'));
-                    $user->status = "active";
-                    $user->update();
-                } else {
-                    return $this->sendError("Code is Incorrect", null);
-                }
+            if ($user) {
+                $user->otp = null;
+                $user->email_verified_at = date("Y-m-d H:i:s", strtotime('now'));
+                $user->status = "active";
+                $user->update();
             } else {
-                return $this->sendError("User not found", null);
+                return $this->sendError("Invalid OTP", null);
             }
 
             DB::commit();
-            Auth::login($user);
-            return $this->sendSuccess('Successfully Verified', $user->id);
 
+            Auth::login($user);
+
+            return $this->sendSuccess('Successfully Verified', $user->id);
         } catch (\Exception$exception) {
             DB::rollback();
             if (('APP_ENV') == 'local') {
@@ -147,6 +144,13 @@ class AuthController extends Controller
         }
 
         try {
+            $user = User::where('email',$request->email)->first();
+            if(!$user){
+                return $this->sendError("Invalid Credentials", null);
+            }
+            if($user->status == 'inactive'){
+                return $this->sendWarning("Verify your email", $user->id);
+            }
 
             if (Auth::attempt($request->only('email', 'password'))) {
                 return $this->sendSuccess('Login Successfully', null);
@@ -179,7 +183,7 @@ class AuthController extends Controller
             $user = User::where('email', '=', $request->email)->first();
 
             if ($user) {
-                $code = mt_rand(100000, 999999);
+                $otp = mt_rand(100000, 999999);
                 $user->otp = $code;
                 $user->update();
 
@@ -298,10 +302,6 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
-
-        $request->session()->invalidate();
-
-        $request->session()->regenerateToken();
 
         return $this->sendSuccess('Logout successfully', null);
     }

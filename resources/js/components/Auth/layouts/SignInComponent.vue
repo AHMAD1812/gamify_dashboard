@@ -45,6 +45,13 @@
             Or <router-link :to="{ name: 'ForgotPassword' }"
                 >Forgot Password</router-link>.
         </p>
+        <p class="mb-0 mt-10 hvsng145">
+            Or Login with
+        </p>
+        <div class="social-auth">
+            <img :src="`${globalBaseUrl}images/facebook.png`" class="social-img"/>
+            <img :src="`${globalBaseUrl}images/google.png`" class="social-img"/>
+        </div>
         <p class="mb-0 mt-20 hvsng145">
             Don't have an account? <router-link :to="{ name: 'Register' }">Sign Up</router-link>
         </p>
@@ -82,6 +89,19 @@ export default {
                             });
                             this.$router.push({
                                 name: "Dashboard",
+                            });
+                        }
+                        if (response.data.status == 320) {
+                            Vue.$toast.open({
+                                message: response.data.message,
+                                type: "warning",
+                                position: "top-right",
+                            });
+                            this.$router.push({
+                                name: "OtpVerification",
+                                params: {
+                                    id: response.data.data,
+                                },
                             });
                         }
                         if (response.data.status == 400) {

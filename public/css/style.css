@@ -2,9 +2,22 @@
     color: #FFFFFF !important;
 }
 
+.social-auth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px;
+    border-bottom: 1px solid #efefef;
+}
 
+.social-auth .social-img{
+    cursor: pointer;
+    margin: 0px 10px;
+}
 
-
+.setting-content{
+    min-height: 45vh;
+}
 
 /*===================== TABLE OF CONTENT =======================
 /*
@@ -3690,11 +3703,12 @@ i.icon2 {
     margin-top: 10px;
     border: 1px solid #4f4848;
 	display: flex;
+    justify-content: center;
 }
 
 ._ttl120 li {
     display: inline-block;
-    width: 25%;
+    width: 30%;
 	padding: 15px 10px;
 	border-right: 1px solid #4f4848;
 }
@@ -5923,7 +5937,7 @@ a.rmv-btn i {
 }
 
 .sgntrm145 {
-    padding: 30px 0 30px;
+    padding: 15px 0 15px;
 	margin-bottom: 0 !important;
     border-bottom: 1px solid #efefef;
 }

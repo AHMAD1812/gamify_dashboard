@@ -16,7 +16,7 @@
                         <div class="card_dash_right1">
                             <button
                                 class="create_btn_dash"
-                                onclick="window.location.href = 'create_new_course.html';"
+                                @click="navigate()"
                             >
                                 Create Your Video
                             </button>
@@ -149,22 +149,14 @@
                                                     >
                                                 </td>
                                                 <td class="text-center">
-                                                    <a
-                                                        href="#"
-                                                        title="Edit"
-                                                        class="gray-s"
-                                                        ><i
-                                                            class="uil uil-edit-alt"
-                                                        ></i
-                                                    ></a>
-                                                    <a
-                                                        href="course_detail_view.html"
+                                                    <router-link
+                                                        :to="{name : 'CourseDetail'}"
                                                         title="Edit"
                                                         class="gray-s"
                                                         ><i
                                                             class="uil uil-eye"
                                                         ></i
-                                                    ></a>
+                                                    ></router-link>
                                                     <a
                                                         href="#"
                                                         title="Delete"
@@ -569,6 +561,13 @@
 <script>
 export default {
     name:"Courses",
+    methods:{
+        navigate(){
+            this.$router.push({
+                name:'CreateVideo'
+            });
+        }
+    }
 };
 </script>
 

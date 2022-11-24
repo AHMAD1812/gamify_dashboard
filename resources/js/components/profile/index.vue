@@ -12,7 +12,7 @@
                     </a>
                     <div class="dp_dt150">
                       <div class="img148">
-                        <img src="images/hd_dp.jpg" alt="" />
+                        <img :src="`${globalBaseUrl}images/hd_dp.jpg`" alt="" />
                       </div>
                       <div class="prfledt1">
                         <h2>Joginder Singh</h2>
@@ -38,18 +38,9 @@
                           <div class="_ttl123">11K</div>
                         </div>
                       </li>
-                      <li>
-                        <div class="_ttl121">
-                          <div class="_ttl122">Subscriptions</div>
-                          <div class="_ttl123">452K</div>
-                        </div>
-                      </li>
                     </ul>
                   </div>
                   <div class="col-lg-5">
-                    <a href="setting.html" class="_216b12">
-                      <span><i class="uil uil-cog"></i></span>Setting
-                    </a>
                     <div class="rgt-145">
                       <ul class="tutor_social_links">
                         <li>
@@ -78,7 +69,7 @@
                       <li>
                         <button
                           class="msg125 btn500"
-                          onclick="window.location.href = 'setting.html';"
+                          @click="$router.push({name: 'Setting'})"
                         >
                           Edit
                         </button>

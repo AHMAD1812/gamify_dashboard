@@ -5413,6 +5413,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_HeaderComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/HeaderComponent.vue */ "./resources/js/components/Auth/components/HeaderComponent.vue");
 /* harmony import */ var _components_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/FooterComponent.vue */ "./resources/js/components/Auth/components/FooterComponent.vue");
 /* harmony import */ var _layouts_OtpVerification_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./layouts/OtpVerification.vue */ "./resources/js/components/Auth/layouts/OtpVerification.vue");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; }, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) }), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; defineProperty(this, "_invoke", { value: function value(method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), defineProperty(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (val) { var object = Object(val), keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 //
 //
 //
@@ -5454,7 +5458,45 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    $('.ui.checkbox').checkbox();
+    var _this = this;
+    return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      var response;
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              $('.ui.checkbox').checkbox();
+              _context.prev = 1;
+              _this.loading = true;
+              _context.next = 5;
+              return axios.get("".concat(globalBaseUrl, "instructor/is_user_login"));
+            case 5:
+              response = _context.sent;
+              _this.loading = false;
+              if (response.data.status == 200) {
+                _this.$router.push({
+                  name: "Dashboard"
+                });
+              }
+              _context.next = 15;
+              break;
+            case 10:
+              _context.prev = 10;
+              _context.t0 = _context["catch"](1);
+              _this.loading = false;
+              console.log(_context.t0);
+              Vue.$toast.open({
+                message: 'Something Went Wrong',
+                type: "error",
+                position: "top-right"
+              });
+            case 15:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[1, 10]]);
+    }))();
   },
   methods: {
     toggleLoader: function toggleLoader() {
@@ -5538,9 +5580,69 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "OtpVerification"
+  name: "OtpVerification",
+  data: function data() {
+    return {
+      id: -1,
+      otp: ""
+    };
+  },
+  mounted: function mounted() {
+    this.id = this.$route.params.id;
+    if (typeof this.id == 'undefined') {
+      this.$router.push({
+        name: "Register"
+      });
+    }
+  },
+  methods: {
+    otpVerification: function otpVerification() {
+      var _this = this;
+      if (this.otp == "") {
+        Vue.$toast.open({
+          message: "Otp is required",
+          type: "error",
+          position: "top-right"
+        });
+        return;
+      }
+      this.$emit("toggle-loader");
+      var formData = new FormData();
+      formData.append('id', this.id);
+      formData.append('otp', this.otp);
+      axios.post("".concat(globalBaseUrl, "instructor/otp_verification"), formData).then(function (response) {
+        if (response.data.status == 200) {
+          Vue.$toast.open({
+            message: response.data.message,
+            type: "success",
+            position: "top-right"
+          });
+          _this.$router.push({
+            name: "Dashboard"
+          });
+        }
+        if (response.data.status == 400) {
+          Vue.$toast.open({
+            message: response.data.message,
+            type: "warning",
+            position: "top-right"
+          });
+        }
+        _this.$emit("toggle-loader");
+      })["catch"](function (e) {
+        _this.$emit("toggle-loader");
+        Vue.$toast.open({
+          message: "Something Went Wrong",
+          type: "error",
+          position: "top-right"
+        });
+        console.log(e);
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -5556,6 +5658,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -5641,6 +5750,19 @@ __webpack_require__.r(__webpack_exports__);
               name: "Dashboard"
             });
           }
+          if (response.data.status == 320) {
+            Vue.$toast.open({
+              message: response.data.message,
+              type: "warning",
+              position: "top-right"
+            });
+            _this.$router.push({
+              name: "OtpVerification",
+              params: {
+                id: response.data.data
+              }
+            });
+          }
           if (response.data.status == 400) {
             Vue.$toast.open({
               message: response.data.message,
@@ -5696,6 +5818,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; }, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) }), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; defineProperty(this, "_invoke", { value: function value(method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), defineProperty(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (val) { var object = Object(val), keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -5911,7 +6040,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               position: "top-right"
             });
             _this3.$router.push({
-              name: "Login"
+              name: "OtpVerification",
+              params: {
+                id: response.data.data
+              }
             });
           }
           if (response.data.status == 400) {
@@ -6265,6 +6397,2342 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Chat"
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/courses/detail.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/courses/detail.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "CourseDetail"
 });
 
 /***/ }),
@@ -6840,17 +9308,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "Courses"
+  name: "Courses",
+  methods: {
+    navigate: function navigate() {
+      this.$router.push({
+        name: 'CreateVideo'
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -10737,6 +13204,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _review_index_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../review/index.vue */ "./resources/js/components/review/index.vue");
 /* harmony import */ var _setting_index_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../setting/index.vue */ "./resources/js/components/setting/index.vue");
 /* harmony import */ var _profile_index_vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../profile/index.vue */ "./resources/js/components/profile/index.vue");
+/* harmony import */ var _courses_detail_vue__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../courses/detail.vue */ "./resources/js/components/courses/detail.vue");
 //
 //
 //
@@ -10755,6 +13223,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+
 
 
 
@@ -10780,7 +13251,18 @@ __webpack_require__.r(__webpack_exports__);
     Notification: _notification_index_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
     Review: _review_index_vue__WEBPACK_IMPORTED_MODULE_8__["default"],
     Setting: _setting_index_vue__WEBPACK_IMPORTED_MODULE_9__["default"],
-    Profile: _profile_index_vue__WEBPACK_IMPORTED_MODULE_10__["default"]
+    Profile: _profile_index_vue__WEBPACK_IMPORTED_MODULE_10__["default"],
+    CourseDetail: _courses_detail_vue__WEBPACK_IMPORTED_MODULE_11__["default"]
+  },
+  data: function data() {
+    return {
+      loading: false
+    };
+  },
+  methods: {
+    toggleLoader: function toggleLoader() {
+      this.loading = !this.loading;
+    }
   }
 });
 
@@ -11095,6 +13577,40 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
     }, 100);
+  },
+  methods: {
+    signOut: function signOut() {
+      var _this = this;
+      this.$emit('toggle-loader');
+      axios.post("".concat(globalBaseUrl, "instructor/logout")).then(function (response) {
+        _this.$emit('toggle-loader');
+        if (response.data.status == 200) {
+          Vue.$toast.open({
+            message: "Logout",
+            type: "error",
+            position: "top-right"
+          });
+          _this.$router.push({
+            name: "Login"
+          });
+        }
+      })["catch"](function (e) {
+        _this.$emit('toggle-loader');
+        Vue.$toast.open({
+          message: "Something Went Wrong",
+          type: "error",
+          position: "top-right"
+        });
+        console.log(e);
+      });
+    },
+    closeDropdown: function closeDropdown() {
+      if ($(".dropdown_account").css("display") == "none") {
+        $(".dropdown_account").show();
+      } else {
+        $(".dropdown_account").hide();
+      }
+    }
   }
 });
 
@@ -11297,15 +13813,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -12855,8 +15362,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Setting"
@@ -12927,6 +15432,10 @@ var routes = [{
   path: "/instructor/courses",
   component: _components_layouts_BodyComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
   name: "Courses"
+}, {
+  path: "/instructor/course_detail",
+  component: _components_layouts_BodyComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+  name: "CourseDetail"
 }, {
   path: "/instructor/create_video",
   component: _components_layouts_BodyComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -36715,6 +39224,45 @@ component.options.__file = "resources/js/components/chat/index.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/courses/detail.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/components/courses/detail.vue ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _detail_vue_vue_type_template_id_20b23cda___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./detail.vue?vue&type=template&id=20b23cda& */ "./resources/js/components/courses/detail.vue?vue&type=template&id=20b23cda&");
+/* harmony import */ var _detail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./detail.vue?vue&type=script&lang=js& */ "./resources/js/components/courses/detail.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _detail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _detail_vue_vue_type_template_id_20b23cda___WEBPACK_IMPORTED_MODULE_0__.render,
+  _detail_vue_vue_type_template_id_20b23cda___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/courses/detail.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/courses/index.vue":
 /*!***************************************************!*\
   !*** ./resources/js/components/courses/index.vue ***!
@@ -37368,6 +39916,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/courses/detail.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/courses/detail.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_detail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./detail.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/courses/detail.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_detail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/courses/index.vue?vue&type=script&lang=js&":
 /*!****************************************************************************!*\
   !*** ./resources/js/components/courses/index.vue?vue&type=script&lang=js& ***!
@@ -37738,6 +40302,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_10a55a66___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_10a55a66___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=template&id=10a55a66& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/chat/index.vue?vue&type=template&id=10a55a66&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/courses/detail.vue?vue&type=template&id=20b23cda&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/courses/detail.vue?vue&type=template&id=20b23cda& ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_detail_vue_vue_type_template_id_20b23cda___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_detail_vue_vue_type_template_id_20b23cda___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_detail_vue_vue_type_template_id_20b23cda___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./detail.vue?vue&type=template&id=20b23cda& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/courses/detail.vue?vue&type=template&id=20b23cda&");
 
 
 /***/ }),
@@ -38128,7 +40709,9 @@ var render = function () {
                   : _vm._e(),
                 _vm._v(" "),
                 _vm.$route.name == "OtpVerification"
-                  ? _c("OtpVerification")
+                  ? _c("OtpVerification", {
+                      on: { "toggle-loader": _vm.toggleLoader },
+                    })
                   : _vm._e(),
                 _vm._v(" "),
                 _c("Footer"),
@@ -38237,35 +40820,55 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "sign_form" }, [
-      _c("h2", [_vm._v("Email Verification")]),
-      _vm._v(" "),
-      _c("form", [
-        _c("div", { staticClass: "ui search focus mt-50" }, [
-          _c("div", { staticClass: "ui left icon input swdh95" }, [
-            _c("input", {
-              staticClass: "prompt srch_explore",
-              attrs: { type: "number", placeholder: "OTP" },
-            }),
-            _vm._v(" "),
-            _c("i", { staticClass: "uil uil-comment-alt-verify icon icon2" }),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("button", { staticClass: "login-btn", attrs: { type: "button" } }, [
-          _vm._v("Verify"),
+  return _c("div", { staticClass: "sign_form" }, [
+    _c("h2", [_vm._v("Email Verification")]),
+    _vm._v(" "),
+    _c("form", [
+      _c("div", { staticClass: "ui search focus mt-50" }, [
+        _c("div", { staticClass: "ui left icon input swdh95" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.otp,
+                expression: "otp",
+              },
+            ],
+            staticClass: "prompt srch_explore",
+            attrs: { type: "number", placeholder: "OTP" },
+            domProps: { value: _vm.otp },
+            on: {
+              input: function ($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.otp = $event.target.value
+              },
+            },
+          }),
+          _vm._v(" "),
+          _c("i", { staticClass: "uil uil-comment-alt-verify icon icon2" }),
         ]),
       ]),
-    ])
-  },
-]
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "login-btn",
+          attrs: { type: "button" },
+          on: {
+            click: function ($event) {
+              return _vm.otpVerification()
+            },
+          },
+        },
+        [_vm._v("Verify")]
+      ),
+    ]),
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -38387,6 +40990,22 @@ var render = function () {
       ],
       1
     ),
+    _vm._v(" "),
+    _c("p", { staticClass: "mb-0 mt-10 hvsng145" }, [
+      _vm._v("\n        Or Login with\n    "),
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "social-auth" }, [
+      _c("img", {
+        staticClass: "social-img",
+        attrs: { src: _vm.globalBaseUrl + "images/facebook.png" },
+      }),
+      _vm._v(" "),
+      _c("img", {
+        staticClass: "social-img",
+        attrs: { src: _vm.globalBaseUrl + "images/google.png" },
+      }),
+    ]),
     _vm._v(" "),
     _c(
       "p",
@@ -38713,6 +41332,22 @@ var render = function () {
       _vm._v(" "),
       _vm._m(0),
       _vm._v(" "),
+      _c("p", { staticClass: "mb-0 mt-10 hvsng145" }, [
+        _vm._v("\n            Or Register with\n        "),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "social-auth" }, [
+        _c("img", {
+          staticClass: "social-img",
+          attrs: { src: _vm.globalBaseUrl + "images/facebook.png" },
+        }),
+        _vm._v(" "),
+        _c("img", {
+          staticClass: "social-img",
+          attrs: { src: _vm.globalBaseUrl + "images/google.png" },
+        }),
+      ]),
+      _vm._v(" "),
       _c(
         "p",
         { staticClass: "mb-0 mt-30" },
@@ -38763,499 +41398,1515 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "sa4d25" }, [
+    _c("div", { staticClass: "container-fluid" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-12" }, [
+          _c("div", { staticClass: "all_msg_bg" }, [
+            _c("div", { staticClass: "row no-gutters" }, [
+              _c("div", { staticClass: "col-xl-4 col-lg-5 col-md-12" }, [
+                _vm._m(1),
+                _vm._v(" "),
+                _c("div", { staticClass: "simplebar-content-wrapper" }, [
+                  _c("div", { staticClass: "group_messages" }, [
+                    _c("div", { staticClass: "chat__message__dt active" }, [
+                      _c("div", { staticClass: "user-status" }, [
+                        _c("div", { staticClass: "user-avatar" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                _vm.globalBaseUrl +
+                                "images/left-imgs/img-1.jpg",
+                              alt: "",
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "msg__badge" }, [
+                            _vm._v("2"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(2),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "user-status-text" }, [
+                          _vm._v(
+                            "\n                            Hi! Sir, How are you. I ask you one thing please\n                            explain it this video price.\n                          "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "user-status-time floaty" }, [
+                          _vm._v("7 hours ago"),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "chat__message__dt" }, [
+                      _c("div", { staticClass: "user-status" }, [
+                        _c("div", { staticClass: "user-avatar" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                _vm.globalBaseUrl +
+                                "images/left-imgs/img-1.jpg",
+                              alt: "",
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "msg__badge" }, [
+                            _vm._v("3"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(3),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "user-status-text" }, [
+                          _vm._v(
+                            "\n                            Hello, I paid you video tutorial but did not play\n                            error 404.\n                          "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "user-status-time floaty" }, [
+                          _vm._v("8 hours ago"),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "chat__message__dt" }, [
+                      _c("div", { staticClass: "user-status" }, [
+                        _c("div", { staticClass: "user-avatar" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                _vm.globalBaseUrl +
+                                "images/left-imgs/img-1.jpg",
+                              alt: "",
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "msg__badge" }, [
+                            _vm._v("1"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(4),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "user-status-text" }, [
+                          _vm._v(
+                            "\n                            Thanks Sir, Such a nice video.\n                          "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "user-status-time floaty" }, [
+                          _vm._v("15 hours ago"),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "chat__message__dt" }, [
+                      _c("div", { staticClass: "user-status" }, [
+                        _c("div", { staticClass: "user-avatar" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                _vm.globalBaseUrl +
+                                "images/left-imgs/img-4.jpg",
+                              alt: "",
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "msg__badge" }, [
+                            _vm._v("7"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(5),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "user-status-text" }, [
+                          _vm._v(
+                            "\n                            Hi! Sir, this is a purchase key CFKX12536ERUJSKLL\n                          "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "user-status-time floaty" }, [
+                          _vm._v("22 hours ago"),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "chat__message__dt" }, [
+                      _c("div", { staticClass: "user-status" }, [
+                        _c("div", { staticClass: "user-avatar" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                _vm.globalBaseUrl +
+                                "images/left-imgs/img-5.jpg",
+                              alt: "",
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "msg__badge" }, [
+                            _vm._v("12"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(6),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "user-status-text" }, [
+                          _vm._v(
+                            "\n                            Pls! Upload .NET Course\n                          "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "user-status-time floaty" }, [
+                          _vm._v("2 days ago"),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "chat__message__dt" }, [
+                      _c("div", { staticClass: "user-status" }, [
+                        _c("div", { staticClass: "user-avatar" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                _vm.globalBaseUrl +
+                                "images/left-imgs/img-6.jpg",
+                              alt: "",
+                            },
+                          }),
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(7),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "user-status-text" }, [
+                          _vm._v(
+                            "\n                            Hi Sir thank you very very much for bootstrap full\n                            course.\n                          "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "user-status-time floaty" }, [
+                          _vm._v("5 days ago"),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "chat__message__dt" }, [
+                      _c("div", { staticClass: "user-status" }, [
+                        _c("div", { staticClass: "user-avatar" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                _vm.globalBaseUrl +
+                                "images/left-imgs/img-7.jpg",
+                              alt: "",
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "msg__badge" }, [
+                            _vm._v("6"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(8),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "user-status-text" }, [
+                          _vm._v("Thank you! Sir"),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "user-status-time floaty" }, [
+                          _vm._v("7 days ago"),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "chat__message__dt" }, [
+                      _c("div", { staticClass: "user-status" }, [
+                        _c("div", { staticClass: "user-avatar" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                _vm.globalBaseUrl +
+                                "images/left-imgs/img-8.jpg",
+                              alt: "",
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "msg__badge" }, [
+                            _vm._v("1"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(9),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "user-status-text" }, [
+                          _vm._v("Hey!"),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "user-status-time floaty" }, [
+                          _vm._v("13 days ago"),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-xl-8 col-lg-7 col-md-12" }, [
+                _c("div", { staticClass: "chatbox_right" }, [
+                  _c("div", { staticClass: "chat_header" }, [
+                    _c("div", { staticClass: "user-status" }, [
+                      _c("div", { staticClass: "user-avatar" }, [
+                        _c("img", {
+                          attrs: {
+                            src:
+                              _vm.globalBaseUrl + "images/left-imgs/img-1.jpg",
+                            alt: "",
+                          },
+                        }),
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(10),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "user-status-tag online" }, [
+                        _vm._v("Online"),
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(11),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(12),
+                  _vm._v(" "),
+                  _vm._m(13),
+                ]),
+              ]),
+            ]),
+          ]),
+        ]),
+      ]),
+    ]),
+  ])
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "sa4d25" }, [
-      _c("div", { staticClass: "container-fluid" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-lg-12" }, [
-            _c("h2", { staticClass: "st_title" }, [
-              _c("i", { staticClass: "uil uil-comments" }),
-              _vm._v(" Messages\n            "),
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-lg-12" }, [
+        _c("h2", { staticClass: "st_title" }, [
+          _c("i", { staticClass: "uil uil-comments" }),
+          _vm._v(" Messages\n            "),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "msg_search" }, [
+      _c("div", { staticClass: "ui search focus" }, [
+        _c("div", { staticClass: "ui left icon input swdh11 swdh15" }, [
+          _c("input", {
+            staticClass: "prompt srch_explore",
+            attrs: { type: "text", placeholder: "Search Messages..." },
+          }),
+          _vm._v(" "),
+          _c("i", { staticClass: "uil uil-search-alt icon icon8" }),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "user-status-title" }, [
+      _c("span", { staticClass: "bold" }, [_vm._v("John Doe")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "user-status-title" }, [
+      _c("span", { staticClass: "bold" }, [_vm._v("Kerstin Cable")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "user-status-title" }, [
+      _c("span", { staticClass: "bold" }, [_vm._v("Jose Portilla")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "user-status-title" }, [
+      _c("span", { staticClass: "bold" }, [_vm._v("Farhat Amin")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "user-status-title" }, [
+      _c("span", { staticClass: "bold" }, [_vm._v("Kyle Pew")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "user-status-title" }, [
+      _c("span", { staticClass: "bold" }, [_vm._v("Eli Natoli")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "user-status-title" }, [
+      _c("span", { staticClass: "bold" }, [_vm._v("Jaysen Batchelor")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "user-status-title" }, [
+      _c("span", { staticClass: "bold" }, [_vm._v("Quinton Batchelor")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "user-status-title" }, [
+      _c("span", { staticClass: "bold" }, [_vm._v("John Doe")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "user-status-time floaty eps_dots eps_dots5 more_dropdown",
+      },
+      [
+        _c("a", { attrs: { href: "#" } }, [
+          _c("i", { staticClass: "uil uil-ellipsis-h" }),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "dropdown-content" }, [
+          _c("span", [
+            _c("i", { staticClass: "uil uil-trash-alt" }),
+            _vm._v("Delete"),
+          ]),
+          _vm._v(" "),
+          _c("span", [
+            _c("i", { staticClass: "uil uil-ban" }),
+            _vm._v("Block"),
+          ]),
+          _vm._v(" "),
+          _c("span", [
+            _c("i", { staticClass: "uil uil-windsock" }),
+            _vm._v("Report"),
+          ]),
+          _vm._v(" "),
+          _c("span", [
+            _c("i", { staticClass: "uil uil-volume-mute" }),
+            _vm._v("Mute"),
+          ]),
+        ]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "messages-line simplebar-content-wrapper2 scrollstyle_4" },
+      [
+        _c("div", { staticClass: "mCustomScrollbar" }, [
+          _c("div", { staticClass: "main-message-box ta-right" }, [
+            _c("div", { staticClass: "message-dt" }, [
+              _c("div", { staticClass: "message-inner-dt" }, [
+                _c("p", [
+                  _vm._v(
+                    "\n                                Lorem ipsum dolor sit amet, consectetur\n                                adipiscing elit. Donec rutrum congue leo eget\n                                malesuada. Vivamus suscipit tortor eget felis\n                                porttitor.\n                              "
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("span", [_vm._v("Sat, April 10, 1:08 PM")]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "main-message-box st3" }, [
+            _c("div", { staticClass: "message-dt st3" }, [
+              _c("div", { staticClass: "message-inner-dt" }, [
+                _c("p", [_vm._v("Cras ultricies ligula.")]),
+              ]),
+              _vm._v(" "),
+              _c("span", [_vm._v("5 minutes ago")]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "main-message-box ta-right" }, [
+            _c("div", { staticClass: "message-dt" }, [
+              _c("div", { staticClass: "message-inner-dt" }, [
+                _c("p", [
+                  _vm._v(
+                    "\n                                Lorem ipsum dolor sit amet, consectetur\n                                adipiscing elit. Donec rutrum congue leo eget\n                                malesuada. Vivamus suscipit tortor eget felis\n                                porttitor.\n                              "
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("span", [_vm._v("Sat, April 10, 1:08 PM")]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "main-message-box st3" }, [
+            _c("div", { staticClass: "message-dt st3" }, [
+              _c("div", { staticClass: "message-inner-dt" }, [
+                _c("p", [_vm._v("Lorem ipsum dolor sit amet")]),
+              ]),
+              _vm._v(" "),
+              _c("span", [_vm._v("2 minutes ago")]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "main-message-box ta-right" }, [
+            _c("div", { staticClass: "message-dt" }, [
+              _c("div", { staticClass: "message-inner-dt" }, [
+                _c("p", [
+                  _vm._v(
+                    "\n                                Lorem ipsum dolor sit amet, consectetur\n                                adipiscing elit. Donec rutrum congue leo eget\n                                malesuada. Vivamus suscipit tortor eget felis\n                                porttitor.\n                              "
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("span", [_vm._v("Sat, April 10, 1:08 PM")]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "main-message-box st3" }, [
+            _c("div", { staticClass: "message-dt st3" }, [
+              _c("div", { staticClass: "message-inner-dt" }, [
+                _c("p", [_vm._v("....")]),
+              ]),
+              _vm._v(" "),
+              _c("span", [_vm._v("Typing...")]),
             ]),
           ]),
         ]),
-        _vm._v(" "),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "message-send-area" }, [
+      _c("form", [
+        _c("div", { staticClass: "mf-field" }, [
+          _c("div", { staticClass: "ui search focus input__msg" }, [
+            _c("div", { staticClass: "ui left icon input swdh19" }, [
+              _c("input", {
+                staticClass: "prompt srch_explore",
+                attrs: {
+                  type: "text",
+                  id: "chat-widget-message-text-2",
+                  name: "chat_widget_message_text_2",
+                  placeholder: "Write a message...",
+                },
+              }),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("button", { staticClass: "add_msg", attrs: { type: "submit" } }, [
+            _c("i", { staticClass: "uil uil-message" }),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/courses/detail.vue?vue&type=template&id=20b23cda&":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/courses/detail.vue?vue&type=template&id=20b23cda& ***!
+  \**************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("span", [
+    _c("div", { staticClass: "_215b01" }, [
+      _c("div", { staticClass: "container-fluid" }, [
         _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-12" }, [
-            _c("div", { staticClass: "all_msg_bg" }, [
-              _c("div", { staticClass: "row no-gutters" }, [
-                _c("div", { staticClass: "col-xl-4 col-lg-5 col-md-12" }, [
-                  _c("div", { staticClass: "msg_search" }, [
-                    _c("div", { staticClass: "ui search focus" }, [
-                      _c(
-                        "div",
-                        { staticClass: "ui left icon input swdh11 swdh15" },
-                        [
-                          _c("input", {
-                            staticClass: "prompt srch_explore",
-                            attrs: {
-                              type: "text",
-                              placeholder: "Search Messages...",
-                            },
-                          }),
+          _c("div", { staticClass: "col-lg-12" }, [
+            _c("div", { staticClass: "section3125" }, [
+              _c("div", { staticClass: "row justify-content-center" }, [
+                _c("div", { staticClass: "col-xl-4 col-lg-5 col-md-6" }, [
+                  _c("div", { staticClass: "preview_video" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "fcrse_img",
+                        attrs: {
+                          href: "#",
+                          "data-toggle": "modal",
+                          "data-target": "#videoModal",
+                        },
+                      },
+                      [
+                        _c("img", {
+                          attrs: {
+                            src: _vm.globalBaseUrl + "images/courses/img-2.jpg",
+                            alt: "",
+                          },
+                        }),
+                        _vm._v(" "),
+                        _vm._m(0),
+                      ]
+                    ),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _vm._m(1),
+              ]),
+            ]),
+          ]),
+        ]),
+      ]),
+    ]),
+    _vm._v(" "),
+    _vm._m(2),
+    _vm._v(" "),
+    _c("div", { staticClass: "_215b17" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-lg-12" }, [
+            _c("div", { staticClass: "course_tab_content" }, [
+              _c(
+                "div",
+                { staticClass: "tab-content", attrs: { id: "nav-tabContent" } },
+                [
+                  _vm._m(3),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "tab-pane fade",
+                      attrs: { id: "nav-reviews", role: "tabpanel" },
+                    },
+                    [
+                      _c("div", { staticClass: "student_reviews" }, [
+                        _c("div", { staticClass: "row" }, [
+                          _vm._m(4),
                           _vm._v(" "),
-                          _c("i", {
-                            staticClass: "uil uil-search-alt icon icon8",
-                          }),
-                        ]
-                      ),
+                          _c("div", { staticClass: "col-lg-7" }, [
+                            _vm._m(5),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "review_all120" }, [
+                              _c("div", { staticClass: "review_item" }, [
+                                _c("div", { staticClass: "review_usr_dt" }, [
+                                  _c("img", {
+                                    attrs: {
+                                      src:
+                                        _vm.globalBaseUrl +
+                                        "images/left-imgs/img-1.jpg",
+                                      alt: "",
+                                    },
+                                  }),
+                                  _vm._v(" "),
+                                  _vm._m(6),
+                                ]),
+                                _vm._v(" "),
+                                _vm._m(7),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "rvds10" }, [
+                                  _vm._v(
+                                    "\n                                                        Nam gravida elit a\n                                                        velit rutrum, eget\n                                                        dapibus ex\n                                                        elementum. Interdum\n                                                        et malesuada fames\n                                                        ac ante ipsum primis\n                                                        in faucibus. Fusce\n                                                        lacinia, nunc sit\n                                                        amet tincidunt\n                                                        venenatis.\n                                                    "
+                                  ),
+                                ]),
+                                _vm._v(" "),
+                                _vm._m(8),
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "review_item" }, [
+                                _c("div", { staticClass: "review_usr_dt" }, [
+                                  _c("img", {
+                                    attrs: {
+                                      src:
+                                        _vm.globalBaseUrl +
+                                        "images/left-imgs/img-1.jpg",
+                                      alt: "",
+                                    },
+                                  }),
+                                  _vm._v(" "),
+                                  _vm._m(9),
+                                ]),
+                                _vm._v(" "),
+                                _vm._m(10),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "rvds10" }, [
+                                  _vm._v(
+                                    "\n                                                        Nam gravida elit a\n                                                        velit rutrum, eget\n                                                        dapibus ex\n                                                        elementum. Interdum\n                                                        et malesuada fames\n                                                        ac ante ipsum primis\n                                                        in faucibus. Fusce\n                                                        lacinia, nunc sit\n                                                        amet tincidunt\n                                                        venenatis.\n                                                    "
+                                  ),
+                                ]),
+                                _vm._v(" "),
+                                _vm._m(11),
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "review_item" }, [
+                                _c("div", { staticClass: "review_usr_dt" }, [
+                                  _c("img", {
+                                    attrs: {
+                                      src:
+                                        _vm.globalBaseUrl +
+                                        "images/left-imgs/img-1.jpg",
+                                      alt: "",
+                                    },
+                                  }),
+                                  _vm._v(" "),
+                                  _vm._m(12),
+                                ]),
+                                _vm._v(" "),
+                                _vm._m(13),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "rvds10" }, [
+                                  _vm._v(
+                                    "\n                                                        Nam gravida elit a\n                                                        velit rutrum, eget\n                                                        dapibus ex\n                                                        elementum. Interdum\n                                                        et malesuada fames\n                                                        ac ante ipsum primis\n                                                        in faucibus. Fusce\n                                                        lacinia, nunc sit\n                                                        amet tincidunt\n                                                        venenatis.\n                                                    "
+                                  ),
+                                ]),
+                                _vm._v(" "),
+                                _vm._m(14),
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "review_item" }, [
+                                _c("div", { staticClass: "review_usr_dt" }, [
+                                  _c("img", {
+                                    attrs: {
+                                      src:
+                                        _vm.globalBaseUrl +
+                                        "images/left-imgs/img-1.jpg",
+                                      alt: "",
+                                    },
+                                  }),
+                                  _vm._v(" "),
+                                  _vm._m(15),
+                                ]),
+                                _vm._v(" "),
+                                _vm._m(16),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "rvds10" }, [
+                                  _vm._v(
+                                    "\n                                                        Nam gravida elit a\n                                                        velit rutrum, eget\n                                                        dapibus ex\n                                                        elementum. Interdum\n                                                        et malesuada fames\n                                                        ac ante ipsum primis\n                                                        in faucibus. Fusce\n                                                        lacinia, nunc sit\n                                                        amet tincidunt\n                                                        venenatis.\n                                                    "
+                                  ),
+                                ]),
+                                _vm._v(" "),
+                                _vm._m(17),
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "review_item" }, [
+                                _c("div", { staticClass: "review_usr_dt" }, [
+                                  _c("img", {
+                                    attrs: {
+                                      src:
+                                        _vm.globalBaseUrl +
+                                        "images/left-imgs/img-1.jpg",
+                                      alt: "",
+                                    },
+                                  }),
+                                  _vm._v(" "),
+                                  _vm._m(18),
+                                ]),
+                                _vm._v(" "),
+                                _vm._m(19),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "rvds10" }, [
+                                  _vm._v(
+                                    "\n                                                        Nam gravida elit a\n                                                        velit rutrum, eget\n                                                        dapibus ex\n                                                        elementum. Interdum\n                                                        et malesuada fames\n                                                        ac ante ipsum primis\n                                                        in faucibus. Fusce\n                                                        lacinia, nunc sit\n                                                        amet tincidunt\n                                                        venenatis.\n                                                    "
+                                  ),
+                                ]),
+                                _vm._v(" "),
+                                _vm._m(20),
+                              ]),
+                              _vm._v(" "),
+                              _vm._m(21),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _vm._m(22),
+                ]
+              ),
+            ]),
+          ]),
+        ]),
+      ]),
+    ]),
+  ])
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "course-overlay" }, [
+      _c("div", { staticClass: "badge_seller" }, [
+        _vm._v(
+          "\n                                                Bestseller\n                                            "
+        ),
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "play_btn1" }, [
+        _c("i", { staticClass: "uil uil-play" }),
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "_215b02" }, [_vm._v("Preview this course")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-xl-8 col-lg-7 col-md-6" }, [
+      _c("div", { staticClass: "_215b03" }, [
+        _c("h2", [_vm._v("The Web Developer Bootcamp")]),
+        _vm._v(" "),
+        _c("span", { staticClass: "_215b04" }, [
+          _vm._v(
+            "The only course you need to learn\n                                        web development - HTML, CSS, JS,\n                                        Node, and More!"
+          ),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "_215b05" }, [
+        _c("div", { staticClass: "crse_reviews mr-2" }, [
+          _c("i", { staticClass: "uil uil-star" }),
+          _vm._v("4.5\n                                    "),
+        ]),
+        _vm._v(
+          "\n                                    (81,665 ratings)\n                                "
+        ),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "_215b05" }, [
+        _vm._v(
+          "\n                                    114,521 students enrolled\n                                "
+        ),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "_215b06" }, [
+        _c("div", { staticClass: "_215b07" }, [
+          _c("span", [_c("i", { staticClass: "uil uil-comment" })]),
+          _vm._v(
+            "\n                                        English\n                                    "
+          ),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "_215b05" }, [
+        _vm._v(
+          "\n                                    Last updated 1/2020\n                                "
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "_215b15 _byt1458" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-lg-12" }, [
+            _c("div", { staticClass: "user_dt5" }, [
+              _c("div", { staticClass: "user_dt_right" }, [
+                _c("ul", [
+                  _c("li", [
+                    _c("a", { staticClass: "lkcm152", attrs: { href: "#" } }, [
+                      _c("i", { staticClass: "uil uil-eye" }),
+                      _c("span", [_vm._v("1452")]),
                     ]),
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "simplebar-content-wrapper" }, [
-                    _c("div", { staticClass: "group_messages" }, [
-                      _c("div", { staticClass: "chat__message__dt active" }, [
-                        _c("div", { staticClass: "user-status" }, [
-                          _c("div", { staticClass: "user-avatar" }, [
-                            _c("img", {
-                              attrs: {
-                                src: "images/left-imgs/img-1.jpg",
-                                alt: "",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "msg__badge" }, [
-                              _vm._v("2"),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "user-status-title" }, [
-                            _c("span", { staticClass: "bold" }, [
-                              _vm._v("John Doe"),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "user-status-text" }, [
-                            _vm._v(
-                              "\n                            Hi! Sir, How are you. I ask you one thing please\n                            explain it this video price.\n                          "
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "user-status-time floaty" }, [
-                            _vm._v("7 hours ago"),
-                          ]),
+                  _c("li", [
+                    _c("a", { staticClass: "lkcm152", attrs: { href: "#" } }, [
+                      _c("i", { staticClass: "uil uil-thumbs-up" }),
+                      _c("span", [_vm._v("100")]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { staticClass: "lkcm152", attrs: { href: "#" } }, [
+                      _c("i", { staticClass: "uil uil-thumbs-down" }),
+                      _c("span", [_vm._v("20")]),
+                    ]),
+                  ]),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "course_tabs" }, [
+              _c("nav", [
+                _c(
+                  "div",
+                  {
+                    staticClass: "nav nav-tabs tab_crse justify-content-center",
+                    attrs: { id: "nav-tab", role: "tablist" },
+                  },
+                  [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "nav-item nav-link active",
+                        attrs: {
+                          id: "nav-about-tab",
+                          "data-toggle": "tab",
+                          href: "#nav-about",
+                          role: "tab",
+                          "aria-selected": "true",
+                        },
+                      },
+                      [_vm._v("About")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "nav-item nav-link",
+                        attrs: {
+                          id: "nav-reviews-tab",
+                          "data-toggle": "tab",
+                          href: "#nav-reviews",
+                          role: "tab",
+                          "aria-selected": "false",
+                        },
+                      },
+                      [_vm._v("Reviews")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "nav-item nav-link",
+                        attrs: {
+                          id: "nav-reviews-tab",
+                          "data-toggle": "tab",
+                          href: "#nav-leaderboard",
+                          role: "tab",
+                          "aria-selected": "false",
+                        },
+                      },
+                      [_vm._v("Leaderboard")]
+                    ),
+                  ]
+                ),
+              ]),
+            ]),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "tab-pane fade show active",
+        attrs: { id: "nav-about", role: "tabpanel" },
+      },
+      [
+        _c("div", { staticClass: "_htg451" }, [
+          _c("div", { staticClass: "_htg452" }, [
+            _c("h3", [_vm._v("Requirements")]),
+            _vm._v(" "),
+            _c("ul", [
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _vm._v(
+                    "Have a computer with\n                                                    Internet"
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _vm._v(
+                    "Be ready to learn an\n                                                    insane amount of awesome\n                                                    stuff"
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _vm._v(
+                    "Prepare to build real\n                                                    web apps!"
+                  ),
+                ]),
+              ]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "_htg452 mt-35" }, [
+            _c("h3", [_vm._v("Description")]),
+            _vm._v(" "),
+            _c("span", { staticClass: "_abc123" }, [
+              _vm._v(
+                "Just updated to include\n                                            Bootstrap 4.1.3!"
+              ),
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "\n                                            Hi! Welcome to the Web Developer\n                                            Bootcamp, the\n                                            "
+              ),
+              _c("strong", [
+                _vm._v(
+                  "only course you need to\n                                                learn web\n                                                development"
+                ),
+              ]),
+              _vm._v(
+                ". There are a lot of options\n                                            for online developer training,\n                                            but this course is without a\n                                            doubt the most comprehensive and\n                                            effective on the market. Here's\n                                            why:\n                                        "
+              ),
+            ]),
+            _vm._v(" "),
+            _c("ul", { staticClass: "_abc124" }, [
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _vm._v(
+                    "This is the only online\n                                                    course taught by a\n                                                    professional bootcamp\n                                                    instructor."
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _vm._v(
+                    "94% of my in-person\n                                                    bootcamp students go on\n                                                    to get full-time\n                                                    developer jobs. Most of\n                                                    them are complete\n                                                    beginners when I start\n                                                    working with them."
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _vm._v(
+                    "The previous 2 bootcamp\n                                                    programs that I taught\n                                                    cost $14,000 and\n                                                    $21,000. This course is\n                                                    just as comprehensive\n                                                    but with brand new\n                                                    content for a fraction\n                                                    of the price."
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _vm._v(
+                    "Everything I cover is\n                                                    up-to-date and relevant\n                                                    to today's developer\n                                                    industry. No PHP or\n                                                    other dated\n                                                    technologies. This\n                                                    course does not cut any\n                                                    corners."
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _vm._v(
+                    "This is the only\n                                                    complete beginner\n                                                    full-stack developer\n                                                    course that covers\n                                                    NodeJS."
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _vm._v(
+                    "We build 13+ projects,\n                                                    including a gigantic\n                                                    production application\n                                                    called YelpCamp. No\n                                                    other course walks you\n                                                    through the creation of\n                                                    such a substantial\n                                                    application."
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _vm._v(
+                    "The course is\n                                                    constantly updated with\n                                                    new content, projects,\n                                                    and modules. Think of it\n                                                    as a subscription to a\n                                                    never-ending supply of\n                                                    developer\n                                                    training."
+                  ),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                '\n                                            When you\'re learning to program\n                                            you often have to sacrifice\n                                            learning the exciting and\n                                            current technologies in favor of\n                                            the "beginner friendly" classes.\n                                            With this course, you get the\n                                            best of both worlds. This is a\n                                            course designed for the complete\n                                            beginner, yet it covers some of\n                                            the most exciting and relevant\n                                            topics in the industry.\n                                        '
+              ),
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "\n                                            Throughout the course we cover\n                                            tons of tools and technologies\n                                            including:\n                                        "
+              ),
+            ]),
+            _vm._v(" "),
+            _c("ul", { staticClass: "_abc124" }, [
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _c("strong", [_vm._v("HTML5")]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _c("strong", [_vm._v("CSS3")]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _c("strong", [_vm._v("JavaScript")]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _c("strong", [_vm._v("Bootstrap 4")]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _c("strong", [_vm._v("SemanticUI")]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _c("strong", [
+                    _vm._v(
+                      "DOM\n                                                        Manipulation"
+                    ),
+                  ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _c("strong", [_vm._v("jQuery")]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _c("strong", [
+                    _vm._v(
+                      "Unix(Command Line)\n                                                        Commands"
+                    ),
+                  ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _c("strong", [_vm._v("NodeJS")]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _c("strong", [_vm._v("NPM")]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _c("strong", [_vm._v("ExpressJS")]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _c("strong", [_vm._v("REST")]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _c("strong", [_vm._v("MongoDB")]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _c("strong", [
+                    _vm._v(
+                      "Database\n                                                        Associations"
+                    ),
+                  ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _c("strong", [_vm._v("Authentication")]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _c("strong", [_vm._v("PassportJS")]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _c("strong", [_vm._v("Authorization")]),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                '\n                                            This course is also unique in\n                                            the way that it is structured\n                                            and presented. Many online\n                                            courses are just a long series\n                                            of "watch as I code" videos.\n                                            This course is different. I\'ve\n                                            incorporated everything I\n                                            learned in my years of teaching\n                                            to make this course not only\n                                            more effective but more\n                                            engaging. The course includes:\n                                        '
+              ),
+            ]),
+            _vm._v(" "),
+            _c("ul", { staticClass: "_abc124" }, [
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [_vm._v("Lectures")]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [_vm._v("Code-Alongs")]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [_vm._v("Projects")]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [_vm._v("Exercises")]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _vm._v(
+                    "Research\n                                                    Assignments"
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [_vm._v("Slides")]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [_vm._v("Downloads")]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [_vm._v("Readings")]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "\n                                            If you have any questions,\n                                            please don't hesitate to contact\n                                            me. I got into this industry\n                                            because I love working with\n                                            people and helping students\n                                            learn. Sign up today and see how\n                                            fun, exciting, and rewarding web\n                                            development can be!\n                                        "
+              ),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "_htg452 mt-35" }, [
+            _c("h3", [_vm._v("Who this course is for :")]),
+            _vm._v(" "),
+            _c("ul", { staticClass: "_abc124" }, [
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _vm._v(
+                    "This course is for\n                                                    anyone who wants to\n                                                    learn about web\n                                                    development, regardless\n                                                    of previous\n                                                    experience"
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _vm._v(
+                    "It's perfect for\n                                                    complete beginners with\n                                                    zero experience"
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _vm._v(
+                    "It's also great for\n                                                    anyone who does have\n                                                    some experience in a few\n                                                    of the technologies(like\n                                                    HTML and CSS) but not\n                                                    all"
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "_5f7g11" }, [
+                  _vm._v(
+                    "If you want to take ONE\n                                                    COURSE to learn\n                                                    everything you need to\n                                                    know about web\n                                                    development, take this\n                                                    course"
+                  ),
+                ]),
+              ]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "_htgdrt mt-35" }, [
+            _c("h3", [_vm._v("What you'll learn")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "_scd123" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-lg-6" }, [
+                  _c("ul", { staticClass: "_htg452 _abcd145" }, [
+                    _c("li", [
+                      _c("div", { staticClass: "_5f7g15" }, [
+                        _c("i", { staticClass: "fas fa-check-circle" }),
+                        _c("span", [
+                          _vm._v(
+                            "Lorem\n                                                                    ipsum\n                                                                    dolor\n                                                                    sit\n                                                                    amet,\n                                                                    consectetur\n                                                                    adipiscing\n                                                                    elit."
+                          ),
                         ]),
                       ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "chat__message__dt" }, [
-                        _c("div", { staticClass: "user-status" }, [
-                          _c("div", { staticClass: "user-avatar" }, [
-                            _c("img", {
-                              attrs: {
-                                src: "images/left-imgs/img-2.jpg",
-                                alt: "",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "msg__badge" }, [
-                              _vm._v("3"),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "user-status-title" }, [
-                            _c("span", { staticClass: "bold" }, [
-                              _vm._v("Kerstin Cable"),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "user-status-text" }, [
-                            _vm._v(
-                              "\n                            Hello, I paid you video tutorial but did not play\n                            error 404.\n                          "
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "user-status-time floaty" }, [
-                            _vm._v("8 hours ago"),
-                          ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("div", { staticClass: "_5f7g15" }, [
+                        _c("i", { staticClass: "fas fa-check-circle" }),
+                        _c("span", [
+                          _vm._v(
+                            "Donec\n                                                                    ultricies\n                                                                    elit\n                                                                    porttitor,\n                                                                    ultrices\n                                                                    enim a,\n                                                                    commodo\n                                                                    dolor."
+                          ),
                         ]),
                       ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "chat__message__dt" }, [
-                        _c("div", { staticClass: "user-status" }, [
-                          _c("div", { staticClass: "user-avatar" }, [
-                            _c("img", {
-                              attrs: {
-                                src: "images/left-imgs/img-3.jpg",
-                                alt: "",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "msg__badge" }, [
-                              _vm._v("1"),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "user-status-title" }, [
-                            _c("span", { staticClass: "bold" }, [
-                              _vm._v("Jose Portilla"),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "user-status-text" }, [
-                            _vm._v(
-                              "\n                            Thanks Sir, Such a nice video.\n                          "
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "user-status-time floaty" }, [
-                            _vm._v("15 hours ago"),
-                          ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("div", { staticClass: "_5f7g15" }, [
+                        _c("i", { staticClass: "fas fa-check-circle" }),
+                        _c("span", [
+                          _vm._v(
+                            "Nunc\n                                                                    dapibus\n                                                                    ligula\n                                                                    sed\n                                                                    justo\n                                                                    porta,\n                                                                    id\n                                                                    volutpat\n                                                                    odio\n                                                                    iaculis."
+                          ),
                         ]),
                       ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "chat__message__dt" }, [
-                        _c("div", { staticClass: "user-status" }, [
-                          _c("div", { staticClass: "user-avatar" }, [
-                            _c("img", {
-                              attrs: {
-                                src: "images/left-imgs/img-4.jpg",
-                                alt: "",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "msg__badge" }, [
-                              _vm._v("7"),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "user-status-title" }, [
-                            _c("span", { staticClass: "bold" }, [
-                              _vm._v("Farhat Amin"),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "user-status-text" }, [
-                            _vm._v(
-                              "\n                            Hi! Sir, this is a purchase key CFKX12536ERUJSKLL\n                          "
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "user-status-time floaty" }, [
-                            _vm._v("22 hours ago"),
-                          ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("div", { staticClass: "_5f7g15" }, [
+                        _c("i", { staticClass: "fas fa-check-circle" }),
+                        _c("span", [
+                          _vm._v(
+                            "Maecenas\n                                                                    pharetra\n                                                                    mi quis\n                                                                    nisl\n                                                                    mollis,\n                                                                    molestie\n                                                                    imperdiet\n                                                                    lorem\n                                                                    molestie."
+                          ),
                         ]),
                       ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "chat__message__dt" }, [
-                        _c("div", { staticClass: "user-status" }, [
-                          _c("div", { staticClass: "user-avatar" }, [
-                            _c("img", {
-                              attrs: {
-                                src: "images/left-imgs/img-5.jpg",
-                                alt: "",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "msg__badge" }, [
-                              _vm._v("12"),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "user-status-title" }, [
-                            _c("span", { staticClass: "bold" }, [
-                              _vm._v("Kyle Pew"),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "user-status-text" }, [
-                            _vm._v(
-                              "\n                            Pls! Upload .NET Course\n                          "
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "user-status-time floaty" }, [
-                            _vm._v("2 days ago"),
-                          ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("div", { staticClass: "_5f7g15" }, [
+                        _c("i", { staticClass: "fas fa-check-circle" }),
+                        _c("span", [
+                          _vm._v(
+                            "Maecenas\n                                                                    ultricies\n                                                                    felis in\n                                                                    pulvinar\n                                                                    blandit."
+                          ),
                         ]),
                       ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "chat__message__dt" }, [
-                        _c("div", { staticClass: "user-status" }, [
-                          _c("div", { staticClass: "user-avatar" }, [
-                            _c("img", {
-                              attrs: {
-                                src: "images/left-imgs/img-6.jpg",
-                                alt: "",
-                              },
-                            }),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "user-status-title" }, [
-                            _c("span", { staticClass: "bold" }, [
-                              _vm._v("Eli Natoli"),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "user-status-text" }, [
-                            _vm._v(
-                              "\n                            Hi Sir thank you very very much for bootstrap full\n                            course.\n                          "
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "user-status-time floaty" }, [
-                            _vm._v("5 days ago"),
-                          ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("div", { staticClass: "_5f7g15" }, [
+                        _c("i", { staticClass: "fas fa-check-circle" }),
+                        _c("span", [
+                          _vm._v(
+                            "Praesent\n                                                                    ac\n                                                                    libero\n                                                                    consequat,\n                                                                    efficitur\n                                                                    tortor\n                                                                    et,\n                                                                    interdum\n                                                                    sem."
+                          ),
                         ]),
                       ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "chat__message__dt" }, [
-                        _c("div", { staticClass: "user-status" }, [
-                          _c("div", { staticClass: "user-avatar" }, [
-                            _c("img", {
-                              attrs: {
-                                src: "images/left-imgs/img-7.jpg",
-                                alt: "",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "msg__badge" }, [
-                              _vm._v("6"),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "user-status-title" }, [
-                            _c("span", { staticClass: "bold" }, [
-                              _vm._v("Jaysen Batchelor"),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "user-status-text" }, [
-                            _vm._v("Thank you! Sir"),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "user-status-time floaty" }, [
-                            _vm._v("7 days ago"),
-                          ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("div", { staticClass: "_5f7g15" }, [
+                        _c("i", { staticClass: "fas fa-check-circle" }),
+                        _c("span", [
+                          _vm._v(
+                            "Nullam\n                                                                    non\n                                                                    lacus\n                                                                    nibh.\n                                                                    Etiam et\n                                                                    fringilla\n                                                                    neque,\n                                                                    ut\n                                                                    vulputate\n                                                                    sapien.\n                                                                    Sed\n                                                                    vitae\n                                                                    tortor\n                                                                    gravida,\n                                                                    interdum\n                                                                    felis\n                                                                    at,\n                                                                    pulvinar\n                                                                    enim.\n                                                                    Integer\n                                                                    tempor\n                                                                    urna\n                                                                    leo."
+                          ),
                         ]),
                       ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "chat__message__dt" }, [
-                        _c("div", { staticClass: "user-status" }, [
-                          _c("div", { staticClass: "user-avatar" }, [
-                            _c("img", {
-                              attrs: {
-                                src: "images/left-imgs/img-8.jpg",
-                                alt: "",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "msg__badge" }, [
-                              _vm._v("1"),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "user-status-title" }, [
-                            _c("span", { staticClass: "bold" }, [
-                              _vm._v("Quinton Batchelor"),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "user-status-text" }, [
-                            _vm._v("Hey!"),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "user-status-time floaty" }, [
-                            _vm._v("13 days ago"),
-                          ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("div", { staticClass: "_5f7g15" }, [
+                        _c("i", { staticClass: "fas fa-check-circle" }),
+                        _c("span", [
+                          _vm._v(
+                            "Phasellus\n                                                                    ultrices\n                                                                    tellus\n                                                                    sed\n                                                                    volutpat\n                                                                    vestibulum.\n                                                                    Curabitur\n                                                                    aliquet\n                                                                    dictum\n                                                                    leo non\n                                                                    congue."
+                          ),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("div", { staticClass: "_5f7g15" }, [
+                        _c("i", { staticClass: "fas fa-check-circle" }),
+                        _c("span", [
+                          _vm._v(
+                            "In hac\n                                                                    habitasse\n                                                                    platea\n                                                                    dictumst.\n                                                                    Aenean\n                                                                    vel\n                                                                    fermentum\n                                                                    neque."
+                          ),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("div", { staticClass: "_5f7g15" }, [
+                        _c("i", { staticClass: "fas fa-check-circle" }),
+                        _c("span", [
+                          _vm._v(
+                            "Suspendisse\n                                                                    semper\n                                                                    feugiat\n                                                                    urna\n                                                                    dictum\n                                                                    interdum."
+                          ),
                         ]),
                       ]),
                     ]),
                   ]),
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-xl-8 col-lg-7 col-md-12" }, [
-                  _c("div", { staticClass: "chatbox_right" }, [
-                    _c("div", { staticClass: "chat_header" }, [
-                      _c("div", { staticClass: "user-status" }, [
-                        _c("div", { staticClass: "user-avatar" }, [
-                          _c("img", {
-                            attrs: {
-                              src: "images/left-imgs/img-1.jpg",
-                              alt: "",
-                            },
-                          }),
+                _c("div", { staticClass: "col-lg-6" }, [
+                  _c("ul", { staticClass: "_htg452 _abcd145" }, [
+                    _c("li", [
+                      _c("div", { staticClass: "_5f7g15" }, [
+                        _c("i", { staticClass: "fas fa-check-circle" }),
+                        _c("span", [
+                          _vm._v(
+                            "Nullam\n                                                                    non\n                                                                    lacus\n                                                                    nibh.\n                                                                    Etiam et\n                                                                    fringilla\n                                                                    neque,\n                                                                    ut\n                                                                    vulputate\n                                                                    sapien.\n                                                                    Sed\n                                                                    vitae\n                                                                    tortor\n                                                                    gravida,\n                                                                    interdum\n                                                                    felis\n                                                                    at,\n                                                                    pulvinar\n                                                                    enim.\n                                                                    Integer\n                                                                    tempor\n                                                                    urna\n                                                                    leo."
+                          ),
                         ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "user-status-title" }, [
-                          _c("span", { staticClass: "bold" }, [
-                            _vm._v("John Doe"),
-                          ]),
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "user-status-tag online" }, [
-                          _vm._v("Online"),
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "user-status-time floaty eps_dots eps_dots5 more_dropdown",
-                          },
-                          [
-                            _c("a", { attrs: { href: "#" } }, [
-                              _c("i", { staticClass: "uil uil-ellipsis-h" }),
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "dropdown-content" }, [
-                              _c("span", [
-                                _c("i", { staticClass: "uil uil-trash-alt" }),
-                                _vm._v("Delete"),
-                              ]),
-                              _vm._v(" "),
-                              _c("span", [
-                                _c("i", { staticClass: "uil uil-ban" }),
-                                _vm._v("Block"),
-                              ]),
-                              _vm._v(" "),
-                              _c("span", [
-                                _c("i", { staticClass: "uil uil-windsock" }),
-                                _vm._v("Report"),
-                              ]),
-                              _vm._v(" "),
-                              _c("span", [
-                                _c("i", { staticClass: "uil uil-volume-mute" }),
-                                _vm._v("Mute"),
-                              ]),
-                            ]),
-                          ]
-                        ),
                       ]),
                     ]),
                     _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "messages-line simplebar-content-wrapper2 scrollstyle_4",
-                      },
-                      [
-                        _c("div", { staticClass: "mCustomScrollbar" }, [
-                          _c(
-                            "div",
-                            { staticClass: "main-message-box ta-right" },
-                            [
-                              _c("div", { staticClass: "message-dt" }, [
-                                _c("div", { staticClass: "message-inner-dt" }, [
-                                  _c("p", [
-                                    _vm._v(
-                                      "\n                                Lorem ipsum dolor sit amet, consectetur\n                                adipiscing elit. Donec rutrum congue leo eget\n                                malesuada. Vivamus suscipit tortor eget felis\n                                porttitor.\n                              "
-                                    ),
-                                  ]),
-                                ]),
-                                _vm._v(" "),
-                                _c("span", [_vm._v("Sat, April 10, 1:08 PM")]),
-                              ]),
-                            ]
+                    _c("li", [
+                      _c("div", { staticClass: "_5f7g15" }, [
+                        _c("i", { staticClass: "fas fa-check-circle" }),
+                        _c("span", [
+                          _vm._v(
+                            "Phasellus\n                                                                    ultrices\n                                                                    tellus\n                                                                    sed\n                                                                    volutpat\n                                                                    vestibulum.\n                                                                    Curabitur\n                                                                    aliquet\n                                                                    dictum\n                                                                    leo non\n                                                                    congue."
                           ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "main-message-box st3" }, [
-                            _c("div", { staticClass: "message-dt st3" }, [
-                              _c("div", { staticClass: "message-inner-dt" }, [
-                                _c("p", [_vm._v("Cras ultricies ligula.")]),
-                              ]),
-                              _vm._v(" "),
-                              _c("span", [_vm._v("5 minutes ago")]),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "main-message-box ta-right" },
-                            [
-                              _c("div", { staticClass: "message-dt" }, [
-                                _c("div", { staticClass: "message-inner-dt" }, [
-                                  _c("p", [
-                                    _vm._v(
-                                      "\n                                Lorem ipsum dolor sit amet, consectetur\n                                adipiscing elit. Donec rutrum congue leo eget\n                                malesuada. Vivamus suscipit tortor eget felis\n                                porttitor.\n                              "
-                                    ),
-                                  ]),
-                                ]),
-                                _vm._v(" "),
-                                _c("span", [_vm._v("Sat, April 10, 1:08 PM")]),
-                              ]),
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "main-message-box st3" }, [
-                            _c("div", { staticClass: "message-dt st3" }, [
-                              _c("div", { staticClass: "message-inner-dt" }, [
-                                _c("p", [_vm._v("Lorem ipsum dolor sit amet")]),
-                              ]),
-                              _vm._v(" "),
-                              _c("span", [_vm._v("2 minutes ago")]),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "main-message-box ta-right" },
-                            [
-                              _c("div", { staticClass: "message-dt" }, [
-                                _c("div", { staticClass: "message-inner-dt" }, [
-                                  _c("p", [
-                                    _vm._v(
-                                      "\n                                Lorem ipsum dolor sit amet, consectetur\n                                adipiscing elit. Donec rutrum congue leo eget\n                                malesuada. Vivamus suscipit tortor eget felis\n                                porttitor.\n                              "
-                                    ),
-                                  ]),
-                                ]),
-                                _vm._v(" "),
-                                _c("span", [_vm._v("Sat, April 10, 1:08 PM")]),
-                              ]),
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "main-message-box st3" }, [
-                            _c("div", { staticClass: "message-dt st3" }, [
-                              _c("div", { staticClass: "message-inner-dt" }, [
-                                _c("p", [_vm._v("....")]),
-                              ]),
-                              _vm._v(" "),
-                              _c("span", [_vm._v("Typing...")]),
-                            ]),
-                          ]),
                         ]),
-                      ]
-                    ),
+                      ]),
+                    ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "message-send-area" }, [
-                      _c("form", [
-                        _c("div", { staticClass: "mf-field" }, [
-                          _c(
-                            "div",
-                            { staticClass: "ui search focus input__msg" },
-                            [
-                              _c(
-                                "div",
-                                { staticClass: "ui left icon input swdh19" },
-                                [
-                                  _c("input", {
-                                    staticClass: "prompt srch_explore",
-                                    attrs: {
-                                      type: "text",
-                                      id: "chat-widget-message-text-2",
-                                      name: "chat_widget_message_text_2",
-                                      placeholder: "Write a message...",
-                                    },
-                                  }),
-                                ]
-                              ),
-                            ]
+                    _c("li", [
+                      _c("div", { staticClass: "_5f7g15" }, [
+                        _c("i", { staticClass: "fas fa-check-circle" }),
+                        _c("span", [
+                          _vm._v(
+                            "In hac\n                                                                    habitasse\n                                                                    platea\n                                                                    dictumst.\n                                                                    Aenean\n                                                                    vel\n                                                                    fermentum\n                                                                    neque."
                           ),
-                          _vm._v(" "),
-                          _c(
-                            "button",
-                            {
-                              staticClass: "add_msg",
-                              attrs: { type: "submit" },
-                            },
-                            [_c("i", { staticClass: "uil uil-message" })]
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("div", { staticClass: "_5f7g15" }, [
+                        _c("i", { staticClass: "fas fa-check-circle" }),
+                        _c("span", [
+                          _vm._v(
+                            "Suspendisse\n                                                                    semper\n                                                                    feugiat\n                                                                    urna\n                                                                    dictum\n                                                                    interdum."
+                          ),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("div", { staticClass: "_5f7g15" }, [
+                        _c("i", { staticClass: "fas fa-check-circle" }),
+                        _c("span", [
+                          _vm._v(
+                            "Lorem\n                                                                    ipsum\n                                                                    dolor\n                                                                    sit\n                                                                    amet,\n                                                                    consectetur\n                                                                    adipiscing\n                                                                    elit."
+                          ),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("div", { staticClass: "_5f7g15" }, [
+                        _c("i", { staticClass: "fas fa-check-circle" }),
+                        _c("span", [
+                          _vm._v(
+                            "Donec\n                                                                    ultricies\n                                                                    elit\n                                                                    porttitor,\n                                                                    ultrices\n                                                                    enim a,\n                                                                    commodo\n                                                                    dolor."
+                          ),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("div", { staticClass: "_5f7g15" }, [
+                        _c("i", { staticClass: "fas fa-check-circle" }),
+                        _c("span", [
+                          _vm._v(
+                            "Nunc\n                                                                    dapibus\n                                                                    ligula\n                                                                    sed\n                                                                    justo\n                                                                    porta,\n                                                                    id\n                                                                    volutpat\n                                                                    odio\n                                                                    iaculis."
+                          ),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("div", { staticClass: "_5f7g15" }, [
+                        _c("i", { staticClass: "fas fa-check-circle" }),
+                        _c("span", [
+                          _vm._v(
+                            "Maecenas\n                                                                    pharetra\n                                                                    mi quis\n                                                                    nisl\n                                                                    mollis,\n                                                                    molestie\n                                                                    imperdiet\n                                                                    lorem\n                                                                    molestie."
+                          ),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("div", { staticClass: "_5f7g15" }, [
+                        _c("i", { staticClass: "fas fa-check-circle" }),
+                        _c("span", [
+                          _vm._v(
+                            "Maecenas\n                                                                    ultricies\n                                                                    felis in\n                                                                    pulvinar\n                                                                    blandit."
+                          ),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("div", { staticClass: "_5f7g15" }, [
+                        _c("i", { staticClass: "fas fa-check-circle" }),
+                        _c("span", [
+                          _vm._v(
+                            "Praesent\n                                                                    ac\n                                                                    libero\n                                                                    consequat,\n                                                                    efficitur\n                                                                    tortor\n                                                                    et,\n                                                                    interdum\n                                                                    sem."
                           ),
                         ]),
                       ]),
@@ -39266,8 +42917,1323 @@ var staticRenderFns = [
             ]),
           ]),
         ]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-lg-5" }, [
+      _c("div", { staticClass: "reviews_left" }, [
+        _c("h3", [_vm._v("Student Feedback")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "total_rating" }, [
+          _c("div", { staticClass: "_rate001" }, [
+            _vm._v(
+              "\n                                                        4.6\n                                                    "
+            ),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "rating-box" }, [
+            _c("span", { staticClass: "rating-star full-star" }),
+            _vm._v(" "),
+            _c("span", { staticClass: "rating-star full-star" }),
+            _vm._v(" "),
+            _c("span", { staticClass: "rating-star full-star" }),
+            _vm._v(" "),
+            _c("span", { staticClass: "rating-star full-star" }),
+            _vm._v(" "),
+            _c("span", { staticClass: "rating-star half-star" }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "_rate002" }, [
+            _vm._v(
+              "\n                                                        Course Rating\n                                                    "
+            ),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "_rate003" }, [
+          _c("div", { staticClass: "_rate004" }, [
+            _c("div", { staticClass: "progress progress1" }, [
+              _c("div", {
+                staticClass: "progress-bar w-70",
+                attrs: {
+                  role: "progressbar",
+                  "aria-valuenow": "70",
+                  "aria-valuemin": "0",
+                  "aria-valuemax": "100",
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "rating-box" }, [
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star full-star" }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "_rate002" }, [
+              _vm._v(
+                "\n                                                            70%\n                                                        "
+              ),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "_rate004" }, [
+            _c("div", { staticClass: "progress progress1" }, [
+              _c("div", {
+                staticClass: "progress-bar w-30",
+                attrs: {
+                  role: "progressbar",
+                  "aria-valuenow": "30",
+                  "aria-valuemin": "0",
+                  "aria-valuemax": "100",
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "rating-box" }, [
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star empty-star" }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "_rate002" }, [
+              _vm._v(
+                "\n                                                            40%\n                                                        "
+              ),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "_rate004" }, [
+            _c("div", { staticClass: "progress progress1" }, [
+              _c("div", {
+                staticClass: "progress-bar w-5",
+                attrs: {
+                  role: "progressbar",
+                  "aria-valuenow": "10",
+                  "aria-valuemin": "0",
+                  "aria-valuemax": "100",
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "rating-box" }, [
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star empty-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star empty-star" }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "_rate002" }, [
+              _vm._v(
+                "\n                                                            5%\n                                                        "
+              ),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "_rate004" }, [
+            _c("div", { staticClass: "progress progress1" }, [
+              _c("div", {
+                staticClass: "progress-bar w-2",
+                attrs: {
+                  role: "progressbar",
+                  "aria-valuenow": "2",
+                  "aria-valuemin": "0",
+                  "aria-valuemax": "100",
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "rating-box" }, [
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star empty-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star empty-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star empty-star" }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "_rate002" }, [
+              _vm._v(
+                "\n                                                            1%\n                                                        "
+              ),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "_rate004" }, [
+            _c("div", { staticClass: "progress progress1" }, [
+              _c("div", {
+                staticClass: "progress-bar w-1",
+                attrs: {
+                  role: "progressbar",
+                  "aria-valuenow": "0",
+                  "aria-valuemin": "0",
+                  "aria-valuemax": "100",
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "rating-box" }, [
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star empty-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star empty-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star empty-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star empty-star" }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "_rate002" }, [
+              _vm._v(
+                "\n                                                            1%\n                                                        "
+              ),
+            ]),
+          ]),
+        ]),
       ]),
     ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "review_right" }, [
+      _c("div", { staticClass: "review_right_heading" }, [
+        _c("h3", [_vm._v("Reviews")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "review_search" }, [
+          _c("input", {
+            staticClass: "rv_srch",
+            attrs: { type: "text", placeholder: "Search reviews..." },
+          }),
+          _vm._v(" "),
+          _c("button", { staticClass: "rvsrch_btn" }, [
+            _c("i", { staticClass: "uil uil-search" }),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rv1458" }, [
+      _c("h4", { staticClass: "tutor_name1" }, [
+        _vm._v(
+          "\n                                                                John Doe\n                                                            "
+        ),
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "time_145" }, [
+        _vm._v(
+          "2 hour\n                                                                ago"
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rating-box mt-20" }, [
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star half-star" }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rpt100" }, [
+      _c("span", [
+        _vm._v(
+          "Was this review\n                                                            helpful?"
+        ),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "radio--group-inline-container" }, [
+        _c("div", { staticClass: "radio-item" }, [
+          _c("input", {
+            attrs: { id: "radio-1", name: "radio", type: "radio" },
+          }),
+          _vm._v(" "),
+          _c(
+            "label",
+            { staticClass: "radio-label", attrs: { for: "radio-1" } },
+            [_vm._v("Yes")]
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "radio-item" }, [
+          _c("input", {
+            attrs: { id: "radio-2", name: "radio", type: "radio" },
+          }),
+          _vm._v(" "),
+          _c(
+            "label",
+            { staticClass: "radio-label", attrs: { for: "radio-2" } },
+            [_vm._v("No")]
+          ),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "report145", attrs: { href: "#" } }, [
+        _vm._v("Report"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rv1458" }, [
+      _c("h4", { staticClass: "tutor_name1" }, [
+        _vm._v(
+          "\n                                                                Jassica\n                                                                William\n                                                            "
+        ),
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "time_145" }, [
+        _vm._v(
+          "12 hour\n                                                                ago"
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rating-box mt-20" }, [
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star empty-star" }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rpt100" }, [
+      _c("span", [
+        _vm._v(
+          "Was this review\n                                                            helpful?"
+        ),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "radio--group-inline-container" }, [
+        _c("div", { staticClass: "radio-item" }, [
+          _c("input", {
+            attrs: { id: "radio-3", name: "radio1", type: "radio" },
+          }),
+          _vm._v(" "),
+          _c(
+            "label",
+            { staticClass: "radio-label", attrs: { for: "radio-3" } },
+            [_vm._v("Yes")]
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "radio-item" }, [
+          _c("input", {
+            attrs: { id: "radio-4", name: "radio1", type: "radio" },
+          }),
+          _vm._v(" "),
+          _c(
+            "label",
+            { staticClass: "radio-label", attrs: { for: "radio-4" } },
+            [_vm._v("No")]
+          ),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "report145", attrs: { href: "#" } }, [
+        _vm._v("Report"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rv1458" }, [
+      _c("h4", { staticClass: "tutor_name1" }, [
+        _vm._v(
+          "\n                                                                Albert Dua\n                                                            "
+        ),
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "time_145" }, [
+        _vm._v(
+          "5 days\n                                                                ago"
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rating-box mt-20" }, [
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star half-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star empty-star" }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rpt100" }, [
+      _c("span", [
+        _vm._v(
+          "Was this review\n                                                            helpful?"
+        ),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "radio--group-inline-container" }, [
+        _c("div", { staticClass: "radio-item" }, [
+          _c("input", {
+            attrs: { id: "radio-5", name: "radio2", type: "radio" },
+          }),
+          _vm._v(" "),
+          _c(
+            "label",
+            { staticClass: "radio-label", attrs: { for: "radio-5" } },
+            [_vm._v("Yes")]
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "radio-item" }, [
+          _c("input", {
+            attrs: { id: "radio-6", name: "radio2", type: "radio" },
+          }),
+          _vm._v(" "),
+          _c(
+            "label",
+            { staticClass: "radio-label", attrs: { for: "radio-6" } },
+            [_vm._v("No")]
+          ),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "report145", attrs: { href: "#" } }, [
+        _vm._v("Report"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rv1458" }, [
+      _c("h4", { staticClass: "tutor_name1" }, [
+        _vm._v(
+          "\n                                                                Zoena Singh\n                                                            "
+        ),
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "time_145" }, [
+        _vm._v(
+          "15 days\n                                                                ago"
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rating-box mt-20" }, [
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rpt100" }, [
+      _c("span", [
+        _vm._v(
+          "Was this review\n                                                            helpful?"
+        ),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "radio--group-inline-container" }, [
+        _c("div", { staticClass: "radio-item" }, [
+          _c("input", {
+            attrs: { id: "radio-7", name: "radio3", type: "radio" },
+          }),
+          _vm._v(" "),
+          _c(
+            "label",
+            { staticClass: "radio-label", attrs: { for: "radio-7" } },
+            [_vm._v("Yes")]
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "radio-item" }, [
+          _c("input", {
+            attrs: { id: "radio-8", name: "radio3", type: "radio" },
+          }),
+          _vm._v(" "),
+          _c(
+            "label",
+            { staticClass: "radio-label", attrs: { for: "radio-8" } },
+            [_vm._v("No")]
+          ),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "report145", attrs: { href: "#" } }, [
+        _vm._v("Report"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rv1458" }, [
+      _c("h4", { staticClass: "tutor_name1" }, [
+        _vm._v(
+          "\n                                                                Joy Dua\n                                                            "
+        ),
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "time_145" }, [
+        _vm._v(
+          "20 days\n                                                                ago"
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rating-box mt-20" }, [
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star empty-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star empty-star" }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rpt100" }, [
+      _c("span", [
+        _vm._v(
+          "Was this review\n                                                            helpful?"
+        ),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "radio--group-inline-container" }, [
+        _c("div", { staticClass: "radio-item" }, [
+          _c("input", {
+            attrs: { id: "radio-9", name: "radio4", type: "radio" },
+          }),
+          _vm._v(" "),
+          _c(
+            "label",
+            { staticClass: "radio-label", attrs: { for: "radio-9" } },
+            [_vm._v("Yes")]
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "radio-item" }, [
+          _c("input", {
+            attrs: { id: "radio-10", name: "radio4", type: "radio" },
+          }),
+          _vm._v(" "),
+          _c(
+            "label",
+            { staticClass: "radio-label", attrs: { for: "radio-10" } },
+            [_vm._v("No")]
+          ),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "report145", attrs: { href: "#" } }, [
+        _vm._v("Report"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "review_item" }, [
+      _c("a", { staticClass: "more_reviews", attrs: { href: "#" } }, [
+        _vm._v("See More Reviews"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "tab-pane fade",
+        attrs: { id: "nav-leaderboard", role: "tabpanel" },
+      },
+      [
+        _c("div", { staticClass: "l-wrapper" }, [
+          _c("div", { staticClass: "l-grid" }, [
+            _c("div", { staticClass: "l-grid__item l-grid__item--sticky" }, [
+              _c("div", { staticClass: "l-grid__item l-grid__item--sticky" }, [
+                _c(
+                  "div",
+                  { staticClass: "c-card u-bg--light-gradient u-text--dark" },
+                  [
+                    _c("div", { staticClass: "c-card__body" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "u-display--flex u-justify--space-between",
+                        },
+                        [
+                          _c("div", { staticClass: "u-text--left" }, [
+                            _c("div", { staticClass: "u-text--small" }, [
+                              _vm._v(
+                                "\n                                                                    Total Students\n                                                                "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [
+                              _vm._v(
+                                "\n                                                                    100\n                                                                "
+                              ),
+                            ]),
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "u-text--right" }, [
+                            _c("div", { staticClass: "u-text--small" }, [
+                              _vm._v(
+                                "\n                                                                    Average Score\n                                                                "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("h2", [_vm._v("24")]),
+                          ]),
+                        ]
+                      ),
+                    ]),
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "c-card" }, [
+                  _c("div", { staticClass: "c-card__body" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "u-text--center",
+                        attrs: { id: "winner" },
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "u-text-small u-text--medium u-mb--16",
+                          },
+                          [
+                            _vm._v(
+                              "\n                                                                Highest Score\n                                                            "
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("img", {
+                          staticClass: "c-avatar c-avatar--lg",
+                          attrs: {
+                            src: "https://www.formula1.com/content/dam/fom-website/drivers/D/DANRIC01_Daniel_Ricciardo/danric01.png.transform/2col-retina/image.png",
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c("h3", { staticClass: "u-mt--16" }, [
+                          _vm._v(
+                            "\n                                                                Daniel\n                                                                Ricciardo\n                                                            "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "span",
+                          { staticClass: "u-text--teal u-text--small" },
+                          [
+                            _vm._v(
+                              "Daniel\n                                                                Ricciardo"
+                            ),
+                          ]
+                        ),
+                      ]
+                    ),
+                  ]),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "l-grid__item" }, [
+              _c("div", { staticClass: "c-card" }, [
+                _c("div", { staticClass: "c-card__body pt-0" }, [
+                  _c("ul", { staticClass: "c-list", attrs: { id: "list" } }, [
+                    _c("li", { staticClass: "c-list__item" }, [
+                      _c("div", { staticClass: "c-list__grid" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "u-text--left u-text--small u-text--medium",
+                          },
+                          [
+                            _vm._v(
+                              "\n                                                                    Rank\n                                                                "
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "u-text--left u-text--small u-text--medium",
+                          },
+                          [
+                            _vm._v(
+                              "\n                                                                    Students\n                                                                "
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "u-text--right u-text--small u-text--medium",
+                          },
+                          [
+                            _vm._v(
+                              "\n                                                                    Scores\n                                                                "
+                            ),
+                          ]
+                        ),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "c-list__item" }, [
+                      _c("div", { staticClass: "c-list__grid" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "c-flag c-place u-bg--transparent u-text--dark u-bg--yellow",
+                          },
+                          [
+                            _vm._v(
+                              "\n                                                                    1\n                                                                "
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "c-media" }, [
+                          _c("img", {
+                            staticClass: "c-avatar c-media__img",
+                            attrs: {
+                              src: "https://www.formula1.com/content/dam/fom-website/drivers/L/LEWHAM01_Lewis_Hamilton/lewham01.png.transform/2col-retina/image.png",
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "c-media__content" }, [
+                            _c("div", { staticClass: "c-media__title" }, [
+                              _vm._v(
+                                "\n                                                                            Lewis\n                                                                            Hamilton\n                                                                        "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                staticClass: "c-media__link u-text--small",
+                                attrs: {
+                                  href: "https://instagram.com/lewishamilton",
+                                  target: "_blank",
+                                },
+                              },
+                              [_vm._v("@lewishamilton")]
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "u-text--right c-kudos u-text--yellow",
+                          },
+                          [
+                            _c("div", { staticClass: "u-mt--8" }, [
+                              _c("strong", [_vm._v("36")]),
+                              _vm._v(
+                                "\n                                                                        ⭐️\n                                                                    "
+                              ),
+                            ]),
+                          ]
+                        ),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "c-list__item" }, [
+                      _c("div", { staticClass: "c-list__grid" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "c-flag c-place u-bg--transparent u-text--dark u-bg--teal",
+                          },
+                          [
+                            _vm._v(
+                              "\n                                                                    2\n                                                                "
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "c-media" }, [
+                          _c("img", {
+                            staticClass: "c-avatar c-media__img",
+                            attrs: {
+                              src: "https://www.formula1.com/content/dam/fom-website/drivers/K/KIMRAI01_Kimi_R%C3%A4ikk%C3%B6nen/kimrai01.png.transform/2col-retina/image.png",
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "c-media__content" }, [
+                            _c("div", { staticClass: "c-media__title" }, [
+                              _vm._v(
+                                "\n                                                                            Kimi\n                                                                            Raikkonen\n                                                                        "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                staticClass: "c-media__link u-text--small",
+                                attrs: {
+                                  href: "https://instagram.com/kimimatiasraikkonen",
+                                  target: "_blank",
+                                },
+                              },
+                              [_vm._v("@kimimatiasraikkonen")]
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "u-text--right c-kudos u-text--teal" },
+                          [
+                            _c("div", { staticClass: "u-mt--8" }, [
+                              _c("strong", [_vm._v("31")]),
+                              _vm._v(
+                                "\n                                                                        👍\n                                                                    "
+                              ),
+                            ]),
+                          ]
+                        ),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "c-list__item" }, [
+                      _c("div", { staticClass: "c-list__grid" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "c-flag c-place u-bg--transparent u-text--dark u-bg--orange",
+                          },
+                          [
+                            _vm._v(
+                              "\n                                                                    3\n                                                                "
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "c-media" }, [
+                          _c("img", {
+                            staticClass: "c-avatar c-media__img",
+                            attrs: {
+                              src: "https://www.formula1.com/content/dam/fom-website/drivers/S/SEBVET01_Sebastian_Vettel/sebvet01.png.transform/2col-retina/image.png",
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "c-media__content" }, [
+                            _c("div", { staticClass: "c-media__title" }, [
+                              _vm._v(
+                                "\n                                                                            Sebastian\n                                                                            Vettel\n                                                                        "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                staticClass: "c-media__link u-text--small",
+                                attrs: {
+                                  href: "https://instagram.com/vettelofficial",
+                                  target: "_blank",
+                                },
+                              },
+                              [_vm._v("@vettelofficial")]
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "u-text--right c-kudos u-text--orange",
+                          },
+                          [
+                            _c("div", { staticClass: "u-mt--8" }, [
+                              _c("strong", [_vm._v("24")]),
+                              _vm._v(
+                                "\n                                                                        ⭐️\n                                                                    "
+                              ),
+                            ]),
+                          ]
+                        ),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "c-list__item" }, [
+                      _c("div", { staticClass: "c-list__grid" }, [
+                        _c(
+                          "div",
+                          { staticClass: "c-flag c-place u-bg--transparent" },
+                          [
+                            _vm._v(
+                              "\n                                                                    4\n                                                                "
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "c-media" }, [
+                          _c("img", {
+                            staticClass: "c-avatar c-media__img",
+                            attrs: {
+                              src: "https://www.formula1.com/content/dam/fom-website/drivers/M/MAXVER01_Max_Verstappen/maxver01.png.transform/2col-retina/image.png",
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "c-media__content" }, [
+                            _c("div", { staticClass: "c-media__title" }, [
+                              _vm._v(
+                                "\n                                                                            Max\n                                                                            Verstappen\n                                                                        "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                staticClass: "c-media__link u-text--small",
+                                attrs: {
+                                  href: "https://instagram.com/maxverstappen1",
+                                  target: "_blank",
+                                },
+                              },
+                              [_vm._v("@maxverstappen1")]
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "u-text--right c-kudos" }, [
+                          _c("div", { staticClass: "u-mt--8" }, [
+                            _c("strong", [_vm._v("22")]),
+                            _vm._v(
+                              "\n                                                                        💯\n                                                                    "
+                            ),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "c-list__item" }, [
+                      _c("div", { staticClass: "c-list__grid" }, [
+                        _c(
+                          "div",
+                          { staticClass: "c-flag c-place u-bg--transparent" },
+                          [
+                            _vm._v(
+                              "\n                                                                    5\n                                                                "
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "c-media" }, [
+                          _c("img", {
+                            staticClass: "c-avatar c-media__img",
+                            attrs: {
+                              src: "https://www.formula1.com/content/dam/fom-website/drivers/L/LANNOR01_Lando_Norris/lannor01.png.transform/2col-retina/image.png",
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "c-media__content" }, [
+                            _c("div", { staticClass: "c-media__title" }, [
+                              _vm._v(
+                                "\n                                                                            Lando\n                                                                            Norris\n                                                                        "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                staticClass: "c-media__link u-text--small",
+                                attrs: {
+                                  href: "https://instagram.com/landonorris",
+                                  target: "_blank",
+                                },
+                              },
+                              [_vm._v("@landonorris")]
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "u-text--right c-kudos" }, [
+                          _c("div", { staticClass: "u-mt--8" }, [
+                            _c("strong", [_vm._v("18")]),
+                            _vm._v(
+                              "\n                                                                        🔥\n                                                                    "
+                            ),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "c-list__item" }, [
+                      _c("div", { staticClass: "c-list__grid" }, [
+                        _c(
+                          "div",
+                          { staticClass: "c-flag c-place u-bg--transparent" },
+                          [
+                            _vm._v(
+                              "\n                                                                    6\n                                                                "
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "c-media" }, [
+                          _c("img", {
+                            staticClass: "c-avatar c-media__img",
+                            attrs: {
+                              src: "https://www.formula1.com/content/dam/fom-website/drivers/C/CHALEC01_Charles_Leclerc/chalec01.png.transform/2col-retina/image.png",
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "c-media__content" }, [
+                            _c("div", { staticClass: "c-media__title" }, [
+                              _vm._v(
+                                "\n                                                                            Charles\n                                                                            Leclerc\n                                                                        "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                staticClass: "c-media__link u-text--small",
+                                attrs: {
+                                  href: "https://instagram.com/charles_leclerc",
+                                  target: "_blank",
+                                },
+                              },
+                              [_vm._v("@charles_leclerc")]
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "u-text--right c-kudos" }, [
+                          _c("div", { staticClass: "u-mt--8" }, [
+                            _c("strong", [_vm._v("16")]),
+                            _vm._v(
+                              "\n                                                                        🔥\n                                                                    "
+                            ),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "c-list__item" }, [
+                      _c("div", { staticClass: "c-list__grid" }, [
+                        _c(
+                          "div",
+                          { staticClass: "c-flag c-place u-bg--transparent" },
+                          [
+                            _vm._v(
+                              "\n                                                                    7\n                                                                "
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "c-media" }, [
+                          _c("img", {
+                            staticClass: "c-avatar c-media__img",
+                            attrs: {
+                              src: "https://www.formula1.com/content/dam/fom-website/drivers/G/GEORUS01_George_Russell/georus01.png.transform/2col-retina/image.png",
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "c-media__content" }, [
+                            _c("div", { staticClass: "c-media__title" }, [
+                              _vm._v(
+                                "\n                                                                            George\n                                                                            Russell\n                                                                        "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                staticClass: "c-media__link u-text--small",
+                                attrs: {
+                                  href: "https://instagram.com/georgerussell63",
+                                  target: "_blank",
+                                },
+                              },
+                              [_vm._v("@georgerussell63")]
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "u-text--right c-kudos" }, [
+                          _c("div", { staticClass: "u-mt--8" }, [
+                            _c("strong", [_vm._v("10")]),
+                            _vm._v(
+                              "\n                                                                        💯\n                                                                    "
+                            ),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "c-list__item" }, [
+                      _c("div", { staticClass: "c-list__grid" }, [
+                        _c(
+                          "div",
+                          { staticClass: "c-flag c-place u-bg--transparent" },
+                          [
+                            _vm._v(
+                              "\n                                                                    8\n                                                                "
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "c-media" }, [
+                          _c("img", {
+                            staticClass: "c-avatar c-media__img",
+                            attrs: {
+                              src: "https://www.formula1.com/content/dam/fom-website/drivers/D/DANRIC01_Daniel_Ricciardo/danric01.png.transform/2col-retina/image.png",
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "c-media__content" }, [
+                            _c("div", { staticClass: "c-media__title" }, [
+                              _vm._v(
+                                "\n                                                                            Daniel\n                                                                            Ricciardo\n                                                                        "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                staticClass: "c-media__link u-text--small",
+                                attrs: {
+                                  href: "https://instagram.com/danielricciardo",
+                                  target: "_blank",
+                                },
+                              },
+                              [_vm._v("@danielricciardo")]
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "u-text--right c-kudos" }, [
+                          _c("div", { staticClass: "u-mt--8" }, [
+                            _c("strong", [_vm._v("7")]),
+                            _vm._v(
+                              "\n                                                                        💯\n                                                                    "
+                            ),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "c-list__item" }, [
+                      _c("div", { staticClass: "c-list__grid" }, [
+                        _c(
+                          "div",
+                          { staticClass: "c-flag c-place u-bg--transparent" },
+                          [
+                            _vm._v(
+                              "\n                                                                    9\n                                                                "
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "c-media" }, [
+                          _c("img", {
+                            staticClass: "c-avatar c-media__img",
+                            attrs: {
+                              src: "https://www.formula1.com/content/dam/fom-website/drivers/A/ALEALB01_Alexander_Albon/alealb01.png.transform/2col-retina/image.png",
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "c-media__content" }, [
+                            _c("div", { staticClass: "c-media__title" }, [
+                              _vm._v(
+                                "\n                                                                            Alexander\n                                                                            Albon\n                                                                        "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                staticClass: "c-media__link u-text--small",
+                                attrs: {
+                                  href: "https://instagram.com/alex_albon",
+                                  target: "_blank",
+                                },
+                              },
+                              [_vm._v("@alex_albon")]
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "u-text--right c-kudos" }, [
+                          _c("div", { staticClass: "u-mt--8" }, [
+                            _c("strong", [_vm._v("4")]),
+                            _vm._v(
+                              "\n                                                                        🏆\n                                                                    "
+                            ),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "c-list__item" }, [
+                      _c("div", { staticClass: "c-list__grid" }, [
+                        _c(
+                          "div",
+                          { staticClass: "c-flag c-place u-bg--transparent" },
+                          [
+                            _vm._v(
+                              "\n                                                                    10\n                                                                "
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "c-media" }, [
+                          _c("img", {
+                            staticClass: "c-avatar c-media__img",
+                            attrs: {
+                              src: "https://www.formula1.com/content/dam/fom-website/drivers/C/CARSAI01_Carlos_Sainz/carsai01.png.transform/2col-retina/image.png",
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "c-media__content" }, [
+                            _c("div", { staticClass: "c-media__title" }, [
+                              _vm._v(
+                                "\n                                                                            Carlos\n                                                                            Sainz\n                                                                            Jr.\n                                                                        "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                staticClass: "c-media__link u-text--small",
+                                attrs: {
+                                  href: "https://instagram.com/carlossainz55",
+                                  target: "_blank",
+                                },
+                              },
+                              [_vm._v("@carlossainz55")]
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "u-text--right c-kudos" }, [
+                          _c("div", { staticClass: "u-mt--8" }, [
+                            _c("strong", [_vm._v("1")]),
+                            _vm._v(
+                              "\n                                                                        👍\n                                                                    "
+                            ),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                ]),
+              ]),
+            ]),
+          ]),
+        ]),
+      ]
+    )
   },
 ]
 render._withStripped = true
@@ -39292,934 +44258,29 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "sa4d25" }, [
-      _c("div", { staticClass: "container-fluid" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-lg-12" }, [
-            _c("h2", { staticClass: "st_title" }, [
-              _c("i", { staticClass: "uil uil-book-alt" }),
-              _vm._v("Courses\n                "),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-12" }, [
-            _c("div", { staticClass: "card_dash1" }, [
-              _c("div", { staticClass: "card_dash_left1" }, [
-                _c("i", { staticClass: "uil uil-book-alt" }),
-                _vm._v(" "),
-                _c("h1", [_vm._v("Jump Into Interactive Video Creation")]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card_dash_right1" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "create_btn_dash",
-                    attrs: {
-                      onclick:
-                        "window.location.href = 'create_new_course.html';",
+  return _c("div", { staticClass: "sa4d25" }, [
+    _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "row" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("div", { staticClass: "card_dash1" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c("div", { staticClass: "card_dash_right1" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "create_btn_dash",
+                  on: {
+                    click: function ($event) {
+                      return _vm.navigate()
                     },
                   },
-                  [
-                    _vm._v(
-                      "\n                            Create Your Video\n                        "
-                    ),
-                  ]
-                ),
-              ]),
-            ]),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-12" }, [
-            _c("div", { staticClass: "my_courses_tabs" }, [
-              _c(
-                "ul",
-                {
-                  staticClass: "nav nav-pills my_crse_nav",
-                  attrs: { id: "pills-tab", role: "tablist" },
                 },
                 [
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "nav-link active",
-                        attrs: {
-                          id: "pills-my-courses-tab",
-                          "data-toggle": "pill",
-                          href: "#pills-my-courses",
-                          role: "tab",
-                          "aria-controls": "pills-my-courses",
-                          "aria-selected": "true",
-                        },
-                      },
-                      [
-                        _c("i", { staticClass: "uil uil-book-alt" }),
-                        _vm._v("My\n                                Courses"),
-                      ]
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "nav-link",
-                        attrs: {
-                          id: "pills-upcoming-courses-tab",
-                          "data-toggle": "pill",
-                          href: "#pills-upcoming-courses",
-                          role: "tab",
-                          "aria-controls": "pills-upcoming-courses",
-                          "aria-selected": "false",
-                        },
-                      },
-                      [
-                        _c("i", { staticClass: "uil uil-upload-alt" }),
-                        _vm._v(
-                          "Expired\n                                Courses"
-                        ),
-                      ]
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "nav-link",
-                        attrs: {
-                          id: "pills-promotions-tab",
-                          "data-toggle": "pill",
-                          href: "#pills-promotions",
-                          role: "tab",
-                          "aria-controls": "pills-promotions",
-                          "aria-selected": "false",
-                        },
-                      },
-                      [
-                        _c("i", { staticClass: "uil uil-megaphone" }),
-                        _vm._v("Promotions"),
-                      ]
-                    ),
-                  ]),
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "tab-content",
-                  attrs: { id: "pills-tabContent" },
-                },
-                [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "tab-pane fade show active",
-                      attrs: { id: "pills-my-courses", role: "tabpanel" },
-                    },
-                    [
-                      _c("div", { staticClass: "table-responsive mt-30" }, [
-                        _c("table", { staticClass: "table ucp-table" }, [
-                          _c("thead", { staticClass: "thead-s" }, [
-                            _c("tr", [
-                              _c(
-                                "th",
-                                {
-                                  staticClass: "text-center",
-                                  attrs: { scope: "col" },
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                                                Item No.\n                                            "
-                                  ),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("th", [_vm._v("Title")]),
-                              _vm._v(" "),
-                              _c(
-                                "th",
-                                {
-                                  staticClass: "text-center",
-                                  attrs: { scope: "col" },
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                                                Publish Date\n                                            "
-                                  ),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "th",
-                                {
-                                  staticClass: "text-center",
-                                  attrs: { scope: "col" },
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                                                Sales\n                                            "
-                                  ),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "th",
-                                {
-                                  staticClass: "text-center",
-                                  attrs: { scope: "col" },
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                                                Parts\n                                            "
-                                  ),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "th",
-                                {
-                                  staticClass: "text-center",
-                                  attrs: { scope: "col" },
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                                                Category\n                                            "
-                                  ),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "th",
-                                {
-                                  staticClass: "text-center",
-                                  attrs: { scope: "col" },
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                                                Status\n                                            "
-                                  ),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "th",
-                                {
-                                  staticClass: "text-center",
-                                  attrs: { scope: "col" },
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                                                Action\n                                            "
-                                  ),
-                                ]
-                              ),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("tbody", [
-                            _c("tr", [
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v(
-                                  "\n                                                IT-001\n                                            "
-                                ),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", [_vm._v("Course Title Here")]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v(
-                                  "\n                                                06 April 2020 | 08:31\n                                            "
-                                ),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v("15"),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v("5"),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Web Development"),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c("b", { staticClass: "course_active" }, [
-                                  _vm._v("Active"),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "gray-s",
-                                    attrs: { href: "#", title: "Edit" },
-                                  },
-                                  [_c("i", { staticClass: "uil uil-edit-alt" })]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "gray-s",
-                                    attrs: {
-                                      href: "course_detail_view.html",
-                                      title: "Edit",
-                                    },
-                                  },
-                                  [_c("i", { staticClass: "uil uil-eye" })]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "gray-s",
-                                    attrs: { href: "#", title: "Delete" },
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass: "uil uil-trash-alt",
-                                    }),
-                                  ]
-                                ),
-                              ]),
-                            ]),
-                            _vm._v(" "),
-                            _c("tr", [
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v(
-                                  "\n                                                IT-002\n                                            "
-                                ),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", [_vm._v("Course Title Here")]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v(
-                                  "\n                                                05 April 2020 | 05:15\n                                            "
-                                ),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v("30"),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v("3"),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Graphic Design"),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c("b", { staticClass: "course_active" }, [
-                                  _vm._v("Active"),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "gray-s",
-                                    attrs: { href: "#", title: "Edit" },
-                                  },
-                                  [_c("i", { staticClass: "uil uil-edit-alt" })]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "gray-s",
-                                    attrs: {
-                                      href: "course_detail_view.html",
-                                      title: "Edit",
-                                    },
-                                  },
-                                  [_c("i", { staticClass: "uil uil-eye" })]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "gray-s",
-                                    attrs: { href: "#", title: "Delete" },
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass: "uil uil-trash-alt",
-                                    }),
-                                  ]
-                                ),
-                              ]),
-                            ]),
-                            _vm._v(" "),
-                            _c("tr", [
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v(
-                                  "\n                                                IT-003\n                                            "
-                                ),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", [_vm._v("Course Title")]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v(
-                                  "\n                                                03 April 2020 | 01:30\n                                            "
-                                ),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v("14"),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v("5"),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Bootstrap"),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c("b", { staticClass: "course_active" }, [
-                                  _vm._v("Active"),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "gray-s",
-                                    attrs: { href: "#", title: "Edit" },
-                                  },
-                                  [_c("i", { staticClass: "uil uil-edit-alt" })]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "gray-s",
-                                    attrs: {
-                                      href: "course_detail_view.html",
-                                      title: "Edit",
-                                    },
-                                  },
-                                  [_c("i", { staticClass: "uil uil-eye" })]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "gray-s",
-                                    attrs: { href: "#", title: "Delete" },
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass: "uil uil-trash-alt",
-                                    }),
-                                  ]
-                                ),
-                              ]),
-                            ]),
-                            _vm._v(" "),
-                            _c("tr", [
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v(
-                                  "\n                                                IT-004\n                                            "
-                                ),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", [_vm._v("Course Title Here")]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v(
-                                  "\n                                                02 April 2020 | 05:15\n                                            "
-                                ),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v("110"),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v("9"),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Game Development"),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c("b", { staticClass: "course_active" }, [
-                                  _vm._v("Active"),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "gray-s",
-                                    attrs: { href: "#", title: "Edit" },
-                                  },
-                                  [_c("i", { staticClass: "uil uil-edit-alt" })]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "gray-s",
-                                    attrs: {
-                                      href: "course_detail_view.html",
-                                      title: "Edit",
-                                    },
-                                  },
-                                  [_c("i", { staticClass: "uil uil-eye" })]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "gray-s",
-                                    attrs: { href: "#", title: "Delete" },
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass: "uil uil-trash-alt",
-                                    }),
-                                  ]
-                                ),
-                              ]),
-                            ]),
-                            _vm._v(" "),
-                            _c("tr", [
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v(
-                                  "\n                                                IT-002\n                                            "
-                                ),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", [_vm._v("Course Title Here")]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v(
-                                  "\n                                                28 March 2020 | 05:15\n                                            "
-                                ),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v("185"),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v("10"),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("C++"),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c("b", { staticClass: "course_active" }, [
-                                  _vm._v("Active"),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "gray-s",
-                                    attrs: { href: "#", title: "Edit" },
-                                  },
-                                  [_c("i", { staticClass: "uil uil-edit-alt" })]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "gray-s",
-                                    attrs: {
-                                      href: "course_detail_view.html",
-                                      title: "Edit",
-                                    },
-                                  },
-                                  [_c("i", { staticClass: "uil uil-eye" })]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "gray-s",
-                                    attrs: { href: "#", title: "Delete" },
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass: "uil uil-trash-alt",
-                                    }),
-                                  ]
-                                ),
-                              ]),
-                            ]),
-                          ]),
-                        ]),
-                      ]),
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "tab-pane fade",
-                      attrs: { id: "pills-upcoming-courses", role: "tabpanel" },
-                    },
-                    [
-                      _c("div", { staticClass: "table-responsive mt-30" }, [
-                        _c("table", { staticClass: "table ucp-table" }, [
-                          _c("thead", { staticClass: "thead-s" }, [
-                            _c("tr", [
-                              _c(
-                                "th",
-                                {
-                                  staticClass: "text-center",
-                                  attrs: { scope: "col" },
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                                                Item No.\n                                            "
-                                  ),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("th", { staticClass: "cell-ta" }, [
-                                _vm._v("Title"),
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "th",
-                                {
-                                  staticClass: "text-center",
-                                  attrs: { scope: "col" },
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                                                Thumbnail\n                                            "
-                                  ),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("th", { staticClass: "text-center" }, [
-                                _vm._v(
-                                  "\n                                                Category\n                                            "
-                                ),
-                              ]),
-                              _vm._v(" "),
-                              _c("th", { staticClass: "text-center" }, [
-                                _vm._v(
-                                  "\n                                                Price\n                                            "
-                                ),
-                              ]),
-                              _vm._v(" "),
-                              _c("th", { staticClass: "text-center" }, [
-                                _vm._v(
-                                  "\n                                                Date\n                                            "
-                                ),
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "th",
-                                {
-                                  staticClass: "text-center",
-                                  attrs: { scope: "col" },
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                                                Status\n                                            "
-                                  ),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "th",
-                                {
-                                  staticClass: "text-center",
-                                  attrs: { scope: "col" },
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                                                Actions\n                                            "
-                                  ),
-                                ]
-                              ),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("tbody", [
-                            _c("tr", [
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v("01"),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "cell-ta" }, [
-                                _vm._v(
-                                  "\n                                                Course Title Here\n                                            "
-                                ),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("View"),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Web Development"),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v("$15"),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v(
-                                  "\n                                                9 April 2020\n                                            "
-                                ),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c("b", { staticClass: "course_active" }, [
-                                  _vm._v("Pending"),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "gray-s",
-                                    attrs: { href: "#", title: "Edit" },
-                                  },
-                                  [_c("i", { staticClass: "uil uil-edit-alt" })]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "gray-s",
-                                    attrs: { href: "#", title: "Delete" },
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass: "uil uil-trash-alt",
-                                    }),
-                                  ]
-                                ),
-                              ]),
-                            ]),
-                            _vm._v(" "),
-                            _c("tr", [
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v("02"),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "cell-ta" }, [
-                                _vm._v(
-                                  "\n                                                Course Title Here\n                                            "
-                                ),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("View"),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Graphic Design"),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v("$12"),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v(
-                                  "\n                                                8 April 2020\n                                            "
-                                ),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c("b", { staticClass: "course_active" }, [
-                                  _vm._v("Pending"),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "gray-s",
-                                    attrs: { href: "#", title: "Edit" },
-                                  },
-                                  [_c("i", { staticClass: "uil uil-edit-alt" })]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "gray-s",
-                                    attrs: { href: "#", title: "Delete" },
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass: "uil uil-trash-alt",
-                                    }),
-                                  ]
-                                ),
-                              ]),
-                            ]),
-                            _vm._v(" "),
-                            _c("tr", [
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v("03"),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "cell-ta" }, [
-                                _vm._v(
-                                  "\n                                                Course Title Here\n                                            "
-                                ),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("View"),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Photography"),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v("$6"),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _vm._v(
-                                  "\n                                                7 April 2020\n                                            "
-                                ),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c("b", { staticClass: "course_active" }, [
-                                  _vm._v("Pending"),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("td", { staticClass: "text-center" }, [
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "gray-s",
-                                    attrs: { href: "#", title: "Edit" },
-                                  },
-                                  [_c("i", { staticClass: "uil uil-edit-alt" })]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "gray-s",
-                                    attrs: { href: "#", title: "Delete" },
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass: "uil uil-trash-alt",
-                                    }),
-                                  ]
-                                ),
-                              ]),
-                            ]),
-                          ]),
-                        ]),
-                      ]),
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "tab-pane fade",
-                      attrs: {
-                        id: "pills-promotions",
-                        role: "tabpanel",
-                        "aria-labelledby": "pills-promotions-tab",
-                      },
-                    },
-                    [
-                      _c("div", { staticClass: "promotion_tab mb-10" }, [
-                        _c("img", {
-                          attrs: {
-                            src: "images/dashboard/promotion.svg",
-                            alt: "",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("h4", [_vm._v("Baby promotion plan is activated!")]),
-                        _vm._v(" "),
-                        _c("p", [
-                          _vm._v(
-                            "\n                                    By activating promotion plans you can\n                                    improve course views and sales.\n                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass: "plan_link_btn",
-                            attrs: { onclick: "window.location.href = '#';" },
-                          },
-                          [
-                            _vm._v(
-                              "\n                                    Change New Plan\n                                "
-                            ),
-                          ]
-                        ),
-                      ]),
-                    ]
+                  _vm._v(
+                    "\n                            Create Your Video\n                        "
                   ),
                 ]
               ),
@@ -40227,7 +44288,781 @@ var staticRenderFns = [
           ]),
         ]),
       ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("div", { staticClass: "my_courses_tabs" }, [
+            _vm._m(2),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "tab-content", attrs: { id: "pills-tabContent" } },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass: "tab-pane fade show active",
+                    attrs: { id: "pills-my-courses", role: "tabpanel" },
+                  },
+                  [
+                    _c("div", { staticClass: "table-responsive mt-30" }, [
+                      _c("table", { staticClass: "table ucp-table" }, [
+                        _vm._m(3),
+                        _vm._v(" "),
+                        _c("tbody", [
+                          _c("tr", [
+                            _c("td", { staticClass: "text-center" }, [
+                              _vm._v(
+                                "\n                                                IT-001\n                                            "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v("Course Title Here")]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "text-center" }, [
+                              _vm._v(
+                                "\n                                                06 April 2020 | 08:31\n                                            "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "text-center" }, [
+                              _vm._v("15"),
+                            ]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "text-center" }, [
+                              _vm._v("5"),
+                            ]),
+                            _vm._v(" "),
+                            _vm._m(4),
+                            _vm._v(" "),
+                            _vm._m(5),
+                            _vm._v(" "),
+                            _c(
+                              "td",
+                              { staticClass: "text-center" },
+                              [
+                                _c(
+                                  "router-link",
+                                  {
+                                    staticClass: "gray-s",
+                                    attrs: {
+                                      to: { name: "CourseDetail" },
+                                      title: "Edit",
+                                    },
+                                  },
+                                  [_c("i", { staticClass: "uil uil-eye" })]
+                                ),
+                                _vm._v(" "),
+                                _vm._m(6),
+                              ],
+                              1
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _vm._m(7),
+                          _vm._v(" "),
+                          _vm._m(8),
+                          _vm._v(" "),
+                          _vm._m(9),
+                          _vm._v(" "),
+                          _vm._m(10),
+                        ]),
+                      ]),
+                    ]),
+                  ]
+                ),
+                _vm._v(" "),
+                _vm._m(11),
+                _vm._v(" "),
+                _vm._m(12),
+              ]
+            ),
+          ]),
+        ]),
+      ]),
+    ]),
+  ])
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-lg-12" }, [
+      _c("h2", { staticClass: "st_title" }, [
+        _c("i", { staticClass: "uil uil-book-alt" }),
+        _vm._v("Courses\n                "),
+      ]),
     ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card_dash_left1" }, [
+      _c("i", { staticClass: "uil uil-book-alt" }),
+      _vm._v(" "),
+      _c("h1", [_vm._v("Jump Into Interactive Video Creation")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "ul",
+      {
+        staticClass: "nav nav-pills my_crse_nav",
+        attrs: { id: "pills-tab", role: "tablist" },
+      },
+      [
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link active",
+              attrs: {
+                id: "pills-my-courses-tab",
+                "data-toggle": "pill",
+                href: "#pills-my-courses",
+                role: "tab",
+                "aria-controls": "pills-my-courses",
+                "aria-selected": "true",
+              },
+            },
+            [
+              _c("i", { staticClass: "uil uil-book-alt" }),
+              _vm._v("My\n                                Courses"),
+            ]
+          ),
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link",
+              attrs: {
+                id: "pills-upcoming-courses-tab",
+                "data-toggle": "pill",
+                href: "#pills-upcoming-courses",
+                role: "tab",
+                "aria-controls": "pills-upcoming-courses",
+                "aria-selected": "false",
+              },
+            },
+            [
+              _c("i", { staticClass: "uil uil-upload-alt" }),
+              _vm._v("Expired\n                                Courses"),
+            ]
+          ),
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link",
+              attrs: {
+                id: "pills-promotions-tab",
+                "data-toggle": "pill",
+                href: "#pills-promotions",
+                role: "tab",
+                "aria-controls": "pills-promotions",
+                "aria-selected": "false",
+              },
+            },
+            [
+              _c("i", { staticClass: "uil uil-megaphone" }),
+              _vm._v("Promotions"),
+            ]
+          ),
+        ]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", { staticClass: "thead-s" }, [
+      _c("tr", [
+        _c("th", { staticClass: "text-center", attrs: { scope: "col" } }, [
+          _vm._v(
+            "\n                                                Item No.\n                                            "
+          ),
+        ]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Title")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center", attrs: { scope: "col" } }, [
+          _vm._v(
+            "\n                                                Publish Date\n                                            "
+          ),
+        ]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center", attrs: { scope: "col" } }, [
+          _vm._v(
+            "\n                                                Sales\n                                            "
+          ),
+        ]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center", attrs: { scope: "col" } }, [
+          _vm._v(
+            "\n                                                Parts\n                                            "
+          ),
+        ]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center", attrs: { scope: "col" } }, [
+          _vm._v(
+            "\n                                                Category\n                                            "
+          ),
+        ]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center", attrs: { scope: "col" } }, [
+          _vm._v(
+            "\n                                                Status\n                                            "
+          ),
+        ]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center", attrs: { scope: "col" } }, [
+          _vm._v(
+            "\n                                                Action\n                                            "
+          ),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticClass: "text-center" }, [
+      _c("a", { attrs: { href: "#" } }, [_vm._v("Web Development")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticClass: "text-center" }, [
+      _c("b", { staticClass: "course_active" }, [_vm._v("Active")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      { staticClass: "gray-s", attrs: { href: "#", title: "Delete" } },
+      [_c("i", { staticClass: "uil uil-trash-alt" })]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", { staticClass: "text-center" }, [
+        _vm._v(
+          "\n                                                IT-002\n                                            "
+        ),
+      ]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Course Title Here")]),
+      _vm._v(" "),
+      _c("td", { staticClass: "text-center" }, [
+        _vm._v(
+          "\n                                                05 April 2020 | 05:15\n                                            "
+        ),
+      ]),
+      _vm._v(" "),
+      _c("td", { staticClass: "text-center" }, [_vm._v("30")]),
+      _vm._v(" "),
+      _c("td", { staticClass: "text-center" }, [_vm._v("3")]),
+      _vm._v(" "),
+      _c("td", { staticClass: "text-center" }, [
+        _c("a", { attrs: { href: "#" } }, [_vm._v("Graphic Design")]),
+      ]),
+      _vm._v(" "),
+      _c("td", { staticClass: "text-center" }, [
+        _c("b", { staticClass: "course_active" }, [_vm._v("Active")]),
+      ]),
+      _vm._v(" "),
+      _c("td", { staticClass: "text-center" }, [
+        _c(
+          "a",
+          { staticClass: "gray-s", attrs: { href: "#", title: "Edit" } },
+          [_c("i", { staticClass: "uil uil-edit-alt" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "gray-s",
+            attrs: { href: "course_detail_view.html", title: "Edit" },
+          },
+          [_c("i", { staticClass: "uil uil-eye" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          { staticClass: "gray-s", attrs: { href: "#", title: "Delete" } },
+          [_c("i", { staticClass: "uil uil-trash-alt" })]
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", { staticClass: "text-center" }, [
+        _vm._v(
+          "\n                                                IT-003\n                                            "
+        ),
+      ]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Course Title")]),
+      _vm._v(" "),
+      _c("td", { staticClass: "text-center" }, [
+        _vm._v(
+          "\n                                                03 April 2020 | 01:30\n                                            "
+        ),
+      ]),
+      _vm._v(" "),
+      _c("td", { staticClass: "text-center" }, [_vm._v("14")]),
+      _vm._v(" "),
+      _c("td", { staticClass: "text-center" }, [_vm._v("5")]),
+      _vm._v(" "),
+      _c("td", { staticClass: "text-center" }, [
+        _c("a", { attrs: { href: "#" } }, [_vm._v("Bootstrap")]),
+      ]),
+      _vm._v(" "),
+      _c("td", { staticClass: "text-center" }, [
+        _c("b", { staticClass: "course_active" }, [_vm._v("Active")]),
+      ]),
+      _vm._v(" "),
+      _c("td", { staticClass: "text-center" }, [
+        _c(
+          "a",
+          { staticClass: "gray-s", attrs: { href: "#", title: "Edit" } },
+          [_c("i", { staticClass: "uil uil-edit-alt" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "gray-s",
+            attrs: { href: "course_detail_view.html", title: "Edit" },
+          },
+          [_c("i", { staticClass: "uil uil-eye" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          { staticClass: "gray-s", attrs: { href: "#", title: "Delete" } },
+          [_c("i", { staticClass: "uil uil-trash-alt" })]
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", { staticClass: "text-center" }, [
+        _vm._v(
+          "\n                                                IT-004\n                                            "
+        ),
+      ]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Course Title Here")]),
+      _vm._v(" "),
+      _c("td", { staticClass: "text-center" }, [
+        _vm._v(
+          "\n                                                02 April 2020 | 05:15\n                                            "
+        ),
+      ]),
+      _vm._v(" "),
+      _c("td", { staticClass: "text-center" }, [_vm._v("110")]),
+      _vm._v(" "),
+      _c("td", { staticClass: "text-center" }, [_vm._v("9")]),
+      _vm._v(" "),
+      _c("td", { staticClass: "text-center" }, [
+        _c("a", { attrs: { href: "#" } }, [_vm._v("Game Development")]),
+      ]),
+      _vm._v(" "),
+      _c("td", { staticClass: "text-center" }, [
+        _c("b", { staticClass: "course_active" }, [_vm._v("Active")]),
+      ]),
+      _vm._v(" "),
+      _c("td", { staticClass: "text-center" }, [
+        _c(
+          "a",
+          { staticClass: "gray-s", attrs: { href: "#", title: "Edit" } },
+          [_c("i", { staticClass: "uil uil-edit-alt" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "gray-s",
+            attrs: { href: "course_detail_view.html", title: "Edit" },
+          },
+          [_c("i", { staticClass: "uil uil-eye" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          { staticClass: "gray-s", attrs: { href: "#", title: "Delete" } },
+          [_c("i", { staticClass: "uil uil-trash-alt" })]
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", { staticClass: "text-center" }, [
+        _vm._v(
+          "\n                                                IT-002\n                                            "
+        ),
+      ]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Course Title Here")]),
+      _vm._v(" "),
+      _c("td", { staticClass: "text-center" }, [
+        _vm._v(
+          "\n                                                28 March 2020 | 05:15\n                                            "
+        ),
+      ]),
+      _vm._v(" "),
+      _c("td", { staticClass: "text-center" }, [_vm._v("185")]),
+      _vm._v(" "),
+      _c("td", { staticClass: "text-center" }, [_vm._v("10")]),
+      _vm._v(" "),
+      _c("td", { staticClass: "text-center" }, [
+        _c("a", { attrs: { href: "#" } }, [_vm._v("C++")]),
+      ]),
+      _vm._v(" "),
+      _c("td", { staticClass: "text-center" }, [
+        _c("b", { staticClass: "course_active" }, [_vm._v("Active")]),
+      ]),
+      _vm._v(" "),
+      _c("td", { staticClass: "text-center" }, [
+        _c(
+          "a",
+          { staticClass: "gray-s", attrs: { href: "#", title: "Edit" } },
+          [_c("i", { staticClass: "uil uil-edit-alt" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "gray-s",
+            attrs: { href: "course_detail_view.html", title: "Edit" },
+          },
+          [_c("i", { staticClass: "uil uil-eye" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          { staticClass: "gray-s", attrs: { href: "#", title: "Delete" } },
+          [_c("i", { staticClass: "uil uil-trash-alt" })]
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "tab-pane fade",
+        attrs: { id: "pills-upcoming-courses", role: "tabpanel" },
+      },
+      [
+        _c("div", { staticClass: "table-responsive mt-30" }, [
+          _c("table", { staticClass: "table ucp-table" }, [
+            _c("thead", { staticClass: "thead-s" }, [
+              _c("tr", [
+                _c(
+                  "th",
+                  { staticClass: "text-center", attrs: { scope: "col" } },
+                  [
+                    _vm._v(
+                      "\n                                                Item No.\n                                            "
+                    ),
+                  ]
+                ),
+                _vm._v(" "),
+                _c("th", { staticClass: "cell-ta" }, [_vm._v("Title")]),
+                _vm._v(" "),
+                _c(
+                  "th",
+                  { staticClass: "text-center", attrs: { scope: "col" } },
+                  [
+                    _vm._v(
+                      "\n                                                Thumbnail\n                                            "
+                    ),
+                  ]
+                ),
+                _vm._v(" "),
+                _c("th", { staticClass: "text-center" }, [
+                  _vm._v(
+                    "\n                                                Category\n                                            "
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("th", { staticClass: "text-center" }, [
+                  _vm._v(
+                    "\n                                                Price\n                                            "
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("th", { staticClass: "text-center" }, [
+                  _vm._v(
+                    "\n                                                Date\n                                            "
+                  ),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "th",
+                  { staticClass: "text-center", attrs: { scope: "col" } },
+                  [
+                    _vm._v(
+                      "\n                                                Status\n                                            "
+                    ),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "th",
+                  { staticClass: "text-center", attrs: { scope: "col" } },
+                  [
+                    _vm._v(
+                      "\n                                                Actions\n                                            "
+                    ),
+                  ]
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("tbody", [
+              _c("tr", [
+                _c("td", { staticClass: "text-center" }, [_vm._v("01")]),
+                _vm._v(" "),
+                _c("td", { staticClass: "cell-ta" }, [
+                  _vm._v(
+                    "\n                                                Course Title Here\n                                            "
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("td", { staticClass: "text-center" }, [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("View")]),
+                ]),
+                _vm._v(" "),
+                _c("td", { staticClass: "text-center" }, [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v("Web Development"),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("td", { staticClass: "text-center" }, [_vm._v("$15")]),
+                _vm._v(" "),
+                _c("td", { staticClass: "text-center" }, [
+                  _vm._v(
+                    "\n                                                9 April 2020\n                                            "
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("td", { staticClass: "text-center" }, [
+                  _c("b", { staticClass: "course_active" }, [
+                    _vm._v("Pending"),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("td", { staticClass: "text-center" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "gray-s",
+                      attrs: { href: "#", title: "Edit" },
+                    },
+                    [_c("i", { staticClass: "uil uil-edit-alt" })]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "gray-s",
+                      attrs: { href: "#", title: "Delete" },
+                    },
+                    [_c("i", { staticClass: "uil uil-trash-alt" })]
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("td", { staticClass: "text-center" }, [_vm._v("02")]),
+                _vm._v(" "),
+                _c("td", { staticClass: "cell-ta" }, [
+                  _vm._v(
+                    "\n                                                Course Title Here\n                                            "
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("td", { staticClass: "text-center" }, [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("View")]),
+                ]),
+                _vm._v(" "),
+                _c("td", { staticClass: "text-center" }, [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Graphic Design")]),
+                ]),
+                _vm._v(" "),
+                _c("td", { staticClass: "text-center" }, [_vm._v("$12")]),
+                _vm._v(" "),
+                _c("td", { staticClass: "text-center" }, [
+                  _vm._v(
+                    "\n                                                8 April 2020\n                                            "
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("td", { staticClass: "text-center" }, [
+                  _c("b", { staticClass: "course_active" }, [
+                    _vm._v("Pending"),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("td", { staticClass: "text-center" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "gray-s",
+                      attrs: { href: "#", title: "Edit" },
+                    },
+                    [_c("i", { staticClass: "uil uil-edit-alt" })]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "gray-s",
+                      attrs: { href: "#", title: "Delete" },
+                    },
+                    [_c("i", { staticClass: "uil uil-trash-alt" })]
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("td", { staticClass: "text-center" }, [_vm._v("03")]),
+                _vm._v(" "),
+                _c("td", { staticClass: "cell-ta" }, [
+                  _vm._v(
+                    "\n                                                Course Title Here\n                                            "
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("td", { staticClass: "text-center" }, [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("View")]),
+                ]),
+                _vm._v(" "),
+                _c("td", { staticClass: "text-center" }, [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Photography")]),
+                ]),
+                _vm._v(" "),
+                _c("td", { staticClass: "text-center" }, [_vm._v("$6")]),
+                _vm._v(" "),
+                _c("td", { staticClass: "text-center" }, [
+                  _vm._v(
+                    "\n                                                7 April 2020\n                                            "
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("td", { staticClass: "text-center" }, [
+                  _c("b", { staticClass: "course_active" }, [
+                    _vm._v("Pending"),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("td", { staticClass: "text-center" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "gray-s",
+                      attrs: { href: "#", title: "Edit" },
+                    },
+                    [_c("i", { staticClass: "uil uil-edit-alt" })]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "gray-s",
+                      attrs: { href: "#", title: "Delete" },
+                    },
+                    [_c("i", { staticClass: "uil uil-trash-alt" })]
+                  ),
+                ]),
+              ]),
+            ]),
+          ]),
+        ]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "tab-pane fade",
+        attrs: {
+          id: "pills-promotions",
+          role: "tabpanel",
+          "aria-labelledby": "pills-promotions-tab",
+        },
+      },
+      [
+        _c("div", { staticClass: "promotion_tab mb-10" }, [
+          _c("img", {
+            attrs: { src: "images/dashboard/promotion.svg", alt: "" },
+          }),
+          _vm._v(" "),
+          _c("h4", [_vm._v("Baby promotion plan is activated!")]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "\n                                    By activating promotion plans you can\n                                    improve course views and sales.\n                                "
+            ),
+          ]),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "plan_link_btn",
+              attrs: { onclick: "window.location.href = '#';" },
+            },
+            [
+              _vm._v(
+                "\n                                    Change New Plan\n                                "
+              ),
+            ]
+          ),
+        ]),
+      ]
+    )
   },
 ]
 render._withStripped = true
@@ -44779,7 +49614,30 @@ var render = function () {
       ]),
     ]),
     _vm._v(" "),
-    _vm._m(5),
+    _c("div", { staticClass: "col-md-12" }, [
+      _c("div", { staticClass: "card_dash1" }, [
+        _vm._m(5),
+        _vm._v(" "),
+        _c("div", { staticClass: "card_dash_right1" }, [
+          _c(
+            "button",
+            {
+              staticClass: "create_btn_dash",
+              on: {
+                click: function ($event) {
+                  return _vm.$router.push({ name: "CreateVideo" })
+                },
+              },
+            },
+            [
+              _vm._v(
+                "\n                    Create Your Video\n                "
+              ),
+            ]
+          ),
+        ]),
+      ]),
+    ]),
   ])
 }
 var staticRenderFns = [
@@ -44846,31 +49704,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-12" }, [
-      _c("div", { staticClass: "card_dash1" }, [
-        _c("div", { staticClass: "card_dash_left1" }, [
-          _c("i", { staticClass: "uil uil-book-alt" }),
-          _vm._v(" "),
-          _c("h1", [_vm._v("Jump Into Video Creation")]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card_dash_right1" }, [
-          _c(
-            "button",
-            {
-              staticClass: "create_btn_dash",
-              attrs: {
-                onclick: "window.location.href = 'create_new_course.html';",
-              },
-            },
-            [
-              _vm._v(
-                "\n                    Create Your Video\n                "
-              ),
-            ]
-          ),
-        ]),
-      ]),
+    return _c("div", { staticClass: "card_dash_left1" }, [
+      _c("i", { staticClass: "uil uil-book-alt" }),
+      _vm._v(" "),
+      _c("h1", [_vm._v("Jump Into Video Creation")]),
     ])
   },
 ]
@@ -44903,7 +49740,46 @@ var render = function () {
       [
         _c("Analytics"),
         _vm._v(" "),
-        _vm._m(0),
+        _c("div", { staticClass: "row" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-xl-4 col-lg-6 col-md-6" }, [
+            _c("div", { staticClass: "fcrse_3 mt-30" }, [
+              _vm._m(1),
+              _vm._v(" "),
+              _c("div", { staticClass: "live_text" }, [
+                _vm._m(2),
+                _vm._v(" "),
+                _c("div", { staticClass: "live-content" }, [
+                  _c("p", [
+                    _vm._v(
+                      "\n                                Set up your video and share to your\n                                students\n                            "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "live_link",
+                      on: {
+                        click: function ($event) {
+                          return _vm.$router.push({ name: "CreateVideo" })
+                        },
+                      },
+                    },
+                    [
+                      _vm._v(
+                        "\n                                Get Started\n                            "
+                      ),
+                    ]
+                  ),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _vm._m(3),
+          ]),
+        ]),
         _vm._v(" "),
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-xl-12 col-lg-12" }, [
@@ -44917,7 +49793,7 @@ var render = function () {
                   [
                     _c("div", { staticClass: "item" }, [
                       _c("div", { staticClass: "fcrse_4 mb-20" }, [
-                        _vm._m(1),
+                        _vm._m(4),
                         _vm._v(" "),
                         _c("div", { staticClass: "st_group" }, [
                           _c("div", { staticClass: "stud_img" }, [
@@ -44938,7 +49814,7 @@ var render = function () {
                     _vm._v(" "),
                     _c("div", { staticClass: "item" }, [
                       _c("div", { staticClass: "fcrse_4 mb-20" }, [
-                        _vm._m(2),
+                        _vm._m(5),
                         _vm._v(" "),
                         _c("div", { staticClass: "st_group" }, [
                           _c("div", { staticClass: "stud_img" }, [
@@ -44959,7 +49835,7 @@ var render = function () {
                     _vm._v(" "),
                     _c("div", { staticClass: "item" }, [
                       _c("div", { staticClass: "fcrse_4 mb-20" }, [
-                        _vm._m(3),
+                        _vm._m(6),
                         _vm._v(" "),
                         _c("div", { staticClass: "st_group" }, [
                           _c("div", { staticClass: "stud_img" }, [
@@ -44980,7 +49856,7 @@ var render = function () {
                     _vm._v(" "),
                     _c("div", { staticClass: "item" }, [
                       _c("div", { staticClass: "fcrse_4 mb-20" }, [
-                        _vm._m(4),
+                        _vm._m(7),
                         _vm._v(" "),
                         _c("div", { staticClass: "st_group" }, [
                           _c("div", { staticClass: "stud_img" }, [
@@ -45001,7 +49877,7 @@ var render = function () {
                     _vm._v(" "),
                     _c("div", { staticClass: "item" }, [
                       _c("div", { staticClass: "fcrse_4 mb-20" }, [
-                        _vm._m(5),
+                        _vm._m(8),
                         _vm._v(" "),
                         _c("div", { staticClass: "st_group" }, [
                           _c("div", { staticClass: "stud_img" }, [
@@ -45035,360 +49911,327 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-xl-8 col-lg-6 col-md-8" }, [
-        _c(
-          "div",
-          {
-            staticClass: "card card-default analysis_card p-0",
-            attrs: { id: "user-activity" },
-          },
-          [
-            _c("div", { staticClass: "row no-gutters" }, [
-              _c("div", { staticClass: "col-xl-12" }, [
-                _c("div", { staticClass: "border-right" }, [
-                  _c(
-                    "div",
-                    { staticClass: "card-header justify-content-between" },
-                    [
-                      _c("h2", { staticClass: "m-0" }, [
-                        _vm._v("User Activity"),
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "date-range-report" }, [
-                        _c("span"),
-                      ]),
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "ul",
-                    {
-                      staticClass:
-                        "nav nav-tabs justify-content-between justify-content-xl-start nav-fill",
-                      attrs: { role: "tablist" },
-                    },
-                    [
-                      _c("li", { staticClass: "nav-item" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "nav-link active pb-md-0",
-                            attrs: {
-                              "data-toggle": "tab",
-                              href: "#user",
-                              role: "tab",
-                              "aria-selected": "true",
-                            },
-                          },
-                          [
-                            _c("span", { staticClass: "type-name" }, [
-                              _vm._v("User"),
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "h4",
-                              {
-                                staticClass:
-                                  "views_title d-inline-block mt-2 mr-2 mb-3",
-                              },
-                              [
-                                _vm._v(
-                                  "\n                                                5248\n                                            "
-                                ),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "text-success1" }, [
-                              _vm._v(
-                                "5%\n                                                "
-                              ),
-                              _c("i", {
-                                staticClass: "uil uil-top-arrow-from-top",
-                              }),
-                            ]),
-                          ]
-                        ),
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "nav-item" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "nav-link pb-md-0",
-                            attrs: {
-                              "data-toggle": "tab",
-                              href: "#session",
-                              role: "tab",
-                              "aria-selected": "false",
-                            },
-                          },
-                          [
-                            _c("span", { staticClass: "type-name" }, [
-                              _vm._v("Sessions"),
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "h4",
-                              {
-                                staticClass:
-                                  "views_title d-inline-block mt-2 mr-2 mb-3",
-                              },
-                              [
-                                _vm._v(
-                                  "\n                                                638\n                                            "
-                                ),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "text-success" }, [
-                              _vm._v(
-                                "20%\n                                                "
-                              ),
-                              _c("i", {
-                                staticClass: "uil uil-top-arrow-from-top",
-                              }),
-                            ]),
-                          ]
-                        ),
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "nav-item" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "nav-link pb-md-0",
-                            attrs: {
-                              "data-toggle": "tab",
-                              href: "#bounce",
-                              role: "tab",
-                              "aria-selected": "false",
-                            },
-                          },
-                          [
-                            _c("span", { staticClass: "type-name" }, [
-                              _vm._v("Bounce Rate"),
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "h4",
-                              {
-                                staticClass:
-                                  "views_title d-inline-block mt-2 mr-2 mb-3",
-                              },
-                              [
-                                _vm._v(
-                                  "\n                                                36.9%\n                                            "
-                                ),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "text-danger" }, [
-                              _vm._v(
-                                "7%\n                                                "
-                              ),
-                              _c("i", {
-                                staticClass: "uil uil-arrow-to-bottom",
-                              }),
-                            ]),
-                          ]
-                        ),
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "nav-item" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "nav-link pb-md-0",
-                            attrs: {
-                              "data-toggle": "tab",
-                              href: "#session-duration",
-                              role: "tab",
-                              "aria-selected": "false",
-                            },
-                          },
-                          [
-                            _c("span", { staticClass: "type-name" }, [
-                              _vm._v("Session Duration"),
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "h4",
-                              {
-                                staticClass:
-                                  "views_title d-inline-block mt-2 mr-2 mb-3",
-                              },
-                              [
-                                _vm._v(
-                                  "\n                                                4m 49s\n                                            "
-                                ),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "text-success" }, [
-                              _vm._v(
-                                "15%\n                                                "
-                              ),
-                              _c("i", {
-                                staticClass: "uil uil-top-arrow-from-top",
-                              }),
-                            ]),
-                          ]
-                        ),
-                      ]),
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card-body" }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "tab-content",
-                        attrs: { id: "myTabContent" },
-                      },
-                      [
-                        _c(
-                          "div",
-                          {
-                            staticClass: "tab-pane fade show active",
-                            attrs: { id: "user", role: "tabpanel" },
-                          },
-                          [
-                            _c("canvas", {
-                              staticClass: "chartjs p-4",
-                              staticStyle: { height: "350px" },
-                              attrs: { id: "activity" },
-                            }),
-                          ]
-                        ),
-                      ]
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "card-footer d-flex flex-wrap bg-white border-top",
-                    },
-                    [
+    return _c("div", { staticClass: "col-xl-8 col-lg-6 col-md-8" }, [
+      _c(
+        "div",
+        {
+          staticClass: "card card-default analysis_card p-0",
+          attrs: { id: "user-activity" },
+        },
+        [
+          _c("div", { staticClass: "row no-gutters" }, [
+            _c("div", { staticClass: "col-xl-12" }, [
+              _c("div", { staticClass: "border-right" }, [
+                _c(
+                  "div",
+                  { staticClass: "card-header justify-content-between" },
+                  [
+                    _c("h2", { staticClass: "m-0" }, [_vm._v("User Activity")]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "date-range-report" }, [
+                      _c("span"),
+                    ]),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "ul",
+                  {
+                    staticClass:
+                      "nav nav-tabs justify-content-between justify-content-xl-start nav-fill",
+                    attrs: { role: "tablist" },
+                  },
+                  [
+                    _c("li", { staticClass: "nav-item" }, [
                       _c(
                         "a",
                         {
-                          staticClass: "text-uppercase py-3 ovrvew-1",
-                          attrs: { href: "#" },
+                          staticClass: "nav-link active pb-md-0",
+                          attrs: {
+                            "data-toggle": "tab",
+                            href: "#user",
+                            role: "tab",
+                            "aria-selected": "true",
+                          },
                         },
-                        [_vm._v("Audience Overview")]
+                        [
+                          _c("span", { staticClass: "type-name" }, [
+                            _vm._v("User"),
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "h4",
+                            {
+                              staticClass:
+                                "views_title d-inline-block mt-2 mr-2 mb-3",
+                            },
+                            [
+                              _vm._v(
+                                "\n                                                5248\n                                            "
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "text-success1" }, [
+                            _vm._v(
+                              "5%\n                                                "
+                            ),
+                            _c("i", {
+                              staticClass: "uil uil-top-arrow-from-top",
+                            }),
+                          ]),
+                        ]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "nav-item" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "nav-link pb-md-0",
+                          attrs: {
+                            "data-toggle": "tab",
+                            href: "#session",
+                            role: "tab",
+                            "aria-selected": "false",
+                          },
+                        },
+                        [
+                          _c("span", { staticClass: "type-name" }, [
+                            _vm._v("Sessions"),
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "h4",
+                            {
+                              staticClass:
+                                "views_title d-inline-block mt-2 mr-2 mb-3",
+                            },
+                            [
+                              _vm._v(
+                                "\n                                                638\n                                            "
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "text-success" }, [
+                            _vm._v(
+                              "20%\n                                                "
+                            ),
+                            _c("i", {
+                              staticClass: "uil uil-top-arrow-from-top",
+                            }),
+                          ]),
+                        ]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "nav-item" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "nav-link pb-md-0",
+                          attrs: {
+                            "data-toggle": "tab",
+                            href: "#bounce",
+                            role: "tab",
+                            "aria-selected": "false",
+                          },
+                        },
+                        [
+                          _c("span", { staticClass: "type-name" }, [
+                            _vm._v("Bounce Rate"),
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "h4",
+                            {
+                              staticClass:
+                                "views_title d-inline-block mt-2 mr-2 mb-3",
+                            },
+                            [
+                              _vm._v(
+                                "\n                                                36.9%\n                                            "
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "text-danger" }, [
+                            _vm._v(
+                              "7%\n                                                "
+                            ),
+                            _c("i", { staticClass: "uil uil-arrow-to-bottom" }),
+                          ]),
+                        ]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "nav-item" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "nav-link pb-md-0",
+                          attrs: {
+                            "data-toggle": "tab",
+                            href: "#session-duration",
+                            role: "tab",
+                            "aria-selected": "false",
+                          },
+                        },
+                        [
+                          _c("span", { staticClass: "type-name" }, [
+                            _vm._v("Session Duration"),
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "h4",
+                            {
+                              staticClass:
+                                "views_title d-inline-block mt-2 mr-2 mb-3",
+                            },
+                            [
+                              _vm._v(
+                                "\n                                                4m 49s\n                                            "
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "text-success" }, [
+                            _vm._v(
+                              "15%\n                                                "
+                            ),
+                            _c("i", {
+                              staticClass: "uil uil-top-arrow-from-top",
+                            }),
+                          ]),
+                        ]
+                      ),
+                    ]),
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "tab-content",
+                      attrs: { id: "myTabContent" },
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "tab-pane fade show active",
+                          attrs: { id: "user", role: "tabpanel" },
+                        },
+                        [
+                          _c("canvas", {
+                            staticClass: "chartjs p-4",
+                            staticStyle: { height: "350px" },
+                            attrs: { id: "activity" },
+                          }),
+                        ]
                       ),
                     ]
                   ),
                 ]),
-              ]),
-            ]),
-          ]
-        ),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-xl-4 col-lg-6 col-md-6" }, [
-        _c("div", { staticClass: "fcrse_3 mt-30" }, [
-          _c("div", { staticClass: "cater_ttle" }, [
-            _c("h4", [_vm._v("Live Streaming")]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "live_text" }, [
-            _c("div", { staticClass: "live_icon" }, [
-              _c("i", { staticClass: "uil uil-kayak" }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "live-content" }, [
-              _c("p", [
-                _vm._v(
-                  "\n                                Set up your channel and stream live to your\n                                students\n                            "
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "card-footer d-flex flex-wrap bg-white border-top",
+                  },
+                  [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "text-uppercase py-3 ovrvew-1",
+                        attrs: { href: "#" },
+                      },
+                      [_vm._v("Audience Overview")]
+                    ),
+                  ]
                 ),
               ]),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "live_link",
-                  attrs: {
-                    onclick: "window.location.href = 'add_streaming.html';",
-                  },
-                },
-                [
-                  _vm._v(
-                    "\n                                Get Started\n                            "
-                  ),
-                ]
-              ),
             ]),
           ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "section3125 mt-10" }, [
-          _c("h4", { staticClass: "item_title" }, [
-            _vm._v("Profile Analytics"),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "la5lo1" }, [
-            _c("div", { staticClass: "fcrse_1" }, [
-              _c("div", { staticClass: "fcrse_content" }, [
-                _c("h6", { staticClass: "crsedt8145" }, [
-                  _vm._v(
-                    "\n                                    Current subscribers\n                                "
-                  ),
+        ]
+      ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "cater_ttle" }, [
+      _c("h4", [_vm._v("Share Interactive course")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "live_icon" }, [
+      _c("i", { staticClass: "uil uil-video" }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "section3125 mt-10" }, [
+      _c("h4", { staticClass: "item_title" }, [_vm._v("Profile Analytics")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "la5lo1" }, [
+        _c("div", { staticClass: "fcrse_1" }, [
+          _c("div", { staticClass: "fcrse_content" }, [
+            _c("h6", { staticClass: "crsedt8145" }, [
+              _vm._v(
+                "\n                                    Current subscribers\n                                "
+              ),
+            ]),
+            _vm._v(" "),
+            _c("h3", { staticClass: "subcribe_title" }, [_vm._v("856")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "allvperf" }, [
+              _c("div", { staticClass: "crse-perf-left" }, [_vm._v("View")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "crse-perf-right" }, [
+                _vm._v("\n                                        17k"),
+                _c("span", { staticClass: "analyics_pr" }, [
+                  _c("i", { staticClass: "uil uil-arrow-to-bottom" }),
+                  _vm._v("75%"),
                 ]),
-                _vm._v(" "),
-                _c("h3", { staticClass: "subcribe_title" }, [_vm._v("856")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "allvperf" }, [
-                  _c("div", { staticClass: "crse-perf-left" }, [
-                    _vm._v("View"),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "crse-perf-right" }, [
-                    _vm._v("\n                                        17k"),
-                    _c("span", { staticClass: "analyics_pr" }, [
-                      _c("i", { staticClass: "uil uil-arrow-to-bottom" }),
-                      _vm._v("75%"),
-                    ]),
-                  ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "allvperf" }, [
+              _c("div", { staticClass: "crse-perf-left" }, [
+                _vm._v("\n                                        Purchased"),
+                _c("span", { staticClass: "per_text" }, [_vm._v("(per hour)")]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "crse-perf-right" }, [
+                _vm._v("\n                                        1"),
+                _c("span", { staticClass: "analyics_pr" }, [
+                  _c("i", { staticClass: "uil uil-top-arrow-from-top" }),
+                  _vm._v("100%"),
                 ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "allvperf" }, [
-                  _c("div", { staticClass: "crse-perf-left" }, [
-                    _vm._v(
-                      "\n                                        Purchased"
-                    ),
-                    _c("span", { staticClass: "per_text" }, [
-                      _vm._v("(per hour)"),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "crse-perf-right" }, [
-                    _vm._v("\n                                        1"),
-                    _c("span", { staticClass: "analyics_pr" }, [
-                      _c("i", { staticClass: "uil uil-top-arrow-from-top" }),
-                      _vm._v("100%"),
-                    ]),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "allvperf" }, [
-                  _c("div", { staticClass: "crse-perf-left" }, [
-                    _vm._v("\n                                        Enroll"),
-                    _c("span", { staticClass: "per_text" }, [
-                      _vm._v("(per hour)"),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "crse-perf-right" }, [
-                    _vm._v("\n                                        50"),
-                    _c("span", { staticClass: "analyics_pr" }, [
-                      _c("i", { staticClass: "uil uil-top-arrow-from-top" }),
-                      _vm._v("70%"),
-                    ]),
-                  ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "allvperf" }, [
+              _c("div", { staticClass: "crse-perf-left" }, [
+                _vm._v("\n                                        Enroll"),
+                _c("span", { staticClass: "per_text" }, [_vm._v("(per hour)")]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "crse-perf-right" }, [
+                _vm._v("\n                                        50"),
+                _c("span", { staticClass: "analyics_pr" }, [
+                  _c("i", { staticClass: "uil uil-top-arrow-from-top" }),
+                  _vm._v("70%"),
                 ]),
               ]),
             ]),
@@ -45483,7 +50326,9 @@ var render = function () {
   return _c(
     "span",
     [
-      _c("Header"),
+      _c("FullScreenLoader", { attrs: { active: _vm.loading } }),
+      _vm._v(" "),
+      _c("Header", { on: { "toggle-loader": _vm.toggleLoader } }),
       _vm._v(" "),
       _c("Sidebar"),
       _vm._v(" "),
@@ -45506,6 +50351,8 @@ var render = function () {
           _vm.$route.name == "Setting" ? _c("Setting") : _vm._e(),
           _vm._v(" "),
           _vm.$route.name == "Profile" ? _c("Profile") : _vm._e(),
+          _vm._v(" "),
+          _vm.$route.name == "CourseDetail" ? _c("CourseDetail") : _vm._e(),
           _vm._v(" "),
           _c("Footer"),
         ],
@@ -45800,7 +50647,14 @@ var render = function () {
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "menu dropdown_account left visible" },
+            {
+              staticClass: "menu dropdown_account left visible",
+              on: {
+                click: function ($event) {
+                  return _vm.closeDropdown()
+                },
+              },
+            },
             [
               _c(
                 "div",
@@ -45834,21 +50688,25 @@ var render = function () {
               ),
               _vm._v(" "),
               _c(
-                "a",
+                "router-link",
                 {
                   staticClass: "item channel_item",
-                  attrs: { href: "instructor_dashboard.html" },
+                  attrs: { to: { name: "Dashboard" } },
                 },
-                [_vm._v("Gamify Us dashboard")]
+                [_vm._v("Dashboard")]
               ),
               _vm._v(" "),
               _c(
-                "a",
+                "router-link",
                 {
                   staticClass: "item channel_item",
-                  attrs: { href: "setting.html" },
+                  attrs: { to: { name: "Setting" } },
                 },
-                [_vm._v("Setting")]
+                [
+                  _vm._v(
+                    "\n                        Setting\n                    "
+                  ),
+                ]
               ),
               _vm._v(" "),
               _c(
@@ -45870,12 +50728,20 @@ var render = function () {
               ),
               _vm._v(" "),
               _c(
-                "router-link",
+                "div",
                 {
                   staticClass: "item channel_item",
-                  attrs: { to: { name: "Login" } },
+                  on: {
+                    click: function ($event) {
+                      return _vm.signOut()
+                    },
+                  },
                 },
-                [_vm._v("Sign Out")]
+                [
+                  _vm._v(
+                    "\n                        Sign Out\n                    "
+                  ),
+                ]
               ),
             ],
             1
@@ -46361,7 +51227,59 @@ var render = function () {
               [_vm._v("Notification Setting")]
             ),
             _vm._v(" "),
-            _vm._m(1),
+            _c("div", { staticClass: "all_msg_bg" }, [
+              _c("div", { staticClass: "channel_my item all__noti5" }, [
+                _c("div", { staticClass: "profile_link" }, [
+                  _c("img", {
+                    attrs: {
+                      src: _vm.globalBaseUrl + "images/left-imgs/img-1.jpg",
+                      alt: "",
+                    },
+                  }),
+                  _vm._v(" "),
+                  _vm._m(1),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "channel_my item all__noti5" }, [
+                _c("div", { staticClass: "profile_link" }, [
+                  _c("img", {
+                    attrs: {
+                      src: _vm.globalBaseUrl + "images/left-imgs/img-1.jpg",
+                      alt: "",
+                    },
+                  }),
+                  _vm._v(" "),
+                  _vm._m(2),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "channel_my item all__noti5" }, [
+                _c("div", { staticClass: "profile_link" }, [
+                  _c("img", {
+                    attrs: {
+                      src: _vm.globalBaseUrl + "images/left-imgs/img-2.jpg",
+                      alt: "",
+                    },
+                  }),
+                  _vm._v(" "),
+                  _vm._m(3),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "channel_my item all__noti5" }, [
+                _c("div", { staticClass: "profile_link" }, [
+                  _c("img", {
+                    attrs: {
+                      src: _vm.globalBaseUrl + "images/left-imgs/img-3.jpg",
+                      alt: "",
+                    },
+                  }),
+                  _vm._v(" "),
+                  _vm._m(4),
+                ]),
+              ]),
+            ]),
           ],
           1
         ),
@@ -46387,82 +51305,68 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "all_msg_bg" }, [
-      _c("div", { staticClass: "channel_my item all__noti5" }, [
-        _c("div", { staticClass: "profile_link" }, [
-          _c("img", { attrs: { src: "images/left-imgs/img-1.jpg", alt: "" } }),
-          _vm._v(" "),
-          _c("div", { staticClass: "pd_content" }, [
-            _c("h6", [_vm._v("Rock William")]),
-            _vm._v(" "),
-            _c("p", { staticClass: "noti__text5" }, [
-              _vm._v(
-                "\n                                    Like Your Comment On Video\n                                    "
-              ),
-              _c("strong", [_vm._v("How to create sidebar menu")]),
-              _vm._v(".\n                                "),
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "nm_time" }, [_vm._v("2 min ago")]),
-          ]),
-        ]),
+    return _c("div", { staticClass: "pd_content" }, [
+      _c("h6", [_vm._v("Rock William")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "noti__text5" }, [
+        _vm._v(
+          "\n                                    Like Your Comment On Video\n                                    "
+        ),
+        _c("strong", [_vm._v("How to create sidebar menu")]),
+        _vm._v(".\n                                "),
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "channel_my item all__noti5" }, [
-        _c("div", { staticClass: "profile_link" }, [
-          _c("img", { attrs: { src: "images/left-imgs/img-2.jpg", alt: "" } }),
-          _vm._v(" "),
-          _c("div", { staticClass: "pd_content" }, [
-            _c("h6", [_vm._v("Jassica Smith")]),
-            _vm._v(" "),
-            _c("p", { staticClass: "noti__text5" }, [
-              _vm._v(
-                "\n                                    Added New Review In Video\n                                    "
-              ),
-              _c("strong", [_vm._v("Full Stack PHP Developer")]),
-              _vm._v(".\n                                "),
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "nm_time" }, [_vm._v("12 min ago")]),
-          ]),
-        ]),
+      _c("span", { staticClass: "nm_time" }, [_vm._v("2 min ago")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "pd_content" }, [
+      _c("h6", [_vm._v("Jassica Smith")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "noti__text5" }, [
+        _vm._v(
+          "\n                                    Added New Review In Video\n                                    "
+        ),
+        _c("strong", [_vm._v("Full Stack PHP Developer")]),
+        _vm._v(".\n                                "),
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "channel_my item all__noti5" }, [
-        _c("div", { staticClass: "profile_link" }, [
-          _c("img", { attrs: { src: "images/left-imgs/img-9.jpg", alt: "" } }),
-          _vm._v(" "),
-          _c("div", { staticClass: "pd_content" }, [
-            _c("p", { staticClass: "noti__text5" }, [
-              _vm._v(
-                "\n                                    Your Membership Activated.\n                                "
-              ),
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "nm_time" }, [_vm._v("20 min ago")]),
-          ]),
-        ]),
+      _c("span", { staticClass: "nm_time" }, [_vm._v("12 min ago")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "pd_content" }, [
+      _c("p", { staticClass: "noti__text5" }, [
+        _vm._v(
+          "\n                                    Your Membership Activated.\n                                "
+        ),
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "channel_my item all__noti5" }, [
-        _c("div", { staticClass: "profile_link" }, [
-          _c("img", { attrs: { src: "images/left-imgs/img-9.jpg", alt: "" } }),
-          _vm._v(" "),
-          _c("div", { staticClass: "pd_content" }, [
-            _c("p", { staticClass: "noti__text5" }, [
-              _vm._v(
-                "\n                                    Your Course Approved Now.\n                                    "
-              ),
-              _c("a", { staticClass: "crse_bl", attrs: { href: "#" } }, [
-                _vm._v("How to create sidebar menu"),
-              ]),
-              _vm._v(".\n                                "),
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "nm_time" }, [_vm._v("20 min ago")]),
-          ]),
+      _c("span", { staticClass: "nm_time" }, [_vm._v("20 min ago")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "pd_content" }, [
+      _c("p", { staticClass: "noti__text5" }, [
+        _vm._v(
+          "\n                                    Your Course Approved Now.\n                                    "
+        ),
+        _c("a", { staticClass: "crse_bl", attrs: { href: "#" } }, [
+          _vm._v("How to create sidebar menu"),
         ]),
+        _vm._v(".\n                                "),
       ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "nm_time" }, [_vm._v("20 min ago")]),
     ])
   },
 ]
@@ -46488,1889 +51392,1841 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("span", [
+    _c("div", { staticClass: "_216b01" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row justify-content-md-center" }, [
+          _c("div", { staticClass: "col-md-10" }, [
+            _c("div", { staticClass: "section3125 rpt145" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-lg-7" }, [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "dp_dt150" }, [
+                    _c("div", { staticClass: "img148" }, [
+                      _c("img", {
+                        attrs: {
+                          src: _vm.globalBaseUrl + "images/hd_dp.jpg",
+                          alt: "",
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(1),
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(2),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-lg-5" }, [
+                  _vm._m(3),
+                  _vm._v(" "),
+                  _c("ul", { staticClass: "_bty149" }, [
+                    _c("li", [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "msg125 btn500",
+                          on: {
+                            click: function ($event) {
+                              return _vm.$router.push({ name: "Setting" })
+                            },
+                          },
+                        },
+                        [
+                          _vm._v(
+                            "\n                        Edit\n                      "
+                          ),
+                        ]
+                      ),
+                    ]),
+                  ]),
+                ]),
+              ]),
+            ]),
+          ]),
+        ]),
+      ]),
+    ]),
+    _vm._v(" "),
+    _vm._m(4),
+    _vm._v(" "),
+    _vm._m(5),
+  ])
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("span", [
-      _c("div", { staticClass: "_216b01" }, [
-        _c("div", { staticClass: "container-fluid" }, [
-          _c("div", { staticClass: "row justify-content-md-center" }, [
-            _c("div", { staticClass: "col-md-10" }, [
-              _c("div", { staticClass: "section3125 rpt145" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-lg-7" }, [
-                    _c("a", { staticClass: "_216b22", attrs: { href: "#" } }, [
-                      _c("span", [_c("i", { staticClass: "uil uil-cog" })]),
-                      _vm._v("Setting\n                  "),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "dp_dt150" }, [
-                      _c("div", { staticClass: "img148" }, [
-                        _c("img", {
-                          attrs: { src: "images/hd_dp.jpg", alt: "" },
-                        }),
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "prfledt1" }, [
-                        _c("h2", [_vm._v("Joginder Singh")]),
-                        _vm._v(" "),
-                        _c("span", [
-                          _vm._v("UI / UX Designer and Web Developer"),
-                        ]),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("ul", { staticClass: "_ttl120" }, [
-                      _c("li", [
-                        _c("div", { staticClass: "_ttl121" }, [
-                          _c("div", { staticClass: "_ttl122" }, [
-                            _vm._v("Enroll Students"),
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "_ttl123" }, [
-                            _vm._v("612K"),
-                          ]),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("div", { staticClass: "_ttl121" }, [
-                          _c("div", { staticClass: "_ttl122" }, [
-                            _vm._v("Videos"),
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "_ttl123" }, [_vm._v("8")]),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("div", { staticClass: "_ttl121" }, [
-                          _c("div", { staticClass: "_ttl122" }, [
-                            _vm._v("Reviews"),
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "_ttl123" }, [
-                            _vm._v("11K"),
-                          ]),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("div", { staticClass: "_ttl121" }, [
-                          _c("div", { staticClass: "_ttl122" }, [
-                            _vm._v("Subscriptions"),
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "_ttl123" }, [
-                            _vm._v("452K"),
-                          ]),
-                        ]),
-                      ]),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-lg-5" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "_216b12",
-                        attrs: { href: "setting.html" },
-                      },
-                      [
-                        _c("span", [_c("i", { staticClass: "uil uil-cog" })]),
-                        _vm._v("Setting\n                  "),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "rgt-145" }, [
-                      _c("ul", { staticClass: "tutor_social_links" }, [
-                        _c("li", [
-                          _c("a", { staticClass: "fb", attrs: { href: "#" } }, [
-                            _c("i", { staticClass: "fab fa-facebook-f" }),
-                          ]),
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c("a", { staticClass: "tw", attrs: { href: "#" } }, [
-                            _c("i", { staticClass: "fab fa-twitter" }),
-                          ]),
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c("a", { staticClass: "ln", attrs: { href: "#" } }, [
-                            _c("i", { staticClass: "fab fa-linkedin-in" }),
-                          ]),
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c("a", { staticClass: "yu", attrs: { href: "#" } }, [
-                            _c("i", { staticClass: "fab fa-youtube" }),
-                          ]),
-                        ]),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("ul", { staticClass: "_bty149" }, [
-                      _c("li", [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "msg125 btn500",
-                            attrs: {
-                              onclick: "window.location.href = 'setting.html';",
-                            },
-                          },
-                          [
-                            _vm._v(
-                              "\n                        Edit\n                      "
-                            ),
-                          ]
-                        ),
-                      ]),
-                    ]),
-                  ]),
-                ]),
-              ]),
-            ]),
-          ]),
+    return _c("a", { staticClass: "_216b22", attrs: { href: "#" } }, [
+      _c("span", [_c("i", { staticClass: "uil uil-cog" })]),
+      _vm._v("Setting\n                  "),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "prfledt1" }, [
+      _c("h2", [_vm._v("Joginder Singh")]),
+      _vm._v(" "),
+      _c("span", [_vm._v("UI / UX Designer and Web Developer")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "_ttl120" }, [
+      _c("li", [
+        _c("div", { staticClass: "_ttl121" }, [
+          _c("div", { staticClass: "_ttl122" }, [_vm._v("Enroll Students")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "_ttl123" }, [_vm._v("612K")]),
         ]),
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "_215b15" }, [
-        _c("div", { staticClass: "container-fluid" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-lg-12" }, [
-              _c("div", { staticClass: "course_tabs" }, [
-                _c("nav", [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "nav nav-tabs tab_crse",
-                      attrs: { id: "nav-tab", role: "tablist" },
-                    },
-                    [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "nav-item nav-link active",
-                          attrs: {
-                            id: "nav-about-tab",
-                            "data-toggle": "tab",
-                            href: "#nav-about",
-                            role: "tab",
-                            "aria-selected": "true",
-                          },
-                        },
-                        [_vm._v("About")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "a",
-                        {
-                          staticClass: "nav-item nav-link",
-                          attrs: {
-                            id: "nav-courses-tab",
-                            "data-toggle": "tab",
-                            href: "#nav-courses",
-                            role: "tab",
-                            "aria-selected": "false",
-                          },
-                        },
-                        [_vm._v("Videos")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "a",
-                        {
-                          staticClass: "nav-item nav-link",
-                          attrs: {
-                            id: "nav-subscriptions-tab",
-                            "data-toggle": "tab",
-                            href: "#nav-subscriptions",
-                            role: "tab",
-                            "aria-selected": "false",
-                          },
-                        },
-                        [_vm._v("Subscriptions")]
-                      ),
-                    ]
-                  ),
-                ]),
-              ]),
-            ]),
-          ]),
+      _c("li", [
+        _c("div", { staticClass: "_ttl121" }, [
+          _c("div", { staticClass: "_ttl122" }, [_vm._v("Videos")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "_ttl123" }, [_vm._v("8")]),
         ]),
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "_215b17" }, [
-        _c("div", { staticClass: "container-fluid" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-lg-12" }, [
-              _c("div", { staticClass: "course_tab_content" }, [
+      _c("li", [
+        _c("div", { staticClass: "_ttl121" }, [
+          _c("div", { staticClass: "_ttl122" }, [_vm._v("Reviews")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "_ttl123" }, [_vm._v("11K")]),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rgt-145" }, [
+      _c("ul", { staticClass: "tutor_social_links" }, [
+        _c("li", [
+          _c("a", { staticClass: "fb", attrs: { href: "#" } }, [
+            _c("i", { staticClass: "fab fa-facebook-f" }),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { staticClass: "tw", attrs: { href: "#" } }, [
+            _c("i", { staticClass: "fab fa-twitter" }),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { staticClass: "ln", attrs: { href: "#" } }, [
+            _c("i", { staticClass: "fab fa-linkedin-in" }),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { staticClass: "yu", attrs: { href: "#" } }, [
+            _c("i", { staticClass: "fab fa-youtube" }),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "_215b15" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-lg-12" }, [
+            _c("div", { staticClass: "course_tabs" }, [
+              _c("nav", [
                 _c(
                   "div",
                   {
-                    staticClass: "tab-content",
-                    attrs: { id: "nav-tabContent" },
+                    staticClass: "nav nav-tabs tab_crse",
+                    attrs: { id: "nav-tab", role: "tablist" },
                   },
                   [
                     _c(
-                      "div",
+                      "a",
                       {
-                        staticClass: "tab-pane fade show active",
-                        attrs: { id: "nav-about", role: "tabpanel" },
+                        staticClass: "nav-item nav-link active",
+                        attrs: {
+                          id: "nav-about-tab",
+                          "data-toggle": "tab",
+                          href: "#nav-about",
+                          role: "tab",
+                          "aria-selected": "true",
+                        },
                       },
-                      [
-                        _c("div", { staticClass: "_htg451" }, [
-                          _c("div", { staticClass: "_htg452" }, [
-                            _c("h3", [_vm._v("About Me")]),
-                            _vm._v(" "),
-                            _c("p", [
-                              _vm._v(
-                                "\n                        Lorem ipsum dolor sit amet, consectetur adipiscing\n                        elit. Vestibulum scelerisque nibh sed ligula blandit,\n                        quis faucibus lorem pellentesque. Suspendisse pulvinar\n                        dictum pellentesque. Vestibulum at sagittis lectus,\n                        sit amet aliquam turpis. In quis elit tempus, semper\n                        justo vitae, lacinia massa. Etiam sagittis quam quis\n                        fermentum lacinia. Curabitur blandit sapien et risus\n                        congue viverra. Mauris auctor risus sit amet cursus\n                        sollicitudin. Lorem ipsum dolor sit amet, consectetur\n                        adipiscing elit. Nulla feugiat sodales massa, in\n                        viverra dolor condimentum ut. In imperdiet, justo nec\n                        volutpat blandit, tellus justo tempor quam, sed\n                        pretium nibh nunc nec mauris. Mauris vel malesuada\n                        magna. Quisque iaculis molestie purus, non luctus\n                        mauris porta id. Maecenas imperdiet tincidunt mauris\n                        vestibulum vulputate. Aenean sollicitudin pretium\n                        nibh, et sagittis risus tincidunt ac. Phasellus\n                        scelerisque rhoncus massa, ac euismod massa pharetra\n                        non. Phasellus dignissim, urna in iaculis varius,\n                        turpis libero mollis velit, sit amet euismod arcu mi\n                        ac nibh. Praesent tincidunt eros at ligula\n                        pellentesque elementum. Fusce condimentum enim a\n                        tellus egestas, sit amet rutrum elit gravida.\n                        Pellentesque in porta sapien. Fusce tristique maximus\n                        ipsum et mollis. Sed at massa ac est dapibus vulputate\n                        at eu nibh.\n                      "
-                              ),
-                            ]),
-                          ]),
-                        ]),
-                      ]
+                      [_vm._v("About")]
                     ),
                     _vm._v(" "),
                     _c(
-                      "div",
+                      "a",
                       {
-                        staticClass: "tab-pane fade",
-                        attrs: { id: "nav-courses", role: "tabpanel" },
+                        staticClass: "nav-item nav-link",
+                        attrs: {
+                          id: "nav-courses-tab",
+                          "data-toggle": "tab",
+                          href: "#nav-courses",
+                          role: "tab",
+                          "aria-selected": "false",
+                        },
                       },
-                      [
-                        _c("div", { staticClass: "crse_content" }, [
-                          _c("h3", [_vm._v("My courses (8)")]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "_14d25" }, [
-                            _c("div", { staticClass: "row" }, [
-                              _c("div", { staticClass: "col-lg-3 col-md-4" }, [
-                                _c("div", { staticClass: "fcrse_1 mt-30" }, [
-                                  _c(
-                                    "a",
-                                    {
-                                      staticClass: "fcrse_img",
-                                      attrs: {
-                                        href: "course_detail_view.html",
-                                      },
-                                    },
-                                    [
-                                      _c("img", {
-                                        attrs: {
-                                          src: "images/courses/img-1.jpg",
-                                          alt: "",
-                                        },
-                                      }),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        { staticClass: "course-overlay" },
-                                        [
-                                          _c(
-                                            "div",
-                                            { staticClass: "badge_seller" },
-                                            [_vm._v("Bestseller")]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            { staticClass: "crse_reviews" },
-                                            [
-                                              _c("i", {
-                                                staticClass: "uil uil-star",
-                                              }),
-                                              _vm._v(
-                                                "4.5\n                                "
-                                              ),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "span",
-                                            { staticClass: "play_btn1" },
-                                            [
-                                              _c("i", {
-                                                staticClass: "uil uil-play",
-                                              }),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            { staticClass: "crse_timer" },
-                                            [_vm._v("25 hours")]
-                                          ),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "fcrse_content" }, [
-                                    _c(
-                                      "div",
-                                      { staticClass: "eps_dots more_dropdown" },
-                                      [
-                                        _c("a", { attrs: { href: "#" } }, [
-                                          _c("i", {
-                                            staticClass: "uil uil-ellipsis-v",
-                                          }),
-                                        ]),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          { staticClass: "dropdown-content" },
-                                          [
-                                            _c("span", [
-                                              _c("i", {
-                                                staticClass:
-                                                  "uil uil-share-alt",
-                                              }),
-                                              _vm._v("Share"),
-                                            ]),
-                                            _vm._v(" "),
-                                            _c("span", [
-                                              _c("i", {
-                                                staticClass: "uil uil-edit-alt",
-                                              }),
-                                              _vm._v("Edit"),
-                                            ]),
-                                          ]
-                                        ),
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "vdtodt" }, [
-                                      _c("span", { staticClass: "vdt14" }, [
-                                        _vm._v("109k views"),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("span", { staticClass: "vdt14" }, [
-                                        _vm._v("15 days ago"),
-                                      ]),
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "crse14s",
-                                        attrs: {
-                                          href: "course_detail_view.html",
-                                        },
-                                      },
-                                      [
-                                        _vm._v(
-                                          "Complete Python Bootcamp: Go from zero to\n                                hero in Python 3"
-                                        ),
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "crse-cate",
-                                        attrs: { href: "#" },
-                                      },
-                                      [_vm._v("Web Development | Python")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "auth1lnkprce" }, [
-                                      _c("p", { staticClass: "cr1fot" }, [
-                                        _vm._v(
-                                          "\n                                  By "
-                                        ),
-                                        _c("a", { attrs: { href: "#" } }, [
-                                          _vm._v("John Doe"),
-                                        ]),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "prce142" }, [
-                                        _vm._v("$10"),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c(
-                                        "button",
-                                        {
-                                          staticClass: "shrt-cart-btn",
-                                          attrs: { title: "cart" },
-                                        },
-                                        [
-                                          _c("i", {
-                                            staticClass:
-                                              "uil uil-shopping-cart-alt",
-                                          }),
-                                        ]
-                                      ),
-                                    ]),
-                                  ]),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-3 col-md-4" }, [
-                                _c("div", { staticClass: "fcrse_1 mt-30" }, [
-                                  _c(
-                                    "a",
-                                    {
-                                      staticClass: "fcrse_img",
-                                      attrs: {
-                                        href: "course_detail_view.html",
-                                      },
-                                    },
-                                    [
-                                      _c("img", {
-                                        attrs: {
-                                          src: "images/courses/img-2.jpg",
-                                          alt: "",
-                                        },
-                                      }),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        { staticClass: "course-overlay" },
-                                        [
-                                          _c(
-                                            "div",
-                                            { staticClass: "badge_seller" },
-                                            [_vm._v("Bestseller")]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            { staticClass: "crse_reviews" },
-                                            [
-                                              _c("i", {
-                                                staticClass: "uil uil-star",
-                                              }),
-                                              _vm._v(
-                                                "4.5\n                                "
-                                              ),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "span",
-                                            { staticClass: "play_btn1" },
-                                            [
-                                              _c("i", {
-                                                staticClass: "uil uil-play",
-                                              }),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            { staticClass: "crse_timer" },
-                                            [_vm._v("28 hours")]
-                                          ),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "fcrse_content" }, [
-                                    _c(
-                                      "div",
-                                      { staticClass: "eps_dots more_dropdown" },
-                                      [
-                                        _c("a", { attrs: { href: "#" } }, [
-                                          _c("i", {
-                                            staticClass: "uil uil-ellipsis-v",
-                                          }),
-                                        ]),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          { staticClass: "dropdown-content" },
-                                          [
-                                            _c("span", [
-                                              _c("i", {
-                                                staticClass:
-                                                  "uil uil-share-alt",
-                                              }),
-                                              _vm._v("Share"),
-                                            ]),
-                                            _vm._v(" "),
-                                            _c("span", [
-                                              _c("i", {
-                                                staticClass: "uil uil-edit-alt",
-                                              }),
-                                              _vm._v("Edit"),
-                                            ]),
-                                          ]
-                                        ),
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "vdtodt" }, [
-                                      _c("span", { staticClass: "vdt14" }, [
-                                        _vm._v("5M views"),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("span", { staticClass: "vdt14" }, [
-                                        _vm._v("15 days ago"),
-                                      ]),
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "crse14s",
-                                        attrs: {
-                                          href: "course_detail_view.html",
-                                        },
-                                      },
-                                      [
-                                        _vm._v(
-                                          "The Complete JavaScript Course 2020: Build\n                                Real Projects!"
-                                        ),
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "crse-cate",
-                                        attrs: { href: "#" },
-                                      },
-                                      [_vm._v("Development | JavaScript")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "auth1lnkprce" }, [
-                                      _c("p", { staticClass: "cr1fot" }, [
-                                        _vm._v(
-                                          "\n                                  By "
-                                        ),
-                                        _c("a", { attrs: { href: "#" } }, [
-                                          _vm._v("John Doe"),
-                                        ]),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "prce142" }, [
-                                        _vm._v("$5"),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c(
-                                        "button",
-                                        {
-                                          staticClass: "shrt-cart-btn",
-                                          attrs: { title: "cart" },
-                                        },
-                                        [
-                                          _c("i", {
-                                            staticClass:
-                                              "uil uil-shopping-cart-alt",
-                                          }),
-                                        ]
-                                      ),
-                                    ]),
-                                  ]),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-3 col-md-4" }, [
-                                _c("div", { staticClass: "fcrse_1 mt-30" }, [
-                                  _c(
-                                    "a",
-                                    {
-                                      staticClass: "fcrse_img",
-                                      attrs: {
-                                        href: "course_detail_view.html",
-                                      },
-                                    },
-                                    [
-                                      _c("img", {
-                                        attrs: {
-                                          src: "images/courses/img-20.jpg",
-                                          alt: "",
-                                        },
-                                      }),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        { staticClass: "course-overlay" },
-                                        [
-                                          _c(
-                                            "div",
-                                            { staticClass: "crse_reviews" },
-                                            [
-                                              _c("i", {
-                                                staticClass: "uil uil-star",
-                                              }),
-                                              _vm._v(
-                                                "5.0\n                                "
-                                              ),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "span",
-                                            { staticClass: "play_btn1" },
-                                            [
-                                              _c("i", {
-                                                staticClass: "uil uil-play",
-                                              }),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            { staticClass: "crse_timer" },
-                                            [_vm._v("21 hours")]
-                                          ),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "fcrse_content" }, [
-                                    _c(
-                                      "div",
-                                      { staticClass: "eps_dots more_dropdown" },
-                                      [
-                                        _c("a", { attrs: { href: "#" } }, [
-                                          _c("i", {
-                                            staticClass: "uil uil-ellipsis-v",
-                                          }),
-                                        ]),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          { staticClass: "dropdown-content" },
-                                          [
-                                            _c("span", [
-                                              _c("i", {
-                                                staticClass:
-                                                  "uil uil-share-alt",
-                                              }),
-                                              _vm._v("Share"),
-                                            ]),
-                                            _vm._v(" "),
-                                            _c("span", [
-                                              _c("i", {
-                                                staticClass: "uil uil-edit-alt",
-                                              }),
-                                              _vm._v("Edit"),
-                                            ]),
-                                          ]
-                                        ),
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "vdtodt" }, [
-                                      _c("span", { staticClass: "vdt14" }, [
-                                        _vm._v("200 Views"),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("span", { staticClass: "vdt14" }, [
-                                        _vm._v("4 days ago"),
-                                      ]),
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "crse14s",
-                                        attrs: {
-                                          href: "course_detail_view.html",
-                                        },
-                                      },
-                                      [
-                                        _vm._v(
-                                          "WordPress Development - Themes, Plugins &\n                                Gutenberg"
-                                        ),
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "crse-cate",
-                                        attrs: { href: "#" },
-                                      },
-                                      [_vm._v("Design | Wordpress")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "auth1lnkprce" }, [
-                                      _c("p", { staticClass: "cr1fot" }, [
-                                        _vm._v(
-                                          "\n                                  By "
-                                        ),
-                                        _c("a", { attrs: { href: "#" } }, [
-                                          _vm._v("John Doe"),
-                                        ]),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "prce142" }, [
-                                        _vm._v("$14"),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c(
-                                        "button",
-                                        {
-                                          staticClass: "shrt-cart-btn",
-                                          attrs: { title: "cart" },
-                                        },
-                                        [
-                                          _c("i", {
-                                            staticClass:
-                                              "uil uil-shopping-cart-alt",
-                                          }),
-                                        ]
-                                      ),
-                                    ]),
-                                  ]),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-3 col-md-4" }, [
-                                _c("div", { staticClass: "fcrse_1 mt-30" }, [
-                                  _c(
-                                    "a",
-                                    {
-                                      staticClass: "fcrse_img",
-                                      attrs: {
-                                        href: "course_detail_view.html",
-                                      },
-                                    },
-                                    [
-                                      _c("img", {
-                                        attrs: {
-                                          src: "images/courses/img-4.jpg",
-                                          alt: "",
-                                        },
-                                      }),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        { staticClass: "course-overlay" },
-                                        [
-                                          _c(
-                                            "div",
-                                            { staticClass: "badge_seller" },
-                                            [_vm._v("Bestseller")]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            { staticClass: "crse_reviews" },
-                                            [
-                                              _c("i", {
-                                                staticClass: "uil uil-star",
-                                              }),
-                                              _vm._v(
-                                                "5.0\n                                "
-                                              ),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "span",
-                                            { staticClass: "play_btn1" },
-                                            [
-                                              _c("i", {
-                                                staticClass: "uil uil-play",
-                                              }),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            { staticClass: "crse_timer" },
-                                            [_vm._v("1 hour")]
-                                          ),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "fcrse_content" }, [
-                                    _c(
-                                      "div",
-                                      { staticClass: "eps_dots more_dropdown" },
-                                      [
-                                        _c("a", { attrs: { href: "#" } }, [
-                                          _c("i", {
-                                            staticClass: "uil uil-ellipsis-v",
-                                          }),
-                                        ]),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          { staticClass: "dropdown-content" },
-                                          [
-                                            _c("span", [
-                                              _c("i", {
-                                                staticClass:
-                                                  "uil uil-share-alt",
-                                              }),
-                                              _vm._v("Share"),
-                                            ]),
-                                            _vm._v(" "),
-                                            _c("span", [
-                                              _c("i", {
-                                                staticClass: "uil uil-edit-alt",
-                                              }),
-                                              _vm._v("Edit"),
-                                            ]),
-                                          ]
-                                        ),
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "vdtodt" }, [
-                                      _c("span", { staticClass: "vdt14" }, [
-                                        _vm._v("153k views"),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("span", { staticClass: "vdt14" }, [
-                                        _vm._v("3 months ago"),
-                                      ]),
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "crse14s",
-                                        attrs: {
-                                          href: "course_detail_view.html",
-                                        },
-                                      },
-                                      [
-                                        _vm._v(
-                                          "The Complete Digital Marketing Course - 12\n                                Courses in 1"
-                                        ),
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "crse-cate",
-                                        attrs: { href: "#" },
-                                      },
-                                      [_vm._v("Digital Marketing | Marketing")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "auth1lnkprce" }, [
-                                      _c("p", { staticClass: "cr1fot" }, [
-                                        _vm._v(
-                                          "\n                                  By "
-                                        ),
-                                        _c("a", { attrs: { href: "#" } }, [
-                                          _vm._v("John Doe"),
-                                        ]),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "prce142" }, [
-                                        _vm._v("$12"),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c(
-                                        "button",
-                                        {
-                                          staticClass: "shrt-cart-btn",
-                                          attrs: { title: "cart" },
-                                        },
-                                        [
-                                          _c("i", {
-                                            staticClass:
-                                              "uil uil-shopping-cart-alt",
-                                          }),
-                                        ]
-                                      ),
-                                    ]),
-                                  ]),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-3 col-md-4" }, [
-                                _c("div", { staticClass: "fcrse_1 mt-30" }, [
-                                  _c(
-                                    "a",
-                                    {
-                                      staticClass: "fcrse_img",
-                                      attrs: {
-                                        href: "course_detail_view.html",
-                                      },
-                                    },
-                                    [
-                                      _c("img", {
-                                        attrs: {
-                                          src: "images/courses/img-13.jpg",
-                                          alt: "",
-                                        },
-                                      }),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        { staticClass: "course-overlay" },
-                                        [
-                                          _c(
-                                            "span",
-                                            { staticClass: "play_btn1" },
-                                            [
-                                              _c("i", {
-                                                staticClass: "uil uil-play",
-                                              }),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            { staticClass: "crse_timer" },
-                                            [_vm._v("30 hours")]
-                                          ),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "fcrse_content" }, [
-                                    _c(
-                                      "div",
-                                      { staticClass: "eps_dots more_dropdown" },
-                                      [
-                                        _c("a", { attrs: { href: "#" } }, [
-                                          _c("i", {
-                                            staticClass: "uil uil-ellipsis-v",
-                                          }),
-                                        ]),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          { staticClass: "dropdown-content" },
-                                          [
-                                            _c("span", [
-                                              _c("i", {
-                                                staticClass:
-                                                  "uil uil-share-alt",
-                                              }),
-                                              _vm._v("Share"),
-                                            ]),
-                                            _vm._v(" "),
-                                            _c("span", [
-                                              _c("i", {
-                                                staticClass: "uil uil-edit-alt",
-                                              }),
-                                              _vm._v("Edit"),
-                                            ]),
-                                          ]
-                                        ),
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "vdtodt" }, [
-                                      _c("span", { staticClass: "vdt14" }, [
-                                        _vm._v("20 Views"),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("span", { staticClass: "vdt14" }, [
-                                        _vm._v("1 day ago"),
-                                      ]),
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "crse14s",
-                                        attrs: {
-                                          href: "course_detail_view.html",
-                                        },
-                                      },
-                                      [
-                                        _vm._v(
-                                          "The Complete Node.js Developer Course (3rd\n                                Edition)"
-                                        ),
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "crse-cate",
-                                        attrs: { href: "#" },
-                                      },
-                                      [_vm._v("Development | Node.js")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "auth1lnkprce" }, [
-                                      _c("p", { staticClass: "cr1fot" }, [
-                                        _vm._v(
-                                          "\n                                  By "
-                                        ),
-                                        _c("a", { attrs: { href: "#" } }, [
-                                          _vm._v("John Doe"),
-                                        ]),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "prce142" }, [
-                                        _vm._v("$3"),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c(
-                                        "button",
-                                        {
-                                          staticClass: "shrt-cart-btn",
-                                          attrs: { title: "cart" },
-                                        },
-                                        [
-                                          _c("i", {
-                                            staticClass:
-                                              "uil uil-shopping-cart-alt",
-                                          }),
-                                        ]
-                                      ),
-                                    ]),
-                                  ]),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-3 col-md-4" }, [
-                                _c("div", { staticClass: "fcrse_1 mt-30" }, [
-                                  _c(
-                                    "a",
-                                    {
-                                      staticClass: "fcrse_img",
-                                      attrs: {
-                                        href: "course_detail_view.html",
-                                      },
-                                    },
-                                    [
-                                      _c("img", {
-                                        attrs: {
-                                          src: "images/courses/img-7.jpg",
-                                          alt: "",
-                                        },
-                                      }),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        { staticClass: "course-overlay" },
-                                        [
-                                          _c(
-                                            "div",
-                                            { staticClass: "badge_seller" },
-                                            [_vm._v("Bestseller")]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            { staticClass: "crse_reviews" },
-                                            [
-                                              _c("i", {
-                                                staticClass: "uil uil-star",
-                                              }),
-                                              _vm._v(
-                                                "5.0\n                                "
-                                              ),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "span",
-                                            { staticClass: "play_btn1" },
-                                            [
-                                              _c("i", {
-                                                staticClass: "uil uil-play",
-                                              }),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            { staticClass: "crse_timer" },
-                                            [_vm._v("5.4 hours")]
-                                          ),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "fcrse_content" }, [
-                                    _c(
-                                      "div",
-                                      { staticClass: "eps_dots more_dropdown" },
-                                      [
-                                        _c("a", { attrs: { href: "#" } }, [
-                                          _c("i", {
-                                            staticClass: "uil uil-ellipsis-v",
-                                          }),
-                                        ]),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          { staticClass: "dropdown-content" },
-                                          [
-                                            _c("span", [
-                                              _c("i", {
-                                                staticClass:
-                                                  "uil uil-share-alt",
-                                              }),
-                                              _vm._v("Share"),
-                                            ]),
-                                            _vm._v(" "),
-                                            _c("span", [
-                                              _c("i", {
-                                                staticClass: "uil uil-edit-alt",
-                                              }),
-                                              _vm._v("Edit"),
-                                            ]),
-                                          ]
-                                        ),
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "vdtodt" }, [
-                                      _c("span", { staticClass: "vdt14" }, [
-                                        _vm._v("109k views"),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("span", { staticClass: "vdt14" }, [
-                                        _vm._v("15 days ago"),
-                                      ]),
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "crse14s",
-                                        attrs: {
-                                          href: "course_detail_view.html",
-                                        },
-                                      },
-                                      [
-                                        _vm._v(
-                                          "WordPress for Beginners: Create a Website\n                                Step by Step"
-                                        ),
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "crse-cate",
-                                        attrs: { href: "#" },
-                                      },
-                                      [_vm._v("Design | Wordpress")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "auth1lnkprce" }, [
-                                      _c("p", { staticClass: "cr1fot" }, [
-                                        _vm._v(
-                                          "\n                                  By "
-                                        ),
-                                        _c("a", { attrs: { href: "#" } }, [
-                                          _vm._v("John Doe"),
-                                        ]),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "prce142" }, [
-                                        _vm._v("$18"),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c(
-                                        "button",
-                                        {
-                                          staticClass: "shrt-cart-btn",
-                                          attrs: { title: "cart" },
-                                        },
-                                        [
-                                          _c("i", {
-                                            staticClass:
-                                              "uil uil-shopping-cart-alt",
-                                          }),
-                                        ]
-                                      ),
-                                    ]),
-                                  ]),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-3 col-md-4" }, [
-                                _c("div", { staticClass: "fcrse_1 mt-30" }, [
-                                  _c(
-                                    "a",
-                                    {
-                                      staticClass: "fcrse_img",
-                                      attrs: {
-                                        href: "course_detail_view.html",
-                                      },
-                                    },
-                                    [
-                                      _c("img", {
-                                        attrs: {
-                                          src: "images/courses/img-8.jpg",
-                                          alt: "",
-                                        },
-                                      }),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        { staticClass: "course-overlay" },
-                                        [
-                                          _c(
-                                            "div",
-                                            { staticClass: "badge_seller" },
-                                            [_vm._v("Bestseller")]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            { staticClass: "crse_reviews" },
-                                            [
-                                              _c("i", {
-                                                staticClass: "uil uil-star",
-                                              }),
-                                              _vm._v(
-                                                "4.0\n                                "
-                                              ),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "span",
-                                            { staticClass: "play_btn1" },
-                                            [
-                                              _c("i", {
-                                                staticClass: "uil uil-play",
-                                              }),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            { staticClass: "crse_timer" },
-                                            [_vm._v("23 hours")]
-                                          ),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "fcrse_content" }, [
-                                    _c(
-                                      "div",
-                                      { staticClass: "eps_dots more_dropdown" },
-                                      [
-                                        _c("a", { attrs: { href: "#" } }, [
-                                          _c("i", {
-                                            staticClass: "uil uil-ellipsis-v",
-                                          }),
-                                        ]),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          { staticClass: "dropdown-content" },
-                                          [
-                                            _c("span", [
-                                              _c("i", {
-                                                staticClass:
-                                                  "uil uil-share-alt",
-                                              }),
-                                              _vm._v("Share"),
-                                            ]),
-                                            _vm._v(" "),
-                                            _c("span", [
-                                              _c("i", {
-                                                staticClass: "uil uil-edit-alt",
-                                              }),
-                                              _vm._v("Edit"),
-                                            ]),
-                                          ]
-                                        ),
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "vdtodt" }, [
-                                      _c("span", { staticClass: "vdt14" }, [
-                                        _vm._v("196k views"),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("span", { staticClass: "vdt14" }, [
-                                        _vm._v("1 month ago"),
-                                      ]),
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "crse14s",
-                                        attrs: {
-                                          href: "course_detail_view.html",
-                                        },
-                                      },
-                                      [
-                                        _vm._v(
-                                          "CSS - The Complete Guide 2020 (incl. Flexbox,\n                                Grid & Sass)"
-                                        ),
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "crse-cate",
-                                        attrs: { href: "#" },
-                                      },
-                                      [_vm._v("Design | CSS")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "auth1lnkprce" }, [
-                                      _c("p", { staticClass: "cr1fot" }, [
-                                        _vm._v(
-                                          "\n                                  By "
-                                        ),
-                                        _c("a", { attrs: { href: "#" } }, [
-                                          _vm._v("John Doe"),
-                                        ]),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "prce142" }, [
-                                        _vm._v("$10"),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c(
-                                        "button",
-                                        {
-                                          staticClass: "shrt-cart-btn",
-                                          attrs: { title: "cart" },
-                                        },
-                                        [
-                                          _c("i", {
-                                            staticClass:
-                                              "uil uil-shopping-cart-alt",
-                                          }),
-                                        ]
-                                      ),
-                                    ]),
-                                  ]),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-3 col-md-4" }, [
-                                _c("div", { staticClass: "fcrse_1 mt-30" }, [
-                                  _c(
-                                    "a",
-                                    {
-                                      staticClass: "fcrse_img",
-                                      attrs: {
-                                        href: "course_detail_view.html",
-                                      },
-                                    },
-                                    [
-                                      _c("img", {
-                                        attrs: {
-                                          src: "images/courses/img-16.jpg",
-                                          alt: "",
-                                        },
-                                      }),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        { staticClass: "course-overlay" },
-                                        [
-                                          _c(
-                                            "span",
-                                            { staticClass: "play_btn1" },
-                                            [
-                                              _c("i", {
-                                                staticClass: "uil uil-play",
-                                              }),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            { staticClass: "crse_timer" },
-                                            [_vm._v("22 hours")]
-                                          ),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "fcrse_content" }, [
-                                    _c(
-                                      "div",
-                                      { staticClass: "eps_dots more_dropdown" },
-                                      [
-                                        _c("a", { attrs: { href: "#" } }, [
-                                          _c("i", {
-                                            staticClass: "uil uil-ellipsis-v",
-                                          }),
-                                        ]),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          { staticClass: "dropdown-content" },
-                                          [
-                                            _c("span", [
-                                              _c("i", {
-                                                staticClass:
-                                                  "uil uil-share-alt",
-                                              }),
-                                              _vm._v("Share"),
-                                            ]),
-                                            _vm._v(" "),
-                                            _c("span", [
-                                              _c("i", {
-                                                staticClass: "uil uil-edit-alt",
-                                              }),
-                                              _vm._v("Edit"),
-                                            ]),
-                                          ]
-                                        ),
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "vdtodt" }, [
-                                      _c("span", { staticClass: "vdt14" }, [
-                                        _vm._v("11 Views"),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("span", { staticClass: "vdt14" }, [
-                                        _vm._v("5 Days ago"),
-                                      ]),
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "crse14s",
-                                        attrs: {
-                                          href: "course_detail_view.html",
-                                        },
-                                      },
-                                      [
-                                        _vm._v(
-                                          "Vue JS 2 - The Complete Guide (incl. Vue\n                                Router & Vuex)"
-                                        ),
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "crse-cate",
-                                        attrs: { href: "#" },
-                                      },
-                                      [_vm._v("Development | Vue JS")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "auth1lnkprce" }, [
-                                      _c("p", { staticClass: "cr1fot" }, [
-                                        _vm._v(
-                                          "\n                                  By "
-                                        ),
-                                        _c("a", { attrs: { href: "#" } }, [
-                                          _vm._v("John Doe"),
-                                        ]),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "prce142" }, [
-                                        _vm._v("$10"),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c(
-                                        "button",
-                                        {
-                                          staticClass: "shrt-cart-btn",
-                                          attrs: { title: "cart" },
-                                        },
-                                        [
-                                          _c("i", {
-                                            staticClass:
-                                              "uil uil-shopping-cart-alt",
-                                          }),
-                                        ]
-                                      ),
-                                    ]),
-                                  ]),
-                                ]),
-                              ]),
-                            ]),
-                          ]),
-                        ]),
-                      ]
+                      [_vm._v("Videos")]
                     ),
                     _vm._v(" "),
                     _c(
-                      "div",
+                      "a",
                       {
-                        staticClass: "tab-pane fade show",
-                        attrs: { id: "nav-subscriptions", role: "tabpanel" },
+                        staticClass: "nav-item nav-link",
+                        attrs: {
+                          id: "nav-subscriptions-tab",
+                          "data-toggle": "tab",
+                          href: "#nav-subscriptions",
+                          role: "tab",
+                          "aria-selected": "false",
+                        },
                       },
-                      [
-                        _c("div", { staticClass: "_htg451" }, [
-                          _c("div", { staticClass: "_htg452" }, [
-                            _c("h3", [_vm._v("Subscriptions")]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "row" }, [
-                              _c("div", { staticClass: "col-lg-3 col-md-4" }, [
-                                _c("div", { staticClass: "fcrse_1 mt-30" }, [
-                                  _c("div", { staticClass: "tutor_img" }, [
-                                    _c("a", { attrs: { href: "#" } }, [
-                                      _c("img", {
-                                        attrs: {
-                                          src: "images/left-imgs/img-1.jpg",
-                                          alt: "",
-                                        },
-                                      }),
-                                    ]),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    { staticClass: "tutor_content_dt" },
-                                    [
-                                      _c("div", { staticClass: "tutor150" }, [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass: "tutor_name",
-                                            attrs: { href: "#" },
-                                          },
-                                          [_vm._v("John Doe")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass: "mef78",
-                                            attrs: { title: "Verify" },
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "uil uil-check-circle",
-                                            }),
-                                          ]
-                                        ),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "tutor_cate" }, [
-                                        _vm._v(
-                                          "\n                                Wordpress & Plugin Tutor\n                              "
-                                        ),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c(
-                                        "ul",
-                                        { staticClass: "tutor_social_links" },
-                                        [
-                                          _c("li", [
-                                            _c(
-                                              "button",
-                                              { staticClass: "sbbc145" },
-                                              [_vm._v("Subscribed")]
-                                            ),
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("li", [
-                                            _c(
-                                              "button",
-                                              { staticClass: "sbbc146" },
-                                              [
-                                                _c("i", {
-                                                  staticClass: "uil uil-bell",
-                                                }),
-                                              ]
-                                            ),
-                                          ]),
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "tut1250" }, [
-                                        _c("span", { staticClass: "vdt15" }, [
-                                          _vm._v("100K Students"),
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("span", { staticClass: "vdt15" }, [
-                                          _vm._v("15 Courses"),
-                                        ]),
-                                      ]),
-                                    ]
-                                  ),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-3 col-md-4" }, [
-                                _c("div", { staticClass: "fcrse_1 mt-30" }, [
-                                  _c("div", { staticClass: "tutor_img" }, [
-                                    _c("a", { attrs: { href: "#" } }, [
-                                      _c("img", {
-                                        attrs: {
-                                          src: "images/left-imgs/img-2.jpg",
-                                          alt: "",
-                                        },
-                                      }),
-                                    ]),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    { staticClass: "tutor_content_dt" },
-                                    [
-                                      _c("div", { staticClass: "tutor150" }, [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass: "tutor_name",
-                                            attrs: { href: "#" },
-                                          },
-                                          [_vm._v("Kerstin Cable")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass: "mef78",
-                                            attrs: { title: "Verify" },
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "uil uil-check-circle",
-                                            }),
-                                          ]
-                                        ),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "tutor_cate" }, [
-                                        _vm._v(
-                                          "\n                                Language Learning Coach, Writer, Online Tutor\n                              "
-                                        ),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c(
-                                        "ul",
-                                        { staticClass: "tutor_social_links" },
-                                        [
-                                          _c("li", [
-                                            _c(
-                                              "button",
-                                              { staticClass: "sbbc145" },
-                                              [_vm._v("Subscribed")]
-                                            ),
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("li", [
-                                            _c(
-                                              "button",
-                                              { staticClass: "sbbc146" },
-                                              [
-                                                _c("i", {
-                                                  staticClass: "uil uil-bell",
-                                                }),
-                                              ]
-                                            ),
-                                          ]),
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "tut1250" }, [
-                                        _c("span", { staticClass: "vdt15" }, [
-                                          _vm._v("14K Students"),
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("span", { staticClass: "vdt15" }, [
-                                          _vm._v("11 Courses"),
-                                        ]),
-                                      ]),
-                                    ]
-                                  ),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-3 col-md-4" }, [
-                                _c("div", { staticClass: "fcrse_1 mt-30" }, [
-                                  _c("div", { staticClass: "tutor_img" }, [
-                                    _c("a", { attrs: { href: "#" } }, [
-                                      _c("img", {
-                                        attrs: {
-                                          src: "images/left-imgs/img-3.jpg",
-                                          alt: "",
-                                        },
-                                      }),
-                                    ]),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    { staticClass: "tutor_content_dt" },
-                                    [
-                                      _c("div", { staticClass: "tutor150" }, [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass: "tutor_name",
-                                            attrs: { href: "#" },
-                                          },
-                                          [_vm._v("Jose Portilla")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass: "mef78",
-                                            attrs: { title: "Verify" },
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "uil uil-check-circle",
-                                            }),
-                                          ]
-                                        ),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "tutor_cate" }, [
-                                        _vm._v(
-                                          "\n                                Head of Data Science, Pierian Data Inc.\n                              "
-                                        ),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c(
-                                        "ul",
-                                        { staticClass: "tutor_social_links" },
-                                        [
-                                          _c("li", [
-                                            _c(
-                                              "button",
-                                              { staticClass: "sbbc145" },
-                                              [_vm._v("Subscribed")]
-                                            ),
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("li", [
-                                            _c(
-                                              "button",
-                                              { staticClass: "sbbc146" },
-                                              [
-                                                _c("i", {
-                                                  staticClass: "uil uil-bell",
-                                                }),
-                                              ]
-                                            ),
-                                          ]),
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "tut1250" }, [
-                                        _c("span", { staticClass: "vdt15" }, [
-                                          _vm._v("1M Students"),
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("span", { staticClass: "vdt15" }, [
-                                          _vm._v("25 Courses"),
-                                        ]),
-                                      ]),
-                                    ]
-                                  ),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-lg-3 col-md-4" }, [
-                                _c("div", { staticClass: "fcrse_1 mt-30" }, [
-                                  _c("div", { staticClass: "tutor_img" }, [
-                                    _c("a", { attrs: { href: "#" } }, [
-                                      _c("img", {
-                                        attrs: {
-                                          src: "images/left-imgs/img-3.jpg",
-                                          alt: "",
-                                        },
-                                      }),
-                                    ]),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    { staticClass: "tutor_content_dt" },
-                                    [
-                                      _c("div", { staticClass: "tutor150" }, [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass: "tutor_name",
-                                            attrs: { href: "#" },
-                                          },
-                                          [_vm._v("Jose Portilla")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass: "mef78",
-                                            attrs: { title: "Verify" },
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "uil uil-check-circle",
-                                            }),
-                                          ]
-                                        ),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "tutor_cate" }, [
-                                        _vm._v(
-                                          "\n                                Head of Data Science, Pierian Data Inc.\n                              "
-                                        ),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c(
-                                        "ul",
-                                        { staticClass: "tutor_social_links" },
-                                        [
-                                          _c("li", [
-                                            _c(
-                                              "button",
-                                              { staticClass: "sbbc145" },
-                                              [_vm._v("Subscribed")]
-                                            ),
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("li", [
-                                            _c(
-                                              "button",
-                                              { staticClass: "sbbc146" },
-                                              [
-                                                _c("i", {
-                                                  staticClass: "uil uil-bell",
-                                                }),
-                                              ]
-                                            ),
-                                          ]),
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "tut1250" }, [
-                                        _c("span", { staticClass: "vdt15" }, [
-                                          _vm._v("1M Students"),
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("span", { staticClass: "vdt15" }, [
-                                          _vm._v("25 Courses"),
-                                        ]),
-                                      ]),
-                                    ]
-                                  ),
-                                ]),
-                              ]),
-                            ]),
-                          ]),
-                        ]),
-                      ]
+                      [_vm._v("Subscriptions")]
                     ),
                   ]
                 ),
               ]),
+            ]),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "_215b17" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-lg-12" }, [
+            _c("div", { staticClass: "course_tab_content" }, [
+              _c(
+                "div",
+                { staticClass: "tab-content", attrs: { id: "nav-tabContent" } },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "tab-pane fade show active",
+                      attrs: { id: "nav-about", role: "tabpanel" },
+                    },
+                    [
+                      _c("div", { staticClass: "_htg451" }, [
+                        _c("div", { staticClass: "_htg452" }, [
+                          _c("h3", [_vm._v("About Me")]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v(
+                              "\n                        Lorem ipsum dolor sit amet, consectetur adipiscing\n                        elit. Vestibulum scelerisque nibh sed ligula blandit,\n                        quis faucibus lorem pellentesque. Suspendisse pulvinar\n                        dictum pellentesque. Vestibulum at sagittis lectus,\n                        sit amet aliquam turpis. In quis elit tempus, semper\n                        justo vitae, lacinia massa. Etiam sagittis quam quis\n                        fermentum lacinia. Curabitur blandit sapien et risus\n                        congue viverra. Mauris auctor risus sit amet cursus\n                        sollicitudin. Lorem ipsum dolor sit amet, consectetur\n                        adipiscing elit. Nulla feugiat sodales massa, in\n                        viverra dolor condimentum ut. In imperdiet, justo nec\n                        volutpat blandit, tellus justo tempor quam, sed\n                        pretium nibh nunc nec mauris. Mauris vel malesuada\n                        magna. Quisque iaculis molestie purus, non luctus\n                        mauris porta id. Maecenas imperdiet tincidunt mauris\n                        vestibulum vulputate. Aenean sollicitudin pretium\n                        nibh, et sagittis risus tincidunt ac. Phasellus\n                        scelerisque rhoncus massa, ac euismod massa pharetra\n                        non. Phasellus dignissim, urna in iaculis varius,\n                        turpis libero mollis velit, sit amet euismod arcu mi\n                        ac nibh. Praesent tincidunt eros at ligula\n                        pellentesque elementum. Fusce condimentum enim a\n                        tellus egestas, sit amet rutrum elit gravida.\n                        Pellentesque in porta sapien. Fusce tristique maximus\n                        ipsum et mollis. Sed at massa ac est dapibus vulputate\n                        at eu nibh.\n                      "
+                            ),
+                          ]),
+                        ]),
+                      ]),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "tab-pane fade",
+                      attrs: { id: "nav-courses", role: "tabpanel" },
+                    },
+                    [
+                      _c("div", { staticClass: "crse_content" }, [
+                        _c("h3", [_vm._v("My courses (8)")]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "_14d25" }, [
+                          _c("div", { staticClass: "row" }, [
+                            _c("div", { staticClass: "col-lg-3 col-md-4" }, [
+                              _c("div", { staticClass: "fcrse_1 mt-30" }, [
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass: "fcrse_img",
+                                    attrs: { href: "course_detail_view.html" },
+                                  },
+                                  [
+                                    _c("img", {
+                                      attrs: {
+                                        src: "images/courses/img-1.jpg",
+                                        alt: "",
+                                      },
+                                    }),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "course-overlay" },
+                                      [
+                                        _c(
+                                          "div",
+                                          { staticClass: "badge_seller" },
+                                          [_vm._v("Bestseller")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "crse_reviews" },
+                                          [
+                                            _c("i", {
+                                              staticClass: "uil uil-star",
+                                            }),
+                                            _vm._v(
+                                              "4.5\n                                "
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "span",
+                                          { staticClass: "play_btn1" },
+                                          [
+                                            _c("i", {
+                                              staticClass: "uil uil-play",
+                                            }),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "crse_timer" },
+                                          [_vm._v("25 hours")]
+                                        ),
+                                      ]
+                                    ),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "fcrse_content" }, [
+                                  _c(
+                                    "div",
+                                    { staticClass: "eps_dots more_dropdown" },
+                                    [
+                                      _c("a", { attrs: { href: "#" } }, [
+                                        _c("i", {
+                                          staticClass: "uil uil-ellipsis-v",
+                                        }),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "dropdown-content" },
+                                        [
+                                          _c("span", [
+                                            _c("i", {
+                                              staticClass: "uil uil-share-alt",
+                                            }),
+                                            _vm._v("Share"),
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("span", [
+                                            _c("i", {
+                                              staticClass: "uil uil-edit-alt",
+                                            }),
+                                            _vm._v("Edit"),
+                                          ]),
+                                        ]
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "vdtodt" }, [
+                                    _c("span", { staticClass: "vdt14" }, [
+                                      _vm._v("109k views"),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", { staticClass: "vdt14" }, [
+                                      _vm._v("15 days ago"),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "crse14s",
+                                      attrs: {
+                                        href: "course_detail_view.html",
+                                      },
+                                    },
+                                    [
+                                      _vm._v(
+                                        "Complete Python Bootcamp: Go from zero to\n                                hero in Python 3"
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "crse-cate",
+                                      attrs: { href: "#" },
+                                    },
+                                    [_vm._v("Web Development | Python")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "auth1lnkprce" }, [
+                                    _c("p", { staticClass: "cr1fot" }, [
+                                      _vm._v(
+                                        "\n                                  By "
+                                      ),
+                                      _c("a", { attrs: { href: "#" } }, [
+                                        _vm._v("John Doe"),
+                                      ]),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "prce142" }, [
+                                      _vm._v("$10"),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass: "shrt-cart-btn",
+                                        attrs: { title: "cart" },
+                                      },
+                                      [
+                                        _c("i", {
+                                          staticClass:
+                                            "uil uil-shopping-cart-alt",
+                                        }),
+                                      ]
+                                    ),
+                                  ]),
+                                ]),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-lg-3 col-md-4" }, [
+                              _c("div", { staticClass: "fcrse_1 mt-30" }, [
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass: "fcrse_img",
+                                    attrs: { href: "course_detail_view.html" },
+                                  },
+                                  [
+                                    _c("img", {
+                                      attrs: {
+                                        src: "images/courses/img-2.jpg",
+                                        alt: "",
+                                      },
+                                    }),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "course-overlay" },
+                                      [
+                                        _c(
+                                          "div",
+                                          { staticClass: "badge_seller" },
+                                          [_vm._v("Bestseller")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "crse_reviews" },
+                                          [
+                                            _c("i", {
+                                              staticClass: "uil uil-star",
+                                            }),
+                                            _vm._v(
+                                              "4.5\n                                "
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "span",
+                                          { staticClass: "play_btn1" },
+                                          [
+                                            _c("i", {
+                                              staticClass: "uil uil-play",
+                                            }),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "crse_timer" },
+                                          [_vm._v("28 hours")]
+                                        ),
+                                      ]
+                                    ),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "fcrse_content" }, [
+                                  _c(
+                                    "div",
+                                    { staticClass: "eps_dots more_dropdown" },
+                                    [
+                                      _c("a", { attrs: { href: "#" } }, [
+                                        _c("i", {
+                                          staticClass: "uil uil-ellipsis-v",
+                                        }),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "dropdown-content" },
+                                        [
+                                          _c("span", [
+                                            _c("i", {
+                                              staticClass: "uil uil-share-alt",
+                                            }),
+                                            _vm._v("Share"),
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("span", [
+                                            _c("i", {
+                                              staticClass: "uil uil-edit-alt",
+                                            }),
+                                            _vm._v("Edit"),
+                                          ]),
+                                        ]
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "vdtodt" }, [
+                                    _c("span", { staticClass: "vdt14" }, [
+                                      _vm._v("5M views"),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", { staticClass: "vdt14" }, [
+                                      _vm._v("15 days ago"),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "crse14s",
+                                      attrs: {
+                                        href: "course_detail_view.html",
+                                      },
+                                    },
+                                    [
+                                      _vm._v(
+                                        "The Complete JavaScript Course 2020: Build\n                                Real Projects!"
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "crse-cate",
+                                      attrs: { href: "#" },
+                                    },
+                                    [_vm._v("Development | JavaScript")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "auth1lnkprce" }, [
+                                    _c("p", { staticClass: "cr1fot" }, [
+                                      _vm._v(
+                                        "\n                                  By "
+                                      ),
+                                      _c("a", { attrs: { href: "#" } }, [
+                                        _vm._v("John Doe"),
+                                      ]),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "prce142" }, [
+                                      _vm._v("$5"),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass: "shrt-cart-btn",
+                                        attrs: { title: "cart" },
+                                      },
+                                      [
+                                        _c("i", {
+                                          staticClass:
+                                            "uil uil-shopping-cart-alt",
+                                        }),
+                                      ]
+                                    ),
+                                  ]),
+                                ]),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-lg-3 col-md-4" }, [
+                              _c("div", { staticClass: "fcrse_1 mt-30" }, [
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass: "fcrse_img",
+                                    attrs: { href: "course_detail_view.html" },
+                                  },
+                                  [
+                                    _c("img", {
+                                      attrs: {
+                                        src: "images/courses/img-20.jpg",
+                                        alt: "",
+                                      },
+                                    }),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "course-overlay" },
+                                      [
+                                        _c(
+                                          "div",
+                                          { staticClass: "crse_reviews" },
+                                          [
+                                            _c("i", {
+                                              staticClass: "uil uil-star",
+                                            }),
+                                            _vm._v(
+                                              "5.0\n                                "
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "span",
+                                          { staticClass: "play_btn1" },
+                                          [
+                                            _c("i", {
+                                              staticClass: "uil uil-play",
+                                            }),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "crse_timer" },
+                                          [_vm._v("21 hours")]
+                                        ),
+                                      ]
+                                    ),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "fcrse_content" }, [
+                                  _c(
+                                    "div",
+                                    { staticClass: "eps_dots more_dropdown" },
+                                    [
+                                      _c("a", { attrs: { href: "#" } }, [
+                                        _c("i", {
+                                          staticClass: "uil uil-ellipsis-v",
+                                        }),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "dropdown-content" },
+                                        [
+                                          _c("span", [
+                                            _c("i", {
+                                              staticClass: "uil uil-share-alt",
+                                            }),
+                                            _vm._v("Share"),
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("span", [
+                                            _c("i", {
+                                              staticClass: "uil uil-edit-alt",
+                                            }),
+                                            _vm._v("Edit"),
+                                          ]),
+                                        ]
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "vdtodt" }, [
+                                    _c("span", { staticClass: "vdt14" }, [
+                                      _vm._v("200 Views"),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", { staticClass: "vdt14" }, [
+                                      _vm._v("4 days ago"),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "crse14s",
+                                      attrs: {
+                                        href: "course_detail_view.html",
+                                      },
+                                    },
+                                    [
+                                      _vm._v(
+                                        "WordPress Development - Themes, Plugins &\n                                Gutenberg"
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "crse-cate",
+                                      attrs: { href: "#" },
+                                    },
+                                    [_vm._v("Design | Wordpress")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "auth1lnkprce" }, [
+                                    _c("p", { staticClass: "cr1fot" }, [
+                                      _vm._v(
+                                        "\n                                  By "
+                                      ),
+                                      _c("a", { attrs: { href: "#" } }, [
+                                        _vm._v("John Doe"),
+                                      ]),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "prce142" }, [
+                                      _vm._v("$14"),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass: "shrt-cart-btn",
+                                        attrs: { title: "cart" },
+                                      },
+                                      [
+                                        _c("i", {
+                                          staticClass:
+                                            "uil uil-shopping-cart-alt",
+                                        }),
+                                      ]
+                                    ),
+                                  ]),
+                                ]),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-lg-3 col-md-4" }, [
+                              _c("div", { staticClass: "fcrse_1 mt-30" }, [
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass: "fcrse_img",
+                                    attrs: { href: "course_detail_view.html" },
+                                  },
+                                  [
+                                    _c("img", {
+                                      attrs: {
+                                        src: "images/courses/img-4.jpg",
+                                        alt: "",
+                                      },
+                                    }),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "course-overlay" },
+                                      [
+                                        _c(
+                                          "div",
+                                          { staticClass: "badge_seller" },
+                                          [_vm._v("Bestseller")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "crse_reviews" },
+                                          [
+                                            _c("i", {
+                                              staticClass: "uil uil-star",
+                                            }),
+                                            _vm._v(
+                                              "5.0\n                                "
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "span",
+                                          { staticClass: "play_btn1" },
+                                          [
+                                            _c("i", {
+                                              staticClass: "uil uil-play",
+                                            }),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "crse_timer" },
+                                          [_vm._v("1 hour")]
+                                        ),
+                                      ]
+                                    ),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "fcrse_content" }, [
+                                  _c(
+                                    "div",
+                                    { staticClass: "eps_dots more_dropdown" },
+                                    [
+                                      _c("a", { attrs: { href: "#" } }, [
+                                        _c("i", {
+                                          staticClass: "uil uil-ellipsis-v",
+                                        }),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "dropdown-content" },
+                                        [
+                                          _c("span", [
+                                            _c("i", {
+                                              staticClass: "uil uil-share-alt",
+                                            }),
+                                            _vm._v("Share"),
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("span", [
+                                            _c("i", {
+                                              staticClass: "uil uil-edit-alt",
+                                            }),
+                                            _vm._v("Edit"),
+                                          ]),
+                                        ]
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "vdtodt" }, [
+                                    _c("span", { staticClass: "vdt14" }, [
+                                      _vm._v("153k views"),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", { staticClass: "vdt14" }, [
+                                      _vm._v("3 months ago"),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "crse14s",
+                                      attrs: {
+                                        href: "course_detail_view.html",
+                                      },
+                                    },
+                                    [
+                                      _vm._v(
+                                        "The Complete Digital Marketing Course - 12\n                                Courses in 1"
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "crse-cate",
+                                      attrs: { href: "#" },
+                                    },
+                                    [_vm._v("Digital Marketing | Marketing")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "auth1lnkprce" }, [
+                                    _c("p", { staticClass: "cr1fot" }, [
+                                      _vm._v(
+                                        "\n                                  By "
+                                      ),
+                                      _c("a", { attrs: { href: "#" } }, [
+                                        _vm._v("John Doe"),
+                                      ]),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "prce142" }, [
+                                      _vm._v("$12"),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass: "shrt-cart-btn",
+                                        attrs: { title: "cart" },
+                                      },
+                                      [
+                                        _c("i", {
+                                          staticClass:
+                                            "uil uil-shopping-cart-alt",
+                                        }),
+                                      ]
+                                    ),
+                                  ]),
+                                ]),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-lg-3 col-md-4" }, [
+                              _c("div", { staticClass: "fcrse_1 mt-30" }, [
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass: "fcrse_img",
+                                    attrs: { href: "course_detail_view.html" },
+                                  },
+                                  [
+                                    _c("img", {
+                                      attrs: {
+                                        src: "images/courses/img-13.jpg",
+                                        alt: "",
+                                      },
+                                    }),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "course-overlay" },
+                                      [
+                                        _c(
+                                          "span",
+                                          { staticClass: "play_btn1" },
+                                          [
+                                            _c("i", {
+                                              staticClass: "uil uil-play",
+                                            }),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "crse_timer" },
+                                          [_vm._v("30 hours")]
+                                        ),
+                                      ]
+                                    ),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "fcrse_content" }, [
+                                  _c(
+                                    "div",
+                                    { staticClass: "eps_dots more_dropdown" },
+                                    [
+                                      _c("a", { attrs: { href: "#" } }, [
+                                        _c("i", {
+                                          staticClass: "uil uil-ellipsis-v",
+                                        }),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "dropdown-content" },
+                                        [
+                                          _c("span", [
+                                            _c("i", {
+                                              staticClass: "uil uil-share-alt",
+                                            }),
+                                            _vm._v("Share"),
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("span", [
+                                            _c("i", {
+                                              staticClass: "uil uil-edit-alt",
+                                            }),
+                                            _vm._v("Edit"),
+                                          ]),
+                                        ]
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "vdtodt" }, [
+                                    _c("span", { staticClass: "vdt14" }, [
+                                      _vm._v("20 Views"),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", { staticClass: "vdt14" }, [
+                                      _vm._v("1 day ago"),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "crse14s",
+                                      attrs: {
+                                        href: "course_detail_view.html",
+                                      },
+                                    },
+                                    [
+                                      _vm._v(
+                                        "The Complete Node.js Developer Course (3rd\n                                Edition)"
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "crse-cate",
+                                      attrs: { href: "#" },
+                                    },
+                                    [_vm._v("Development | Node.js")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "auth1lnkprce" }, [
+                                    _c("p", { staticClass: "cr1fot" }, [
+                                      _vm._v(
+                                        "\n                                  By "
+                                      ),
+                                      _c("a", { attrs: { href: "#" } }, [
+                                        _vm._v("John Doe"),
+                                      ]),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "prce142" }, [
+                                      _vm._v("$3"),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass: "shrt-cart-btn",
+                                        attrs: { title: "cart" },
+                                      },
+                                      [
+                                        _c("i", {
+                                          staticClass:
+                                            "uil uil-shopping-cart-alt",
+                                        }),
+                                      ]
+                                    ),
+                                  ]),
+                                ]),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-lg-3 col-md-4" }, [
+                              _c("div", { staticClass: "fcrse_1 mt-30" }, [
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass: "fcrse_img",
+                                    attrs: { href: "course_detail_view.html" },
+                                  },
+                                  [
+                                    _c("img", {
+                                      attrs: {
+                                        src: "images/courses/img-7.jpg",
+                                        alt: "",
+                                      },
+                                    }),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "course-overlay" },
+                                      [
+                                        _c(
+                                          "div",
+                                          { staticClass: "badge_seller" },
+                                          [_vm._v("Bestseller")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "crse_reviews" },
+                                          [
+                                            _c("i", {
+                                              staticClass: "uil uil-star",
+                                            }),
+                                            _vm._v(
+                                              "5.0\n                                "
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "span",
+                                          { staticClass: "play_btn1" },
+                                          [
+                                            _c("i", {
+                                              staticClass: "uil uil-play",
+                                            }),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "crse_timer" },
+                                          [_vm._v("5.4 hours")]
+                                        ),
+                                      ]
+                                    ),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "fcrse_content" }, [
+                                  _c(
+                                    "div",
+                                    { staticClass: "eps_dots more_dropdown" },
+                                    [
+                                      _c("a", { attrs: { href: "#" } }, [
+                                        _c("i", {
+                                          staticClass: "uil uil-ellipsis-v",
+                                        }),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "dropdown-content" },
+                                        [
+                                          _c("span", [
+                                            _c("i", {
+                                              staticClass: "uil uil-share-alt",
+                                            }),
+                                            _vm._v("Share"),
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("span", [
+                                            _c("i", {
+                                              staticClass: "uil uil-edit-alt",
+                                            }),
+                                            _vm._v("Edit"),
+                                          ]),
+                                        ]
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "vdtodt" }, [
+                                    _c("span", { staticClass: "vdt14" }, [
+                                      _vm._v("109k views"),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", { staticClass: "vdt14" }, [
+                                      _vm._v("15 days ago"),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "crse14s",
+                                      attrs: {
+                                        href: "course_detail_view.html",
+                                      },
+                                    },
+                                    [
+                                      _vm._v(
+                                        "WordPress for Beginners: Create a Website\n                                Step by Step"
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "crse-cate",
+                                      attrs: { href: "#" },
+                                    },
+                                    [_vm._v("Design | Wordpress")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "auth1lnkprce" }, [
+                                    _c("p", { staticClass: "cr1fot" }, [
+                                      _vm._v(
+                                        "\n                                  By "
+                                      ),
+                                      _c("a", { attrs: { href: "#" } }, [
+                                        _vm._v("John Doe"),
+                                      ]),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "prce142" }, [
+                                      _vm._v("$18"),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass: "shrt-cart-btn",
+                                        attrs: { title: "cart" },
+                                      },
+                                      [
+                                        _c("i", {
+                                          staticClass:
+                                            "uil uil-shopping-cart-alt",
+                                        }),
+                                      ]
+                                    ),
+                                  ]),
+                                ]),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-lg-3 col-md-4" }, [
+                              _c("div", { staticClass: "fcrse_1 mt-30" }, [
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass: "fcrse_img",
+                                    attrs: { href: "course_detail_view.html" },
+                                  },
+                                  [
+                                    _c("img", {
+                                      attrs: {
+                                        src: "images/courses/img-8.jpg",
+                                        alt: "",
+                                      },
+                                    }),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "course-overlay" },
+                                      [
+                                        _c(
+                                          "div",
+                                          { staticClass: "badge_seller" },
+                                          [_vm._v("Bestseller")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "crse_reviews" },
+                                          [
+                                            _c("i", {
+                                              staticClass: "uil uil-star",
+                                            }),
+                                            _vm._v(
+                                              "4.0\n                                "
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "span",
+                                          { staticClass: "play_btn1" },
+                                          [
+                                            _c("i", {
+                                              staticClass: "uil uil-play",
+                                            }),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "crse_timer" },
+                                          [_vm._v("23 hours")]
+                                        ),
+                                      ]
+                                    ),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "fcrse_content" }, [
+                                  _c(
+                                    "div",
+                                    { staticClass: "eps_dots more_dropdown" },
+                                    [
+                                      _c("a", { attrs: { href: "#" } }, [
+                                        _c("i", {
+                                          staticClass: "uil uil-ellipsis-v",
+                                        }),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "dropdown-content" },
+                                        [
+                                          _c("span", [
+                                            _c("i", {
+                                              staticClass: "uil uil-share-alt",
+                                            }),
+                                            _vm._v("Share"),
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("span", [
+                                            _c("i", {
+                                              staticClass: "uil uil-edit-alt",
+                                            }),
+                                            _vm._v("Edit"),
+                                          ]),
+                                        ]
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "vdtodt" }, [
+                                    _c("span", { staticClass: "vdt14" }, [
+                                      _vm._v("196k views"),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", { staticClass: "vdt14" }, [
+                                      _vm._v("1 month ago"),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "crse14s",
+                                      attrs: {
+                                        href: "course_detail_view.html",
+                                      },
+                                    },
+                                    [
+                                      _vm._v(
+                                        "CSS - The Complete Guide 2020 (incl. Flexbox,\n                                Grid & Sass)"
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "crse-cate",
+                                      attrs: { href: "#" },
+                                    },
+                                    [_vm._v("Design | CSS")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "auth1lnkprce" }, [
+                                    _c("p", { staticClass: "cr1fot" }, [
+                                      _vm._v(
+                                        "\n                                  By "
+                                      ),
+                                      _c("a", { attrs: { href: "#" } }, [
+                                        _vm._v("John Doe"),
+                                      ]),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "prce142" }, [
+                                      _vm._v("$10"),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass: "shrt-cart-btn",
+                                        attrs: { title: "cart" },
+                                      },
+                                      [
+                                        _c("i", {
+                                          staticClass:
+                                            "uil uil-shopping-cart-alt",
+                                        }),
+                                      ]
+                                    ),
+                                  ]),
+                                ]),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-lg-3 col-md-4" }, [
+                              _c("div", { staticClass: "fcrse_1 mt-30" }, [
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass: "fcrse_img",
+                                    attrs: { href: "course_detail_view.html" },
+                                  },
+                                  [
+                                    _c("img", {
+                                      attrs: {
+                                        src: "images/courses/img-16.jpg",
+                                        alt: "",
+                                      },
+                                    }),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "course-overlay" },
+                                      [
+                                        _c(
+                                          "span",
+                                          { staticClass: "play_btn1" },
+                                          [
+                                            _c("i", {
+                                              staticClass: "uil uil-play",
+                                            }),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "crse_timer" },
+                                          [_vm._v("22 hours")]
+                                        ),
+                                      ]
+                                    ),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "fcrse_content" }, [
+                                  _c(
+                                    "div",
+                                    { staticClass: "eps_dots more_dropdown" },
+                                    [
+                                      _c("a", { attrs: { href: "#" } }, [
+                                        _c("i", {
+                                          staticClass: "uil uil-ellipsis-v",
+                                        }),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "dropdown-content" },
+                                        [
+                                          _c("span", [
+                                            _c("i", {
+                                              staticClass: "uil uil-share-alt",
+                                            }),
+                                            _vm._v("Share"),
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("span", [
+                                            _c("i", {
+                                              staticClass: "uil uil-edit-alt",
+                                            }),
+                                            _vm._v("Edit"),
+                                          ]),
+                                        ]
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "vdtodt" }, [
+                                    _c("span", { staticClass: "vdt14" }, [
+                                      _vm._v("11 Views"),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", { staticClass: "vdt14" }, [
+                                      _vm._v("5 Days ago"),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "crse14s",
+                                      attrs: {
+                                        href: "course_detail_view.html",
+                                      },
+                                    },
+                                    [
+                                      _vm._v(
+                                        "Vue JS 2 - The Complete Guide (incl. Vue\n                                Router & Vuex)"
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "crse-cate",
+                                      attrs: { href: "#" },
+                                    },
+                                    [_vm._v("Development | Vue JS")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "auth1lnkprce" }, [
+                                    _c("p", { staticClass: "cr1fot" }, [
+                                      _vm._v(
+                                        "\n                                  By "
+                                      ),
+                                      _c("a", { attrs: { href: "#" } }, [
+                                        _vm._v("John Doe"),
+                                      ]),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "prce142" }, [
+                                      _vm._v("$10"),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass: "shrt-cart-btn",
+                                        attrs: { title: "cart" },
+                                      },
+                                      [
+                                        _c("i", {
+                                          staticClass:
+                                            "uil uil-shopping-cart-alt",
+                                        }),
+                                      ]
+                                    ),
+                                  ]),
+                                ]),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "tab-pane fade show",
+                      attrs: { id: "nav-subscriptions", role: "tabpanel" },
+                    },
+                    [
+                      _c("div", { staticClass: "_htg451" }, [
+                        _c("div", { staticClass: "_htg452" }, [
+                          _c("h3", [_vm._v("Subscriptions")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "row" }, [
+                            _c("div", { staticClass: "col-lg-3 col-md-4" }, [
+                              _c("div", { staticClass: "fcrse_1 mt-30" }, [
+                                _c("div", { staticClass: "tutor_img" }, [
+                                  _c("a", { attrs: { href: "#" } }, [
+                                    _c("img", {
+                                      attrs: {
+                                        src: "images/left-imgs/img-1.jpg",
+                                        alt: "",
+                                      },
+                                    }),
+                                  ]),
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "tutor_content_dt" }, [
+                                  _c("div", { staticClass: "tutor150" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "tutor_name",
+                                        attrs: { href: "#" },
+                                      },
+                                      [_vm._v("John Doe")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "mef78",
+                                        attrs: { title: "Verify" },
+                                      },
+                                      [
+                                        _c("i", {
+                                          staticClass: "uil uil-check-circle",
+                                        }),
+                                      ]
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "tutor_cate" }, [
+                                    _vm._v(
+                                      "\n                                Wordpress & Plugin Tutor\n                              "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "ul",
+                                    { staticClass: "tutor_social_links" },
+                                    [
+                                      _c("li", [
+                                        _c(
+                                          "button",
+                                          { staticClass: "sbbc145" },
+                                          [_vm._v("Subscribed")]
+                                        ),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("li", [
+                                        _c(
+                                          "button",
+                                          { staticClass: "sbbc146" },
+                                          [
+                                            _c("i", {
+                                              staticClass: "uil uil-bell",
+                                            }),
+                                          ]
+                                        ),
+                                      ]),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "tut1250" }, [
+                                    _c("span", { staticClass: "vdt15" }, [
+                                      _vm._v("100K Students"),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", { staticClass: "vdt15" }, [
+                                      _vm._v("15 Courses"),
+                                    ]),
+                                  ]),
+                                ]),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-lg-3 col-md-4" }, [
+                              _c("div", { staticClass: "fcrse_1 mt-30" }, [
+                                _c("div", { staticClass: "tutor_img" }, [
+                                  _c("a", { attrs: { href: "#" } }, [
+                                    _c("img", {
+                                      attrs: {
+                                        src: "images/left-imgs/img-2.jpg",
+                                        alt: "",
+                                      },
+                                    }),
+                                  ]),
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "tutor_content_dt" }, [
+                                  _c("div", { staticClass: "tutor150" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "tutor_name",
+                                        attrs: { href: "#" },
+                                      },
+                                      [_vm._v("Kerstin Cable")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "mef78",
+                                        attrs: { title: "Verify" },
+                                      },
+                                      [
+                                        _c("i", {
+                                          staticClass: "uil uil-check-circle",
+                                        }),
+                                      ]
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "tutor_cate" }, [
+                                    _vm._v(
+                                      "\n                                Language Learning Coach, Writer, Online Tutor\n                              "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "ul",
+                                    { staticClass: "tutor_social_links" },
+                                    [
+                                      _c("li", [
+                                        _c(
+                                          "button",
+                                          { staticClass: "sbbc145" },
+                                          [_vm._v("Subscribed")]
+                                        ),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("li", [
+                                        _c(
+                                          "button",
+                                          { staticClass: "sbbc146" },
+                                          [
+                                            _c("i", {
+                                              staticClass: "uil uil-bell",
+                                            }),
+                                          ]
+                                        ),
+                                      ]),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "tut1250" }, [
+                                    _c("span", { staticClass: "vdt15" }, [
+                                      _vm._v("14K Students"),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", { staticClass: "vdt15" }, [
+                                      _vm._v("11 Courses"),
+                                    ]),
+                                  ]),
+                                ]),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-lg-3 col-md-4" }, [
+                              _c("div", { staticClass: "fcrse_1 mt-30" }, [
+                                _c("div", { staticClass: "tutor_img" }, [
+                                  _c("a", { attrs: { href: "#" } }, [
+                                    _c("img", {
+                                      attrs: {
+                                        src: "images/left-imgs/img-3.jpg",
+                                        alt: "",
+                                      },
+                                    }),
+                                  ]),
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "tutor_content_dt" }, [
+                                  _c("div", { staticClass: "tutor150" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "tutor_name",
+                                        attrs: { href: "#" },
+                                      },
+                                      [_vm._v("Jose Portilla")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "mef78",
+                                        attrs: { title: "Verify" },
+                                      },
+                                      [
+                                        _c("i", {
+                                          staticClass: "uil uil-check-circle",
+                                        }),
+                                      ]
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "tutor_cate" }, [
+                                    _vm._v(
+                                      "\n                                Head of Data Science, Pierian Data Inc.\n                              "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "ul",
+                                    { staticClass: "tutor_social_links" },
+                                    [
+                                      _c("li", [
+                                        _c(
+                                          "button",
+                                          { staticClass: "sbbc145" },
+                                          [_vm._v("Subscribed")]
+                                        ),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("li", [
+                                        _c(
+                                          "button",
+                                          { staticClass: "sbbc146" },
+                                          [
+                                            _c("i", {
+                                              staticClass: "uil uil-bell",
+                                            }),
+                                          ]
+                                        ),
+                                      ]),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "tut1250" }, [
+                                    _c("span", { staticClass: "vdt15" }, [
+                                      _vm._v("1M Students"),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", { staticClass: "vdt15" }, [
+                                      _vm._v("25 Courses"),
+                                    ]),
+                                  ]),
+                                ]),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-lg-3 col-md-4" }, [
+                              _c("div", { staticClass: "fcrse_1 mt-30" }, [
+                                _c("div", { staticClass: "tutor_img" }, [
+                                  _c("a", { attrs: { href: "#" } }, [
+                                    _c("img", {
+                                      attrs: {
+                                        src: "images/left-imgs/img-3.jpg",
+                                        alt: "",
+                                      },
+                                    }),
+                                  ]),
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "tutor_content_dt" }, [
+                                  _c("div", { staticClass: "tutor150" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "tutor_name",
+                                        attrs: { href: "#" },
+                                      },
+                                      [_vm._v("Jose Portilla")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "mef78",
+                                        attrs: { title: "Verify" },
+                                      },
+                                      [
+                                        _c("i", {
+                                          staticClass: "uil uil-check-circle",
+                                        }),
+                                      ]
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "tutor_cate" }, [
+                                    _vm._v(
+                                      "\n                                Head of Data Science, Pierian Data Inc.\n                              "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "ul",
+                                    { staticClass: "tutor_social_links" },
+                                    [
+                                      _c("li", [
+                                        _c(
+                                          "button",
+                                          { staticClass: "sbbc145" },
+                                          [_vm._v("Subscribed")]
+                                        ),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("li", [
+                                        _c(
+                                          "button",
+                                          { staticClass: "sbbc146" },
+                                          [
+                                            _c("i", {
+                                              staticClass: "uil uil-bell",
+                                            }),
+                                          ]
+                                        ),
+                                      ]),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "tut1250" }, [
+                                    _c("span", { staticClass: "vdt15" }, [
+                                      _vm._v("1M Students"),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", { staticClass: "vdt15" }, [
+                                      _vm._v("25 Courses"),
+                                    ]),
+                                  ]),
+                                ]),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                    ]
+                  ),
+                ]
+              ),
             ]),
           ]),
         ]),
@@ -48400,346 +53256,90 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "sa4d25" }, [
-      _c("div", { staticClass: "container-fluid" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-lg-12" }, [
-            _c("h2", { staticClass: "st_title" }, [
-              _c("i", { staticClass: "uil uil-star" }),
-              _vm._v(" All Review"),
-            ]),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-12" }, [
-            _c("div", { staticClass: "student_reviews" }, [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-lg-5" }, [
-                  _c("div", { staticClass: "reviews_left" }, [
-                    _c("h3", [_vm._v("All Student Feedback")]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "total_rating" }, [
-                      _c("div", { staticClass: "_rate001" }, [_vm._v("4.6")]),
+  return _c("div", { staticClass: "sa4d25" }, [
+    _c("div", { staticClass: "container-fluid" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-12" }, [
+          _c("div", { staticClass: "student_reviews" }, [
+            _c("div", { staticClass: "row" }, [
+              _vm._m(1),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-lg-7" }, [
+                _vm._m(2),
+                _vm._v(" "),
+                _c("div", { staticClass: "review_all120" }, [
+                  _vm._m(3),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "review_item" }, [
+                    _c("div", { staticClass: "review_usr_dt" }, [
+                      _c("img", {
+                        attrs: {
+                          src: _vm.globalBaseUrl + "images/left-imgs/img-1.jpg",
+                          alt: "",
+                        },
+                      }),
                       _vm._v(" "),
-                      _c("div", { staticClass: "rating-box" }, [
-                        _c("span", { staticClass: "rating-star full-star" }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "rating-star full-star" }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "rating-star full-star" }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "rating-star full-star" }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "rating-star half-star" }),
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "_rate002" }, [
-                        _vm._v("All Rating"),
-                      ]),
+                      _vm._m(4),
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "_rate003" }, [
-                      _c("div", { staticClass: "_rate004" }, [
-                        _c("div", { staticClass: "progress progress1" }, [
-                          _c("div", {
-                            staticClass: "progress-bar w-70",
-                            attrs: {
-                              role: "progressbar",
-                              "aria-valuenow": "70",
-                              "aria-valuemin": "0",
-                              "aria-valuemax": "100",
-                            },
-                          }),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "rating-box" }, [
-                          _c("span", { staticClass: "rating-star full-star" }),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "rating-star full-star" }),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "rating-star full-star" }),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "rating-star full-star" }),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "rating-star full-star" }),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "_rate002" }, [_vm._v("70%")]),
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "_rate004" }, [
-                        _c("div", { staticClass: "progress progress1" }, [
-                          _c("div", {
-                            staticClass: "progress-bar w-30",
-                            attrs: {
-                              role: "progressbar",
-                              "aria-valuenow": "30",
-                              "aria-valuemin": "0",
-                              "aria-valuemax": "100",
-                            },
-                          }),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "rating-box" }, [
-                          _c("span", { staticClass: "rating-star full-star" }),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "rating-star full-star" }),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "rating-star full-star" }),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "rating-star full-star" }),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "rating-star empty-star" }),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "_rate002" }, [_vm._v("40%")]),
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "_rate004" }, [
-                        _c("div", { staticClass: "progress progress1" }, [
-                          _c("div", {
-                            staticClass: "progress-bar w-5",
-                            attrs: {
-                              role: "progressbar",
-                              "aria-valuenow": "10",
-                              "aria-valuemin": "0",
-                              "aria-valuemax": "100",
-                            },
-                          }),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "rating-box" }, [
-                          _c("span", { staticClass: "rating-star full-star" }),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "rating-star full-star" }),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "rating-star full-star" }),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "rating-star empty-star" }),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "rating-star empty-star" }),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "_rate002" }, [_vm._v("5%")]),
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "_rate004" }, [
-                        _c("div", { staticClass: "progress progress1" }, [
-                          _c("div", {
-                            staticClass: "progress-bar w-2",
-                            attrs: {
-                              role: "progressbar",
-                              "aria-valuenow": "2",
-                              "aria-valuemin": "0",
-                              "aria-valuemax": "100",
-                            },
-                          }),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "rating-box" }, [
-                          _c("span", { staticClass: "rating-star full-star" }),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "rating-star full-star" }),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "rating-star empty-star" }),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "rating-star empty-star" }),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "rating-star empty-star" }),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "_rate002" }, [_vm._v("1%")]),
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "_rate004" }, [
-                        _c("div", { staticClass: "progress progress1" }, [
-                          _c("div", {
-                            staticClass: "progress-bar w-1",
-                            attrs: {
-                              role: "progressbar",
-                              "aria-valuenow": "0",
-                              "aria-valuemin": "0",
-                              "aria-valuemax": "100",
-                            },
-                          }),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "rating-box" }, [
-                          _c("span", { staticClass: "rating-star full-star" }),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "rating-star empty-star" }),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "rating-star empty-star" }),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "rating-star empty-star" }),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "rating-star empty-star" }),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "_rate002" }, [_vm._v("1%")]),
-                      ]),
+                    _vm._m(5),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "rvds10" }, [
+                      _vm._v(
+                        "\n                        Nam gravida elit a velit rutrum, eget dapibus ex\n                        elementum. Interdum et malesuada fames ac ante ipsum\n                        primis in faucibus. Fusce lacinia, nunc sit amet\n                        tincidunt venenatis.\n                      "
+                      ),
                     ]),
                   ]),
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-lg-7" }, [
-                  _c("div", { staticClass: "review_right" }, [
-                    _c("div", { staticClass: "review_right_heading" }, [
-                      _c("h3", [_vm._v("All Reviews")]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "review_search" }, [
-                        _c("input", {
-                          staticClass: "rv_srch",
-                          attrs: {
-                            type: "text",
-                            placeholder: "Search reviews...",
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("button", { staticClass: "rvsrch_btn" }, [
-                          _c("i", { staticClass: "uil uil-search" }),
-                        ]),
-                      ]),
-                    ]),
-                  ]),
+                _c("div", { staticClass: "review_all120 mt-30" }, [
+                  _vm._m(6),
                   _vm._v(" "),
-                  _c("div", { staticClass: "review_all120" }, [
-                    _c("div", { staticClass: "review_item_course_title" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _vm._v("Course Title Here"),
-                      ]),
+                  _c("div", { staticClass: "review_item" }, [
+                    _c("div", { staticClass: "review_usr_dt" }, [
+                      _c("img", {
+                        attrs: {
+                          src: _vm.globalBaseUrl + "images/left-imgs/img-1.jpg",
+                          alt: "",
+                        },
+                      }),
+                      _vm._v(" "),
+                      _vm._m(7),
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "review_item" }, [
-                      _c("div", { staticClass: "review_usr_dt" }, [
-                        _c("img", {
-                          attrs: { src: "images/left-imgs/img-1.jpg", alt: "" },
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "rv1458" }, [
-                          _c("h4", { staticClass: "tutor_name1" }, [
-                            _vm._v("John Doe"),
-                          ]),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "time_145" }, [
-                            _vm._v("2 hour ago"),
-                          ]),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "rating-box mt-20" }, [
-                        _c("span", { staticClass: "rating-star full-star" }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "rating-star full-star" }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "rating-star full-star" }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "rating-star full-star" }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "rating-star half-star" }),
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "rvds10" }, [
-                        _vm._v(
-                          "\n                        Nam gravida elit a velit rutrum, eget dapibus ex\n                        elementum. Interdum et malesuada fames ac ante ipsum\n                        primis in faucibus. Fusce lacinia, nunc sit amet\n                        tincidunt venenatis.\n                      "
-                        ),
-                      ]),
+                    _vm._m(8),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "rvds10" }, [
+                      _vm._v(
+                        "\n                        Nam gravida elit a velit rutrum, eget dapibus ex\n                        elementum. Interdum et malesuada fames ac ante ipsum\n                        primis in faucibus. Fusce lacinia, nunc sit amet\n                        tincidunt venenatis.\n                      "
+                      ),
                     ]),
                   ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "review_all120 mt-30" }, [
+                  _vm._m(9),
                   _vm._v(" "),
-                  _c("div", { staticClass: "review_all120 mt-30" }, [
-                    _c("div", { staticClass: "review_item_course_title" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _vm._v("Course Title Here"),
-                      ]),
+                  _c("div", { staticClass: "review_item" }, [
+                    _c("div", { staticClass: "review_usr_dt" }, [
+                      _c("img", {
+                        attrs: {
+                          src: _vm.globalBaseUrl + "images/left-imgs/img-1.jpg",
+                          alt: "",
+                        },
+                      }),
+                      _vm._v(" "),
+                      _vm._m(10),
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "review_item" }, [
-                      _c("div", { staticClass: "review_usr_dt" }, [
-                        _c("img", {
-                          attrs: { src: "images/left-imgs/img-2.jpg", alt: "" },
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "rv1458" }, [
-                          _c("h4", { staticClass: "tutor_name1" }, [
-                            _vm._v("Zoena Singh"),
-                          ]),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "time_145" }, [
-                            _vm._v("2 hour ago"),
-                          ]),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "rating-box mt-20" }, [
-                        _c("span", { staticClass: "rating-star full-star" }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "rating-star full-star" }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "rating-star full-star" }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "rating-star full-star" }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "rating-star half-star" }),
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "rvds10" }, [
-                        _vm._v(
-                          "\n                        Nam gravida elit a velit rutrum, eget dapibus ex\n                        elementum. Interdum et malesuada fames ac ante ipsum\n                        primis in faucibus. Fusce lacinia, nunc sit amet\n                        tincidunt venenatis.\n                      "
-                        ),
-                      ]),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "review_all120 mt-30" }, [
-                    _c("div", { staticClass: "review_item_course_title" }, [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _vm._v("Course Title Here"),
-                      ]),
-                    ]),
+                    _vm._m(11),
                     _vm._v(" "),
-                    _c("div", { staticClass: "review_item" }, [
-                      _c("div", { staticClass: "review_usr_dt" }, [
-                        _c("img", {
-                          attrs: { src: "images/left-imgs/img-3.jpg", alt: "" },
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "rv1458" }, [
-                          _c("h4", { staticClass: "tutor_name1" }, [
-                            _vm._v("Rock William"),
-                          ]),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "time_145" }, [
-                            _vm._v("5 hour ago"),
-                          ]),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "rating-box mt-20" }, [
-                        _c("span", { staticClass: "rating-star full-star" }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "rating-star full-star" }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "rating-star full-star" }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "rating-star full-star" }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "rating-star half-star" }),
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "rvds10" }, [
-                        _vm._v(
-                          "\n                        Nam gravida elit a velit rutrum, eget dapibus ex\n                        elementum. Interdum et malesuada fames ac ante ipsum\n                        primis in faucibus. Fusce lacinia, nunc sit amet\n                        tincidunt venenatis.\n                      "
-                        ),
-                      ]),
+                    _c("p", { staticClass: "rvds10" }, [
+                      _vm._v(
+                        "\n                        Nam gravida elit a velit rutrum, eget dapibus ex\n                        elementum. Interdum et malesuada fames ac ante ipsum\n                        primis in faucibus. Fusce lacinia, nunc sit amet\n                        tincidunt venenatis.\n                      "
+                      ),
                     ]),
                   ]),
                 ]),
@@ -48748,6 +53348,314 @@ var staticRenderFns = [
           ]),
         ]),
       ]),
+    ]),
+  ])
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-lg-12" }, [
+        _c("h2", { staticClass: "st_title" }, [
+          _c("i", { staticClass: "uil uil-star" }),
+          _vm._v(" All Review"),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-lg-5" }, [
+      _c("div", { staticClass: "reviews_left" }, [
+        _c("h3", [_vm._v("All Student Feedback")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "total_rating" }, [
+          _c("div", { staticClass: "_rate001" }, [_vm._v("4.6")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "rating-box" }, [
+            _c("span", { staticClass: "rating-star full-star" }),
+            _vm._v(" "),
+            _c("span", { staticClass: "rating-star full-star" }),
+            _vm._v(" "),
+            _c("span", { staticClass: "rating-star full-star" }),
+            _vm._v(" "),
+            _c("span", { staticClass: "rating-star full-star" }),
+            _vm._v(" "),
+            _c("span", { staticClass: "rating-star half-star" }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "_rate002" }, [_vm._v("All Rating")]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "_rate003" }, [
+          _c("div", { staticClass: "_rate004" }, [
+            _c("div", { staticClass: "progress progress1" }, [
+              _c("div", {
+                staticClass: "progress-bar w-70",
+                attrs: {
+                  role: "progressbar",
+                  "aria-valuenow": "70",
+                  "aria-valuemin": "0",
+                  "aria-valuemax": "100",
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "rating-box" }, [
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star full-star" }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "_rate002" }, [_vm._v("70%")]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "_rate004" }, [
+            _c("div", { staticClass: "progress progress1" }, [
+              _c("div", {
+                staticClass: "progress-bar w-30",
+                attrs: {
+                  role: "progressbar",
+                  "aria-valuenow": "30",
+                  "aria-valuemin": "0",
+                  "aria-valuemax": "100",
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "rating-box" }, [
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star empty-star" }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "_rate002" }, [_vm._v("40%")]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "_rate004" }, [
+            _c("div", { staticClass: "progress progress1" }, [
+              _c("div", {
+                staticClass: "progress-bar w-5",
+                attrs: {
+                  role: "progressbar",
+                  "aria-valuenow": "10",
+                  "aria-valuemin": "0",
+                  "aria-valuemax": "100",
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "rating-box" }, [
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star empty-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star empty-star" }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "_rate002" }, [_vm._v("5%")]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "_rate004" }, [
+            _c("div", { staticClass: "progress progress1" }, [
+              _c("div", {
+                staticClass: "progress-bar w-2",
+                attrs: {
+                  role: "progressbar",
+                  "aria-valuenow": "2",
+                  "aria-valuemin": "0",
+                  "aria-valuemax": "100",
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "rating-box" }, [
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star empty-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star empty-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star empty-star" }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "_rate002" }, [_vm._v("1%")]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "_rate004" }, [
+            _c("div", { staticClass: "progress progress1" }, [
+              _c("div", {
+                staticClass: "progress-bar w-1",
+                attrs: {
+                  role: "progressbar",
+                  "aria-valuenow": "0",
+                  "aria-valuemin": "0",
+                  "aria-valuemax": "100",
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "rating-box" }, [
+              _c("span", { staticClass: "rating-star full-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star empty-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star empty-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star empty-star" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating-star empty-star" }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "_rate002" }, [_vm._v("1%")]),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "review_right" }, [
+      _c("div", { staticClass: "review_right_heading" }, [
+        _c("h3", [_vm._v("All Reviews")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "review_search" }, [
+          _c("input", {
+            staticClass: "rv_srch",
+            attrs: { type: "text", placeholder: "Search reviews..." },
+          }),
+          _vm._v(" "),
+          _c("button", { staticClass: "rvsrch_btn" }, [
+            _c("i", { staticClass: "uil uil-search" }),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "review_item_course_title" }, [
+      _c("a", { attrs: { href: "#" } }, [_vm._v("Course Title Here")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rv1458" }, [
+      _c("h4", { staticClass: "tutor_name1" }, [_vm._v("John Doe")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "time_145" }, [_vm._v("2 hour ago")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rating-box mt-20" }, [
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star half-star" }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "review_item_course_title" }, [
+      _c("a", { attrs: { href: "#" } }, [_vm._v("Course Title Here")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rv1458" }, [
+      _c("h4", { staticClass: "tutor_name1" }, [_vm._v("Zoena Singh")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "time_145" }, [_vm._v("2 hour ago")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rating-box mt-20" }, [
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star half-star" }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "review_item_course_title" }, [
+      _c("a", { attrs: { href: "#" } }, [_vm._v("Course Title Here")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rv1458" }, [
+      _c("h4", { staticClass: "tutor_name1" }, [_vm._v("Rock William")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "time_145" }, [_vm._v("5 hour ago")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rating-box mt-20" }, [
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star half-star" }),
     ])
   },
 ]
@@ -48870,7 +53778,10 @@ var staticRenderFns = [
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "tab-content", attrs: { id: "pills-tabContent" } },
+              {
+                staticClass: "tab-content setting-content",
+                attrs: { id: "pills-tabContent" },
+              },
               [
                 _c(
                   "div",
@@ -48884,11 +53795,11 @@ var staticRenderFns = [
                   },
                   [
                     _c("div", { staticClass: "account_setting" }, [
-                      _c("h4", [_vm._v("Your Cursus Account")]),
+                      _c("h4", [_vm._v("Your Gamify Account")]),
                       _vm._v(" "),
                       _c("p", [
                         _vm._v(
-                          "\n                    This is your public presence on Cursus. You need a account\n                    to upload your paid courses, comment on courses, purchased\n                    by students, or earning.\n                  "
+                          "\n                    This is your public presence on Gamify US.\n                  "
                         ),
                       ]),
                       _vm._v(" "),

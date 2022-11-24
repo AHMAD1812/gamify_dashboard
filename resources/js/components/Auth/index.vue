@@ -8,7 +8,7 @@
             <SignInComponent v-if="$route.name=='Login'" @toggle-loader="toggleLoader"></SignInComponent>
             <SignUpComponent v-if="$route.name=='Register'" @toggle-loader="toggleLoader"></SignUpComponent>
             <ForgotPassword v-if="$route.name=='ForgotPassword'"></ForgotPassword>
-            <OtpVerification v-if="$route.name=='OtpVerification'"></OtpVerification>
+            <OtpVerification v-if="$route.name=='OtpVerification'" @toggle-loader="toggleLoader"></OtpVerification>
             <Footer></Footer>
           </div>
         </div>
@@ -39,8 +39,26 @@ export default {
         loading:false,
       }
     },
-    mounted(){
+    async mounted(){
         $('.ui.checkbox').checkbox();
+        try {
+            this.loading=true;
+            let response = await axios.get(`${globalBaseUrl}instructor/is_user_login`);
+            this.loading=false;
+            if(response.data.status==200){
+                this.$router.push({
+                    name: "Dashboard",
+                });
+            }
+        } catch (error) {
+            this.loading=false;
+            console.log(error);
+            Vue.$toast.open({
+              message:'Something Went Wrong',
+              type: "error",
+              position: "top-right",
+            })
+        }
     },
     methods:{
       toggleLoader(){

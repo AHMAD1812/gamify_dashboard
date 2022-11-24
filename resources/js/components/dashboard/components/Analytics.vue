@@ -62,7 +62,7 @@
                 <div class="card_dash_right1">
                     <button
                         class="create_btn_dash"
-                        onclick="window.location.href = 'create_new_course.html';"
+                        @click="$router.push({name: 'CreateVideo' })"
                     >
                         Create Your Video
                     </button>
