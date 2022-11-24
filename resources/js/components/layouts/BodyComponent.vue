@@ -1,7 +1,7 @@
 <template>
   <span>
     <FullScreenLoader :active="loading"></FullScreenLoader>
-    <Header @toggle-loader="toggleLoader"></Header>
+    <Header @toggle-loader="toggleLoader" :user="user"></Header>
     <Sidebar></Sidebar>
     <div class="wrapper">
         <Dashboard v-if="$route.name=='Dashboard'"></Dashboard>
@@ -10,8 +10,8 @@
         <Chat v-if="$route.name == 'Messages'"></Chat>
         <Notification v-if="$route.name=='Notification'"></Notification>
         <Review v-if="$route.name == 'Review'"></Review>
-        <Setting v-if="$route.name == 'Setting'"></Setting>
-        <Profile v-if="$route.name == 'Profile'"></Profile>
+        <Setting v-if="$route.name == 'Setting'" @toggle-loader="toggleLoader"></Setting>
+        <Profile v-if="$route.name == 'Profile'" ></Profile>
         <CourseDetail v-if="$route.name == 'CourseDetail'"></CourseDetail>
         <Footer></Footer>
     </div>
@@ -51,6 +51,18 @@ export default {
     data(){
       return{
         loading:false,
+        user:[],
+      }
+    },
+    async mounted(){
+      try{
+        this.loading=true;
+        let response = await axios.get(`${globalBaseUrl}instructor/profile`);
+        this.user = response.data.data;
+        this.loading=false;
+      }catch(e){
+        this.loading=false;
+        console.log(e);
       }
     },
     methods:{

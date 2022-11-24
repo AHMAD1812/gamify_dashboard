@@ -9333,1224 +9333,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; }, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) }), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; defineProperty(this, "_invoke", { value: function value(method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), defineProperty(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (val) { var object = Object(val), keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 //
 //
 //
@@ -12532,20 +11318,68 @@ __webpack_require__.r(__webpack_exports__);
     return {
       question_type: 1,
       question_option: [],
-      video_type: 'mp4'
+      video_type: 'mp4',
+      levelOptions: [{
+        text: 'Beginner',
+        value: 'beginner'
+      }, {
+        text: 'Intermediate',
+        value: 'intermediate'
+      }, {
+        text: 'Expert',
+        value: 'expert'
+      }],
+      level: null,
+      categoryOptions: [],
+      category: null,
+      question_name: "",
+      questions: []
     };
   },
   mounted: function mounted() {
-    $(document).ready(function () {
-      $('.ui.dropdown').dropdown();
-      $("#add-course-tab").steps({
-        onFinish: function onFinish() {
-          alert("Wizard Completed");
+    var _this = this;
+    return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      var response, category;
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.prev = 0;
+              _context.next = 3;
+              return axios.get("".concat(globalBaseUrl, "instructor/get_categories"));
+            case 3:
+              response = _context.sent;
+              category = response.data.data;
+              _this.categoryOptions = category.map(function (item) {
+                return {
+                  text: item.name,
+                  value: item.id
+                };
+              });
+              _context.next = 11;
+              break;
+            case 8:
+              _context.prev = 8;
+              _context.t0 = _context["catch"](0);
+              console.log(_context.t0);
+            case 11:
+              $(document).ready(function () {
+                $('.ui.dropdown').dropdown();
+                $("#add-course-tab").steps({
+                  onFinish: function onFinish() {
+                    alert("Wizard Completed");
+                  }
+                });
+                $(".sortable").sortable();
+                $(".sortable").disableSelection();
+              });
+            case 12:
+            case "end":
+              return _context.stop();
+          }
         }
-      });
-      $(".sortable").sortable();
-      $(".sortable").disableSelection();
-    });
+      }, _callee, null, [[0, 8]]);
+    }))();
   },
   methods: {
     addOption: function addOption() {
@@ -12556,6 +11390,29 @@ __webpack_require__.r(__webpack_exports__);
     },
     deleteOption: function deleteOption(index) {
       this.question_option.splice(index, 1);
+    },
+    addQuestion: function addQuestion() {
+      if (this.question_name == "") {
+        Vue.$toast.open({
+          message: "Name requried",
+          type: "error",
+          position: "top-right"
+        });
+        return;
+      } else if (this.question_option.length == 0) {
+        Vue.$toast.open({
+          message: "Options requried",
+          type: "error",
+          position: "top-right"
+        });
+        return;
+      }
+      this.questions.push({
+        name: this.question_name
+      });
+      this.question_name = "";
+      this.question_type = 1;
+      this.question_option = [];
     }
   }
 });
@@ -13205,6 +12062,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _setting_index_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../setting/index.vue */ "./resources/js/components/setting/index.vue");
 /* harmony import */ var _profile_index_vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../profile/index.vue */ "./resources/js/components/profile/index.vue");
 /* harmony import */ var _courses_detail_vue__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../courses/detail.vue */ "./resources/js/components/courses/detail.vue");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; }, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) }), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; defineProperty(this, "_invoke", { value: function value(method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), defineProperty(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (val) { var object = Object(val), keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 //
 //
 //
@@ -13256,8 +12117,40 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      loading: false
+      loading: false,
+      user: []
     };
+  },
+  mounted: function mounted() {
+    var _this = this;
+    return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      var response;
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.prev = 0;
+              _this.loading = true;
+              _context.next = 4;
+              return axios.get("".concat(globalBaseUrl, "instructor/profile"));
+            case 4:
+              response = _context.sent;
+              _this.user = response.data.data;
+              _this.loading = false;
+              _context.next = 13;
+              break;
+            case 9:
+              _context.prev = 9;
+              _context.t0 = _context["catch"](0);
+              _this.loading = false;
+              console.log(_context.t0);
+            case 13:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[0, 9]]);
+    }))();
   },
   methods: {
     toggleLoader: function toggleLoader() {
@@ -13279,8 +12172,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-//
-//
 //
 //
 //
@@ -13543,6 +12434,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Header",
+  props: ['user'],
   mounted: function mounted() {
     $(".new-dropdown").click(function () {
       if ($(".dropdown_account").css("display") == "none") {
@@ -14888,54 +13780,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; }, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) }), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; defineProperty(this, "_invoke", { value: function value(method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), defineProperty(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (val) { var object = Object(val), keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 //
 //
 //
@@ -15364,7 +14212,48 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "Setting"
+  name: "Setting",
+  data: function data() {
+    return {
+      full_name: "",
+      email: "",
+      bio: ""
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+    return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      var response, user;
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.prev = 0;
+              _this.$emit('toggle-loader');
+              _context.next = 4;
+              return axios.get("".concat(globalBaseUrl, "instructor/profile"));
+            case 4:
+              response = _context.sent;
+              user = response.data.data;
+              _this.full_name = user.full_name;
+              _this.email = user.email;
+              _this.bio = user.biography;
+              _this.$emit('toggle-loader');
+              _context.next = 16;
+              break;
+            case 12:
+              _context.prev = 12;
+              _context.t0 = _context["catch"](0);
+              _this.$emit('toggle-loader');
+              console.log(_context.t0);
+            case 16:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[0, 12]]);
+    }))();
+  }
 });
 
 /***/ }),
@@ -45102,9 +43991,93 @@ var render = function () {
                   _vm._m(1),
                   _vm._v(" "),
                   _c("div", { staticClass: "step-content" }, [
-                    _vm._m(2),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "step-tab-panel step-tab-info active",
+                        attrs: { id: "tab_step1" },
+                      },
+                      [
+                        _c("div", { staticClass: "tab-from-content" }, [
+                          _vm._m(2),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "course__form" }, [
+                            _c("div", { staticClass: "general_info10" }, [
+                              _c("div", { staticClass: "row" }, [
+                                _vm._m(3),
+                                _vm._v(" "),
+                                _vm._m(4),
+                                _vm._v(" "),
+                                _vm._m(5),
+                                _vm._v(" "),
+                                _vm._m(6),
+                                _vm._v(" "),
+                                _vm._m(7),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "col-lg-6 col-md-12" },
+                                  [
+                                    _vm._m(8),
+                                    _vm._v(" "),
+                                    _c("sui-dropdown", {
+                                      staticClass:
+                                        "cntry152 prompt srch_explore",
+                                      attrs: {
+                                        selection: "",
+                                        placeholder: "Select Level",
+                                        options: _vm.levelOptions,
+                                      },
+                                      model: {
+                                        value: _vm.level,
+                                        callback: function ($$v) {
+                                          _vm.level = $$v
+                                        },
+                                        expression: "level",
+                                      },
+                                    }),
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "col-lg-6 col-md-6" },
+                                  [
+                                    _vm._m(9),
+                                    _vm._v(" "),
+                                    _c("sui-dropdown", {
+                                      staticClass:
+                                        "cntry152 prompt srch_explore",
+                                      attrs: {
+                                        multiple: "",
+                                        fluid: "",
+                                        placeholder: "Select Category",
+                                        "max-selections": 2,
+                                        search: "",
+                                        selection: "",
+                                        "allow-additions": "",
+                                        options: _vm.categoryOptions,
+                                      },
+                                      model: {
+                                        value: _vm.category,
+                                        callback: function ($$v) {
+                                          _vm.category = $$v
+                                        },
+                                        expression: "category",
+                                      },
+                                    }),
+                                  ],
+                                  1
+                                ),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]
+                    ),
                     _vm._v(" "),
-                    _vm._m(3),
+                    _vm._m(10),
                     _vm._v(" "),
                     _c(
                       "div",
@@ -45114,7 +44087,7 @@ var render = function () {
                       },
                       [
                         _c("div", { staticClass: "tab-from-content" }, [
-                          _vm._m(4),
+                          _vm._m(11),
                           _vm._v(" "),
                           _c("div", { staticClass: "lecture-video-dt mb-30" }, [
                             _c("span", { staticClass: "video-info" }, [
@@ -45180,7 +44153,7 @@ var render = function () {
                                     _vm.video_type == "mp4" ? "d-block" : "",
                                   ],
                                 },
-                                [_vm._m(5)]
+                                [_vm._m(12)]
                               ),
                               _vm._v(" "),
                               _c(
@@ -45191,7 +44164,7 @@ var render = function () {
                                     _vm.video_type == "url" ? "d-block" : "",
                                   ],
                                 },
-                                [_vm._m(6)]
+                                [_vm._m(13)]
                               ),
                             ]),
                           ]),
@@ -45219,7 +44192,7 @@ var render = function () {
                                     },
                                   }),
                                   _vm._v(" "),
-                                  _vm._m(7),
+                                  _vm._m(14),
                                 ]),
                               ]),
                             ]),
@@ -45228,12 +44201,12 @@ var render = function () {
                       ]
                     ),
                     _vm._v(" "),
-                    _vm._m(8),
+                    _vm._m(15),
                     _vm._v(" "),
-                    _vm._m(9),
+                    _vm._m(16),
                   ]),
                   _vm._v(" "),
-                  _vm._m(10),
+                  _vm._m(17),
                 ]
               ),
             ]),
@@ -45242,9 +44215,9 @@ var render = function () {
       ]),
     ]),
     _vm._v(" "),
-    _vm._m(11),
+    _vm._m(18),
     _vm._v(" "),
-    _vm._m(12),
+    _vm._m(19),
     _vm._v(" "),
     _c(
       "div",
@@ -45260,14 +44233,14 @@ var render = function () {
       [
         _c("div", { staticClass: "modal-dialog modal-lg" }, [
           _c("div", { staticClass: "modal-content" }, [
-            _vm._m(13),
+            _vm._m(20),
             _vm._v(" "),
             _c("div", { staticClass: "modal-body" }, [
               _c("div", { staticClass: "new-section-block" }, [
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-md-12" }, [
                     _c("div", { staticClass: "course-main-tabs" }, [
-                      _vm._m(14),
+                      _vm._m(21),
                       _vm._v(" "),
                       _c("div", { staticClass: "tab-content" }, [
                         _c(
@@ -45282,7 +44255,7 @@ var render = function () {
                               { staticClass: "lecture-video-dt mt-30" },
                               [
                                 _c("div", { staticClass: "add-ques-dt" }, [
-                                  _vm._m(15),
+                                  _vm._m(22),
                                   _vm._v(" "),
                                   _c(
                                     "div",
@@ -45339,7 +44312,7 @@ var render = function () {
                                                     },
                                                   },
                                                 }),
-                                                _vm._m(16),
+                                                _vm._m(23),
                                               ]),
                                               _vm._v(" "),
                                               _c("label", [
@@ -45370,7 +44343,7 @@ var render = function () {
                                                     },
                                                   },
                                                 }),
-                                                _vm._m(17),
+                                                _vm._m(24),
                                               ]),
                                               _vm._v(" "),
                                               _vm.question_type == 1
@@ -45392,7 +44365,85 @@ var render = function () {
                                                                 "row",
                                                             },
                                                             [
-                                                              _vm._m(18),
+                                                              _c(
+                                                                "div",
+                                                                {
+                                                                  staticClass:
+                                                                    "col-lg-6 col-md-12",
+                                                                },
+                                                                [
+                                                                  _c(
+                                                                    "div",
+                                                                    {
+                                                                      staticClass:
+                                                                        "form_group mt-30",
+                                                                    },
+                                                                    [
+                                                                      _c(
+                                                                        "label",
+                                                                        {
+                                                                          staticClass:
+                                                                            "label25 text-left",
+                                                                        },
+                                                                        [
+                                                                          _vm._v(
+                                                                            "Question\n                                                                                        Title*"
+                                                                          ),
+                                                                        ]
+                                                                      ),
+                                                                      _vm._v(
+                                                                        " "
+                                                                      ),
+                                                                      _c(
+                                                                        "input",
+                                                                        {
+                                                                          directives:
+                                                                            [
+                                                                              {
+                                                                                name: "model",
+                                                                                rawName:
+                                                                                  "v-model",
+                                                                                value:
+                                                                                  _vm.question_name,
+                                                                                expression:
+                                                                                  "question_name",
+                                                                              },
+                                                                            ],
+                                                                          staticClass:
+                                                                            "form_input_1",
+                                                                          attrs:
+                                                                            {
+                                                                              type: "text",
+                                                                              placeholder:
+                                                                                "Write question title",
+                                                                            },
+                                                                          domProps:
+                                                                            {
+                                                                              value:
+                                                                                _vm.question_name,
+                                                                            },
+                                                                          on: {
+                                                                            input:
+                                                                              function (
+                                                                                $event
+                                                                              ) {
+                                                                                if (
+                                                                                  $event
+                                                                                    .target
+                                                                                    .composing
+                                                                                ) {
+                                                                                  return
+                                                                                }
+                                                                                _vm.question_name =
+                                                                                  $event.target.value
+                                                                              },
+                                                                          },
+                                                                        }
+                                                                      ),
+                                                                    ]
+                                                                  ),
+                                                                ]
+                                                              ),
                                                               _vm._v(" "),
                                                               _c(
                                                                 "div",
@@ -45439,7 +44490,7 @@ var render = function () {
                                                                 ]
                                                               ),
                                                               _vm._v(" "),
-                                                              _vm._m(19),
+                                                              _vm._m(25),
                                                             ]
                                                           ),
                                                         ]
@@ -45803,7 +44854,7 @@ var render = function () {
                                                 ? _c(
                                                     "div",
                                                     { staticClass: "sline" },
-                                                    [_vm._m(20)]
+                                                    [_vm._m(26)]
                                                   )
                                                 : _vm._e(),
                                             ]
@@ -45811,18 +44862,102 @@ var render = function () {
                                         ]
                                       ),
                                       _vm._v(" "),
-                                      _vm._m(21),
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "share-submit-btns pl-0 pb-0",
+                                        },
+                                        [
+                                          _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "main-btn color btn-hover",
+                                              attrs: { type: "button" },
+                                              on: {
+                                                click: function ($event) {
+                                                  return _vm.addQuestion()
+                                                },
+                                              },
+                                            },
+                                            [
+                                              _c("i", {
+                                                staticClass: "fas fa-save mr-2",
+                                              }),
+                                              _vm._v(
+                                                "Save\n                                                                Question\n                                                            "
+                                              ),
+                                            ]
+                                          ),
+                                        ]
+                                      ),
                                     ]
                                   ),
                                   _vm._v(" "),
-                                  _vm._m(22),
+                                  _c("div", { staticClass: "added-ques" }, [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "section-group-list pl-0 pr-0 sortable",
+                                      },
+                                      _vm._l(
+                                        _vm.questions,
+                                        function (question, key) {
+                                          return _c(
+                                            "div",
+                                            {
+                                              key: "question_" + key,
+                                              staticClass: "section-list-item",
+                                            },
+                                            [
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "section-item-title",
+                                                },
+                                                [
+                                                  _c("i", {
+                                                    staticClass:
+                                                      "far fa-dot-circle mr-2",
+                                                  }),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "span",
+                                                    {
+                                                      staticClass:
+                                                        "section-item-title-text",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(question.name)
+                                                      ),
+                                                    ]
+                                                  ),
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _vm._m(27, true),
+                                              _vm._v(" "),
+                                              _vm._m(28, true),
+                                              _vm._v(" "),
+                                              _vm._m(29, true),
+                                            ]
+                                          )
+                                        }
+                                      ),
+                                      0
+                                    ),
+                                  ]),
                                 ]),
                               ]
                             ),
                           ]
                         ),
                         _vm._v(" "),
-                        _vm._m(23),
+                        _vm._m(30),
                       ]),
                     ]),
                   ]),
@@ -45830,13 +44965,13 @@ var render = function () {
               ]),
             ]),
             _vm._v(" "),
-            _vm._m(24),
+            _vm._m(31),
           ]),
         ]),
       ]
     ),
     _vm._v(" "),
-    _vm._m(25),
+    _vm._m(32),
   ])
 }
 var staticRenderFns = [
@@ -45895,1133 +45030,265 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "step-tab-panel step-tab-info active",
-        attrs: { id: "tab_step1" },
-      },
-      [
-        _c("div", { staticClass: "tab-from-content" }, [
-          _c("div", { staticClass: "title-icon" }, [
-            _c("h3", { staticClass: "title" }, [
-              _c("i", { staticClass: "uil uil-info-circle" }),
-              _vm._v(
-                "Basic Information\n                                            "
-              ),
+    return _c("div", { staticClass: "title-icon" }, [
+      _c("h3", { staticClass: "title" }, [
+        _c("i", { staticClass: "uil uil-info-circle" }),
+        _vm._v(
+          "Basic Information\n                                            "
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-lg-12 col-md-12" }, [
+      _c("div", { staticClass: "ui search focus mt-30 lbel25" }, [
+        _c("label", [
+          _vm._v(
+            "Course\n                                                                Title*"
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "ui left icon input swdh19" }, [
+          _c("input", {
+            staticClass: "prompt srch_explore",
+            attrs: {
+              type: "text",
+              placeholder: "Course title here",
+              name: "title",
+              "data-purpose": "edit-course-title",
+              maxlength: "60",
+              id: "main[title]",
+              value: "",
+            },
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "badge_num" }, [
+            _vm._v(
+              "\n                                                                    60\n                                                                "
+            ),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "help-block" }, [
+          _vm._v(
+            "\n                                                                (Please make\n                                                                this a\n                                                                maximum of\n                                                                100\n                                                                characters\n                                                                and unique.)\n                                                            "
+          ),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-lg-12 col-md-12" }, [
+      _c("div", { staticClass: "ui search focus lbel25 mt-30" }, [
+        _c("label", [
+          _vm._v(
+            "Short\n                                                                Description*"
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "ui form swdh30" }, [
+          _c("div", { staticClass: "field" }, [
+            _c("textarea", {
+              attrs: {
+                rows: "3",
+                name: "description",
+                id: "",
+                placeholder: "Item description here...",
+              },
+            }),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "help-block" }, [
+          _vm._v(
+            "\n                                                                220 words\n                                                            "
+          ),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-lg-12 col-md-12" }, [
+      _c("div", { staticClass: "course_des_textarea mt-30 lbel25" }, [
+        _c("label", [
+          _vm._v(
+            "Course\n                                                                Description*"
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "course_des_bg" }, [
+          _c("ul", { staticClass: "course_des_ttle" }, [
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [
+                _c("i", { staticClass: "uil uil-bold" }),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [
+                _c("i", { staticClass: "uil uil-italic" }),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [
+                _c("i", { staticClass: "uil uil-list-ul" }),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [
+                _c("i", {
+                  staticClass: "uil uil-left-to-right-text-direction",
+                }),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [
+                _c("i", {
+                  staticClass: "uil uil-right-to-left-text-direction",
+                }),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [
+                _c("i", { staticClass: "uil uil-list-ui-alt" }),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [
+                _c("i", { staticClass: "uil uil-link" }),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [
+                _c("i", { staticClass: "uil uil-text-size" }),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#" } }, [
+                _c("i", { staticClass: "uil uil-text" }),
+              ]),
             ]),
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "course__form" }, [
-            _c("div", { staticClass: "general_info10" }, [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-lg-12 col-md-12" }, [
-                  _c("div", { staticClass: "ui search focus mt-30 lbel25" }, [
-                    _c("label", [
-                      _vm._v(
-                        "Course\n                                                                Title*"
-                      ),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "ui left icon input swdh19" }, [
-                      _c("input", {
-                        staticClass: "prompt srch_explore",
-                        attrs: {
-                          type: "text",
-                          placeholder: "Course title here",
-                          name: "title",
-                          "data-purpose": "edit-course-title",
-                          maxlength: "60",
-                          id: "main[title]",
-                          value: "",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "badge_num" }, [
-                        _vm._v(
-                          "\n                                                                    60\n                                                                "
-                        ),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "help-block" }, [
-                      _vm._v(
-                        "\n                                                                (Please make\n                                                                this a\n                                                                maximum of\n                                                                100\n                                                                characters\n                                                                and unique.)\n                                                            "
-                      ),
-                    ]),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-lg-12 col-md-12" }, [
-                  _c("div", { staticClass: "ui search focus lbel25 mt-30" }, [
-                    _c("label", [
-                      _vm._v(
-                        "Short\n                                                                Description*"
-                      ),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "ui form swdh30" }, [
-                      _c("div", { staticClass: "field" }, [
-                        _c("textarea", {
-                          attrs: {
-                            rows: "3",
-                            name: "description",
-                            id: "",
-                            placeholder: "Item description here...",
-                          },
-                        }),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "help-block" }, [
-                      _vm._v(
-                        "\n                                                                220 words\n                                                            "
-                      ),
-                    ]),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-lg-12 col-md-12" }, [
-                  _c(
-                    "div",
-                    { staticClass: "course_des_textarea mt-30 lbel25" },
-                    [
-                      _c("label", [
-                        _vm._v(
-                          "Course\n                                                                Description*"
-                        ),
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "course_des_bg" }, [
-                        _c("ul", { staticClass: "course_des_ttle" }, [
-                          _c("li", [
-                            _c("a", { attrs: { href: "#" } }, [
-                              _c("i", { staticClass: "uil uil-bold" }),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c("a", { attrs: { href: "#" } }, [
-                              _c("i", { staticClass: "uil uil-italic" }),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c("a", { attrs: { href: "#" } }, [
-                              _c("i", { staticClass: "uil uil-list-ul" }),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c("a", { attrs: { href: "#" } }, [
-                              _c("i", {
-                                staticClass:
-                                  "uil uil-left-to-right-text-direction",
-                              }),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c("a", { attrs: { href: "#" } }, [
-                              _c("i", {
-                                staticClass:
-                                  "uil uil-right-to-left-text-direction",
-                              }),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c("a", { attrs: { href: "#" } }, [
-                              _c("i", { staticClass: "uil uil-list-ui-alt" }),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c("a", { attrs: { href: "#" } }, [
-                              _c("i", { staticClass: "uil uil-link" }),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c("a", { attrs: { href: "#" } }, [
-                              _c("i", { staticClass: "uil uil-text-size" }),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c("a", { attrs: { href: "#" } }, [
-                              _c("i", { staticClass: "uil uil-text" }),
-                            ]),
-                          ]),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "textarea_dt" }, [
-                          _c("div", { staticClass: "ui form swdh339" }, [
-                            _c("div", { staticClass: "field" }, [
-                              _c("textarea", {
-                                attrs: {
-                                  rows: "5",
-                                  name: "description",
-                                  id: "id_course_description",
-                                  placeholder: "Insert your course description",
-                                },
-                              }),
-                            ]),
-                          ]),
-                        ]),
-                      ]),
-                    ]
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-lg-6 col-md-12" }, [
-                  _c("div", { staticClass: "ui search focus lbel25 mt-30" }, [
-                    _c("label", [
-                      _vm._v(
-                        "What will\n                                                                students\n                                                                learn in\n                                                                your\n                                                                course?*"
-                      ),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "ui form swdh30" }, [
-                      _c("div", { staticClass: "field" }, [
-                        _c("textarea", {
-                          attrs: {
-                            rows: "3",
-                            name: "description",
-                            id: "",
-                            placeholder: "",
-                          },
-                        }),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "help-block" }, [
-                      _vm._v(
-                        "\n                                                                Student will\n                                                                gain this\n                                                                skills,\n                                                                knowledge\n                                                                after\n                                                                completing\n                                                                this course.\n                                                                (One per\n                                                                line).\n                                                            "
-                      ),
-                    ]),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-lg-6 col-md-12" }, [
-                  _c("div", { staticClass: "ui search focus lbel25 mt-30" }, [
-                    _c("label", [_vm._v("Requirements*")]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "ui form swdh30" }, [
-                      _c("div", { staticClass: "field" }, [
-                        _c("textarea", {
-                          attrs: {
-                            rows: "3",
-                            name: "description",
-                            id: "",
-                            placeholder: "",
-                          },
-                        }),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "help-block" }, [
-                      _vm._v(
-                        "\n                                                                What\n                                                                knowledge,\n                                                                technology,\n                                                                tools\n                                                                required by\n                                                                users to\n                                                                start this\n                                                                course. (One\n                                                                per line).\n                                                            "
-                      ),
-                    ]),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-lg-6 col-md-12" }, [
-                  _c("div", { staticClass: "mt-30 lbel25" }, [
-                    _c("label", [
-                      _vm._v(
-                        "Course\n                                                                Level*"
-                      ),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "select",
-                    {
-                      staticClass:
-                        "ui hj145 dropdown cntry152 prompt srch_explore",
-                      attrs: { multiple: "" },
-                    },
-                    [
-                      _c("option", { attrs: { value: "" } }, [
-                        _vm._v(
-                          "\n                                                                Select Level\n                                                            "
-                        ),
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "1" } }, [
-                        _vm._v(
-                          "\n                                                                Beginner\n                                                            "
-                        ),
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "2" } }, [
-                        _vm._v(
-                          "\n                                                                Intermediate\n                                                            "
-                        ),
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "3" } }, [
-                        _vm._v(
-                          "\n                                                                Expert\n                                                            "
-                        ),
-                      ]),
-                    ]
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-lg-6 col-md-6" }, [
-                  _c("div", { staticClass: "mt-30 lbel25" }, [
-                    _c("label", [
-                      _vm._v(
-                        "Course\n                                                                Category*"
-                      ),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "ui selection dropdown cntry152 prompt srch_explore optgroup",
-                    },
-                    [
-                      _c("div", { staticClass: "default text" }, [
-                        _vm._v(
-                          "\n                                                                Select\n                                                            "
-                        ),
-                      ]),
-                      _vm._v(" "),
-                      _c("i", { staticClass: "dropdown icon" }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "menu cate_menu" }, [
-                        _c(
-                          "div",
-                          { staticClass: "ui horizontal divider opt_title" },
-                          [
-                            _vm._v(
-                              "\n                                                                    Development\n                                                                "
-                            ),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Web\n                                                                    Development\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Data\n                                                                    Science\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Programming\n                                                                    Languages\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Mobile\n                                                                    Apps\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Game\n                                                                    Development\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Databases\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Software\n                                                                    Testing\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Software\n                                                                    Engineering\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Development\n                                                                    Tools\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    E-Commerce\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "ui horizontal divider opt_title" },
-                          [
-                            _vm._v(
-                              "\n                                                                    Business\n                                                                "
-                            ),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Finance\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Entrepreneurship\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Communications\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Management\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Sales\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Strategy\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Operations\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Project\n                                                                    Management\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Business\n                                                                    Law\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Data &\n                                                                    Analytics\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Home\n                                                                    Business\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Human\n                                                                    Resources\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Industry\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Media\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Real\n                                                                    Estate\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Other\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "ui horizontal divider opt_title" },
-                          [
-                            _vm._v(
-                              "\n                                                                    Finance\n                                                                    &\n                                                                    Accounting\n                                                                "
-                            ),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Accounting\n                                                                    &\n                                                                    Bookkeeping\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Compliance\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Cryptocurrency\n                                                                    &\n                                                                    Blockchain\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Economics\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Finance\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Finance\n                                                                    Cert &\n                                                                    Exam\n                                                                    Prep\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Financial\n                                                                    Modeling\n                                                                    &\n                                                                    Analysis\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Investing\n                                                                    &\n                                                                    Trading\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Money\n                                                                    Management\n                                                                    Tools\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Taxes\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Other\n                                                                    Finance\n                                                                    &\n                                                                    Economics\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "ui horizontal divider opt_title" },
-                          [
-                            _vm._v(
-                              "\n                                                                    IT &\n                                                                    Software\n                                                                "
-                            ),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    IT\n                                                                    Certification\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Network\n                                                                    &\n                                                                    Security\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Hardware\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Operating\n                                                                    Systems\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Other\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "ui horizontal divider opt_title" },
-                          [
-                            _vm._v(
-                              "\n                                                                    Office\n                                                                    Productivity\n                                                                "
-                            ),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Microsoft\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Apple\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Google\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    SAP\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Oracle\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "ui horizontal divider opt_title" },
-                          [
-                            _vm._v(
-                              "\n                                                                    Personal\n                                                                    Development\n                                                                "
-                            ),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Personal\n                                                                    Transformation\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Productivity\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Leadership\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Personal\n                                                                    Finance\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Career\n                                                                    Development\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Parenting\n                                                                    &\n                                                                    Relationships\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Happiness\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Religion\n                                                                    &\n                                                                    Spirituality\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Personal\n                                                                    Brand\n                                                                    Building\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Creativity\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Influence\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Self\n                                                                    Esteem\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Stress\n                                                                    Management\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Memory &\n                                                                    Study\n                                                                    Skills\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Motivation\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Other\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "ui horizontal divider opt_title" },
-                          [
-                            _vm._v(
-                              "\n                                                                    Design\n                                                                "
-                            ),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Web\n                                                                    Design\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Graphic\n                                                                    Design\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Design\n                                                                    Tools\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    User\n                                                                    Experience\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Game\n                                                                    Design\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Design\n                                                                    Thinking\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    3D &\n                                                                    Animation\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Fashion\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Architectural\n                                                                    Design\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Interior\n                                                                    Design\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "ui horizontal divider opt_title" },
-                          [
-                            _vm._v(
-                              "\n                                                                    Marketing\n                                                                "
-                            ),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Digital\n                                                                    Marketing\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Search\n                                                                    Engine\n                                                                    Optimization\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Social\n                                                                    Media\n                                                                    Marketing\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Branding\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Marketing\n                                                                    Fundamentals\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Analytics\n                                                                    &\n                                                                    Automation\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Public\n                                                                    Relations\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Advertising\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Video &\n                                                                    Mobile\n                                                                    Marketing\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Content\n                                                                    Marketing\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Growth\n                                                                    Hacking\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Affiliate\n                                                                    Marketing\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Product\n                                                                    Marketing\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "ui horizontal divider opt_title" },
-                          [
-                            _vm._v(
-                              "\n                                                                    Lifestyle\n                                                                "
-                            ),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Arts &\n                                                                    Crafts\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Food &\n                                                                    Beverage\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Beauty &\n                                                                    Makeup\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Travel\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Gaming\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Home\n                                                                    Improvement\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Pet Care\n                                                                    &\n                                                                    Training\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "ui horizontal divider opt_title" },
-                          [
-                            _vm._v(
-                              "\n                                                                    Photography\n                                                                "
-                            ),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Digital\n                                                                    Photography\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Photography\n                                                                    Fundamentals\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Portraits\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Photography\n                                                                    Tools\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Commercial\n                                                                    Photography\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Video\n                                                                    Design\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "ui horizontal divider opt_title" },
-                          [
-                            _vm._v(
-                              "\n                                                                    Health &\n                                                                    Fitness\n                                                                "
-                            ),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Fitness\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    General\n                                                                    Health\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Sports\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Nutrition\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Yoga\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Mental\n                                                                    Health\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Dieting\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Self\n                                                                    Defense\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Safety &\n                                                                    First\n                                                                    Aid\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Dance\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Meditation\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "ui horizontal divider opt_title" },
-                          [
-                            _vm._v(
-                              "\n                                                                    Music\n                                                                "
-                            ),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Instruments\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Production\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Music\n                                                                    Fundamentals\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Vocal\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Music\n                                                                    Techniques\n                                                                "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "item" }, [
-                          _vm._v(
-                            "\n                                                                    Music\n                                                                    Software\n                                                                "
-                          ),
-                        ]),
-                      ]),
-                    ]
-                  ),
-                ]),
+          _c("div", { staticClass: "textarea_dt" }, [
+            _c("div", { staticClass: "ui form swdh339" }, [
+              _c("div", { staticClass: "field" }, [
+                _c("textarea", {
+                  attrs: {
+                    rows: "5",
+                    name: "description",
+                    id: "id_course_description",
+                    placeholder: "Insert your course description",
+                  },
+                }),
               ]),
             ]),
           ]),
         ]),
-      ]
-    )
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-lg-6 col-md-12" }, [
+      _c("div", { staticClass: "ui search focus lbel25 mt-30" }, [
+        _c("label", [
+          _vm._v(
+            "What will\n                                                                students\n                                                                learn in\n                                                                your\n                                                                course?*"
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "ui form swdh30" }, [
+          _c("div", { staticClass: "field" }, [
+            _c("textarea", {
+              attrs: {
+                rows: "3",
+                name: "description",
+                id: "",
+                placeholder: "",
+              },
+            }),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "help-block" }, [
+          _vm._v(
+            "\n                                                                Student will\n                                                                gain this\n                                                                skills,\n                                                                knowledge\n                                                                after\n                                                                completing\n                                                                this course.\n                                                                (One per\n                                                                line).\n                                                            "
+          ),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-lg-6 col-md-12" }, [
+      _c("div", { staticClass: "ui search focus lbel25 mt-30" }, [
+        _c("label", [_vm._v("Requirements*")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "ui form swdh30" }, [
+          _c("div", { staticClass: "field" }, [
+            _c("textarea", {
+              attrs: {
+                rows: "3",
+                name: "description",
+                id: "",
+                placeholder: "",
+              },
+            }),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "help-block" }, [
+          _vm._v(
+            "\n                                                                What\n                                                                knowledge,\n                                                                technology,\n                                                                tools\n                                                                required by\n                                                                users to\n                                                                start this\n                                                                course. (One\n                                                                per line).\n                                                            "
+          ),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mt-30 lbel25" }, [
+      _c("label", [
+        _vm._v(
+          "Course\n                                                                Level*"
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mt-30 lbel25" }, [
+      _c("label", [
+        _vm._v(
+          "Course\n                                                                Category*"
+        ),
+      ]),
+    ])
   },
   function () {
     var _vm = this
@@ -47740,24 +46007,6 @@ var staticRenderFns = [
                                 "flex-sm-fill text-sm-center nav-link",
                               attrs: {
                                 "data-toggle": "tab",
-                                href: "#nav-video",
-                                role: "tab",
-                                "aria-selected": "false",
-                              },
-                            },
-                            [
-                              _c("i", { staticClass: "fas fa-video mr-2" }),
-                              _vm._v("Video"),
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "a",
-                            {
-                              staticClass:
-                                "flex-sm-fill text-sm-center nav-link",
-                              attrs: {
-                                "data-toggle": "tab",
                                 href: "#nav-attachment",
                                 role: "tab",
                                 "aria-selected": "false",
@@ -47835,725 +46084,6 @@ var staticRenderFns = [
                                 _c("span"),
                               ]),
                             ]),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "tab-pane fade",
-                            attrs: { id: "nav-video", role: "tabpanel" },
-                          },
-                          [
-                            _c(
-                              "div",
-                              { staticClass: "lecture-video-dt mt-30" },
-                              [
-                                _c("span", { staticClass: "video-info" }, [
-                                  _vm._v(
-                                    "Select your preferred\n                                                    video type. (.mp4,\n                                                    YouTube, Vimeo\n                                                    etc.)"
-                                  ),
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "video-category" }, [
-                                  _c("label", [
-                                    _c("input", {
-                                      attrs: {
-                                        type: "radio",
-                                        name: "colorRadio",
-                                        value: "mp4",
-                                        checked: "",
-                                      },
-                                    }),
-                                    _c("span", [_vm._v("HTML5(mp4)")]),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("label", [
-                                    _c("input", {
-                                      attrs: {
-                                        type: "radio",
-                                        name: "colorRadio",
-                                        value: "url",
-                                      },
-                                    }),
-                                    _c("span", [
-                                      _vm._v(
-                                        "External\n                                                            URL"
-                                      ),
-                                    ]),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("label", [
-                                    _c("input", {
-                                      attrs: {
-                                        type: "radio",
-                                        name: "colorRadio",
-                                        value: "youtube",
-                                      },
-                                    }),
-                                    _c("span", [_vm._v("YouTube")]),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("label", [
-                                    _c("input", {
-                                      attrs: {
-                                        type: "radio",
-                                        name: "colorRadio",
-                                        value: "vimeo",
-                                      },
-                                    }),
-                                    _c("span", [_vm._v("Vimeo")]),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("label", [
-                                    _c("input", {
-                                      attrs: {
-                                        type: "radio",
-                                        name: "colorRadio",
-                                        value: "embedded",
-                                      },
-                                    }),
-                                    _c("span", [_vm._v("embedded")]),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass: "mp4 video-box",
-                                      staticStyle: { display: "block" },
-                                    },
-                                    [
-                                      _c("div", { staticClass: "row" }, [
-                                        _c(
-                                          "div",
-                                          { staticClass: "col-lg-6 col-md-6" },
-                                          [
-                                            _c(
-                                              "div",
-                                              {
-                                                staticClass:
-                                                  "upload-file-dt mt-30",
-                                              },
-                                              [
-                                                _c(
-                                                  "div",
-                                                  { staticClass: "upload-btn" },
-                                                  [
-                                                    _c("input", {
-                                                      staticClass:
-                                                        "uploadBtn-main-input",
-                                                      attrs: {
-                                                        type: "file",
-                                                        id: "VideoFile__input--source",
-                                                      },
-                                                    }),
-                                                    _vm._v(" "),
-                                                    _c(
-                                                      "label",
-                                                      {
-                                                        attrs: {
-                                                          for: "VideoFile__input--source",
-                                                          title: "Zip",
-                                                        },
-                                                      },
-                                                      [
-                                                        _vm._v(
-                                                          "Upload\n                                                                            Video"
-                                                        ),
-                                                      ]
-                                                    ),
-                                                  ]
-                                                ),
-                                                _vm._v(" "),
-                                                _c(
-                                                  "span",
-                                                  {
-                                                    staticClass:
-                                                      "uploadBtn-main-file",
-                                                  },
-                                                  [
-                                                    _vm._v(
-                                                      "File\n                                                                        Format:\n                                                                        .mp4"
-                                                    ),
-                                                  ]
-                                                ),
-                                                _vm._v(" "),
-                                                _c(
-                                                  "span",
-                                                  {
-                                                    staticClass: "uploaded-id",
-                                                  },
-                                                  [
-                                                    _vm._v(
-                                                      "Uploaded\n                                                                        ID :\n                                                                        "
-                                                    ),
-                                                    _c("b", [_vm._v("12")]),
-                                                  ]
-                                                ),
-                                              ]
-                                            ),
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          { staticClass: "col-lg-6 col-md-6" },
-                                          [
-                                            _c(
-                                              "div",
-                                              {
-                                                staticClass:
-                                                  "upload-file-dt mt-30",
-                                              },
-                                              [
-                                                _c(
-                                                  "div",
-                                                  { staticClass: "upload-btn" },
-                                                  [
-                                                    _c("input", {
-                                                      staticClass:
-                                                        "uploadBtn-main-input",
-                                                      attrs: {
-                                                        type: "file",
-                                                        id: "PosterFile__input--source",
-                                                      },
-                                                    }),
-                                                    _vm._v(" "),
-                                                    _c(
-                                                      "label",
-                                                      {
-                                                        attrs: {
-                                                          for: "PosterFile__input--source",
-                                                          title: "Zip",
-                                                        },
-                                                      },
-                                                      [
-                                                        _vm._v(
-                                                          "Video\n                                                                            Poster"
-                                                        ),
-                                                      ]
-                                                    ),
-                                                  ]
-                                                ),
-                                                _vm._v(" "),
-                                                _c(
-                                                  "span",
-                                                  {
-                                                    staticClass:
-                                                      "uploadBtn-main-file color-b",
-                                                  },
-                                                  [
-                                                    _vm._v(
-                                                      "Uploaded\n                                                                        ID :\n                                                                        preview.jpg"
-                                                    ),
-                                                  ]
-                                                ),
-                                                _vm._v(" "),
-                                                _c(
-                                                  "span",
-                                                  {
-                                                    staticClass:
-                                                      "uploaded-id color-fmt",
-                                                  },
-                                                  [
-                                                    _vm._v(
-                                                      "Size:\n                                                                        590x300\n                                                                        pixels.\n                                                                        Supports:\n                                                                        jpg,jpeg,\n                                                                        or\n                                                                        png"
-                                                    ),
-                                                  ]
-                                                ),
-                                              ]
-                                            ),
-                                          ]
-                                        ),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        { staticClass: "video-duration" },
-                                        [
-                                          _c(
-                                            "label",
-                                            { staticClass: "label25" },
-                                            [
-                                              _vm._v(
-                                                "Video\n                                                                Runtime -\n                                                                "
-                                              ),
-                                              _c("strong", [
-                                                _vm._v("hh:mm:ss"),
-                                              ]),
-                                              _vm._v("*"),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            { staticClass: "duration-time" },
-                                            [
-                                              _c(
-                                                "div",
-                                                { staticClass: "input-group" },
-                                                [
-                                                  _c("input", {
-                                                    staticClass: "form_input_1",
-                                                    attrs: {
-                                                      type: "text",
-                                                      name: "video[runtime][hours]",
-                                                      value: "00",
-                                                    },
-                                                  }),
-                                                  _vm._v(" "),
-                                                  _c("input", {
-                                                    staticClass: "form_input_1",
-                                                    attrs: {
-                                                      type: "text",
-                                                      name: "video[runtime][mins]",
-                                                      value: "1",
-                                                    },
-                                                  }),
-                                                  _vm._v(" "),
-                                                  _c("input", {
-                                                    staticClass: "form_input_1",
-                                                    attrs: {
-                                                      type: "text",
-                                                      name: "video[runtime][secs]",
-                                                      value: "00",
-                                                    },
-                                                  }),
-                                                ]
-                                              ),
-                                            ]
-                                          ),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "url video-box" }, [
-                                    _c("div", { staticClass: "new-section" }, [
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass:
-                                            "ui search focus mt-30 lbel25",
-                                        },
-                                        [
-                                          _c("label", [
-                                            _vm._v(
-                                              "External\n                                                                    URL*"
-                                            ),
-                                          ]),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "ui left icon input swdh19",
-                                            },
-                                            [
-                                              _c("input", {
-                                                staticClass:
-                                                  "prompt srch_explore",
-                                                attrs: {
-                                                  type: "text",
-                                                  placeholder:
-                                                    "External Video URL",
-                                                  name: "",
-                                                  id: "",
-                                                  value: "",
-                                                },
-                                              }),
-                                            ]
-                                          ),
-                                        ]
-                                      ),
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "video-duration" },
-                                      [
-                                        _c(
-                                          "label",
-                                          { staticClass: "label25" },
-                                          [
-                                            _vm._v(
-                                              "Video\n                                                                Runtime -\n                                                                "
-                                            ),
-                                            _c("strong", [_vm._v("hh:mm:ss")]),
-                                            _vm._v("*"),
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          { staticClass: "duration-time" },
-                                          [
-                                            _c(
-                                              "div",
-                                              { staticClass: "input-group" },
-                                              [
-                                                _c("input", {
-                                                  staticClass: "form_input_1",
-                                                  attrs: {
-                                                    type: "text",
-                                                    name: "video[runtime][hours]",
-                                                    value: "00",
-                                                  },
-                                                }),
-                                                _vm._v(" "),
-                                                _c("input", {
-                                                  staticClass: "form_input_1",
-                                                  attrs: {
-                                                    type: "text",
-                                                    name: "video[runtime][mins]",
-                                                    value: "1",
-                                                  },
-                                                }),
-                                                _vm._v(" "),
-                                                _c("input", {
-                                                  staticClass: "form_input_1",
-                                                  attrs: {
-                                                    type: "text",
-                                                    name: "video[runtime][secs]",
-                                                    value: "00",
-                                                  },
-                                                }),
-                                              ]
-                                            ),
-                                          ]
-                                        ),
-                                      ]
-                                    ),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    { staticClass: "youtube video-box" },
-                                    [
-                                      _c(
-                                        "div",
-                                        { staticClass: "new-section" },
-                                        [
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "ui search focus mt-30 lbel25",
-                                            },
-                                            [
-                                              _c("label", [
-                                                _vm._v(
-                                                  "Youtube\n                                                                    URL*"
-                                                ),
-                                              ]),
-                                              _vm._v(" "),
-                                              _c(
-                                                "div",
-                                                {
-                                                  staticClass:
-                                                    "ui left icon input swdh19",
-                                                },
-                                                [
-                                                  _c("input", {
-                                                    staticClass:
-                                                      "prompt srch_explore",
-                                                    attrs: {
-                                                      type: "text",
-                                                      placeholder:
-                                                        "Youtube Video URL",
-                                                      name: "",
-                                                      id: "",
-                                                      value: "",
-                                                    },
-                                                  }),
-                                                ]
-                                              ),
-                                            ]
-                                          ),
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        { staticClass: "video-duration" },
-                                        [
-                                          _c(
-                                            "label",
-                                            { staticClass: "label25" },
-                                            [
-                                              _vm._v(
-                                                "Video\n                                                                Runtime -\n                                                                "
-                                              ),
-                                              _c("strong", [
-                                                _vm._v("hh:mm:ss"),
-                                              ]),
-                                              _vm._v("*"),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            { staticClass: "duration-time" },
-                                            [
-                                              _c(
-                                                "div",
-                                                { staticClass: "input-group" },
-                                                [
-                                                  _c("input", {
-                                                    staticClass: "form_input_1",
-                                                    attrs: {
-                                                      type: "text",
-                                                      name: "video[runtime][hours]",
-                                                      value: "00",
-                                                    },
-                                                  }),
-                                                  _vm._v(" "),
-                                                  _c("input", {
-                                                    staticClass: "form_input_1",
-                                                    attrs: {
-                                                      type: "text",
-                                                      name: "video[runtime][mins]",
-                                                      value: "1",
-                                                    },
-                                                  }),
-                                                  _vm._v(" "),
-                                                  _c("input", {
-                                                    staticClass: "form_input_1",
-                                                    attrs: {
-                                                      type: "text",
-                                                      name: "video[runtime][secs]",
-                                                      value: "00",
-                                                    },
-                                                  }),
-                                                ]
-                                              ),
-                                            ]
-                                          ),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    { staticClass: "vimeo video-box" },
-                                    [
-                                      _c(
-                                        "div",
-                                        { staticClass: "new-section" },
-                                        [
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "ui search focus mt-30 lbel25",
-                                            },
-                                            [
-                                              _c("label", [
-                                                _vm._v(
-                                                  "Vimeo\n                                                                    URL*"
-                                                ),
-                                              ]),
-                                              _vm._v(" "),
-                                              _c(
-                                                "div",
-                                                {
-                                                  staticClass:
-                                                    "ui left icon input swdh19",
-                                                },
-                                                [
-                                                  _c("input", {
-                                                    staticClass:
-                                                      "prompt srch_explore",
-                                                    attrs: {
-                                                      type: "text",
-                                                      placeholder:
-                                                        "Vimeo Video URL",
-                                                      name: "",
-                                                      id: "",
-                                                      value: "",
-                                                    },
-                                                  }),
-                                                ]
-                                              ),
-                                            ]
-                                          ),
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        { staticClass: "video-duration" },
-                                        [
-                                          _c(
-                                            "label",
-                                            { staticClass: "label25" },
-                                            [
-                                              _vm._v(
-                                                "Video\n                                                                Runtime -\n                                                                "
-                                              ),
-                                              _c("strong", [
-                                                _vm._v("hh:mm:ss"),
-                                              ]),
-                                              _vm._v("*"),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            { staticClass: "duration-time" },
-                                            [
-                                              _c(
-                                                "div",
-                                                { staticClass: "input-group" },
-                                                [
-                                                  _c("input", {
-                                                    staticClass: "form_input_1",
-                                                    attrs: {
-                                                      type: "text",
-                                                      name: "video[runtime][hours]",
-                                                      value: "00",
-                                                    },
-                                                  }),
-                                                  _vm._v(" "),
-                                                  _c("input", {
-                                                    staticClass: "form_input_1",
-                                                    attrs: {
-                                                      type: "text",
-                                                      name: "video[runtime][mins]",
-                                                      value: "1",
-                                                    },
-                                                  }),
-                                                  _vm._v(" "),
-                                                  _c("input", {
-                                                    staticClass: "form_input_1",
-                                                    attrs: {
-                                                      type: "text",
-                                                      name: "video[runtime][secs]",
-                                                      value: "00",
-                                                    },
-                                                  }),
-                                                ]
-                                              ),
-                                            ]
-                                          ),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    { staticClass: "embedded video-box" },
-                                    [
-                                      _c(
-                                        "div",
-                                        { staticClass: "new-section" },
-                                        [
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "ui search focus mt-30 lbel25",
-                                            },
-                                            [
-                                              _c("label", [
-                                                _vm._v(
-                                                  "Embedded\n                                                                    Code*"
-                                                ),
-                                              ]),
-                                              _vm._v(" "),
-                                              _c(
-                                                "div",
-                                                {
-                                                  staticClass: "ui form swdh30",
-                                                },
-                                                [
-                                                  _c(
-                                                    "div",
-                                                    { staticClass: "field" },
-                                                    [
-                                                      _c("textarea", {
-                                                        attrs: {
-                                                          rows: "3",
-                                                          name: "",
-                                                          id: "",
-                                                          placeholder:
-                                                            "Place your embedded code here",
-                                                        },
-                                                      }),
-                                                    ]
-                                                  ),
-                                                ]
-                                              ),
-                                            ]
-                                          ),
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        { staticClass: "video-duration" },
-                                        [
-                                          _c(
-                                            "label",
-                                            { staticClass: "label25" },
-                                            [
-                                              _vm._v(
-                                                "Video\n                                                                Runtime -\n                                                                "
-                                              ),
-                                              _c("strong", [
-                                                _vm._v("hh:mm:ss"),
-                                              ]),
-                                              _vm._v("*"),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            { staticClass: "duration-time" },
-                                            [
-                                              _c(
-                                                "div",
-                                                { staticClass: "input-group" },
-                                                [
-                                                  _c("input", {
-                                                    staticClass: "form_input_1",
-                                                    attrs: {
-                                                      type: "text",
-                                                      name: "video[runtime][hours]",
-                                                      value: "00",
-                                                    },
-                                                  }),
-                                                  _vm._v(" "),
-                                                  _c("input", {
-                                                    staticClass: "form_input_1",
-                                                    attrs: {
-                                                      type: "text",
-                                                      name: "video[runtime][mins]",
-                                                      value: "1",
-                                                    },
-                                                  }),
-                                                  _vm._v(" "),
-                                                  _c("input", {
-                                                    staticClass: "form_input_1",
-                                                    attrs: {
-                                                      type: "text",
-                                                      name: "video[runtime][secs]",
-                                                      value: "00",
-                                                    },
-                                                  }),
-                                                ]
-                                              ),
-                                            ]
-                                          ),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                ]),
-                              ]
-                            ),
                           ]
                         ),
                         _vm._v(" "),
@@ -48861,25 +46391,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-lg-6 col-md-12" }, [
-      _c("div", { staticClass: "form_group mt-30" }, [
-        _c("label", { staticClass: "label25 text-left" }, [
-          _vm._v(
-            "Question\n                                                                                        Title*"
-          ),
-        ]),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "form_input_1",
-          attrs: { type: "text", placeholder: "Write question title" },
-        }),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-lg-3 col-md-6" }, [
       _c("div", { staticClass: "form_group mt-30" }, [
         _c("label", { staticClass: "label25 text-left" }, [_vm._v("Score*")]),
@@ -48964,55 +46475,31 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "share-submit-btns pl-0 pb-0" }, [
-      _c("button", { staticClass: "main-btn color btn-hover" }, [
-        _c("i", { staticClass: "fas fa-save mr-2" }),
-        _vm._v(
-          "Save\n                                                                Question\n                                                            "
-        ),
-      ]),
-    ])
+    return _c(
+      "button",
+      { staticClass: "section-item-tools", attrs: { type: "button" } },
+      [_c("i", { staticClass: "fas fa-edit" })]
+    )
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "added-ques" }, [
-      _c("div", { staticClass: "section-group-list pl-0 pr-0 sortable" }, [
-        _c("div", { staticClass: "section-list-item" }, [
-          _c("div", { staticClass: "section-item-title" }, [
-            _c("i", { staticClass: "far fa-dot-circle mr-2" }),
-            _vm._v(" "),
-            _c("span", { staticClass: "section-item-title-text" }, [
-              _vm._v(
-                "Question\n                                                                        Title"
-              ),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c(
-            "button",
-            { staticClass: "section-item-tools", attrs: { type: "button" } },
-            [_c("i", { staticClass: "fas fa-edit" })]
-          ),
-          _vm._v(" "),
-          _c(
-            "button",
-            { staticClass: "section-item-tools", attrs: { type: "button" } },
-            [_c("i", { staticClass: "fas fa-trash-alt" })]
-          ),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "section-item-tools ml-auto",
-              attrs: { type: "button" },
-            },
-            [_c("i", { staticClass: "fas fa-bars" })]
-          ),
-        ]),
-      ]),
-    ])
+    return _c(
+      "button",
+      { staticClass: "section-item-tools", attrs: { type: "button" } },
+      [_c("i", { staticClass: "fas fa-trash-alt" })]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "section-item-tools ml-auto", attrs: { type: "button" } },
+      [_c("i", { staticClass: "fas fa-bars" })]
+    )
   },
   function () {
     var _vm = this
@@ -50328,7 +47815,10 @@ var render = function () {
     [
       _c("FullScreenLoader", { attrs: { active: _vm.loading } }),
       _vm._v(" "),
-      _c("Header", { on: { "toggle-loader": _vm.toggleLoader } }),
+      _c("Header", {
+        attrs: { user: _vm.user },
+        on: { "toggle-loader": _vm.toggleLoader },
+      }),
       _vm._v(" "),
       _c("Sidebar"),
       _vm._v(" "),
@@ -50348,7 +47838,9 @@ var render = function () {
           _vm._v(" "),
           _vm.$route.name == "Review" ? _c("Review") : _vm._e(),
           _vm._v(" "),
-          _vm.$route.name == "Setting" ? _c("Setting") : _vm._e(),
+          _vm.$route.name == "Setting"
+            ? _c("Setting", { on: { "toggle-loader": _vm.toggleLoader } })
+            : _vm._e(),
           _vm._v(" "),
           _vm.$route.name == "Profile" ? _c("Profile") : _vm._e(),
           _vm._v(" "),
@@ -50469,10 +47961,6 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("a", { attrs: { href: "#" } }, [
-          _c("i", { staticClass: "fab fa-google-plus-g" }),
-        ]),
-        _vm._v(" "),
-        _c("a", { attrs: { href: "#" } }, [
           _c("i", { staticClass: "fab fa-linkedin-in" }),
         ]),
         _vm._v(" "),
@@ -50482,10 +47970,6 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("a", { attrs: { href: "#" } }, [
           _c("i", { staticClass: "fab fa-youtube" }),
-        ]),
-        _vm._v(" "),
-        _c("a", { attrs: { href: "#" } }, [
-          _c("i", { staticClass: "fab fa-pinterest-p" }),
         ]),
       ]),
     ])
@@ -50673,7 +48157,15 @@ var render = function () {
                     ]
                   ),
                   _vm._v(" "),
-                  _vm._m(9),
+                  _c(
+                    "div",
+                    { staticClass: "rhte85 mt-2 justify-content-center" },
+                    [
+                      _c("h6", [_vm._v(_vm._s(_vm.user.full_name))]),
+                      _vm._v(" "),
+                      _vm._m(9),
+                    ]
+                  ),
                   _vm._v(" "),
                   _c(
                     "router-link",
@@ -50983,12 +48475,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "rhte85 mt-2 justify-content-center" }, [
-      _c("h6", [_vm._v("Joginder Singh")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "mef78", attrs: { title: "Verify" } }, [
-        _c("i", { staticClass: "uil uil-check-circle" }),
-      ]),
+    return _c("div", { staticClass: "mef78", attrs: { title: "Verify" } }, [
+      _c("i", { staticClass: "uil uil-check-circle" }),
     ])
   },
 ]
@@ -53681,918 +51169,804 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "sa4d25" }, [
+    _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-12" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "tab-content setting-content",
+              attrs: { id: "pills-tabContent" },
+            },
+            [
+              _c(
+                "div",
+                {
+                  staticClass: "tab-pane fade show active",
+                  attrs: {
+                    id: "pills-account",
+                    role: "tabpanel",
+                    "aria-labelledby": "pills-account-tab",
+                  },
+                },
+                [
+                  _c("div", { staticClass: "account_setting" }, [
+                    _c("h4", [_vm._v("Your Gamify Account")]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v(
+                        "\n                    This is your public presence on Gamify US.\n                  "
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "basic_profile" }, [
+                      _vm._m(2),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "basic_form" }, [
+                        _c("div", { staticClass: "row" }, [
+                          _c("div", { staticClass: "col-lg-8" }, [
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-lg-12" }, [
+                                _c(
+                                  "div",
+                                  { staticClass: "ui search focus mt-30" },
+                                  [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "ui left icon input swdh11 swdh19",
+                                      },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.full_name,
+                                              expression: "full_name",
+                                            },
+                                          ],
+                                          staticClass: "prompt srch_explore",
+                                          attrs: {
+                                            type: "text",
+                                            name: "name",
+                                            placeholder: "First Name",
+                                          },
+                                          domProps: { value: _vm.full_name },
+                                          on: {
+                                            input: function ($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.full_name =
+                                                $event.target.value
+                                            },
+                                          },
+                                        }),
+                                      ]
+                                    ),
+                                  ]
+                                ),
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-lg-12" }, [
+                                _c(
+                                  "div",
+                                  { staticClass: "ui search focus mt-30" },
+                                  [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "ui left icon input swdh11 swdh19",
+                                      },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.email,
+                                              expression: "email",
+                                            },
+                                          ],
+                                          staticClass: "prompt srch_explore",
+                                          attrs: {
+                                            type: "email",
+                                            name: "email",
+                                            value: "Joginder",
+                                            placeholder: "Email",
+                                            readonly: "",
+                                          },
+                                          domProps: { value: _vm.email },
+                                          on: {
+                                            input: function ($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.email = $event.target.value
+                                            },
+                                          },
+                                        }),
+                                      ]
+                                    ),
+                                  ]
+                                ),
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-lg-12" }, [
+                                _c(
+                                  "div",
+                                  { staticClass: "ui search focus mt-30" },
+                                  [
+                                    _c(
+                                      "div",
+                                      { staticClass: "ui form swdh30" },
+                                      [
+                                        _c("div", { staticClass: "field" }, [
+                                          _c("textarea", {
+                                            directives: [
+                                              {
+                                                name: "model",
+                                                rawName: "v-model",
+                                                value: _vm.bio,
+                                                expression: "bio",
+                                              },
+                                            ],
+                                            attrs: {
+                                              rows: "3",
+                                              name: "description",
+                                              id: "id_about",
+                                              placeholder:
+                                                "Write a little description about you...",
+                                            },
+                                            domProps: { value: _vm.bio },
+                                            on: {
+                                              input: function ($event) {
+                                                if ($event.target.composing) {
+                                                  return
+                                                }
+                                                _vm.bio = $event.target.value
+                                              },
+                                            },
+                                          }),
+                                        ]),
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "help-block" }, [
+                                      _vm._v(
+                                        "\n                                  Links and coupon codes are not permitted in\n                                  this section.\n                                "
+                                      ),
+                                    ]),
+                                  ]
+                                ),
+                              ]),
+                              _vm._v(" "),
+                              _vm._m(3),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(4),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      { staticClass: "save_btn", attrs: { type: "submit" } },
+                      [_vm._v("Save Changes")]
+                    ),
+                  ]),
+                ]
+              ),
+              _vm._v(" "),
+              _vm._m(5),
+              _vm._v(" "),
+              _vm._m(6),
+              _vm._v(" "),
+              _vm._m(7),
+            ]
+          ),
+        ]),
+      ]),
+    ]),
+  ])
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "sa4d25" }, [
-      _c("div", { staticClass: "container-fluid" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-lg-12" }, [
-            _c("h2", { staticClass: "st_title" }, [
-              _c("i", { staticClass: "uil uil-cog" }),
-              _vm._v(" Setting"),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "setting_tabs" }, [
-              _c(
-                "ul",
-                {
-                  staticClass: "nav nav-pills mb-4",
-                  attrs: { id: "pills-tab", role: "tablist" },
+    return _c("h2", { staticClass: "st_title" }, [
+      _c("i", { staticClass: "uil uil-cog" }),
+      _vm._v(" Setting"),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "setting_tabs" }, [
+      _c(
+        "ul",
+        {
+          staticClass: "nav nav-pills mb-4",
+          attrs: { id: "pills-tab", role: "tablist" },
+        },
+        [
+          _c("li", { staticClass: "nav-item" }, [
+            _c(
+              "a",
+              {
+                staticClass: "nav-link active",
+                attrs: {
+                  id: "pills-account-tab",
+                  "data-toggle": "pill",
+                  href: "#pills-account",
+                  role: "tab",
+                  "aria-selected": "true",
                 },
-                [
-                  _c("li", { staticClass: "nav-item" }, [
+              },
+              [_vm._v("Account")]
+            ),
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "nav-item" }, [
+            _c(
+              "a",
+              {
+                staticClass: "nav-link",
+                attrs: {
+                  id: "pills-notification-tab",
+                  "data-toggle": "pill",
+                  href: "#pills-notification",
+                  role: "tab",
+                  "aria-selected": "false",
+                },
+              },
+              [_vm._v("Notification")]
+            ),
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "nav-item" }, [
+            _c(
+              "a",
+              {
+                staticClass: "nav-link",
+                attrs: {
+                  id: "pills-privacy-tab",
+                  "data-toggle": "pill",
+                  href: "#pills-privacy",
+                  role: "tab",
+                  "aria-selected": "false",
+                },
+              },
+              [_vm._v("Privacy")]
+            ),
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "nav-item" }, [
+            _c(
+              "a",
+              {
+                staticClass: "nav-link",
+                attrs: {
+                  id: "pills-closeaccount-tab",
+                  "data-toggle": "pill",
+                  href: "#pills-closeaccount",
+                  role: "tab",
+                  "aria-selected": "false",
+                },
+              },
+              [_vm._v("Close Account")]
+            ),
+          ]),
+        ]
+      ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "basic_ptitle" }, [
+      _c("h4", [_vm._v("Basic Profile")]),
+      _vm._v(" "),
+      _c("p", [_vm._v("Add information about yourself")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-lg-12" }, [
+      _c("div", { staticClass: "divider-1" }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "basic_profile1" }, [
+      _c("div", { staticClass: "basic_ptitle" }, [
+        _c("h4", [_vm._v("Profile Links")]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "basic_form" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-lg-8" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-lg-12" }, [
+                _c("div", { staticClass: "ui search focus mt-30" }, [
+                  _c(
+                    "div",
+                    { staticClass: "ui left icon labeled input swdh11 swdh31" },
+                    [
+                      _c("div", { staticClass: "ui label lb12" }, [
+                        _vm._v(
+                          "\n                                    http://facebook.com/\n                                  "
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "prompt srch_explore",
+                        attrs: {
+                          type: "text",
+                          name: "facebooklink",
+                          id: "id_facebook",
+                          required: "",
+                          maxlength: "64",
+                          placeholder: "Facebook Profile",
+                        },
+                      }),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "help-block" }, [
+                    _vm._v(
+                      "\n                                  Add your Facebook username (e.g. johndoe).\n                                "
+                    ),
+                  ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-lg-12" }, [
+                _c("div", { staticClass: "ui search focus mt-30" }, [
+                  _c(
+                    "div",
+                    { staticClass: "ui left icon labeled input swdh11 swdh31" },
+                    [
+                      _c("div", { staticClass: "ui label lb12" }, [
+                        _vm._v(
+                          "\n                                    http://twitter.com/\n                                  "
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "prompt srch_explore",
+                        attrs: {
+                          type: "text",
+                          name: "twitterlink",
+                          id: "id_twitter",
+                          required: "",
+                          maxlength: "64",
+                          placeholder: "Twitter Profile",
+                        },
+                      }),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "help-block" }, [
+                    _vm._v(
+                      "\n                                  Add your Twitter username (e.g. johndoe).\n                                "
+                    ),
+                  ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-lg-12" }, [
+                _c("div", { staticClass: "ui search focus mt-30" }, [
+                  _c(
+                    "div",
+                    { staticClass: "ui left icon labeled input swdh11 swdh31" },
+                    [
+                      _c("div", { staticClass: "ui label lb12" }, [
+                        _vm._v(
+                          "\n                                    http://www.linkedin.com/\n                                  "
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "prompt srch_explore",
+                        attrs: {
+                          type: "text",
+                          name: "linkedinlink",
+                          id: "id_linkedin",
+                          required: "",
+                          maxlength: "64",
+                          placeholder: "Linkedin Profile",
+                        },
+                      }),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "help-block" }, [
+                    _vm._v(
+                      "\n                                  Input your LinkedIn resource id (e.g.\n                                  in/johndoe).\n                                "
+                    ),
+                  ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-lg-12" }, [
+                _c("div", { staticClass: "ui search focus mt-30" }, [
+                  _c(
+                    "div",
+                    { staticClass: "ui left icon labeled input swdh11 swdh31" },
+                    [
+                      _c("div", { staticClass: "ui label lb12" }, [
+                        _vm._v(
+                          "\n                                    http://www.youtube.com/\n                                  "
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "prompt srch_explore",
+                        attrs: {
+                          type: "text",
+                          name: "youtubelink",
+                          id: "id_youtube",
+                          required: "",
+                          maxlength: "64",
+                          placeholder: "Youtube Profile",
+                        },
+                      }),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "help-block" }, [
+                    _vm._v(
+                      "\n                                  Input your Youtube username (e.g. johndoe).\n                                "
+                    ),
+                  ]),
+                ]),
+              ]),
+            ]),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "tab-pane fade",
+        attrs: {
+          id: "pills-notification",
+          role: "tabpanel",
+          "aria-labelledby": "pills-notification-tab",
+        },
+      },
+      [
+        _c("div", { staticClass: "account_setting" }, [
+          _c("h4", [
+            _vm._v("Notifications - Choose when and how to be notified"),
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "\n                    Select push and email notifications you'd like to receive\n                  "
+            ),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "basic_profile" }, [
+            _c("div", { staticClass: "basic_form" }, [
+              _c("div", { staticClass: "nstting_content" }, [
+                _c("div", { staticClass: "basic_ptitle" }, [
+                  _c("h4", [_vm._v("Choose when and how to be notified")]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "ui toggle checkbox _1457s2" }, [
+                  _c("input", {
+                    attrs: {
+                      type: "checkbox",
+                      name: "stream_ss1",
+                      checked: "",
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("label", [_vm._v("Subscriptions")]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "ml5" }, [
+                    _vm._v(
+                      "\n                            Notify me about activity from the profiles I'm\n                            subscribed to\n                          "
+                    ),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "ui toggle checkbox _1457s2" }, [
+                  _c("input", {
+                    attrs: { type: "checkbox", name: "stream_ss2" },
+                  }),
+                  _vm._v(" "),
+                  _c("label", [_vm._v("Recommended Courses")]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "ml5" }, [
+                    _vm._v(
+                      "\n                            Notify me of courses I might like based on what I\n                            watch\n                          "
+                    ),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "ui toggle checkbox _1457s2" }, [
+                  _c("input", {
+                    attrs: { type: "checkbox", name: "stream_ss3" },
+                  }),
+                  _vm._v(" "),
+                  _c("label", [_vm._v("Activity on my comments")]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "ml5" }, [
+                    _vm._v(
+                      "\n                            Notify me about activity on my comments on others’\n                            courses\n                          "
+                    ),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "ui toggle checkbox _1457s2" }, [
+                  _c("input", {
+                    attrs: {
+                      type: "checkbox",
+                      name: "stream_ss4",
+                      checked: "",
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("label", [_vm._v("Replies to my comments")]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "ml5" }, [
+                    _vm._v(
+                      "\n                            Notify me about replies to my comments\n                          "
+                    ),
+                  ]),
+                ]),
+              ]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "divider-1 mb-50" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "basic_profile" }, [
+            _c("div", { staticClass: "basic_form" }, [
+              _c("div", { staticClass: "nstting_content" }, [
+                _c("div", { staticClass: "basic_ptitle" }, [
+                  _c("h4", [_vm._v("Email notifications")]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "\n                            Your emails are sent to\n                            "
+                    ),
                     _c(
                       "a",
                       {
-                        staticClass: "nav-link active",
+                        staticClass: "__cf_email__",
                         attrs: {
-                          id: "pills-account-tab",
-                          "data-toggle": "pill",
-                          href: "#pills-account",
-                          role: "tab",
-                          "aria-selected": "true",
+                          href: "https://gambolthemes.net/cdn-cgi/l/email-protection",
+                          "data-cfemail":
+                            "15727478777a792c2126557278747c793b767a783b",
                         },
                       },
-                      [_vm._v("Account")]
+                      [_vm._v("[email protected]")]
+                    ),
+                    _vm._v(
+                      '\n                            To unsubscribe from an email, click the\n                            "Unsubscribe" link at the bottom of it.\n                            '
+                    ),
+                    _c("a", { attrs: { href: "#" } }, [_vm._v("Learn more")]),
+                    _vm._v(
+                      " about emails from\n                            Edututs+.\n                          "
+                    ),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "ui toggle checkbox _1457s2" }, [
+                  _c("input", {
+                    attrs: {
+                      type: "checkbox",
+                      name: "stream_ss5",
+                      checked: "",
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("label", [
+                    _vm._v(
+                      "Send me emails about my Cursus activity and\n                            updates I requested"
                     ),
                   ]),
                   _vm._v(" "),
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "nav-link",
-                        attrs: {
-                          id: "pills-notification-tab",
-                          "data-toggle": "pill",
-                          href: "#pills-notification",
-                          role: "tab",
-                          "aria-selected": "false",
-                        },
-                      },
-                      [_vm._v("Notification")]
+                  _c("p", { staticClass: "ml5" }, [
+                    _vm._v(
+                      "\n                            If this setting is turned off, Cursus may still\n                            send you messages regarding your account, required\n                            service announcements, legal notifications, and\n                            privacy matters\n                          "
+                    ),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "ui toggle checkbox _1457s2" }, [
+                  _c("input", {
+                    attrs: { type: "checkbox", name: "stream_ss6" },
+                  }),
+                  _vm._v(" "),
+                  _c("label", [
+                    _vm._v(
+                      "Promotions, course recommendations, and helpful\n                            resources from Cursus."
+                    ),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "ui toggle checkbox _1457s2" }, [
+                  _c("input", {
+                    attrs: { type: "checkbox", name: "stream_ss7" },
+                  }),
+                  _vm._v(" "),
+                  _c("label", [
+                    _vm._v(
+                      "Announcements from instructors whose course(s)\n                            I’m enrolled in."
                     ),
                   ]),
                   _vm._v(" "),
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "nav-link",
-                        attrs: {
-                          id: "pills-privacy-tab",
-                          "data-toggle": "pill",
-                          href: "#pills-privacy",
-                          role: "tab",
-                          "aria-selected": "false",
-                        },
-                      },
-                      [_vm._v("Privacy")]
+                  _c("p", { staticClass: "ml5" }, [
+                    _vm._v(
+                      '\n                            To adjust this preference by course, leave this\n                            box checked and go to the course dashboard and\n                            click on "Options" to opt in or out of specific\n                            announcements.\n                          '
                     ),
                   ]),
+                ]),
+              ]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("button", { staticClass: "save_btn", attrs: { type: "submit" } }, [
+            _vm._v("Save Changes"),
+          ]),
+        ]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "tab-pane fade",
+        attrs: {
+          id: "pills-privacy",
+          role: "tabpanel",
+          "aria-labelledby": "pills-privacy-tab",
+        },
+      },
+      [
+        _c("div", { staticClass: "account_setting" }, [
+          _c("h4", [_vm._v("Privacy")]),
+          _vm._v(" "),
+          _c("p", [_vm._v("Modify your privacy settings here.")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "basic_profile" }, [
+            _c("div", { staticClass: "basic_form" }, [
+              _c("div", { staticClass: "nstting_content" }, [
+                _c("div", { staticClass: "basic_ptitle" }, [
+                  _c("h4", [_vm._v("Profile page settings")]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "ui toggle checkbox _1457s2" }, [
+                  _c("input", {
+                    attrs: {
+                      type: "checkbox",
+                      name: "stream_ss8",
+                      checked: "",
+                    },
+                  }),
                   _vm._v(" "),
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "nav-link",
-                        attrs: {
-                          id: "pills-closeaccount-tab",
-                          "data-toggle": "pill",
-                          href: "#pills-closeaccount",
-                          role: "tab",
-                          "aria-selected": "false",
-                        },
-                      },
-                      [_vm._v("Close Account")]
+                  _c("label", [_vm._v("Show your profile on search engines")]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "ui toggle checkbox _1457s2" }, [
+                  _c("input", {
+                    attrs: { type: "checkbox", name: "stream_ss9" },
+                  }),
+                  _vm._v(" "),
+                  _c("label", [
+                    _vm._v(
+                      "Show courses you're taking on your profile\n                            page"
                     ),
                   ]),
-                ]
-              ),
+                ]),
+              ]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("button", { staticClass: "save_btn", attrs: { type: "submit" } }, [
+            _vm._v("Save Changes"),
+          ]),
+        ]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "tab-pane fade",
+        attrs: {
+          id: "pills-closeaccount",
+          role: "tabpanel",
+          "aria-labelledby": "pills-closeaccount-tab",
+        },
+      },
+      [
+        _c("div", { staticClass: "account_setting" }, [
+          _c("h4", [_vm._v("Close account")]),
+          _vm._v(" "),
+          _c("p", [
+            _c("strong", [_vm._v("Warning:")]),
+            _vm._v(
+              " If you close your account, you\n                    will be unsubscribed from all your 5 courses, and will\n                    lose access forever.\n                  "
+            ),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-lg-4" }, [
+            _c("div", { staticClass: "ui search focus mt-30" }, [
+              _c("div", { staticClass: "ui left icon input swdh11 swdh19" }, [
+                _c("input", {
+                  staticClass: "prompt srch_explore",
+                  attrs: {
+                    type: "password",
+                    name: "yourassword",
+                    id: "id_yourpassword",
+                    required: "",
+                    maxlength: "64",
+                    placeholder: "Enter Your Password",
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "help-block" }, [
+                _vm._v(
+                  "\n                        Are you sure you want to close your account?\n                      "
+                ),
+              ]),
             ]),
             _vm._v(" "),
             _c(
-              "div",
+              "button",
               {
-                staticClass: "tab-content setting-content",
-                attrs: { id: "pills-tabContent" },
+                staticClass: "save_payout_btn mbs20",
+                attrs: { type: "submit" },
               },
               [
-                _c(
-                  "div",
-                  {
-                    staticClass: "tab-pane fade show active",
-                    attrs: {
-                      id: "pills-account",
-                      role: "tabpanel",
-                      "aria-labelledby": "pills-account-tab",
-                    },
-                  },
-                  [
-                    _c("div", { staticClass: "account_setting" }, [
-                      _c("h4", [_vm._v("Your Gamify Account")]),
-                      _vm._v(" "),
-                      _c("p", [
-                        _vm._v(
-                          "\n                    This is your public presence on Gamify US.\n                  "
-                        ),
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "basic_profile" }, [
-                        _c("div", { staticClass: "basic_ptitle" }, [
-                          _c("h4", [_vm._v("Basic Profile")]),
-                          _vm._v(" "),
-                          _c("p", [_vm._v("Add information about yourself")]),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "basic_form" }, [
-                          _c("div", { staticClass: "row" }, [
-                            _c("div", { staticClass: "col-lg-8" }, [
-                              _c("div", { staticClass: "row" }, [
-                                _c("div", { staticClass: "col-lg-6" }, [
-                                  _c(
-                                    "div",
-                                    { staticClass: "ui search focus mt-30" },
-                                    [
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass:
-                                            "ui left icon input swdh11 swdh19",
-                                        },
-                                        [
-                                          _c("input", {
-                                            staticClass: "prompt srch_explore",
-                                            attrs: {
-                                              type: "text",
-                                              name: "name",
-                                              value: "Joginder",
-                                              id: "id[name]",
-                                              required: "",
-                                              maxlength: "64",
-                                              placeholder: "First Name",
-                                            },
-                                          }),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-lg-6" }, [
-                                  _c(
-                                    "div",
-                                    { staticClass: "ui search focus mt-30" },
-                                    [
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass:
-                                            "ui left icon input swdh11 swdh19",
-                                        },
-                                        [
-                                          _c("input", {
-                                            staticClass: "prompt srch_explore",
-                                            attrs: {
-                                              type: "text",
-                                              name: "surname",
-                                              value: "Singh",
-                                              id: "id[surname]",
-                                              required: "",
-                                              maxlength: "64",
-                                              placeholder: "Last Name",
-                                            },
-                                          }),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-lg-12" }, [
-                                  _c(
-                                    "div",
-                                    { staticClass: "ui search focus mt-30" },
-                                    [
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass:
-                                            "ui left icon input swdh11 swdh19",
-                                        },
-                                        [
-                                          _c("input", {
-                                            staticClass: "prompt srch_explore",
-                                            attrs: {
-                                              type: "text",
-                                              name: "headline",
-                                              value: "I  am a Web Designer",
-                                              id: "id_headline",
-                                              required: "",
-                                              maxlength: "60",
-                                              placeholder: "Headline",
-                                            },
-                                          }),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "form-control-counter",
-                                              attrs: {
-                                                "data-purpose":
-                                                  "form-control-counter",
-                                              },
-                                            },
-                                            [
-                                              _vm._v(
-                                                "\n                                    36\n                                  "
-                                              ),
-                                            ]
-                                          ),
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "help-block" }, [
-                                        _vm._v(
-                                          '\n                                  Add a professional headline like, "Engineer\n                                  at Cursus" or "Architect."\n                                '
-                                        ),
-                                      ]),
-                                    ]
-                                  ),
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-lg-12" }, [
-                                  _c(
-                                    "div",
-                                    { staticClass: "ui search focus mt-30" },
-                                    [
-                                      _c(
-                                        "div",
-                                        { staticClass: "ui form swdh30" },
-                                        [
-                                          _c("div", { staticClass: "field" }, [
-                                            _c("textarea", {
-                                              attrs: {
-                                                rows: "3",
-                                                name: "description",
-                                                id: "id_about",
-                                                placeholder:
-                                                  "Write a little description about you...",
-                                              },
-                                            }),
-                                          ]),
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "help-block" }, [
-                                        _vm._v(
-                                          "\n                                  Links and coupon codes are not permitted in\n                                  this section.\n                                "
-                                        ),
-                                      ]),
-                                    ]
-                                  ),
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-lg-12" }, [
-                                  _c("div", { staticClass: "divider-1" }),
-                                ]),
-                              ]),
-                            ]),
-                          ]),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "basic_profile1" }, [
-                        _c("div", { staticClass: "basic_ptitle" }, [
-                          _c("h4", [_vm._v("Profile Links")]),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "basic_form" }, [
-                          _c("div", { staticClass: "row" }, [
-                            _c("div", { staticClass: "col-lg-8" }, [
-                              _c("div", { staticClass: "row" }, [
-                                _c("div", { staticClass: "col-lg-12" }, [
-                                  _c(
-                                    "div",
-                                    { staticClass: "ui search focus mt-30" },
-                                    [
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass:
-                                            "ui left icon labeled input swdh11 swdh31",
-                                        },
-                                        [
-                                          _c(
-                                            "div",
-                                            { staticClass: "ui label lb12" },
-                                            [_vm._v("https://")]
-                                          ),
-                                          _vm._v(" "),
-                                          _c("input", {
-                                            staticClass: "prompt srch_explore",
-                                            attrs: {
-                                              type: "text",
-                                              name: "site",
-                                              value: "gambolthemes.net",
-                                              id: "id_site",
-                                              required: "",
-                                              maxlength: "64",
-                                              placeholder: "yoursite.com",
-                                            },
-                                          }),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-lg-12" }, [
-                                  _c(
-                                    "div",
-                                    { staticClass: "ui search focus mt-30" },
-                                    [
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass:
-                                            "ui left icon labeled input swdh11 swdh31",
-                                        },
-                                        [
-                                          _c(
-                                            "div",
-                                            { staticClass: "ui label lb12" },
-                                            [
-                                              _vm._v(
-                                                "\n                                    http://facebook.com/\n                                  "
-                                              ),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c("input", {
-                                            staticClass: "prompt srch_explore",
-                                            attrs: {
-                                              type: "text",
-                                              name: "facebooklink",
-                                              id: "id_facebook",
-                                              required: "",
-                                              maxlength: "64",
-                                              placeholder: "Facebook Profile",
-                                            },
-                                          }),
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "help-block" }, [
-                                        _vm._v(
-                                          "\n                                  Add your Facebook username (e.g. johndoe).\n                                "
-                                        ),
-                                      ]),
-                                    ]
-                                  ),
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-lg-12" }, [
-                                  _c(
-                                    "div",
-                                    { staticClass: "ui search focus mt-30" },
-                                    [
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass:
-                                            "ui left icon labeled input swdh11 swdh31",
-                                        },
-                                        [
-                                          _c(
-                                            "div",
-                                            { staticClass: "ui label lb12" },
-                                            [
-                                              _vm._v(
-                                                "\n                                    http://twitter.com/\n                                  "
-                                              ),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c("input", {
-                                            staticClass: "prompt srch_explore",
-                                            attrs: {
-                                              type: "text",
-                                              name: "twitterlink",
-                                              id: "id_twitter",
-                                              required: "",
-                                              maxlength: "64",
-                                              placeholder: "Twitter Profile",
-                                            },
-                                          }),
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "help-block" }, [
-                                        _vm._v(
-                                          "\n                                  Add your Twitter username (e.g. johndoe).\n                                "
-                                        ),
-                                      ]),
-                                    ]
-                                  ),
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-lg-12" }, [
-                                  _c(
-                                    "div",
-                                    { staticClass: "ui search focus mt-30" },
-                                    [
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass:
-                                            "ui left icon labeled input swdh11 swdh31",
-                                        },
-                                        [
-                                          _c(
-                                            "div",
-                                            { staticClass: "ui label lb12" },
-                                            [
-                                              _vm._v(
-                                                "\n                                    http://www.linkedin.com/\n                                  "
-                                              ),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c("input", {
-                                            staticClass: "prompt srch_explore",
-                                            attrs: {
-                                              type: "text",
-                                              name: "linkedinlink",
-                                              id: "id_linkedin",
-                                              required: "",
-                                              maxlength: "64",
-                                              placeholder: "Linkedin Profile",
-                                            },
-                                          }),
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "help-block" }, [
-                                        _vm._v(
-                                          "\n                                  Input your LinkedIn resource id (e.g.\n                                  in/johndoe).\n                                "
-                                        ),
-                                      ]),
-                                    ]
-                                  ),
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-lg-12" }, [
-                                  _c(
-                                    "div",
-                                    { staticClass: "ui search focus mt-30" },
-                                    [
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass:
-                                            "ui left icon labeled input swdh11 swdh31",
-                                        },
-                                        [
-                                          _c(
-                                            "div",
-                                            { staticClass: "ui label lb12" },
-                                            [
-                                              _vm._v(
-                                                "\n                                    http://www.youtube.com/\n                                  "
-                                              ),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c("input", {
-                                            staticClass: "prompt srch_explore",
-                                            attrs: {
-                                              type: "text",
-                                              name: "youtubelink",
-                                              id: "id_youtube",
-                                              required: "",
-                                              maxlength: "64",
-                                              placeholder: "Youtube Profile",
-                                            },
-                                          }),
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "help-block" }, [
-                                        _vm._v(
-                                          "\n                                  Input your Youtube username (e.g. johndoe).\n                                "
-                                        ),
-                                      ]),
-                                    ]
-                                  ),
-                                ]),
-                              ]),
-                            ]),
-                          ]),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        { staticClass: "save_btn", attrs: { type: "submit" } },
-                        [_vm._v("Save Changes")]
-                      ),
-                    ]),
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "tab-pane fade",
-                    attrs: {
-                      id: "pills-notification",
-                      role: "tabpanel",
-                      "aria-labelledby": "pills-notification-tab",
-                    },
-                  },
-                  [
-                    _c("div", { staticClass: "account_setting" }, [
-                      _c("h4", [
-                        _vm._v(
-                          "Notifications - Choose when and how to be notified"
-                        ),
-                      ]),
-                      _vm._v(" "),
-                      _c("p", [
-                        _vm._v(
-                          "\n                    Select push and email notifications you'd like to receive\n                  "
-                        ),
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "basic_profile" }, [
-                        _c("div", { staticClass: "basic_form" }, [
-                          _c("div", { staticClass: "nstting_content" }, [
-                            _c("div", { staticClass: "basic_ptitle" }, [
-                              _c("h4", [
-                                _vm._v("Choose when and how to be notified"),
-                              ]),
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "ui toggle checkbox _1457s2" },
-                              [
-                                _c("input", {
-                                  attrs: {
-                                    type: "checkbox",
-                                    name: "stream_ss1",
-                                    checked: "",
-                                  },
-                                }),
-                                _vm._v(" "),
-                                _c("label", [_vm._v("Subscriptions")]),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "ml5" }, [
-                                  _vm._v(
-                                    "\n                            Notify me about activity from the profiles I'm\n                            subscribed to\n                          "
-                                  ),
-                                ]),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "ui toggle checkbox _1457s2" },
-                              [
-                                _c("input", {
-                                  attrs: {
-                                    type: "checkbox",
-                                    name: "stream_ss2",
-                                  },
-                                }),
-                                _vm._v(" "),
-                                _c("label", [_vm._v("Recommended Courses")]),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "ml5" }, [
-                                  _vm._v(
-                                    "\n                            Notify me of courses I might like based on what I\n                            watch\n                          "
-                                  ),
-                                ]),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "ui toggle checkbox _1457s2" },
-                              [
-                                _c("input", {
-                                  attrs: {
-                                    type: "checkbox",
-                                    name: "stream_ss3",
-                                  },
-                                }),
-                                _vm._v(" "),
-                                _c("label", [
-                                  _vm._v("Activity on my comments"),
-                                ]),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "ml5" }, [
-                                  _vm._v(
-                                    "\n                            Notify me about activity on my comments on others’\n                            courses\n                          "
-                                  ),
-                                ]),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "ui toggle checkbox _1457s2" },
-                              [
-                                _c("input", {
-                                  attrs: {
-                                    type: "checkbox",
-                                    name: "stream_ss4",
-                                    checked: "",
-                                  },
-                                }),
-                                _vm._v(" "),
-                                _c("label", [_vm._v("Replies to my comments")]),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "ml5" }, [
-                                  _vm._v(
-                                    "\n                            Notify me about replies to my comments\n                          "
-                                  ),
-                                ]),
-                              ]
-                            ),
-                          ]),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "divider-1 mb-50" }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "basic_profile" }, [
-                        _c("div", { staticClass: "basic_form" }, [
-                          _c("div", { staticClass: "nstting_content" }, [
-                            _c("div", { staticClass: "basic_ptitle" }, [
-                              _c("h4", [_vm._v("Email notifications")]),
-                              _vm._v(" "),
-                              _c("p", [
-                                _vm._v(
-                                  "\n                            Your emails are sent to\n                            "
-                                ),
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "__cf_email__",
-                                    attrs: {
-                                      href: "https://gambolthemes.net/cdn-cgi/l/email-protection",
-                                      "data-cfemail":
-                                        "15727478777a792c2126557278747c793b767a783b",
-                                    },
-                                  },
-                                  [_vm._v("[email protected]")]
-                                ),
-                                _vm._v(
-                                  '\n                            To unsubscribe from an email, click the\n                            "Unsubscribe" link at the bottom of it.\n                            '
-                                ),
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Learn more"),
-                                ]),
-                                _vm._v(
-                                  " about emails from\n                            Edututs+.\n                          "
-                                ),
-                              ]),
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "ui toggle checkbox _1457s2" },
-                              [
-                                _c("input", {
-                                  attrs: {
-                                    type: "checkbox",
-                                    name: "stream_ss5",
-                                    checked: "",
-                                  },
-                                }),
-                                _vm._v(" "),
-                                _c("label", [
-                                  _vm._v(
-                                    "Send me emails about my Cursus activity and\n                            updates I requested"
-                                  ),
-                                ]),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "ml5" }, [
-                                  _vm._v(
-                                    "\n                            If this setting is turned off, Cursus may still\n                            send you messages regarding your account, required\n                            service announcements, legal notifications, and\n                            privacy matters\n                          "
-                                  ),
-                                ]),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "ui toggle checkbox _1457s2" },
-                              [
-                                _c("input", {
-                                  attrs: {
-                                    type: "checkbox",
-                                    name: "stream_ss6",
-                                  },
-                                }),
-                                _vm._v(" "),
-                                _c("label", [
-                                  _vm._v(
-                                    "Promotions, course recommendations, and helpful\n                            resources from Cursus."
-                                  ),
-                                ]),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "ui toggle checkbox _1457s2" },
-                              [
-                                _c("input", {
-                                  attrs: {
-                                    type: "checkbox",
-                                    name: "stream_ss7",
-                                  },
-                                }),
-                                _vm._v(" "),
-                                _c("label", [
-                                  _vm._v(
-                                    "Announcements from instructors whose course(s)\n                            I’m enrolled in."
-                                  ),
-                                ]),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "ml5" }, [
-                                  _vm._v(
-                                    '\n                            To adjust this preference by course, leave this\n                            box checked and go to the course dashboard and\n                            click on "Options" to opt in or out of specific\n                            announcements.\n                          '
-                                  ),
-                                ]),
-                              ]
-                            ),
-                          ]),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        { staticClass: "save_btn", attrs: { type: "submit" } },
-                        [_vm._v("Save Changes")]
-                      ),
-                    ]),
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "tab-pane fade",
-                    attrs: {
-                      id: "pills-privacy",
-                      role: "tabpanel",
-                      "aria-labelledby": "pills-privacy-tab",
-                    },
-                  },
-                  [
-                    _c("div", { staticClass: "account_setting" }, [
-                      _c("h4", [_vm._v("Privacy")]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("Modify your privacy settings here.")]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "basic_profile" }, [
-                        _c("div", { staticClass: "basic_form" }, [
-                          _c("div", { staticClass: "nstting_content" }, [
-                            _c("div", { staticClass: "basic_ptitle" }, [
-                              _c("h4", [_vm._v("Profile page settings")]),
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "ui toggle checkbox _1457s2" },
-                              [
-                                _c("input", {
-                                  attrs: {
-                                    type: "checkbox",
-                                    name: "stream_ss8",
-                                    checked: "",
-                                  },
-                                }),
-                                _vm._v(" "),
-                                _c("label", [
-                                  _vm._v("Show your profile on search engines"),
-                                ]),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "ui toggle checkbox _1457s2" },
-                              [
-                                _c("input", {
-                                  attrs: {
-                                    type: "checkbox",
-                                    name: "stream_ss9",
-                                  },
-                                }),
-                                _vm._v(" "),
-                                _c("label", [
-                                  _vm._v(
-                                    "Show courses you're taking on your profile\n                            page"
-                                  ),
-                                ]),
-                              ]
-                            ),
-                          ]),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        { staticClass: "save_btn", attrs: { type: "submit" } },
-                        [_vm._v("Save Changes")]
-                      ),
-                    ]),
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "tab-pane fade",
-                    attrs: {
-                      id: "pills-closeaccount",
-                      role: "tabpanel",
-                      "aria-labelledby": "pills-closeaccount-tab",
-                    },
-                  },
-                  [
-                    _c("div", { staticClass: "account_setting" }, [
-                      _c("h4", [_vm._v("Close account")]),
-                      _vm._v(" "),
-                      _c("p", [
-                        _c("strong", [_vm._v("Warning:")]),
-                        _vm._v(
-                          " If you close your account, you\n                    will be unsubscribed from all your 5 courses, and will\n                    lose access forever.\n                  "
-                        ),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-lg-4" }, [
-                        _c("div", { staticClass: "ui search focus mt-30" }, [
-                          _c(
-                            "div",
-                            { staticClass: "ui left icon input swdh11 swdh19" },
-                            [
-                              _c("input", {
-                                staticClass: "prompt srch_explore",
-                                attrs: {
-                                  type: "password",
-                                  name: "yourassword",
-                                  id: "id_yourpassword",
-                                  required: "",
-                                  maxlength: "64",
-                                  placeholder: "Enter Your Password",
-                                },
-                              }),
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "help-block" }, [
-                            _vm._v(
-                              "\n                        Are you sure you want to close your account?\n                      "
-                            ),
-                          ]),
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass: "save_payout_btn mbs20",
-                            attrs: { type: "submit" },
-                          },
-                          [
-                            _vm._v(
-                              "\n                      Close Account\n                    "
-                            ),
-                          ]
-                        ),
-                      ]),
-                    ]),
-                  ]
+                _vm._v(
+                  "\n                      Close Account\n                    "
                 ),
               ]
             ),
           ]),
         ]),
-      ]),
-    ])
+      ]
+    )
   },
 ]
 render._withStripped = true

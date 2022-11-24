@@ -126,7 +126,7 @@
                                 <img :src="`${globalBaseUrl}images/hd_dp.jpg`" alt="" />
                             </div>
                             <div class="rhte85 mt-2 justify-content-center">
-                                <h6>Joginder Singh</h6>
+                                <h6>{{user.full_name}}</h6>
                                 <div class="mef78" title="Verify">
                                     <i class="uil uil-check-circle"></i>
                                 </div>
@@ -159,6 +159,9 @@
 <script>
 export default {
     name: "Header",
+    props:[
+        'user',
+    ],
     mounted() {
         $(".new-dropdown").click(function () {
             if ($(".dropdown_account").css("display") == "none") {

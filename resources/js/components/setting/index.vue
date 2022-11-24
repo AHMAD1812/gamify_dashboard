@@ -73,34 +73,15 @@
                         <div class="row">
                           <div class="col-lg-8">
                             <div class="row">
-                              <div class="col-lg-6">
+                              <div class="col-lg-12">
                                 <div class="ui search focus mt-30">
                                   <div class="ui left icon input swdh11 swdh19">
                                     <input
                                       class="prompt srch_explore"
                                       type="text"
                                       name="name"
-                                      value="Joginder"
-                                      id="id[name]"
-                                      required=""
-                                      maxlength="64"
                                       placeholder="First Name"
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-lg-6">
-                                <div class="ui search focus mt-30">
-                                  <div class="ui left icon input swdh11 swdh19">
-                                    <input
-                                      class="prompt srch_explore"
-                                      type="text"
-                                      name="surname"
-                                      value="Singh"
-                                      id="id[surname]"
-                                      required=""
-                                      maxlength="64"
-                                      placeholder="Last Name"
+                                      v-model="full_name"
                                     />
                                   </div>
                                 </div>
@@ -110,24 +91,13 @@
                                   <div class="ui left icon input swdh11 swdh19">
                                     <input
                                       class="prompt srch_explore"
-                                      type="text"
-                                      name="headline"
-                                      value="I  am a Web Designer"
-                                      id="id_headline"
-                                      required=""
-                                      maxlength="60"
-                                      placeholder="Headline"
+                                      type="email"
+                                      name="email"
+                                      value="Joginder"
+                                      placeholder="Email"
+                                      v-model="email"
+                                      readonly
                                     />
-                                    <div
-                                      class="form-control-counter"
-                                      data-purpose="form-control-counter"
-                                    >
-                                      36
-                                    </div>
-                                  </div>
-                                  <div class="help-block">
-                                    Add a professional headline like, "Engineer
-                                    at Cursus" or "Architect."
                                   </div>
                                 </div>
                               </div>
@@ -139,6 +109,7 @@
                                         rows="3"
                                         name="description"
                                         id="id_about"
+                                        v-model="bio"
                                         placeholder="Write a little description about you..."
                                       ></textarea>
                                     </div>
@@ -165,25 +136,6 @@
                         <div class="row">
                           <div class="col-lg-8">
                             <div class="row">
-                              <div class="col-lg-12">
-                                <div class="ui search focus mt-30">
-                                  <div
-                                    class="ui left icon labeled input swdh11 swdh31"
-                                  >
-                                    <div class="ui label lb12">https://</div>
-                                    <input
-                                      class="prompt srch_explore"
-                                      type="text"
-                                      name="site"
-                                      value="gambolthemes.net"
-                                      id="id_site"
-                                      required=""
-                                      maxlength="64"
-                                      placeholder="yoursite.com"
-                                    />
-                                  </div>
-                                </div>
-                              </div>
                               <div class="col-lg-12">
                                 <div class="ui search focus mt-30">
                                   <div
@@ -475,6 +427,27 @@
 <script>
 export default {
     name:"Setting",
+    data(){
+      return{
+        full_name:"",
+        email:"",
+        bio:"",
+      }
+    },
+    async mounted(){
+      try{
+          this.$emit('toggle-loader');
+          let response = await axios.get(`${globalBaseUrl}instructor/profile`);
+          let user = response.data.data;
+          this.full_name = user.full_name;
+          this.email = user.email;
+          this.bio = user.biography;
+          this.$emit('toggle-loader');
+        }catch(e){
+          this.$emit('toggle-loader');
+          console.log(e);
+        }
+    }
 }
 </script>
 

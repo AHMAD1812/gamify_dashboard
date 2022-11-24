@@ -5,6 +5,7 @@ use App\Http\Controllers\AppController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,7 +47,10 @@ Route::prefix('instructor')->group(function () {
         Route::get('/profile', [PageController::class, 'index']);
         Route::get('/setting', [PageController::class, 'index']);
         Route::get('/course_detail', [PageController::class, 'index']);
+
+        //API Doces
         Route::post('/logout', [AuthController::class, 'logout']);
+        Route::get('/profile', [UserController::class, 'getUser']);
     });
 
 

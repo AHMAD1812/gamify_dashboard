@@ -334,31 +334,14 @@
                                                                     Level*</label
                                                                 >
                                                             </div>
-                                                            <select
-                                                                class="ui hj145 dropdown cntry152 prompt srch_explore"
-                                                                multiple=""
-                                                            >
-                                                                <option
-                                                                    value=""
-                                                                >
-                                                                    Select Level
-                                                                </option>
-                                                                <option
-                                                                    value="1"
-                                                                >
-                                                                    Beginner
-                                                                </option>
-                                                                <option
-                                                                    value="2"
-                                                                >
-                                                                    Intermediate
-                                                                </option>
-                                                                <option
-                                                                    value="3"
-                                                                >
-                                                                    Expert
-                                                                </option>
-                                                            </select>
+                                                            <sui-dropdown
+                                                                selection
+                                                                placeholder="Select Level"
+                                                                class="cntry152 prompt srch_explore"
+                                                                :options="levelOptions"
+                                                                v-model="level"
+                                                            />
+                                                            
                                                         </div>
                                                         <div
                                                             class="col-lg-6 col-md-6"
@@ -371,759 +354,18 @@
                                                                     Category*</label
                                                                 >
                                                             </div>
-                                                            <div
-                                                                class="ui selection dropdown cntry152 prompt srch_explore optgroup"
-                                                            >
-                                                                <div
-                                                                    class="default text"
-                                                                >
-                                                                    Select
-                                                                </div>
-                                                                <i
-                                                                    class="dropdown icon"
-                                                                ></i>
-                                                                <div
-                                                                    class="menu cate_menu"
-                                                                >
-                                                                    <div
-                                                                        class="ui horizontal divider opt_title"
-                                                                    >
-                                                                        Development
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Web
-                                                                        Development
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Data
-                                                                        Science
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Programming
-                                                                        Languages
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Mobile
-                                                                        Apps
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Game
-                                                                        Development
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Databases
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Software
-                                                                        Testing
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Software
-                                                                        Engineering
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Development
-                                                                        Tools
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        E-Commerce
-                                                                    </div>
-                                                                    <div
-                                                                        class="ui horizontal divider opt_title"
-                                                                    >
-                                                                        Business
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Finance
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Entrepreneurship
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Communications
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Management
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Sales
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Strategy
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Operations
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Project
-                                                                        Management
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Business
-                                                                        Law
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Data &
-                                                                        Analytics
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Home
-                                                                        Business
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Human
-                                                                        Resources
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Industry
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Media
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Real
-                                                                        Estate
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Other
-                                                                    </div>
-                                                                    <div
-                                                                        class="ui horizontal divider opt_title"
-                                                                    >
-                                                                        Finance
-                                                                        &
-                                                                        Accounting
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Accounting
-                                                                        &
-                                                                        Bookkeeping
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Compliance
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Cryptocurrency
-                                                                        &
-                                                                        Blockchain
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Economics
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Finance
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Finance
-                                                                        Cert &
-                                                                        Exam
-                                                                        Prep
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Financial
-                                                                        Modeling
-                                                                        &
-                                                                        Analysis
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Investing
-                                                                        &
-                                                                        Trading
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Money
-                                                                        Management
-                                                                        Tools
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Taxes
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Other
-                                                                        Finance
-                                                                        &
-                                                                        Economics
-                                                                    </div>
-                                                                    <div
-                                                                        class="ui horizontal divider opt_title"
-                                                                    >
-                                                                        IT &
-                                                                        Software
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        IT
-                                                                        Certification
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Network
-                                                                        &
-                                                                        Security
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Hardware
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Operating
-                                                                        Systems
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Other
-                                                                    </div>
-                                                                    <div
-                                                                        class="ui horizontal divider opt_title"
-                                                                    >
-                                                                        Office
-                                                                        Productivity
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Microsoft
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Apple
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Google
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        SAP
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Oracle
-                                                                    </div>
-                                                                    <div
-                                                                        class="ui horizontal divider opt_title"
-                                                                    >
-                                                                        Personal
-                                                                        Development
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Personal
-                                                                        Transformation
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Productivity
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Leadership
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Personal
-                                                                        Finance
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Career
-                                                                        Development
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Parenting
-                                                                        &
-                                                                        Relationships
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Happiness
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Religion
-                                                                        &
-                                                                        Spirituality
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Personal
-                                                                        Brand
-                                                                        Building
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Creativity
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Influence
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Self
-                                                                        Esteem
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Stress
-                                                                        Management
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Memory &
-                                                                        Study
-                                                                        Skills
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Motivation
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Other
-                                                                    </div>
-                                                                    <div
-                                                                        class="ui horizontal divider opt_title"
-                                                                    >
-                                                                        Design
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Web
-                                                                        Design
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Graphic
-                                                                        Design
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Design
-                                                                        Tools
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        User
-                                                                        Experience
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Game
-                                                                        Design
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Design
-                                                                        Thinking
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        3D &
-                                                                        Animation
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Fashion
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Architectural
-                                                                        Design
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Interior
-                                                                        Design
-                                                                    </div>
-                                                                    <div
-                                                                        class="ui horizontal divider opt_title"
-                                                                    >
-                                                                        Marketing
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Digital
-                                                                        Marketing
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Search
-                                                                        Engine
-                                                                        Optimization
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Social
-                                                                        Media
-                                                                        Marketing
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Branding
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Marketing
-                                                                        Fundamentals
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Analytics
-                                                                        &
-                                                                        Automation
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Public
-                                                                        Relations
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Advertising
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Video &
-                                                                        Mobile
-                                                                        Marketing
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Content
-                                                                        Marketing
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Growth
-                                                                        Hacking
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Affiliate
-                                                                        Marketing
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Product
-                                                                        Marketing
-                                                                    </div>
-                                                                    <div
-                                                                        class="ui horizontal divider opt_title"
-                                                                    >
-                                                                        Lifestyle
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Arts &
-                                                                        Crafts
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Food &
-                                                                        Beverage
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Beauty &
-                                                                        Makeup
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Travel
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Gaming
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Home
-                                                                        Improvement
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Pet Care
-                                                                        &
-                                                                        Training
-                                                                    </div>
-                                                                    <div
-                                                                        class="ui horizontal divider opt_title"
-                                                                    >
-                                                                        Photography
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Digital
-                                                                        Photography
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Photography
-                                                                        Fundamentals
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Portraits
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Photography
-                                                                        Tools
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Commercial
-                                                                        Photography
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Video
-                                                                        Design
-                                                                    </div>
-                                                                    <div
-                                                                        class="ui horizontal divider opt_title"
-                                                                    >
-                                                                        Health &
-                                                                        Fitness
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Fitness
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        General
-                                                                        Health
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Sports
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Nutrition
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Yoga
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Mental
-                                                                        Health
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Dieting
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Self
-                                                                        Defense
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Safety &
-                                                                        First
-                                                                        Aid
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Dance
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Meditation
-                                                                    </div>
-                                                                    <div
-                                                                        class="ui horizontal divider opt_title"
-                                                                    >
-                                                                        Music
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Instruments
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Production
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Music
-                                                                        Fundamentals
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Vocal
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Music
-                                                                        Techniques
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Music
-                                                                        Software
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                            <sui-dropdown
+                                                                multiple
+                                                                fluid
+                                                                placeholder="Select Category"
+                                                                :max-selections="2"
+                                                                class="cntry152 prompt srch_explore"
+                                                                search
+                                                                selection
+                                                                allow-additions
+                                                                :options="categoryOptions"
+                                                                v-model="category"
+                                                            />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1730,17 +972,7 @@
                                                 ></i
                                                 >Basic</a
                                             >
-                                            <a
-                                                class="flex-sm-fill text-sm-center nav-link"
-                                                data-toggle="tab"
-                                                href="#nav-video"
-                                                role="tab"
-                                                aria-selected="false"
-                                                ><i
-                                                    class="fas fa-video mr-2"
-                                                ></i
-                                                >Video</a
-                                            >
+                                            
                                             <a
                                                 class="flex-sm-fill text-sm-center nav-link"
                                                 data-toggle="tab"
@@ -1799,460 +1031,6 @@
                                                         />
                                                         <span></span>
                                                     </label>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="tab-pane fade"
-                                                id="nav-video"
-                                                role="tabpanel"
-                                            >
-                                                <div
-                                                    class="lecture-video-dt mt-30"
-                                                >
-                                                    <span class="video-info"
-                                                        >Select your preferred
-                                                        video type. (.mp4,
-                                                        YouTube, Vimeo
-                                                        etc.)</span
-                                                    >
-                                                    <div class="video-category">
-                                                        <label
-                                                            ><input
-                                                                type="radio"
-                                                                name="colorRadio"
-                                                                value="mp4"
-                                                                checked=""
-                                                            /><span
-                                                                >HTML5(mp4)</span
-                                                            ></label
-                                                        >
-                                                        <label
-                                                            ><input
-                                                                type="radio"
-                                                                name="colorRadio"
-                                                                value="url"
-                                                            /><span
-                                                                >External
-                                                                URL</span
-                                                            ></label
-                                                        >
-                                                        <label
-                                                            ><input
-                                                                type="radio"
-                                                                name="colorRadio"
-                                                                value="youtube"
-                                                            /><span
-                                                                >YouTube</span
-                                                            ></label
-                                                        >
-                                                        <label
-                                                            ><input
-                                                                type="radio"
-                                                                name="colorRadio"
-                                                                value="vimeo"
-                                                            /><span
-                                                                >Vimeo</span
-                                                            ></label
-                                                        >
-                                                        <label
-                                                            ><input
-                                                                type="radio"
-                                                                name="colorRadio"
-                                                                value="embedded"
-                                                            /><span
-                                                                >embedded</span
-                                                            ></label
-                                                        >
-                                                        <div
-                                                            class="mp4 video-box"
-                                                            style="
-                                                                display: block;
-                                                            "
-                                                        >
-                                                            <div class="row">
-                                                                <div
-                                                                    class="col-lg-6 col-md-6"
-                                                                >
-                                                                    <div
-                                                                        class="upload-file-dt mt-30"
-                                                                    >
-                                                                        <div
-                                                                            class="upload-btn"
-                                                                        >
-                                                                            <input
-                                                                                class="uploadBtn-main-input"
-                                                                                type="file"
-                                                                                id="VideoFile__input--source"
-                                                                            />
-                                                                            <label
-                                                                                for="VideoFile__input--source"
-                                                                                title="Zip"
-                                                                                >Upload
-                                                                                Video</label
-                                                                            >
-                                                                        </div>
-                                                                        <span
-                                                                            class="uploadBtn-main-file"
-                                                                            >File
-                                                                            Format:
-                                                                            .mp4</span
-                                                                        >
-                                                                        <span
-                                                                            class="uploaded-id"
-                                                                            >Uploaded
-                                                                            ID :
-                                                                            <b
-                                                                                >12</b
-                                                                            ></span
-                                                                        >
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    class="col-lg-6 col-md-6"
-                                                                >
-                                                                    <div
-                                                                        class="upload-file-dt mt-30"
-                                                                    >
-                                                                        <div
-                                                                            class="upload-btn"
-                                                                        >
-                                                                            <input
-                                                                                class="uploadBtn-main-input"
-                                                                                type="file"
-                                                                                id="PosterFile__input--source"
-                                                                            />
-                                                                            <label
-                                                                                for="PosterFile__input--source"
-                                                                                title="Zip"
-                                                                                >Video
-                                                                                Poster</label
-                                                                            >
-                                                                        </div>
-                                                                        <span
-                                                                            class="uploadBtn-main-file color-b"
-                                                                            >Uploaded
-                                                                            ID :
-                                                                            preview.jpg</span
-                                                                        >
-                                                                        <span
-                                                                            class="uploaded-id color-fmt"
-                                                                            >Size:
-                                                                            590x300
-                                                                            pixels.
-                                                                            Supports:
-                                                                            jpg,jpeg,
-                                                                            or
-                                                                            png</span
-                                                                        >
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                class="video-duration"
-                                                            >
-                                                                <label
-                                                                    class="label25"
-                                                                    >Video
-                                                                    Runtime -
-                                                                    <strong
-                                                                        >hh:mm:ss</strong
-                                                                    >*</label
-                                                                >
-                                                                <div
-                                                                    class="duration-time"
-                                                                >
-                                                                    <div
-                                                                        class="input-group"
-                                                                    >
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][hours]"
-                                                                            value="00"
-                                                                        />
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][mins]"
-                                                                            value="1"
-                                                                        />
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][secs]"
-                                                                            value="00"
-                                                                        />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div
-                                                            class="url video-box"
-                                                        >
-                                                            <div
-                                                                class="new-section"
-                                                            >
-                                                                <div
-                                                                    class="ui search focus mt-30 lbel25"
-                                                                >
-                                                                    <label
-                                                                        >External
-                                                                        URL*</label
-                                                                    >
-                                                                    <div
-                                                                        class="ui left icon input swdh19"
-                                                                    >
-                                                                        <input
-                                                                            class="prompt srch_explore"
-                                                                            type="text"
-                                                                            placeholder="External Video URL"
-                                                                            name=""
-                                                                            id=""
-                                                                            value=""
-                                                                        />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                class="video-duration"
-                                                            >
-                                                                <label
-                                                                    class="label25"
-                                                                    >Video
-                                                                    Runtime -
-                                                                    <strong
-                                                                        >hh:mm:ss</strong
-                                                                    >*</label
-                                                                >
-                                                                <div
-                                                                    class="duration-time"
-                                                                >
-                                                                    <div
-                                                                        class="input-group"
-                                                                    >
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][hours]"
-                                                                            value="00"
-                                                                        />
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][mins]"
-                                                                            value="1"
-                                                                        />
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][secs]"
-                                                                            value="00"
-                                                                        />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div
-                                                            class="youtube video-box"
-                                                        >
-                                                            <div
-                                                                class="new-section"
-                                                            >
-                                                                <div
-                                                                    class="ui search focus mt-30 lbel25"
-                                                                >
-                                                                    <label
-                                                                        >Youtube
-                                                                        URL*</label
-                                                                    >
-                                                                    <div
-                                                                        class="ui left icon input swdh19"
-                                                                    >
-                                                                        <input
-                                                                            class="prompt srch_explore"
-                                                                            type="text"
-                                                                            placeholder="Youtube Video URL"
-                                                                            name=""
-                                                                            id=""
-                                                                            value=""
-                                                                        />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                class="video-duration"
-                                                            >
-                                                                <label
-                                                                    class="label25"
-                                                                    >Video
-                                                                    Runtime -
-                                                                    <strong
-                                                                        >hh:mm:ss</strong
-                                                                    >*</label
-                                                                >
-                                                                <div
-                                                                    class="duration-time"
-                                                                >
-                                                                    <div
-                                                                        class="input-group"
-                                                                    >
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][hours]"
-                                                                            value="00"
-                                                                        />
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][mins]"
-                                                                            value="1"
-                                                                        />
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][secs]"
-                                                                            value="00"
-                                                                        />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div
-                                                            class="vimeo video-box"
-                                                        >
-                                                            <div
-                                                                class="new-section"
-                                                            >
-                                                                <div
-                                                                    class="ui search focus mt-30 lbel25"
-                                                                >
-                                                                    <label
-                                                                        >Vimeo
-                                                                        URL*</label
-                                                                    >
-                                                                    <div
-                                                                        class="ui left icon input swdh19"
-                                                                    >
-                                                                        <input
-                                                                            class="prompt srch_explore"
-                                                                            type="text"
-                                                                            placeholder="Vimeo Video URL"
-                                                                            name=""
-                                                                            id=""
-                                                                            value=""
-                                                                        />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                class="video-duration"
-                                                            >
-                                                                <label
-                                                                    class="label25"
-                                                                    >Video
-                                                                    Runtime -
-                                                                    <strong
-                                                                        >hh:mm:ss</strong
-                                                                    >*</label
-                                                                >
-                                                                <div
-                                                                    class="duration-time"
-                                                                >
-                                                                    <div
-                                                                        class="input-group"
-                                                                    >
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][hours]"
-                                                                            value="00"
-                                                                        />
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][mins]"
-                                                                            value="1"
-                                                                        />
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][secs]"
-                                                                            value="00"
-                                                                        />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div
-                                                            class="embedded video-box"
-                                                        >
-                                                            <div
-                                                                class="new-section"
-                                                            >
-                                                                <div
-                                                                    class="ui search focus mt-30 lbel25"
-                                                                >
-                                                                    <label
-                                                                        >Embedded
-                                                                        Code*</label
-                                                                    >
-                                                                    <div
-                                                                        class="ui form swdh30"
-                                                                    >
-                                                                        <div
-                                                                            class="field"
-                                                                        >
-                                                                            <textarea
-                                                                                rows="3"
-                                                                                name=""
-                                                                                id=""
-                                                                                placeholder="Place your embedded code here"
-                                                                            ></textarea>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                class="video-duration"
-                                                            >
-                                                                <label
-                                                                    class="label25"
-                                                                    >Video
-                                                                    Runtime -
-                                                                    <strong
-                                                                        >hh:mm:ss</strong
-                                                                    >*</label
-                                                                >
-                                                                <div
-                                                                    class="duration-time"
-                                                                >
-                                                                    <div
-                                                                        class="input-group"
-                                                                    >
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][hours]"
-                                                                            value="00"
-                                                                        />
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][mins]"
-                                                                            value="1"
-                                                                        />
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][secs]"
-                                                                            value="00"
-                                                                        />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                 </div>
                                             </div>
                                             <div
@@ -2514,6 +1292,7 @@
                                                                                             class="form_input_1"
                                                                                             type="text"
                                                                                             placeholder="Write question title"
+                                                                                            v-model="question_name"
                                                                                         />
                                                                                     </div>
                                                                                 </div>
@@ -2716,6 +1495,8 @@
                                                             >
                                                                 <button
                                                                     class="main-btn color btn-hover"
+                                                                    type="button"
+                                                                    @click="addQuestion()"
                                                                 >
                                                                     <i
                                                                         class="fas fa-save mr-2"
@@ -2731,6 +1512,8 @@
                                                             >
                                                                 <div
                                                                     class="section-list-item"
+                                                                    v-for="(question,key) in questions"
+                                                                    :key="`question_${key}`"
                                                                 >
                                                                     <div
                                                                         class="section-item-title"
@@ -2740,8 +1523,7 @@
                                                                         ></i>
                                                                         <span
                                                                             class="section-item-title-text"
-                                                                            >Question
-                                                                            Title</span
+                                                                            >{{question.name}}</span
                                                                         >
                                                                     </div>
                                                                     <button
@@ -3199,9 +1981,37 @@ export default {
             question_type:1,
             question_option:[],
             video_type:'mp4',
+            levelOptions:[{
+                    text:'Beginner',
+                    value:'beginner',
+                },{
+                    text:'Intermediate',
+                    value:'intermediate',
+                },{
+                    text:'Expert',
+                    value:'expert',
+                }
+            ],
+            level:null,
+            categoryOptions:[],
+            category:null,
+            question_name:"",
+            questions:[],
         }
     },
-    mounted() {
+    async mounted() {
+        try {
+            let response = await axios.get(`${globalBaseUrl}instructor/get_categories`);
+            let category = response.data.data;
+            this.categoryOptions = category.map((item)=>{
+                return {
+                    text:item.name,
+                    value: item.id
+                }
+            });
+        } catch (error) {
+            console.log(error);
+        }
         $(document).ready(function(){
             $('.ui.dropdown')
             .dropdown();
@@ -3220,6 +2030,29 @@ export default {
         },
         deleteOption(index){
             this.question_option.splice(index,1);
+        },
+        addQuestion(){
+            if(this.question_name == ""){
+                Vue.$toast.open({
+                    message:"Name requried",
+                    type: "error",
+                    position: "top-right",
+                });
+                return;
+            }else if(this.question_option.length == 0){
+                Vue.$toast.open({
+                    message:"Options requried",
+                    type: "error",
+                    position: "top-right",
+                });
+                return;
+            }
+            this.questions.push({
+                name:this.question_name,
+            });
+            this.question_name="";
+            this.question_type=1;
+            this.question_option=[];
         }
     }
     
