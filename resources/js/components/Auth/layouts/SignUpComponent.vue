@@ -102,13 +102,13 @@
                 <a href="#">Privacy Policy</a>.
             </p>
             <p class="mb-0 mt-10 hvsng145">
-                Or Register with
+                or Register with
             </p>
             <div class="social-auth">
                 <img :src="`${globalBaseUrl}images/facebook.png`" class="social-img"/>
                 <img :src="`${globalBaseUrl}images/google.png`" class="social-img"/>
             </div>
-            <p class="mb-0 mt-30">
+            <p class="mb-0 mt-30 hvsng145">
                 Already have an account?
                 <router-link :to="{ name: 'Login' }">Log In</router-link>
             </p>

@@ -6,4 +6,7 @@
     
     <link rel="icon" type="image/png" href="{{asset('images/gamify-favicon.png')}}" />
     <link href="main/css/styles.css" rel="stylesheet">
+    <link href="main/css/bootstrap.css" rel="stylesheet"  >
+    <link href="main/css/style-app.css" rel="stylesheet"  >
+    <link href="main/css/responsive.css" rel="stylesheet"  >
 </head>

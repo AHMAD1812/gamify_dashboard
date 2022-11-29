@@ -42,11 +42,11 @@
             <!-- </router-link> -->
         </form>
         <p class="sgntrm145">
-            Or <router-link :to="{ name: 'ForgotPassword' }"
+            or <router-link :to="{ name: 'ForgotPassword' }"
                 >Forgot Password</router-link>.
         </p>
         <p class="mb-0 mt-10 hvsng145">
-            Or Login with
+            or login with
         </p>
         <div class="social-auth">
             <img :src="`${globalBaseUrl}images/facebook.png`" class="social-img"/>

@@ -115,7 +115,8 @@
 
 <!-- ============================ map Start ================================== -->
 <section class="p-0">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616969.6694606147!2d76.0180559099777!3d27.71120494451525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397477034c6a8ab1%3A0xc64bfb455f3b8f4f!2sLenovo%20Service%20Center%20-%20Wipro%20Infocare%20Digital%20System!5e0!3m2!1sen!2sin!4v1629534919408!5m2!1sen!2sin" class="full-width" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>	
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27213.58274218791!2d74.32574853997552!3d31.50498819767007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919045a28ff1d39%3A0xf71e739b84b3c3c!2sGulberg%20III%2C%20Lahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1669753245333!5m2!1sen!2s" class="full-width" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    
 </section>
 <div class="clearfix"></div>
 <!-- ============================ map End ================================== -->

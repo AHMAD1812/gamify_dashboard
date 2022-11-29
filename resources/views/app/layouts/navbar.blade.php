@@ -2,8 +2,8 @@
     <div class="container">
         <nav id="navigation" class="navigation navigation-landscape">
             <div class="nav-header">
-                <a class="nav-brand" href="{{route('app')}}">
-                    <img src="{{asset('images/gamify-logo.png')}}" class="logo" alt="" />
+                <a class="nav-brand" href="{{ route('app') }}">
+                    <img src="{{ asset('images/gamify-logo.png') }}" class="logo" alt="" />
                 </a>
                 <div class="nav-toggle"></div>
                 {{-- <div class="mobile_nav">
@@ -147,23 +147,16 @@
             <div class="nav-menus-wrapper">
                 <ul class="nav-menu">
 
-                    <li class="{{request()->is('/') ? 'active' : ''}}">
-                        <a href="{{route('app')}}">Home<span class="submenu-indicator"></span></a>
+                    <li class="{{ request()->is('/') ? 'active' : '' }}">
+                        <a href="{{ route('app') }}">Home<span class="submenu-indicator"></span></a>
                     </li>
 
-                    <li class="{{request()->is('about-us') ? 'active' : ''}}">
-                        <a href="{{route('about')}}">About Us<span class="submenu-indicator"></span></a>
+                    <li class="{{ request()->is('about-us') ? 'active' : '' }}">
+                        <a href="{{ route('about') }}">About Us<span class="submenu-indicator"></span></a>
                     </li>
 
-                    <li><a href="grid-layout-with-sidebar-5.html">Interactive Videos<span
-                                class="submenu-indicator"></span></a>
-                    </li>
-
-                    <li><a href="find-instructor.html">Find Instructor<span class="submenu-indicator"></span></a>
-                    </li>
-
-                    <li class="{{request()->is('contact-us') ? 'active' : ''}}">
-                        <a href="{{route('contact')}}">Contact Us<span class="submenu-indicator"></span></a>
+                    <li class="{{ request()->is('contact-us') ? 'active' : '' }}">
+                        <a href="{{ route('contact') }}">Contact Us<span class="submenu-indicator"></span></a>
                     </li>
 
 
@@ -172,12 +165,12 @@
                 <ul class="nav-menu nav-menu-social align-to-right">
 
                     <li>
-                        <a href="{{route('instructor.login')}}" class="alio_green">
+                        <a href="{{ route('instructor.login') }}" class="alio_green">
                             <i class="fas fa-sign-in-alt mr-1"></i><span class="dn-lg">Sign In</span>
                         </a>
                     </li>
                     <li class="add-listing theme-bg">
-                        <a href="{{route('instructor.register')}}" class="text-white">Get Started</a>
+                        <a href="{{ route('instructor.register') }}" class="text-white">Get Started</a>
                     </li>
                 </ul>
             </div>

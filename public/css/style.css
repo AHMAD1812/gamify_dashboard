@@ -476,7 +476,7 @@ i.icon1 {
     position: absolute;
     top: 10px;
     right: 8px;
-    background: #3AAAD1;
+    background: #3454b4;
     color: #fff;
     width: 16px;
     height: 16px;
@@ -505,7 +505,7 @@ i.icon1 {
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #fff;
-    background: #3AAAD1;
+    background: #3454b4;
     padding: 9px 15px;
     border-radius: 3px;
 	margin-right: 10px;
@@ -518,7 +518,7 @@ i.icon1 {
 
 .upload_btn:hover {
     color: #fff !important;
-    background: #1E7BBF;
+    background: rgba(52, 84, 180, 0.8);
 }
 .left_title {
     padding: 20px 17px 10px;
@@ -614,13 +614,13 @@ i.icon1 {
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     margin-top: 10px;
-    color: #3AAAD1 !important;
+    color: #3454b4 !important;
     display: block;
     text-align: center;
 }
 
 .dp_link_12:hover {
-    color: #3AAAD1 !important;
+    color: #3454b4 !important;
 }
 
 .ui.dropdown .menu>.channel_item {
@@ -631,9 +631,10 @@ i.icon1 {
 }
 
 .ui.dropdown .menu>.channel_item:hover {
-    color: #333 !important;
-    background:#EBF8FC !important;
+    color: #fff !important;
+    background:rgba(52, 84, 180, 0.7)  !important;
 }
+
 
 .rhte85 {
     display: flex;
@@ -642,7 +643,7 @@ i.icon1 {
 .mef78 i {
     font-size: 18px;
     line-height: 15px;
-    color: #1da1f2;
+    color: #3454b4;
 }
 
 .pd_content p {
@@ -670,15 +671,15 @@ i.icon1 {
     text-align: center;
     float: left;
     padding: 15px 0;
-    background: #EBF8FC;
+    background: #6d87d4;
     font-size: 14px;
-    color: #333 !important;
+    color: #fff !important;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
 }
 
 .vbm_btn:hover {
-    background: #333;
+    background: #3454b4;
     color: #fff !important;
 }
 
@@ -1176,7 +1177,7 @@ i.icon1 {
 
 .dropdown-content span:hover {
 	color: #333 !important;
-	background-color: #EBF8FC;
+	background-color: rgba(52, 84, 180, 0.3);
 }
 
 .more_dropdown:hover .dropdown-content {display: block;}
@@ -1749,9 +1750,10 @@ i.icon1 {
     font-size: 30px;
     text-align: center;
     padding: 14px 0;
-	background: #EBF8FC;
+	background: rgba(52, 84, 180, 0.8) ;
     border-radius: 100%;
 	border-bottom: 1px solid #efefef;
+    color:#fff;
 }
 
 .live-content {
@@ -1782,7 +1784,7 @@ i.icon1 {
 
 .live_link {
     height: 40px;
-    background: #3AAAD1;
+    background: #3454b4;
     border: 0;
     border-radius: 3px;
     padding: 10px 20px;
@@ -2018,12 +2020,12 @@ i.icon1 {
 }
 
 .footer_logo img {
-    width: 30px;
-	margin-right: 20px;
+	margin-right: 10px;
+    height: 50px;
 }
 
 .fotb_left p {
-	font-size: 14px;
+	font-size: 15px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     color: #f7f7f7;
@@ -2540,7 +2542,7 @@ i.icon1 {
 }
 
 .srch_explore:focus {
-    border: 1px solid #333 !important;	
+    border: 1px solid #3d54b4 !important;	
 	box-shadow: none !important;
 }
 
@@ -2760,7 +2762,7 @@ i.icon2 {
     background-color: transparent !important;
     border-color: inherit !important;
 	border-top: 0 !important;
-	border-bottom: 2px solid #3AAAD1 !important;
+	border-bottom: 2px solid #3d54b4 !important;
 	border-left: 0 !important;
 	border-right: 0 !important;
 }
@@ -3337,7 +3339,7 @@ i.icon2 {
 }
 
 .progress1 .progress-bar {
-    background-color: #3AAAD1 !important;
+    background-color: #3D54b4 !important;
 }
 
 .w-70 {
@@ -3408,7 +3410,7 @@ i.icon2 {
     border: 0;
     height: 26px;
     width: 26px;
-    background: #3AAAD1;
+    background: #3D54b4;
     color: #fff;
     font-size: 14px;
 }
@@ -4062,7 +4064,7 @@ a.rmv-btn i {
 
 .setting_tabs .nav-pills .nav-link.active, .setting_tabs .nav-pills .show>.nav-link {
     color: #fff !important;
-    background-color: #3AAAD1 !important;
+    background-color: #3D54b4 !important;
 	border-radius: 3px;
 }
 
@@ -4153,7 +4155,7 @@ a.rmv-btn i {
 }
 
 .ui.form.swdh30 textarea:focus {
-    border: 1px solid #333 !important;
+    border: 1px solid #3D54b4 !important;
     box-shadow: none;
 }
 
@@ -4204,13 +4206,13 @@ a.rmv-btn i {
     border-radius: 3px;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
-    background: #3AAAD1;
+    background: #3D54b4;
 	display: block;
 }
 
 .save_btn:hover {
     color: #fff !important;
-    background: #333;
+    background: rgba(52, 84, 180, 0.7);
 }
 
 .ml5 {
@@ -4219,7 +4221,7 @@ a.rmv-btn i {
 }
 
 .ui.selection.dropdown.cntry152 {
-    border: 1px solid #e5e5e5 !important;
+    border: 1px solid #e5e5e5;
     border-radius: 3px !important;
 	box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.02) !important;
 }
@@ -5885,8 +5887,8 @@ a.rmv-btn i {
 
 .ui.checkbox.mncheck input:checked~.box:after, .ui.checkbox.mncheck input:checked~label:after {
     opacity: 1;
-    color: #3AAAD1 !important;
-	font-size: 10px !important;
+    color: #3454b4 !important;
+	font-size: 12px !important;
 	border-radius: 100%;
 	margin-top: 0;
 }
@@ -5904,7 +5906,7 @@ a.rmv-btn i {
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #fff;
-    background: #3AAAD1;
+    background: #3454b4;
     border-radius: 3px;
     text-align: center;
 	border: 0;
@@ -5914,7 +5916,7 @@ a.rmv-btn i {
 
 .login-btn:hover {
     color: #fff;
-    background: #333;
+    background: rgba(52, 84, 180, 0.9);
 }
 
 .sign_form h2 {
@@ -5927,8 +5929,8 @@ a.rmv-btn i {
 }
 
 .sign_form p {
-	font-size: 14px;
-    margin-bottom: 47px;
+	font-size: 15px;
+    margin-bottom: 20px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
 	color: #686f7a;
@@ -5956,23 +5958,24 @@ a.rmv-btn i {
 
 .sign_footer img {
     margin-right: 10px;
+    height: 50px;
 }
 
 .sgntrm145 a {
-    color: #3AAAD1;
+    color: #3454b4;
 }
 
 .sgntrm145 a:hover {
-	color: #333 !important;
-	text-decoration: underline !important;
+	color: rgba(52, 84, 180, 0.8) !important;
+    text-decoration: underline !important;
 }
 
 .hvsng145 a {
-    color: #3AAAD1;
+    color: #3454b4;
 }
 
 .hvsng145 a:hover {
-	color: #333 !important;
+	color: rgba(52, 84, 180, 0.8) !important;
 	text-decoration: underline !important;
 }
 
@@ -7349,22 +7352,13 @@ a.rmv-btn i {
 
 .ui.checkbox input:checked~.box:before, .ui.checkbox input:checked~label:before {
     background: #fff;
-    border-color: #3AAAD1 !important;
+    border-color: #3D54b4 !important;
 }
 
 .ui.radio.checkbox input:checked~.box:after, .ui.radio.checkbox input:checked~label:after {
-    background-color: #3AAAD1 !important;
+    background-color: #3D54b4 !important;
 }
 
-.sign_form p {
-    font-size: 14px;
-    margin-bottom: 47px;
-    font-weight: 400;
-    font-family: 'Roboto', sans-serif;
-    color: #686f7a;
-    text-align: center;
-    line-height: 26px;
-}
 
 .testtrm145 {
     padding: 20px 0 10px;
@@ -7381,10 +7375,6 @@ a.rmv-btn i {
 .testtrm145 a:hover {
 	color: #333 !important;
     text-decoration: underline !important;
-}
-
-.sgntrm145 a {
-    color: #3AAAD1;
 }
 
 .questrm145 {

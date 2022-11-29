@@ -306,11 +306,11 @@ p:last-child {
     margin-bottom: 0;
 }
 a {
-    color: #4183c4;
+    color: #3454b4;
     text-decoration: none;
 }
 a:hover {
-    color: #1e70bf;
+    color: #3454b4;
     text-decoration: none;
 }
 ::-webkit-selection {
@@ -22865,7 +22865,7 @@ a.ui.card:hover {
 }
 .ui.toggle.checkbox input:checked ~ .box:before,
 .ui.toggle.checkbox input:checked ~ label:before {
-    background-color: #2185d0 !important;
+    background-color: #3D54b4 !important;
 }
 .ui.toggle.checkbox input:checked ~ .box:after,
 .ui.toggle.checkbox input:checked ~ label:after {
@@ -23432,7 +23432,7 @@ select.ui.dropdown {
     box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
 }
 .ui.selection.dropdown:focus {
-    border-color: #96c8da;
+    border-color: #3D54b4;
     -webkit-box-shadow: none;
     box-shadow: none;
 }

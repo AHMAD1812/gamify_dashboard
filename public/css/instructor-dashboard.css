@@ -284,7 +284,7 @@ body {
 }
 .menu_left::-webkit-scrollbar-thumb {
     height: 50px;
-    background: hsla(0, 0%, 53.3%, 0.4);
+    background: rgba(52, 84, 180, 0.5);
 }
 
 .simplebar-content-wrapper::-webkit-scrollbar {
@@ -293,7 +293,7 @@ body {
 
 .simplebar-content-wrapper::-webkit-scrollbar-thumb {
     height: 50px;
-    background: hsla(0, 0%, 53.3%, 0.4);
+    background: rgba(52, 84, 180, 0.5);
 }
 
 .simplebar-content-wrapper2::-webkit-scrollbar {
@@ -302,7 +302,7 @@ body {
 
 .simplebar-content-wrapper2::-webkit-scrollbar-thumb {
     height: 50px;
-    background: hsla(0, 0%, 53.3%, 0.4);
+    background: rgba(52, 84, 180, 0.5);
 }
 
 input[type=text] {
@@ -492,27 +492,6 @@ i.icon1 {
     margin-left: 10px;
 }
 
-.upload_btn {
-    font-size: 14px;
-    font-weight: 500;
-    font-family: 'Roboto', sans-serif;
-    color: #fff;
-    background: #3AAAD1;
-    padding: 9px 15px;
-    border-radius: 3px;
-	margin-right: 10px;
-}
-
-.upload_btn i {
-    font-size: 16px;
-    margin-right:3px;
-}
-
-.upload_btn:hover {
-    color: #fff !important;
-    background: #1E7BBF;
-}
-
 .left_title {
     padding: 20px 17px 10px;
     font-size: 12px;
@@ -602,19 +581,6 @@ i.icon1 {
     text-align: left;
 }
 
-.dp_link_12 {
-    font-size: 14px;
-    font-weight: 500;
-    font-family: 'Roboto', sans-serif;
-    color: #333;
-    margin-top: 15px;
-    display: block;
-    text-align: left;
-}
-
-.dp_link_12:hover {
-    color: #3AAAD1 !important;
-}
 
 .ui.dropdown .menu>.channel_item {
     color: #686f7a !important;
@@ -623,19 +589,9 @@ i.icon1 {
 	font-family: 'Roboto', sans-serif;
 }
 
-.ui.dropdown .menu>.channel_item:hover {
-    color: #333 !important;
-    background:#EBF8FC !important;
-}
 
 .rhte85 {
     display: flex;
-}
-
-.mef78 i {
-    font-size: 18px;
-    line-height: 15px;
-    color: #1da1f2;
 }
 
 .pd_content p {
@@ -656,23 +612,6 @@ i.icon1 {
     margin-bottom: 0;
     color: #afafaf;
     text-align: left;
-}
-
-.vbm_btn {
-    width: 100%;
-    text-align: center;
-    float: left;
-    padding: 15px 0;
-    background: #EBF8FC;
-    font-size: 14px;
-    color: #333 !important;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-}
-
-.vbm_btn:hover {
-    background: #333;
-    color: #fff !important;
 }
 
 /*--- Index Homepage ---*/
@@ -763,11 +702,6 @@ i.icon1 {
 .fotb_left li {
 	display: inline-block;
 	vertical-align: middle;
-}
-
-.footer_logo img {
-    width: 30px;
-	margin-right: 20px;
 }
 
 .fotb_left p {
@@ -1152,7 +1086,7 @@ i.icon1 {
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #fff;
-    background: #3AAAD1;
+    background: #3454b4;
     padding: 0px 20px;
     border-radius: 3px;
     border: 0;
@@ -1161,7 +1095,7 @@ i.icon1 {
 
 .create_btn_dash:hover {
     color: #fff;
-    background: #1E7BBF;
+    background: rgba(52, 84, 180, 0.8);
 }
 
 .card_dash1 {
@@ -1339,39 +1273,6 @@ i.icon1 {
 
 .more_dropdown {
   display: inline-block;
-}
-
-.dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #fff;
-	min-width: 160px;
-	box-shadow: 0 2px 3px 0 rgba(34,36,38,.15);
-    border: 1px solid rgba(34,36,38,.15);
-	z-index: 1;
-	right: 0;
-	border-radius: 5px;
-}
-
-.dropdown-content span {
-	color: #686f7a;
-	font-size: 14px;
-	font-weight: 400;
-	font-family: 'Roboto', sans-serif;
-	padding: 10px;
-	text-decoration: none;
-	display: block;
-	cursor: pointer;
-}
-
-.dropdown-content span i {
-	margin-right: 6px;
-	font-size: 115%;
-}
-
-.dropdown-content span:hover {
-	color: #333 !important;
-	background-color: #EBF8FC;
 }
 
 .more_dropdown:hover .dropdown-content {display: block;}
@@ -1696,12 +1597,12 @@ i.icon1 {
 
 .my_courses_tabs .nav-pills .nav-link.active, .my_courses_tabs .nav-pills .show>.nav-link {
     color: #fff;
-    background-color: #3AAAD1 !important;
+    background-color: #3454b4!important;
 }
 
 .my_courses_tabs .nav-pills .nav-link:hover {
     color: #fff !important;
-    background-color: #3AAAD1 !important;
+    background-color: rgba(52, 84, 180, 0.8)  !important;
 }
 
 .my_courses_tabs .nav-link {
@@ -1803,7 +1704,7 @@ table {
 }
 
 .course_active {
-    color: #3AAAD1;
+    color: #3454b4;
 }
 
 .ucp-table tbody tr td {
@@ -1938,12 +1839,6 @@ table {
     color: #333;
 }
 
-.ui.selection.dropdown.cntry152 {
-    border: 1px solid #e5e5e5 !important;
-    border-radius: 3px !important;
-    box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.02) !important;
-}
-
 .srch_explore {
     background: #fff !important;
     border: 1px solid #e5e5e5 !important;
@@ -2019,7 +1914,7 @@ table {
 }
 
 .promotion_tab img {
-    width: 200px;
+    width: 300px;
 }
 
 .promotion_tab h4 {
@@ -2208,16 +2103,6 @@ table {
     text-align: left;
 }
 
-.ui.form.swdh30 textarea {
-    background: #fff;
-    border: 1px solid #e5e5e5 !important;
-    outline: 0;
-	min-height: 130px;
-    color: rgba(0,0,0,.87);
-    border-radius: 3px !important;
-    box-shadow: inset 0px 1px 4px rgb(0 0 0 / 0.02) !important;
-}
-
 #add-course-tab {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
@@ -2288,12 +2173,12 @@ table {
 
 #add-course-tab .step-steps > li.active > a > .number,
 #add-course-tab .step-steps > li.done > a > .number {
-	background-color: #3AAAD1;
+	background-color: #3454b4;
 }
 
 #add-course-tab .step-steps > li.active > a > .number:before,
 #add-course-tab .step-steps > li.done > a > .number:before {
-	background-color: rgba(83, 176, 243, 0.316);
+	background-color: rgba(52, 84, 180, 0.3);
 }
 
 #add-course-tab .step-steps > li.active > a > .step-name,
@@ -2302,7 +2187,7 @@ table {
 }
 
 #add-course-tab .step-steps > li.done:before {
-	background-color: #3AAAD1;
+	background-color: #3454b4;
 }
 
 #add-course-tab .step-steps > li.done > a > .number:after {
@@ -2483,7 +2368,7 @@ table {
 }
 
 .badge_num {
-    background: #3AAAD1;
+    background: #3454b4;
     color: #fff;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
@@ -2498,7 +2383,7 @@ table {
 }
 
 .badge_num2 {
-    background: #3AAAD1;
+    background: #3D54b4;
     color: #fff;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
@@ -2552,7 +2437,7 @@ table {
     font-weight: 500 !important;
     font-family: 'Roboto', sans-serif !important;
     color: #fff !important;
-    background: #3AAAD1 !important;
+    background: #3D54b4 !important;
     padding: 0px 20px !important;
     border-radius: 3px !important;
     border: 0 !important;
@@ -2561,7 +2446,7 @@ table {
 
 .steps_btn:hover {
     color: #fff !important;
-    background: #333 !important;
+    background: rgba(52, 84, 180, 0.8) !important;
 }
 
 .steps_btn:focus {
@@ -2797,21 +2682,8 @@ table {
     background: #333;
 }
 
-.ui.checkbox input:checked~.box:before, .ui.checkbox input:checked~label:before {
-    background: #fff;
-    border-color: #3AAAD1 !important;
-}
-
 .ui.radio.checkbox input:checked~.box:after, .ui.radio.checkbox input:checked~label:after {
     background-color: #3AAAD1 !important;
-}
-
-.ui.checkbox.mncheck input:checked~.box:after, .ui.checkbox.mncheck input:checked~label:after {
-    opacity: 1;
-    color: #3AAAD1 !important;
-    font-size: 10px !important;
-    border-radius: 100%;
-    margin-top: 2px;
 }
 
 .ui.checkbox.mncheck .box:before, .ui.checkbox.mncheck label:before {
@@ -2920,8 +2792,8 @@ i.icon8 {
 }
 
 .chat__message__dt.active, .chat__message__dt:hover {
-    border-left: 4px solid #3AAAD1;
-	background: #EBF8FC;
+    border-left: 4px solid #3D54b4;
+	background: rgba(52, 84, 180, 0.2) ;
 }
 
 .user-status {
@@ -2951,7 +2823,7 @@ i.icon8 {
     border: 2px solid #fff;
     height: 22px;
     width: 22px;
-    background: #3AAAD1;
+    background: #3D54b4;
     position: absolute;
     right: 10px;
     bottom: 2px;
@@ -3196,7 +3068,7 @@ i.icon8 {
 .message-inner-dt > p {
 	float: right;
 	width: 60%;
-	background-color: #3AAAD1;
+	background-color: #3D54b4;
 	font-size: 14px;
 	font-family: 'Roboto', sans-serif;
 	line-height: 22px;
@@ -3211,8 +3083,8 @@ i.icon8 {
 }
 
 .message-dt.st3 .message-inner-dt > p {
-	background-color: #EBF8FC;
-	color: #686f7a;
+	background-color: #B5B5B5;
+	color: #fff;
 	width: auto;
 	padding: 12px 20px;
 	float: left;
@@ -3304,7 +3176,7 @@ i.icon8 {
     float: left;
     padding: 10px 20px;
     color: #fff;
-    background: #3AAAD1;
+    background: #3D54b4;
     border-radius: 3px;
     font-size: 14px;
     font-weight: 500;
@@ -3313,7 +3185,7 @@ i.icon8 {
 
 .setting_noti:hover {
     color: #fff !important;
-    background: #333;
+    background: rgba(52, 84, 180, 0.7);
 }
 
 
@@ -3457,10 +3329,6 @@ i.icon8 {
     flex-basis: 50%;
 	margin-right: 20px;
 	height: 1.4rem !important;
-}
-
-.progress1 .progress-bar {
-    background-color: #3AAAD1 !important;
 }
 
 .w-70 {
@@ -4174,7 +4042,7 @@ i.icon8 {
     font-size: 14px;
     color: #fff;
     border: 0;
-    background: #3AAAD1;
+    background: #3D54b4;
     border-radius: 3px;
     margin-right: 5px;
     font-weight: 500;
@@ -4183,7 +4051,7 @@ i.icon8 {
 
 .main-btn:hover {
     color: #fff !important;
-    background: #333;
+    background: #3D54b4;
 }
 
 .added-section-item {
@@ -4347,10 +4215,10 @@ i.icon8 {
 }
 
 .video-category input:checked + span {
-    background-color: #3AAAD1;
+    background-color: #3D54b4;
     color: #fff;
 	border-radius: 3px;
-	border: 1px solid #3AAAD1;
+	border: 1px solid #3D54b4;
 }
 
 .label25 {
@@ -4641,7 +4509,7 @@ img.img-thumbnail {
     transition: all 0.3s;
     vertical-align: middle;
     margin: 0 0 17px;
-    color: #3AAAD1 ;
+    color: #3D54b4 ;
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 2px 3px 0px rgba(20, 47, 219, 0.11);
     border: 0;
@@ -4649,7 +4517,7 @@ img.img-thumbnail {
     font-weight: 500;
     height: 40px;
     padding: 10px 25px;
-    border: 1px solid #3AAAD1 ;
+    border: 1px solid #3D54b4 ;
     border-radius: 3px;
     text-transform: uppercase;
 }
@@ -4729,8 +4597,8 @@ label.switch input[type=checkbox]:checked+span:after {
 }
 
 label.switch input[type=checkbox]:checked+span:before {
-    border-color: #3AAAD1;
-    background: #3AAAD1;
+    border-color: #3D54b4;
+    background: #3D54b4;
 }
 
 .course-main-tabs {
@@ -4767,7 +4635,7 @@ label.switch input[type=checkbox]:checked+span:before {
 
 .course-main-tabs .nav-pills .nav-link.active, .course-main-tabs .nav-pills .show>.nav-link {
     color: #fff !important;
-    background-color: #3AAAD1 !important;
+    background-color: #3D54b4 !important;
 	border: 0;
 }
 

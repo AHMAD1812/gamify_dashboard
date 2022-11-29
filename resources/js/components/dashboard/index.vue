@@ -438,7 +438,7 @@ export default {
                         {
                             label: "New",
                             backgroundColor: "transparent",
-                            borderColor: "#3AAAD1",
+                            borderColor: "#3454b4",
                             data: activityData[0].first,
                             lineTension: 0,
                             pointRadius: 5,
@@ -451,7 +451,7 @@ export default {
                         {
                             label: "Old",
                             backgroundColor: "transparent",
-                            borderColor: "#3AAAA1",
+                            borderColor: "#3454b4",
                             data: activityData[0].second,
                             lineTension: 0,
                             borderDash: [10, 5],

@@ -5,7 +5,7 @@
             <div class="col-lg-12">
               <h2 class="st_title"><i class="uil uil-cog"></i> Setting</h2>
               <div class="setting_tabs">
-                <ul class="nav nav-pills mb-4" id="pills-tab" role="tablist">
+                <ul class="nav nav-pills my-3" id="pills-tab" role="tablist">
                   <li class="nav-item">
                     <a
                       class="nav-link active"
@@ -254,33 +254,29 @@
                           <div class="basic_ptitle">
                             <h4>Choose when and how to be notified</h4>
                           </div>
-                          <div class="ui toggle checkbox _1457s2">
-                            <input type="checkbox" name="stream_ss1" checked />
-                            <label>Subscriptions</label>
+                          <div class="checkbox _1457s2">
+                            <sui-checkbox label="Subscriptions" toggle />
                             <p class="ml5">
                               Notify me about activity from the profiles I'm
                               subscribed to
                             </p>
                           </div>
-                          <div class="ui toggle checkbox _1457s2">
-                            <input type="checkbox" name="stream_ss2" />
-                            <label>Recommended Courses</label>
+                          <div class=" checkbox _1457s2">
+                            <sui-checkbox label="Recommended Courses" toggle />
                             <p class="ml5">
                               Notify me of courses I might like based on what I
                               watch
                             </p>
                           </div>
-                          <div class="ui toggle checkbox _1457s2">
-                            <input type="checkbox" name="stream_ss3" />
-                            <label>Activity on my comments</label>
+                          <div class=" checkbox _1457s2">
+                            <sui-checkbox label="Activity on my comments" toggle />
                             <p class="ml5">
                               Notify me about activity on my comments on others’
                               courses
                             </p>
                           </div>
-                          <div class="ui toggle checkbox _1457s2">
-                            <input type="checkbox" name="stream_ss4" checked />
-                            <label>Replies to my comments</label>
+                          <div class=" checkbox _1457s2">
+                            <sui-checkbox label="Replies to my comments" toggle />
                             <p class="ml5">
                               Notify me about replies to my comments
                             </p>
@@ -308,12 +304,8 @@
                               Edututs+.
                             </p>
                           </div>
-                          <div class="ui toggle checkbox _1457s2">
-                            <input type="checkbox" name="stream_ss5" checked />
-                            <label
-                              >Send me emails about my Cursus activity and
-                              updates I requested</label
-                            >
+                          <div class="checkbox _1457s2">
+                            <sui-checkbox label="Send me emails about my Cursus activity and updates I requested" toggle />
                             <p class="ml5">
                               If this setting is turned off, Cursus may still
                               send you messages regarding your account, required
@@ -321,19 +313,12 @@
                               privacy matters
                             </p>
                           </div>
-                          <div class="ui toggle checkbox _1457s2">
-                            <input type="checkbox" name="stream_ss6" />
-                            <label
-                              >Promotions, course recommendations, and helpful
-                              resources from Cursus.</label
-                            >
+                          <div class="checkbox _1457s2">
+                            <sui-checkbox label="Promotions, course recommendations, and helpful resources from Cursus." toggle />
                           </div>
-                          <div class="ui toggle checkbox _1457s2">
-                            <input type="checkbox" name="stream_ss7" />
-                            <label
-                              >Announcements from instructors whose course(s)
-                              I’m enrolled in.</label
-                            >
+                          <div class="checkbox _1457s2">
+                            <sui-checkbox label="Announcements from instructors whose course(s)
+                              I’m enrolled in." toggle />
                             <p class="ml5">
                               To adjust this preference by course, leave this
                               box checked and go to the course dashboard and
@@ -362,11 +347,11 @@
                           <div class="basic_ptitle">
                             <h4>Profile page settings</h4>
                           </div>
-                          <div class="ui toggle checkbox _1457s2">
+                          <div class="checkbox _1457s2">
                             <input type="checkbox" name="stream_ss8" checked />
                             <label>Show your profile on search engines</label>
                           </div>
-                          <div class="ui toggle checkbox _1457s2">
+                          <div class="checkbox _1457s2">
                             <input type="checkbox" name="stream_ss9" />
                             <label
                               >Show courses you're taking on your profile

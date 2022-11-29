@@ -8,7 +8,7 @@
             <span class="collapse_menu--label"></span>
         </button>
         <div class="main_logo" id="logo">
-            <img :src="`${globalBaseUrl}images/gamify-logo.png`" alt="" width="160" />
+            <img :src="`${globalBaseUrl}images/gamify-logo-text.png`" alt="logo" height="70" />
         </div>
         <div class="top-category">
             <div class="ui compact menu cate-dpdwn">
@@ -65,11 +65,11 @@
                         >Create New Video</router-link>
                 </li>
                 <li class="ui dropdown">
-                    <a href="#" class="option_links" title="Notifications"
+                    <a href="#" class="option_links notification-dropdown" title="Notifications"
                         ><i class="uil uil-bell"></i
                         ><span class="noti_count">3</span></a
                     >
-                    <div class="menu dropdown_mn">
+                    <div class="menu dropdown_mn left visible" @click="closeDropdown()">
                         <a href="#" class="channel_my item">
                             <div class="profile_link">
                                 <img :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`" alt="" />
@@ -111,9 +111,9 @@
                                 </div>
                             </div>
                         </a>
-                        <a class="vbm_btn" href="instructor_notifications.html"
+                        <router-link :to="{name : 'Notification'}" class="vbm_btn"
                             >View All <i class="uil uil-arrow-right"></i
-                        ></a>
+                        ></router-link>
                     </div>
                 </li>
                 <li class="ui dropdown">
@@ -170,6 +170,16 @@ export default {
                 $(".dropdown_account").hide();
             }
         });
+
+        $(".notification-dropdown").click(function () {
+            if ($(".dropdown_mn").css("display") == "none") {
+                $(".dropdown_mn").show();
+            } else {
+                $(".dropdown_mn").hide();
+            }
+        });
+
+        
         var tid = setInterval(function () {
             if ("complete" === document.readyState) {
                 clearInterval(tid);
@@ -236,11 +246,8 @@ export default {
                 });
         },
         closeDropdown(){
-            if ($(".dropdown_account").css("display") == "none") {
-                $(".dropdown_account").show();
-            } else {
-                $(".dropdown_account").hide();
-            }
+            $(".dropdown_account").hide();
+            $(".dropdown_mn").hide();
         }
     }
 };

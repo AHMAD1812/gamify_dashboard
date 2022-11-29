@@ -171,9 +171,6 @@
                               <span
                                 ><i class="uil uil-windsock"></i>Report</span
                               >
-                              <span
-                                ><i class="uil uil-volume-mute"></i>Mute</span
-                              >
                             </div>
                           </div>
                         </div>

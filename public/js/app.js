@@ -6391,9 +6391,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Chat"
@@ -9274,40 +9271,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Courses",
@@ -11234,83 +11197,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "CreateVideo",
@@ -11333,7 +11219,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       categoryOptions: [],
       category: null,
       question_name: "",
-      questions: []
+      questions: [],
+      steps: ""
     };
   },
   mounted: function mounted() {
@@ -11365,9 +11252,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             case 11:
               $(document).ready(function () {
                 $('.ui.dropdown').dropdown();
-                $("#add-course-tab").steps({
+                this.steps = $("#add-course-tab").steps({
                   onFinish: function onFinish() {
-                    alert("Wizard Completed");
+                    alert("Course Created");
+                    window.location.reload();
                   }
                 });
                 $(".sortable").sortable();
@@ -11382,6 +11270,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }))();
   },
   methods: {
+    setSteps: function setSteps(e) {},
     addOption: function addOption() {
       this.question_option.push({
         name: '',
@@ -11945,7 +11834,7 @@ __webpack_require__.r(__webpack_exports__);
           datasets: [{
             label: "New",
             backgroundColor: "transparent",
-            borderColor: "#3AAAD1",
+            borderColor: "#3454b4",
             data: activityData[0].first,
             lineTension: 0,
             pointRadius: 5,
@@ -11957,7 +11846,7 @@ __webpack_require__.r(__webpack_exports__);
           }, {
             label: "Old",
             backgroundColor: "transparent",
-            borderColor: "#3AAAA1",
+            borderColor: "#3454b4",
             data: activityData[0].second,
             lineTension: 0,
             borderDash: [10, 5],
@@ -12443,6 +12332,13 @@ __webpack_require__.r(__webpack_exports__);
         $(".dropdown_account").hide();
       }
     });
+    $(".notification-dropdown").click(function () {
+      if ($(".dropdown_mn").css("display") == "none") {
+        $(".dropdown_mn").show();
+      } else {
+        $(".dropdown_mn").hide();
+      }
+    });
     var tid = setInterval(function () {
       if ("complete" === document.readyState) {
         clearInterval(tid);
@@ -12497,11 +12393,8 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     closeDropdown: function closeDropdown() {
-      if ($(".dropdown_account").css("display") == "none") {
-        $(".dropdown_account").show();
-      } else {
-        $(".dropdown_account").hide();
-      }
+      $(".dropdown_account").hide();
+      $(".dropdown_mn").hide();
     }
   }
 });
@@ -13784,21 +13677,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; }, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) }), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; defineProperty(this, "_invoke", { value: function value(method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), defineProperty(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (val) { var object = Object(val), keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -39871,7 +39749,7 @@ var render = function () {
       "p",
       { staticClass: "sgntrm145" },
       [
-        _vm._v("\n        Or "),
+        _vm._v("\n        or "),
         _c("router-link", { attrs: { to: { name: "ForgotPassword" } } }, [
           _vm._v("Forgot Password"),
         ]),
@@ -39881,7 +39759,7 @@ var render = function () {
     ),
     _vm._v(" "),
     _c("p", { staticClass: "mb-0 mt-10 hvsng145" }, [
-      _vm._v("\n        Or Login with\n    "),
+      _vm._v("\n        or login with\n    "),
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "social-auth" }, [
@@ -40222,7 +40100,7 @@ var render = function () {
       _vm._m(0),
       _vm._v(" "),
       _c("p", { staticClass: "mb-0 mt-10 hvsng145" }, [
-        _vm._v("\n            Or Register with\n        "),
+        _vm._v("\n            or Register with\n        "),
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "social-auth" }, [
@@ -40239,7 +40117,7 @@ var render = function () {
       _vm._v(" "),
       _c(
         "p",
-        { staticClass: "mb-0 mt-30" },
+        { staticClass: "mb-0 mt-30 hvsng145" },
         [
           _vm._v("\n            Already have an account?\n            "),
           _c("router-link", { attrs: { to: { name: "Login" } } }, [
@@ -40710,11 +40588,6 @@ var staticRenderFns = [
           _c("span", [
             _c("i", { staticClass: "uil uil-windsock" }),
             _vm._v("Report"),
-          ]),
-          _vm._v(" "),
-          _c("span", [
-            _c("i", { staticClass: "uil uil-volume-mute" }),
-            _vm._v("Mute"),
           ]),
         ]),
       ]
@@ -43248,22 +43121,242 @@ var render = function () {
                             ),
                           ]),
                           _vm._v(" "),
-                          _vm._m(7),
+                          _c("tr", [
+                            _c("td", { staticClass: "text-center" }, [
+                              _vm._v(
+                                "\n                                                IT-001\n                                            "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v("Course Title Here")]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "text-center" }, [
+                              _vm._v(
+                                "\n                                                06 April 2020 | 08:31\n                                            "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "text-center" }, [
+                              _vm._v("15"),
+                            ]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "text-center" }, [
+                              _vm._v("5"),
+                            ]),
+                            _vm._v(" "),
+                            _vm._m(7),
+                            _vm._v(" "),
+                            _vm._m(8),
+                            _vm._v(" "),
+                            _c(
+                              "td",
+                              { staticClass: "text-center" },
+                              [
+                                _c(
+                                  "router-link",
+                                  {
+                                    staticClass: "gray-s",
+                                    attrs: {
+                                      to: { name: "CourseDetail" },
+                                      title: "Edit",
+                                    },
+                                  },
+                                  [_c("i", { staticClass: "uil uil-eye" })]
+                                ),
+                                _vm._v(" "),
+                                _vm._m(9),
+                              ],
+                              1
+                            ),
+                          ]),
                           _vm._v(" "),
-                          _vm._m(8),
+                          _c("tr", [
+                            _c("td", { staticClass: "text-center" }, [
+                              _vm._v(
+                                "\n                                                IT-001\n                                            "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v("Course Title Here")]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "text-center" }, [
+                              _vm._v(
+                                "\n                                                06 April 2020 | 08:31\n                                            "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "text-center" }, [
+                              _vm._v("15"),
+                            ]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "text-center" }, [
+                              _vm._v("5"),
+                            ]),
+                            _vm._v(" "),
+                            _vm._m(10),
+                            _vm._v(" "),
+                            _vm._m(11),
+                            _vm._v(" "),
+                            _c(
+                              "td",
+                              { staticClass: "text-center" },
+                              [
+                                _c(
+                                  "router-link",
+                                  {
+                                    staticClass: "gray-s",
+                                    attrs: {
+                                      to: { name: "CourseDetail" },
+                                      title: "Edit",
+                                    },
+                                  },
+                                  [_c("i", { staticClass: "uil uil-eye" })]
+                                ),
+                                _vm._v(" "),
+                                _vm._m(12),
+                              ],
+                              1
+                            ),
+                          ]),
                           _vm._v(" "),
-                          _vm._m(9),
+                          _c("tr", [
+                            _c("td", { staticClass: "text-center" }, [
+                              _vm._v(
+                                "\n                                                IT-001\n                                            "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v("Course Title Here")]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "text-center" }, [
+                              _vm._v(
+                                "\n                                                06 April 2020 | 08:31\n                                            "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "text-center" }, [
+                              _vm._v("15"),
+                            ]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "text-center" }, [
+                              _vm._v("5"),
+                            ]),
+                            _vm._v(" "),
+                            _vm._m(13),
+                            _vm._v(" "),
+                            _vm._m(14),
+                            _vm._v(" "),
+                            _c(
+                              "td",
+                              { staticClass: "text-center" },
+                              [
+                                _c(
+                                  "router-link",
+                                  {
+                                    staticClass: "gray-s",
+                                    attrs: {
+                                      to: { name: "CourseDetail" },
+                                      title: "Edit",
+                                    },
+                                  },
+                                  [_c("i", { staticClass: "uil uil-eye" })]
+                                ),
+                                _vm._v(" "),
+                                _vm._m(15),
+                              ],
+                              1
+                            ),
+                          ]),
                           _vm._v(" "),
-                          _vm._m(10),
+                          _c("tr", [
+                            _c("td", { staticClass: "text-center" }, [
+                              _vm._v(
+                                "\n                                                IT-001\n                                            "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v("Course Title Here")]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "text-center" }, [
+                              _vm._v(
+                                "\n                                                06 April 2020 | 08:31\n                                            "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "text-center" }, [
+                              _vm._v("15"),
+                            ]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "text-center" }, [
+                              _vm._v("5"),
+                            ]),
+                            _vm._v(" "),
+                            _vm._m(16),
+                            _vm._v(" "),
+                            _vm._m(17),
+                            _vm._v(" "),
+                            _c(
+                              "td",
+                              { staticClass: "text-center" },
+                              [
+                                _c(
+                                  "router-link",
+                                  {
+                                    staticClass: "gray-s",
+                                    attrs: {
+                                      to: { name: "CourseDetail" },
+                                      title: "Edit",
+                                    },
+                                  },
+                                  [_c("i", { staticClass: "uil uil-eye" })]
+                                ),
+                                _vm._v(" "),
+                                _vm._m(18),
+                              ],
+                              1
+                            ),
+                          ]),
                         ]),
                       ]),
                     ]),
                   ]
                 ),
                 _vm._v(" "),
-                _vm._m(11),
+                _vm._m(19),
                 _vm._v(" "),
-                _vm._m(12),
+                _c(
+                  "div",
+                  {
+                    staticClass: "tab-pane fade",
+                    attrs: {
+                      id: "pills-promotions",
+                      role: "tabpanel",
+                      "aria-labelledby": "pills-promotions-tab",
+                    },
+                  },
+                  [
+                    _c("div", { staticClass: "promotion_tab mb-10" }, [
+                      _c("img", {
+                        attrs: {
+                          src:
+                            _vm.globalBaseUrl +
+                            "images/illustrations/working.png",
+                          alt: "",
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("h4", [
+                        _vm._v("Promotion Plan will be available soon!"),
+                      ]),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v(
+                          "\n                                    By activating promotion plans you can\n                                    improve course views and student.\n                                "
+                        ),
+                      ]),
+                    ]),
+                  ]
+                ),
               ]
             ),
           ]),
@@ -43392,13 +43485,13 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { staticClass: "text-center", attrs: { scope: "col" } }, [
           _vm._v(
-            "\n                                                Sales\n                                            "
+            "\n                                                Total Students\n                                            "
           ),
         ]),
         _vm._v(" "),
         _c("th", { staticClass: "text-center", attrs: { scope: "col" } }, [
           _vm._v(
-            "\n                                                Parts\n                                            "
+            "\n                                                Rating\n                                            "
           ),
         ]),
         _vm._v(" "),
@@ -43452,221 +43545,105 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("td", { staticClass: "text-center" }, [
-        _vm._v(
-          "\n                                                IT-002\n                                            "
-        ),
-      ]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Course Title Here")]),
-      _vm._v(" "),
-      _c("td", { staticClass: "text-center" }, [
-        _vm._v(
-          "\n                                                05 April 2020 | 05:15\n                                            "
-        ),
-      ]),
-      _vm._v(" "),
-      _c("td", { staticClass: "text-center" }, [_vm._v("30")]),
-      _vm._v(" "),
-      _c("td", { staticClass: "text-center" }, [_vm._v("3")]),
-      _vm._v(" "),
-      _c("td", { staticClass: "text-center" }, [
-        _c("a", { attrs: { href: "#" } }, [_vm._v("Graphic Design")]),
-      ]),
-      _vm._v(" "),
-      _c("td", { staticClass: "text-center" }, [
-        _c("b", { staticClass: "course_active" }, [_vm._v("Active")]),
-      ]),
-      _vm._v(" "),
-      _c("td", { staticClass: "text-center" }, [
-        _c(
-          "a",
-          { staticClass: "gray-s", attrs: { href: "#", title: "Edit" } },
-          [_c("i", { staticClass: "uil uil-edit-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "gray-s",
-            attrs: { href: "course_detail_view.html", title: "Edit" },
-          },
-          [_c("i", { staticClass: "uil uil-eye" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          { staticClass: "gray-s", attrs: { href: "#", title: "Delete" } },
-          [_c("i", { staticClass: "uil uil-trash-alt" })]
-        ),
-      ]),
+    return _c("td", { staticClass: "text-center" }, [
+      _c("a", { attrs: { href: "#" } }, [_vm._v("Web Development")]),
     ])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("td", { staticClass: "text-center" }, [
-        _vm._v(
-          "\n                                                IT-003\n                                            "
-        ),
-      ]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Course Title")]),
-      _vm._v(" "),
-      _c("td", { staticClass: "text-center" }, [
-        _vm._v(
-          "\n                                                03 April 2020 | 01:30\n                                            "
-        ),
-      ]),
-      _vm._v(" "),
-      _c("td", { staticClass: "text-center" }, [_vm._v("14")]),
-      _vm._v(" "),
-      _c("td", { staticClass: "text-center" }, [_vm._v("5")]),
-      _vm._v(" "),
-      _c("td", { staticClass: "text-center" }, [
-        _c("a", { attrs: { href: "#" } }, [_vm._v("Bootstrap")]),
-      ]),
-      _vm._v(" "),
-      _c("td", { staticClass: "text-center" }, [
-        _c("b", { staticClass: "course_active" }, [_vm._v("Active")]),
-      ]),
-      _vm._v(" "),
-      _c("td", { staticClass: "text-center" }, [
-        _c(
-          "a",
-          { staticClass: "gray-s", attrs: { href: "#", title: "Edit" } },
-          [_c("i", { staticClass: "uil uil-edit-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "gray-s",
-            attrs: { href: "course_detail_view.html", title: "Edit" },
-          },
-          [_c("i", { staticClass: "uil uil-eye" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          { staticClass: "gray-s", attrs: { href: "#", title: "Delete" } },
-          [_c("i", { staticClass: "uil uil-trash-alt" })]
-        ),
-      ]),
+    return _c("td", { staticClass: "text-center" }, [
+      _c("b", { staticClass: "course_active" }, [_vm._v("Active")]),
     ])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("td", { staticClass: "text-center" }, [
-        _vm._v(
-          "\n                                                IT-004\n                                            "
-        ),
-      ]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Course Title Here")]),
-      _vm._v(" "),
-      _c("td", { staticClass: "text-center" }, [
-        _vm._v(
-          "\n                                                02 April 2020 | 05:15\n                                            "
-        ),
-      ]),
-      _vm._v(" "),
-      _c("td", { staticClass: "text-center" }, [_vm._v("110")]),
-      _vm._v(" "),
-      _c("td", { staticClass: "text-center" }, [_vm._v("9")]),
-      _vm._v(" "),
-      _c("td", { staticClass: "text-center" }, [
-        _c("a", { attrs: { href: "#" } }, [_vm._v("Game Development")]),
-      ]),
-      _vm._v(" "),
-      _c("td", { staticClass: "text-center" }, [
-        _c("b", { staticClass: "course_active" }, [_vm._v("Active")]),
-      ]),
-      _vm._v(" "),
-      _c("td", { staticClass: "text-center" }, [
-        _c(
-          "a",
-          { staticClass: "gray-s", attrs: { href: "#", title: "Edit" } },
-          [_c("i", { staticClass: "uil uil-edit-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "gray-s",
-            attrs: { href: "course_detail_view.html", title: "Edit" },
-          },
-          [_c("i", { staticClass: "uil uil-eye" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          { staticClass: "gray-s", attrs: { href: "#", title: "Delete" } },
-          [_c("i", { staticClass: "uil uil-trash-alt" })]
-        ),
-      ]),
+    return _c(
+      "a",
+      { staticClass: "gray-s", attrs: { href: "#", title: "Delete" } },
+      [_c("i", { staticClass: "uil uil-trash-alt" })]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticClass: "text-center" }, [
+      _c("a", { attrs: { href: "#" } }, [_vm._v("Web Development")]),
     ])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("td", { staticClass: "text-center" }, [
-        _vm._v(
-          "\n                                                IT-002\n                                            "
-        ),
-      ]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Course Title Here")]),
-      _vm._v(" "),
-      _c("td", { staticClass: "text-center" }, [
-        _vm._v(
-          "\n                                                28 March 2020 | 05:15\n                                            "
-        ),
-      ]),
-      _vm._v(" "),
-      _c("td", { staticClass: "text-center" }, [_vm._v("185")]),
-      _vm._v(" "),
-      _c("td", { staticClass: "text-center" }, [_vm._v("10")]),
-      _vm._v(" "),
-      _c("td", { staticClass: "text-center" }, [
-        _c("a", { attrs: { href: "#" } }, [_vm._v("C++")]),
-      ]),
-      _vm._v(" "),
-      _c("td", { staticClass: "text-center" }, [
-        _c("b", { staticClass: "course_active" }, [_vm._v("Active")]),
-      ]),
-      _vm._v(" "),
-      _c("td", { staticClass: "text-center" }, [
-        _c(
-          "a",
-          { staticClass: "gray-s", attrs: { href: "#", title: "Edit" } },
-          [_c("i", { staticClass: "uil uil-edit-alt" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "gray-s",
-            attrs: { href: "course_detail_view.html", title: "Edit" },
-          },
-          [_c("i", { staticClass: "uil uil-eye" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          { staticClass: "gray-s", attrs: { href: "#", title: "Delete" } },
-          [_c("i", { staticClass: "uil uil-trash-alt" })]
-        ),
-      ]),
+    return _c("td", { staticClass: "text-center" }, [
+      _c("b", { staticClass: "course_active" }, [_vm._v("Active")]),
     ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      { staticClass: "gray-s", attrs: { href: "#", title: "Delete" } },
+      [_c("i", { staticClass: "uil uil-trash-alt" })]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticClass: "text-center" }, [
+      _c("a", { attrs: { href: "#" } }, [_vm._v("Web Development")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticClass: "text-center" }, [
+      _c("b", { staticClass: "course_active" }, [_vm._v("Active")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      { staticClass: "gray-s", attrs: { href: "#", title: "Delete" } },
+      [_c("i", { staticClass: "uil uil-trash-alt" })]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticClass: "text-center" }, [
+      _c("a", { attrs: { href: "#" } }, [_vm._v("Web Development")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticClass: "text-center" }, [
+      _c("b", { staticClass: "course_active" }, [_vm._v("Active")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      { staticClass: "gray-s", attrs: { href: "#", title: "Delete" } },
+      [_c("i", { staticClass: "uil uil-trash-alt" })]
+    )
   },
   function () {
     var _vm = this
@@ -43905,50 +43882,6 @@ var staticRenderFns = [
               ]),
             ]),
           ]),
-        ]),
-      ]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "tab-pane fade",
-        attrs: {
-          id: "pills-promotions",
-          role: "tabpanel",
-          "aria-labelledby": "pills-promotions-tab",
-        },
-      },
-      [
-        _c("div", { staticClass: "promotion_tab mb-10" }, [
-          _c("img", {
-            attrs: { src: "images/dashboard/promotion.svg", alt: "" },
-          }),
-          _vm._v(" "),
-          _c("h4", [_vm._v("Baby promotion plan is activated!")]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "\n                                    By activating promotion plans you can\n                                    improve course views and sales.\n                                "
-            ),
-          ]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "plan_link_btn",
-              attrs: { onclick: "window.location.href = '#';" },
-            },
-            [
-              _vm._v(
-                "\n                                    Change New Plan\n                                "
-              ),
-            ]
-          ),
         ]),
       ]
     )
@@ -44206,7 +44139,47 @@ var render = function () {
                     _vm._m(16),
                   ]),
                   _vm._v(" "),
-                  _vm._m(17),
+                  _c("div", { staticClass: "step-footer step-tab-pager" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-default steps_btn",
+                        attrs: { "data-direction": "prev" },
+                      },
+                      [
+                        _vm._v(
+                          "\n                                    PREVIOUS\n                                "
+                        ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-default steps_btn",
+                        attrs: { "data-direction": "next" },
+                        on: { click: _vm.setSteps },
+                      },
+                      [
+                        _vm._v(
+                          "\n                                    Next\n                                "
+                        ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-default steps_btn",
+                        attrs: { "data-direction": "finish" },
+                      },
+                      [
+                        _vm._v(
+                          "\n                                    Submit for Review\n                                "
+                        ),
+                      ]
+                    ),
+                  ]),
                 ]
               ),
             ]),
@@ -44215,9 +44188,9 @@ var render = function () {
       ]),
     ]),
     _vm._v(" "),
-    _vm._m(18),
+    _vm._m(17),
     _vm._v(" "),
-    _vm._m(19),
+    _vm._m(18),
     _vm._v(" "),
     _c(
       "div",
@@ -44233,14 +44206,14 @@ var render = function () {
       [
         _c("div", { staticClass: "modal-dialog modal-lg" }, [
           _c("div", { staticClass: "modal-content" }, [
-            _vm._m(20),
+            _vm._m(19),
             _vm._v(" "),
             _c("div", { staticClass: "modal-body" }, [
               _c("div", { staticClass: "new-section-block" }, [
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-md-12" }, [
                     _c("div", { staticClass: "course-main-tabs" }, [
-                      _vm._m(21),
+                      _vm._m(20),
                       _vm._v(" "),
                       _c("div", { staticClass: "tab-content" }, [
                         _c(
@@ -44255,7 +44228,7 @@ var render = function () {
                               { staticClass: "lecture-video-dt mt-30" },
                               [
                                 _c("div", { staticClass: "add-ques-dt" }, [
-                                  _vm._m(22),
+                                  _vm._m(21),
                                   _vm._v(" "),
                                   _c(
                                     "div",
@@ -44312,7 +44285,7 @@ var render = function () {
                                                     },
                                                   },
                                                 }),
-                                                _vm._m(23),
+                                                _vm._m(22),
                                               ]),
                                               _vm._v(" "),
                                               _c("label", [
@@ -44343,7 +44316,7 @@ var render = function () {
                                                     },
                                                   },
                                                 }),
-                                                _vm._m(24),
+                                                _vm._m(23),
                                               ]),
                                               _vm._v(" "),
                                               _vm.question_type == 1
@@ -44490,7 +44463,7 @@ var render = function () {
                                                                 ]
                                                               ),
                                                               _vm._v(" "),
-                                                              _vm._m(25),
+                                                              _vm._m(24),
                                                             ]
                                                           ),
                                                         ]
@@ -44854,7 +44827,7 @@ var render = function () {
                                                 ? _c(
                                                     "div",
                                                     { staticClass: "sline" },
-                                                    [_vm._m(26)]
+                                                    [_vm._m(25)]
                                                   )
                                                 : _vm._e(),
                                             ]
@@ -44939,11 +44912,11 @@ var render = function () {
                                                 ]
                                               ),
                                               _vm._v(" "),
+                                              _vm._m(26, true),
+                                              _vm._v(" "),
                                               _vm._m(27, true),
                                               _vm._v(" "),
                                               _vm._m(28, true),
-                                              _vm._v(" "),
-                                              _vm._m(29, true),
                                             ]
                                           )
                                         }
@@ -44957,7 +44930,7 @@ var render = function () {
                           ]
                         ),
                         _vm._v(" "),
-                        _vm._m(30),
+                        _vm._m(29),
                       ]),
                     ]),
                   ]),
@@ -44965,13 +44938,13 @@ var render = function () {
               ]),
             ]),
             _vm._v(" "),
-            _vm._m(31),
+            _vm._m(30),
           ]),
         ]),
       ]
     ),
     _vm._v(" "),
-    _vm._m(32),
+    _vm._m(31),
   ])
 }
 var staticRenderFns = [
@@ -44982,8 +44955,8 @@ var staticRenderFns = [
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-lg-12" }, [
         _c("h2", { staticClass: "st_title" }, [
-          _c("i", { staticClass: "uil uil-analysis" }),
-          _vm._v(" Create New Video\n                    "),
+          _c("i", { staticClass: "uil uil-video" }),
+          _vm._v(" Create new interactive video\n                    "),
         ]),
       ]),
     ])
@@ -45064,12 +45037,6 @@ var staticRenderFns = [
               value: "",
             },
           }),
-          _vm._v(" "),
-          _c("div", { staticClass: "badge_num" }, [
-            _vm._v(
-              "\n                                                                    60\n                                                                "
-            ),
-          ]),
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "help-block" }, [
@@ -45126,66 +45093,6 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "course_des_bg" }, [
-          _c("ul", { staticClass: "course_des_ttle" }, [
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("i", { staticClass: "uil uil-bold" }),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("i", { staticClass: "uil uil-italic" }),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("i", { staticClass: "uil uil-list-ul" }),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("i", {
-                  staticClass: "uil uil-left-to-right-text-direction",
-                }),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("i", {
-                  staticClass: "uil uil-right-to-left-text-direction",
-                }),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("i", { staticClass: "uil uil-list-ui-alt" }),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("i", { staticClass: "uil uil-link" }),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("i", { staticClass: "uil uil-text-size" }),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("i", { staticClass: "uil uil-text" }),
-              ]),
-            ]),
-          ]),
-          _vm._v(" "),
           _c("div", { staticClass: "textarea_dt" }, [
             _c("div", { staticClass: "ui form swdh339" }, [
               _c("div", { staticClass: "field" }, [
@@ -45770,51 +45677,6 @@ var staticRenderFns = [
         ]),
       ]
     )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "step-footer step-tab-pager" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-default steps_btn",
-          attrs: { "data-direction": "prev" },
-        },
-        [
-          _vm._v(
-            "\n                                    PREVIOUS\n                                "
-          ),
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-default steps_btn",
-          attrs: { "data-direction": "next" },
-        },
-        [
-          _vm._v(
-            "\n                                    Next\n                                "
-          ),
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-default steps_btn",
-          attrs: { "data-direction": "finish" },
-        },
-        [
-          _vm._v(
-            "\n                                    Submit for Review\n                                "
-          ),
-        ]
-      ),
-    ])
   },
   function () {
     var _vm = this
@@ -46748,9 +46610,14 @@ var staticRenderFns = [
                           _vm._v("Description*"),
                         ]),
                         _vm._v(" "),
-                        _c("div", { staticClass: "text-editor" }, [
-                          _c("div", { attrs: { id: "editor4" } }),
-                        ]),
+                        _c("textarea", {
+                          attrs: {
+                            rows: "3",
+                            name: "description",
+                            id: "",
+                            placeholder: "",
+                          },
+                        }),
                       ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "form_group mt-30" }, [
@@ -48001,7 +47868,7 @@ var render = function () {
     attrs: {
       active: _vm.active,
       spinner: "line-wave",
-      color: "#3AAAD1",
+      color: "#3454b4",
       "is-full-screen": true,
     },
   })
@@ -48037,9 +47904,9 @@ var render = function () {
     _c("div", { staticClass: "main_logo", attrs: { id: "logo" } }, [
       _c("img", {
         attrs: {
-          src: _vm.globalBaseUrl + "images/gamify-logo.png",
-          alt: "",
-          width: "160",
+          src: _vm.globalBaseUrl + "images/gamify-logo-text.png",
+          alt: "logo",
+          height: "70",
         },
       }),
     ]),
@@ -48071,48 +47938,82 @@ var render = function () {
         _c("li", { staticClass: "ui dropdown" }, [
           _vm._m(4),
           _vm._v(" "),
-          _c("div", { staticClass: "menu dropdown_mn" }, [
-            _c("a", { staticClass: "channel_my item", attrs: { href: "#" } }, [
-              _c("div", { staticClass: "profile_link" }, [
-                _c("img", {
-                  attrs: {
-                    src: _vm.globalBaseUrl + "images/left-imgs/img-1.jpg",
-                    alt: "",
-                  },
-                }),
-                _vm._v(" "),
-                _vm._m(5),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("a", { staticClass: "channel_my item", attrs: { href: "#" } }, [
-              _c("div", { staticClass: "profile_link" }, [
-                _c("img", {
-                  attrs: {
-                    src: _vm.globalBaseUrl + "images/left-imgs/img-2.jpg",
-                    alt: "",
-                  },
-                }),
-                _vm._v(" "),
-                _vm._m(6),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("a", { staticClass: "channel_my item", attrs: { href: "#" } }, [
-              _c("div", { staticClass: "profile_link" }, [
-                _c("img", {
-                  attrs: {
-                    src: _vm.globalBaseUrl + "images/left-imgs/img-9.jpg",
-                    alt: "",
-                  },
-                }),
-                _vm._v(" "),
-                _vm._m(7),
-              ]),
-            ]),
-            _vm._v(" "),
-            _vm._m(8),
-          ]),
+          _c(
+            "div",
+            {
+              staticClass: "menu dropdown_mn left visible",
+              on: {
+                click: function ($event) {
+                  return _vm.closeDropdown()
+                },
+              },
+            },
+            [
+              _c(
+                "a",
+                { staticClass: "channel_my item", attrs: { href: "#" } },
+                [
+                  _c("div", { staticClass: "profile_link" }, [
+                    _c("img", {
+                      attrs: {
+                        src: _vm.globalBaseUrl + "images/left-imgs/img-1.jpg",
+                        alt: "",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _vm._m(5),
+                  ]),
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                { staticClass: "channel_my item", attrs: { href: "#" } },
+                [
+                  _c("div", { staticClass: "profile_link" }, [
+                    _c("img", {
+                      attrs: {
+                        src: _vm.globalBaseUrl + "images/left-imgs/img-2.jpg",
+                        alt: "",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _vm._m(6),
+                  ]),
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                { staticClass: "channel_my item", attrs: { href: "#" } },
+                [
+                  _c("div", { staticClass: "profile_link" }, [
+                    _c("img", {
+                      attrs: {
+                        src: _vm.globalBaseUrl + "images/left-imgs/img-9.jpg",
+                        alt: "",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _vm._m(7),
+                  ]),
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass: "vbm_btn",
+                  attrs: { to: { name: "Notification" } },
+                },
+                [
+                  _vm._v("View All "),
+                  _c("i", { staticClass: "uil uil-arrow-right" }),
+                ]
+              ),
+            ],
+            1
+          ),
         ]),
         _vm._v(" "),
         _c("li", { staticClass: "ui dropdown" }, [
@@ -48163,7 +48064,7 @@ var render = function () {
                     [
                       _c("h6", [_vm._v(_vm._s(_vm.user.full_name))]),
                       _vm._v(" "),
-                      _vm._m(9),
+                      _vm._m(8),
                     ]
                   ),
                   _vm._v(" "),
@@ -48397,7 +48298,7 @@ var staticRenderFns = [
     return _c(
       "a",
       {
-        staticClass: "option_links",
+        staticClass: "option_links notification-dropdown",
         attrs: { href: "#", title: "Notifications" },
       },
       [
@@ -48457,19 +48358,6 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("span", { staticClass: "nm_time" }, [_vm._v("20 min ago")]),
     ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "vbm_btn",
-        attrs: { href: "instructor_notifications.html" },
-      },
-      [_vm._v("View All "), _c("i", { staticClass: "uil uil-arrow-right" })]
-    )
   },
   function () {
     var _vm = this
@@ -51367,11 +51255,194 @@ var render = function () {
                 ]
               ),
               _vm._v(" "),
-              _vm._m(5),
-              _vm._v(" "),
-              _vm._m(6),
+              _c(
+                "div",
+                {
+                  staticClass: "tab-pane fade",
+                  attrs: {
+                    id: "pills-notification",
+                    role: "tabpanel",
+                    "aria-labelledby": "pills-notification-tab",
+                  },
+                },
+                [
+                  _c("div", { staticClass: "account_setting" }, [
+                    _c("h4", [
+                      _vm._v(
+                        "Notifications - Choose when and how to be notified"
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v(
+                        "\n                    Select push and email notifications you'd like to receive\n                  "
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "basic_profile" }, [
+                      _c("div", { staticClass: "basic_form" }, [
+                        _c("div", { staticClass: "nstting_content" }, [
+                          _vm._m(5),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "checkbox _1457s2" },
+                            [
+                              _c("sui-checkbox", {
+                                attrs: { label: "Subscriptions", toggle: "" },
+                              }),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "ml5" }, [
+                                _vm._v(
+                                  "\n                            Notify me about activity from the profiles I'm\n                            subscribed to\n                          "
+                                ),
+                              ]),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "checkbox _1457s2" },
+                            [
+                              _c("sui-checkbox", {
+                                attrs: {
+                                  label: "Recommended Courses",
+                                  toggle: "",
+                                },
+                              }),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "ml5" }, [
+                                _vm._v(
+                                  "\n                            Notify me of courses I might like based on what I\n                            watch\n                          "
+                                ),
+                              ]),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "checkbox _1457s2" },
+                            [
+                              _c("sui-checkbox", {
+                                attrs: {
+                                  label: "Activity on my comments",
+                                  toggle: "",
+                                },
+                              }),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "ml5" }, [
+                                _vm._v(
+                                  "\n                            Notify me about activity on my comments on others’\n                            courses\n                          "
+                                ),
+                              ]),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "checkbox _1457s2" },
+                            [
+                              _c("sui-checkbox", {
+                                attrs: {
+                                  label: "Replies to my comments",
+                                  toggle: "",
+                                },
+                              }),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "ml5" }, [
+                                _vm._v(
+                                  "\n                            Notify me about replies to my comments\n                          "
+                                ),
+                              ]),
+                            ],
+                            1
+                          ),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "divider-1 mb-50" }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "basic_profile" }, [
+                      _c("div", { staticClass: "basic_form" }, [
+                        _c("div", { staticClass: "nstting_content" }, [
+                          _vm._m(6),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "checkbox _1457s2" },
+                            [
+                              _c("sui-checkbox", {
+                                attrs: {
+                                  label:
+                                    "Send me emails about my Cursus activity and updates I requested",
+                                  toggle: "",
+                                },
+                              }),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "ml5" }, [
+                                _vm._v(
+                                  "\n                            If this setting is turned off, Cursus may still\n                            send you messages regarding your account, required\n                            service announcements, legal notifications, and\n                            privacy matters\n                          "
+                                ),
+                              ]),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "checkbox _1457s2" },
+                            [
+                              _c("sui-checkbox", {
+                                attrs: {
+                                  label:
+                                    "Promotions, course recommendations, and helpful resources from Cursus.",
+                                  toggle: "",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "checkbox _1457s2" },
+                            [
+                              _c("sui-checkbox", {
+                                attrs: {
+                                  label:
+                                    "Announcements from instructors whose course(s)\n                            I’m enrolled in.",
+                                  toggle: "",
+                                },
+                              }),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "ml5" }, [
+                                _vm._v(
+                                  '\n                            To adjust this preference by course, leave this\n                            box checked and go to the course dashboard and\n                            click on "Options" to opt in or out of specific\n                            announcements.\n                          '
+                                ),
+                              ]),
+                            ],
+                            1
+                          ),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      { staticClass: "save_btn", attrs: { type: "submit" } },
+                      [_vm._v("Save Changes")]
+                    ),
+                  ]),
+                ]
+              ),
               _vm._v(" "),
               _vm._m(7),
+              _vm._v(" "),
+              _vm._m(8),
             ]
           ),
         ]),
@@ -51397,7 +51468,7 @@ var staticRenderFns = [
       _c(
         "ul",
         {
-          staticClass: "nav nav-pills mb-4",
+          staticClass: "nav nav-pills my-3",
           attrs: { id: "pills-tab", role: "tablist" },
         },
         [
@@ -51648,197 +51719,41 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "tab-pane fade",
-        attrs: {
-          id: "pills-notification",
-          role: "tabpanel",
-          "aria-labelledby": "pills-notification-tab",
-        },
-      },
-      [
-        _c("div", { staticClass: "account_setting" }, [
-          _c("h4", [
-            _vm._v("Notifications - Choose when and how to be notified"),
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "\n                    Select push and email notifications you'd like to receive\n                  "
-            ),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "basic_profile" }, [
-            _c("div", { staticClass: "basic_form" }, [
-              _c("div", { staticClass: "nstting_content" }, [
-                _c("div", { staticClass: "basic_ptitle" }, [
-                  _c("h4", [_vm._v("Choose when and how to be notified")]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "ui toggle checkbox _1457s2" }, [
-                  _c("input", {
-                    attrs: {
-                      type: "checkbox",
-                      name: "stream_ss1",
-                      checked: "",
-                    },
-                  }),
-                  _vm._v(" "),
-                  _c("label", [_vm._v("Subscriptions")]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "ml5" }, [
-                    _vm._v(
-                      "\n                            Notify me about activity from the profiles I'm\n                            subscribed to\n                          "
-                    ),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "ui toggle checkbox _1457s2" }, [
-                  _c("input", {
-                    attrs: { type: "checkbox", name: "stream_ss2" },
-                  }),
-                  _vm._v(" "),
-                  _c("label", [_vm._v("Recommended Courses")]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "ml5" }, [
-                    _vm._v(
-                      "\n                            Notify me of courses I might like based on what I\n                            watch\n                          "
-                    ),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "ui toggle checkbox _1457s2" }, [
-                  _c("input", {
-                    attrs: { type: "checkbox", name: "stream_ss3" },
-                  }),
-                  _vm._v(" "),
-                  _c("label", [_vm._v("Activity on my comments")]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "ml5" }, [
-                    _vm._v(
-                      "\n                            Notify me about activity on my comments on others’\n                            courses\n                          "
-                    ),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "ui toggle checkbox _1457s2" }, [
-                  _c("input", {
-                    attrs: {
-                      type: "checkbox",
-                      name: "stream_ss4",
-                      checked: "",
-                    },
-                  }),
-                  _vm._v(" "),
-                  _c("label", [_vm._v("Replies to my comments")]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "ml5" }, [
-                    _vm._v(
-                      "\n                            Notify me about replies to my comments\n                          "
-                    ),
-                  ]),
-                ]),
-              ]),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "divider-1 mb-50" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "basic_profile" }, [
-            _c("div", { staticClass: "basic_form" }, [
-              _c("div", { staticClass: "nstting_content" }, [
-                _c("div", { staticClass: "basic_ptitle" }, [
-                  _c("h4", [_vm._v("Email notifications")]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "\n                            Your emails are sent to\n                            "
-                    ),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "__cf_email__",
-                        attrs: {
-                          href: "https://gambolthemes.net/cdn-cgi/l/email-protection",
-                          "data-cfemail":
-                            "15727478777a792c2126557278747c793b767a783b",
-                        },
-                      },
-                      [_vm._v("[email protected]")]
-                    ),
-                    _vm._v(
-                      '\n                            To unsubscribe from an email, click the\n                            "Unsubscribe" link at the bottom of it.\n                            '
-                    ),
-                    _c("a", { attrs: { href: "#" } }, [_vm._v("Learn more")]),
-                    _vm._v(
-                      " about emails from\n                            Edututs+.\n                          "
-                    ),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "ui toggle checkbox _1457s2" }, [
-                  _c("input", {
-                    attrs: {
-                      type: "checkbox",
-                      name: "stream_ss5",
-                      checked: "",
-                    },
-                  }),
-                  _vm._v(" "),
-                  _c("label", [
-                    _vm._v(
-                      "Send me emails about my Cursus activity and\n                            updates I requested"
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "ml5" }, [
-                    _vm._v(
-                      "\n                            If this setting is turned off, Cursus may still\n                            send you messages regarding your account, required\n                            service announcements, legal notifications, and\n                            privacy matters\n                          "
-                    ),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "ui toggle checkbox _1457s2" }, [
-                  _c("input", {
-                    attrs: { type: "checkbox", name: "stream_ss6" },
-                  }),
-                  _vm._v(" "),
-                  _c("label", [
-                    _vm._v(
-                      "Promotions, course recommendations, and helpful\n                            resources from Cursus."
-                    ),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "ui toggle checkbox _1457s2" }, [
-                  _c("input", {
-                    attrs: { type: "checkbox", name: "stream_ss7" },
-                  }),
-                  _vm._v(" "),
-                  _c("label", [
-                    _vm._v(
-                      "Announcements from instructors whose course(s)\n                            I’m enrolled in."
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "ml5" }, [
-                    _vm._v(
-                      '\n                            To adjust this preference by course, leave this\n                            box checked and go to the course dashboard and\n                            click on "Options" to opt in or out of specific\n                            announcements.\n                          '
-                    ),
-                  ]),
-                ]),
-              ]),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("button", { staticClass: "save_btn", attrs: { type: "submit" } }, [
-            _vm._v("Save Changes"),
-          ]),
-        ]),
-      ]
-    )
+    return _c("div", { staticClass: "basic_ptitle" }, [
+      _c("h4", [_vm._v("Choose when and how to be notified")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "basic_ptitle" }, [
+      _c("h4", [_vm._v("Email notifications")]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "\n                            Your emails are sent to\n                            "
+        ),
+        _c(
+          "a",
+          {
+            staticClass: "__cf_email__",
+            attrs: {
+              href: "https://gambolthemes.net/cdn-cgi/l/email-protection",
+              "data-cfemail": "15727478777a792c2126557278747c793b767a783b",
+            },
+          },
+          [_vm._v("[email protected]")]
+        ),
+        _vm._v(
+          '\n                            To unsubscribe from an email, click the\n                            "Unsubscribe" link at the bottom of it.\n                            '
+        ),
+        _c("a", { attrs: { href: "#" } }, [_vm._v("Learn more")]),
+        _vm._v(
+          " about emails from\n                            Edututs+.\n                          "
+        ),
+      ]),
+    ])
   },
   function () {
     var _vm = this
@@ -51867,7 +51782,7 @@ var staticRenderFns = [
                   _c("h4", [_vm._v("Profile page settings")]),
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "ui toggle checkbox _1457s2" }, [
+                _c("div", { staticClass: "checkbox _1457s2" }, [
                   _c("input", {
                     attrs: {
                       type: "checkbox",
@@ -51879,7 +51794,7 @@ var staticRenderFns = [
                   _c("label", [_vm._v("Show your profile on search engines")]),
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "ui toggle checkbox _1457s2" }, [
+                _c("div", { staticClass: "checkbox _1457s2" }, [
                   _c("input", {
                     attrs: { type: "checkbox", name: "stream_ss9" },
                   }),

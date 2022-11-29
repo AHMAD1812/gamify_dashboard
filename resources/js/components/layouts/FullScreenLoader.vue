@@ -1,5 +1,5 @@
 <template>
-    <vue-element-loading :active="active" spinner="line-wave" color="#3AAAD1" :is-full-screen="true"/>
+    <vue-element-loading :active="active" spinner="line-wave" color="#3454b4" :is-full-screen="true"/>
   </template>
   
   <script>

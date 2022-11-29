@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h2 class="st_title">
-                            <i class="uil uil-analysis"></i> Create New Video
+                            <i class="uil uil-video"></i> Create new interactive video
                         </h2>
                     </div>
                 </div>
@@ -84,11 +84,6 @@
                                                                         id="main[title]"
                                                                         value=""
                                                                     />
-                                                                    <div
-                                                                        class="badge_num"
-                                                                    >
-                                                                        60
-                                                                    </div>
                                                                 </div>
                                                                 <div
                                                                     class="help-block"
@@ -146,82 +141,6 @@
                                                                 <div
                                                                     class="course_des_bg"
                                                                 >
-                                                                    <ul
-                                                                        class="course_des_ttle"
-                                                                    >
-                                                                        <li>
-                                                                            <a
-                                                                                href="#"
-                                                                                ><i
-                                                                                    class="uil uil-bold"
-                                                                                ></i
-                                                                            ></a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="#"
-                                                                                ><i
-                                                                                    class="uil uil-italic"
-                                                                                ></i
-                                                                            ></a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="#"
-                                                                                ><i
-                                                                                    class="uil uil-list-ul"
-                                                                                ></i
-                                                                            ></a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="#"
-                                                                                ><i
-                                                                                    class="uil uil-left-to-right-text-direction"
-                                                                                ></i
-                                                                            ></a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="#"
-                                                                                ><i
-                                                                                    class="uil uil-right-to-left-text-direction"
-                                                                                ></i
-                                                                            ></a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="#"
-                                                                                ><i
-                                                                                    class="uil uil-list-ui-alt"
-                                                                                ></i
-                                                                            ></a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="#"
-                                                                                ><i
-                                                                                    class="uil uil-link"
-                                                                                ></i
-                                                                            ></a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="#"
-                                                                                ><i
-                                                                                    class="uil uil-text-size"
-                                                                                ></i
-                                                                            ></a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="#"
-                                                                                ><i
-                                                                                    class="uil uil-text"
-                                                                                ></i
-                                                                            ></a>
-                                                                        </li>
-                                                                    </ul>
                                                                     <div
                                                                         class="textarea_dt"
                                                                     >
@@ -855,6 +774,7 @@
                                     <button
                                         data-direction="next"
                                         class="btn btn-default steps_btn"
+                                        @click="setSteps"
                                     >
                                         Next
                                     </button>
@@ -1783,9 +1703,12 @@
                                             <label class="label25"
                                                 >Description*</label
                                             >
-                                            <div class="text-editor">
-                                                <div id="editor4"></div>
-                                            </div>
+                                            <textarea
+                                                rows="3"
+                                                name="description"
+                                                id=""
+                                                placeholder=""
+                                            ></textarea>
                                         </div>
                                         <div class="form_group mt-30">
                                             <div class="row g-4">
@@ -1997,6 +1920,7 @@ export default {
             category:null,
             question_name:"",
             questions:[],
+            steps:"",
         }
     },
     async mounted() {
@@ -2015,16 +1939,20 @@ export default {
         $(document).ready(function(){
             $('.ui.dropdown')
             .dropdown();
-            $("#add-course-tab").steps({
+            this.steps = $("#add-course-tab").steps({
                 onFinish: function () {
-                    alert("Wizard Completed");
+                    alert("Course Created");
+                    window.location.reload();
                 },
             });
+            
             $(".sortable").sortable();
             $(".sortable").disableSelection();
         });
     },
     methods:{
+        setSteps(e){
+        },
         addOption(){
             this.question_option.push({name:'',isCorrect:false});
         },
