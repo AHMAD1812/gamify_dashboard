@@ -12,8 +12,8 @@
                         <h1 class="banner_title mb-4">The Best<br>E-Learning Gamification Platform<br><span class="light"> For Brighten Future</span></h1>
                         <p class="font-lg mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
                         <div class="inline_btn">
-                            <a href="explore-category.html" class="btn theme-bg text-white">Get Started</a>
-                            <a href="explore-category.html" class="btn light_btn">Become An Instructor</a>
+                            <a href="{{route('instructor.login')}}" class="btn theme-bg text-white">Get Started</a>
+                            <a href="{{route('instructor.login')}}" class="btn light_btn">Become An Instructor</a>
                         </div>
                     </div>
                 </div>
@@ -260,8 +260,8 @@
 <section>
     <div class="container">
         <div class="sec-heading center mb-4">
-            <h2>About <span class="theme-cl">Gamification Mobile APP</span></h2>
-            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores</p>
+            <h2>About <span class="theme-cl">Student Gamify US Application</span></h2>
+            <p>The objective of student mobile app is to give users ease of access to the interactive courses and provide reliable communication with instructors .</p>
         </div>
         <div class="row align-items-center justify-content-between">
             
@@ -333,52 +333,52 @@
             <div class="col-md-3 col-sm-6">
                 <div class="how-work-single wow fadeIn" data-wow-delay="0.1s">
                     <div class="how-work-btn position-relative">
-                        <span class="font-600 gradient-bg-1 color-white text-center"> Download</span>
+                        <span class="font-600 gradient-bg-1 color-white text-center">Select Course</span>
                         <div class="arrow-line">
                             <div class="round-circle"></div>
                         </div>
                     </div>
                     <div class="how-work-image">
-                        <img src="{{asset('main/img/app7.png')}}" class="img-responsive" alt="Image">
+                        <img src="{{asset('main/img/main-screen.png')}}" class="img-responsive" alt="Image">
                     </div>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="how-work-single wow fadeIn" data-wow-delay="0.2s">
                     <div class="how-work-btn position-relative">
-                        <span class="font-600 gradient-bg-1 color-white text-center"> Install</span>
+                        <span class="font-600 gradient-bg-1 color-white text-center">Filter Course</span>
                         <div class="arrow-line">
                             <div class="round-circle"></div>
                         </div>
                     </div>
                     <div class="how-work-image">
-                        <img src="{{asset('main/img/app6.png')}}" class="img-responsive" alt="Image">
+                        <img src="{{asset('main/img/filter.png')}}" class="img-responsive" alt="Image">
                     </div>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="how-work-single wow fadeIn" data-wow-delay="0.3s">
                     <div class="how-work-btn position-relative">
-                        <span class="font-600 gradient-bg-1 color-white text-center"> Setting</span>
+                        <span class="font-600 gradient-bg-1 color-white text-center">Take Course</span>
                         <div class="arrow-line">
                             <div class="round-circle"></div>
                         </div>
                     </div>
                     <div class="how-work-image">
-                        <img src="{{asset('main/img/app5.png')}}" class="img-responsive" alt="Image">
+                        <img src="{{asset('main/img/take-course.png')}}" class="img-responsive" alt="Image">
                     </div>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="how-work-single wow fadeIn" data-wow-delay="0.4s">
                     <div class="how-work-btn position-relative">
-                        <span class="font-600 gradient-bg-1 color-white text-center"> Options</span>
+                        <span class="font-600 gradient-bg-1 color-white text-center">Feedback</span>
                         <div class="arrow-line">
                             <div class="round-circle"></div>
                         </div>
                     </div>
                     <div class="how-work-image">
-                        <img src="{{asset('main/img/app4.png')}}" class="img-responsive" alt="Image">
+                        <img src="{{asset('main/img/feedback.png')}}" class="img-responsive" alt="Image">
                     </div>
                 </div>
             </div>
@@ -394,7 +394,6 @@
             <div class="col-lg-7 col-md-10 text-center">
                 <div class="sec-heading center mb-4">
                     <h2>Screenshots of <span class="theme-cl">Mobile Application</span></h2>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores</p>
                 </div>
             </div>
         </div>
@@ -407,7 +406,7 @@
                     <div class="lios_item">	
                         
                             <div class="crs_trt_thumb">
-                                <a href="instructor-detail.html" class="crs_trt_thum_link"><img src="{{asset('main/img/app7.png')}}" class="img-fluid" alt=""></a>
+                                <img src="{{asset('main/img/main-screen.png')}}" class="img-fluid app-images" alt="">
                             </div>
                             
                         
@@ -417,7 +416,7 @@
                     <div class="lios_item">	
                     
                             <div class="crs_trt_thumb">
-                                <a href="instructor-detail.html" class="crs_trt_thum_link"><img src="{{asset('main/img/app1.png')}}" class="img-fluid" alt=""></a>
+                                <img src="{{asset('main/img/take-course.png')}}" class="img-fluid app-images" alt="">
                             </div>
                         
                     </div>
@@ -426,7 +425,7 @@
                     <div class="lios_item">	
                         
                             <div class="crs_trt_thumb">
-                                <a href="instructor-detail.html" class="crs_trt_thum_link"><img src="{{asset('main/img/app2.png')}}" class="img-fluid" alt=""></a>
+                                <img src="{{asset('main/img/filter.png')}}" class="img-fluid app-images" alt="">
                             </div>
                             
                         
@@ -436,7 +435,7 @@
                     <div class="lios_item">	
                         
                             <div class="crs_trt_thumb">
-                                <a href="instructor-detail.html" class="crs_trt_thum_link"><img src="{{asset('main/img/app3.png')}}" class="img-fluid" alt=""></a>
+                                <img src="{{asset('main/img/feedback.png')}}" class="img-fluid app-images" alt="">
                             </div>
                             
                         
@@ -446,7 +445,7 @@
                     <div class="lios_item">	
                         
                             <div class="crs_trt_thumb">
-                                <a href="instructor-detail.html" class="crs_trt_thum_link"><img src="{{asset('main/img/app5.png')}}" class="img-fluid" alt=""></a>
+                                <img src="{{asset('main/img/profile.png')}}" class="img-fluid app-images" alt="">
                             </div>
                             
                         
@@ -454,12 +453,15 @@
                     
                     <!-- Single Item -->
                     <div class="lios_item">	
-                        
                             <div class="crs_trt_thumb">
-                                <a href="instructor-detail.html" class="crs_trt_thum_link"><img src="{{asset('main/img/app6.png')}}" class="img-fluid" alt=""></a>
+                                <img src="{{asset('main/img/faq.png')}}" class="img-fluid app-images" alt="">
                             </div>
-                            
-                        
+                    </div>
+
+                    <div class="lios_item">	
+                        <div class="crs_trt_thumb">
+                            <img src="{{asset('main/img/notification.png')}}" class="img-fluid app-images" alt="">
+                        </div>
                     </div>
                 
                 </div>
@@ -617,7 +619,7 @@
                     <div class="lios_item">	
                         <div class="crs_trt_grid theme-light shadow_none">
                             <div class="crs_trt_thumb">
-                                <a href="instructor-detail.html" class="crs_trt_thum_link"><img src="{{asset('main/img/t-1.png')}}" class="img-fluid" alt=""></a>
+                                <img src="{{asset('main/img/t-1.png')}}" class="img-fluid" alt="">
                             </div>
                             <div class="crs_trt_caption large">
                                 <div class="instructor_tag dark"><span>Sanskrit Teacher</span></div>

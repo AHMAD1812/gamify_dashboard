@@ -2758,7 +2758,7 @@ li.login-attri .account-drop a {
 .hero_banner{
 	display: flex;
     height: auto;
-    padding:7rem 0;
+    padding:5rem 0;
     align-items: center;
 	position:relative;
 }
@@ -3804,7 +3804,8 @@ ul.lt_cr_list li i{
 }
 .crs_trt_thumb {
     position: relative;
-    display: block;
+    display: flex;
+    justify-content: center;
 }
 .crs_trt_thumb .crs_trt_thum_link {
     display: block;
@@ -7595,7 +7596,7 @@ footer.skin-dark-footer ul.footer-bottom-social li a:hover, footer.skin-dark-foo
 	}
 	.hero_banner{
 		min-height:600px;
-		height: 85vh;
+		height: 80vh;
 	}
 	.banner_title {
 		font-size: 50px;

@@ -11197,6 +11197,22 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "CreateVideo",
@@ -11220,7 +11236,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       category: null,
       question_name: "",
       questions: [],
-      steps: ""
+      steps: "",
+      showHour: false
     };
   },
   mounted: function mounted() {
@@ -44342,7 +44359,7 @@ var render = function () {
                                                                 "div",
                                                                 {
                                                                   staticClass:
-                                                                    "col-lg-6 col-md-12",
+                                                                    "col-lg-5 col-md-12",
                                                                 },
                                                                 [
                                                                   _c(
@@ -44448,22 +44465,147 @@ var render = function () {
                                                                         " "
                                                                       ),
                                                                       _c(
-                                                                        "vue-timepicker",
+                                                                        "div",
                                                                         {
-                                                                          attrs:
+                                                                          staticClass:
+                                                                            "d-flex align-items-baseline",
+                                                                        },
+                                                                        [
+                                                                          _c(
+                                                                            "vue-timepicker",
                                                                             {
-                                                                              format:
-                                                                                "mm:ss",
+                                                                              attrs:
+                                                                                {
+                                                                                  format:
+                                                                                    _vm.showHour
+                                                                                      ? "hh:mm:ss"
+                                                                                      : "mm:ss",
+                                                                                },
+                                                                            }
+                                                                          ),
+                                                                          _vm._v(
+                                                                            " "
+                                                                          ),
+                                                                          _c(
+                                                                            "input",
+                                                                            {
+                                                                              directives:
+                                                                                [
+                                                                                  {
+                                                                                    name: "model",
+                                                                                    rawName:
+                                                                                      "v-model",
+                                                                                    value:
+                                                                                      _vm.showHour,
+                                                                                    expression:
+                                                                                      "showHour",
+                                                                                  },
+                                                                                ],
+                                                                              staticClass:
+                                                                                "ml-2",
+                                                                              attrs:
+                                                                                {
+                                                                                  type: "checkbox",
+                                                                                },
+                                                                              domProps:
+                                                                                {
+                                                                                  checked:
+                                                                                    Array.isArray(
+                                                                                      _vm.showHour
+                                                                                    )
+                                                                                      ? _vm._i(
+                                                                                          _vm.showHour,
+                                                                                          null
+                                                                                        ) >
+                                                                                        -1
+                                                                                      : _vm.showHour,
+                                                                                },
+                                                                              on: {
+                                                                                change:
+                                                                                  function (
+                                                                                    $event
+                                                                                  ) {
+                                                                                    var $$a =
+                                                                                        _vm.showHour,
+                                                                                      $$el =
+                                                                                        $event.target,
+                                                                                      $$c =
+                                                                                        $$el.checked
+                                                                                          ? true
+                                                                                          : false
+                                                                                    if (
+                                                                                      Array.isArray(
+                                                                                        $$a
+                                                                                      )
+                                                                                    ) {
+                                                                                      var $$v =
+                                                                                          null,
+                                                                                        $$i =
+                                                                                          _vm._i(
+                                                                                            $$a,
+                                                                                            $$v
+                                                                                          )
+                                                                                      if (
+                                                                                        $$el.checked
+                                                                                      ) {
+                                                                                        $$i <
+                                                                                          0 &&
+                                                                                          (_vm.showHour =
+                                                                                            $$a.concat(
+                                                                                              [
+                                                                                                $$v,
+                                                                                              ]
+                                                                                            ))
+                                                                                      } else {
+                                                                                        $$i >
+                                                                                          -1 &&
+                                                                                          (_vm.showHour =
+                                                                                            $$a
+                                                                                              .slice(
+                                                                                                0,
+                                                                                                $$i
+                                                                                              )
+                                                                                              .concat(
+                                                                                                $$a.slice(
+                                                                                                  $$i +
+                                                                                                    1
+                                                                                                )
+                                                                                              ))
+                                                                                      }
+                                                                                    } else {
+                                                                                      _vm.showHour =
+                                                                                        $$c
+                                                                                    }
+                                                                                  },
+                                                                              },
+                                                                            }
+                                                                          ),
+                                                                          _vm._v(
+                                                                            " "
+                                                                          ),
+                                                                          _c(
+                                                                            "label",
+                                                                            {
+                                                                              staticClass:
+                                                                                "label25 text-left",
                                                                             },
-                                                                        }
+                                                                            [
+                                                                              _vm._v(
+                                                                                "Time"
+                                                                              ),
+                                                                            ]
+                                                                          ),
+                                                                        ],
+                                                                        1
                                                                       ),
-                                                                    ],
-                                                                    1
+                                                                    ]
                                                                   ),
                                                                 ]
                                                               ),
                                                               _vm._v(" "),
                                                               _vm._m(24),
+                                                              _vm._v(" "),
+                                                              _vm._m(25),
                                                             ]
                                                           ),
                                                         ]
@@ -44827,7 +44969,7 @@ var render = function () {
                                                 ? _c(
                                                     "div",
                                                     { staticClass: "sline" },
-                                                    [_vm._m(25)]
+                                                    [_vm._m(26)]
                                                   )
                                                 : _vm._e(),
                                             ]
@@ -44912,11 +45054,11 @@ var render = function () {
                                                 ]
                                               ),
                                               _vm._v(" "),
-                                              _vm._m(26, true),
-                                              _vm._v(" "),
                                               _vm._m(27, true),
                                               _vm._v(" "),
                                               _vm._m(28, true),
+                                              _vm._v(" "),
+                                              _vm._m(29, true),
                                             ]
                                           )
                                         }
@@ -44930,7 +45072,7 @@ var render = function () {
                           ]
                         ),
                         _vm._v(" "),
-                        _vm._m(29),
+                        _vm._m(30),
                       ]),
                     ]),
                   ]),
@@ -44938,13 +45080,13 @@ var render = function () {
               ]),
             ]),
             _vm._v(" "),
-            _vm._m(30),
+            _vm._m(31),
           ]),
         ]),
       ]
     ),
     _vm._v(" "),
-    _vm._m(31),
+    _vm._m(32),
   ])
 }
 var staticRenderFns = [
@@ -46247,6 +46389,14 @@ var staticRenderFns = [
       _vm._v(
         "Milti\n                                                                        Line\n                                                                        Text"
       ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-lg-1 col-md-1" }, [
+      _c("div", { staticClass: "form_group mt-30" }),
     ])
   },
   function () {

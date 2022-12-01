@@ -43,22 +43,10 @@
                             <input type="text" class="form-control" placeholder="Email" />
                         </div>
                     </div>
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                        <div class="form-group">
-                            <label>Company</label>
-                            <input type="text" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                        <div class="form-group">
-                            <label>Phone</label>
-                            <input type="text" class="form-control" />
-                        </div>
-                    </div>
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                         <div class="form-group">
                             <label>Message</label>
-                            <input type="text" class="form-control" />
+                            <textarea class="form-control" rows="5"></textarea>
                         </div>
                     </div>
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
@@ -74,10 +62,10 @@
                     <ol class="list-unstyled p-0">
                       <li class="d-flex align-items-start my-3 my-md-4">
                         <div class="rounded-circle p-3 p-sm-4 d-flex align-items-center justify-content-center theme-bg-light">
-                          <div class="position-absolute theme-cl h5 mb-0"><i class="fas fa-home"></i></div>
+                          <div class="position-absolute theme-cl h5 my-0"><i class="fas fa-home"></i></div>
                         </div>
                         <div class="ml-3 ml-md-4">
-                          <h4>Reach Us</h4>
+                          <h4 class="my-0">Reach Us</h4>
                           <p>
                             1234, abc Town,<br> Xyz 12 Street,<br>City, Country
                           </p>
@@ -85,10 +73,10 @@
                       </li>
                       <li class="d-flex align-items-start my-3 my-md-4">
                         <div class="rounded-circle p-3 p-sm-4 d-flex align-items-center justify-content-center theme-bg-light">
-                          <div class="position-absolute theme-cl h5 mb-0"><i class="fas fa-at"></i></div>
+                          <div class="position-absolute theme-cl h5 my-0"><i class="fas fa-at"></i></div>
                         </div>
                         <div class="ml-3 ml-md-4">
-                          <h4>Drop A Mail</h4>
+                          <h4 class="my-0">Drop A Mail</h4>
                           <p>
                             support@GamifyUs.com<br>GamifyUs@gmail.com
                           </p>
@@ -96,10 +84,10 @@
                       </li>
                        <li class="d-flex align-items-start my-3 my-md-4">
                         <div class="rounded-circle p-3 p-sm-4 d-flex align-items-center justify-content-center theme-bg-light">
-                          <div class="position-absolute theme-cl h5 mb-0"><i class="fas fa-phone-alt"></i></div>
+                          <div class="position-absolute theme-cl h5 my-0"><i class="fas fa-phone-alt"></i></div>
                         </div>
                         <div class="ml-3 ml-md-4">
-                          <h4>Make a Call</h4>
+                          <h4 class="my-0">Make a Call</h4>
                           <p>
                             (042) 123 521 458<br>+92 235 548 7548
                           </p>

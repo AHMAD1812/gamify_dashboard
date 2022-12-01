@@ -30,9 +30,7 @@
                     <div class="lmp_caption">
                         <span class="theme-cl">About Us</span>
                         <h2 class="mb-3">What We Do & Our Aim</h2>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                            deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non
-                            provident, similique</p>
+                        <p>Gamification simply brings the game-based elements that make these platforms popular and integrate them with other activities within education. We are developing a platform that allows developers to put educational videos into their games. </p>
                         <div class="mb-3 mr-4 ml-lg-0 mr-lg-4">
                             <div class="d-flex align-items-center">
                                 <div

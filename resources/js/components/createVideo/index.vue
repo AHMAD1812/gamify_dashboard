@@ -1198,7 +1198,7 @@
                                                                                 class="row"
                                                                             >
                                                                                 <div
-                                                                                    class="col-lg-6 col-md-12"
+                                                                                    class="col-lg-5 col-md-12"
                                                                                 >
                                                                                     <div
                                                                                         class="form_group mt-30"
@@ -1227,7 +1227,23 @@
                                                                                             class="label25 text-left"
                                                                                             >Time</label
                                                                                         >
-                                                                                        <vue-timepicker format="mm:ss"></vue-timepicker>
+                                                                                        <div class="d-flex align-items-baseline">
+                                                                                            <vue-timepicker :format="showHour ?'hh:mm:ss':'mm:ss'"></vue-timepicker>
+                                                                                            <input type="checkbox" v-model="showHour" class="ml-2"/>
+                                                                                            <label
+                                                                                                class="label25 text-left"
+                                                                                                >Time</label
+                                                                                            >
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="col-lg-1 col-md-1"
+                                                                                >
+                                                                                    <div
+                                                                                        class="form_group mt-30"
+                                                                                    >
+                                                                                        
                                                                                     </div>
                                                                                 </div>
                                                                                 <div
@@ -1921,6 +1937,7 @@ export default {
             question_name:"",
             questions:[],
             steps:"",
+            showHour:false,
         }
     },
     async mounted() {
