@@ -72,6 +72,20 @@
                       <div class="basic_form">
                         <div class="row">
                           <div class="col-lg-8">
+                              <div class="avatar-upload">
+                                  <div class="avatar-edit">
+                                      <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" @change="onImageSelected"/>
+                                      <label for="imageUpload">
+                                        <i class="uil uil-edit-alt"></i>
+                                      </label>
+                                  </div>
+                                  <div class="avatar-preview">
+                                      <img v-if="file==null" :src="image==null?`${globalAssetUrl}images/avatar.png`:`${globalAssetUrl}${image}`"/>
+                                      <img v-else :src="image"/>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-8">
                             <div class="row">
                               <div class="col-lg-12">
                                 <div class="ui search focus mt-30">
@@ -148,37 +162,12 @@
                                       class="prompt srch_explore"
                                       type="text"
                                       name="facebooklink"
-                                      id="id_facebook"
-                                      required=""
-                                      maxlength="64"
                                       placeholder="Facebook Profile"
+                                      v-model="facebook"
                                     />
                                   </div>
                                   <div class="help-block">
-                                    Add your Facebook username (e.g. johndoe).
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-lg-12">
-                                <div class="ui search focus mt-30">
-                                  <div
-                                    class="ui left icon labeled input swdh11 swdh31"
-                                  >
-                                    <div class="ui label lb12">
-                                      http://twitter.com/
-                                    </div>
-                                    <input
-                                      class="prompt srch_explore"
-                                      type="text"
-                                      name="twitterlink"
-                                      id="id_twitter"
-                                      required=""
-                                      maxlength="64"
-                                      placeholder="Twitter Profile"
-                                    />
-                                  </div>
-                                  <div class="help-block">
-                                    Add your Twitter username (e.g. johndoe).
+                                    Add your Facebook username
                                   </div>
                                 </div>
                               </div>
@@ -194,15 +183,12 @@
                                       class="prompt srch_explore"
                                       type="text"
                                       name="linkedinlink"
-                                      id="id_linkedin"
-                                      required=""
-                                      maxlength="64"
                                       placeholder="Linkedin Profile"
+                                      v-model="linkedin"
                                     />
                                   </div>
                                   <div class="help-block">
-                                    Input your LinkedIn resource id (e.g.
-                                    in/johndoe).
+                                    Input your LinkedIn resource id.
                                   </div>
                                 </div>
                               </div>
@@ -218,14 +204,12 @@
                                       class="prompt srch_explore"
                                       type="text"
                                       name="youtubelink"
-                                      id="id_youtube"
-                                      required=""
-                                      maxlength="64"
                                       placeholder="Youtube Profile"
+                                      v-model="youtube"
                                     />
                                   </div>
                                   <div class="help-block">
-                                    Input your Youtube username (e.g. johndoe).
+                                    Input your Youtube username.
                                   </div>
                                 </div>
                               </div>
@@ -234,7 +218,7 @@
                         </div>
                       </div>
                     </div>
-                    <button class="save_btn" type="submit">Save Changes</button>
+                    <button class="save_btn" type="button" @click="updateProfile">Save Changes</button>
                   </div>
                 </div>
                 <div
@@ -414,24 +398,112 @@ export default {
     name:"Setting",
     data(){
       return{
+        user:{},
         full_name:"",
         email:"",
         bio:"",
+        facebook:"",
+        linkedin:"",
+        youtube:"",
+        image:null,
+        file:null,
       }
     },
     async mounted(){
       try{
           this.$emit('toggle-loader');
-          let response = await axios.get(`${globalBaseUrl}instructor/profile`);
+          let response = await axios.get(`${globalBaseUrl}instructor/user_profile`);
           let user = response.data.data;
+          this.user=user;
           this.full_name = user.full_name;
           this.email = user.email;
           this.bio = user.biography;
+          this.facebook=user.facebook==null?"":user.facebook;
+          this.youtube=user.youtube == null ? "" : user.youtube;
+          this.linkedin=user.linkedin == null ? "" : user.linkedin;
+          this.image=user.profile_img;
           this.$emit('toggle-loader');
         }catch(e){
           this.$emit('toggle-loader');
           console.log(e);
         }
+    },
+    methods:{
+      updateProfile(){
+        if(this.validateInput()){
+          try{
+            this.$emit("toggle-loader");
+            let formData=new FormData();
+            formData.append('full_name',this.full_name);
+            formData.append('biography',this.bio);
+            if(this.facebook!=""){
+              formData.append('facebook',this.facebook);
+            }
+            if(this.linkedin!=""){
+              formData.append('linkedin',this.linkedin);
+            }
+            if(this.youtube!=""){
+              formData.append('youtube',this.youtube);
+            }
+            if(this.file != null){
+              formData.append('profile_image',this.file);
+            }
+            axios
+            .post(`${globalBaseUrl}instructor/update_profile`,formData)
+            .then((response) => {
+                if (response.data.status == 200) {
+                    Vue.$toast.open({
+                      message: response.data.message,
+                      type: "success",
+                      position: "top-right",
+                    });
+                    this.$emit("profile-updated",response.data.data)
+                }
+                if (response.data.status == 400) {
+                    Vue.$toast.open({
+                        message: response.data.message,
+                        type: "warning",
+                        position: "top-right",
+                    });
+                }
+                this.$emit("toggle-loader");
+            })
+            .catch((e) => {
+                this.$emit("toggle-loader");
+                Vue.$toast.open({
+                    message: "Something Went Wrong",
+                    type: "error",
+                    position: "top-right",
+                });
+                console.log(e);
+            });
+          }catch(e){
+            this.$emit('toogle-loader');
+            console.log(e);
+          }
+        }
+      },
+      onImageSelected(e){
+        this.file=e.target.files[0];
+        this.image=URL.createObjectURL(this.file);
+      },
+      validateInput(){
+        if(this.full_name==""){
+          this.errorToast('Name is Required');
+          return false;
+        }else if(this.bio == ""){
+          this.errorToast("Bio is required")
+          return false;
+        }
+        return true;
+      },
+      errorToast(message){
+        Vue.$toast.open({
+          type:'error',
+          message:message,
+          position:'top-right'
+        })
+      }
     }
 }
 </script>

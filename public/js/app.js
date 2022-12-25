@@ -11213,6 +11213,36 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "CreateVideo",
@@ -11220,24 +11250,34 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     return {
       question_type: 1,
       question_option: [],
-      video_type: 'mp4',
+      video_type: "mp4",
       levelOptions: [{
-        text: 'Beginner',
-        value: 'beginner'
+        text: "Beginner",
+        value: "beginner"
       }, {
-        text: 'Intermediate',
-        value: 'intermediate'
+        text: "Intermediate",
+        value: "intermediate"
       }, {
-        text: 'Expert',
-        value: 'expert'
+        text: "Expert",
+        value: "expert"
       }],
       level: null,
       categoryOptions: [],
       category: null,
       question_name: "",
+      question_time: {
+        mm: "",
+        ss: ""
+      },
+      question_score: "",
       questions: [],
       steps: "",
-      showHour: false
+      showHour: false,
+      isEdit: false,
+      edit_key: -1,
+      curriculum: [],
+      thumbnail: null,
+      validation: true
     };
   },
   mounted: function mounted() {
@@ -11268,7 +11308,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               console.log(_context.t0);
             case 11:
               $(document).ready(function () {
-                $('.ui.dropdown').dropdown();
+                $(".ui.dropdown").dropdown();
                 this.steps = $("#add-course-tab").steps({
                   onFinish: function onFinish() {
                     alert("Course Created");
@@ -11287,10 +11327,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }))();
   },
   methods: {
-    setSteps: function setSteps(e) {},
+    addCurriculum: function addCurriculum(type, name) {
+      this.curriculum.push({
+        type: type,
+        name: name
+      });
+    },
+    deleteCurriculum: function deleteCurriculum(key) {
+      this.curriculum.splice(key, 1);
+    },
     addOption: function addOption() {
       this.question_option.push({
-        name: '',
+        name: "",
         isCorrect: false
       });
     },
@@ -11313,12 +11361,61 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         });
         return;
       }
-      this.questions.push({
-        name: this.question_name
-      });
-      this.question_name = "";
+      if (this.isEdit) {
+        var key = this.edit_key;
+        this.questions[key].options = this.question_option;
+        this.questions[key].name = this.question_name;
+        this.questions[key].score = this.question_score;
+        this.questions[key].time = this.question_time;
+        this.isEdit = false;
+        this.edit_key = -1;
+      } else {
+        this.questions.push({
+          name: this.question_name,
+          options: this.question_option,
+          time: this.question_time,
+          score: this.question_score
+        });
+      }
+      this.question_time = {
+        mm: "",
+        ss: ""
+      };
+      this.showHour = false;
+      this.question_score = "", this.question_name = "";
       this.question_type = 1;
       this.question_option = [];
+    },
+    editQuestion: function editQuestion(key) {
+      this.question_option = this.questions[key].options;
+      this.question_name = this.questions[key].name;
+      this.question_score = this.questions[key].score;
+      this.question_time = this.questions[key].time;
+      this.isEdit = true;
+      this.edit_key = key;
+    },
+    deleteQuestion: function deleteQuestion(key) {
+      this.questions.splice(key, 1);
+    },
+    onThumbnailSelected: function onThumbnailSelected(e) {
+      var file = e.target.files[0];
+      this.thumbnail = URL.createObjectURL(file);
+    }
+  },
+  watch: {
+    showHour: function showHour() {
+      if (this.showHour) {
+        this.question_time = {
+          hh: "",
+          mm: "",
+          ss: ""
+        };
+      } else {
+        this.question_time = {
+          mm: "",
+          ss: ""
+        };
+      }
     }
   }
 });
@@ -11992,6 +12089,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 
 
 
@@ -12030,35 +12130,54 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   mounted: function mounted() {
     var _this = this;
     return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-      var response;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              _context.prev = 0;
               _this.loading = true;
-              _context.next = 4;
-              return axios.get("".concat(globalBaseUrl, "instructor/profile"));
-            case 4:
-              response = _context.sent;
-              _this.user = response.data.data;
-              _this.loading = false;
-              _context.next = 13;
-              break;
-            case 9:
-              _context.prev = 9;
-              _context.t0 = _context["catch"](0);
-              _this.loading = false;
-              console.log(_context.t0);
-            case 13:
+              _this.getUser();
+            case 2:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[0, 9]]);
+      }, _callee);
     }))();
   },
   methods: {
+    getUser: function getUser() {
+      var _this2 = this;
+      return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+        var response;
+        return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.prev = 0;
+                _context2.next = 3;
+                return axios.get("".concat(globalBaseUrl, "instructor/user_profile"));
+              case 3:
+                response = _context2.sent;
+                _this2.user = response.data.data;
+                _this2.loading = false;
+                _context2.next = 12;
+                break;
+              case 8:
+                _context2.prev = 8;
+                _context2.t0 = _context2["catch"](0);
+                _this2.loading = false;
+                console.log(_context2.t0);
+              case 12:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, null, [[0, 8]]);
+      }))();
+    },
+    profileUpdated: function profileUpdated(user) {
+      this.user = user;
+    },
     toggleLoader: function toggleLoader() {
       this.loading = !this.loading;
     }
@@ -14089,30 +14208,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Setting",
   data: function data() {
     return {
+      user: {},
       full_name: "",
       email: "",
-      bio: ""
+      bio: "",
+      facebook: "",
+      linkedin: "",
+      youtube: "",
+      image: null,
+      file: null
     };
   },
   mounted: function mounted() {
@@ -14126,28 +14235,108 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               _context.prev = 0;
               _this.$emit('toggle-loader');
               _context.next = 4;
-              return axios.get("".concat(globalBaseUrl, "instructor/profile"));
+              return axios.get("".concat(globalBaseUrl, "instructor/user_profile"));
             case 4:
               response = _context.sent;
               user = response.data.data;
+              _this.user = user;
               _this.full_name = user.full_name;
               _this.email = user.email;
               _this.bio = user.biography;
+              _this.facebook = user.facebook == null ? "" : user.facebook;
+              _this.youtube = user.youtube == null ? "" : user.youtube;
+              _this.linkedin = user.linkedin == null ? "" : user.linkedin;
+              _this.image = user.profile_img;
               _this.$emit('toggle-loader');
-              _context.next = 16;
+              _context.next = 21;
               break;
-            case 12:
-              _context.prev = 12;
+            case 17:
+              _context.prev = 17;
               _context.t0 = _context["catch"](0);
               _this.$emit('toggle-loader');
               console.log(_context.t0);
-            case 16:
+            case 21:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[0, 12]]);
+      }, _callee, null, [[0, 17]]);
     }))();
+  },
+  methods: {
+    updateProfile: function updateProfile() {
+      var _this2 = this;
+      if (this.validateInput()) {
+        try {
+          this.$emit("toggle-loader");
+          var formData = new FormData();
+          formData.append('full_name', this.full_name);
+          formData.append('biography', this.bio);
+          if (this.facebook != "") {
+            formData.append('facebook', this.facebook);
+          }
+          if (this.linkedin != "") {
+            formData.append('linkedin', this.linkedin);
+          }
+          if (this.youtube != "") {
+            formData.append('youtube', this.youtube);
+          }
+          if (this.file != null) {
+            formData.append('profile_image', this.file);
+          }
+          axios.post("".concat(globalBaseUrl, "instructor/update_profile"), formData).then(function (response) {
+            if (response.data.status == 200) {
+              Vue.$toast.open({
+                message: response.data.message,
+                type: "success",
+                position: "top-right"
+              });
+              _this2.$emit("profile-updated", response.data.data);
+            }
+            if (response.data.status == 400) {
+              Vue.$toast.open({
+                message: response.data.message,
+                type: "warning",
+                position: "top-right"
+              });
+            }
+            _this2.$emit("toggle-loader");
+          })["catch"](function (e) {
+            _this2.$emit("toggle-loader");
+            Vue.$toast.open({
+              message: "Something Went Wrong",
+              type: "error",
+              position: "top-right"
+            });
+            console.log(e);
+          });
+        } catch (e) {
+          this.$emit('toogle-loader');
+          console.log(e);
+        }
+      }
+    },
+    onImageSelected: function onImageSelected(e) {
+      this.file = e.target.files[0];
+      this.image = URL.createObjectURL(this.file);
+    },
+    validateInput: function validateInput() {
+      if (this.full_name == "") {
+        this.errorToast('Name is Required');
+        return false;
+      } else if (this.bio == "") {
+        this.errorToast("Bio is required");
+        return false;
+      }
+      return true;
+    },
+    errorToast: function errorToast(message) {
+      Vue.$toast.open({
+        type: 'error',
+        message: message,
+        position: 'top-right'
+      });
+    }
   }
 });
 
@@ -19743,7 +19932,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.vue__time-picker input{\r\n    font-size: 14px !important;\r\n    font-weight: 400 !important;\r\n    width: 100% !important; \r\n    border: 1px solid #efefef !important;\r\n    height: 40px !important;\r\n    padding: 0 16px !important;\r\n    background: #fff !important;\r\n    border-radius: 3px !important;\r\n    box-shadow: inset 0px 1px 4px rgb(0 0 0 / 2%) !important;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.vue__time-picker input {\r\n    font-size: 14px !important;\r\n    font-weight: 400 !important;\r\n    width: 100% !important;\r\n    border: 1px solid #efefef !important;\r\n    height: 40px !important;\r\n    padding: 0 16px !important;\r\n    background: #fff !important;\r\n    border-radius: 3px !important;\r\n    box-shadow: inset 0px 1px 4px rgb(0 0 0 / 2%) !important;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -39389,7 +39578,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "sign_footer" }, [
     _c("img", {
-      attrs: { src: _vm.globalBaseUrl + "images/gamify-favicon.png", alt: "" },
+      attrs: { src: _vm.globalBaseUrl + "images/favicon-svg.svg", alt: "" },
     }),
     _vm._v("© 2022\n    "),
     _c("strong", [_vm._v("Gamify US")]),
@@ -39424,7 +39613,7 @@ var render = function () {
       _c("div", [
         _c("img", {
           attrs: {
-            src: _vm.globalBaseUrl + "images/gamify-logo.png",
+            src: _vm.globalBaseUrl + "images/gamify-logo-svg.svg",
             alt: "",
             width: "250",
           },
@@ -44014,7 +44203,8 @@ var render = function () {
                                         callback: function ($$v) {
                                           _vm.category = $$v
                                         },
-                                        expression: "category",
+                                        expression:
+                                          "\n                                                                category\n                                                            ",
                                       },
                                     }),
                                   ],
@@ -44027,7 +44217,129 @@ var render = function () {
                       ]
                     ),
                     _vm._v(" "),
-                    _vm._m(10),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "step-tab-panel step-tab-gallery",
+                        attrs: { id: "tab_step2" },
+                      },
+                      [
+                        _c("div", { staticClass: "tab-from-content" }, [
+                          _vm._m(10),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "curriculum-section" }, [
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-md-12" }, [
+                                _vm._m(11),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "added-section-item mb-30" },
+                                  [
+                                    _c(
+                                      "div",
+                                      { staticClass: "section-group-list" },
+                                      _vm._l(
+                                        _vm.curriculum,
+                                        function (item, key) {
+                                          return _c(
+                                            "div",
+                                            {
+                                              key: "curriculum_" + key + "_",
+                                              staticClass: "section-list-item",
+                                            },
+                                            [
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "section-item-title",
+                                                },
+                                                [
+                                                  _c("i", {
+                                                    staticClass: "fas mr-2",
+                                                    class: [
+                                                      item.type == "assignment"
+                                                        ? "fa-file"
+                                                        : item.type == "quiz"
+                                                        ? "fa-stream"
+                                                        : "fa-clipboard-list",
+                                                    ],
+                                                  }),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "span",
+                                                    {
+                                                      staticClass:
+                                                        "section-item-title-text",
+                                                    },
+                                                    [_vm._v(_vm._s(item.name))]
+                                                  ),
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "button",
+                                                {
+                                                  staticClass:
+                                                    "section-item-tools",
+                                                  attrs: {
+                                                    type: "button",
+                                                    "data-toggle": "modal",
+                                                    "data-target": [
+                                                      item.type == "quiz"
+                                                        ? "#add_quiz_model"
+                                                        : item.type ==
+                                                          "assignment"
+                                                        ? "#add_assignment_model"
+                                                        : "#add_lecture_model",
+                                                    ],
+                                                  },
+                                                },
+                                                [
+                                                  _c("i", {
+                                                    staticClass: "fas fa-edit",
+                                                  }),
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "button",
+                                                {
+                                                  staticClass:
+                                                    "section-item-tools",
+                                                  attrs: { type: "button" },
+                                                  on: {
+                                                    click: function ($event) {
+                                                      return _vm.deleteCurriculum(
+                                                        key
+                                                      )
+                                                    },
+                                                  },
+                                                },
+                                                [
+                                                  _c("i", {
+                                                    staticClass:
+                                                      "fas fa-trash-alt",
+                                                  }),
+                                                ]
+                                              ),
+                                            ]
+                                          )
+                                        }
+                                      ),
+                                      0
+                                    ),
+                                    _vm._v(" "),
+                                    _vm._m(12),
+                                  ]
+                                ),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]
+                    ),
                     _vm._v(" "),
                     _c(
                       "div",
@@ -44037,12 +44349,12 @@ var render = function () {
                       },
                       [
                         _c("div", { staticClass: "tab-from-content" }, [
-                          _vm._m(11),
+                          _vm._m(13),
                           _vm._v(" "),
                           _c("div", { staticClass: "lecture-video-dt mb-30" }, [
                             _c("span", { staticClass: "video-info" }, [
                               _vm._v(
-                                "Video overview\n                                                provider type. (.mp4,\n                                                YouTube)"
+                                "Video overview provider\n                                                type. (.mp4, YouTube)"
                               ),
                             ]),
                             _vm._v(" "),
@@ -44057,7 +44369,12 @@ var render = function () {
                                       expression: "video_type",
                                     },
                                   ],
-                                  attrs: { type: "radio", name: "colorRadio" },
+                                  staticClass: "d-none",
+                                  attrs: {
+                                    type: "radio",
+                                    name: "colorRadio",
+                                    checked: "",
+                                  },
                                   domProps: {
                                     value: "mp4",
                                     checked: _vm._q(_vm.video_type, "mp4"),
@@ -44068,7 +44385,15 @@ var render = function () {
                                     },
                                   },
                                 }),
-                                _c("span", [_vm._v("HTML5(mp4)")]),
+                                _c(
+                                  "span",
+                                  {
+                                    class: [
+                                      _vm.video_type == "mp4" ? "selected" : "",
+                                    ],
+                                  },
+                                  [_vm._v("HTML5(mp4)")]
+                                ),
                               ]),
                               _vm._v(" "),
                               _c("label", [
@@ -44081,6 +44406,7 @@ var render = function () {
                                       expression: "video_type",
                                     },
                                   ],
+                                  staticClass: "d-none",
                                   attrs: { type: "radio", name: "colorRadio" },
                                   domProps: {
                                     value: "url",
@@ -44092,7 +44418,15 @@ var render = function () {
                                     },
                                   },
                                 }),
-                                _c("span", [_vm._v("External URL")]),
+                                _c(
+                                  "span",
+                                  {
+                                    class: [
+                                      _vm.video_type == "url" ? "selected" : "",
+                                    ],
+                                  },
+                                  [_vm._v("External URL")]
+                                ),
                               ]),
                               _vm._v(" "),
                               _c(
@@ -44103,7 +44437,7 @@ var render = function () {
                                     _vm.video_type == "mp4" ? "d-block" : "",
                                   ],
                                 },
-                                [_vm._m(12)]
+                                [_vm._m(14)]
                               ),
                               _vm._v(" "),
                               _c(
@@ -44114,7 +44448,7 @@ var render = function () {
                                     _vm.video_type == "url" ? "d-block" : "",
                                   ],
                                 },
-                                [_vm._m(13)]
+                                [_vm._m(15)]
                               ),
                             ]),
                           ]),
@@ -44136,13 +44470,51 @@ var render = function () {
                                   _c("img", {
                                     attrs: {
                                       src:
-                                        _vm.globalBaseUrl +
-                                        "images/thumbnail-demo.jpg",
+                                        _vm.thumbnail == null
+                                          ? _vm.globalBaseUrl +
+                                            "images/thumbnail-demo.jpg"
+                                          : _vm.thumbnail,
                                       alt: "",
                                     },
                                   }),
                                   _vm._v(" "),
-                                  _vm._m(14),
+                                  _c("div", { staticClass: "thumb-dt" }, [
+                                    _c("div", { staticClass: "upload-btn" }, [
+                                      _c("input", {
+                                        staticClass: "uploadBtn-main-input",
+                                        attrs: {
+                                          type: "file",
+                                          id: "ThumbFile__input--source",
+                                        },
+                                        on: { change: _vm.onThumbnailSelected },
+                                      }),
+                                      _vm._v(" "),
+                                      _c(
+                                        "label",
+                                        {
+                                          attrs: {
+                                            for: "ThumbFile__input--source",
+                                            title: "Zip",
+                                          },
+                                        },
+                                        [
+                                          _vm._v(
+                                            "Choose\n                                                                    Thumbnail"
+                                          ),
+                                        ]
+                                      ),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "span",
+                                      { staticClass: "uploadBtn-main-file" },
+                                      [
+                                        _vm._v(
+                                          "Size:\n                                                                590x300\n                                                                pixels.\n                                                                Supports:\n                                                                jpg,jpeg, or\n                                                                png"
+                                        ),
+                                      ]
+                                    ),
+                                  ]),
                                 ]),
                               ]),
                             ]),
@@ -44151,9 +44523,9 @@ var render = function () {
                       ]
                     ),
                     _vm._v(" "),
-                    _vm._m(15),
-                    _vm._v(" "),
                     _vm._m(16),
+                    _vm._v(" "),
+                    _vm._m(17),
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "step-footer step-tab-pager" }, [
@@ -44161,7 +44533,9 @@ var render = function () {
                       "button",
                       {
                         staticClass: "btn btn-default steps_btn",
-                        attrs: { "data-direction": "prev" },
+                        attrs: {
+                          "data-direction": _vm.validation ? "prev" : "",
+                        },
                       },
                       [
                         _vm._v(
@@ -44174,8 +44548,9 @@ var render = function () {
                       "button",
                       {
                         staticClass: "btn btn-default steps_btn",
-                        attrs: { "data-direction": "next" },
-                        on: { click: _vm.setSteps },
+                        attrs: {
+                          "data-direction": _vm.validation ? "next" : "",
+                        },
                       },
                       [
                         _vm._v(
@@ -44205,9 +44580,60 @@ var render = function () {
       ]),
     ]),
     _vm._v(" "),
-    _vm._m(17),
-    _vm._v(" "),
-    _vm._m(18),
+    _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        attrs: {
+          id: "add_lecture_model",
+          tabindex: "-1",
+          "aria-labelledby": "lectureModalLabel",
+          "aria-hidden": "true",
+        },
+      },
+      [
+        _c("div", { staticClass: "modal-dialog modal-lg" }, [
+          _c("div", { staticClass: "modal-content" }, [
+            _vm._m(18),
+            _vm._v(" "),
+            _vm._m(19),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-footer" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "main-btn cancel",
+                  attrs: { type: "button", "data-dismiss": "modal" },
+                },
+                [
+                  _vm._v(
+                    "\n                        Close\n                    "
+                  ),
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "main-btn",
+                  attrs: { type: "button", "data-dismiss": "modal" },
+                  on: {
+                    click: function ($event) {
+                      return _vm.addCurriculum("lecture", "Lecture")
+                    },
+                  },
+                },
+                [
+                  _vm._v(
+                    "\n                        Add Lecture\n                    "
+                  ),
+                ]
+              ),
+            ]),
+          ]),
+        ]),
+      ]
+    ),
     _vm._v(" "),
     _c(
       "div",
@@ -44223,14 +44649,14 @@ var render = function () {
       [
         _c("div", { staticClass: "modal-dialog modal-lg" }, [
           _c("div", { staticClass: "modal-content" }, [
-            _vm._m(19),
+            _vm._m(20),
             _vm._v(" "),
             _c("div", { staticClass: "modal-body" }, [
               _c("div", { staticClass: "new-section-block" }, [
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-md-12" }, [
                     _c("div", { staticClass: "course-main-tabs" }, [
-                      _vm._m(20),
+                      _vm._m(21),
                       _vm._v(" "),
                       _c("div", { staticClass: "tab-content" }, [
                         _c(
@@ -44245,7 +44671,7 @@ var render = function () {
                               { staticClass: "lecture-video-dt mt-30" },
                               [
                                 _c("div", { staticClass: "add-ques-dt" }, [
-                                  _vm._m(21),
+                                  _vm._m(22),
                                   _vm._v(" "),
                                   _c(
                                     "div",
@@ -44282,9 +44708,10 @@ var render = function () {
                                                       rawName: "v-model",
                                                       value: _vm.question_type,
                                                       expression:
-                                                        "question_type",
+                                                        "\n                                                                            question_type\n                                                                        ",
                                                     },
                                                   ],
+                                                  staticClass: "d-none",
                                                   attrs: {
                                                     type: "radio",
                                                     name: "colorRadio",
@@ -44302,7 +44729,7 @@ var render = function () {
                                                     },
                                                   },
                                                 }),
-                                                _vm._m(22),
+                                                _vm._m(23),
                                               ]),
                                               _vm._v(" "),
                                               _c("label", [
@@ -44313,9 +44740,10 @@ var render = function () {
                                                       rawName: "v-model",
                                                       value: _vm.question_type,
                                                       expression:
-                                                        "question_type",
+                                                        "\n                                                                            question_type\n                                                                        ",
                                                     },
                                                   ],
+                                                  staticClass: "d-none",
                                                   attrs: {
                                                     type: "radio",
                                                     name: "colorRadio",
@@ -44333,7 +44761,7 @@ var render = function () {
                                                     },
                                                   },
                                                 }),
-                                                _vm._m(23),
+                                                _vm._m(24),
                                               ]),
                                               _vm._v(" "),
                                               _vm.question_type == 1
@@ -44396,7 +44824,7 @@ var render = function () {
                                                                                 value:
                                                                                   _vm.question_name,
                                                                                 expression:
-                                                                                  "question_name",
+                                                                                  "\n                                                                                            question_name\n                                                                                        ",
                                                                               },
                                                                             ],
                                                                           staticClass:
@@ -44476,10 +44904,28 @@ var render = function () {
                                                                             {
                                                                               attrs:
                                                                                 {
+                                                                                  "manual-input":
+                                                                                    "",
+                                                                                  "hide-dropdown":
+                                                                                    "",
                                                                                   format:
                                                                                     _vm.showHour
                                                                                       ? "hh:mm:ss"
                                                                                       : "mm:ss",
+                                                                                },
+                                                                              model:
+                                                                                {
+                                                                                  value:
+                                                                                    _vm.question_time,
+                                                                                  callback:
+                                                                                    function (
+                                                                                      $$v
+                                                                                    ) {
+                                                                                      _vm.question_time =
+                                                                                        $$v
+                                                                                    },
+                                                                                  expression:
+                                                                                    "\n                                                                                                question_time\n                                                                                            ",
                                                                                 },
                                                                             }
                                                                           ),
@@ -44498,7 +44944,7 @@ var render = function () {
                                                                                     value:
                                                                                       _vm.showHour,
                                                                                     expression:
-                                                                                      "showHour",
+                                                                                      "\n                                                                                                showHour\n                                                                                            ",
                                                                                   },
                                                                                 ],
                                                                               staticClass:
@@ -44591,7 +45037,7 @@ var render = function () {
                                                                             },
                                                                             [
                                                                               _vm._v(
-                                                                                "Time"
+                                                                                "Hour"
                                                                               ),
                                                                             ]
                                                                           ),
@@ -44603,9 +45049,87 @@ var render = function () {
                                                                 ]
                                                               ),
                                                               _vm._v(" "),
-                                                              _vm._m(24),
-                                                              _vm._v(" "),
                                                               _vm._m(25),
+                                                              _vm._v(" "),
+                                                              _c(
+                                                                "div",
+                                                                {
+                                                                  staticClass:
+                                                                    "col-lg-3 col-md-6",
+                                                                },
+                                                                [
+                                                                  _c(
+                                                                    "div",
+                                                                    {
+                                                                      staticClass:
+                                                                        "form_group mt-30",
+                                                                    },
+                                                                    [
+                                                                      _c(
+                                                                        "label",
+                                                                        {
+                                                                          staticClass:
+                                                                            "label25 text-left",
+                                                                        },
+                                                                        [
+                                                                          _vm._v(
+                                                                            "Score*"
+                                                                          ),
+                                                                        ]
+                                                                      ),
+                                                                      _vm._v(
+                                                                        " "
+                                                                      ),
+                                                                      _c(
+                                                                        "input",
+                                                                        {
+                                                                          directives:
+                                                                            [
+                                                                              {
+                                                                                name: "model",
+                                                                                rawName:
+                                                                                  "v-model",
+                                                                                value:
+                                                                                  _vm.question_score,
+                                                                                expression:
+                                                                                  "\n                                                                                            question_score\n                                                                                        ",
+                                                                              },
+                                                                            ],
+                                                                          staticClass:
+                                                                            "form_input_1",
+                                                                          attrs:
+                                                                            {
+                                                                              type: "number",
+                                                                              placeholder:
+                                                                                "Score",
+                                                                            },
+                                                                          domProps:
+                                                                            {
+                                                                              value:
+                                                                                _vm.question_score,
+                                                                            },
+                                                                          on: {
+                                                                            input:
+                                                                              function (
+                                                                                $event
+                                                                              ) {
+                                                                                if (
+                                                                                  $event
+                                                                                    .target
+                                                                                    .composing
+                                                                                ) {
+                                                                                  return
+                                                                                }
+                                                                                _vm.question_score =
+                                                                                  $event.target.value
+                                                                              },
+                                                                          },
+                                                                        }
+                                                                      ),
+                                                                    ]
+                                                                  ),
+                                                                ]
+                                                              ),
                                                             ]
                                                           ),
                                                         ]
@@ -44772,7 +45296,7 @@ var render = function () {
                                                                                           value:
                                                                                             option.name,
                                                                                           expression:
-                                                                                            "option.name",
+                                                                                            "\n                                                                                                    option.name\n                                                                                                ",
                                                                                         },
                                                                                       ],
                                                                                     staticClass:
@@ -44835,7 +45359,7 @@ var render = function () {
                                                                                           value:
                                                                                             option.isCorrect,
                                                                                           expression:
-                                                                                            "option.isCorrect",
+                                                                                            "\n                                                                                                    option.isCorrect\n                                                                                                ",
                                                                                         },
                                                                                       ],
                                                                                     attrs:
@@ -44969,7 +45493,118 @@ var render = function () {
                                                 ? _c(
                                                     "div",
                                                     { staticClass: "sline" },
-                                                    [_vm._m(26)]
+                                                    [
+                                                      _c(
+                                                        "div",
+                                                        {
+                                                          staticClass:
+                                                            "ques-box",
+                                                        },
+                                                        [
+                                                          _c(
+                                                            "div",
+                                                            {
+                                                              staticClass:
+                                                                "row",
+                                                            },
+                                                            [
+                                                              _c(
+                                                                "div",
+                                                                {
+                                                                  staticClass:
+                                                                    "col-lg-2 col-md-2",
+                                                                },
+                                                                [
+                                                                  _c(
+                                                                    "div",
+                                                                    {
+                                                                      staticClass:
+                                                                        "form_group mt-30",
+                                                                    },
+                                                                    [
+                                                                      _c(
+                                                                        "label",
+                                                                        {
+                                                                          staticClass:
+                                                                            "label25 text-left",
+                                                                        },
+                                                                        [
+                                                                          _vm._v(
+                                                                            "Image*"
+                                                                          ),
+                                                                        ]
+                                                                      ),
+                                                                      _vm._v(
+                                                                        " "
+                                                                      ),
+                                                                      _c(
+                                                                        "div",
+                                                                        {
+                                                                          staticClass:
+                                                                            "upload-thumb",
+                                                                        },
+                                                                        [
+                                                                          _c(
+                                                                            "input",
+                                                                            {
+                                                                              staticClass:
+                                                                                "uploadBtn-input-preview",
+                                                                              attrs:
+                                                                                {
+                                                                                  type: "file",
+                                                                                  accept:
+                                                                                    "image/png",
+                                                                                  id: "thumbnail_source2",
+                                                                                },
+                                                                            }
+                                                                          ),
+                                                                          _vm._v(
+                                                                            " "
+                                                                          ),
+                                                                          _c(
+                                                                            "label",
+                                                                            {
+                                                                              staticClass:
+                                                                                "mx-0 my-0",
+                                                                              attrs:
+                                                                                {
+                                                                                  for: "thumbnail_source2",
+                                                                                  title:
+                                                                                    "Image",
+                                                                                },
+                                                                            },
+                                                                            [
+                                                                              _c(
+                                                                                "img",
+                                                                                {
+                                                                                  staticClass:
+                                                                                    "img-thumbnail",
+                                                                                  attrs:
+                                                                                    {
+                                                                                      src:
+                                                                                        _vm.globalAssetUrl +
+                                                                                        "images/placeholder-image.png",
+                                                                                      alt: "",
+                                                                                    },
+                                                                                }
+                                                                              ),
+                                                                            ]
+                                                                          ),
+                                                                        ]
+                                                                      ),
+                                                                    ]
+                                                                  ),
+                                                                ]
+                                                              ),
+                                                              _vm._v(" "),
+                                                              _vm._m(26),
+                                                              _vm._v(" "),
+                                                              _vm._m(27),
+                                                            ]
+                                                          ),
+                                                        ]
+                                                      ),
+                                                    ]
                                                   )
                                                 : _vm._e(),
                                             ]
@@ -45001,7 +45636,13 @@ var render = function () {
                                                 staticClass: "fas fa-save mr-2",
                                               }),
                                               _vm._v(
-                                                "Save\n                                                                Question\n                                                            "
+                                                "\n                                                                " +
+                                                  _vm._s(
+                                                    _vm.isEdit
+                                                      ? "Edit Question"
+                                                      : "Save Question"
+                                                  ) +
+                                                  "\n                                                            "
                                               ),
                                             ]
                                           ),
@@ -45015,7 +45656,7 @@ var render = function () {
                                       "div",
                                       {
                                         staticClass:
-                                          "section-group-list pl-0 pr-0 sortable",
+                                          "section-group-list pl-0 pr-0",
                                       },
                                       _vm._l(
                                         _vm.questions,
@@ -45054,11 +45695,48 @@ var render = function () {
                                                 ]
                                               ),
                                               _vm._v(" "),
-                                              _vm._m(27, true),
+                                              _c(
+                                                "button",
+                                                {
+                                                  staticClass:
+                                                    "section-item-tools",
+                                                  attrs: { type: "button" },
+                                                },
+                                                [
+                                                  _c("i", {
+                                                    staticClass: "fas fa-edit",
+                                                    on: {
+                                                      click: function ($event) {
+                                                        return _vm.editQuestion(
+                                                          key
+                                                        )
+                                                      },
+                                                    },
+                                                  }),
+                                                ]
+                                              ),
                                               _vm._v(" "),
-                                              _vm._m(28, true),
-                                              _vm._v(" "),
-                                              _vm._m(29, true),
+                                              _c(
+                                                "button",
+                                                {
+                                                  staticClass:
+                                                    "section-item-tools",
+                                                  attrs: { type: "button" },
+                                                },
+                                                [
+                                                  _c("i", {
+                                                    staticClass:
+                                                      "fas fa-trash-alt",
+                                                    on: {
+                                                      click: function ($event) {
+                                                        return _vm.deleteQuestion(
+                                                          key
+                                                        )
+                                                      },
+                                                    },
+                                                  }),
+                                                ]
+                                              ),
                                             ]
                                           )
                                         }
@@ -45072,7 +45750,7 @@ var render = function () {
                           ]
                         ),
                         _vm._v(" "),
-                        _vm._m(30),
+                        _vm._m(28),
                       ]),
                     ]),
                   ]),
@@ -45080,13 +45758,97 @@ var render = function () {
               ]),
             ]),
             _vm._v(" "),
-            _vm._m(31),
+            _c("div", { staticClass: "modal-footer" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "main-btn cancel",
+                  attrs: { type: "button", "data-dismiss": "modal" },
+                },
+                [
+                  _vm._v(
+                    "\n                        Close\n                    "
+                  ),
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "main-btn",
+                  attrs: { type: "button", "data-dismiss": "modal" },
+                  on: {
+                    click: function ($event) {
+                      return _vm.addCurriculum("quiz", "Quiz")
+                    },
+                  },
+                },
+                [
+                  _vm._v(
+                    "\n                        Add Quiz\n                    "
+                  ),
+                ]
+              ),
+            ]),
           ]),
         ]),
       ]
     ),
     _vm._v(" "),
-    _vm._m(32),
+    _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        attrs: {
+          id: "add_assignment_model",
+          tabindex: "-1",
+          "aria-labelledby": "lectureModalLabel",
+          "aria-hidden": "true",
+        },
+      },
+      [
+        _c("div", { staticClass: "modal-dialog modal-lg" }, [
+          _c("div", { staticClass: "modal-content" }, [
+            _vm._m(29),
+            _vm._v(" "),
+            _vm._m(30),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-footer" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "main-btn cancel",
+                  attrs: { type: "button", "data-dismiss": "modal" },
+                },
+                [
+                  _vm._v(
+                    "\n                        Close\n                    "
+                  ),
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "main-btn",
+                  attrs: { type: "button", "data-dismiss": "modal" },
+                  on: {
+                    click: function ($event) {
+                      return _vm.addCurriculum("assignment", "Assignment")
+                    },
+                  },
+                },
+                [
+                  _vm._v(
+                    "\n                        Add Assignment\n                    "
+                  ),
+                ]
+              ),
+            ]),
+          ]),
+        ]),
+      ]
+    ),
   ])
 }
 var staticRenderFns = [
@@ -45098,7 +45860,9 @@ var staticRenderFns = [
       _c("div", { staticClass: "col-lg-12" }, [
         _c("h2", { staticClass: "st_title" }, [
           _c("i", { staticClass: "uil uil-video" }),
-          _vm._v(" Create new interactive video\n                    "),
+          _vm._v(
+            " Create new interactive\n                        video\n                    "
+          ),
         ]),
       ]),
     ])
@@ -45343,95 +46107,79 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "step-tab-panel step-tab-gallery",
-        attrs: { id: "tab_step2" },
-      },
-      [
-        _c("div", { staticClass: "tab-from-content" }, [
-          _c("div", { staticClass: "title-icon" }, [
-            _c("h3", { staticClass: "title" }, [
-              _c("i", { staticClass: "uil uil-notebooks" }),
-              _vm._v(
-                "Curriculum\n                                            "
-              ),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "curriculum-section" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-12" }, [
-                _c("div", { staticClass: "curriculum-add-item" }, [
-                  _c("h4", { staticClass: "section-title mt-0" }, [
-                    _c("i", { staticClass: "fas fa-th-list mr-2" }),
-                    _vm._v(
-                      "Curriculum\n                                                        "
-                    ),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "added-section-item mb-30" }, [
-                  _c("div", { staticClass: "section-add-item-wrap p-3" }, [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "add_lecture",
-                        attrs: {
-                          "data-toggle": "modal",
-                          "data-target": "#add_lecture_model",
-                        },
-                      },
-                      [
-                        _c("i", { staticClass: "far fa-plus-square mr-2" }),
-                        _vm._v(
-                          "Lecture\n                                                            "
-                        ),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "add_quiz",
-                        attrs: {
-                          "data-toggle": "modal",
-                          "data-target": "#add_quiz_model",
-                        },
-                      },
-                      [
-                        _c("i", { staticClass: "far fa-plus-square mr-2" }),
-                        _vm._v(
-                          "Quiz\n                                                            "
-                        ),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "add_assignment",
-                        attrs: {
-                          "data-toggle": "modal",
-                          "data-target": "#add_assignment_model",
-                        },
-                      },
-                      [
-                        _c("i", { staticClass: "far fa-plus-square mr-2" }),
-                        _vm._v(
-                          "Assignment\n                                                            "
-                        ),
-                      ]
-                    ),
-                  ]),
-                ]),
-              ]),
-            ]),
-          ]),
-        ]),
-      ]
-    )
+    return _c("div", { staticClass: "title-icon" }, [
+      _c("h3", { staticClass: "title" }, [
+        _c("i", { staticClass: "uil uil-notebooks" }),
+        _vm._v("Curriculum\n                                            "),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "curriculum-add-item" }, [
+      _c("h4", { staticClass: "section-title mt-0" }, [
+        _c("i", { staticClass: "fas fa-th-list mr-2" }),
+        _vm._v(
+          "Curriculum\n                                                        "
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "section-add-item-wrap p-3" }, [
+      _c(
+        "button",
+        {
+          staticClass: "add_lecture",
+          attrs: {
+            "data-toggle": "modal",
+            "data-target": "#add_lecture_model",
+          },
+        },
+        [
+          _c("i", { staticClass: "far fa-plus-square mr-2" }),
+          _vm._v(
+            "Lecture\n                                                            "
+          ),
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "add_quiz",
+          attrs: { "data-toggle": "modal", "data-target": "#add_quiz_model" },
+        },
+        [
+          _c("i", { staticClass: "far fa-plus-square mr-2" }),
+          _vm._v(
+            "Quiz\n                                                            "
+          ),
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "add_assignment",
+          attrs: {
+            "data-toggle": "modal",
+            "data-target": "#add_assignment_model",
+          },
+        },
+        [
+          _c("i", { staticClass: "far fa-plus-square mr-2" }),
+          _vm._v(
+            "Assignment\n                                                            "
+          ),
+        ]
+      ),
+    ])
   },
   function () {
     var _vm = this
@@ -45503,35 +46251,6 @@ var staticRenderFns = [
             },
           }),
         ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "thumb-dt" }, [
-      _c("div", { staticClass: "upload-btn" }, [
-        _c("input", {
-          staticClass: "uploadBtn-main-input",
-          attrs: { type: "file", id: "ThumbFile__input--source" },
-        }),
-        _vm._v(" "),
-        _c(
-          "label",
-          { attrs: { for: "ThumbFile__input--source", title: "Zip" } },
-          [
-            _vm._v(
-              "Choose\n                                                                    Thumbnail"
-            ),
-          ]
-        ),
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "uploadBtn-main-file" }, [
-        _vm._v(
-          "Size:\n                                                                590x300\n                                                                pixels.\n                                                                Supports:\n                                                                jpg,jpeg, or\n                                                                png"
-        ),
       ]),
     ])
   },
@@ -45813,7 +46532,11 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("p", [
             _vm._v(
-              "\n                                            Your course is in a draft state.\n                                            Students cannot view, purchase\n                                            or enroll in this course. For\n                                            students that are already\n                                            enrolled, this course will not\n                                            appear on their student\n                                            Dashboard.\n                                        "
+              "\n                                            Your course is in a draft state.\n                                            Students cannot view or take this course. \n                                            "
+            ),
+            _c("br"),
+            _vm._v(
+              "\n                                            Course will appear on students dashboard once it is approved.\n                                        "
             ),
           ]),
         ]),
@@ -45824,459 +46547,176 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "modal fade",
-        attrs: {
-          id: "add_section_model",
-          tabindex: "-1",
-          "aria-labelledby": "lectureModalLabel",
-          "aria-hidden": "true",
+    return _c("div", { staticClass: "modal-header" }, [
+      _c(
+        "h5",
+        { staticClass: "modal-title", attrs: { id: "lectureModalLabel" } },
+        [_vm._v("\n                        Add Lecture\n                    ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close",
+          },
         },
-      },
-      [
-        _c("div", { staticClass: "modal-dialog modal-lg" }, [
-          _c("div", { staticClass: "modal-content" }, [
-            _c("div", { staticClass: "modal-header" }, [
-              _c(
-                "h5",
-                {
-                  staticClass: "modal-title",
-                  attrs: { id: "lectureModalLabel" },
-                },
-                [
-                  _vm._v(
-                    "\n                        New Section\n                    "
-                  ),
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "close",
-                  attrs: {
-                    type: "button",
-                    "data-dismiss": "modal",
-                    "aria-label": "Close",
-                  },
-                },
-                [
-                  _c("span", { attrs: { "aria-hidden": "true" } }, [
-                    _vm._v("×"),
-                  ]),
-                ]
-              ),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-body" }, [
-              _c("div", { staticClass: "new-section-block" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "new-section" }, [
-                      _c("div", { staticClass: "form_group" }, [
-                        _c("label", { staticClass: "label25" }, [
-                          _vm._v("Section Name*"),
-                        ]),
-                        _vm._v(" "),
-                        _c("input", {
-                          staticClass: "form_input_1",
-                          attrs: {
-                            type: "text",
-                            placeholder: "Section title here",
-                          },
-                        }),
-                      ]),
-                    ]),
-                  ]),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-footer" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "main-btn cancel",
-                  attrs: { type: "button", "data-dismiss": "modal" },
-                },
-                [
-                  _vm._v(
-                    "\n                        Close\n                    "
-                  ),
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "main-btn", attrs: { type: "button" } },
-                [
-                  _vm._v(
-                    "\n                        Add Section\n                    "
-                  ),
-                ]
-              ),
-            ]),
-          ]),
-        ]),
-      ]
-    )
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      ),
+    ])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "modal fade",
-        attrs: {
-          id: "add_lecture_model",
-          tabindex: "-1",
-          "aria-labelledby": "lectureModalLabel",
-          "aria-hidden": "true",
-        },
-      },
-      [
-        _c("div", { staticClass: "modal-dialog modal-lg" }, [
-          _c("div", { staticClass: "modal-content" }, [
-            _c("div", { staticClass: "modal-header" }, [
+    return _c("div", { staticClass: "modal-body" }, [
+      _c("div", { staticClass: "new-section-block" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", { staticClass: "course-main-tabs" }, [
               _c(
-                "h5",
+                "div",
                 {
-                  staticClass: "modal-title",
-                  attrs: { id: "lectureModalLabel" },
+                  staticClass: "nav nav-pills flex-column flex-sm-row nav-tabs",
+                  attrs: { role: "tablist" },
                 },
                 [
-                  _vm._v(
-                    "\n                        Add Lecture\n                    "
+                  _c(
+                    "a",
+                    {
+                      staticClass:
+                        "flex-sm-fill text-sm-center nav-link active",
+                      attrs: {
+                        "data-toggle": "tab",
+                        href: "#nav-basic",
+                        role: "tab",
+                        "aria-selected": "true",
+                      },
+                    },
+                    [
+                      _c("i", { staticClass: "fas fa-file-alt mr-2" }),
+                      _vm._v("Basic"),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "flex-sm-fill text-sm-center nav-link",
+                      attrs: {
+                        "data-toggle": "tab",
+                        href: "#nav-attachment",
+                        role: "tab",
+                        "aria-selected": "false",
+                      },
+                    },
+                    [
+                      _c("i", { staticClass: "fas fa-paperclip mr-2" }),
+                      _vm._v("Attachments"),
+                    ]
                   ),
                 ]
               ),
               _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "close",
-                  attrs: {
-                    type: "button",
-                    "data-dismiss": "modal",
-                    "aria-label": "Close",
+              _c("div", { staticClass: "tab-content" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "tab-pane fade show active",
+                    attrs: { id: "nav-basic", role: "tabpanel" },
                   },
-                },
-                [
-                  _c("span", { attrs: { "aria-hidden": "true" } }, [
-                    _vm._v("×"),
-                  ]),
-                ]
-              ),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-body" }, [
-              _c("div", { staticClass: "new-section-block" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "course-main-tabs" }, [
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "nav nav-pills flex-column flex-sm-row nav-tabs",
-                          attrs: { role: "tablist" },
-                        },
-                        [
-                          _c(
-                            "a",
-                            {
-                              staticClass:
-                                "flex-sm-fill text-sm-center nav-link active",
-                              attrs: {
-                                "data-toggle": "tab",
-                                href: "#nav-basic",
-                                role: "tab",
-                                "aria-selected": "true",
-                              },
-                            },
-                            [
-                              _c("i", { staticClass: "fas fa-file-alt mr-2" }),
-                              _vm._v("Basic"),
-                            ]
+                  [
+                    _c("div", { staticClass: "new-section mt-30" }, [
+                      _c("div", { staticClass: "form_group" }, [
+                        _c("label", { staticClass: "label25" }, [
+                          _vm._v(
+                            "Lecture\n                                                        Title*"
                           ),
-                          _vm._v(" "),
-                          _c(
-                            "a",
-                            {
-                              staticClass:
-                                "flex-sm-fill text-sm-center nav-link",
-                              attrs: {
-                                "data-toggle": "tab",
-                                href: "#nav-attachment",
-                                role: "tab",
-                                "aria-selected": "false",
-                              },
-                            },
-                            [
-                              _c("i", { staticClass: "fas fa-paperclip mr-2" }),
-                              _vm._v("Attachments"),
-                            ]
-                          ),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "tab-content" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass: "tab-pane fade show active",
-                            attrs: { id: "nav-basic", role: "tabpanel" },
-                          },
-                          [
-                            _c("div", { staticClass: "new-section mt-30" }, [
-                              _c("div", { staticClass: "form_group" }, [
-                                _c("label", { staticClass: "label25" }, [
-                                  _vm._v(
-                                    "Lecture\n                                                        Title*"
-                                  ),
-                                ]),
-                                _vm._v(" "),
-                                _c("input", {
-                                  staticClass: "form_input_1",
-                                  attrs: {
-                                    type: "text",
-                                    placeholder: "Title here",
-                                  },
-                                }),
-                              ]),
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "ui search focus lbel25 mt-30" },
-                              [
-                                _c("label", [_vm._v("Description*")]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "ui form swdh30" }, [
-                                  _c("div", { staticClass: "field" }, [
-                                    _c("textarea", {
-                                      attrs: {
-                                        rows: "3",
-                                        name: "description",
-                                        id: "",
-                                        placeholder: "description here...",
-                                      },
-                                    }),
-                                  ]),
-                                ]),
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "preview-dt" }, [
-                              _c("span", { staticClass: "title-875" }, [
-                                _vm._v("Free Preview"),
-                              ]),
-                              _vm._v(" "),
-                              _c("label", { staticClass: "switch" }, [
-                                _c("input", {
-                                  attrs: {
-                                    type: "checkbox",
-                                    name: "preview_op",
-                                    value: "",
-                                  },
-                                }),
-                                _vm._v(" "),
-                                _c("span"),
-                              ]),
-                            ]),
-                          ]
-                        ),
+                        ]),
                         _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "tab-pane fade",
-                            attrs: { id: "nav-attachment", role: "tabpanel" },
-                          },
-                          [
-                            _c("div", { staticClass: "row" }, [
-                              _c("div", { staticClass: "col-lg-12" }, [
-                                _c(
-                                  "div",
-                                  { staticClass: "upload-file-dt mt-30" },
-                                  [
-                                    _c("div", { staticClass: "upload-btn" }, [
-                                      _c("input", {
-                                        staticClass: "uploadBtn-main-input",
-                                        attrs: {
-                                          type: "file",
-                                          id: "SourceFile__input--source",
-                                        },
-                                      }),
-                                      _vm._v(" "),
-                                      _c(
-                                        "label",
-                                        {
-                                          attrs: {
-                                            for: "SourceFile__input--source",
-                                            title: "Zip",
-                                          },
-                                        },
-                                        [
-                                          _c("i", {
-                                            staticClass:
-                                              "far fa-plus-square mr-2",
-                                          }),
-                                          _vm._v("Attachment"),
-                                        ]
-                                      ),
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "span",
-                                      { staticClass: "uploadBtn-main-file" },
-                                      [
-                                        _vm._v(
-                                          "Supports: jpg,\n                                                            jpeg, png, pdf\n                                                            or .zip"
-                                        ),
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "add-attachments-dt" },
-                                      [
-                                        _c(
-                                          "div",
-                                          { staticClass: "attachment-items" },
-                                          [
-                                            _c(
-                                              "div",
-                                              { staticClass: "attachment_id" },
-                                              [
-                                                _vm._v(
-                                                  "\n                                                                    Uploaded\n                                                                    ID: 12\n                                                                "
-                                                ),
-                                              ]
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "button",
-                                              {
-                                                staticClass: "cancel-btn",
-                                                attrs: { type: "button" },
-                                              },
-                                              [
-                                                _c("i", {
-                                                  staticClass:
-                                                    "fas fa-trash-alt",
-                                                }),
-                                              ]
-                                            ),
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          { staticClass: "attachment-items" },
-                                          [
-                                            _c(
-                                              "div",
-                                              { staticClass: "attachment_id" },
-                                              [
-                                                _vm._v(
-                                                  "\n                                                                    Uploaded\n                                                                    ID: 13\n                                                                "
-                                                ),
-                                              ]
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "button",
-                                              {
-                                                staticClass: "cancel-btn",
-                                                attrs: { type: "button" },
-                                              },
-                                              [
-                                                _c("i", {
-                                                  staticClass:
-                                                    "fas fa-trash-alt",
-                                                }),
-                                              ]
-                                            ),
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          { staticClass: "attachment-items" },
-                                          [
-                                            _c(
-                                              "div",
-                                              { staticClass: "attachment_id" },
-                                              [
-                                                _vm._v(
-                                                  "\n                                                                    Uploaded\n                                                                    ID: 14\n                                                                "
-                                                ),
-                                              ]
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "button",
-                                              {
-                                                staticClass: "cancel-btn",
-                                                attrs: { type: "button" },
-                                              },
-                                              [
-                                                _c("i", {
-                                                  staticClass:
-                                                    "fas fa-trash-alt",
-                                                }),
-                                              ]
-                                            ),
-                                          ]
-                                        ),
-                                      ]
-                                    ),
-                                  ]
-                                ),
-                              ]),
-                            ]),
-                          ]
-                        ),
+                        _c("input", {
+                          staticClass: "form_input_1",
+                          attrs: { type: "text", placeholder: "Title here" },
+                        }),
                       ]),
                     ]),
-                  ]),
-                ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "ui search focus lbel25 mt-30" }, [
+                      _c("label", [_vm._v("Description*")]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "ui form swdh30" }, [
+                        _c("div", { staticClass: "field" }, [
+                          _c("textarea", {
+                            attrs: {
+                              rows: "3",
+                              name: "description",
+                              id: "",
+                              placeholder: "description here...",
+                            },
+                          }),
+                        ]),
+                      ]),
+                    ]),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "tab-pane fade",
+                    attrs: { id: "nav-attachment", role: "tabpanel" },
+                  },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-lg-12" }, [
+                        _c("div", { staticClass: "upload-file-dt mt-30" }, [
+                          _c("div", { staticClass: "upload-btn" }, [
+                            _c("input", {
+                              staticClass: "uploadBtn-main-input",
+                              attrs: {
+                                type: "file",
+                                id: "SourceFile__input--source",
+                              },
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "label",
+                              {
+                                attrs: {
+                                  for: "SourceFile__input--source",
+                                  title: "Zip",
+                                },
+                              },
+                              [
+                                _c("i", {
+                                  staticClass: "far fa-plus-square mr-2",
+                                }),
+                                _vm._v("Attachment"),
+                              ]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "uploadBtn-main-file" }, [
+                            _vm._v(
+                              "Supports: jpg,\n                                                            jpeg, png, pdf\n                                                            or .zip"
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "add-attachments-dt" }),
+                        ]),
+                      ]),
+                    ]),
+                  ]
+                ),
               ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-footer" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "main-btn cancel",
-                  attrs: { type: "button", "data-dismiss": "modal" },
-                },
-                [
-                  _vm._v(
-                    "\n                        Close\n                    "
-                  ),
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "main-btn", attrs: { type: "button" } },
-                [
-                  _vm._v(
-                    "\n                        Add Lecture\n                    "
-                  ),
-                ]
-              ),
             ]),
           ]),
         ]),
-      ]
-    )
+      ]),
+    ])
   },
   function () {
     var _vm = this
@@ -46403,7 +46843,26 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-lg-3 col-md-6" }, [
+    return _c("div", { staticClass: "col-lg-7 col-md-9" }, [
+      _c("div", { staticClass: "form_group mt-30" }, [
+        _c("label", { staticClass: "label25 text-left" }, [
+          _vm._v(
+            "Question\n                                                                                        Title*"
+          ),
+        ]),
+        _vm._v(" "),
+        _c("input", {
+          staticClass: "form_input_1",
+          attrs: { type: "text", placeholder: "Write question title" },
+        }),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-lg-3 col-md-12" }, [
       _c("div", { staticClass: "form_group mt-30" }, [
         _c("label", { staticClass: "label25 text-left" }, [_vm._v("Score*")]),
         _vm._v(" "),
@@ -46413,105 +46872,6 @@ var staticRenderFns = [
         }),
       ]),
     ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "ques-box" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-2 col-md-2" }, [
-          _c("div", { staticClass: "form_group mt-30" }, [
-            _c("label", { staticClass: "label25 text-left" }, [
-              _vm._v("Image*"),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "upload-thumb" }, [
-              _c("input", {
-                staticClass: "uploadBtn-input-preview",
-                attrs: {
-                  type: "file",
-                  accept: "image/png",
-                  id: "thumbnail_source2",
-                },
-              }),
-              _vm._v(" "),
-              _c(
-                "label",
-                {
-                  staticClass: "mx-0 my-0",
-                  attrs: { for: "thumbnail_source2", title: "Image" },
-                },
-                [
-                  _c("img", {
-                    staticClass: "img-thumbnail",
-                    attrs: { src: "images/placeholder-image.png", alt: "" },
-                  }),
-                ]
-              ),
-            ]),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-7 col-md-9" }, [
-          _c("div", { staticClass: "form_group mt-30" }, [
-            _c("label", { staticClass: "label25 text-left" }, [
-              _vm._v(
-                "Question\n                                                                                        Title*"
-              ),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form_input_1",
-              attrs: { type: "text", placeholder: "Write question title" },
-            }),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-3 col-md-12" }, [
-          _c("div", { staticClass: "form_group mt-30" }, [
-            _c("label", { staticClass: "label25 text-left" }, [
-              _vm._v("Score*"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form_input_1",
-              attrs: { type: "number", placeholder: "Score" },
-            }),
-          ]),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      { staticClass: "section-item-tools", attrs: { type: "button" } },
-      [_c("i", { staticClass: "fas fa-edit" })]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      { staticClass: "section-item-tools", attrs: { type: "button" } },
-      [_c("i", { staticClass: "fas fa-trash-alt" })]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      { staticClass: "section-item-tools ml-auto", attrs: { type: "button" } },
-      [_c("i", { staticClass: "fas fa-bars" })]
-    )
   },
   function () {
     var _vm = this
@@ -46671,366 +47031,246 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-footer" }, [
+    return _c("div", { staticClass: "modal-header" }, [
+      _c(
+        "h5",
+        { staticClass: "modal-title", attrs: { id: "lectureModalLabel" } },
+        [
+          _vm._v(
+            "\n                        Add Assignment\n                    "
+          ),
+        ]
+      ),
+      _vm._v(" "),
       _c(
         "button",
         {
-          staticClass: "main-btn cancel",
-          attrs: { type: "button", "data-dismiss": "modal" },
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close",
+          },
         },
-        [_vm._v("\n                        Close\n                    ")]
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
       ),
-      _vm._v(" "),
-      _c("button", { staticClass: "main-btn", attrs: { type: "button" } }, [
-        _vm._v("Add Quiz"),
-      ]),
     ])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "modal fade",
-        attrs: {
-          id: "add_assignment_model",
-          tabindex: "-1",
-          "aria-labelledby": "lectureModalLabel",
-          "aria-hidden": "true",
-        },
-      },
-      [
-        _c("div", { staticClass: "modal-dialog modal-lg" }, [
-          _c("div", { staticClass: "modal-content" }, [
-            _c("div", { staticClass: "modal-header" }, [
-              _c(
-                "h5",
-                {
-                  staticClass: "modal-title",
-                  attrs: { id: "lectureModalLabel" },
-                },
-                [
-                  _vm._v(
-                    "\n                        Add Assignment\n                    "
-                  ),
-                ]
-              ),
+    return _c("div", { staticClass: "modal-body" }, [
+      _c("div", { staticClass: "new-section-block main-form" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", { staticClass: "new-section" }, [
+              _c("div", { staticClass: "form_group" }, [
+                _c("label", { staticClass: "label25" }, [
+                  _vm._v("Assignment Title*"),
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "form_input_1",
+                  attrs: { type: "text", placeholder: "Assignment title here" },
+                }),
+              ]),
               _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "close",
+              _c("div", { staticClass: "form_group mt-30" }, [
+                _c("label", { staticClass: "label25" }, [
+                  _vm._v("Description*"),
+                ]),
+                _vm._v(" "),
+                _c("textarea", {
+                  staticClass: "w-100",
                   attrs: {
-                    type: "button",
-                    "data-dismiss": "modal",
-                    "aria-label": "Close",
+                    rows: "5",
+                    name: "description",
+                    placeholder: "Add Description",
                   },
-                },
-                [
-                  _c("span", { attrs: { "aria-hidden": "true" } }, [
-                    _vm._v("×"),
-                  ]),
-                ]
-              ),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-body" }, [
-              _c("div", { staticClass: "new-section-block main-form" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "new-section" }, [
-                      _c("div", { staticClass: "form_group" }, [
-                        _c("label", { staticClass: "label25" }, [
-                          _vm._v("Assignment Title*"),
-                        ]),
-                        _vm._v(" "),
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form_group" }, [
+                _c("div", { staticClass: "row g-4" }, [
+                  _c("div", { staticClass: "col-lg-4 mt-30" }, [
+                    _c("label", { staticClass: "label25" }, [
+                      _vm._v("Time Duration*"),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "row no-gutters" }, [
+                      _c("div", { staticClass: "col-6" }, [
                         _c("input", {
                           staticClass: "form_input_1",
                           attrs: {
-                            type: "text",
-                            placeholder: "Assignment title here",
-                          },
-                        }),
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form_group mt-30" }, [
-                        _c("label", { staticClass: "label25" }, [
-                          _vm._v("Description*"),
-                        ]),
-                        _vm._v(" "),
-                        _c("textarea", {
-                          attrs: {
-                            rows: "3",
-                            name: "description",
-                            id: "",
+                            type: "number",
+                            value: "0",
                             placeholder: "",
                           },
                         }),
                       ]),
                       _vm._v(" "),
-                      _c("div", { staticClass: "form_group mt-30" }, [
-                        _c("div", { staticClass: "row g-4" }, [
-                          _c("div", { staticClass: "col-lg-4 mt-30" }, [
-                            _c("label", { staticClass: "label25" }, [
-                              _vm._v("Time Duration*"),
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "row no-gutters" }, [
-                              _c("div", { staticClass: "col-6" }, [
-                                _c("input", {
-                                  staticClass: "form_input_1",
-                                  attrs: {
-                                    type: "number",
-                                    value: "0",
-                                    placeholder: "",
-                                  },
-                                }),
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-6 pl-2" }, [
-                                _c(
-                                  "select",
-                                  {
-                                    staticClass:
-                                      "ui hj145 dropdown cntry152 assignment prompt srch_explore",
-                                  },
-                                  [
-                                    _c("option", { attrs: { value: "" } }, [
-                                      _vm._v(
-                                        "\n                                                                Select\n                                                            "
-                                      ),
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("option", [
-                                      _vm._v(
-                                        "\n                                                                Weeks\n                                                            "
-                                      ),
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("option", [
-                                      _vm._v(
-                                        "\n                                                                Days\n                                                            "
-                                      ),
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("option", [
-                                      _vm._v(
-                                        "\n                                                                Hours\n                                                            "
-                                      ),
-                                    ]),
-                                  ]
-                                ),
-                              ]),
-                            ]),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "alt-text" }, [
+                      _c("div", { staticClass: "col-6 pl-2" }, [
+                        _c(
+                          "select",
+                          {
+                            staticClass:
+                              "ui hj145 dropdown cntry152 assignment prompt srch_explore",
+                          },
+                          [
+                            _c("option", { attrs: { value: "" } }, [
                               _vm._v(
-                                "Assignment time\n                                                    duration, set 0 for no\n                                                    limit."
-                              ),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-lg-4 mt-30" }, [
-                            _c("label", { staticClass: "label25" }, [
-                              _vm._v("Total Number*"),
-                            ]),
-                            _vm._v(" "),
-                            _c("input", {
-                              staticClass: "form_input_1",
-                              attrs: {
-                                type: "number",
-                                value: "10",
-                                placeholder: "",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "alt-text" }, [
-                              _vm._v(
-                                "Maximum points a\n                                                    student can score"
-                              ),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-lg-4 mt-30" }, [
-                            _c("label", { staticClass: "label25" }, [
-                              _vm._v(
-                                "Minimum Pass\n                                                    Number*"
+                                "\n                                                                Select\n                                                            "
                               ),
                             ]),
                             _vm._v(" "),
-                            _c("input", {
-                              staticClass: "form_input_1",
-                              attrs: {
-                                type: "number",
-                                value: "5",
-                                placeholder: "",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "alt-text" }, [
+                            _c("option", [
                               _vm._v(
-                                "Minimum points required\n                                                    for the student to pass\n                                                    this assignment."
+                                "\n                                                                Weeks\n                                                            "
                               ),
                             ]),
-                          ]),
-                        ]),
+                            _vm._v(" "),
+                            _c("option", [
+                              _vm._v(
+                                "\n                                                                Days\n                                                            "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("option", [
+                              _vm._v(
+                                "\n                                                                Hours\n                                                            "
+                              ),
+                            ]),
+                          ]
+                        ),
                       ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "assgn152 mt-30 pt-30" }, [
-                        _c("div", { staticClass: "row g-6" }, [
-                          _c("div", { staticClass: "col-lg-6 mt-30" }, [
-                            _c("label", { staticClass: "label25" }, [
-                              _vm._v(
-                                "Upload attachment\n                                                    limit*"
-                              ),
-                            ]),
-                            _vm._v(" "),
-                            _c("input", {
-                              staticClass: "form_input_1",
-                              attrs: {
-                                type: "text",
-                                value: "1",
-                                placeholder: "",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "alt-text" }, [
-                              _vm._v(
-                                "Maximum attachment size\n                                                    limit"
-                              ),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-lg-6 mt-30" }, [
-                            _c("label", { staticClass: "label25" }, [
-                              _vm._v(
-                                "Maximum attachment size\n                                                    limit"
-                              ),
-                            ]),
-                            _vm._v(" "),
-                            _c("input", {
-                              staticClass: "form_input_1",
-                              attrs: {
-                                type: "text",
-                                value: "10",
-                                placeholder: "",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "alt-text" }, [
-                              _vm._v(
-                                "Define maximum\n                                                    attachment size in\n                                                    MB"
-                              ),
-                            ]),
-                          ]),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "upload-file-dt mt-30" }, [
-                        _c("div", { staticClass: "upload-btn" }, [
-                          _c("input", {
-                            staticClass: "uploadBtn-main-input",
-                            attrs: {
-                              type: "file",
-                              id: "AssignmentFile__input--source",
-                            },
-                          }),
-                          _vm._v(" "),
-                          _c(
-                            "label",
-                            {
-                              attrs: {
-                                for: "AssignmentFile__input--source",
-                                title: "Zip",
-                              },
-                            },
-                            [
-                              _c("i", {
-                                staticClass: "far fa-plus-square mr-2",
-                              }),
-                              _vm._v("Attachment"),
-                            ]
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "uploadBtn-main-file" }, [
-                          _vm._v(
-                            "Supports: jpg, jpeg, png, pdf\n                                            or .zip"
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "add-attachments-dt" }, [
-                          _c("div", { staticClass: "attachment-items" }, [
-                            _c("div", { staticClass: "attachment_id" }, [
-                              _vm._v(
-                                "\n                                                    Uploaded ID: 5\n                                                "
-                              ),
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "button",
-                              {
-                                staticClass: "cancel-btn",
-                                attrs: { type: "button" },
-                              },
-                              [_c("i", { staticClass: "fas fa-trash-alt" })]
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "attachment-items" }, [
-                            _c("div", { staticClass: "attachment_id" }, [
-                              _vm._v(
-                                "\n                                                    Uploaded ID: 6\n                                                "
-                              ),
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "button",
-                              {
-                                staticClass: "cancel-btn",
-                                attrs: { type: "button" },
-                              },
-                              [_c("i", { staticClass: "fas fa-trash-alt" })]
-                            ),
-                          ]),
-                        ]),
-                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "alt-text" }, [
+                      _vm._v(
+                        "Assignment time\n                                                    duration, set 0 for no\n                                                    limit."
+                      ),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-lg-4 mt-30" }, [
+                    _c("label", { staticClass: "label25" }, [
+                      _vm._v("Total Number*"),
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form_input_1",
+                      attrs: { type: "number", value: "10", placeholder: "" },
+                    }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "alt-text" }, [
+                      _vm._v(
+                        "Maximum points a\n                                                    student can score"
+                      ),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-lg-4 mt-30" }, [
+                    _c("label", { staticClass: "label25" }, [
+                      _vm._v(
+                        "Minimum Pass\n                                                    Number*"
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form_input_1",
+                      attrs: { type: "number", value: "5", placeholder: "" },
+                    }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "alt-text" }, [
+                      _vm._v(
+                        "Minimum points required\n                                                    for the student to pass\n                                                    this assignment."
+                      ),
                     ]),
                   ]),
                 ]),
               ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-footer" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "main-btn cancel",
-                  attrs: { type: "button", "data-dismiss": "modal" },
-                },
-                [
-                  _vm._v(
-                    "\n                        Close\n                    "
-                  ),
-                ]
-              ),
               _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "main-btn", attrs: { type: "button" } },
-                [
-                  _vm._v(
-                    "\n                        Add Assignment\n                    "
+              _c("div", { staticClass: "assgn152 mt-30 pt-30" }, [
+                _c("div", { staticClass: "row g-6" }, [
+                  _c("div", { staticClass: "col-lg-6 mt-30" }, [
+                    _c("label", { staticClass: "label25" }, [
+                      _vm._v(
+                        "Upload attachment\n                                                    limit*"
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form_input_1",
+                      attrs: { type: "text", value: "1", placeholder: "" },
+                    }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "alt-text" }, [
+                      _vm._v(
+                        "Maximum attachment size\n                                                    limit"
+                      ),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-lg-6 mt-30" }, [
+                    _c("label", { staticClass: "label25" }, [
+                      _vm._v(
+                        "Maximum attachment size\n                                                    limit"
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form_input_1",
+                      attrs: { type: "text", value: "10", placeholder: "" },
+                    }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "alt-text" }, [
+                      _vm._v(
+                        "Define maximum\n                                                    attachment size in\n                                                    MB"
+                      ),
+                    ]),
+                  ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "upload-file-dt mt-30" }, [
+                _c("div", { staticClass: "upload-btn" }, [
+                  _c("input", {
+                    staticClass: "uploadBtn-main-input",
+                    attrs: {
+                      type: "file",
+                      id: "AssignmentFile__input--source",
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "label",
+                    {
+                      attrs: {
+                        for: "AssignmentFile__input--source",
+                        title: "Zip",
+                      },
+                    },
+                    [
+                      _c("i", { staticClass: "far fa-plus-square mr-2" }),
+                      _vm._v("Attachment"),
+                    ]
                   ),
-                ]
-              ),
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "uploadBtn-main-file" }, [
+                  _vm._v(
+                    "Supports: jpg, jpeg, png, pdf\n                                            or .zip"
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "add-attachments-dt" }),
+              ]),
             ]),
           ]),
         ]),
-      ]
-    )
+      ]),
+    ])
   },
 ]
 render._withStripped = true
@@ -47856,7 +48096,12 @@ var render = function () {
           _vm.$route.name == "Review" ? _c("Review") : _vm._e(),
           _vm._v(" "),
           _vm.$route.name == "Setting"
-            ? _c("Setting", { on: { "toggle-loader": _vm.toggleLoader } })
+            ? _c("Setting", {
+                on: {
+                  "toggle-loader": _vm.toggleLoader,
+                  "profile-updated": _vm.profileUpdated,
+                },
+              })
             : _vm._e(),
           _vm._v(" "),
           _vm.$route.name == "Profile" ? _c("Profile") : _vm._e(),
@@ -48054,9 +48299,9 @@ var render = function () {
     _c("div", { staticClass: "main_logo", attrs: { id: "logo" } }, [
       _c("img", {
         attrs: {
-          src: _vm.globalBaseUrl + "images/gamify-logo-text.png",
+          src: _vm.globalBaseUrl + "images/logo-svg.svg",
           alt: "logo",
-          height: "70",
+          height: "50",
         },
       }),
     ]),
@@ -48175,7 +48420,13 @@ var render = function () {
             },
             [
               _c("img", {
-                attrs: { src: _vm.globalBaseUrl + "images/hd_dp.jpg", alt: "" },
+                attrs: {
+                  src:
+                    _vm.user.profile_img == null
+                      ? _vm.globalBaseUrl + "images/avatar.png"
+                      : "" + _vm.globalBaseUrl + _vm.user.profile_img,
+                  alt: "",
+                },
               }),
             ]
           ),
@@ -48201,7 +48452,7 @@ var render = function () {
                     [
                       _c("img", {
                         attrs: {
-                          src: _vm.globalBaseUrl + "images/hd_dp.jpg",
+                          src: _vm.globalBaseUrl + "images/avatar.png",
                           alt: "",
                         },
                       }),
@@ -51248,6 +51499,39 @@ var render = function () {
                       _c("div", { staticClass: "basic_form" }, [
                         _c("div", { staticClass: "row" }, [
                           _c("div", { staticClass: "col-lg-8" }, [
+                            _c("div", { staticClass: "avatar-upload" }, [
+                              _c("div", { staticClass: "avatar-edit" }, [
+                                _c("input", {
+                                  attrs: {
+                                    type: "file",
+                                    id: "imageUpload",
+                                    accept: ".png, .jpg, .jpeg",
+                                  },
+                                  on: { change: _vm.onImageSelected },
+                                }),
+                                _vm._v(" "),
+                                _vm._m(3),
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "avatar-preview" }, [
+                                _vm.file == null
+                                  ? _c("img", {
+                                      attrs: {
+                                        src:
+                                          _vm.image == null
+                                            ? _vm.globalAssetUrl +
+                                              "images/avatar.png"
+                                            : "" +
+                                              _vm.globalAssetUrl +
+                                              _vm.image,
+                                      },
+                                    })
+                                  : _c("img", { attrs: { src: _vm.image } }),
+                              ]),
+                            ]),
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-lg-8" }, [
                             _c("div", { staticClass: "row" }, [
                               _c("div", { staticClass: "col-lg-12" }, [
                                 _c(
@@ -51387,18 +51671,209 @@ var render = function () {
                                 ),
                               ]),
                               _vm._v(" "),
-                              _vm._m(3),
+                              _vm._m(4),
                             ]),
                           ]),
                         ]),
                       ]),
                     ]),
                     _vm._v(" "),
-                    _vm._m(4),
+                    _c("div", { staticClass: "basic_profile1" }, [
+                      _vm._m(5),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "basic_form" }, [
+                        _c("div", { staticClass: "row" }, [
+                          _c("div", { staticClass: "col-lg-8" }, [
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-lg-12" }, [
+                                _c(
+                                  "div",
+                                  { staticClass: "ui search focus mt-30" },
+                                  [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "ui left icon labeled input swdh11 swdh31",
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          { staticClass: "ui label lb12" },
+                                          [
+                                            _vm._v(
+                                              "\n                                    http://facebook.com/\n                                  "
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.facebook,
+                                              expression: "facebook",
+                                            },
+                                          ],
+                                          staticClass: "prompt srch_explore",
+                                          attrs: {
+                                            type: "text",
+                                            name: "facebooklink",
+                                            placeholder: "Facebook Profile",
+                                          },
+                                          domProps: { value: _vm.facebook },
+                                          on: {
+                                            input: function ($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.facebook = $event.target.value
+                                            },
+                                          },
+                                        }),
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "help-block" }, [
+                                      _vm._v(
+                                        "\n                                  Add your Facebook username\n                                "
+                                      ),
+                                    ]),
+                                  ]
+                                ),
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-lg-12" }, [
+                                _c(
+                                  "div",
+                                  { staticClass: "ui search focus mt-30" },
+                                  [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "ui left icon labeled input swdh11 swdh31",
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          { staticClass: "ui label lb12" },
+                                          [
+                                            _vm._v(
+                                              "\n                                    http://www.linkedin.com/\n                                  "
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.linkedin,
+                                              expression: "linkedin",
+                                            },
+                                          ],
+                                          staticClass: "prompt srch_explore",
+                                          attrs: {
+                                            type: "text",
+                                            name: "linkedinlink",
+                                            placeholder: "Linkedin Profile",
+                                          },
+                                          domProps: { value: _vm.linkedin },
+                                          on: {
+                                            input: function ($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.linkedin = $event.target.value
+                                            },
+                                          },
+                                        }),
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "help-block" }, [
+                                      _vm._v(
+                                        "\n                                  Input your LinkedIn resource id.\n                                "
+                                      ),
+                                    ]),
+                                  ]
+                                ),
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-lg-12" }, [
+                                _c(
+                                  "div",
+                                  { staticClass: "ui search focus mt-30" },
+                                  [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "ui left icon labeled input swdh11 swdh31",
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          { staticClass: "ui label lb12" },
+                                          [
+                                            _vm._v(
+                                              "\n                                    http://www.youtube.com/\n                                  "
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.youtube,
+                                              expression: "youtube",
+                                            },
+                                          ],
+                                          staticClass: "prompt srch_explore",
+                                          attrs: {
+                                            type: "text",
+                                            name: "youtubelink",
+                                            placeholder: "Youtube Profile",
+                                          },
+                                          domProps: { value: _vm.youtube },
+                                          on: {
+                                            input: function ($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.youtube = $event.target.value
+                                            },
+                                          },
+                                        }),
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "help-block" }, [
+                                      _vm._v(
+                                        "\n                                  Input your Youtube username.\n                                "
+                                      ),
+                                    ]),
+                                  ]
+                                ),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
                     _vm._v(" "),
                     _c(
                       "button",
-                      { staticClass: "save_btn", attrs: { type: "submit" } },
+                      {
+                        staticClass: "save_btn",
+                        attrs: { type: "button" },
+                        on: { click: _vm.updateProfile },
+                      },
                       [_vm._v("Save Changes")]
                     ),
                   ]),
@@ -51432,7 +51907,7 @@ var render = function () {
                     _c("div", { staticClass: "basic_profile" }, [
                       _c("div", { staticClass: "basic_form" }, [
                         _c("div", { staticClass: "nstting_content" }, [
-                          _vm._m(5),
+                          _vm._m(6),
                           _vm._v(" "),
                           _c(
                             "div",
@@ -51519,7 +51994,7 @@ var render = function () {
                     _c("div", { staticClass: "basic_profile" }, [
                       _c("div", { staticClass: "basic_form" }, [
                         _c("div", { staticClass: "nstting_content" }, [
-                          _vm._m(6),
+                          _vm._m(7),
                           _vm._v(" "),
                           _c(
                             "div",
@@ -51590,9 +52065,9 @@ var render = function () {
                 ]
               ),
               _vm._v(" "),
-              _vm._m(7),
-              _vm._v(" "),
               _vm._m(8),
+              _vm._v(" "),
+              _vm._m(9),
             ]
           ),
         ]),
@@ -51707,6 +52182,14 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "imageUpload" } }, [
+      _c("i", { staticClass: "uil uil-edit-alt" }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-lg-12" }, [
       _c("div", { staticClass: "divider-1" }),
     ])
@@ -51715,154 +52198,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "basic_profile1" }, [
-      _c("div", { staticClass: "basic_ptitle" }, [
-        _c("h4", [_vm._v("Profile Links")]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "basic_form" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-lg-8" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-lg-12" }, [
-                _c("div", { staticClass: "ui search focus mt-30" }, [
-                  _c(
-                    "div",
-                    { staticClass: "ui left icon labeled input swdh11 swdh31" },
-                    [
-                      _c("div", { staticClass: "ui label lb12" }, [
-                        _vm._v(
-                          "\n                                    http://facebook.com/\n                                  "
-                        ),
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        staticClass: "prompt srch_explore",
-                        attrs: {
-                          type: "text",
-                          name: "facebooklink",
-                          id: "id_facebook",
-                          required: "",
-                          maxlength: "64",
-                          placeholder: "Facebook Profile",
-                        },
-                      }),
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "help-block" }, [
-                    _vm._v(
-                      "\n                                  Add your Facebook username (e.g. johndoe).\n                                "
-                    ),
-                  ]),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-12" }, [
-                _c("div", { staticClass: "ui search focus mt-30" }, [
-                  _c(
-                    "div",
-                    { staticClass: "ui left icon labeled input swdh11 swdh31" },
-                    [
-                      _c("div", { staticClass: "ui label lb12" }, [
-                        _vm._v(
-                          "\n                                    http://twitter.com/\n                                  "
-                        ),
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        staticClass: "prompt srch_explore",
-                        attrs: {
-                          type: "text",
-                          name: "twitterlink",
-                          id: "id_twitter",
-                          required: "",
-                          maxlength: "64",
-                          placeholder: "Twitter Profile",
-                        },
-                      }),
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "help-block" }, [
-                    _vm._v(
-                      "\n                                  Add your Twitter username (e.g. johndoe).\n                                "
-                    ),
-                  ]),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-12" }, [
-                _c("div", { staticClass: "ui search focus mt-30" }, [
-                  _c(
-                    "div",
-                    { staticClass: "ui left icon labeled input swdh11 swdh31" },
-                    [
-                      _c("div", { staticClass: "ui label lb12" }, [
-                        _vm._v(
-                          "\n                                    http://www.linkedin.com/\n                                  "
-                        ),
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        staticClass: "prompt srch_explore",
-                        attrs: {
-                          type: "text",
-                          name: "linkedinlink",
-                          id: "id_linkedin",
-                          required: "",
-                          maxlength: "64",
-                          placeholder: "Linkedin Profile",
-                        },
-                      }),
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "help-block" }, [
-                    _vm._v(
-                      "\n                                  Input your LinkedIn resource id (e.g.\n                                  in/johndoe).\n                                "
-                    ),
-                  ]),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-12" }, [
-                _c("div", { staticClass: "ui search focus mt-30" }, [
-                  _c(
-                    "div",
-                    { staticClass: "ui left icon labeled input swdh11 swdh31" },
-                    [
-                      _c("div", { staticClass: "ui label lb12" }, [
-                        _vm._v(
-                          "\n                                    http://www.youtube.com/\n                                  "
-                        ),
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        staticClass: "prompt srch_explore",
-                        attrs: {
-                          type: "text",
-                          name: "youtubelink",
-                          id: "id_youtube",
-                          required: "",
-                          maxlength: "64",
-                          placeholder: "Youtube Profile",
-                        },
-                      }),
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "help-block" }, [
-                    _vm._v(
-                      "\n                                  Input your Youtube username (e.g. johndoe).\n                                "
-                    ),
-                  ]),
-                ]),
-              ]),
-            ]),
-          ]),
-        ]),
-      ]),
+    return _c("div", { staticClass: "basic_ptitle" }, [
+      _c("h4", [_vm._v("Profile Links")]),
     ])
   },
   function () {

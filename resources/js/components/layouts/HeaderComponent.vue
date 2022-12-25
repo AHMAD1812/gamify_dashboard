@@ -8,7 +8,7 @@
             <span class="collapse_menu--label"></span>
         </button>
         <div class="main_logo" id="logo">
-            <img :src="`${globalBaseUrl}images/gamify-logo-text.png`" alt="logo" height="70" />
+            <img :src="`${globalBaseUrl}images/logo-svg.svg`" alt="logo" height="50" />
         </div>
         <div class="top-category">
             <div class="ui compact menu cate-dpdwn">
@@ -118,12 +118,12 @@
                 </li>
                 <li class="ui dropdown">
                     <div class="opts_account new-dropdown" title="Account">
-                        <img :src="`${globalBaseUrl}images/hd_dp.jpg`" alt="" />
+                        <img :src="user.profile_img == null ? `${globalBaseUrl}images/avatar.png` : `${globalBaseUrl}${user.profile_img}`" alt="" />
                     </div>
                     <div class="menu dropdown_account left visible" @click="closeDropdown()">
                         <div class="channel_my">
                             <div class="profile_link justify-content-center">
-                                <img :src="`${globalBaseUrl}images/hd_dp.jpg`" alt="" />
+                                <img :src="`${globalBaseUrl}images/avatar.png`" alt="" />
                             </div>
                             <div class="rhte85 mt-2 justify-content-center">
                                 <h6>{{user.full_name}}</h6>

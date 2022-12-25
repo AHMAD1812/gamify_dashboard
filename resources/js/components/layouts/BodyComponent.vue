@@ -10,7 +10,10 @@
         <Chat v-if="$route.name == 'Messages'"></Chat>
         <Notification v-if="$route.name=='Notification'"></Notification>
         <Review v-if="$route.name == 'Review'"></Review>
-        <Setting v-if="$route.name == 'Setting'" @toggle-loader="toggleLoader"></Setting>
+        <Setting v-if="$route.name == 'Setting'" 
+          @toggle-loader="toggleLoader"
+          @profile-updated="profileUpdated">
+        </Setting>
         <Profile v-if="$route.name == 'Profile'" ></Profile>
         <CourseDetail v-if="$route.name == 'CourseDetail'"></CourseDetail>
         <Footer></Footer>
@@ -55,17 +58,23 @@ export default {
       }
     },
     async mounted(){
-      try{
-        this.loading=true;
-        let response = await axios.get(`${globalBaseUrl}instructor/profile`);
-        this.user = response.data.data;
-        this.loading=false;
-      }catch(e){
-        this.loading=false;
-        console.log(e);
-      }
+      this.loading=true;
+      this.getUser();
     },
     methods:{
+      async getUser(){
+        try{
+          let response = await axios.get(`${globalBaseUrl}instructor/user_profile`);
+          this.user = response.data.data;
+          this.loading=false;
+        }catch(e){
+          this.loading=false;
+          console.log(e);
+        }
+      },
+      profileUpdated(user){
+        this.user=user;
+      },
       toggleLoader(){
         this.loading=!this.loading;
       }

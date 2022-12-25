@@ -50,7 +50,8 @@ Route::prefix('instructor')->group(function () {
 
         //API Doces
         Route::post('/logout', [AuthController::class, 'logout']);
-        Route::get('/profile', [UserController::class, 'getUser']);
+        Route::get('/user_profile', [UserController::class, 'getUser']);
+        Route::post('/update_profile', [UserController::class, 'updateUser']);
     });
 
 

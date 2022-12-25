@@ -44,7 +44,6 @@ trait CommonTrait
                 $destination_path = $path;
                 $extension = $file->getClientOriginalExtension();
                 $fileName = Str::random(15) . '.' . $extension;
-                //$img=Image::make($file);
                 $file->move($destination_path, $fileName);
                 $file_path = $destination_path . $fileName;
                 return $file_path;

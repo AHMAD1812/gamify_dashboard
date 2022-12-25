@@ -4118,9 +4118,6 @@ i.icon8 {
     align-items: center;
 }
 
-.section-list-item {
-    cursor: move;
-}
 
 .section-item-tools {
     border: 0;
@@ -4214,7 +4211,7 @@ i.icon8 {
     top:-20px;
 }
 
-.video-category input:checked + span {
+.video-category span.selected {
     background-color: #3D54b4;
     color: #fff;
 	border-radius: 3px;
@@ -4767,13 +4764,8 @@ label.switch input[type=checkbox]:checked+span:before {
 }
 
 .main-btn.cancel {
-    color: #91699c;
+    color: #3D54b4 !important;
     background: #f3f3f3;
-}
-
-.main-btn.cancel:hover {
-    color: #333 !important;
-    background: #f4f4f4;
 }
 
 .alt-text {
