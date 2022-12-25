@@ -13,7 +13,7 @@
                     <span class="crdbg_1">New $50</span>
                 </div>
                 <div class="card_dash_right">
-                    <img src="images/dashboard/achievement.svg" alt="" />
+                    <img :src="`${globalBaseUrl}images/dashboard/achievement.svg`" alt="" />
                 </div>
             </div>
         </div>
@@ -25,7 +25,7 @@
                     <span class="crdbg_2">New 125</span>
                 </div>
                 <div class="card_dash_right">
-                    <img src="images/dashboard/graduation-cap.svg" alt="" />
+                    <img :src="`${globalBaseUrl}images/dashboard/graduation-cap.svg`" alt="" />
                 </div>
             </div>
         </div>
@@ -37,7 +37,7 @@
                     <span class="crdbg_3">New 5</span>
                 </div>
                 <div class="card_dash_right">
-                    <img src="images/dashboard/online-course.svg" alt="" />
+                    <img :src="`${globalBaseUrl}images/dashboard/online-course.svg`" alt="" />
                 </div>
             </div>
         </div>
@@ -49,7 +49,7 @@
                     <span class="crdbg_4">New 245</span>
                 </div>
                 <div class="card_dash_right">
-                    <img src="images/dashboard/knowledge.svg" alt="" />
+                    <img :src="`${globalBaseUrl}images/dashboard/knowledge.svg`" alt="" />
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@
                 <div class="card_dash_right1">
                     <button
                         class="create_btn_dash"
-                        onclick="window.location.href = 'create_new_course.html';"
+                        @click="$router.push({name: 'CreateVideo' })"
                     >
                         Create Your Video
                     </button>

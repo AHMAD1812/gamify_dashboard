@@ -4,74 +4,67 @@
             <div class="left_section">
                 <ul>
                     <li class="menu--item">
-                        <a
-                            href="instructor_dashboard.html"
-                            class="menu--link active"
+                        <router-link :to="{name:'Dashboard'}"
+                            class="menu--link"
                             title="Dashboard"
                         >
                             <i class="uil uil-apps menu--icon"></i>
                             <span class="menu--label">Dashboard</span>
-                        </a>
+                        </router-link>
                     </li>
                     <li class="menu--item">
-                        <a
-                            href="instructor_courses.html"
+                        <router-link :to="{name:'Courses'}"
                             class="menu--link"
                             title="Courses"
                         >
                             <i class="uil uil-book-alt menu--icon"></i>
                             <span class="menu--label">Courses</span>
-                        </a>
+                        </router-link>
                     </li>
                     <li class="menu--item">
-                        <a
-                            href="create_new_course.html"
+                        <router-link :to="{name:'CreateVideo'}"
                             class="menu--link"
-                            title="Create Course"
+                            title="Create Video"
                         >
                             <i class="uil uil-plus-circle menu--icon"></i>
                             <span class="menu--label">Create Video</span>
-                        </a>
+                        </router-link>
                     </li>
                     <li class="menu--item">
-                        <a
-                            href="instructor_messages.html"
+                        <router-link :to="{name:'Messages'}"
                             class="menu--link"
                             title="Messages"
                         >
                             <i class="uil uil-comments menu--icon"></i>
                             <span class="menu--label">Messages</span>
-                        </a>
+                        </router-link>
                     </li>
                     <li class="menu--item">
-                        <a
-                            href="instructor_notifications.html"
+                        <router-link :to="{name:'Notification'}"
                             class="menu--link"
                             title="Notifications"
                         >
                             <i class="uil uil-bell menu--icon"></i>
                             <span class="menu--label">Notifications</span>
-                        </a>
+                        </router-link>
                     </li>
                     <li class="menu--item">
-                        <a
-                            href="instructor_all_reviews.html"
+                        <router-link :to="{name:'Review'}"
                             class="menu--link"
                             title="Reviews"
                         >
                             <i class="uil uil-star menu--icon"></i>
                             <span class="menu--label">Reviews</span>
-                        </a>
+                        </router-link>
                     </li>
                     <li class="menu--item">
-                        <a
-                            href="setting.html"
+                        <router-link :to="{name:'Setting'}"
                             class="menu--link"
                             title="Setting"
                         >
                             <i class="uil uil-cog menu--icon"></i>
                             <span class="menu--label">Setting</span>
-                        </a>
+                        </router-link>
                     </li>
                 </ul>
             </div>

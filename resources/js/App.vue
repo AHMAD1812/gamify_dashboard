@@ -1,6 +1,18 @@
 <template>
-  <!-- <Body></Body> -->
-    <Auth></Auth>
+    <span>
+        <Body v-if="
+                $route.name != 'Login' &&
+                $route.name != 'Register' &&
+                $route.name != 'ForgotPassword' &&
+                $route.name != 'OtpVerification'
+            "></Body>
+        <Auth v-if="
+                $route.name == 'Login' ||
+                $route.name == 'Register' ||
+                $route.name == 'ForgotPassword' ||
+                $route.name == 'OtpVerification'
+            "></Auth>
+    </span>
 </template>
 
 <script>

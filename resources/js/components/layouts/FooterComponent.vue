@@ -17,13 +17,13 @@
                   <li>
                     <a href="index.html">
                       <div class="footer_logo">
-                        <img src="images/gamifyfavv.png" alt="" />
+                        <img :src="`${globalBaseUrl}images/gamify-favicon.png`" alt="" />
                       </div>
                     </a>
                   </li>
                   <li>
                     <p>
-                      © 2022 <strong>Gamify Us</strong>. All Rights
+                      © 2022 <strong>Gamify US</strong>. All Rights
                       Reserved.
                     </p>
                   </li>
@@ -33,11 +33,9 @@
                 <div class="edu_social_links">
                   <a href="#"><i class="fab fa-facebook-f"></i></a>
                   <a href="#"><i class="fab fa-twitter"></i></a>
-                  <a href="#"><i class="fab fa-google-plus-g"></i></a>
                   <a href="#"><i class="fab fa-linkedin-in"></i></a>
                   <a href="#"><i class="fab fa-instagram"></i></a>
                   <a href="#"><i class="fab fa-youtube"></i></a>
-                  <a href="#"><i class="fab fa-pinterest-p"></i></a>
                 </div>
               </div>
             </div>
