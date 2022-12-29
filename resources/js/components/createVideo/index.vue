@@ -1140,6 +1140,7 @@
                                                                             "
                                                                             class="d-none"
                                                                         /><span
+                                                                            :class="[question_type==1?'selected':'']"
                                                                             ><i
                                                                                 class="far fa-check-circle mr-2"
                                                                             ></i
@@ -1159,6 +1160,7 @@
                                                                             "
                                                                             class="d-none"
                                                                         /><span
+                                                                            :class="[question_type==2?'selected':'']"
                                                                             ><i
                                                                                 class="far fa-file-alt mr-2"
                                                                             ></i
@@ -2012,10 +2014,15 @@ export default {
     },
     methods: {
         addCurriculum(type,name){
-            this.curriculum.push({
-                type:type,
-                name:name
+            let item_type = this.curriculum.map((item)=>{
+                return item.type;
             });
+            if(!item_type.includes(type)){
+                this.curriculum.push({
+                    type:type,
+                    name:name
+                });
+            }
         },
         deleteCurriculum(key){
             this.curriculum.splice(key,1);

@@ -12,11 +12,11 @@
                     </a>
                     <div class="dp_dt150">
                       <div class="img148">
-                        <img :src="`${globalBaseUrl}images/hd_dp.jpg`" alt="" />
+                        <img :src="user.profile_img == null ? `${globalBaseUrl}images/avatar.png` : `${globalBaseUrl}${user.profile_img}`" alt="" />
                       </div>
                       <div class="prfledt1">
-                        <h2>Joginder Singh</h2>
-                        <span>UI / UX Designer and Web Developer</span>
+                        <h2>{{user.full_name}}</h2>
+                        <span>{{user.email}}</span>
                       </div>
                     </div>
                     <ul class="_ttl120">
@@ -118,7 +118,7 @@
                       href="#nav-subscriptions"
                       role="tab"
                       aria-selected="false"
-                      >Subscriptions</a
+                      >Students</a
                     >
                   </div>
                 </nav>
@@ -142,39 +142,14 @@
                       <div class="_htg452">
                         <h3>About Me</h3>
                         <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Vestibulum scelerisque nibh sed ligula blandit,
-                          quis faucibus lorem pellentesque. Suspendisse pulvinar
-                          dictum pellentesque. Vestibulum at sagittis lectus,
-                          sit amet aliquam turpis. In quis elit tempus, semper
-                          justo vitae, lacinia massa. Etiam sagittis quam quis
-                          fermentum lacinia. Curabitur blandit sapien et risus
-                          congue viverra. Mauris auctor risus sit amet cursus
-                          sollicitudin. Lorem ipsum dolor sit amet, consectetur
-                          adipiscing elit. Nulla feugiat sodales massa, in
-                          viverra dolor condimentum ut. In imperdiet, justo nec
-                          volutpat blandit, tellus justo tempor quam, sed
-                          pretium nibh nunc nec mauris. Mauris vel malesuada
-                          magna. Quisque iaculis molestie purus, non luctus
-                          mauris porta id. Maecenas imperdiet tincidunt mauris
-                          vestibulum vulputate. Aenean sollicitudin pretium
-                          nibh, et sagittis risus tincidunt ac. Phasellus
-                          scelerisque rhoncus massa, ac euismod massa pharetra
-                          non. Phasellus dignissim, urna in iaculis varius,
-                          turpis libero mollis velit, sit amet euismod arcu mi
-                          ac nibh. Praesent tincidunt eros at ligula
-                          pellentesque elementum. Fusce condimentum enim a
-                          tellus egestas, sit amet rutrum elit gravida.
-                          Pellentesque in porta sapien. Fusce tristique maximus
-                          ipsum et mollis. Sed at massa ac est dapibus vulputate
-                          at eu nibh.
+                          {{ user.biography}}
                         </p>
                       </div>
                     </div>
                   </div>
                   <div class="tab-pane fade" id="nav-courses" role="tabpanel">
                     <div class="crse_content">
-                      <h3>My courses (8)</h3>
+                      <h3>My videos (8)</h3>
                       <div class="_14d25">
                         <div class="row">
                           <div class="col-lg-3 col-md-4">
@@ -183,7 +158,7 @@
                                 href="course_detail_view.html"
                                 class="fcrse_img"
                               >
-                                <img src="images/courses/img-1.jpg" alt="" />
+                                <img :src="`${globalBaseUrl}images/courses/img-1.jpg`" alt="" />
                                 <div class="course-overlay">
                                   <div class="badge_seller">Bestseller</div>
                                   <div class="crse_reviews">
@@ -228,7 +203,7 @@
                                   <p class="cr1fot">
                                     By <a href="#">John Doe</a>
                                   </p>
-                                  <div class="prce142">$10</div>
+                                  <!-- <div class="prce142">$10</div> -->
                                   <button class="shrt-cart-btn" title="cart">
                                     <i class="uil uil-shopping-cart-alt"></i>
                                   </button>
@@ -242,7 +217,7 @@
                                 href="course_detail_view.html"
                                 class="fcrse_img"
                               >
-                                <img src="images/courses/img-2.jpg" alt="" />
+                                <img :src="`${globalBaseUrl}images/courses/img-2.jpg`" alt="" />
                                 <div class="course-overlay">
                                   <div class="badge_seller">Bestseller</div>
                                   <div class="crse_reviews">
@@ -287,7 +262,7 @@
                                   <p class="cr1fot">
                                     By <a href="#">John Doe</a>
                                   </p>
-                                  <div class="prce142">$5</div>
+                                  <!-- <div class="prce142">$5</div> -->
                                   <button class="shrt-cart-btn" title="cart">
                                     <i class="uil uil-shopping-cart-alt"></i>
                                   </button>
@@ -301,7 +276,7 @@
                                 href="course_detail_view.html"
                                 class="fcrse_img"
                               >
-                                <img src="images/courses/img-20.jpg" alt="" />
+                                <img :src="`${globalBaseUrl}images/courses/img-20.jpg`" alt="" />
                                 <div class="course-overlay">
                                   <div class="crse_reviews">
                                     <i class="uil uil-star"></i>5.0
@@ -345,7 +320,7 @@
                                   <p class="cr1fot">
                                     By <a href="#">John Doe</a>
                                   </p>
-                                  <div class="prce142">$14</div>
+                                  <!-- <div class="prce142">$14</div> -->
                                   <button class="shrt-cart-btn" title="cart">
                                     <i class="uil uil-shopping-cart-alt"></i>
                                   </button>
@@ -359,7 +334,7 @@
                                 href="course_detail_view.html"
                                 class="fcrse_img"
                               >
-                                <img src="images/courses/img-4.jpg" alt="" />
+                                <img :src="`${globalBaseUrl}images/courses/img-4.jpg`" alt="" />
                                 <div class="course-overlay">
                                   <div class="badge_seller">Bestseller</div>
                                   <div class="crse_reviews">
@@ -404,7 +379,7 @@
                                   <p class="cr1fot">
                                     By <a href="#">John Doe</a>
                                   </p>
-                                  <div class="prce142">$12</div>
+                                  <!-- <div class="prce142">$12</div> -->
                                   <button class="shrt-cart-btn" title="cart">
                                     <i class="uil uil-shopping-cart-alt"></i>
                                   </button>
@@ -418,7 +393,7 @@
                                 href="course_detail_view.html"
                                 class="fcrse_img"
                               >
-                                <img src="images/courses/img-13.jpg" alt="" />
+                                <img :src="`${globalBaseUrl}images/courses/img-13.jpg`" alt="" />
                                 <div class="course-overlay">
                                   <span class="play_btn1"
                                     ><i class="uil uil-play"></i
@@ -459,7 +434,7 @@
                                   <p class="cr1fot">
                                     By <a href="#">John Doe</a>
                                   </p>
-                                  <div class="prce142">$3</div>
+                                  <!-- <div class="prce142">$3</div> -->
                                   <button class="shrt-cart-btn" title="cart">
                                     <i class="uil uil-shopping-cart-alt"></i>
                                   </button>
@@ -473,7 +448,7 @@
                                 href="course_detail_view.html"
                                 class="fcrse_img"
                               >
-                                <img src="images/courses/img-7.jpg" alt="" />
+                                <img :src="`${globalBaseUrl}images/courses/img-7.jpg`" alt="" />
                                 <div class="course-overlay">
                                   <div class="badge_seller">Bestseller</div>
                                   <div class="crse_reviews">
@@ -518,7 +493,7 @@
                                   <p class="cr1fot">
                                     By <a href="#">John Doe</a>
                                   </p>
-                                  <div class="prce142">$18</div>
+                                  <!-- <div class="prce142">$18</div> -->
                                   <button class="shrt-cart-btn" title="cart">
                                     <i class="uil uil-shopping-cart-alt"></i>
                                   </button>
@@ -532,7 +507,7 @@
                                 href="course_detail_view.html"
                                 class="fcrse_img"
                               >
-                                <img src="images/courses/img-8.jpg" alt="" />
+                                <img :src="`${globalBaseUrl}images/courses/img-8.jpg`" alt="" />
                                 <div class="course-overlay">
                                   <div class="badge_seller">Bestseller</div>
                                   <div class="crse_reviews">
@@ -575,7 +550,7 @@
                                   <p class="cr1fot">
                                     By <a href="#">John Doe</a>
                                   </p>
-                                  <div class="prce142">$10</div>
+                                  <!-- <div class="prce142">$10</div> -->
                                   <button class="shrt-cart-btn" title="cart">
                                     <i class="uil uil-shopping-cart-alt"></i>
                                   </button>
@@ -589,7 +564,7 @@
                                 href="course_detail_view.html"
                                 class="fcrse_img"
                               >
-                                <img src="images/courses/img-16.jpg" alt="" />
+                                <img :src="`${globalBaseUrl}images/courses/img-16.jpg`" alt="" />
                                 <div class="course-overlay">
                                   <span class="play_btn1"
                                     ><i class="uil uil-play"></i
@@ -630,7 +605,7 @@
                                   <p class="cr1fot">
                                     By <a href="#">John Doe</a>
                                   </p>
-                                  <div class="prce142">$10</div>
+                                  <!-- <div class="prce142">$10</div> -->
                                   <button class="shrt-cart-btn" title="cart">
                                     <i class="uil uil-shopping-cart-alt"></i>
                                   </button>
@@ -649,13 +624,13 @@
                   >
                     <div class="_htg451">
                       <div class="_htg452">
-                        <h3>Subscriptions</h3>
+                        <h3>Students</h3>
                         <div class="row">
                           <div class="col-lg-3 col-md-4">
                             <div class="fcrse_1 mt-30">
                               <div class="tutor_img">
                                 <a href="#"
-                                  ><img src="images/left-imgs/img-1.jpg" alt=""
+                                  ><img :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`" alt=""
                                 /></a>
                               </div>
                               <div class="tutor_content_dt">
@@ -672,16 +647,7 @@
                                   <li>
                                     <button class="sbbc145">Subscribed</button>
                                   </li>
-                                  <li>
-                                    <button class="sbbc146">
-                                      <i class="uil uil-bell"></i>
-                                    </button>
-                                  </li>
                                 </ul>
-                                <div class="tut1250">
-                                  <span class="vdt15">100K Students</span>
-                                  <span class="vdt15">15 Courses</span>
-                                </div>
                               </div>
                             </div>
                           </div>
@@ -689,7 +655,7 @@
                             <div class="fcrse_1 mt-30">
                               <div class="tutor_img">
                                 <a href="#"
-                                  ><img src="images/left-imgs/img-2.jpg" alt=""
+                                  ><img :src="`${globalBaseUrl}images/left-imgs/img-2.jpg`" alt=""
                                 /></a>
                               </div>
                               <div class="tutor_content_dt">
@@ -708,16 +674,7 @@
                                   <li>
                                     <button class="sbbc145">Subscribed</button>
                                   </li>
-                                  <li>
-                                    <button class="sbbc146">
-                                      <i class="uil uil-bell"></i>
-                                    </button>
-                                  </li>
                                 </ul>
-                                <div class="tut1250">
-                                  <span class="vdt15">14K Students</span>
-                                  <span class="vdt15">11 Courses</span>
-                                </div>
                               </div>
                             </div>
                           </div>
@@ -725,7 +682,7 @@
                             <div class="fcrse_1 mt-30">
                               <div class="tutor_img">
                                 <a href="#"
-                                  ><img src="images/left-imgs/img-3.jpg" alt=""
+                                  ><img :src="`${globalBaseUrl}images/left-imgs/img-3.jpg`" alt=""
                                 /></a>
                               </div>
                               <div class="tutor_content_dt">
@@ -744,16 +701,7 @@
                                   <li>
                                     <button class="sbbc145">Subscribed</button>
                                   </li>
-                                  <li>
-                                    <button class="sbbc146">
-                                      <i class="uil uil-bell"></i>
-                                    </button>
-                                  </li>
                                 </ul>
-                                <div class="tut1250">
-                                  <span class="vdt15">1M Students</span>
-                                  <span class="vdt15">25 Courses</span>
-                                </div>
                               </div>
                             </div>
                           </div>
@@ -761,7 +709,7 @@
                             <div class="fcrse_1 mt-30">
                               <div class="tutor_img">
                                 <a href="#"
-                                  ><img src="images/left-imgs/img-3.jpg" alt=""
+                                  ><img :src="`${globalBaseUrl}images/left-imgs/img-3.jpg`" alt=""
                                 /></a>
                               </div>
                               <div class="tutor_content_dt">
@@ -780,16 +728,7 @@
                                   <li>
                                     <button class="sbbc145">Subscribed</button>
                                   </li>
-                                  <li>
-                                    <button class="sbbc146">
-                                      <i class="uil uil-bell"></i>
-                                    </button>
-                                  </li>
                                 </ul>
-                                <div class="tut1250">
-                                  <span class="vdt15">1M Students</span>
-                                  <span class="vdt15">25 Courses</span>
-                                </div>
                               </div>
                             </div>
                           </div>
@@ -809,6 +748,7 @@
 <script>
 export default {
     name:"Profile",
+    props:['user']
 }
 </script>
 
