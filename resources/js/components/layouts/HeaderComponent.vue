@@ -123,7 +123,7 @@
                     <div class="menu dropdown_account left visible" @click="closeDropdown()">
                         <div class="channel_my">
                             <div class="profile_link justify-content-center">
-                                <img :src="`${globalBaseUrl}images/avatar.png`" alt="" />
+                                <img :src="user.profile_img == null ? `${globalBaseUrl}images/avatar.png` : `${globalBaseUrl}${user.profile_img}`" alt="" />
                             </div>
                             <div class="rhte85 mt-2 justify-content-center">
                                 <h6>{{user.full_name}}</h6>

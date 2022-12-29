@@ -3130,14 +3130,14 @@ i.icon8 {
 	font-weight: 500;
 	font-size: 18px;
 	color: #fff;
-	background: #3AAAD1;
+	background: #3D54b4;
 	height: 40px;
 	float: left;
 }
 
 .mf-field .add_msg:hover {
 	color: #fff;
-	background: #333;
+	background: rgba(52, 84, 180, 0.8);
 }
 
 .add_photo {

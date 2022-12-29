@@ -17,7 +17,7 @@
                   <li>
                     <a href="index.html">
                       <div class="footer_logo">
-                        <img :src="`${globalBaseUrl}images/gamify-favicon.png`" alt="" />
+                        <img :src="`${globalBaseUrl}images/favicon-svg.svg`" alt="" />
                       </div>
                     </a>
                   </li>

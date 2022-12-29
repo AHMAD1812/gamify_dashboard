@@ -3,7 +3,7 @@
         <nav id="navigation" class="navigation navigation-landscape">
             <div class="nav-header">
                 <a class="nav-brand" href="{{ route('app') }}">
-                    <img src="{{ asset('images/gamify-logo.png') }}" class="logo" alt="" />
+                    <img src="{{ asset('images/gamify-logo-svg.svg') }}" class="logo" alt="" />
                 </a>
                 <div class="nav-toggle"></div>
                 {{-- <div class="mobile_nav">

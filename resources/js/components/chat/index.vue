@@ -258,7 +258,7 @@
                                 />
                               </div>
                             </div>
-                            <button class="add_msg" type="submit">
+                            <button class="add_msg" type="button">
                               <i class="uil uil-message"></i>
                             </button>
                           </div>
