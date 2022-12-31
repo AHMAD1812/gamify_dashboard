@@ -15,7 +15,7 @@
                     <div class="all_msg_bg">
                         <div class="channel_my item all__noti5">
                             <div class="profile_link">
-                                <img src="images/left-imgs/img-1.jpg" alt="" />
+                                <img :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`" alt="" />
                                 <div class="pd_content">
                                     <h6>Rock William</h6>
                                     <p class="noti__text5">
@@ -30,7 +30,7 @@
                         </div>
                         <div class="channel_my item all__noti5">
                             <div class="profile_link">
-                                <img src="images/left-imgs/img-2.jpg" alt="" />
+                                <img :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`" alt="" />
                                 <div class="pd_content">
                                     <h6>Jassica Smith</h6>
                                     <p class="noti__text5">
@@ -44,7 +44,7 @@
                         </div>
                         <div class="channel_my item all__noti5">
                             <div class="profile_link">
-                                <img src="images/left-imgs/img-9.jpg" alt="" />
+                                <img :src="`${globalBaseUrl}images/left-imgs/img-2.jpg`" alt="" />
                                 <div class="pd_content">
                                     <p class="noti__text5">
                                         Your Membership Activated.
@@ -55,7 +55,7 @@
                         </div>
                         <div class="channel_my item all__noti5">
                             <div class="profile_link">
-                                <img src="images/left-imgs/img-9.jpg" alt="" />
+                                <img :src="`${globalBaseUrl}images/left-imgs/img-3.jpg`" alt="" />
                                 <div class="pd_content">
                                     <p class="noti__text5">
                                         Your Course Approved Now.

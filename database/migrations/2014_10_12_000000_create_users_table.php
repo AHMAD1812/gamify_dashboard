@@ -23,6 +23,10 @@ class CreateUsersTable extends Migration
             $table->enum('gender', ['male', 'female', 'other'])->default('male');
             $table->string('country')->nullable();
             $table->string('city')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('linkedin')->nullable();
+            $table->string('youtube')->nullable();
+            $table->string('city')->nullable();
             $table->text('biography')->nullable();
             $table->text('category')->nullable();
             $table->double('rating', 8, 2)->default('0.0');

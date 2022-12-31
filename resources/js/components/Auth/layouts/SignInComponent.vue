@@ -10,6 +10,7 @@
                         type="email"
                         name="emailaddress"
                         placeholder="Email Address"
+                        v-model="email"
                     />
                     <i class="uil uil-envelope icon icon2"></i>
                 </div>
@@ -20,11 +21,8 @@
                         class="prompt srch_explore"
                         type="password"
                         name="password"
-                        value=""
-                        id="id_password"
-                        required=""
-                        maxlength="64"
                         placeholder="Password"
+                        v-model="password"
                     />
                     <i class="uil uil-key-skeleton-alt icon icon2"></i>
                 </div>
@@ -37,16 +35,23 @@
                     </div>
                 </div>
             </div>
-            <router-link :to="{ name: 'Dashboard' }"
-                ><button class="login-btn mt-3" type="button">
+            <!-- <router-link :to="{ name: 'Dashboard' }"> -->
+                <button class="login-btn mt-3" type="button" @click="login()">
                     Sign In
-                </button></router-link
-            >
+                </button>
+            <!-- </router-link> -->
         </form>
         <p class="sgntrm145">
-            Or <router-link :to="{ name: 'ForgotPassword' }"
+            or <router-link :to="{ name: 'ForgotPassword' }"
                 >Forgot Password</router-link>.
         </p>
+        <p class="mb-0 mt-10 hvsng145">
+            or login with
+        </p>
+        <div class="social-auth">
+            <img :src="`${globalBaseUrl}images/facebook.png`" class="social-img"/>
+            <img :src="`${globalBaseUrl}images/google.png`" class="social-img"/>
+        </div>
         <p class="mb-0 mt-20 hvsng145">
             Don't have an account? <router-link :to="{ name: 'Register' }">Sign Up</router-link>
         </p>
@@ -56,9 +61,86 @@
 <script>
 export default {
     name: "SignInComponent",
+    data(){
+        return{
+            email:'',
+            password:'',
+        }
+    },
     mounted() {
         $(".ui.checkbox").checkbox();
     },
+    methods:{
+        login(){
+            if(this.validateData()){
+                this.$emit('toggle-loader');
+                let formData = new FormData();
+                formData.append('email', this.email);
+                formData.append('password', this.password);
+                axios
+                    .post(globalBaseUrl+"instructor/login_process",formData)
+                    .then((response) => {
+                        this.$emit("toggle-loader");
+                        if (response.data.status == 200) {
+                            Vue.$toast.open({
+                                message: response.data.message,
+                                type: "success",
+                                position: "top-right",
+                            });
+                            this.$router.push({
+                                name: "Dashboard",
+                            });
+                        }
+                        if (response.data.status == 320) {
+                            Vue.$toast.open({
+                                message: response.data.message,
+                                type: "warning",
+                                position: "top-right",
+                            });
+                            this.$router.push({
+                                name: "OtpVerification",
+                                params: {
+                                    id: response.data.data,
+                                },
+                            });
+                        }
+                        if (response.data.status == 400) {
+                            Vue.$toast.open({
+                                message: response.data.message,
+                                type: "warning",
+                                position: "top-right",
+                            });
+                        }
+                    })
+                    .catch((e) => {
+                        this.$emit("toggle-loader");
+                        Vue.$toast.open({
+                            message: "Something Went Wrong",
+                            type: "error",
+                            position: "top-right",
+                        });
+                        console.log(e);
+                    });
+            }
+        },
+        validateData(){
+            if(this.email == ""){
+                this.errorToast("Email is required");
+                return false;
+            }else if(this.password == ""){
+                this.errorToast("Password are required");
+                return false;
+            }
+            return true;
+        },
+        errorToast(message) {
+            Vue.$toast.open({
+                message: message,
+                type: "error",
+                position: "top-right",
+            });
+        },
+    }
 };
 </script>
 

@@ -17,7 +17,12 @@ const routes = [{
         name: "ForgotPassword",
     },
     {
-        path: "/instructor/dashboard",
+        path: "/instructor/otp_verification",
+        component: Auth,
+        name: "OtpVerification",
+    },
+    {
+        path: "/instructor/",
         component: Body,
         name: "Dashboard",
     },
@@ -25,6 +30,11 @@ const routes = [{
         path: "/instructor/courses",
         component: Body,
         name: "Courses",
+    },
+    {
+        path: "/instructor/course_detail",
+        component: Body,
+        name: "CourseDetail",
     },
     {
         path: "/instructor/create_video",
@@ -55,6 +65,11 @@ const routes = [{
         path: "/instructor/profile",
         component: Body,
         name: "Profile",
+    },
+    {
+        path: "/instructor/feedback",
+        component: Body,
+        name: "Feedback",
     },
 ]
 

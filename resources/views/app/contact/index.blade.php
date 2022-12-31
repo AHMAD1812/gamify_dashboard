@@ -43,22 +43,10 @@
                             <input type="text" class="form-control" placeholder="Email" />
                         </div>
                     </div>
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                        <div class="form-group">
-                            <label>Company</label>
-                            <input type="text" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                        <div class="form-group">
-                            <label>Phone</label>
-                            <input type="text" class="form-control" />
-                        </div>
-                    </div>
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                         <div class="form-group">
                             <label>Message</label>
-                            <input type="text" class="form-control" />
+                            <textarea class="form-control" rows="5"></textarea>
                         </div>
                     </div>
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
@@ -74,10 +62,10 @@
                     <ol class="list-unstyled p-0">
                       <li class="d-flex align-items-start my-3 my-md-4">
                         <div class="rounded-circle p-3 p-sm-4 d-flex align-items-center justify-content-center theme-bg-light">
-                          <div class="position-absolute theme-cl h5 mb-0"><i class="fas fa-home"></i></div>
+                          <div class="position-absolute theme-cl h5 my-0"><i class="fas fa-home"></i></div>
                         </div>
                         <div class="ml-3 ml-md-4">
-                          <h4>Reach Us</h4>
+                          <h4 class="my-0">Reach Us</h4>
                           <p>
                             1234, abc Town,<br> Xyz 12 Street,<br>City, Country
                           </p>
@@ -85,10 +73,10 @@
                       </li>
                       <li class="d-flex align-items-start my-3 my-md-4">
                         <div class="rounded-circle p-3 p-sm-4 d-flex align-items-center justify-content-center theme-bg-light">
-                          <div class="position-absolute theme-cl h5 mb-0"><i class="fas fa-at"></i></div>
+                          <div class="position-absolute theme-cl h5 my-0"><i class="fas fa-at"></i></div>
                         </div>
                         <div class="ml-3 ml-md-4">
-                          <h4>Drop A Mail</h4>
+                          <h4 class="my-0">Drop A Mail</h4>
                           <p>
                             support@GamifyUs.com<br>GamifyUs@gmail.com
                           </p>
@@ -96,10 +84,10 @@
                       </li>
                        <li class="d-flex align-items-start my-3 my-md-4">
                         <div class="rounded-circle p-3 p-sm-4 d-flex align-items-center justify-content-center theme-bg-light">
-                          <div class="position-absolute theme-cl h5 mb-0"><i class="fas fa-phone-alt"></i></div>
+                          <div class="position-absolute theme-cl h5 my-0"><i class="fas fa-phone-alt"></i></div>
                         </div>
                         <div class="ml-3 ml-md-4">
-                          <h4>Make a Call</h4>
+                          <h4 class="my-0">Make a Call</h4>
                           <p>
                             (042) 123 521 458<br>+92 235 548 7548
                           </p>
@@ -115,7 +103,8 @@
 
 <!-- ============================ map Start ================================== -->
 <section class="p-0">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616969.6694606147!2d76.0180559099777!3d27.71120494451525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397477034c6a8ab1%3A0xc64bfb455f3b8f4f!2sLenovo%20Service%20Center%20-%20Wipro%20Infocare%20Digital%20System!5e0!3m2!1sen!2sin!4v1629534919408!5m2!1sen!2sin" class="full-width" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>	
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27213.58274218791!2d74.32574853997552!3d31.50498819767007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919045a28ff1d39%3A0xf71e739b84b3c3c!2sGulberg%20III%2C%20Lahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1669753245333!5m2!1sen!2s" class="full-width" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    
 </section>
 <div class="clearfix"></div>
 <!-- ============================ map End ================================== -->

@@ -16,10 +16,21 @@ window.globalBaseUrl = config.SITE_URL;
 
 import VueRouter from "vue-router";
 import SuiVue from 'semantic-ui-vue';
- 
- 
+import VueTimepicker from 'vue2-timepicker'
+// CSS
+import 'vue2-timepicker/dist/VueTimepicker.css';
+import Axios from "axios";
+import VueAxios from "vue-axios";
+import VueToast from "vue-toast-notification";
+import "vue-toast-notification/dist/theme-sugar.css";
+
+window.csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+Vue.prototype.axios = Axios;
+
+Vue.use(VueToast);
 Vue.use(SuiVue);
 Vue.use(VueRouter);
+Vue.use(VueAxios, Axios);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -32,6 +43,12 @@ Vue.use(VueRouter);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('main-app', require('./App.vue').default);
+Vue.component('vue-timepicker', VueTimepicker);
+Vue.component('FullScreenLoader',Vue.extend(require('./components/layouts/FullScreenLoader.vue').default),{
+    props: {
+        active: Boolean,
+    }
+});
 
 Vue.mixin({
     data: function () {

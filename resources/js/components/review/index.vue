@@ -145,7 +145,7 @@
                       </div>
                       <div class="review_item">
                         <div class="review_usr_dt">
-                          <img src="images/left-imgs/img-1.jpg" alt="" />
+                          <img :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`" alt="" />
                           <div class="rv1458">
                             <h4 class="tutor_name1">John Doe</h4>
                             <span class="time_145">2 hour ago</span>
@@ -172,7 +172,7 @@
                       </div>
                       <div class="review_item">
                         <div class="review_usr_dt">
-                          <img src="images/left-imgs/img-2.jpg" alt="" />
+                          <img :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`" alt="" />
                           <div class="rv1458">
                             <h4 class="tutor_name1">Zoena Singh</h4>
                             <span class="time_145">2 hour ago</span>
@@ -199,7 +199,7 @@
                       </div>
                       <div class="review_item">
                         <div class="review_usr_dt">
-                          <img src="images/left-imgs/img-3.jpg" alt="" />
+                          <img :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`" alt="" />
                           <div class="rv1458">
                             <h4 class="tutor_name1">Rock William</h4>
                             <span class="time_145">5 hour ago</span>

@@ -8,7 +8,7 @@
             <span class="collapse_menu--label"></span>
         </button>
         <div class="main_logo" id="logo">
-            <img src="images/gamify-logo.png" alt="" width="160" />
+            <img :src="`${globalBaseUrl}images/logo-svg.svg`" alt="logo" height="50" />
         </div>
         <div class="top-category">
             <div class="ui compact menu cate-dpdwn">
@@ -65,14 +65,14 @@
                         >Create New Video</router-link>
                 </li>
                 <li class="ui dropdown">
-                    <a href="#" class="option_links" title="Notifications"
+                    <a href="#" class="option_links notification-dropdown" title="Notifications"
                         ><i class="uil uil-bell"></i
                         ><span class="noti_count">3</span></a
                     >
-                    <div class="menu dropdown_mn">
+                    <div class="menu dropdown_mn left visible" @click="closeDropdown()">
                         <a href="#" class="channel_my item">
                             <div class="profile_link">
-                                <img src="images/left-imgs/img-1.jpg" alt="" />
+                                <img :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`" alt="" />
                                 <div class="pd_content">
                                     <h6>Rock William</h6>
                                     <p>
@@ -87,7 +87,7 @@
                         </a>
                         <a href="#" class="channel_my item">
                             <div class="profile_link">
-                                <img src="images/left-imgs/img-2.jpg" alt="" />
+                                <img :src="`${globalBaseUrl}images/left-imgs/img-2.jpg`" alt="" />
                                 <div class="pd_content">
                                     <h6>Jassica Smith</h6>
                                     <p>
@@ -101,7 +101,7 @@
                         </a>
                         <a href="#" class="channel_my item">
                             <div class="profile_link">
-                                <img src="images/left-imgs/img-9.jpg" alt="" />
+                                <img :src="`${globalBaseUrl}images/left-imgs/img-9.jpg`" alt="" />
                                 <div class="pd_content">
                                     <p>
                                         Your Membership Approved
@@ -111,22 +111,22 @@
                                 </div>
                             </div>
                         </a>
-                        <a class="vbm_btn" href="instructor_notifications.html"
+                        <router-link :to="{name : 'Notification'}" class="vbm_btn"
                             >View All <i class="uil uil-arrow-right"></i
-                        ></a>
+                        ></router-link>
                     </div>
                 </li>
                 <li class="ui dropdown">
                     <div class="opts_account new-dropdown" title="Account">
-                        <img src="images/hd_dp.jpg" alt="" />
+                        <img :src="user.profile_img == null ? `${globalBaseUrl}images/avatar.png` : `${globalBaseUrl}${user.profile_img}`" alt="" />
                     </div>
-                    <div class="menu dropdown_account left visible">
+                    <div class="menu dropdown_account left visible" @click="closeDropdown()">
                         <div class="channel_my">
                             <div class="profile_link justify-content-center">
-                                <img src="images/hd_dp.jpg" alt="" />
+                                <img :src="user.profile_img == null ? `${globalBaseUrl}images/avatar.png` : `${globalBaseUrl}${user.profile_img}`" alt="" />
                             </div>
                             <div class="rhte85 mt-2 justify-content-center">
-                                <h6>Joginder Singh</h6>
+                                <h6>{{user.full_name}}</h6>
                                 <div class="mef78" title="Verify">
                                     <i class="uil uil-check-circle"></i>
                                 </div>
@@ -135,20 +135,20 @@
                                 class="dp_link_12 mt-2 text-center"
                                 >View Instructor Profile</router-link>
                         </div>
-                        <a
-                            href="instructor_dashboard.html"
+                        <router-link :to="{name : 'Dashboard'}"
                             class="item channel_item"
-                            >Gamify Us dashboard</a
+                            >Dashboard</router-link
                         >
-                        <a href="setting.html" class="item channel_item"
-                            >Setting</a
-                        >
+                        <router-link :to="{name : 'Setting'}" class="item channel_item">
+                            Setting
+                        </router-link>
                         <a href="help.html" class="item channel_item">Help</a>
-                        <a href="feedback.html" class="item channel_item"
-                            >Send Feedback</a
+                        <router-link :to="{name : 'Feedback'}" class="item channel_item"
+                            >Send Feedback</router-link
                         >
-                        <router-link :to="{name : 'Login'}" class="item channel_item"
-                            >Sign Out</router-link>
+                        <div class="item channel_item" @click="signOut()">
+                            Sign Out
+                        </div>
                     </div>
                 </li>
             </ul>
@@ -159,6 +159,9 @@
 <script>
 export default {
     name: "Header",
+    props:[
+        'user',
+    ],
     mounted() {
         $(".new-dropdown").click(function () {
             if ($(".dropdown_account").css("display") == "none") {
@@ -167,6 +170,16 @@ export default {
                 $(".dropdown_account").hide();
             }
         });
+
+        $(".notification-dropdown").click(function () {
+            if ($(".dropdown_mn").css("display") == "none") {
+                $(".dropdown_mn").show();
+            } else {
+                $(".dropdown_mn").hide();
+            }
+        });
+
+        
         var tid = setInterval(function () {
             if ("complete" === document.readyState) {
                 clearInterval(tid);
@@ -204,6 +217,39 @@ export default {
             }
         }, 100);
     },
+    methods:{
+        signOut(){
+            this.$emit('toggle-loader');
+            axios
+                .post(`${globalBaseUrl}instructor/logout`)
+                .then((response) => {
+                    this.$emit('toggle-loader');
+                    if (response.data.status == 200) {
+                        Vue.$toast.open({
+                            message: "Logout",
+                            type: "error",
+                            position: "top-right",
+                        });
+                        this.$router.push({
+                            name: "Login",
+                        });
+                    }
+                })
+                .catch((e) => {
+                    this.$emit('toggle-loader');
+                    Vue.$toast.open({
+                        message: "Something Went Wrong",
+                        type: "error",
+                        position: "top-right",
+                    });
+                    console.log(e);
+                });
+        },
+        closeDropdown(){
+            $(".dropdown_account").hide();
+            $(".dropdown_mn").hide();
+        }
+    }
 };
 </script>
 

@@ -31,7 +31,7 @@ trait CommonTrait
     {
         //return Response::json(array('status' => 400, 'errorMessage' => $error_message), 400);
         return response()->json([
-            'status' => 400,
+            'status' => 320,
             'message' => $error_message,
             'data' => $data,
         ]);
@@ -44,7 +44,6 @@ trait CommonTrait
                 $destination_path = $path;
                 $extension = $file->getClientOriginalExtension();
                 $fileName = Str::random(15) . '.' . $extension;
-                //$img=Image::make($file);
                 $file->move($destination_path, $fileName);
                 $file_path = $destination_path . $fileName;
                 return $file_path;

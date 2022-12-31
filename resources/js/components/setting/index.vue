@@ -5,7 +5,7 @@
             <div class="col-lg-12">
               <h2 class="st_title"><i class="uil uil-cog"></i> Setting</h2>
               <div class="setting_tabs">
-                <ul class="nav nav-pills mb-4" id="pills-tab" role="tablist">
+                <ul class="nav nav-pills my-3" id="pills-tab" role="tablist">
                   <li class="nav-item">
                     <a
                       class="nav-link active"
@@ -52,7 +52,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="tab-content" id="pills-tabContent">
+              <div class="tab-content setting-content" id="pills-tabContent">
                 <div
                   class="tab-pane fade show active"
                   id="pills-account"
@@ -60,11 +60,9 @@
                   aria-labelledby="pills-account-tab"
                 >
                   <div class="account_setting">
-                    <h4>Your Cursus Account</h4>
+                    <h4>Your Gamify Account</h4>
                     <p>
-                      This is your public presence on Cursus. You need a account
-                      to upload your paid courses, comment on courses, purchased
-                      by students, or earning.
+                      This is your public presence on Gamify US.
                     </p>
                     <div class="basic_profile">
                       <div class="basic_ptitle">
@@ -74,35 +72,30 @@
                       <div class="basic_form">
                         <div class="row">
                           <div class="col-lg-8">
+                              <div class="avatar-upload">
+                                  <div class="avatar-edit">
+                                      <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" @change="onImageSelected"/>
+                                      <label for="imageUpload">
+                                        <i class="uil uil-edit-alt"></i>
+                                      </label>
+                                  </div>
+                                  <div class="avatar-preview">
+                                      <img v-if="file==null" :src="image==null?`${globalAssetUrl}images/avatar.png`:`${globalAssetUrl}${image}`"/>
+                                      <img v-else :src="image"/>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-8">
                             <div class="row">
-                              <div class="col-lg-6">
+                              <div class="col-lg-12">
                                 <div class="ui search focus mt-30">
                                   <div class="ui left icon input swdh11 swdh19">
                                     <input
                                       class="prompt srch_explore"
                                       type="text"
                                       name="name"
-                                      value="Joginder"
-                                      id="id[name]"
-                                      required=""
-                                      maxlength="64"
                                       placeholder="First Name"
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-lg-6">
-                                <div class="ui search focus mt-30">
-                                  <div class="ui left icon input swdh11 swdh19">
-                                    <input
-                                      class="prompt srch_explore"
-                                      type="text"
-                                      name="surname"
-                                      value="Singh"
-                                      id="id[surname]"
-                                      required=""
-                                      maxlength="64"
-                                      placeholder="Last Name"
+                                      v-model="full_name"
                                     />
                                   </div>
                                 </div>
@@ -112,24 +105,13 @@
                                   <div class="ui left icon input swdh11 swdh19">
                                     <input
                                       class="prompt srch_explore"
-                                      type="text"
-                                      name="headline"
-                                      value="I  am a Web Designer"
-                                      id="id_headline"
-                                      required=""
-                                      maxlength="60"
-                                      placeholder="Headline"
+                                      type="email"
+                                      name="email"
+                                      value="Joginder"
+                                      placeholder="Email"
+                                      v-model="email"
+                                      readonly
                                     />
-                                    <div
-                                      class="form-control-counter"
-                                      data-purpose="form-control-counter"
-                                    >
-                                      36
-                                    </div>
-                                  </div>
-                                  <div class="help-block">
-                                    Add a professional headline like, "Engineer
-                                    at Cursus" or "Architect."
                                   </div>
                                 </div>
                               </div>
@@ -141,6 +123,7 @@
                                         rows="3"
                                         name="description"
                                         id="id_about"
+                                        v-model="bio"
                                         placeholder="Write a little description about you..."
                                       ></textarea>
                                     </div>
@@ -172,25 +155,6 @@
                                   <div
                                     class="ui left icon labeled input swdh11 swdh31"
                                   >
-                                    <div class="ui label lb12">https://</div>
-                                    <input
-                                      class="prompt srch_explore"
-                                      type="text"
-                                      name="site"
-                                      value="gambolthemes.net"
-                                      id="id_site"
-                                      required=""
-                                      maxlength="64"
-                                      placeholder="yoursite.com"
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-lg-12">
-                                <div class="ui search focus mt-30">
-                                  <div
-                                    class="ui left icon labeled input swdh11 swdh31"
-                                  >
                                     <div class="ui label lb12">
                                       http://facebook.com/
                                     </div>
@@ -198,37 +162,12 @@
                                       class="prompt srch_explore"
                                       type="text"
                                       name="facebooklink"
-                                      id="id_facebook"
-                                      required=""
-                                      maxlength="64"
                                       placeholder="Facebook Profile"
+                                      v-model="facebook"
                                     />
                                   </div>
                                   <div class="help-block">
-                                    Add your Facebook username (e.g. johndoe).
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-lg-12">
-                                <div class="ui search focus mt-30">
-                                  <div
-                                    class="ui left icon labeled input swdh11 swdh31"
-                                  >
-                                    <div class="ui label lb12">
-                                      http://twitter.com/
-                                    </div>
-                                    <input
-                                      class="prompt srch_explore"
-                                      type="text"
-                                      name="twitterlink"
-                                      id="id_twitter"
-                                      required=""
-                                      maxlength="64"
-                                      placeholder="Twitter Profile"
-                                    />
-                                  </div>
-                                  <div class="help-block">
-                                    Add your Twitter username (e.g. johndoe).
+                                    Add your Facebook username
                                   </div>
                                 </div>
                               </div>
@@ -244,15 +183,12 @@
                                       class="prompt srch_explore"
                                       type="text"
                                       name="linkedinlink"
-                                      id="id_linkedin"
-                                      required=""
-                                      maxlength="64"
                                       placeholder="Linkedin Profile"
+                                      v-model="linkedin"
                                     />
                                   </div>
                                   <div class="help-block">
-                                    Input your LinkedIn resource id (e.g.
-                                    in/johndoe).
+                                    Input your LinkedIn resource id.
                                   </div>
                                 </div>
                               </div>
@@ -268,14 +204,12 @@
                                       class="prompt srch_explore"
                                       type="text"
                                       name="youtubelink"
-                                      id="id_youtube"
-                                      required=""
-                                      maxlength="64"
                                       placeholder="Youtube Profile"
+                                      v-model="youtube"
                                     />
                                   </div>
                                   <div class="help-block">
-                                    Input your Youtube username (e.g. johndoe).
+                                    Input your Youtube username.
                                   </div>
                                 </div>
                               </div>
@@ -284,7 +218,7 @@
                         </div>
                       </div>
                     </div>
-                    <button class="save_btn" type="submit">Save Changes</button>
+                    <button class="save_btn" type="button" @click="updateProfile">Save Changes</button>
                   </div>
                 </div>
                 <div
@@ -304,33 +238,29 @@
                           <div class="basic_ptitle">
                             <h4>Choose when and how to be notified</h4>
                           </div>
-                          <div class="ui toggle checkbox _1457s2">
-                            <input type="checkbox" name="stream_ss1" checked />
-                            <label>Subscriptions</label>
+                          <div class="checkbox _1457s2">
+                            <sui-checkbox label="Subscriptions" toggle />
                             <p class="ml5">
                               Notify me about activity from the profiles I'm
                               subscribed to
                             </p>
                           </div>
-                          <div class="ui toggle checkbox _1457s2">
-                            <input type="checkbox" name="stream_ss2" />
-                            <label>Recommended Courses</label>
+                          <div class=" checkbox _1457s2">
+                            <sui-checkbox label="Recommended Courses" toggle />
                             <p class="ml5">
                               Notify me of courses I might like based on what I
                               watch
                             </p>
                           </div>
-                          <div class="ui toggle checkbox _1457s2">
-                            <input type="checkbox" name="stream_ss3" />
-                            <label>Activity on my comments</label>
+                          <div class=" checkbox _1457s2">
+                            <sui-checkbox label="Activity on my comments" toggle />
                             <p class="ml5">
                               Notify me about activity on my comments on others’
                               courses
                             </p>
                           </div>
-                          <div class="ui toggle checkbox _1457s2">
-                            <input type="checkbox" name="stream_ss4" checked />
-                            <label>Replies to my comments</label>
+                          <div class=" checkbox _1457s2">
+                            <sui-checkbox label="Replies to my comments" toggle />
                             <p class="ml5">
                               Notify me about replies to my comments
                             </p>
@@ -358,12 +288,8 @@
                               Edututs+.
                             </p>
                           </div>
-                          <div class="ui toggle checkbox _1457s2">
-                            <input type="checkbox" name="stream_ss5" checked />
-                            <label
-                              >Send me emails about my Cursus activity and
-                              updates I requested</label
-                            >
+                          <div class="checkbox _1457s2">
+                            <sui-checkbox label="Send me emails about my Cursus activity and updates I requested" toggle />
                             <p class="ml5">
                               If this setting is turned off, Cursus may still
                               send you messages regarding your account, required
@@ -371,19 +297,12 @@
                               privacy matters
                             </p>
                           </div>
-                          <div class="ui toggle checkbox _1457s2">
-                            <input type="checkbox" name="stream_ss6" />
-                            <label
-                              >Promotions, course recommendations, and helpful
-                              resources from Cursus.</label
-                            >
+                          <div class="checkbox _1457s2">
+                            <sui-checkbox label="Promotions, course recommendations, and helpful resources from Cursus." toggle />
                           </div>
-                          <div class="ui toggle checkbox _1457s2">
-                            <input type="checkbox" name="stream_ss7" />
-                            <label
-                              >Announcements from instructors whose course(s)
-                              I’m enrolled in.</label
-                            >
+                          <div class="checkbox _1457s2">
+                            <sui-checkbox label="Announcements from instructors whose course(s)
+                              I’m enrolled in." toggle />
                             <p class="ml5">
                               To adjust this preference by course, leave this
                               box checked and go to the course dashboard and
@@ -412,11 +331,11 @@
                           <div class="basic_ptitle">
                             <h4>Profile page settings</h4>
                           </div>
-                          <div class="ui toggle checkbox _1457s2">
+                          <div class="checkbox _1457s2">
                             <input type="checkbox" name="stream_ss8" checked />
                             <label>Show your profile on search engines</label>
                           </div>
-                          <div class="ui toggle checkbox _1457s2">
+                          <div class="checkbox _1457s2">
                             <input type="checkbox" name="stream_ss9" />
                             <label
                               >Show courses you're taking on your profile
@@ -477,6 +396,115 @@
 <script>
 export default {
     name:"Setting",
+    data(){
+      return{
+        user:{},
+        full_name:"",
+        email:"",
+        bio:"",
+        facebook:"",
+        linkedin:"",
+        youtube:"",
+        image:null,
+        file:null,
+      }
+    },
+    async mounted(){
+      try{
+          this.$emit('toggle-loader');
+          let response = await axios.get(`${globalBaseUrl}instructor/user_profile`);
+          let user = response.data.data;
+          this.user=user;
+          this.full_name = user.full_name;
+          this.email = user.email;
+          this.bio = user.biography;
+          this.facebook=user.facebook==null?"":user.facebook;
+          this.youtube=user.youtube == null ? "" : user.youtube;
+          this.linkedin=user.linkedin == null ? "" : user.linkedin;
+          this.image=user.profile_img;
+          this.$emit('toggle-loader');
+        }catch(e){
+          this.$emit('toggle-loader');
+          console.log(e);
+        }
+    },
+    methods:{
+      updateProfile(){
+        if(this.validateInput()){
+          try{
+            this.$emit("toggle-loader");
+            let formData=new FormData();
+            formData.append('full_name',this.full_name);
+            formData.append('biography',this.bio);
+            if(this.facebook!=""){
+              formData.append('facebook',this.facebook);
+            }
+            if(this.linkedin!=""){
+              formData.append('linkedin',this.linkedin);
+            }
+            if(this.youtube!=""){
+              formData.append('youtube',this.youtube);
+            }
+            if(this.file != null){
+              formData.append('profile_image',this.file);
+            }
+            axios
+            .post(`${globalBaseUrl}instructor/update_profile`,formData)
+            .then((response) => {
+                if (response.data.status == 200) {
+                    Vue.$toast.open({
+                      message: response.data.message,
+                      type: "success",
+                      position: "top-right",
+                    });
+                    this.$emit("profile-updated",response.data.data)
+                }
+                if (response.data.status == 400) {
+                    Vue.$toast.open({
+                        message: response.data.message,
+                        type: "warning",
+                        position: "top-right",
+                    });
+                }
+                this.$emit("toggle-loader");
+            })
+            .catch((e) => {
+                this.$emit("toggle-loader");
+                Vue.$toast.open({
+                    message: "Something Went Wrong",
+                    type: "error",
+                    position: "top-right",
+                });
+                console.log(e);
+            });
+          }catch(e){
+            this.$emit('toogle-loader');
+            console.log(e);
+          }
+        }
+      },
+      onImageSelected(e){
+        this.file=e.target.files[0];
+        this.image=URL.createObjectURL(this.file);
+      },
+      validateInput(){
+        if(this.full_name==""){
+          this.errorToast('Name is Required');
+          return false;
+        }else if(this.bio == ""){
+          this.errorToast("Bio is required")
+          return false;
+        }
+        return true;
+      },
+      errorToast(message){
+        Vue.$toast.open({
+          type:'error',
+          message:message,
+          position:'top-right'
+        })
+      }
+    }
 }
 </script>
 

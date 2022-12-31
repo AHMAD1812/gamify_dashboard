@@ -5,7 +5,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h2 class="st_title">
-                            <i class="uil uil-analysis"></i> Create New Video
+                            <i class="uil uil-video"></i> Create new interactive
+                            video
                         </h2>
                     </div>
                 </div>
@@ -84,11 +85,6 @@
                                                                         id="main[title]"
                                                                         value=""
                                                                     />
-                                                                    <div
-                                                                        class="badge_num"
-                                                                    >
-                                                                        60
-                                                                    </div>
                                                                 </div>
                                                                 <div
                                                                     class="help-block"
@@ -146,82 +142,6 @@
                                                                 <div
                                                                     class="course_des_bg"
                                                                 >
-                                                                    <ul
-                                                                        class="course_des_ttle"
-                                                                    >
-                                                                        <li>
-                                                                            <a
-                                                                                href="#"
-                                                                                ><i
-                                                                                    class="uil uil-bold"
-                                                                                ></i
-                                                                            ></a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="#"
-                                                                                ><i
-                                                                                    class="uil uil-italic"
-                                                                                ></i
-                                                                            ></a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="#"
-                                                                                ><i
-                                                                                    class="uil uil-list-ul"
-                                                                                ></i
-                                                                            ></a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="#"
-                                                                                ><i
-                                                                                    class="uil uil-left-to-right-text-direction"
-                                                                                ></i
-                                                                            ></a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="#"
-                                                                                ><i
-                                                                                    class="uil uil-right-to-left-text-direction"
-                                                                                ></i
-                                                                            ></a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="#"
-                                                                                ><i
-                                                                                    class="uil uil-list-ui-alt"
-                                                                                ></i
-                                                                            ></a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="#"
-                                                                                ><i
-                                                                                    class="uil uil-link"
-                                                                                ></i
-                                                                            ></a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="#"
-                                                                                ><i
-                                                                                    class="uil uil-text-size"
-                                                                                ></i
-                                                                            ></a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="#"
-                                                                                ><i
-                                                                                    class="uil uil-text"
-                                                                                ></i
-                                                                            ></a>
-                                                                        </li>
-                                                                    </ul>
                                                                     <div
                                                                         class="textarea_dt"
                                                                     >
@@ -334,31 +254,15 @@
                                                                     Level*</label
                                                                 >
                                                             </div>
-                                                            <select
-                                                                class="ui hj145 dropdown cntry152 prompt srch_explore"
-                                                                multiple=""
-                                                            >
-                                                                <option
-                                                                    value=""
-                                                                >
-                                                                    Select Level
-                                                                </option>
-                                                                <option
-                                                                    value="1"
-                                                                >
-                                                                    Beginner
-                                                                </option>
-                                                                <option
-                                                                    value="2"
-                                                                >
-                                                                    Intermediate
-                                                                </option>
-                                                                <option
-                                                                    value="3"
-                                                                >
-                                                                    Expert
-                                                                </option>
-                                                            </select>
+                                                            <sui-dropdown
+                                                                selection
+                                                                placeholder="Select Level"
+                                                                class="cntry152 prompt srch_explore"
+                                                                :options="
+                                                                    levelOptions
+                                                                "
+                                                                v-model="level"
+                                                            />
                                                         </div>
                                                         <div
                                                             class="col-lg-6 col-md-6"
@@ -371,759 +275,24 @@
                                                                     Category*</label
                                                                 >
                                                             </div>
-                                                            <div
-                                                                class="ui selection dropdown cntry152 prompt srch_explore optgroup"
-                                                            >
-                                                                <div
-                                                                    class="default text"
-                                                                >
-                                                                    Select
-                                                                </div>
-                                                                <i
-                                                                    class="dropdown icon"
-                                                                ></i>
-                                                                <div
-                                                                    class="menu cate_menu"
-                                                                >
-                                                                    <div
-                                                                        class="ui horizontal divider opt_title"
-                                                                    >
-                                                                        Development
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Web
-                                                                        Development
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Data
-                                                                        Science
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Programming
-                                                                        Languages
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Mobile
-                                                                        Apps
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Game
-                                                                        Development
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Databases
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Software
-                                                                        Testing
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Software
-                                                                        Engineering
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Development
-                                                                        Tools
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        E-Commerce
-                                                                    </div>
-                                                                    <div
-                                                                        class="ui horizontal divider opt_title"
-                                                                    >
-                                                                        Business
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Finance
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Entrepreneurship
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Communications
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Management
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Sales
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Strategy
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Operations
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Project
-                                                                        Management
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Business
-                                                                        Law
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Data &
-                                                                        Analytics
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Home
-                                                                        Business
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Human
-                                                                        Resources
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Industry
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Media
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Real
-                                                                        Estate
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Other
-                                                                    </div>
-                                                                    <div
-                                                                        class="ui horizontal divider opt_title"
-                                                                    >
-                                                                        Finance
-                                                                        &
-                                                                        Accounting
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Accounting
-                                                                        &
-                                                                        Bookkeeping
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Compliance
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Cryptocurrency
-                                                                        &
-                                                                        Blockchain
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Economics
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Finance
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Finance
-                                                                        Cert &
-                                                                        Exam
-                                                                        Prep
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Financial
-                                                                        Modeling
-                                                                        &
-                                                                        Analysis
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Investing
-                                                                        &
-                                                                        Trading
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Money
-                                                                        Management
-                                                                        Tools
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Taxes
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Other
-                                                                        Finance
-                                                                        &
-                                                                        Economics
-                                                                    </div>
-                                                                    <div
-                                                                        class="ui horizontal divider opt_title"
-                                                                    >
-                                                                        IT &
-                                                                        Software
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        IT
-                                                                        Certification
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Network
-                                                                        &
-                                                                        Security
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Hardware
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Operating
-                                                                        Systems
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Other
-                                                                    </div>
-                                                                    <div
-                                                                        class="ui horizontal divider opt_title"
-                                                                    >
-                                                                        Office
-                                                                        Productivity
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Microsoft
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Apple
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Google
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        SAP
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Oracle
-                                                                    </div>
-                                                                    <div
-                                                                        class="ui horizontal divider opt_title"
-                                                                    >
-                                                                        Personal
-                                                                        Development
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Personal
-                                                                        Transformation
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Productivity
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Leadership
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Personal
-                                                                        Finance
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Career
-                                                                        Development
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Parenting
-                                                                        &
-                                                                        Relationships
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Happiness
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Religion
-                                                                        &
-                                                                        Spirituality
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Personal
-                                                                        Brand
-                                                                        Building
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Creativity
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Influence
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Self
-                                                                        Esteem
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Stress
-                                                                        Management
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Memory &
-                                                                        Study
-                                                                        Skills
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Motivation
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Other
-                                                                    </div>
-                                                                    <div
-                                                                        class="ui horizontal divider opt_title"
-                                                                    >
-                                                                        Design
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Web
-                                                                        Design
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Graphic
-                                                                        Design
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Design
-                                                                        Tools
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        User
-                                                                        Experience
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Game
-                                                                        Design
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Design
-                                                                        Thinking
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        3D &
-                                                                        Animation
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Fashion
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Architectural
-                                                                        Design
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Interior
-                                                                        Design
-                                                                    </div>
-                                                                    <div
-                                                                        class="ui horizontal divider opt_title"
-                                                                    >
-                                                                        Marketing
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Digital
-                                                                        Marketing
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Search
-                                                                        Engine
-                                                                        Optimization
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Social
-                                                                        Media
-                                                                        Marketing
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Branding
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Marketing
-                                                                        Fundamentals
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Analytics
-                                                                        &
-                                                                        Automation
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Public
-                                                                        Relations
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Advertising
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Video &
-                                                                        Mobile
-                                                                        Marketing
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Content
-                                                                        Marketing
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Growth
-                                                                        Hacking
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Affiliate
-                                                                        Marketing
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Product
-                                                                        Marketing
-                                                                    </div>
-                                                                    <div
-                                                                        class="ui horizontal divider opt_title"
-                                                                    >
-                                                                        Lifestyle
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Arts &
-                                                                        Crafts
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Food &
-                                                                        Beverage
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Beauty &
-                                                                        Makeup
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Travel
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Gaming
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Home
-                                                                        Improvement
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Pet Care
-                                                                        &
-                                                                        Training
-                                                                    </div>
-                                                                    <div
-                                                                        class="ui horizontal divider opt_title"
-                                                                    >
-                                                                        Photography
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Digital
-                                                                        Photography
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Photography
-                                                                        Fundamentals
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Portraits
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Photography
-                                                                        Tools
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Commercial
-                                                                        Photography
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Video
-                                                                        Design
-                                                                    </div>
-                                                                    <div
-                                                                        class="ui horizontal divider opt_title"
-                                                                    >
-                                                                        Health &
-                                                                        Fitness
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Fitness
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        General
-                                                                        Health
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Sports
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Nutrition
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Yoga
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Mental
-                                                                        Health
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Dieting
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Self
-                                                                        Defense
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Safety &
-                                                                        First
-                                                                        Aid
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Dance
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Meditation
-                                                                    </div>
-                                                                    <div
-                                                                        class="ui horizontal divider opt_title"
-                                                                    >
-                                                                        Music
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Instruments
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Production
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Music
-                                                                        Fundamentals
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Vocal
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Music
-                                                                        Techniques
-                                                                    </div>
-                                                                    <div
-                                                                        class="item"
-                                                                    >
-                                                                        Music
-                                                                        Software
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                            <sui-dropdown
+                                                                multiple
+                                                                fluid
+                                                                placeholder="Select Category"
+                                                                :max-selections="
+                                                                    2
+                                                                "
+                                                                class="cntry152 prompt srch_explore"
+                                                                search
+                                                                selection
+                                                                allow-additions
+                                                                :options="
+                                                                    categoryOptions
+                                                                "
+                                                                v-model="
+                                                                    category
+                                                                "
+                                                            />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1157,117 +326,38 @@
                                                                 ></i
                                                                 >Curriculum
                                                             </h4>
-                                                            <button
-                                                                class="main-btn color btn-hover ml-left add-section-title"
-                                                                data-toggle="modal"
-                                                                data-target="#add_section_model"
-                                                            >
-                                                                New Section
-                                                            </button>
                                                         </div>
                                                         <div
                                                             class="added-section-item mb-30"
                                                         >
                                                             <div
-                                                                class="section-header"
-                                                            >
-                                                                <h4>
-                                                                    <i
-                                                                        class="fas fa-bars mr-2"
-                                                                    ></i
-                                                                    >Introduction
-                                                                </h4>
-                                                                <div
-                                                                    class="section-edit-options"
-                                                                >
-                                                                    <button
-                                                                        class="btn-152"
-                                                                        type="button"
-                                                                        data-toggle="collapse"
-                                                                        data-target="#edit-section"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-edit"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        class="btn-152"
-                                                                        type="button"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-trash-alt"
-                                                                        ></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                id="edit-section"
-                                                                class="collapse"
-                                                            >
-                                                                <div
-                                                                    class="new-section smt-25"
-                                                                >
-                                                                    <div
-                                                                        class="form_group"
-                                                                    >
-                                                                        <div
-                                                                            class="ui search focus mt-30 lbel25"
-                                                                        >
-                                                                            <label
-                                                                                >Section
-                                                                                Name*</label
-                                                                            >
-                                                                            <div
-                                                                                class="ui left icon input swdh19"
-                                                                            >
-                                                                                <input
-                                                                                    class="prompt srch_explore"
-                                                                                    type="text"
-                                                                                    placeholder=""
-                                                                                    name="title"
-                                                                                    maxlength="60"
-                                                                                    id="main[title]"
-                                                                                    value="Introduction"
-                                                                                />
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div
-                                                                        class="share-submit-btns pl-0"
-                                                                    >
-                                                                        <button
-                                                                            class="main-btn color btn-hover"
-                                                                        >
-                                                                            <i
-                                                                                class="fas fa-save mr-2"
-                                                                            ></i
-                                                                            >Update
-                                                                            Section
-                                                                        </button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                class="section-group-list sortable"
+                                                                class="section-group-list"
                                                             >
                                                                 <div
                                                                     class="section-list-item"
+                                                                    v-for="(item,key) in curriculum"
+                                                                    :key="`curriculum_${key}_`"
                                                                 >
                                                                     <div
                                                                         class="section-item-title"
                                                                     >
                                                                         <i
-                                                                            class="fas fa-file-alt mr-2"
+                                                                            class="fas mr-2"
+                                                                            :class="[item.type=='assignment' ? 'fa-file' : 
+                                                                                    item.type=='quiz'? 'fa-stream' : 'fa-clipboard-list']"
                                                                         ></i>
                                                                         <span
                                                                             class="section-item-title-text"
-                                                                            >lecture
-                                                                            Title</span
+                                                                            >{{ item.name }}</span
                                                                         >
                                                                     </div>
                                                                     <button
                                                                         type="button"
                                                                         class="section-item-tools"
+                                                                        data-toggle="modal"
+                                                                        :data-target="[item.type=='quiz'?'#add_quiz_model':
+                                                                        item.type=='assignment'?'#add_assignment_model' :
+                                                                        '#add_lecture_model']"
                                                                     >
                                                                         <i
                                                                             class="fas fa-edit"
@@ -1276,97 +366,10 @@
                                                                     <button
                                                                         type="button"
                                                                         class="section-item-tools"
+                                                                        @click="deleteCurriculum(key)"
                                                                     >
                                                                         <i
                                                                             class="fas fa-trash-alt"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools ml-auto"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-bars"
-                                                                        ></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div
-                                                                    class="section-list-item"
-                                                                >
-                                                                    <div
-                                                                        class="section-item-title"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-stream mr-2"
-                                                                        ></i>
-                                                                        <span
-                                                                            class="section-item-title-text"
-                                                                            >Quiz
-                                                                            Title</span
-                                                                        >
-                                                                    </div>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-edit"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-trash-alt"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools ml-auto"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-bars"
-                                                                        ></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div
-                                                                    class="section-list-item"
-                                                                >
-                                                                    <div
-                                                                        class="section-item-title"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-clipboard-list mr-2"
-                                                                        ></i>
-                                                                        <span
-                                                                            class="section-item-title-text"
-                                                                            >Assignment
-                                                                            Title</span
-                                                                        >
-                                                                    </div>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-edit"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-trash-alt"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools ml-auto"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-bars"
                                                                         ></i>
                                                                     </button>
                                                                 </div>
@@ -1424,60 +427,42 @@
                                             </div>
                                             <div class="lecture-video-dt mb-30">
                                                 <span class="video-info"
-                                                    >Intro Course overview
-                                                    provider type. (.mp4,
-                                                    YouTube, Vimeo etc.)</span
+                                                    >Video overview provider
+                                                    type. (.mp4, YouTube)</span
                                                 >
                                                 <div class="video-category">
                                                     <label
                                                         ><input
                                                             type="radio"
                                                             name="colorRadio"
-                                                            value="mp4"
+                                                            class="d-none"
+                                                            :value="'mp4'"
+                                                            v-model="video_type"
                                                             checked
                                                         /><span
+                                                            :class="[video_type=='mp4'?'selected':'']"
                                                             >HTML5(mp4)</span
                                                         ></label
                                                     >
                                                     <label
                                                         ><input
                                                             type="radio"
+                                                            class="d-none"
                                                             name="colorRadio"
-                                                            value="url"
+                                                            :value="'url'"
+                                                            v-model="video_type"
                                                         /><span
+                                                            :class="[video_type=='url'?'selected':'']"
                                                             >External URL</span
                                                         ></label
                                                     >
-                                                    <label
-                                                        ><input
-                                                            type="radio"
-                                                            name="colorRadio"
-                                                            value="youtube"
-                                                        /><span
-                                                            >YouTube</span
-                                                        ></label
-                                                    >
-                                                    <label
-                                                        ><input
-                                                            type="radio"
-                                                            name="colorRadio"
-                                                            value="vimeo"
-                                                        /><span
-                                                            >Vimeo</span
-                                                        ></label
-                                                    >
-                                                    <label
-                                                        ><input
-                                                            type="radio"
-                                                            name="colorRadio"
-                                                            value="embedded"
-                                                        /><span
-                                                            >embedded</span
-                                                        ></label
-                                                    >
                                                     <div
-                                                        class="mp4 intro-box"
-                                                        style="display: block"
+                                                        class="intro-box"
+                                                        :class="[
+                                                            video_type == 'mp4'
+                                                                ? 'd-block'
+                                                                : '',
+                                                        ]"
                                                     >
                                                         <div class="row">
                                                             <div
@@ -1514,7 +499,14 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="url intro-box">
+                                                    <div
+                                                        class="intro-box"
+                                                        :class="[
+                                                            video_type == 'url'
+                                                                ? 'd-block'
+                                                                : '',
+                                                        ]"
+                                                    >
                                                         <div
                                                             class="new-section"
                                                         >
@@ -1540,92 +532,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div
-                                                        class="youtube intro-box"
-                                                    >
-                                                        <div
-                                                            class="new-section"
-                                                        >
-                                                            <div
-                                                                class="ui search focus mt-30 lbel25"
-                                                            >
-                                                                <label
-                                                                    >Youtube
-                                                                    URL*</label
-                                                                >
-                                                                <div
-                                                                    class="ui left icon input swdh19"
-                                                                >
-                                                                    <input
-                                                                        class="prompt srch_explore"
-                                                                        type="text"
-                                                                        placeholder="Youtube Video URL"
-                                                                        name=""
-                                                                        id=""
-                                                                        value=""
-                                                                    />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div
-                                                        class="vimeo intro-box"
-                                                    >
-                                                        <div
-                                                            class="new-section"
-                                                        >
-                                                            <div
-                                                                class="ui search focus mt-30 lbel25"
-                                                            >
-                                                                <label
-                                                                    >Vimeo
-                                                                    URL*</label
-                                                                >
-                                                                <div
-                                                                    class="ui left icon input swdh19"
-                                                                >
-                                                                    <input
-                                                                        class="prompt srch_explore"
-                                                                        type="text"
-                                                                        placeholder="Vimeo Video URL"
-                                                                        name=""
-                                                                        id=""
-                                                                        value=""
-                                                                    />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div
-                                                        class="embedded intro-box"
-                                                    >
-                                                        <div
-                                                            class="new-section"
-                                                        >
-                                                            <div
-                                                                class="ui search focus mt-30 lbel25"
-                                                            >
-                                                                <label
-                                                                    >Embedded
-                                                                    Code*</label
-                                                                >
-                                                                <div
-                                                                    class="ui form swdh30"
-                                                                >
-                                                                    <div
-                                                                        class="field"
-                                                                    >
-                                                                        <textarea
-                                                                            rows="3"
-                                                                            name=""
-                                                                            id=""
-                                                                            placeholder="Place your embedded code here"
-                                                                        ></textarea>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="thumbnail-into">
@@ -1640,7 +546,7 @@
                                                         >
                                                         <div class="thumb-item">
                                                             <img
-                                                                src="images/thumbnail-demo.jpg"
+                                                                :src="thumbnail==null?`${globalBaseUrl}images/thumbnail-demo.jpg`:thumbnail"
                                                                 alt=""
                                                             />
                                                             <div
@@ -1652,6 +558,7 @@
                                                                     <input
                                                                         class="uploadBtn-main-input"
                                                                         type="file"
+                                                                        @change="onThumbnailSelected"
                                                                         id="ThumbFile__input--source"
                                                                     />
                                                                     <label
@@ -1914,25 +821,22 @@
                                             <i class="far fa-edit"></i>
                                             <p>
                                                 Your course is in a draft state.
-                                                Students cannot view, purchase
-                                                or enroll in this course. For
-                                                students that are already
-                                                enrolled, this course will not
-                                                appear on their student
-                                                Dashboard.
+                                                Students cannot view or take this course. 
+                                                <br/>
+                                                Course will appear on students dashboard once it is approved.
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="step-footer step-tab-pager">
                                     <button
-                                        data-direction="prev"
+                                        :data-direction="validation?'prev':''"
                                         class="btn btn-default steps_btn"
                                     >
                                         PREVIOUS
                                     </button>
                                     <button
-                                        data-direction="next"
+                                        :data-direction="validation?'next':''"
                                         class="btn btn-default steps_btn"
                                     >
                                         Next
@@ -1946,64 +850,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div
-            class="modal fade"
-            id="add_section_model"
-            tabindex="-1"
-            aria-labelledby="lectureModalLabel"
-            aria-hidden="true"
-        >
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="lectureModalLabel">
-                            New Section
-                        </h5>
-                        <button
-                            type="button"
-                            class="close"
-                            data-dismiss="modal"
-                            aria-label="Close"
-                        >
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="new-section-block">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="new-section">
-                                        <div class="form_group">
-                                            <label class="label25"
-                                                >Section Name*</label
-                                            >
-                                            <input
-                                                class="form_input_1"
-                                                type="text"
-                                                placeholder="Section title here"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button
-                            type="button"
-                            class="main-btn cancel"
-                            data-dismiss="modal"
-                        >
-                            Close
-                        </button>
-                        <button type="button" class="main-btn">
-                            Add Section
-                        </button>
                     </div>
                 </div>
             </div>
@@ -2051,17 +897,7 @@
                                                 ></i
                                                 >Basic</a
                                             >
-                                            <a
-                                                class="flex-sm-fill text-sm-center nav-link"
-                                                data-toggle="tab"
-                                                href="#nav-video"
-                                                role="tab"
-                                                aria-selected="false"
-                                                ><i
-                                                    class="fas fa-video mr-2"
-                                                ></i
-                                                >Video</a
-                                            >
+
                                             <a
                                                 class="flex-sm-fill text-sm-center nav-link"
                                                 data-toggle="tab"
@@ -2108,7 +944,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="preview-dt">
+                                                <!-- <div class="preview-dt">
                                                     <span class="title-875"
                                                         >Free Preview</span
                                                     >
@@ -2120,461 +956,7 @@
                                                         />
                                                         <span></span>
                                                     </label>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="tab-pane fade"
-                                                id="nav-video"
-                                                role="tabpanel"
-                                            >
-                                                <div
-                                                    class="lecture-video-dt mt-30"
-                                                >
-                                                    <span class="video-info"
-                                                        >Select your preferred
-                                                        video type. (.mp4,
-                                                        YouTube, Vimeo
-                                                        etc.)</span
-                                                    >
-                                                    <div class="video-category">
-                                                        <label
-                                                            ><input
-                                                                type="radio"
-                                                                name="colorRadio"
-                                                                value="mp4"
-                                                                checked=""
-                                                            /><span
-                                                                >HTML5(mp4)</span
-                                                            ></label
-                                                        >
-                                                        <label
-                                                            ><input
-                                                                type="radio"
-                                                                name="colorRadio"
-                                                                value="url"
-                                                            /><span
-                                                                >External
-                                                                URL</span
-                                                            ></label
-                                                        >
-                                                        <label
-                                                            ><input
-                                                                type="radio"
-                                                                name="colorRadio"
-                                                                value="youtube"
-                                                            /><span
-                                                                >YouTube</span
-                                                            ></label
-                                                        >
-                                                        <label
-                                                            ><input
-                                                                type="radio"
-                                                                name="colorRadio"
-                                                                value="vimeo"
-                                                            /><span
-                                                                >Vimeo</span
-                                                            ></label
-                                                        >
-                                                        <label
-                                                            ><input
-                                                                type="radio"
-                                                                name="colorRadio"
-                                                                value="embedded"
-                                                            /><span
-                                                                >embedded</span
-                                                            ></label
-                                                        >
-                                                        <div
-                                                            class="mp4 video-box"
-                                                            style="
-                                                                display: block;
-                                                            "
-                                                        >
-                                                            <div class="row">
-                                                                <div
-                                                                    class="col-lg-6 col-md-6"
-                                                                >
-                                                                    <div
-                                                                        class="upload-file-dt mt-30"
-                                                                    >
-                                                                        <div
-                                                                            class="upload-btn"
-                                                                        >
-                                                                            <input
-                                                                                class="uploadBtn-main-input"
-                                                                                type="file"
-                                                                                id="VideoFile__input--source"
-                                                                            />
-                                                                            <label
-                                                                                for="VideoFile__input--source"
-                                                                                title="Zip"
-                                                                                >Upload
-                                                                                Video</label
-                                                                            >
-                                                                        </div>
-                                                                        <span
-                                                                            class="uploadBtn-main-file"
-                                                                            >File
-                                                                            Format:
-                                                                            .mp4</span
-                                                                        >
-                                                                        <span
-                                                                            class="uploaded-id"
-                                                                            >Uploaded
-                                                                            ID :
-                                                                            <b
-                                                                                >12</b
-                                                                            ></span
-                                                                        >
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    class="col-lg-6 col-md-6"
-                                                                >
-                                                                    <div
-                                                                        class="upload-file-dt mt-30"
-                                                                    >
-                                                                        <div
-                                                                            class="upload-btn"
-                                                                        >
-                                                                            <input
-                                                                                class="uploadBtn-main-input"
-                                                                                type="file"
-                                                                                id="PosterFile__input--source"
-                                                                            />
-                                                                            <label
-                                                                                for="PosterFile__input--source"
-                                                                                title="Zip"
-                                                                                >Video
-                                                                                Poster</label
-                                                                            >
-                                                                        </div>
-                                                                        <span
-                                                                            class="uploadBtn-main-file color-b"
-                                                                            >Uploaded
-                                                                            ID :
-                                                                            preview.jpg</span
-                                                                        >
-                                                                        <span
-                                                                            class="uploaded-id color-fmt"
-                                                                            >Size:
-                                                                            590x300
-                                                                            pixels.
-                                                                            Supports:
-                                                                            jpg,jpeg,
-                                                                            or
-                                                                            png</span
-                                                                        >
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                class="video-duration"
-                                                            >
-                                                                <label
-                                                                    class="label25"
-                                                                    >Video
-                                                                    Runtime -
-                                                                    <strong
-                                                                        >hh:mm:ss</strong
-                                                                    >*</label
-                                                                >
-                                                                <div
-                                                                    class="duration-time"
-                                                                >
-                                                                    <div
-                                                                        class="input-group"
-                                                                    >
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][hours]"
-                                                                            value="00"
-                                                                        />
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][mins]"
-                                                                            value="1"
-                                                                        />
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][secs]"
-                                                                            value="00"
-                                                                        />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div
-                                                            class="url video-box"
-                                                        >
-                                                            <div
-                                                                class="new-section"
-                                                            >
-                                                                <div
-                                                                    class="ui search focus mt-30 lbel25"
-                                                                >
-                                                                    <label
-                                                                        >External
-                                                                        URL*</label
-                                                                    >
-                                                                    <div
-                                                                        class="ui left icon input swdh19"
-                                                                    >
-                                                                        <input
-                                                                            class="prompt srch_explore"
-                                                                            type="text"
-                                                                            placeholder="External Video URL"
-                                                                            name=""
-                                                                            id=""
-                                                                            value=""
-                                                                        />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                class="video-duration"
-                                                            >
-                                                                <label
-                                                                    class="label25"
-                                                                    >Video
-                                                                    Runtime -
-                                                                    <strong
-                                                                        >hh:mm:ss</strong
-                                                                    >*</label
-                                                                >
-                                                                <div
-                                                                    class="duration-time"
-                                                                >
-                                                                    <div
-                                                                        class="input-group"
-                                                                    >
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][hours]"
-                                                                            value="00"
-                                                                        />
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][mins]"
-                                                                            value="1"
-                                                                        />
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][secs]"
-                                                                            value="00"
-                                                                        />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div
-                                                            class="youtube video-box"
-                                                        >
-                                                            <div
-                                                                class="new-section"
-                                                            >
-                                                                <div
-                                                                    class="ui search focus mt-30 lbel25"
-                                                                >
-                                                                    <label
-                                                                        >Youtube
-                                                                        URL*</label
-                                                                    >
-                                                                    <div
-                                                                        class="ui left icon input swdh19"
-                                                                    >
-                                                                        <input
-                                                                            class="prompt srch_explore"
-                                                                            type="text"
-                                                                            placeholder="Youtube Video URL"
-                                                                            name=""
-                                                                            id=""
-                                                                            value=""
-                                                                        />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                class="video-duration"
-                                                            >
-                                                                <label
-                                                                    class="label25"
-                                                                    >Video
-                                                                    Runtime -
-                                                                    <strong
-                                                                        >hh:mm:ss</strong
-                                                                    >*</label
-                                                                >
-                                                                <div
-                                                                    class="duration-time"
-                                                                >
-                                                                    <div
-                                                                        class="input-group"
-                                                                    >
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][hours]"
-                                                                            value="00"
-                                                                        />
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][mins]"
-                                                                            value="1"
-                                                                        />
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][secs]"
-                                                                            value="00"
-                                                                        />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div
-                                                            class="vimeo video-box"
-                                                        >
-                                                            <div
-                                                                class="new-section"
-                                                            >
-                                                                <div
-                                                                    class="ui search focus mt-30 lbel25"
-                                                                >
-                                                                    <label
-                                                                        >Vimeo
-                                                                        URL*</label
-                                                                    >
-                                                                    <div
-                                                                        class="ui left icon input swdh19"
-                                                                    >
-                                                                        <input
-                                                                            class="prompt srch_explore"
-                                                                            type="text"
-                                                                            placeholder="Vimeo Video URL"
-                                                                            name=""
-                                                                            id=""
-                                                                            value=""
-                                                                        />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                class="video-duration"
-                                                            >
-                                                                <label
-                                                                    class="label25"
-                                                                    >Video
-                                                                    Runtime -
-                                                                    <strong
-                                                                        >hh:mm:ss</strong
-                                                                    >*</label
-                                                                >
-                                                                <div
-                                                                    class="duration-time"
-                                                                >
-                                                                    <div
-                                                                        class="input-group"
-                                                                    >
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][hours]"
-                                                                            value="00"
-                                                                        />
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][mins]"
-                                                                            value="1"
-                                                                        />
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][secs]"
-                                                                            value="00"
-                                                                        />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div
-                                                            class="embedded video-box"
-                                                        >
-                                                            <div
-                                                                class="new-section"
-                                                            >
-                                                                <div
-                                                                    class="ui search focus mt-30 lbel25"
-                                                                >
-                                                                    <label
-                                                                        >Embedded
-                                                                        Code*</label
-                                                                    >
-                                                                    <div
-                                                                        class="ui form swdh30"
-                                                                    >
-                                                                        <div
-                                                                            class="field"
-                                                                        >
-                                                                            <textarea
-                                                                                rows="3"
-                                                                                name=""
-                                                                                id=""
-                                                                                placeholder="Place your embedded code here"
-                                                                            ></textarea>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                class="video-duration"
-                                                            >
-                                                                <label
-                                                                    class="label25"
-                                                                    >Video
-                                                                    Runtime -
-                                                                    <strong
-                                                                        >hh:mm:ss</strong
-                                                                    >*</label
-                                                                >
-                                                                <div
-                                                                    class="duration-time"
-                                                                >
-                                                                    <div
-                                                                        class="input-group"
-                                                                    >
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][hours]"
-                                                                            value="00"
-                                                                        />
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][mins]"
-                                                                            value="1"
-                                                                        />
-                                                                        <input
-                                                                            type="text"
-                                                                            class="form_input_1"
-                                                                            name="video[runtime][secs]"
-                                                                            value="00"
-                                                                        />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                </div> -->
                                             </div>
                                             <div
                                                 class="tab-pane fade"
@@ -2612,7 +994,7 @@
                                                             <div
                                                                 class="add-attachments-dt"
                                                             >
-                                                                <div
+                                                                <!-- <div
                                                                     class="attachment-items"
                                                                 >
                                                                     <div
@@ -2629,43 +1011,7 @@
                                                                             class="fas fa-trash-alt"
                                                                         ></i>
                                                                     </button>
-                                                                </div>
-                                                                <div
-                                                                    class="attachment-items"
-                                                                >
-                                                                    <div
-                                                                        class="attachment_id"
-                                                                    >
-                                                                        Uploaded
-                                                                        ID: 13
-                                                                    </div>
-                                                                    <button
-                                                                        class="cancel-btn"
-                                                                        type="button"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-trash-alt"
-                                                                        ></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div
-                                                                    class="attachment-items"
-                                                                >
-                                                                    <div
-                                                                        class="attachment_id"
-                                                                    >
-                                                                        Uploaded
-                                                                        ID: 14
-                                                                    </div>
-                                                                    <button
-                                                                        class="cancel-btn"
-                                                                        type="button"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-trash-alt"
-                                                                        ></i>
-                                                                    </button>
-                                                                </div>
+                                                                </div> -->
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2685,7 +1031,8 @@
                         >
                             Close
                         </button>
-                        <button type="button" class="main-btn">
+                        <button type="button" class="main-btn" data-dismiss="modal"
+                        @click="addCurriculum('lecture','Lecture')">
                             Add Lecture
                         </button>
                     </div>
@@ -2727,17 +1074,6 @@
                                             <a
                                                 class="flex-sm-fill text-sm-center nav-link active"
                                                 data-toggle="tab"
-                                                href="#nav-quizbasic"
-                                                role="tab"
-                                                aria-selected="true"
-                                                ><i
-                                                    class="fas fa-file-alt mr-2"
-                                                ></i
-                                                >Basic</a
-                                            >
-                                            <a
-                                                class="flex-sm-fill text-sm-center nav-link"
-                                                data-toggle="tab"
                                                 href="#nav-questions"
                                                 role="tab"
                                                 aria-selected="false"
@@ -2758,42 +1094,7 @@
                                         </div>
                                         <div class="tab-content">
                                             <div
-                                                class="tab-pane fade show active"
-                                                id="nav-quizbasic"
-                                                role="tabpanel"
-                                            >
-                                                <div class="new-section">
-                                                    <div
-                                                        class="form_group mt-30"
-                                                    >
-                                                        <label class="label25"
-                                                            >Quiz Title*</label
-                                                        >
-                                                        <input
-                                                            class="form_input_1"
-                                                            type="text"
-                                                            placeholder="Title here"
-                                                        />
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="ui search focus lbel25 mt-30"
-                                                >
-                                                    <label>Description*</label>
-                                                    <div class="ui form swdh30">
-                                                        <div class="field">
-                                                            <textarea
-                                                                rows="3"
-                                                                name="description"
-                                                                id=""
-                                                                placeholder="description here..."
-                                                            ></textarea>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="tab-pane fade"
+                                                class="tab-pane fade active show"
                                                 id="nav-questions"
                                                 role="tabpanel"
                                             >
@@ -2831,21 +1132,15 @@
                                                                         ><input
                                                                             type="radio"
                                                                             name="colorRadio"
-                                                                            value="schoice"
+                                                                            :value="
+                                                                                1
+                                                                            "
+                                                                            v-model="
+                                                                                question_type
+                                                                            "
+                                                                            class="d-none"
                                                                         /><span
-                                                                            ><i
-                                                                                class="far fa-dot-circle mr-2"
-                                                                            ></i
-                                                                            >Single
-                                                                            Choice</span
-                                                                        ></label
-                                                                    >
-                                                                    <label
-                                                                        ><input
-                                                                            type="radio"
-                                                                            name="colorRadio"
-                                                                            value="mchoice"
-                                                                        /><span
+                                                                            :class="[question_type==1?'selected':'']"
                                                                             ><i
                                                                                 class="far fa-check-circle mr-2"
                                                                             ></i
@@ -2857,22 +1152,15 @@
                                                                         ><input
                                                                             type="radio"
                                                                             name="colorRadio"
-                                                                            value="sline"
+                                                                            :value="
+                                                                                2
+                                                                            "
+                                                                            v-model="
+                                                                                question_type
+                                                                            "
+                                                                            class="d-none"
                                                                         /><span
-                                                                            ><i
-                                                                                class="far fa-edit mr-2"
-                                                                            ></i
-                                                                            >Single
-                                                                            Line
-                                                                            Text</span
-                                                                        ></label
-                                                                    >
-                                                                    <label
-                                                                        ><input
-                                                                            type="radio"
-                                                                            name="colorRadio"
-                                                                            value="mline"
-                                                                        /><span
+                                                                            :class="[question_type==2?'selected':'']"
                                                                             ><i
                                                                                 class="far fa-file-alt mr-2"
                                                                             ></i
@@ -2882,7 +1170,11 @@
                                                                         ></label
                                                                     >
                                                                     <div
-                                                                        class="schoice quiz-box"
+                                                                        class="mchoice"
+                                                                        v-if="
+                                                                            question_type ==
+                                                                            1
+                                                                        "
                                                                     >
                                                                         <div
                                                                             class="ques-box"
@@ -2891,38 +1183,7 @@
                                                                                 class="row"
                                                                             >
                                                                                 <div
-                                                                                    class="col-lg-2 col-md-2"
-                                                                                >
-                                                                                    <div
-                                                                                        class="form_group mt-30"
-                                                                                    >
-                                                                                        <label
-                                                                                            class="label25 text-left"
-                                                                                            >Image*</label
-                                                                                        >
-                                                                                        <div
-                                                                                            class="upload-thumb"
-                                                                                        >
-                                                                                            <input
-                                                                                                class="uploadBtn-input-preview"
-                                                                                                type="file"
-                                                                                                accept="image/png"
-                                                                                                id="thumbnail_source"
-                                                                                            />
-                                                                                            <label
-                                                                                                class="mx-0 my-0"
-                                                                                                for="thumbnail_source"
-                                                                                                title="Image"
-                                                                                                ><img
-                                                                                                    class="img-thumbnail"
-                                                                                                    src="images/placeholder-image.png"
-                                                                                                    alt=""
-                                                                                            /></label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="col-lg-7 col-md-9"
+                                                                                    class="col-lg-5 col-md-12"
                                                                                 >
                                                                                     <div
                                                                                         class="form_group mt-30"
@@ -2936,11 +1197,62 @@
                                                                                             class="form_input_1"
                                                                                             type="text"
                                                                                             placeholder="Write question title"
+                                                                                            v-model="
+                                                                                                question_name
+                                                                                            "
                                                                                         />
                                                                                     </div>
                                                                                 </div>
+
                                                                                 <div
-                                                                                    class="col-lg-3 col-md-12"
+                                                                                    class="col-lg-3 col-md-6"
+                                                                                >
+                                                                                    <div
+                                                                                        class="form_group mt-30"
+                                                                                    >
+                                                                                        <label
+                                                                                            class="label25 text-left"
+                                                                                            >Time</label
+                                                                                        >
+                                                                                        <div
+                                                                                            class="d-flex align-items-baseline"
+                                                                                        >
+                                                                                            <vue-timepicker
+                                                                                                manual-input
+                                                                                                hide-dropdown
+                                                                                                :format="
+                                                                                                    showHour
+                                                                                                        ? 'hh:mm:ss'
+                                                                                                        : 'mm:ss'
+                                                                                                "
+                                                                                                v-model="
+                                                                                                    question_time
+                                                                                                "
+                                                                                            >
+                                                                                            </vue-timepicker>
+                                                                                            <input
+                                                                                                type="checkbox"
+                                                                                                v-model="
+                                                                                                    showHour
+                                                                                                "
+                                                                                                class="ml-2"
+                                                                                            />
+                                                                                            <label
+                                                                                                class="label25 text-left"
+                                                                                                >Hour</label
+                                                                                            >
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="col-lg-1 col-md-1"
+                                                                                >
+                                                                                    <div
+                                                                                        class="form_group mt-30"
+                                                                                    ></div>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="col-lg-3 col-md-6"
                                                                                 >
                                                                                     <div
                                                                                         class="form_group mt-30"
@@ -2953,6 +1265,9 @@
                                                                                             class="form_input_1"
                                                                                             type="number"
                                                                                             placeholder="Score"
+                                                                                            v-model="
+                                                                                                question_score
+                                                                                            "
                                                                                         />
                                                                                     </div>
                                                                                 </div>
@@ -2969,6 +1284,9 @@
                                                                                 >
                                                                                     <button
                                                                                         class="main-btn color btn-hover mt-30"
+                                                                                        @click="
+                                                                                            addOption()
+                                                                                        "
                                                                                     >
                                                                                         Add
                                                                                         Option
@@ -2979,16 +1297,29 @@
                                                                                 >
                                                                                     <div
                                                                                         class="option-item"
+                                                                                        :key="`option_${index}`"
+                                                                                        v-for="(
+                                                                                            option,
+                                                                                            index
+                                                                                        ) in question_option"
                                                                                     >
                                                                                         <div
                                                                                             class="opt-title"
                                                                                         >
                                                                                             <h4>
-                                                                                                1.
+                                                                                                {{
+                                                                                                    index +
+                                                                                                    1
+                                                                                                }}.
                                                                                                 Option
                                                                                             </h4>
                                                                                             <span
                                                                                                 class="opt-del"
+                                                                                                @click="
+                                                                                                    deleteOption(
+                                                                                                        index
+                                                                                                    )
+                                                                                                "
                                                                                                 ><i
                                                                                                     class="fas fa-trash-alt"
                                                                                                 ></i
@@ -3009,6 +1340,9 @@
                                                                                                     class="form_input_1"
                                                                                                     type="text"
                                                                                                     placeholder="Option title"
+                                                                                                    v-model="
+                                                                                                        option.name
+                                                                                                    "
                                                                                                 />
                                                                                             </div>
                                                                                             <div
@@ -3016,10 +1350,17 @@
                                                                                             >
                                                                                                 <input
                                                                                                     type="checkbox"
-                                                                                                    id="check1"
+                                                                                                    :value="
+                                                                                                        true
+                                                                                                    "
+                                                                                                    :id="`check_${index}`"
+                                                                                                    v-model="
+                                                                                                        option.isCorrect
+                                                                                                    "
+                                                                                                    name="correct_answer"
                                                                                                 />
                                                                                                 <label
-                                                                                                    for="check1"
+                                                                                                    :for="`check_${index}`"
                                                                                                     >Correct
                                                                                                     answer</label
                                                                                                 >
@@ -3031,156 +1372,11 @@
                                                                         </div>
                                                                     </div>
                                                                     <div
-                                                                        class="mchoice quiz-box"
-                                                                    >
-                                                                        <div
-                                                                            class="ques-box"
-                                                                        >
-                                                                            <div
-                                                                                class="row"
-                                                                            >
-                                                                                <div
-                                                                                    class="col-lg-2 col-md-2"
-                                                                                >
-                                                                                    <div
-                                                                                        class="form_group mt-30"
-                                                                                    >
-                                                                                        <label
-                                                                                            class="label25 text-left"
-                                                                                            >Image*</label
-                                                                                        >
-                                                                                        <div
-                                                                                            class="upload-thumb"
-                                                                                        >
-                                                                                            <input
-                                                                                                class="uploadBtn-input-preview"
-                                                                                                type="file"
-                                                                                                accept="image/png"
-                                                                                                id="thumbnail_source1"
-                                                                                            />
-                                                                                            <label
-                                                                                                class="mx-0 my-0"
-                                                                                                for="thumbnail_source1"
-                                                                                                title="Image"
-                                                                                                ><img
-                                                                                                    class="img-thumbnail"
-                                                                                                    src="images/placeholder-image.png"
-                                                                                                    alt=""
-                                                                                            /></label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="col-lg-7 col-md-9"
-                                                                                >
-                                                                                    <div
-                                                                                        class="form_group mt-30"
-                                                                                    >
-                                                                                        <label
-                                                                                            class="label25 text-left"
-                                                                                            >Question
-                                                                                            Title*</label
-                                                                                        >
-                                                                                        <input
-                                                                                            class="form_input_1"
-                                                                                            type="text"
-                                                                                            placeholder="Write question title"
-                                                                                        />
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="col-lg-3 col-md-12"
-                                                                                >
-                                                                                    <div
-                                                                                        class="form_group mt-30"
-                                                                                    >
-                                                                                        <label
-                                                                                            class="label25 text-left"
-                                                                                            >Score*</label
-                                                                                        >
-                                                                                        <input
-                                                                                            class="form_input_1"
-                                                                                            type="number"
-                                                                                            placeholder="Score"
-                                                                                        />
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div
-                                                                            class="ans-box"
-                                                                        >
-                                                                            <div
-                                                                                class="row"
-                                                                            >
-                                                                                <div
-                                                                                    class="col-lg-12 col-md-12"
-                                                                                >
-                                                                                    <button
-                                                                                        class="main-btn color btn-hover mt-30"
-                                                                                    >
-                                                                                        Add
-                                                                                        Option
-                                                                                    </button>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="col-lg-12 col-md-12"
-                                                                                >
-                                                                                    <div
-                                                                                        class="option-item"
-                                                                                    >
-                                                                                        <div
-                                                                                            class="opt-title"
-                                                                                        >
-                                                                                            <h4>
-                                                                                                1.
-                                                                                                Option
-                                                                                            </h4>
-                                                                                            <span
-                                                                                                class="opt-del"
-                                                                                                ><i
-                                                                                                    class="fas fa-trash-alt"
-                                                                                                ></i
-                                                                                            ></span>
-                                                                                        </div>
-                                                                                        <div
-                                                                                            class="option-wrap"
-                                                                                        >
-                                                                                            <div
-                                                                                                class="form_group"
-                                                                                            >
-                                                                                                <label
-                                                                                                    class="label25 text-left"
-                                                                                                    >Option
-                                                                                                    Title*</label
-                                                                                                >
-                                                                                                <input
-                                                                                                    class="form_input_1"
-                                                                                                    type="text"
-                                                                                                    placeholder="Option title"
-                                                                                                />
-                                                                                            </div>
-                                                                                            <div
-                                                                                                class="agree_checkbox"
-                                                                                            >
-                                                                                                <input
-                                                                                                    type="checkbox"
-                                                                                                    id="check2"
-                                                                                                />
-                                                                                                <label
-                                                                                                    for="check2"
-                                                                                                    >Correct
-                                                                                                    answer</label
-                                                                                                >
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div
-                                                                        class="sline quiz-box"
+                                                                        class="sline"
+                                                                        v-if="
+                                                                            question_type ==
+                                                                            2
+                                                                        "
                                                                     >
                                                                         <div
                                                                             class="ques-box"
@@ -3213,85 +1409,7 @@
                                                                                                 title="Image"
                                                                                                 ><img
                                                                                                     class="img-thumbnail"
-                                                                                                    src="images/placeholder-image.png"
-                                                                                                    alt=""
-                                                                                            /></label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="col-lg-7 col-md-9"
-                                                                                >
-                                                                                    <div
-                                                                                        class="form_group mt-30"
-                                                                                    >
-                                                                                        <label
-                                                                                            class="label25 text-left"
-                                                                                            >Question
-                                                                                            Title*</label
-                                                                                        >
-                                                                                        <input
-                                                                                            class="form_input_1"
-                                                                                            type="text"
-                                                                                            placeholder="Write question title"
-                                                                                        />
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="col-lg-3 col-md-12"
-                                                                                >
-                                                                                    <div
-                                                                                        class="form_group mt-30"
-                                                                                    >
-                                                                                        <label
-                                                                                            class="label25 text-left"
-                                                                                            >Score*</label
-                                                                                        >
-                                                                                        <input
-                                                                                            class="form_input_1"
-                                                                                            type="number"
-                                                                                            placeholder="Score"
-                                                                                        />
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div
-                                                                        class="mline quiz-box"
-                                                                    >
-                                                                        <div
-                                                                            class="ques-box"
-                                                                        >
-                                                                            <div
-                                                                                class="row"
-                                                                            >
-                                                                                <div
-                                                                                    class="col-lg-2 col-md-2"
-                                                                                >
-                                                                                    <div
-                                                                                        class="form_group mt-30"
-                                                                                    >
-                                                                                        <label
-                                                                                            class="label25 text-left"
-                                                                                            >Image*</label
-                                                                                        >
-                                                                                        <div
-                                                                                            class="upload-thumb"
-                                                                                        >
-                                                                                            <input
-                                                                                                class="uploadBtn-input-preview"
-                                                                                                type="file"
-                                                                                                accept="image/png"
-                                                                                                id="thumbnail_source3"
-                                                                                            />
-                                                                                            <label
-                                                                                                class="mx-0 my-0"
-                                                                                                for="thumbnail_source3"
-                                                                                                title="Image"
-                                                                                                ><img
-                                                                                                    class="img-thumbnail"
-                                                                                                    src="images/placeholder-image.png"
+                                                                                                    :src="`${globalAssetUrl}images/placeholder-image.png`"
                                                                                                     alt=""
                                                                                             /></label>
                                                                                         </div>
@@ -3342,21 +1460,33 @@
                                                             >
                                                                 <button
                                                                     class="main-btn color btn-hover"
+                                                                    type="button"
+                                                                    @click="
+                                                                        addQuestion()
+                                                                    "
                                                                 >
                                                                     <i
                                                                         class="fas fa-save mr-2"
-                                                                    ></i
-                                                                    >Save
-                                                                    Question
+                                                                    ></i>
+                                                                    {{
+                                                                        isEdit
+                                                                            ? "Edit Question"
+                                                                            : "Save Question"
+                                                                    }}
                                                                 </button>
                                                             </div>
                                                         </div>
                                                         <div class="added-ques">
                                                             <div
-                                                                class="section-group-list pl-0 pr-0 sortable"
+                                                                class="section-group-list pl-0 pr-0"
                                                             >
                                                                 <div
                                                                     class="section-list-item"
+                                                                    v-for="(
+                                                                        question,
+                                                                        key
+                                                                    ) in questions"
+                                                                    :key="`question_${key}`"
                                                                 >
                                                                     <div
                                                                         class="section-item-title"
@@ -3366,8 +1496,9 @@
                                                                         ></i>
                                                                         <span
                                                                             class="section-item-title-text"
-                                                                            >Question
-                                                                            Title</span
+                                                                            >{{
+                                                                                question.name
+                                                                            }}</span
                                                                         >
                                                                     </div>
                                                                     <button
@@ -3376,6 +1507,11 @@
                                                                     >
                                                                         <i
                                                                             class="fas fa-edit"
+                                                                            @click="
+                                                                                editQuestion(
+                                                                                    key
+                                                                                )
+                                                                            "
                                                                         ></i>
                                                                     </button>
                                                                     <button
@@ -3384,134 +1520,11 @@
                                                                     >
                                                                         <i
                                                                             class="fas fa-trash-alt"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools ml-auto"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-bars"
-                                                                        ></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div
-                                                                    class="section-list-item"
-                                                                >
-                                                                    <div
-                                                                        class="section-item-title"
-                                                                    >
-                                                                        <i
-                                                                            class="far fa-check-circle mr-2"
-                                                                        ></i>
-                                                                        <span
-                                                                            class="section-item-title-text"
-                                                                            >Question
-                                                                            Title</span
-                                                                        >
-                                                                    </div>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-edit"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-trash-alt"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools ml-auto"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-bars"
-                                                                        ></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div
-                                                                    class="section-list-item"
-                                                                >
-                                                                    <div
-                                                                        class="section-item-title"
-                                                                    >
-                                                                        <i
-                                                                            class="far fa-edit mr-2"
-                                                                        ></i>
-                                                                        <span
-                                                                            class="section-item-title-text"
-                                                                            >Question
-                                                                            Title</span
-                                                                        >
-                                                                    </div>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-edit"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-trash-alt"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools ml-auto"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-bars"
-                                                                        ></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div
-                                                                    class="section-list-item"
-                                                                >
-                                                                    <div
-                                                                        class="section-item-title"
-                                                                    >
-                                                                        <i
-                                                                            class="far fa-file-alt mr-2"
-                                                                        ></i>
-                                                                        <span
-                                                                            class="section-item-title-text"
-                                                                            >Question
-                                                                            Title</span
-                                                                        >
-                                                                    </div>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-edit"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-trash-alt"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools ml-auto"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-bars"
+                                                                            @click="
+                                                                                deleteQuestion(
+                                                                                    key
+                                                                                )
+                                                                            "
                                                                         ></i>
                                                                     </button>
                                                                 </div>
@@ -3700,7 +1713,10 @@
                         >
                             Close
                         </button>
-                        <button type="button" class="main-btn">Add Quiz</button>
+                        <button type="button" class="main-btn" data-dismiss="modal"
+                            @click="addCurriculum('quiz','Quiz')">
+                            Add Quiz
+                        </button>
                     </div>
                 </div>
             </div>
@@ -3747,11 +1763,14 @@
                                             <label class="label25"
                                                 >Description*</label
                                             >
-                                            <div class="text-editor">
-                                                <div id="editor4"></div>
-                                            </div>
+                                            <textarea
+                                                rows="5"
+                                                name="description"
+                                                placeholder="Add Description"
+                                                class="w-100"
+                                            ></textarea>
                                         </div>
-                                        <div class="form_group mt-30">
+                                        <div class="form_group">
                                             <div class="row g-4">
                                                 <div class="col-lg-4 mt-30">
                                                     <label class="label25"
@@ -3885,7 +1904,7 @@
                                                 or .zip</span
                                             >
                                             <div class="add-attachments-dt">
-                                                <div class="attachment-items">
+                                                <!-- <div class="attachment-items">
                                                     <div class="attachment_id">
                                                         Uploaded ID: 5
                                                     </div>
@@ -3897,20 +1916,7 @@
                                                             class="fas fa-trash-alt"
                                                         ></i>
                                                     </button>
-                                                </div>
-                                                <div class="attachment-items">
-                                                    <div class="attachment_id">
-                                                        Uploaded ID: 6
-                                                    </div>
-                                                    <button
-                                                        class="cancel-btn"
-                                                        type="button"
-                                                    >
-                                                        <i
-                                                            class="fas fa-trash-alt"
-                                                        ></i>
-                                                    </button>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                     </div>
@@ -3926,7 +1932,8 @@
                         >
                             Close
                         </button>
-                        <button type="button" class="main-btn">
+                        <button type="button" class="main-btn" data-dismiss="modal"
+                        @click="addCurriculum('assignment','Assignment')">
                             Add Assignment
                         </button>
                     </div>
@@ -3937,24 +1944,181 @@
 </template>
 
 <script>
-
 export default {
     name: "CreateVideo",
-    mounted() {
-        $(document).ready(function(){
-            $('.ui.dropdown')
-            .dropdown();
-            $("#add-course-tab").steps({
+    data() {
+        return {
+            question_type: 1,
+            question_option: [],
+            video_type: "mp4",
+            levelOptions: [
+                {
+                    text: "Beginner",
+                    value: "beginner",
+                },
+                {
+                    text: "Intermediate",
+                    value: "intermediate",
+                },
+                {
+                    text: "Expert",
+                    value: "expert",
+                },
+            ],
+            level: null,
+            categoryOptions: [],
+            category: null,
+            question_name: "",
+            question_time: {
+                mm: "",
+                ss: "",
+            },
+            question_score: "",
+            questions: [],
+            steps: "",
+            showHour: false,
+            isEdit: false,
+            edit_key: -1,
+            curriculum: [],
+            thumbnail:null,
+            validation:true,
+        };
+    },
+    async mounted() {
+        try {
+            let response = await axios.get(
+                `${globalBaseUrl}instructor/get_categories`
+            );
+            let category = response.data.data;
+            this.categoryOptions = category.map((item) => {
+                return {
+                    text: item.name,
+                    value: item.id,
+                };
+            });
+        } catch (error) {
+            console.log(error);
+        }
+        $(document).ready(function () {
+            $(".ui.dropdown").dropdown();
+            this.steps = $("#add-course-tab").steps({
                 onFinish: function () {
-                    alert("Wizard Completed");
+                    alert("Course Created");
+                    window.location.reload();
                 },
             });
+
             $(".sortable").sortable();
             $(".sortable").disableSelection();
         });
     },
-    
+    methods: {
+        addCurriculum(type,name){
+            let item_type = this.curriculum.map((item)=>{
+                return item.type;
+            });
+            if(!item_type.includes(type)){
+                this.curriculum.push({
+                    type:type,
+                    name:name
+                });
+            }
+        },
+        deleteCurriculum(key){
+            this.curriculum.splice(key,1);
+        },
+        addOption() {
+            this.question_option.push({ name: "", isCorrect: false });
+        },
+        deleteOption(index) {
+            this.question_option.splice(index, 1);
+        },
+        addQuestion() {
+            if (this.question_name == "") {
+                Vue.$toast.open({
+                    message: "Name requried",
+                    type: "error",
+                    position: "top-right",
+                });
+                return;
+            } else if (this.question_option.length == 0) {
+                Vue.$toast.open({
+                    message: "Options requried",
+                    type: "error",
+                    position: "top-right",
+                });
+                return;
+            }
+            if (this.isEdit) {
+                let key = this.edit_key;
+                this.questions[key].options = this.question_option;
+                this.questions[key].name = this.question_name;
+                this.questions[key].score = this.question_score;
+                this.questions[key].time = this.question_time;
+                this.isEdit = false;
+                this.edit_key = -1;
+            } else {
+                this.questions.push({
+                    name: this.question_name,
+                    options: this.question_option,
+                    time: this.question_time,
+                    score: this.question_score,
+                });
+            }
+            this.question_time = {
+                mm: "",
+                ss: "",
+            };
+            this.showHour = false;
+            (this.question_score = ""), (this.question_name = "");
+            this.question_type = 1;
+            this.question_option = [];
+        },
+        editQuestion(key) {
+            this.question_option = this.questions[key].options;
+            this.question_name = this.questions[key].name;
+            this.question_score = this.questions[key].score;
+            this.question_time = this.questions[key].time;
+            this.isEdit = true;
+            this.edit_key = key;
+        },
+        deleteQuestion(key) {
+            this.questions.splice(key, 1);
+        },
+        onThumbnailSelected(e){
+            const file = e.target.files[0];
+            this.thumbnail = URL.createObjectURL(file);
+        }
+    },
+    watch: {
+        showHour() {
+            if (this.showHour) {
+                this.question_time = {
+                    hh: "",
+                    mm: "",
+                    ss: "",
+                };
+            } else {
+                this.question_time = {
+                    mm: "",
+                    ss: "",
+                };
+            }
+        },
+    },
 };
 </script>
 
-<style></style>
+<style>
+.vue__time-picker input {
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    width: 100% !important;
+    border: 1px solid #efefef !important;
+    height: 40px !important;
+    padding: 0 16px !important;
+    background: #fff !important;
+    border-radius: 3px !important;
+    box-shadow: inset 0px 1px 4px rgb(0 0 0 / 2%) !important;
+}
+</style>
