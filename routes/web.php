@@ -47,6 +47,7 @@ Route::prefix('instructor')->group(function () {
         Route::get('/profile', [PageController::class, 'index']);
         Route::get('/setting', [PageController::class, 'index']);
         Route::get('/course_detail', [PageController::class, 'index']);
+        Route::get('/feedback', [PageController::class, 'index']);
 
         //API Doces
         Route::post('/logout', [AuthController::class, 'logout']);

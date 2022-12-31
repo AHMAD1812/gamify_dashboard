@@ -143,8 +143,8 @@
                             Setting
                         </router-link>
                         <a href="help.html" class="item channel_item">Help</a>
-                        <a href="feedback.html" class="item channel_item"
-                            >Send Feedback</a
+                        <router-link :to="{name : 'Feedback'}" class="item channel_item"
+                            >Send Feedback</router-link
                         >
                         <div class="item channel_item" @click="signOut()">
                             Sign Out

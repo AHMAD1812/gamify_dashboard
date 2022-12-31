@@ -152,11 +152,11 @@
                     </li>
 
                     <li class="{{ request()->is('about-us') ? 'active' : '' }}">
-                        <a href="{{ route('about') }}">About Us<span class="submenu-indicator"></span></a>
+                        <a href="{{ route('about') }}">About us<span class="submenu-indicator"></span></a>
                     </li>
 
                     <li class="{{ request()->is('contact-us') ? 'active' : '' }}">
-                        <a href="{{ route('contact') }}">Contact Us<span class="submenu-indicator"></span></a>
+                        <a href="{{ route('contact') }}">Contact us<span class="submenu-indicator"></span></a>
                     </li>
 
 

@@ -66,6 +66,11 @@ const routes = [{
         component: Body,
         name: "Profile",
     },
+    {
+        path: "/instructor/feedback",
+        component: Body,
+        name: "Feedback",
+    },
 ]
 
 export default routes;
