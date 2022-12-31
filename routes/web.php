@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\Admin\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,4 +30,8 @@ Route::prefix('instructor')->group(function () {
     Route::get('/notification', [PageController::class, 'index']);
     Route::get('/reviews', [PageController::class, 'index']);
     Route::get('/profile', [PageController::class, 'index']);
+});
+
+Route::prefix('admin')->group(function () {
+    Route::get('/', [AdminController::class, 'index']);
 });
