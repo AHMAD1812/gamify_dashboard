@@ -18,6 +18,7 @@
             </Setting>
             <Profile v-if="$route.name == 'Profile'" :user="user"></Profile>
             <CourseDetail v-if="$route.name == 'CourseDetail'"></CourseDetail>
+            <Feedback v-if="$route.name == 'Feedback'"></Feedback>
             <Footer></Footer>
         </div>
     </span>
@@ -36,6 +37,7 @@ import Review from "../review/index.vue";
 import Setting from "../setting/index.vue";
 import Profile from "../profile/index.vue";
 import CourseDetail from "../courses/detail.vue";
+import Feedback from "../feedback/index.vue";
 
 export default {
     name: "Body",
@@ -52,6 +54,7 @@ export default {
         Setting,
         Profile,
         CourseDetail,
+        Feedback
     },
     data() {
         return {
