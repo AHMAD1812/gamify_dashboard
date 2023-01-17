@@ -3,21 +3,21 @@ var env = process.env.NODE_ENV || "development";
 // var env = 'production';
 
 var config = {
-    development: {
-        API_URL: "",
-        BASE_URL: "http://localhost:8000/",
-        SITE_URL: "http://127.0.0.1:8000/",
-        ASSET_URL: "http://localhost:8000/",
-        SOCKET_URL: "http://127.0.0.1:8008/",
-        // SOCKET_URL: "http://54.159.224.249:8008/",
-    },
     // development: {
     //     API_URL: "",
-    //     BASE_URL: "http://54.159.224.249/",
-    //     SITE_URL: "http://54.159.224.249/",
-    //     ASSET_URL: "http://54.159.224.249/",
-    //     SOCKET_URL: "http://54.159.224.249:8008/",
+    //     BASE_URL: "http://localhost:8000/",
+    //     SITE_URL: "http://127.0.0.1:8000/",
+    //     ASSET_URL: "http://localhost:8000/",
+    //     SOCKET_URL: "http://127.0.0.1:8008/",
+    //     // SOCKET_URL: "http://54.159.224.249:8008/",
     // },
+    development: {
+        API_URL: "",
+        BASE_URL: "https://gamify.stackup.solutions/",
+        SITE_URL: "https://gamify.stackup.solutions/",
+        ASSET_URL: "https://gamify.stackup.solutions/",
+        SOCKET_URL: "http://54.159.224.249:8008/",
+    },
     // development: {
     //     API_URL: "",
     //     BASE_URL: "http://snapwork.biz/",
