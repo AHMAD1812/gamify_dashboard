@@ -83,7 +83,7 @@
     <!-- ============================ About Detail ================================== -->
 
     <!-- ============================ partner Start ================================== -->
-    <section class="gray">
+    {{-- <section class="gray">
         <div class="container">
 
             <div class="row justify-content-center">
@@ -182,20 +182,19 @@
             </div>
 
         </div>
-    </section>
+    </section> --}}
     <div class="clearfix"></div>
     <!-- ============================ partner End ================================== -->
 
     <!-- ============================ Students Reviews ================================== -->
-    <section>
+    {{-- <section>
         <div class="container">
 
             <div class="row justify-content-center">
                 <div class="col-lg-7 col-md-8">
                     <div class="sec-heading center">
                         <h2>Our Gamified Students <span class="theme-cl">Reviews</span></h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        <p>TThese reviews shows how well we have done</p>
                     </div>
                 </div>
             </div>
@@ -351,7 +350,7 @@
             </div>
 
         </div>
-    </section>
+    </section> --}}
     <!-- ============================ Students Reviews End ================================== -->
 
     <!-- ============================ Call To Action ================================== -->

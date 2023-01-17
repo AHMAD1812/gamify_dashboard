@@ -6104,10 +6104,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/chat/index.vue?vue&type=script&lang=js&":
-/*!*****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/chat/index.vue?vue&type=script&lang=js& ***!
-  \*****************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/chat/components/chatCard.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/chat/components/chatCard.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -6137,100 +6137,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "chatCard",
+  props: ['is_active']
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/chat/index.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/chat/index.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _components_chatCard_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/chatCard.vue */ "./resources/js/components/chat/components/chatCard.vue");
 //
 //
 //
@@ -6392,8 +6318,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "Chat"
+  name: "Chat",
+  components: {
+    chatCard: _components_chatCard_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
 });
 
 /***/ }),
@@ -38197,6 +38127,45 @@ component.options.__file = "resources/js/components/Auth/layouts/SignUpComponent
 
 /***/ }),
 
+/***/ "./resources/js/components/chat/components/chatCard.vue":
+/*!**************************************************************!*\
+  !*** ./resources/js/components/chat/components/chatCard.vue ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _chatCard_vue_vue_type_template_id_68489316___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./chatCard.vue?vue&type=template&id=68489316& */ "./resources/js/components/chat/components/chatCard.vue?vue&type=template&id=68489316&");
+/* harmony import */ var _chatCard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./chatCard.vue?vue&type=script&lang=js& */ "./resources/js/components/chat/components/chatCard.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _chatCard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _chatCard_vue_vue_type_template_id_68489316___WEBPACK_IMPORTED_MODULE_0__.render,
+  _chatCard_vue_vue_type_template_id_68489316___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/chat/components/chatCard.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/chat/index.vue":
 /*!************************************************!*\
   !*** ./resources/js/components/chat/index.vue ***!
@@ -38951,6 +38920,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/chat/components/chatCard.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/chat/components/chatCard.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_chatCard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./chatCard.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/chat/components/chatCard.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_chatCard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/chat/index.vue?vue&type=script&lang=js&":
 /*!*************************************************************************!*\
   !*** ./resources/js/components/chat/index.vue?vue&type=script&lang=js& ***!
@@ -39352,6 +39337,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SignUpComponent_vue_vue_type_template_id_79095d83___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SignUpComponent_vue_vue_type_template_id_79095d83___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./SignUpComponent.vue?vue&type=template&id=79095d83& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Auth/layouts/SignUpComponent.vue?vue&type=template&id=79095d83&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/chat/components/chatCard.vue?vue&type=template&id=68489316&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/components/chat/components/chatCard.vue?vue&type=template&id=68489316& ***!
+  \*********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_chatCard_vue_vue_type_template_id_68489316___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_chatCard_vue_vue_type_template_id_68489316___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_chatCard_vue_vue_type_template_id_68489316___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./chatCard.vue?vue&type=template&id=68489316& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/chat/components/chatCard.vue?vue&type=template&id=68489316&");
 
 
 /***/ }),
@@ -40466,6 +40468,72 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/chat/components/chatCard.vue?vue&type=template&id=68489316&":
+/*!************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/chat/components/chatCard.vue?vue&type=template&id=68489316& ***!
+  \************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      staticClass: "chat__message__dt",
+      class: [_vm.is_active ? "active" : ""],
+    },
+    [
+      _c("div", { staticClass: "user-status" }, [
+        _c("div", { staticClass: "user-avatar" }, [
+          _c("img", {
+            attrs: {
+              src: _vm.globalBaseUrl + "images/left-imgs/img-1.jpg",
+              alt: "",
+            },
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "msg__badge" }, [_vm._v("2")]),
+        ]),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _c("p", { staticClass: "user-status-text" }, [
+          _vm._v(
+            "\n            Hi! Sir, How are you. I ask you one thing please explain it this\n            video price.\n        "
+          ),
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "user-status-time floaty" }, [
+          _vm._v("7 hours ago"),
+        ]),
+      ]),
+    ]
+  )
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "user-status-title" }, [
+      _c("span", { staticClass: "bold" }, [_vm._v("John Doe")]),
+    ])
+  },
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/chat/index.vue?vue&type=template&id=10a55a66&":
 /*!**********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/chat/index.vue?vue&type=template&id=10a55a66& ***!
@@ -40494,247 +40562,17 @@ var render = function () {
                 _vm._m(1),
                 _vm._v(" "),
                 _c("div", { staticClass: "simplebar-content-wrapper" }, [
-                  _c("div", { staticClass: "group_messages" }, [
-                    _c("div", { staticClass: "chat__message__dt active" }, [
-                      _c("div", { staticClass: "user-status" }, [
-                        _c("div", { staticClass: "user-avatar" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                _vm.globalBaseUrl +
-                                "images/left-imgs/img-1.jpg",
-                              alt: "",
-                            },
-                          }),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "msg__badge" }, [
-                            _vm._v("2"),
-                          ]),
-                        ]),
-                        _vm._v(" "),
-                        _vm._m(2),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "user-status-text" }, [
-                          _vm._v(
-                            "\n                            Hi! Sir, How are you. I ask you one thing please\n                            explain it this video price.\n                          "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "user-status-time floaty" }, [
-                          _vm._v("7 hours ago"),
-                        ]),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "chat__message__dt" }, [
-                      _c("div", { staticClass: "user-status" }, [
-                        _c("div", { staticClass: "user-avatar" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                _vm.globalBaseUrl +
-                                "images/left-imgs/img-1.jpg",
-                              alt: "",
-                            },
-                          }),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "msg__badge" }, [
-                            _vm._v("3"),
-                          ]),
-                        ]),
-                        _vm._v(" "),
-                        _vm._m(3),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "user-status-text" }, [
-                          _vm._v(
-                            "\n                            Hello, I paid you video tutorial but did not play\n                            error 404.\n                          "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "user-status-time floaty" }, [
-                          _vm._v("8 hours ago"),
-                        ]),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "chat__message__dt" }, [
-                      _c("div", { staticClass: "user-status" }, [
-                        _c("div", { staticClass: "user-avatar" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                _vm.globalBaseUrl +
-                                "images/left-imgs/img-1.jpg",
-                              alt: "",
-                            },
-                          }),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "msg__badge" }, [
-                            _vm._v("1"),
-                          ]),
-                        ]),
-                        _vm._v(" "),
-                        _vm._m(4),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "user-status-text" }, [
-                          _vm._v(
-                            "\n                            Thanks Sir, Such a nice video.\n                          "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "user-status-time floaty" }, [
-                          _vm._v("15 hours ago"),
-                        ]),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "chat__message__dt" }, [
-                      _c("div", { staticClass: "user-status" }, [
-                        _c("div", { staticClass: "user-avatar" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                _vm.globalBaseUrl +
-                                "images/left-imgs/img-4.jpg",
-                              alt: "",
-                            },
-                          }),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "msg__badge" }, [
-                            _vm._v("7"),
-                          ]),
-                        ]),
-                        _vm._v(" "),
-                        _vm._m(5),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "user-status-text" }, [
-                          _vm._v(
-                            "\n                            Hi! Sir, this is a purchase key CFKX12536ERUJSKLL\n                          "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "user-status-time floaty" }, [
-                          _vm._v("22 hours ago"),
-                        ]),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "chat__message__dt" }, [
-                      _c("div", { staticClass: "user-status" }, [
-                        _c("div", { staticClass: "user-avatar" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                _vm.globalBaseUrl +
-                                "images/left-imgs/img-5.jpg",
-                              alt: "",
-                            },
-                          }),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "msg__badge" }, [
-                            _vm._v("12"),
-                          ]),
-                        ]),
-                        _vm._v(" "),
-                        _vm._m(6),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "user-status-text" }, [
-                          _vm._v(
-                            "\n                            Pls! Upload .NET Course\n                          "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "user-status-time floaty" }, [
-                          _vm._v("2 days ago"),
-                        ]),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "chat__message__dt" }, [
-                      _c("div", { staticClass: "user-status" }, [
-                        _c("div", { staticClass: "user-avatar" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                _vm.globalBaseUrl +
-                                "images/left-imgs/img-6.jpg",
-                              alt: "",
-                            },
-                          }),
-                        ]),
-                        _vm._v(" "),
-                        _vm._m(7),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "user-status-text" }, [
-                          _vm._v(
-                            "\n                            Hi Sir thank you very very much for bootstrap full\n                            course.\n                          "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "user-status-time floaty" }, [
-                          _vm._v("5 days ago"),
-                        ]),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "chat__message__dt" }, [
-                      _c("div", { staticClass: "user-status" }, [
-                        _c("div", { staticClass: "user-avatar" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                _vm.globalBaseUrl +
-                                "images/left-imgs/img-7.jpg",
-                              alt: "",
-                            },
-                          }),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "msg__badge" }, [
-                            _vm._v("6"),
-                          ]),
-                        ]),
-                        _vm._v(" "),
-                        _vm._m(8),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "user-status-text" }, [
-                          _vm._v("Thank you! Sir"),
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "user-status-time floaty" }, [
-                          _vm._v("7 days ago"),
-                        ]),
-                      ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "chat__message__dt" }, [
-                      _c("div", { staticClass: "user-status" }, [
-                        _c("div", { staticClass: "user-avatar" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                _vm.globalBaseUrl +
-                                "images/left-imgs/img-8.jpg",
-                              alt: "",
-                            },
-                          }),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "msg__badge" }, [
-                            _vm._v("1"),
-                          ]),
-                        ]),
-                        _vm._v(" "),
-                        _vm._m(9),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "user-status-text" }, [
-                          _vm._v("Hey!"),
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "user-status-time floaty" }, [
-                          _vm._v("13 days ago"),
-                        ]),
-                      ]),
-                    ]),
-                  ]),
+                  _c(
+                    "div",
+                    { staticClass: "group_messages" },
+                    _vm._l(7, function (rep, key) {
+                      return _c("chatCard", {
+                        key: "chat_card_" + key,
+                        attrs: { is_active: rep == 1 ? true : false },
+                      })
+                    }),
+                    1
+                  ),
                 ]),
               ]),
               _vm._v(" "),
@@ -40752,19 +40590,19 @@ var render = function () {
                         }),
                       ]),
                       _vm._v(" "),
-                      _vm._m(10),
+                      _vm._m(2),
                       _vm._v(" "),
                       _c("p", { staticClass: "user-status-tag online" }, [
                         _vm._v("Online"),
                       ]),
                       _vm._v(" "),
-                      _vm._m(11),
+                      _vm._m(3),
                     ]),
                   ]),
                   _vm._v(" "),
-                  _vm._m(12),
+                  _vm._m(4),
                   _vm._v(" "),
-                  _vm._m(13),
+                  _vm._m(5),
                 ]),
               ]),
             ]),
@@ -40803,70 +40641,6 @@ var staticRenderFns = [
           _c("i", { staticClass: "uil uil-search-alt icon icon8" }),
         ]),
       ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "user-status-title" }, [
-      _c("span", { staticClass: "bold" }, [_vm._v("John Doe")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "user-status-title" }, [
-      _c("span", { staticClass: "bold" }, [_vm._v("Kerstin Cable")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "user-status-title" }, [
-      _c("span", { staticClass: "bold" }, [_vm._v("Jose Portilla")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "user-status-title" }, [
-      _c("span", { staticClass: "bold" }, [_vm._v("Farhat Amin")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "user-status-title" }, [
-      _c("span", { staticClass: "bold" }, [_vm._v("Kyle Pew")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "user-status-title" }, [
-      _c("span", { staticClass: "bold" }, [_vm._v("Eli Natoli")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "user-status-title" }, [
-      _c("span", { staticClass: "bold" }, [_vm._v("Jaysen Batchelor")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "user-status-title" }, [
-      _c("span", { staticClass: "bold" }, [_vm._v("Quinton Batchelor")]),
     ])
   },
   function () {
@@ -47670,7 +47444,7 @@ var render = function () {
                               attrs: {
                                 src:
                                   _vm.globalBaseUrl +
-                                  "images/left-imgs/img-4.jpg",
+                                  "images/left-imgs/img-1.jpg",
                                 alt: "",
                               },
                             }),
@@ -47691,7 +47465,7 @@ var render = function () {
                               attrs: {
                                 src:
                                   _vm.globalBaseUrl +
-                                  "images/left-imgs/img-1.jpg",
+                                  "images/left-imgs/img-2.jpg",
                                 alt: "",
                               },
                             }),
@@ -47712,7 +47486,7 @@ var render = function () {
                               attrs: {
                                 src:
                                   _vm.globalBaseUrl +
-                                  "images/left-imgs/img-7.jpg",
+                                  "images/left-imgs/img-3.jpg",
                                 alt: "",
                               },
                             }),
@@ -47733,7 +47507,7 @@ var render = function () {
                               attrs: {
                                 src:
                                   _vm.globalBaseUrl +
-                                  "images/left-imgs/img-6.jpg",
+                                  "images/left-imgs/img-1.jpg",
                                 alt: "",
                               },
                             }),
