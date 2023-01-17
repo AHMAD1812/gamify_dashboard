@@ -27,124 +27,8 @@
                     </div>
                     <div class="simplebar-content-wrapper">
                       <div class="group_messages">
-                        <div class="chat__message__dt active">
-                          <div class="user-status">
-                            <div class="user-avatar">
-                              <img :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`" alt="" />
-                              <div class="msg__badge">2</div>
-                            </div>
-                            <p class="user-status-title">
-                              <span class="bold">John Doe</span>
-                            </p>
-                            <p class="user-status-text">
-                              Hi! Sir, How are you. I ask you one thing please
-                              explain it this video price.
-                            </p>
-                            <p class="user-status-time floaty">7 hours ago</p>
-                          </div>
-                        </div>
-                        <div class="chat__message__dt">
-                          <div class="user-status">
-                            <div class="user-avatar">
-                              <img :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`" alt="" />
-                              <div class="msg__badge">3</div>
-                            </div>
-                            <p class="user-status-title">
-                              <span class="bold">Kerstin Cable</span>
-                            </p>
-                            <p class="user-status-text">
-                              Hello, I paid you video tutorial but did not play
-                              error 404.
-                            </p>
-                            <p class="user-status-time floaty">8 hours ago</p>
-                          </div>
-                        </div>
-                        <div class="chat__message__dt">
-                          <div class="user-status">
-                            <div class="user-avatar">
-                              <img :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`" alt="" />
-                              <div class="msg__badge">1</div>
-                            </div>
-                            <p class="user-status-title">
-                              <span class="bold">Jose Portilla</span>
-                            </p>
-                            <p class="user-status-text">
-                              Thanks Sir, Such a nice video.
-                            </p>
-                            <p class="user-status-time floaty">15 hours ago</p>
-                          </div>
-                        </div>
-                        <div class="chat__message__dt">
-                          <div class="user-status">
-                            <div class="user-avatar">
-                              <img :src="`${globalBaseUrl}images/left-imgs/img-4.jpg`" alt="" />
-                              <div class="msg__badge">7</div>
-                            </div>
-                            <p class="user-status-title">
-                              <span class="bold">Farhat Amin</span>
-                            </p>
-                            <p class="user-status-text">
-                              Hi! Sir, this is a purchase key CFKX12536ERUJSKLL
-                            </p>
-                            <p class="user-status-time floaty">22 hours ago</p>
-                          </div>
-                        </div>
-                        <div class="chat__message__dt">
-                          <div class="user-status">
-                            <div class="user-avatar">
-                              <img :src="`${globalBaseUrl}images/left-imgs/img-5.jpg`" alt="" />
-                              <div class="msg__badge">12</div>
-                            </div>
-                            <p class="user-status-title">
-                              <span class="bold">Kyle Pew</span>
-                            </p>
-                            <p class="user-status-text">
-                              Pls! Upload .NET Course
-                            </p>
-                            <p class="user-status-time floaty">2 days ago</p>
-                          </div>
-                        </div>
-                        <div class="chat__message__dt">
-                          <div class="user-status">
-                            <div class="user-avatar">
-                              <img :src="`${globalBaseUrl}images/left-imgs/img-6.jpg`" alt="" />
-                            </div>
-                            <p class="user-status-title">
-                              <span class="bold">Eli Natoli</span>
-                            </p>
-                            <p class="user-status-text">
-                              Hi Sir thank you very very much for bootstrap full
-                              course.
-                            </p>
-                            <p class="user-status-time floaty">5 days ago</p>
-                          </div>
-                        </div>
-                        <div class="chat__message__dt">
-                          <div class="user-status">
-                            <div class="user-avatar">
-                              <img :src="`${globalBaseUrl}images/left-imgs/img-7.jpg`" alt="" />
-                              <div class="msg__badge">6</div>
-                            </div>
-                            <p class="user-status-title">
-                              <span class="bold">Jaysen Batchelor</span>
-                            </p>
-                            <p class="user-status-text">Thank you! Sir</p>
-                            <p class="user-status-time floaty">7 days ago</p>
-                          </div>
-                        </div>
-                        <div class="chat__message__dt">
-                          <div class="user-status">
-                            <div class="user-avatar">
-                              <img :src="`${globalBaseUrl}images/left-imgs/img-8.jpg`" alt="" />
-                              <div class="msg__badge">1</div>
-                            </div>
-                            <p class="user-status-title">
-                              <span class="bold">Quinton Batchelor</span>
-                            </p>
-                            <p class="user-status-text">Hey!</p>
-                            <p class="user-status-time floaty">13 days ago</p>
-                          </div>
-                        </div>
+                        <chatCard v-for="(rep,key) in 7" :key="`chat_card_${key}`" :is_active="rep == 1 ? true : false">
+                        </chatCard>
                       </div>
                     </div>
                   </div>
@@ -275,8 +159,12 @@
 </template>
 
 <script>
+import chatCard from './components/chatCard.vue';
 export default {
-    name:"Chat"
+    name:"Chat",
+    components:{
+      chatCard,
+    }
 }
 </script>
 
