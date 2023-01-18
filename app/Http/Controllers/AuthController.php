@@ -82,7 +82,7 @@ class AuthController extends Controller
             //     return $this->sendError($e->getMessage(), null);
             // }
             DB::commit();
-            return $this->sendSuccess('Successfully registered', $user->id);
+            return $this->sendSuccess('Successfully registered', $user);
         } catch (\Exception$exception) {
             DB::rollback();
             if (('APP_ENV') == 'local') {

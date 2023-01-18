@@ -202,10 +202,12 @@ export default {
                                 type: "success",
                                 position: "top-right",
                             });
+                            alert("Use this code '"+response.data.data.otp+"'");
+                            console.log("Otp ==>",response.data.data.otp);
                             this.$router.push({
                                 name: "OtpVerification",
                                 params: {
-                                    id: response.data.data,
+                                    id: response.data.data.id,
                                 },
                             });
                         }
