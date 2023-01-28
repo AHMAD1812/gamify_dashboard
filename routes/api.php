@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiControllers\AuthController;
+use App\Http\Controllers\ApiControllers\UserController;
+use App\Http\Controllers\ApiControllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,22 +18,28 @@ use App\Http\Controllers\ApiControllers\AuthController;
  */
 
 Route::post('register', [AuthController::class, 'register']);
-Route::post('login_in', [AuthController::class, 'login']);
+Route::post('login', [AuthController::class, 'login']);
+//Verify Email API's
 Route::post('verify_email', [AuthController::class, 'verifyEmail']);
 Route::post('resend_otp', [AuthController::class, 'resendOtp']);
-Route::post('forgot_password', [AuthController::class, 'forgotPassword']);
-Route::post('forgot_password_code', [AuthController::class, 'forgotPasswordCode']);
-Route::post('new_password', [AuthController::class, 'resetPassword']);
+//Forgot Password API's
+Route::post('send_forgot_password_code', [AuthController::class, 'sendforgotPasswordCode']);
+Route::post('verify_forgot_password_code', [AuthController::class, 'verifyForgotPasswordCode']);
+Route::post('resend_forgot_password_otp', [AuthController::class, 'resendForgotPasswordOtp']);
+Route::post('change_password', [AuthController::class, 'changePassword']);
+//Social Login API's
 Route::post('social_login', [AuthController::class, 'userSocialLogin']);
-Route::post('resend_forgot_pass_otp', [AuthController::class, 'resendForgotPasswordOtp']);
 
 Route::group(['middleware' => 'auth:api'], function () {
     Route::get('logout', [AuthController::class, 'logout']);
-    Route::get('get_user', [AuthController::class, 'getUser']);
+    Route::get('get_user', [UserController::class, 'getUser']);
     Route::post('update_profile', [UserController::class, 'updateProfile']);
-    Route::get('interests', [UserController::class, 'getAllInterest']);
-    Route::post('delete_interest', [UserController::class, 'deleteInterest']);
-    Route::post('add_interests', [UserController::class, 'updateInterest']);
+
+    //Categories
+    Route::get('get_categories', [CategoryController::class, 'getAllCategories']);
+    Route::get('get_user_categories', [CategoryController::class, 'getUserCategories']);
+    Route::post('add_categories', [CategoryController::class, 'addCategories']);
+    Route::post('update_categories', [CategoryController::class, 'updateCategories']);
     
     //Chat Routes
     // Route::post('/create_chat', [ChatController::class, 'create_chat']);
