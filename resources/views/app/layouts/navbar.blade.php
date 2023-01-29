@@ -158,12 +158,9 @@
                     <li class="{{ request()->is('contact-us') ? 'active' : '' }}">
                         <a href="{{ route('contact') }}">Contact us<span class="submenu-indicator"></span></a>
                     </li>
-
-
                 </ul>
 
                 <ul class="nav-menu nav-menu-social align-to-right">
-
                     <li>
                         <a href="{{ route('instructor.login') }}" class="alio_green">
                             <i class="fas fa-sign-in-alt mr-1"></i><span class="dn-lg">Sign In</span>
