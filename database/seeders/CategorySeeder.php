@@ -17,12 +17,14 @@ class CategorySeeder extends Seeder
         DB::table('categories')->insert(
             [
                 'name' => 'Developement',
+                'image'=>'categories/developement.png'
             ] 
         );
         DB::table('categories')->insert(
             
             [
                 'name' => 'IT & Software',
+                'image'=>'categories/software.png'
             ],
             
         );
@@ -30,6 +32,7 @@ class CategorySeeder extends Seeder
            
             [
                 'name' => 'Business',
+                'image'=>'categories/business.png'
             ],
             
         );
@@ -37,6 +40,7 @@ class CategorySeeder extends Seeder
             
             [
                 'name' => 'Health & Fitness',
+                'image'=>'categories/health.png'
             ],
             
         );
@@ -44,12 +48,20 @@ class CategorySeeder extends Seeder
             
             [
                 'name' => 'Education',
+                'image'=>'categories/education.png'
             ],
             
         );
         DB::table('categories')->insert(
             [
                 'name' => 'Marketing',
+                'image'=>'categories/marketing.png'
+            ]
+        );
+        DB::table('categories')->insert(
+            [
+                'name' => 'Designing',
+                'image'=>'categories/designing.png'
             ]
         );
     }
