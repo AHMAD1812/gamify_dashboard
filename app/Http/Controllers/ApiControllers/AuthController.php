@@ -23,6 +23,7 @@ class AuthController extends Controller
                 'min:8',
             ],
             'full_name' => 'required',
+            'profile_image' => 'sometimes'
         ]);
         if ($validator->fails()) {
             return $this->sendError($validator->messages()->first(), null);
@@ -39,6 +40,9 @@ class AuthController extends Controller
             $user->otp = $code;
             $user->role = 'student';
             $user->status = 'inactive';
+            if ($request->profile_image) {
+                $user->profile_img = $this->addFile($request->profile_image, 'uploads/profile/');
+            }
             $user->save();
 
             DB::commit();
