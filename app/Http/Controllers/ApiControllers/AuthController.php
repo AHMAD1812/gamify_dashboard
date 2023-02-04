@@ -99,7 +99,7 @@ class AuthController extends Controller
                 
                 return $this->sendSuccess('Login successfully', $data);
             } elseif ($user && $user->status == 'inactive') {
-                return $this->sendError('Please verify your phone first', null);
+                return $this->sendError('Please verify your email first', null);
             } elseif ($user && $user->status == 'pending') {
                 return $this->sendError('Your account approval is pending on admin side', null);
             } else {

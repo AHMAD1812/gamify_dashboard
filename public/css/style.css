@@ -66,6 +66,12 @@
     border-radius: 100%;
 }
 
+.input-date{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e5e5e5 !important;
+    border-radius: 3px;
+}
 /*===================== TABLE OF CONTENT =======================
 /*
 Table Of Content
