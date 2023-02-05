@@ -26,7 +26,7 @@ class CreateCoursesTable extends Migration
             $table->string('categories');
             $table->string('objectives');
             $table->string('code');
-            $table->string('playing_time');
+            $table->string('playing_time')->nullable();
             $table->date('start_date');
             $table->date('end_date');
             $table->timestamps();

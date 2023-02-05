@@ -6,7 +6,7 @@
         <div class="wrapper">
             <Dashboard v-if="$route.name == 'Dashboard'"></Dashboard>
             <Courses v-if="$route.name == 'Courses'"></Courses>
-            <CreateVideo v-if="$route.name == 'CreateVideo'"></CreateVideo>
+            <CreateVideo v-if="$route.name == 'CreateVideo'" @toggle-loader="toggleLoader"></CreateVideo>
             <Chat v-if="$route.name == 'Messages'"></Chat>
             <Notification v-if="$route.name == 'Notification'"></Notification>
             <Review v-if="$route.name == 'Review'"></Review>

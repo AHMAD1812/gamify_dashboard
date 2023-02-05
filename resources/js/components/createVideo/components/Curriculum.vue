@@ -156,6 +156,7 @@
                                                         <input
                                                             class="form_input_1"
                                                             type="text"
+                                                            v-model="lecture_title"
                                                             placeholder="Title here"
                                                         />
                                                     </div>
@@ -169,8 +170,8 @@
                                                             <textarea
                                                                 rows="3"
                                                                 name="description"
-                                                                id=""
-                                                                placeholder="description here..."
+                                                                v-model="lecture_description"
+                                                                placeholder="Description here..."
                                                             ></textarea>
                                                         </div>
                                                     </div>
@@ -205,6 +206,7 @@
                                                                 <input
                                                                     class="uploadBtn-main-input"
                                                                     type="file"
+                                                                    @change="addlectureFile"
                                                                     id="SourceFile__input--source"
                                                                 />
                                                                 <label
@@ -225,24 +227,25 @@
                                                             <div
                                                                 class="add-attachments-dt"
                                                             >
-                                                                <!-- <div
+                                                                <div
                                                                     class="attachment-items"
+                                                                    v-if="lecture_file != null"
                                                                 >
                                                                     <div
                                                                         class="attachment_id"
                                                                     >
-                                                                        Uploaded
-                                                                        ID: 12
+                                                                        File Attached
                                                                     </div>
                                                                     <button
                                                                         class="cancel-btn"
                                                                         type="button"
+                                                                        @click="lecture_file = null"
                                                                     >
                                                                         <i
                                                                             class="fas fa-trash-alt"
                                                                         ></i>
                                                                     </button>
-                                                                </div> -->
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -257,7 +260,7 @@
                     <div class="modal-footer">
                         <button
                             type="button"
-                            class="main-btn cancel"
+                            class="main-btn cancel close-btn"
                             data-dismiss="modal"
                         >
                             Close
@@ -265,7 +268,6 @@
                         <button
                             type="button"
                             class="main-btn"
-                            data-dismiss="modal"
                             @click="addCurriculum('lecture', 'Lecture')"
                         >
                             Add Lecture
@@ -317,7 +319,7 @@
                                                 ></i
                                                 >Questions</a
                                             >
-                                            <a
+                                            <!-- <a
                                                 class="flex-sm-fill text-sm-center nav-link"
                                                 data-toggle="tab"
                                                 href="#nav-setting"
@@ -325,7 +327,7 @@
                                                 aria-selected="false"
                                                 ><i class="fas fa-cog mr-2"></i
                                                 >Setting</a
-                                            >
+                                            > -->
                                         </div>
                                         <div class="tab-content">
                                             <div
@@ -388,7 +390,7 @@
                                                                             Choice</span
                                                                         ></label
                                                                     >
-                                                                    <label
+                                                                    <!-- <label
                                                                         ><input
                                                                             type="radio"
                                                                             name="colorRadio"
@@ -413,7 +415,7 @@
                                                                             Line
                                                                             Text</span
                                                                         ></label
-                                                                    >
+                                                                    > -->
                                                                     <div
                                                                         class="mchoice"
                                                                         v-if="
@@ -953,7 +955,7 @@
                     <div class="modal-footer">
                         <button
                             type="button"
-                            class="main-btn cancel"
+                            class="main-btn cancel close-btn"
                             data-dismiss="modal"
                         >
                             Close
@@ -961,7 +963,6 @@
                         <button
                             type="button"
                             class="main-btn"
-                            data-dismiss="modal"
                             @click="addCurriculum('quiz', 'Quiz')"
                         >
                             Add Quiz
@@ -991,18 +992,50 @@ export default {
             isEdit: false,
             edit_key: -1,
             curriculum: [],
+            lecture_title:"",
+            lecture_description:"",
+            lecture_file:null,
         };
     },
     methods:{
+        addRequestCurriculum(){
+            if(this.curriculum.length == 0){
+                this.errorToast("Atleast 1 curriculum is required");
+                return;
+            }
+            let request = {
+                questions : this.questions,
+                curriculum : this.curriculum,
+                lecture_title: this.lecture_title,
+                lecture_description: this.lecture_description,
+                lecture_file: this.lecture_file
+            }
+            this.$emit('add-curriculum',request);
+        },
         addCurriculum(type,name){
             let item_type = this.curriculum.map((item)=>{
                 return item.type;
             });
             if(!item_type.includes(type)){
+                if(type == 'quiz' && this.questions.length == 0){
+                    event.preventDefault();
+                    this.errorToast('Questions are required');
+                    return;
+                }else if(type == 'lecture'){
+                    if(this.lecture_title == ""){
+                        this.errorToast("Title is required");
+                        return;
+                    }else if(this.lecture_description == ""){
+                        this.errorToast("Description required");
+                        return;
+                    }
+                }
                 this.curriculum.push({
                     type:type,
                     name:name
                 });
+
+                $('.close-btn').click();                
             }
         },
         deleteCurriculum(key){
@@ -1016,18 +1049,33 @@ export default {
         },
         addQuestion() {
             if (this.question_name == "") {
-                Vue.$toast.open({
-                    message: "Name requried",
-                    type: "error",
-                    position: "top-right",
-                });
+                this.errorToast("Name required");
+                return;
+            } else if( this.question_time.mm == "" || this.question_time.ss == ""){
+                this.errorToast("Time required");
+                return;
+            } else if(this.question_score == ""){
+                this.errorToast("Score required");
                 return;
             } else if (this.question_option.length == 0) {
-                Vue.$toast.open({
-                    message: "Options requried",
-                    type: "error",
-                    position: "top-right",
-                });
+                this.errorToast("Options are required");
+                return;
+            } else if (this.question_option.length < 2 || this.question_option.length > 4) {
+                this.errorToast("There should be at least 2 options or max 4 options");
+                return;
+            }
+            let option = this.question_option.filter((opt)=>{
+                return opt.name == "";
+            });
+            if(option.length > 0){
+                this.errorToast("Option name required");
+                return;
+            }
+            option = this.question_option.filter((opt)=>{
+                return opt.isCorrect == true;
+            });
+            if(option.length == 0){
+                this.errorToast("Select Correct Option");
                 return;
             }
             if (this.isEdit) {
@@ -1036,6 +1084,7 @@ export default {
                 this.questions[key].name = this.question_name;
                 this.questions[key].score = this.question_score;
                 this.questions[key].time = this.question_time;
+                this.questions[key].is_hour = this.showHour;
                 this.isEdit = false;
                 this.edit_key = -1;
             } else {
@@ -1044,6 +1093,7 @@ export default {
                     options: this.question_option,
                     time: this.question_time,
                     score: this.question_score,
+                    is_hour: this.showHour,
                 });
             }
             this.question_time = {
@@ -1051,7 +1101,8 @@ export default {
                 ss: "",
             };
             this.showHour = false;
-            (this.question_score = ""), (this.question_name = "");
+            this.question_score = "";
+            this.question_name = "";
             this.question_type = 1;
             this.question_option = [];
         },
@@ -1060,11 +1111,22 @@ export default {
             this.question_name = this.questions[key].name;
             this.question_score = this.questions[key].score;
             this.question_time = this.questions[key].time;
+            this.showHour = this.questions[key].is_hour;
             this.isEdit = true;
             this.edit_key = key;
         },
         deleteQuestion(key) {
             this.questions.splice(key, 1);
+        },
+        errorToast(message){
+            Vue.$toast.open({
+                message: message,
+                type: "error",
+                position: "top-right",
+            });
+        },
+        addlectureFile(event){
+            this.lecture_file = event.target.files[0];
         },
     },
     watch: {

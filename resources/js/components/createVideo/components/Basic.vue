@@ -15,7 +15,7 @@
                                 <div class="ui left icon input swdh19">
                                     <input
                                         class="prompt srch_explore"
-                                        v-model="title"
+                                        v-model="request.title"
                                         type="text"
                                         placeholder="Course title here"
                                         name="title"
@@ -38,7 +38,7 @@
                                                 <textarea
                                                     rows="5"
                                                     name="description"
-                                                    v-model="descriptions"
+                                                    v-model="request.descriptions"
                                                     placeholder="Insert your course description"
                                                 ></textarea>
                                             </div>
@@ -58,7 +58,7 @@
                                         <textarea
                                             rows="3"
                                             name="description"
-                                            v-model="objectives"
+                                            v-model="request.objectives"
                                             placeholder="What skills students will learn"
                                         ></textarea>
                                     </div>
@@ -78,7 +78,7 @@
                                         <textarea
                                             rows="3"
                                             name="description"
-                                            v-model="requirement"
+                                            v-model="request.requirement"
                                             placeholder="Requirements to take this course"
                                         ></textarea>
                                     </div>
@@ -124,14 +124,14 @@
                                 <label>Start Date*</label>
                             </div>
                             <div>
-                                <input type="date" class="input-date" v-model="start_date"/>
+                                <input type="date" class="input-date" v-model="request.start_date" :min="request.today_date"/>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="mt-30 lbel25">
                                 <label>End Date*</label>
                             </div>
-                            <input type="date" class="input-date" v-model="end_date"/>
+                            <input type="date" class="input-date" v-model="request.end_date" :min="request.today_date"/>
                         </div>
                     </div>
                 </div>
@@ -141,16 +141,22 @@
 </template>
 
 <script>
+import moment from 'moment';
 export default {
     name: "Basic",
     data(){
         return{
-            title:"",
-            descriptions:"",
-            objectives:"",
-            requirement:"",
-            start_date:"",
-            end_date:"",
+            request:{
+                category:[],
+                level:null,
+                title:"",
+                descriptions:"",
+                objectives:"",
+                requirement:"",
+                start_date:"",
+                end_date:"",
+                today_date: moment(new Date()).format("YYYY-MM-DD"),
+            },
             levelOptions: [
                 {
                     text: "Beginner",
@@ -166,10 +172,6 @@ export default {
                 },
             ],
             categoryOptions: [],
-            request:{
-                category:[],
-                level:null,
-            }
         }
     },
     async created(){
@@ -187,7 +189,50 @@ export default {
         } catch (error) {
             console.log(error);
         }
+    },
+    methods:{
+        addBasic(){
+            if(this.validateData()){
+                this.$emit('add-basic',this.request);
+            }
+        }, 
+        validateData() {
+            if (this.request.title == "") {
+                this.errorToast("Title is Required.");
+                return false;
+            } else if (this.request.descriptions == "") {
+                this.errorToast("Description is required.");
+                return false;
+            } else if (this.request.objectives == "") {
+                this.errorToast("Objective is required.");
+                return false;
+            } else if (this.request.requirement == "") {
+                this.errorToast("Requirement is required.");
+                return false;
+            } else if (this.request.level == null) {
+                this.errorToast("Level is required.");
+                return false;
+            } else if (this.request.category.length == 0) {
+                this.errorToast("Categories are required.");
+                return false;
+            } else if (this.request.start_date == "") {
+                this.errorToast("Start date is required.");
+                return false;
+            } else if (this.request.end_date == "") {
+                this.errorToast("End date is required.");
+                return false;
+            } 
+            return true;
+        },
+        errorToast(message) {
+            Vue.$toast.open({
+                message: message,
+                type: "error",
+                position: "top-right",
+            });
+        },
     }
+
 };
 </script>
 

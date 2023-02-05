@@ -15,9 +15,9 @@
                             name="colorRadio"
                             class="d-none"
                             :value="'mp4'"
-                            v-model="video_type"
+                            v-model="request.video_type"
                             checked
-                        /><span :class="[video_type == 'mp4' ? 'selected' : '']"
+                        /><span :class="[request.video_type == 'mp4' ? 'selected' : '']"
                             >HTML5(mp4)</span
                         ></label
                     >
@@ -27,14 +27,14 @@
                             class="d-none"
                             name="colorRadio"
                             :value="'url'"
-                            v-model="video_type"
-                        /><span :class="[video_type == 'url' ? 'selected' : '']"
+                            v-model="request.video_type"
+                        /><span :class="[request.video_type == 'url' ? 'selected' : '']"
                             >External URL</span
                         ></label
                     >
                     <div
                         class="intro-box"
-                        :class="[video_type == 'mp4' ? 'd-block' : '']"
+                        :class="[request.video_type == 'mp4' ? 'd-block' : '']"
                     >
                         <div class="row">
                             <div class="col-lg-5 col-md-12">
@@ -43,6 +43,8 @@
                                         <input
                                             class="uploadBtn-main-input"
                                             type="file"
+                                            @change="addVideo($event)"
+                                            accept="video/*"
                                             id="IntroFile__input--source"
                                         />
                                         <label
@@ -54,14 +56,17 @@
                                     <span class="uploadBtn-main-file"
                                         >File Format: .mp4</span
                                     >
-                                    <span class="uploaded-id"></span>
+                                    <span class="uploaded-id"
+                                        v-if="request.video != null"
+                                        >Video Attached
+                                    </span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div
                         class="intro-box"
-                        :class="[video_type == 'url' ? 'd-block' : '']"
+                        :class="[request.video_type == 'url' ? 'd-block' : '']"
                     >
                         <div class="new-section">
                             <div class="ui search focus mt-30 lbel25">
@@ -71,9 +76,7 @@
                                         class="prompt srch_explore"
                                         type="text"
                                         placeholder="External Video URL"
-                                        name=""
-                                        id=""
-                                        value=""
+                                        v-model="request.video_link"
                                     />
                                 </div>
                             </div>
@@ -90,9 +93,9 @@
                         <div class="thumb-item">
                             <img
                                 :src="
-                                    thumbnail == null
+                                    request.thumbnail == null
                                         ? `${globalBaseUrl}images/thumbnail-demo.jpg`
-                                        : thumbnail
+                                        : request.thumbnail
                                 "
                                 alt=""
                             />
@@ -125,19 +128,50 @@
 
 <script>
 export default {
-    name:'Media',
-    data(){
-        return{
-            video_type: "mp4",
-            thumbnail:null,
-        }
+    name: "Media",
+    data() {
+        return {
+            request: {
+                video_type: "mp4",
+                thumbnail: null,
+                thumbnail_file: null,
+                video: null,
+                video_link: "",
+            },
+        };
     },
-    methods:{
-        onThumbnailSelected(e){
+    methods: {
+        addMedia() {
+            if (this.validateData()) {
+                this.$emit("add-media", this.request);
+            }
+        },
+        addVideo(e) {
+            this.request.video = e.target.files[0];
+        },
+        onThumbnailSelected(e) {
             const file = e.target.files[0];
-            this.thumbnail = URL.createObjectURL(file);
-        }
-    }
+            this.request.thumbnail_file = file;
+            this.request.thumbnail = URL.createObjectURL(file);
+        },
+        validateData() {
+            if(this.request.video == null && this.request.video_link == "" ){
+                this.errorToast("Video required");
+                return false;
+            }else if(this.request.thumbnail_file == null){
+                this.errorToast("Thumbnail required");
+                return false;
+            }
+            return true;
+        },
+        errorToast(message) {
+            Vue.$toast.open({
+                message: message,
+                type: "error",
+                position: "top-right",
+            });
+        },
+    },
 };
 </script>
 

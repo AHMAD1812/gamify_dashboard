@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CourseController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,7 +50,11 @@ Route::prefix('instructor')->group(function () {
         Route::get('/course_detail', [PageController::class, 'index']);
         Route::get('/feedback', [PageController::class, 'index']);
 
-        //API Doces
+        //API Docs
+        
+        //Course 
+        Route::post('/add_course', [CourseController::class, 'addCourse']);
+
         Route::post('/logout', [AuthController::class, 'logout']);
         Route::get('/user_profile', [UserController::class, 'getUser']);
         Route::post('/update_profile', [UserController::class, 'updateUser']);

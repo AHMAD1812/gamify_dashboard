@@ -46,14 +46,33 @@
                                     </li>
                                 </ul>
                                 <div class="step-content">
-                                    <div class="step-tab-panel step-tab-info active" id="tab_step1">
-                                        <Basic></Basic>
+                                    <div
+                                        class="step-tab-panel step-tab-info active"
+                                        id="tab_step1"
+                                    >
+                                        <Basic
+                                            ref="basic"
+                                            @add-basic="addBasic"
+                                        ></Basic>
                                     </div>
-                                    <div class="step-tab-panel step-tab-gallery" id="tab_step2">
-                                        <Curriculum></Curriculum>
+                                    <div
+                                        class="step-tab-panel step-tab-gallery"
+                                        id="tab_step2"
+                                    >
+                                        <Curriculum
+                                            ref="curriculum"
+                                            @add-curriculum="addCurriculum"
+                                        ></Curriculum>
                                     </div>
-                                    <div class="step-tab-panel step-tab-location" id="tab_step3">
-                                        <Media></Media>
+                                    <div
+                                        class="step-tab-panel step-tab-location"
+                                        id="tab_step3"
+                                    >
+                                        <Media
+                                            ref="media"
+                                            @add-media="addMedia"
+                                        >
+                                        </Media>
                                     </div>
                                     <div
                                         class="step-tab-panel step-tab-location"
@@ -73,13 +92,15 @@
                                             <i class="far fa-edit"></i>
                                             <p>
                                                 Your course is in a draft state.
-                                                Students cannot view or take this course. 
-                                                <br/>
-                                                Course will appear on students dashboard once it is approved.
+                                                Students cannot view or take
+                                                this course.
+                                                <br />
+                                                Course will appear on students
+                                                dashboard once it is approved.
                                             </p>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- <div
                                         class="step-tab-panel step-tab-amenities"
                                         id="tab_step4"
@@ -302,26 +323,36 @@
                                 </div>
                                 <div class="step-footer step-tab-pager">
                                     <button
-                                        data-direction="prev"
                                         class="btn btn-default steps_btn"
+                                        @click="prevStep"
+                                        v-if="steps > 1"
+                                    >
+                                        PREVIOUS
+                                    </button>
+                                    <button
+                                        data-direction="prev"
+                                        class="btn btn-default steps_btn prev-btn"
+                                        style="visibility: hidden"
                                     >
                                         PREVIOUS
                                     </button>
                                     <button
                                         data-direction="next"
-                                        v-if="validation"
-                                        class="btn btn-default steps_btn"
+                                        class="btn btn-default steps_btn next-btn"
+                                        style="visibility: hidden"
                                     >
                                         Next
                                     </button>
                                     <button
-                                        v-else
                                         class="btn btn-default steps_btn"
+                                        @click="nextStep"
+                                        v-if="steps < 4"
                                     >
                                         Next
                                     </button>
                                     <button
                                         data-direction="finish"
+                                        @click="addCourse"
                                         class="btn btn-default steps_btn"
                                     >
                                         Submit for Review
@@ -333,17 +364,16 @@
                 </div>
             </div>
         </div>
-
     </span>
 </template>
 
 <script>
-import Basic from './components/Basic.vue';
-import Curriculum from './components/Curriculum.vue';
-import Media from './components/Media.vue';
+import Basic from "./components/Basic.vue";
+import Curriculum from "./components/Curriculum.vue";
+import Media from "./components/Media.vue";
 export default {
     name: "CreateVideo",
-    components:{
+    components: {
         Basic,
         Curriculum,
         Media,
@@ -352,18 +382,30 @@ export default {
         return {
             level: null,
             category: null,
-            steps: "",
-            validation:true,
+            title: "",
+            descriptions: "",
+            objectives: "",
+            requirement: "",
+            start_date: "",
+            end_date: "",
+            steps: 1,
+            questions: [],
+            curriculum: [],
+            lecture_title: "",
+            lecture_description: "",
+            lecture_file: null,
+            video_type: "mp4",
+            thumbnail_file: null,
+            video: null,
+            video_link: "",
+            validation: true,
         };
     },
     async mounted() {
         $(document).ready(function () {
             $(".ui.dropdown").dropdown();
-            this.steps = $("#add-course-tab").steps({
-                onFinish: function () {
-                    alert("Course Created");
-                    window.location.reload();
-                },
+            $("#add-course-tab").steps({
+                onFinish: function () {},
             });
 
             $(".sortable").sortable();
@@ -371,6 +413,98 @@ export default {
         });
     },
     methods: {
+        addCourse() {
+            this.$emit("toggle-loader");
+            axios
+                .post(`${globalBaseUrl}instructor/add_course`, {
+                    level: this.level,
+                    category: this.category,
+                    title: this.title,
+                    descriptions: this.descriptions,
+                    objectives: this.objectives,
+                    requirement: this.requirement,
+                    start_date: this.start_date,
+                    end_date: this.end_date,
+                    questions: this.questions,
+                    curriculum: this.curriculum,
+                    lecture_title: this.lecture_title,
+                    lecture_description: this.lecture_description,
+                    lecture_file: this.lecture_file,
+                    video_type: this.video_type,
+                    thumbnail_file: this.thumbnail_file,
+                    video: this.video,
+                    video_link: this.video_link,
+                })
+                .then((response) => {
+                    this.$emit("toggle-loader");
+                    if (response.data.status == 200) {
+                        window.location.reload();
+                    }
+                    if (response.data.status == 400) {
+                        Vue.$toast.open({
+                            message: response.data.message,
+                            type: "warning",
+                            position: "top-right",
+                        });
+                    }
+                })
+                .catch((e) => {
+                    this.$emit("toggle-loader");
+                    Vue.$toast.open({
+                        message: "Something Went Wrong",
+                        type: "error",
+                        position: "top-right",
+                    });
+                    console.log(e);
+                });
+        },
+        nextStep() {
+            if (this.steps == 1) {
+                this.$refs.basic.addBasic();
+            } else if (this.steps == 2) {
+                this.$refs.curriculum.addRequestCurriculum();
+            } else if (this.steps == 3) {
+                this.$refs.media.addMedia();
+            }
+        },
+        prevStep() {
+            this.steps--;
+            $(window).scrollTop(0);
+            $(".prev-btn").click();
+        },
+        addBasic(request) {
+            this.level = request.level;
+            this.category = request.category;
+            this.title = request.title;
+            this.descriptions = request.descriptions;
+            this.objectives = request.objectives;
+            this.requirement = request.requirement;
+            this.start_date = request.start_date;
+            this.end_date = request.end_date;
+            this.steps++;
+            $(".next-btn").click();
+            $(window).scrollTop(0);
+        },
+        addCurriculum(request) {
+            this.questions = request.questions;
+            this.curriculum = request.curriculum;
+            this.lecture_title = request.lecture_title;
+            this.lecture_description = request.lecture_description;
+            this.lecture_file = request.lecture_file;
+            this.steps++;
+            $(".next-btn").click();
+            $(window).scrollTop(0);
+        },
+        addMedia(request) {
+            this.video_type = request.video_type;
+            this.thumbnail = request.thumbnail;
+            this.thumbnail_file = request.thumbnail_file;
+            this.video = request.video;
+            this.video_link = request.video_link;
+            this.steps++;
+            $(".next-btn").click();
+            $(window).scrollTop(0);
+        },
     },
 };
 </script>
