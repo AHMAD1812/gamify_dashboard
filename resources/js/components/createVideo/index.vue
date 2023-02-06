@@ -364,6 +364,11 @@
                 </div>
             </div>
         </div>
+        <Prompt
+            :type="'success'"
+            :message="'Your course has been created successfully'"
+            @btn-clicked="btnClicked"
+        ></Prompt>
     </span>
 </template>
 
@@ -371,12 +376,14 @@
 import Basic from "./components/Basic.vue";
 import Curriculum from "./components/Curriculum.vue";
 import Media from "./components/Media.vue";
+import Prompt from "../modals/Prompt.vue";
 export default {
     name: "CreateVideo",
     components: {
         Basic,
         Curriculum,
         Media,
+        Prompt,
     },
     data() {
         return {
@@ -438,7 +445,7 @@ export default {
                 .then((response) => {
                     this.$emit("toggle-loader");
                     if (response.data.status == 200) {
-                        window.location.reload();
+                        $(".show-prompt").click();
                     }
                     if (response.data.status == 400) {
                         Vue.$toast.open({
@@ -457,6 +464,10 @@ export default {
                     });
                     console.log(e);
                 });
+        },
+        btnClicked(){
+            console.log('clicked');
+            window.location.reload();
         },
         nextStep() {
             if (this.steps == 1) {

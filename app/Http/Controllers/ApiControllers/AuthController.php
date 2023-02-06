@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\ApiControllers;
 
-use App\Http\Controllers\Controller;
-use App\Http\Traits\CommonTrait;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
@@ -303,6 +304,32 @@ class AuthController extends Controller
             return $this->sendError($e->getMessage(), null);
         }
 
+    }
+
+    public function resetPassword(Request $request){
+        $validator = Validator::make($request->all(), [
+            'password' => ['required'],
+            'new_password' => ['required', 'min:8'],
+        ]);
+        if ($validator->fails()) {
+            return $this->sendError($validator->messages()->first(), null);
+        }
+
+        try {
+            DB::beginTransaction();
+            $user = User::find(Auth::id());
+            if (Hash::check($request->password, $user->password)) {
+                $user->password = bcrypt($request->password);
+                $user->update();
+                DB::commit();
+                return $this->sendSuccess('Password changed', $user);
+            } else {
+                return $this->sendError('Invalid Password', null);
+            }
+        } catch (Exception $e) {
+            DB::rollback();
+            return $this->sendError($e->getMessage(), null);
+        }
     }
     public function socialLogin(Request $request)
     {

@@ -25,7 +25,7 @@ class UserController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'full_name' => 'sometimes',
-            'profile_image' => 'sometimes|mimes:jpeg,jpg,png,gif',
+            'profile_image' => 'sometimes',
             'gender' => 'sometimes|in:male,female,other',
             'bio'=>'sometimes'
         ]);
