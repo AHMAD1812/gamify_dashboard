@@ -1,14 +1,13 @@
 <template>
   <div class="sign_in_up_bg">
-      <FullScreenLoader :active="loading"></FullScreenLoader>
       <div class="container">
         <div class="row justify-content-lg-center justify-content-md-center">
           <Header></Header>
           <div class="col-lg-6 col-md-8">
-            <SignInComponent v-if="$route.name=='Login'" @toggle-loader="toggleLoader"></SignInComponent>
-            <SignUpComponent v-if="$route.name=='Register'" @toggle-loader="toggleLoader"></SignUpComponent>
+            <SignInComponent v-if="$route.name=='Login'"></SignInComponent>
+            <SignUpComponent v-if="$route.name=='Register'"></SignUpComponent>
             <ForgotPassword v-if="$route.name=='ForgotPassword'"></ForgotPassword>
-            <OtpVerification v-if="$route.name=='OtpVerification'" @toggle-loader="toggleLoader"></OtpVerification>
+            <OtpVerification v-if="$route.name=='OtpVerification'"></OtpVerification>
             <Footer></Footer>
           </div>
         </div>
@@ -34,36 +33,26 @@ export default {
         Footer,
         OtpVerification,
     },
-    data(){
-      return {
-        loading:false,
-      }
-    },
     async mounted(){
         $('.ui.checkbox').checkbox();
         try {
-            this.loading=true;
+            this.$store.dispatch('toggleLoader',true);
             let response = await axios.get(`${globalBaseUrl}instructor/is_user_login`);
-            this.loading=false;
+            this.$store.dispatch('toggleLoader',false);
             if(response.data.status==200){
                 this.$router.push({
                     name: "Dashboard",
                 });
             }
         } catch (error) {
-            this.loading=false;
+            this.$store.dispatch('toggleLoader',false);
             console.log(error);
             Vue.$toast.open({
               message:'Something Went Wrong',
               type: "error",
               position: "top-right",
-            })
+            });
         }
-    },
-    methods:{
-      toggleLoader(){
-        this.loading=!this.loading;
-      }
     }
 }
 </script>

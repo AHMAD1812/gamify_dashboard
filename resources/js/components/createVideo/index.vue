@@ -421,7 +421,7 @@ export default {
     },
     methods: {
         addCourse() {
-            this.$emit("toggle-loader");
+            this.$store.dispatch('toggleLoader',true);
             axios
                 .post(`${globalBaseUrl}instructor/add_course`, {
                     level: this.level,
@@ -443,7 +443,7 @@ export default {
                     video_link: this.video_link,
                 })
                 .then((response) => {
-                    this.$emit("toggle-loader");
+                    this.$store.dispatch('toggleLoader',false);
                     if (response.data.status == 200) {
                         $(".show-prompt").click();
                     }
@@ -456,7 +456,7 @@ export default {
                     }
                 })
                 .catch((e) => {
-                    this.$emit("toggle-loader");
+                    this.$store.dispatch('toggleLoader',false);
                     Vue.$toast.open({
                         message: "Something Went Wrong",
                         type: "error",

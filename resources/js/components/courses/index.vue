@@ -111,7 +111,7 @@
                                                     class="text-center"
                                                     scope="col"
                                                 >
-                                                    Category
+                                                    Course Level
                                                 </th>
                                                 <th
                                                     class="text-center"
@@ -128,176 +128,21 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
+                                            <tr
+                                                v-for="(course,key) in courses"
+                                                :key="`courses_${key}`">
                                                 <td class="text-center">
-                                                    IT-001
+                                                    CR-{{course.id}}
                                                 </td>
-                                                <td>Course Title Here</td>
+                                                <td>{{course.title}}</td>
                                                 <td class="text-center">
                                                     06 April 2020 | 08:31
+
                                                 </td>
-                                                <td class="text-center">15</td>
-                                                <td class="text-center">5</td>
+                                                <td class="text-center">0</td>
+                                                <td class="text-center">0</td>
                                                 <td class="text-center">
-                                                    <a href="#"
-                                                        >Web Development</a
-                                                    >
-                                                </td>
-                                                <td class="text-center">
-                                                    <b class="course_active"
-                                                        >Active</b
-                                                    >
-                                                </td>
-                                                <td class="text-center">
-                                                    <router-link
-                                                        :to="{name : 'CourseDetail'}"
-                                                        title="Edit"
-                                                        class="gray-s"
-                                                        ><i
-                                                            class="uil uil-eye"
-                                                        ></i
-                                                    ></router-link>
-                                                    <a
-                                                        href="#"
-                                                        title="Delete"
-                                                        class="gray-s"
-                                                        ><i
-                                                            class="uil uil-trash-alt"
-                                                        ></i
-                                                    ></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">
-                                                    IT-001
-                                                </td>
-                                                <td>Course Title Here</td>
-                                                <td class="text-center">
-                                                    06 April 2020 | 08:31
-                                                </td>
-                                                <td class="text-center">15</td>
-                                                <td class="text-center">5</td>
-                                                <td class="text-center">
-                                                    <a href="#"
-                                                        >Web Development</a
-                                                    >
-                                                </td>
-                                                <td class="text-center">
-                                                    <b class="course_active"
-                                                        >Active</b
-                                                    >
-                                                </td>
-                                                <td class="text-center">
-                                                    <router-link
-                                                        :to="{name : 'CourseDetail'}"
-                                                        title="Edit"
-                                                        class="gray-s"
-                                                        ><i
-                                                            class="uil uil-eye"
-                                                        ></i
-                                                    ></router-link>
-                                                    <a
-                                                        href="#"
-                                                        title="Delete"
-                                                        class="gray-s"
-                                                        ><i
-                                                            class="uil uil-trash-alt"
-                                                        ></i
-                                                    ></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">
-                                                    IT-001
-                                                </td>
-                                                <td>Course Title Here</td>
-                                                <td class="text-center">
-                                                    06 April 2020 | 08:31
-                                                </td>
-                                                <td class="text-center">15</td>
-                                                <td class="text-center">5</td>
-                                                <td class="text-center">
-                                                    <a href="#"
-                                                        >Web Development</a
-                                                    >
-                                                </td>
-                                                <td class="text-center">
-                                                    <b class="course_active"
-                                                        >Active</b
-                                                    >
-                                                </td>
-                                                <td class="text-center">
-                                                    <router-link
-                                                        :to="{name : 'CourseDetail'}"
-                                                        title="Edit"
-                                                        class="gray-s"
-                                                        ><i
-                                                            class="uil uil-eye"
-                                                        ></i
-                                                    ></router-link>
-                                                    <a
-                                                        href="#"
-                                                        title="Delete"
-                                                        class="gray-s"
-                                                        ><i
-                                                            class="uil uil-trash-alt"
-                                                        ></i
-                                                    ></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">
-                                                    IT-001
-                                                </td>
-                                                <td>Course Title Here</td>
-                                                <td class="text-center">
-                                                    06 April 2020 | 08:31
-                                                </td>
-                                                <td class="text-center">15</td>
-                                                <td class="text-center">5</td>
-                                                <td class="text-center">
-                                                    <a href="#"
-                                                        >Web Development</a
-                                                    >
-                                                </td>
-                                                <td class="text-center">
-                                                    <b class="course_active"
-                                                        >Active</b
-                                                    >
-                                                </td>
-                                                <td class="text-center">
-                                                    <router-link
-                                                        :to="{name : 'CourseDetail'}"
-                                                        title="Edit"
-                                                        class="gray-s"
-                                                        ><i
-                                                            class="uil uil-eye"
-                                                        ></i
-                                                    ></router-link>
-                                                    <a
-                                                        href="#"
-                                                        title="Delete"
-                                                        class="gray-s"
-                                                        ><i
-                                                            class="uil uil-trash-alt"
-                                                        ></i
-                                                    ></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">
-                                                    IT-001
-                                                </td>
-                                                <td>Course Title Here</td>
-                                                <td class="text-center">
-                                                    06 April 2020 | 08:31
-                                                </td>
-                                                <td class="text-center">15</td>
-                                                <td class="text-center">5</td>
-                                                <td class="text-center">
-                                                    <a href="#"
-                                                        >Web Development</a
-                                                    >
+                                                    {{ course.course_level }}
                                                 </td>
                                                 <td class="text-center">
                                                     <b class="course_active"
@@ -325,6 +170,9 @@
                                             </tr>
                                         </tbody>
                                     </table>
+                                    <div class="w-100 text-center my-4">
+                                        <SpinnerLoader :loading="loading" :color="'#3454b4'"></SpinnerLoader>
+                                    </div>
                                 </div>
                             </div>
                             <div
@@ -527,13 +375,34 @@
 <script>
 export default {
     name:"Courses",
+    data(){
+        return {
+            courses:[],
+            loading:true,
+        }
+    },
+    async mounted(){
+        try {
+            let response = await axios.get(`${globalBaseUrl}instructor/get_courses`);
+            this.courses = response.data.data;
+            this.loading = false;
+        } catch (error) {
+            this.loading = false;
+            console.log(error);
+            Vue.$toast.open({
+              message:'Something Went Wrong',
+              type: "error",
+              position: "top-right",
+            });
+        }
+    },
     methods:{
         navigate(){
             this.$router.push({
                 name:'CreateVideo'
             });
         }
-    }
+    },
 };
 </script>
 

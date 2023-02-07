@@ -104,4 +104,13 @@ class CourseController extends Controller
         }
         // dd($request);
     }
+
+    public function getCourses(Request $request){
+        try{
+            $courses = Courses::where('creator_id',Auth::id())->get();
+            return $this->sendSuccess('Courses', $courses);
+        }catch(Exception $e){
+            return $this->sendError($e->getMessage(), null);
+        }
+    }
 }

@@ -432,7 +432,7 @@ export default {
       updateProfile(){
         if(this.validateInput()){
           try{
-            this.$emit("toggle-loader");
+            this.$store.dispatch('toggleLoader',true);
             let formData=new FormData();
             formData.append('full_name',this.full_name);
             formData.append('biography',this.bio);
@@ -457,7 +457,7 @@ export default {
                       type: "success",
                       position: "top-right",
                     });
-                    this.$emit("profile-updated",response.data.data)
+                    this.$store.dispatch('setUser',response.data.data);
                 }
                 if (response.data.status == 400) {
                     Vue.$toast.open({
@@ -466,10 +466,10 @@ export default {
                         position: "top-right",
                     });
                 }
-                this.$emit("toggle-loader");
+                this.$store.dispatch('toggleLoader',false);
             })
             .catch((e) => {
-                this.$emit("toggle-loader");
+              this.$store.dispatch('toggleLoader',false);
                 Vue.$toast.open({
                     message: "Something Went Wrong",
                     type: "error",

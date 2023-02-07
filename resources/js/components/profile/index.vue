@@ -748,7 +748,11 @@
 <script>
 export default {
     name:"Profile",
-    props:['user']
+    computed:{
+      user() {
+        return this.$store.state.user;
+      }
+    }
 }
 </script>
 

@@ -45,7 +45,7 @@ export default {
                 });
                 return;
             }
-            this.$emit("toggle-loader");
+            this.$store.dispatch('toggleLoader',true);
             let formData = new FormData();
             
             formData.append('id', this.id);
@@ -71,11 +71,11 @@ export default {
                             position: "top-right",
                         });
                     }
-                    this.$emit("toggle-loader");
+                    this.$store.dispatch('toggleLoader',false);
                     
                 })
                 .catch((e) => {
-                    this.$emit("toggle-loader");
+                    this.$store.dispatch('toggleLoader',false);
                     
                     Vue.$toast.open({
                         message: "Something Went Wrong",

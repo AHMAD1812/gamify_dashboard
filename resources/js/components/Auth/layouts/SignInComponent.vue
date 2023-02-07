@@ -73,14 +73,14 @@ export default {
     methods:{
         login(){
             if(this.validateData()){
-                this.$emit('toggle-loader');
+                this.$store.dispatch('toggleLoader',true);
                 let formData = new FormData();
                 formData.append('email', this.email);
                 formData.append('password', this.password);
                 axios
                     .post(globalBaseUrl+"instructor/login_process",formData)
                     .then((response) => {
-                        this.$emit("toggle-loader");
+                        this.$store.dispatch('toggleLoader',false);
                         if (response.data.status == 200) {
                             Vue.$toast.open({
                                 message: response.data.message,
@@ -113,7 +113,7 @@ export default {
                         }
                     })
                     .catch((e) => {
-                        this.$emit("toggle-loader");
+                        this.$store.dispatch('toggleLoader',false);
                         Vue.$toast.open({
                             message: "Something Went Wrong",
                             type: "error",

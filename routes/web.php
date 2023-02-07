@@ -54,6 +54,7 @@ Route::prefix('instructor')->group(function () {
         
         //Course 
         Route::post('/add_course', [CourseController::class, 'addCourse']);
+        Route::get('/get_courses', [CourseController::class, 'getCourses']);
 
         Route::post('/logout', [AuthController::class, 'logout']);
         Route::get('/user_profile', [UserController::class, 'getUser']);
