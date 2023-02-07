@@ -21,6 +21,15 @@ use App\Http\Controllers\UserController;
 Route::get('/', [AppController::class, 'index'])->name('app');
 Route::get('/about-us', [AppController::class, 'about'])->name('about');
 Route::get('/contact-us', [AppController::class, 'contact'])->name('contact');
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::get('/teacher', [AdminController::class, 'teacher'])->name('teacher');
+Route::get('/student', [AdminController::class, 'student'])->name('student');
+Route::get('/login', [AdminController::class, 'login'])->name('login');
+Route::get('/register', [AdminController::class, 'register'])->name('register');
+Route::get('/forgot', [AdminController::class, 'forgot'])->name('forgot');
+
+
+
 
 Route::prefix('instructor')->group(function () {
 
