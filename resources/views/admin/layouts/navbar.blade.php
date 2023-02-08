@@ -46,7 +46,7 @@
                             <a href="#" data-bs-toggle="dropdown"
                                 class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                                 <div class="avatar me-1">
-                                    <img src="mainn/images/avatar/avatar-s-1.png" alt="" srcset="">
+                                    <img src="{{asset('admin_files/images/avatar/avatar-1.png')}}" alt="" srcset="">
                                 </div>
                                 <div class="d-none d-md-block d-lg-inline-block">Hi, Saugi</div>
                             </a>

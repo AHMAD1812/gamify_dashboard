@@ -22,18 +22,18 @@ use App\Http\Controllers\CourseController;
 Route::get('/', [AppController::class, 'index'])->name('app');
 Route::get('/about-us', [AppController::class, 'about'])->name('about');
 Route::get('/contact-us', [AppController::class, 'contact'])->name('contact');
-Route::get('/admin', [AdminController::class, 'index'])->name('admin');
-Route::get('/teacher', [AdminController::class, 'teacher'])->name('teacher');
-Route::get('/student', [AdminController::class, 'student'])->name('student');
-Route::get('/login', [AdminController::class, 'login'])->name('login');
-Route::get('/register', [AdminController::class, 'register'])->name('register');
-Route::get('/forgot', [AdminController::class, 'forgot'])->name('forgot');
 
-
+Route::prefix('admin')->group(function (){
+    Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/teacher', [AdminController::class, 'teacher'])->name('admin.teacher');
+    Route::get('/student', [AdminController::class, 'student'])->name('admin.student');
+    Route::get('/login', [AdminController::class, 'login'])->name('admin.login');
+    Route::get('/register', [AdminController::class, 'register'])->name('admin.register');
+    Route::get('/forgot', [AdminController::class, 'forgot'])->name('admin.forgot');
+});
 
 
 Route::prefix('instructor')->group(function () {
-
 
     //Authentication Auth Api
     
