@@ -50,541 +50,58 @@
                                         class="step-tab-panel step-tab-info active"
                                         id="tab_step1"
                                     >
-                                        <div class="tab-from-content">
-                                            <div class="title-icon">
-                                                <h3 class="title">
-                                                    <i
-                                                        class="uil uil-info-circle"
-                                                    ></i
-                                                    >Basic Information
-                                                </h3>
-                                            </div>
-                                            <div class="course__form">
-                                                <div class="general_info10">
-                                                    <div class="row">
-                                                        <div
-                                                            class="col-lg-12 col-md-12"
-                                                        >
-                                                            <div
-                                                                class="ui search focus mt-30 lbel25"
-                                                            >
-                                                                <label
-                                                                    >Course
-                                                                    Title*</label
-                                                                >
-                                                                <div
-                                                                    class="ui left icon input swdh19"
-                                                                >
-                                                                    <input
-                                                                        class="prompt srch_explore"
-                                                                        type="text"
-                                                                        placeholder="Course title here"
-                                                                        name="title"
-                                                                        data-purpose="edit-course-title"
-                                                                        maxlength="60"
-                                                                        id="main[title]"
-                                                                        value=""
-                                                                    />
-                                                                </div>
-                                                                <div
-                                                                    class="help-block"
-                                                                >
-                                                                    (Please make
-                                                                    this a
-                                                                    maximum of
-                                                                    100
-                                                                    characters
-                                                                    and unique.)
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div
-                                                            class="col-lg-12 col-md-12"
-                                                        >
-                                                            <div
-                                                                class="ui search focus lbel25 mt-30"
-                                                            >
-                                                                <label
-                                                                    >Short
-                                                                    Description*</label
-                                                                >
-                                                                <div
-                                                                    class="ui form swdh30"
-                                                                >
-                                                                    <div
-                                                                        class="field"
-                                                                    >
-                                                                        <textarea
-                                                                            rows="3"
-                                                                            name="description"
-                                                                            id=""
-                                                                            placeholder="Item description here..."
-                                                                        ></textarea>
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    class="help-block"
-                                                                >
-                                                                    220 words
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div
-                                                            class="col-lg-12 col-md-12"
-                                                        >
-                                                            <div
-                                                                class="course_des_textarea mt-30 lbel25"
-                                                            >
-                                                                <label
-                                                                    >Course
-                                                                    Description*</label
-                                                                >
-                                                                <div
-                                                                    class="course_des_bg"
-                                                                >
-                                                                    <div
-                                                                        class="textarea_dt"
-                                                                    >
-                                                                        <div
-                                                                            class="ui form swdh339"
-                                                                        >
-                                                                            <div
-                                                                                class="field"
-                                                                            >
-                                                                                <textarea
-                                                                                    rows="5"
-                                                                                    name="description"
-                                                                                    id="id_course_description"
-                                                                                    placeholder="Insert your course description"
-                                                                                ></textarea>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div
-                                                            class="col-lg-6 col-md-12"
-                                                        >
-                                                            <div
-                                                                class="ui search focus lbel25 mt-30"
-                                                            >
-                                                                <label
-                                                                    >What will
-                                                                    students
-                                                                    learn in
-                                                                    your
-                                                                    course?*</label
-                                                                >
-                                                                <div
-                                                                    class="ui form swdh30"
-                                                                >
-                                                                    <div
-                                                                        class="field"
-                                                                    >
-                                                                        <textarea
-                                                                            rows="3"
-                                                                            name="description"
-                                                                            id=""
-                                                                            placeholder=""
-                                                                        ></textarea>
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    class="help-block"
-                                                                >
-                                                                    Student will
-                                                                    gain this
-                                                                    skills,
-                                                                    knowledge
-                                                                    after
-                                                                    completing
-                                                                    this course.
-                                                                    (One per
-                                                                    line).
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div
-                                                            class="col-lg-6 col-md-12"
-                                                        >
-                                                            <div
-                                                                class="ui search focus lbel25 mt-30"
-                                                            >
-                                                                <label
-                                                                    >Requirements*</label
-                                                                >
-                                                                <div
-                                                                    class="ui form swdh30"
-                                                                >
-                                                                    <div
-                                                                        class="field"
-                                                                    >
-                                                                        <textarea
-                                                                            rows="3"
-                                                                            name="description"
-                                                                            id=""
-                                                                            placeholder=""
-                                                                        ></textarea>
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    class="help-block"
-                                                                >
-                                                                    What
-                                                                    knowledge,
-                                                                    technology,
-                                                                    tools
-                                                                    required by
-                                                                    users to
-                                                                    start this
-                                                                    course. (One
-                                                                    per line).
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div
-                                                            class="col-lg-6 col-md-12"
-                                                        >
-                                                            <div
-                                                                class="mt-30 lbel25"
-                                                            >
-                                                                <label
-                                                                    >Course
-                                                                    Level*</label
-                                                                >
-                                                            </div>
-                                                            <sui-dropdown
-                                                                selection
-                                                                placeholder="Select Level"
-                                                                class="cntry152 prompt srch_explore"
-                                                                :options="
-                                                                    levelOptions
-                                                                "
-                                                                v-model="level"
-                                                            />
-                                                        </div>
-                                                        <div
-                                                            class="col-lg-6 col-md-6"
-                                                        >
-                                                            <div
-                                                                class="mt-30 lbel25"
-                                                            >
-                                                                <label
-                                                                    >Course
-                                                                    Category*</label
-                                                                >
-                                                            </div>
-                                                            <sui-dropdown
-                                                                multiple
-                                                                fluid
-                                                                placeholder="Select Category"
-                                                                :max-selections="
-                                                                    2
-                                                                "
-                                                                class="cntry152 prompt srch_explore"
-                                                                search
-                                                                selection
-                                                                allow-additions
-                                                                :options="
-                                                                    categoryOptions
-                                                                "
-                                                                v-model="
-                                                                    category
-                                                                "
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <Basic
+                                            ref="basic"
+                                            @add-basic="addBasic"
+                                        ></Basic>
                                     </div>
                                     <div
                                         class="step-tab-panel step-tab-gallery"
                                         id="tab_step2"
                                     >
-                                        <div class="tab-from-content">
-                                            <div class="title-icon">
-                                                <h3 class="title">
-                                                    <i
-                                                        class="uil uil-notebooks"
-                                                    ></i
-                                                    >Curriculum
-                                                </h3>
-                                            </div>
-                                            <div class="curriculum-section">
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div
-                                                            class="curriculum-add-item"
-                                                        >
-                                                            <h4
-                                                                class="section-title mt-0"
-                                                            >
-                                                                <i
-                                                                    class="fas fa-th-list mr-2"
-                                                                ></i
-                                                                >Curriculum
-                                                            </h4>
-                                                        </div>
-                                                        <div
-                                                            class="added-section-item mb-30"
-                                                        >
-                                                            <div
-                                                                class="section-group-list"
-                                                            >
-                                                                <div
-                                                                    class="section-list-item"
-                                                                    v-for="(item,key) in curriculum"
-                                                                    :key="`curriculum_${key}_`"
-                                                                >
-                                                                    <div
-                                                                        class="section-item-title"
-                                                                    >
-                                                                        <i
-                                                                            class="fas mr-2"
-                                                                            :class="[item.type=='assignment' ? 'fa-file' : 
-                                                                                    item.type=='quiz'? 'fa-stream' : 'fa-clipboard-list']"
-                                                                        ></i>
-                                                                        <span
-                                                                            class="section-item-title-text"
-                                                                            >{{ item.name }}</span
-                                                                        >
-                                                                    </div>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools"
-                                                                        data-toggle="modal"
-                                                                        :data-target="[item.type=='quiz'?'#add_quiz_model':
-                                                                        item.type=='assignment'?'#add_assignment_model' :
-                                                                        '#add_lecture_model']"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-edit"
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools"
-                                                                        @click="deleteCurriculum(key)"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-trash-alt"
-                                                                        ></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                class="section-add-item-wrap p-3"
-                                                            >
-                                                                <button
-                                                                    class="add_lecture"
-                                                                    data-toggle="modal"
-                                                                    data-target="#add_lecture_model"
-                                                                >
-                                                                    <i
-                                                                        class="far fa-plus-square mr-2"
-                                                                    ></i
-                                                                    >Lecture
-                                                                </button>
-                                                                <button
-                                                                    class="add_quiz"
-                                                                    data-toggle="modal"
-                                                                    data-target="#add_quiz_model"
-                                                                >
-                                                                    <i
-                                                                        class="far fa-plus-square mr-2"
-                                                                    ></i
-                                                                    >Quiz
-                                                                </button>
-                                                                <button
-                                                                    class="add_assignment"
-                                                                    data-toggle="modal"
-                                                                    data-target="#add_assignment_model"
-                                                                >
-                                                                    <i
-                                                                        class="far fa-plus-square mr-2"
-                                                                    ></i
-                                                                    >Assignment
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <Curriculum
+                                            ref="curriculum"
+                                            @add-curriculum="addCurriculum"
+                                        ></Curriculum>
                                     </div>
                                     <div
                                         class="step-tab-panel step-tab-location"
                                         id="tab_step3"
                                     >
+                                        <Media
+                                            ref="media"
+                                            @add-media="addMedia"
+                                        >
+                                        </Media>
+                                    </div>
+                                    <div
+                                        class="step-tab-panel step-tab-location"
+                                        id="tab_step5"
+                                    >
                                         <div class="tab-from-content">
                                             <div class="title-icon">
                                                 <h3 class="title">
-                                                    <i class="uil uil-image"></i
-                                                    >Media
+                                                    <i
+                                                        class="uil uil-upload"
+                                                    ></i
+                                                    >Submit
                                                 </h3>
                                             </div>
-                                            <div class="lecture-video-dt mb-30">
-                                                <span class="video-info"
-                                                    >Video overview provider
-                                                    type. (.mp4, YouTube)</span
-                                                >
-                                                <div class="video-category">
-                                                    <label
-                                                        ><input
-                                                            type="radio"
-                                                            name="colorRadio"
-                                                            class="d-none"
-                                                            :value="'mp4'"
-                                                            v-model="video_type"
-                                                            checked
-                                                        /><span
-                                                            :class="[video_type=='mp4'?'selected':'']"
-                                                            >HTML5(mp4)</span
-                                                        ></label
-                                                    >
-                                                    <label
-                                                        ><input
-                                                            type="radio"
-                                                            class="d-none"
-                                                            name="colorRadio"
-                                                            :value="'url'"
-                                                            v-model="video_type"
-                                                        /><span
-                                                            :class="[video_type=='url'?'selected':'']"
-                                                            >External URL</span
-                                                        ></label
-                                                    >
-                                                    <div
-                                                        class="intro-box"
-                                                        :class="[
-                                                            video_type == 'mp4'
-                                                                ? 'd-block'
-                                                                : '',
-                                                        ]"
-                                                    >
-                                                        <div class="row">
-                                                            <div
-                                                                class="col-lg-5 col-md-12"
-                                                            >
-                                                                <div
-                                                                    class="upload-file-dt mt-30"
-                                                                >
-                                                                    <div
-                                                                        class="upload-btn"
-                                                                    >
-                                                                        <input
-                                                                            class="uploadBtn-main-input"
-                                                                            type="file"
-                                                                            id="IntroFile__input--source"
-                                                                        />
-                                                                        <label
-                                                                            for="IntroFile__input--source"
-                                                                            title="Zip"
-                                                                            >Upload
-                                                                            Video</label
-                                                                        >
-                                                                    </div>
-                                                                    <span
-                                                                        class="uploadBtn-main-file"
-                                                                        >File
-                                                                        Format:
-                                                                        .mp4</span
-                                                                    >
-                                                                    <span
-                                                                        class="uploaded-id"
-                                                                    ></span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div
-                                                        class="intro-box"
-                                                        :class="[
-                                                            video_type == 'url'
-                                                                ? 'd-block'
-                                                                : '',
-                                                        ]"
-                                                    >
-                                                        <div
-                                                            class="new-section"
-                                                        >
-                                                            <div
-                                                                class="ui search focus mt-30 lbel25"
-                                                            >
-                                                                <label
-                                                                    >External
-                                                                    URL*</label
-                                                                >
-                                                                <div
-                                                                    class="ui left icon input swdh19"
-                                                                >
-                                                                    <input
-                                                                        class="prompt srch_explore"
-                                                                        type="text"
-                                                                        placeholder="External Video URL"
-                                                                        name=""
-                                                                        id=""
-                                                                        value=""
-                                                                    />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="thumbnail-into">
-                                                <div class="row">
-                                                    <div
-                                                        class="col-lg-5 col-md-6"
-                                                    >
-                                                        <label
-                                                            class="label25 text-left"
-                                                            >Course
-                                                            thumbnail*</label
-                                                        >
-                                                        <div class="thumb-item">
-                                                            <img
-                                                                :src="thumbnail==null?`${globalBaseUrl}images/thumbnail-demo.jpg`:thumbnail"
-                                                                alt=""
-                                                            />
-                                                            <div
-                                                                class="thumb-dt"
-                                                            >
-                                                                <div
-                                                                    class="upload-btn"
-                                                                >
-                                                                    <input
-                                                                        class="uploadBtn-main-input"
-                                                                        type="file"
-                                                                        @change="onThumbnailSelected"
-                                                                        id="ThumbFile__input--source"
-                                                                    />
-                                                                    <label
-                                                                        for="ThumbFile__input--source"
-                                                                        title="Zip"
-                                                                        >Choose
-                                                                        Thumbnail</label
-                                                                    >
-                                                                </div>
-                                                                <span
-                                                                    class="uploadBtn-main-file"
-                                                                    >Size:
-                                                                    590x300
-                                                                    pixels.
-                                                                    Supports:
-                                                                    jpg,jpeg, or
-                                                                    png</span
-                                                                >
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        </div>
+                                        <div class="publish-block">
+                                            <i class="far fa-edit"></i>
+                                            <p>
+                                                Your course is in a draft state.
+                                                Students cannot view or take
+                                                this course.
+                                                <br />
+                                                Course will appear on students
+                                                dashboard once it is approved.
+                                            </p>
                                         </div>
                                     </div>
-                                    <div
+
+                                    <!-- <div
                                         class="step-tab-panel step-tab-amenities"
                                         id="tab_step4"
                                     >
@@ -802,47 +319,40 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div
-                                        class="step-tab-panel step-tab-location"
-                                        id="tab_step5"
-                                    >
-                                        <div class="tab-from-content">
-                                            <div class="title-icon">
-                                                <h3 class="title">
-                                                    <i
-                                                        class="uil uil-upload"
-                                                    ></i
-                                                    >Submit
-                                                </h3>
-                                            </div>
-                                        </div>
-                                        <div class="publish-block">
-                                            <i class="far fa-edit"></i>
-                                            <p>
-                                                Your course is in a draft state.
-                                                Students cannot view or take this course. 
-                                                <br/>
-                                                Course will appear on students dashboard once it is approved.
-                                            </p>
-                                        </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="step-footer step-tab-pager">
                                     <button
-                                        :data-direction="validation?'prev':''"
                                         class="btn btn-default steps_btn"
+                                        @click="prevStep"
+                                        v-if="steps > 1"
                                     >
                                         PREVIOUS
                                     </button>
                                     <button
-                                        :data-direction="validation?'next':''"
+                                        data-direction="prev"
+                                        class="btn btn-default steps_btn prev-btn"
+                                        style="visibility: hidden"
+                                    >
+                                        PREVIOUS
+                                    </button>
+                                    <button
+                                        data-direction="next"
+                                        class="btn btn-default steps_btn next-btn"
+                                        style="visibility: hidden"
+                                    >
+                                        Next
+                                    </button>
+                                    <button
                                         class="btn btn-default steps_btn"
+                                        @click="nextStep"
+                                        v-if="steps < 4"
                                     >
                                         Next
                                     </button>
                                     <button
                                         data-direction="finish"
+                                        @click="addCourse"
                                         class="btn btn-default steps_btn"
                                     >
                                         Submit for Review
@@ -854,1158 +364,55 @@
                 </div>
             </div>
         </div>
-
-        <div
-            class="modal fade"
-            id="add_lecture_model"
-            tabindex="-1"
-            aria-labelledby="lectureModalLabel"
-            aria-hidden="true"
-        >
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="lectureModalLabel">
-                            Add Lecture
-                        </h5>
-                        <button
-                            type="button"
-                            class="close"
-                            data-dismiss="modal"
-                            aria-label="Close"
-                        >
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="new-section-block">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="course-main-tabs">
-                                        <div
-                                            class="nav nav-pills flex-column flex-sm-row nav-tabs"
-                                            role="tablist"
-                                        >
-                                            <a
-                                                class="flex-sm-fill text-sm-center nav-link active"
-                                                data-toggle="tab"
-                                                href="#nav-basic"
-                                                role="tab"
-                                                aria-selected="true"
-                                                ><i
-                                                    class="fas fa-file-alt mr-2"
-                                                ></i
-                                                >Basic</a
-                                            >
-
-                                            <a
-                                                class="flex-sm-fill text-sm-center nav-link"
-                                                data-toggle="tab"
-                                                href="#nav-attachment"
-                                                role="tab"
-                                                aria-selected="false"
-                                                ><i
-                                                    class="fas fa-paperclip mr-2"
-                                                ></i
-                                                >Attachments</a
-                                            >
-                                        </div>
-                                        <div class="tab-content">
-                                            <div
-                                                class="tab-pane fade show active"
-                                                id="nav-basic"
-                                                role="tabpanel"
-                                            >
-                                                <div class="new-section mt-30">
-                                                    <div class="form_group">
-                                                        <label class="label25"
-                                                            >Lecture
-                                                            Title*</label
-                                                        >
-                                                        <input
-                                                            class="form_input_1"
-                                                            type="text"
-                                                            placeholder="Title here"
-                                                        />
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="ui search focus lbel25 mt-30"
-                                                >
-                                                    <label>Description*</label>
-                                                    <div class="ui form swdh30">
-                                                        <div class="field">
-                                                            <textarea
-                                                                rows="3"
-                                                                name="description"
-                                                                id=""
-                                                                placeholder="description here..."
-                                                            ></textarea>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- <div class="preview-dt">
-                                                    <span class="title-875"
-                                                        >Free Preview</span
-                                                    >
-                                                    <label class="switch">
-                                                        <input
-                                                            type="checkbox"
-                                                            name="preview_op"
-                                                            value=""
-                                                        />
-                                                        <span></span>
-                                                    </label>
-                                                </div> -->
-                                            </div>
-                                            <div
-                                                class="tab-pane fade"
-                                                id="nav-attachment"
-                                                role="tabpanel"
-                                            >
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div
-                                                            class="upload-file-dt mt-30"
-                                                        >
-                                                            <div
-                                                                class="upload-btn"
-                                                            >
-                                                                <input
-                                                                    class="uploadBtn-main-input"
-                                                                    type="file"
-                                                                    id="SourceFile__input--source"
-                                                                />
-                                                                <label
-                                                                    for="SourceFile__input--source"
-                                                                    title="Zip"
-                                                                    ><i
-                                                                        class="far fa-plus-square mr-2"
-                                                                    ></i
-                                                                    >Attachment</label
-                                                                >
-                                                            </div>
-                                                            <span
-                                                                class="uploadBtn-main-file"
-                                                                >Supports: jpg,
-                                                                jpeg, png, pdf
-                                                                or .zip</span
-                                                            >
-                                                            <div
-                                                                class="add-attachments-dt"
-                                                            >
-                                                                <!-- <div
-                                                                    class="attachment-items"
-                                                                >
-                                                                    <div
-                                                                        class="attachment_id"
-                                                                    >
-                                                                        Uploaded
-                                                                        ID: 12
-                                                                    </div>
-                                                                    <button
-                                                                        class="cancel-btn"
-                                                                        type="button"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-trash-alt"
-                                                                        ></i>
-                                                                    </button>
-                                                                </div> -->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button
-                            type="button"
-                            class="main-btn cancel"
-                            data-dismiss="modal"
-                        >
-                            Close
-                        </button>
-                        <button type="button" class="main-btn" data-dismiss="modal"
-                        @click="addCurriculum('lecture','Lecture')">
-                            Add Lecture
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div
-            class="modal fade"
-            id="add_quiz_model"
-            tabindex="-1"
-            aria-labelledby="lectureModalLabel"
-            aria-hidden="true"
-        >
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="lectureModalLabel">
-                            Add Quiz
-                        </h5>
-                        <button
-                            type="button"
-                            class="close"
-                            data-dismiss="modal"
-                            aria-label="Close"
-                        >
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="new-section-block">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="course-main-tabs">
-                                        <div
-                                            class="nav nav-pills flex-column flex-sm-row nav-tabs"
-                                            role="tablist"
-                                        >
-                                            <a
-                                                class="flex-sm-fill text-sm-center nav-link active"
-                                                data-toggle="tab"
-                                                href="#nav-questions"
-                                                role="tab"
-                                                aria-selected="false"
-                                                ><i
-                                                    class="fas fa-question-circle mr-2"
-                                                ></i
-                                                >Questions</a
-                                            >
-                                            <a
-                                                class="flex-sm-fill text-sm-center nav-link"
-                                                data-toggle="tab"
-                                                href="#nav-setting"
-                                                role="tab"
-                                                aria-selected="false"
-                                                ><i class="fas fa-cog mr-2"></i
-                                                >Setting</a
-                                            >
-                                        </div>
-                                        <div class="tab-content">
-                                            <div
-                                                class="tab-pane fade active show"
-                                                id="nav-questions"
-                                                role="tabpanel"
-                                            >
-                                                <div
-                                                    class="lecture-video-dt mt-30"
-                                                >
-                                                    <div class="add-ques-dt">
-                                                        <button
-                                                            type="button"
-                                                            class="main-btn color btn-hover w-100"
-                                                            data-toggle="collapse"
-                                                            data-target="#add-ques"
-                                                        >
-                                                            <i
-                                                                class="far fa-plus-square mr-2"
-                                                            ></i
-                                                            >Add Question
-                                                        </button>
-                                                        <div
-                                                            id="add-ques"
-                                                            class="collapse"
-                                                        >
-                                                            <div
-                                                                class="lecture-video-dt mt-30"
-                                                            >
-                                                                <span
-                                                                    class="video-info"
-                                                                    >Question
-                                                                    Type</span
-                                                                >
-                                                                <div
-                                                                    class="video-category"
-                                                                >
-                                                                    <label
-                                                                        ><input
-                                                                            type="radio"
-                                                                            name="colorRadio"
-                                                                            :value="
-                                                                                1
-                                                                            "
-                                                                            v-model="
-                                                                                question_type
-                                                                            "
-                                                                            class="d-none"
-                                                                        /><span
-                                                                            :class="[question_type==1?'selected':'']"
-                                                                            ><i
-                                                                                class="far fa-check-circle mr-2"
-                                                                            ></i
-                                                                            >Multiple
-                                                                            Choice</span
-                                                                        ></label
-                                                                    >
-                                                                    <label
-                                                                        ><input
-                                                                            type="radio"
-                                                                            name="colorRadio"
-                                                                            :value="
-                                                                                2
-                                                                            "
-                                                                            v-model="
-                                                                                question_type
-                                                                            "
-                                                                            class="d-none"
-                                                                        /><span
-                                                                            :class="[question_type==2?'selected':'']"
-                                                                            ><i
-                                                                                class="far fa-file-alt mr-2"
-                                                                            ></i
-                                                                            >Milti
-                                                                            Line
-                                                                            Text</span
-                                                                        ></label
-                                                                    >
-                                                                    <div
-                                                                        class="mchoice"
-                                                                        v-if="
-                                                                            question_type ==
-                                                                            1
-                                                                        "
-                                                                    >
-                                                                        <div
-                                                                            class="ques-box"
-                                                                        >
-                                                                            <div
-                                                                                class="row"
-                                                                            >
-                                                                                <div
-                                                                                    class="col-lg-5 col-md-12"
-                                                                                >
-                                                                                    <div
-                                                                                        class="form_group mt-30"
-                                                                                    >
-                                                                                        <label
-                                                                                            class="label25 text-left"
-                                                                                            >Question
-                                                                                            Title*</label
-                                                                                        >
-                                                                                        <input
-                                                                                            class="form_input_1"
-                                                                                            type="text"
-                                                                                            placeholder="Write question title"
-                                                                                            v-model="
-                                                                                                question_name
-                                                                                            "
-                                                                                        />
-                                                                                    </div>
-                                                                                </div>
-
-                                                                                <div
-                                                                                    class="col-lg-3 col-md-6"
-                                                                                >
-                                                                                    <div
-                                                                                        class="form_group mt-30"
-                                                                                    >
-                                                                                        <label
-                                                                                            class="label25 text-left"
-                                                                                            >Time</label
-                                                                                        >
-                                                                                        <div
-                                                                                            class="d-flex align-items-baseline"
-                                                                                        >
-                                                                                            <vue-timepicker
-                                                                                                manual-input
-                                                                                                hide-dropdown
-                                                                                                :format="
-                                                                                                    showHour
-                                                                                                        ? 'hh:mm:ss'
-                                                                                                        : 'mm:ss'
-                                                                                                "
-                                                                                                v-model="
-                                                                                                    question_time
-                                                                                                "
-                                                                                            >
-                                                                                            </vue-timepicker>
-                                                                                            <input
-                                                                                                type="checkbox"
-                                                                                                v-model="
-                                                                                                    showHour
-                                                                                                "
-                                                                                                class="ml-2"
-                                                                                            />
-                                                                                            <label
-                                                                                                class="label25 text-left"
-                                                                                                >Hour</label
-                                                                                            >
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="col-lg-1 col-md-1"
-                                                                                >
-                                                                                    <div
-                                                                                        class="form_group mt-30"
-                                                                                    ></div>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="col-lg-3 col-md-6"
-                                                                                >
-                                                                                    <div
-                                                                                        class="form_group mt-30"
-                                                                                    >
-                                                                                        <label
-                                                                                            class="label25 text-left"
-                                                                                            >Score*</label
-                                                                                        >
-                                                                                        <input
-                                                                                            class="form_input_1"
-                                                                                            type="number"
-                                                                                            placeholder="Score"
-                                                                                            v-model="
-                                                                                                question_score
-                                                                                            "
-                                                                                        />
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div
-                                                                            class="ans-box"
-                                                                        >
-                                                                            <div
-                                                                                class="row"
-                                                                            >
-                                                                                <div
-                                                                                    class="col-lg-12 col-md-12"
-                                                                                >
-                                                                                    <button
-                                                                                        class="main-btn color btn-hover mt-30"
-                                                                                        @click="
-                                                                                            addOption()
-                                                                                        "
-                                                                                    >
-                                                                                        Add
-                                                                                        Option
-                                                                                    </button>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="col-lg-12 col-md-12"
-                                                                                >
-                                                                                    <div
-                                                                                        class="option-item"
-                                                                                        :key="`option_${index}`"
-                                                                                        v-for="(
-                                                                                            option,
-                                                                                            index
-                                                                                        ) in question_option"
-                                                                                    >
-                                                                                        <div
-                                                                                            class="opt-title"
-                                                                                        >
-                                                                                            <h4>
-                                                                                                {{
-                                                                                                    index +
-                                                                                                    1
-                                                                                                }}.
-                                                                                                Option
-                                                                                            </h4>
-                                                                                            <span
-                                                                                                class="opt-del"
-                                                                                                @click="
-                                                                                                    deleteOption(
-                                                                                                        index
-                                                                                                    )
-                                                                                                "
-                                                                                                ><i
-                                                                                                    class="fas fa-trash-alt"
-                                                                                                ></i
-                                                                                            ></span>
-                                                                                        </div>
-                                                                                        <div
-                                                                                            class="option-wrap"
-                                                                                        >
-                                                                                            <div
-                                                                                                class="form_group"
-                                                                                            >
-                                                                                                <label
-                                                                                                    class="label25 text-left"
-                                                                                                    >Option
-                                                                                                    Title*</label
-                                                                                                >
-                                                                                                <input
-                                                                                                    class="form_input_1"
-                                                                                                    type="text"
-                                                                                                    placeholder="Option title"
-                                                                                                    v-model="
-                                                                                                        option.name
-                                                                                                    "
-                                                                                                />
-                                                                                            </div>
-                                                                                            <div
-                                                                                                class="agree_checkbox"
-                                                                                            >
-                                                                                                <input
-                                                                                                    type="checkbox"
-                                                                                                    :value="
-                                                                                                        true
-                                                                                                    "
-                                                                                                    :id="`check_${index}`"
-                                                                                                    v-model="
-                                                                                                        option.isCorrect
-                                                                                                    "
-                                                                                                    name="correct_answer"
-                                                                                                />
-                                                                                                <label
-                                                                                                    :for="`check_${index}`"
-                                                                                                    >Correct
-                                                                                                    answer</label
-                                                                                                >
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div
-                                                                        class="sline"
-                                                                        v-if="
-                                                                            question_type ==
-                                                                            2
-                                                                        "
-                                                                    >
-                                                                        <div
-                                                                            class="ques-box"
-                                                                        >
-                                                                            <div
-                                                                                class="row"
-                                                                            >
-                                                                                <div
-                                                                                    class="col-lg-2 col-md-2"
-                                                                                >
-                                                                                    <div
-                                                                                        class="form_group mt-30"
-                                                                                    >
-                                                                                        <label
-                                                                                            class="label25 text-left"
-                                                                                            >Image*</label
-                                                                                        >
-                                                                                        <div
-                                                                                            class="upload-thumb"
-                                                                                        >
-                                                                                            <input
-                                                                                                class="uploadBtn-input-preview"
-                                                                                                type="file"
-                                                                                                accept="image/png"
-                                                                                                id="thumbnail_source2"
-                                                                                            />
-                                                                                            <label
-                                                                                                class="mx-0 my-0"
-                                                                                                for="thumbnail_source2"
-                                                                                                title="Image"
-                                                                                                ><img
-                                                                                                    class="img-thumbnail"
-                                                                                                    :src="`${globalAssetUrl}images/placeholder-image.png`"
-                                                                                                    alt=""
-                                                                                            /></label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="col-lg-7 col-md-9"
-                                                                                >
-                                                                                    <div
-                                                                                        class="form_group mt-30"
-                                                                                    >
-                                                                                        <label
-                                                                                            class="label25 text-left"
-                                                                                            >Question
-                                                                                            Title*</label
-                                                                                        >
-                                                                                        <input
-                                                                                            class="form_input_1"
-                                                                                            type="text"
-                                                                                            placeholder="Write question title"
-                                                                                        />
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="col-lg-3 col-md-12"
-                                                                                >
-                                                                                    <div
-                                                                                        class="form_group mt-30"
-                                                                                    >
-                                                                                        <label
-                                                                                            class="label25 text-left"
-                                                                                            >Score*</label
-                                                                                        >
-                                                                                        <input
-                                                                                            class="form_input_1"
-                                                                                            type="number"
-                                                                                            placeholder="Score"
-                                                                                        />
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                class="share-submit-btns pl-0 pb-0"
-                                                            >
-                                                                <button
-                                                                    class="main-btn color btn-hover"
-                                                                    type="button"
-                                                                    @click="
-                                                                        addQuestion()
-                                                                    "
-                                                                >
-                                                                    <i
-                                                                        class="fas fa-save mr-2"
-                                                                    ></i>
-                                                                    {{
-                                                                        isEdit
-                                                                            ? "Edit Question"
-                                                                            : "Save Question"
-                                                                    }}
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                        <div class="added-ques">
-                                                            <div
-                                                                class="section-group-list pl-0 pr-0"
-                                                            >
-                                                                <div
-                                                                    class="section-list-item"
-                                                                    v-for="(
-                                                                        question,
-                                                                        key
-                                                                    ) in questions"
-                                                                    :key="`question_${key}`"
-                                                                >
-                                                                    <div
-                                                                        class="section-item-title"
-                                                                    >
-                                                                        <i
-                                                                            class="far fa-dot-circle mr-2"
-                                                                        ></i>
-                                                                        <span
-                                                                            class="section-item-title-text"
-                                                                            >{{
-                                                                                question.name
-                                                                            }}</span
-                                                                        >
-                                                                    </div>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-edit"
-                                                                            @click="
-                                                                                editQuestion(
-                                                                                    key
-                                                                                )
-                                                                            "
-                                                                        ></i>
-                                                                    </button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="section-item-tools"
-                                                                    >
-                                                                        <i
-                                                                            class="fas fa-trash-alt"
-                                                                            @click="
-                                                                                deleteQuestion(
-                                                                                    key
-                                                                                )
-                                                                            "
-                                                                        ></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="tab-pane fade"
-                                                id="nav-setting"
-                                                role="tabpanel"
-                                            >
-                                                <div class="new-section mt-30">
-                                                    <div class="quiz-cogs-step">
-                                                        <label
-                                                            class="label25 quiz-st-ft text-left"
-                                                            >Gradable</label
-                                                        >
-                                                        <div
-                                                            class="cogs-toggle"
-                                                        >
-                                                            <label
-                                                                class="switch"
-                                                            >
-                                                                <input
-                                                                    type="checkbox"
-                                                                    id="gradable_quiz"
-                                                                    value=""
-                                                                />
-                                                                <span></span>
-                                                            </label>
-                                                            <label
-                                                                for="gradable_quiz"
-                                                                class="lbl-quiz"
-                                                                >Quiz
-                                                                Gradable</label
-                                                            >
-                                                        </div>
-                                                        <p>
-                                                            If this quiz test
-                                                            affect on the
-                                                            students grading
-                                                            system for this
-                                                            course.
-                                                        </p>
-                                                    </div>
-                                                    <div
-                                                        class="quiz-cogs-step mt-30"
-                                                    >
-                                                        <label
-                                                            class="label25 quiz-st-ft text-left"
-                                                            >Remaining time
-                                                            display</label
-                                                        >
-                                                        <div
-                                                            class="cogs-toggle"
-                                                        >
-                                                            <label
-                                                                class="switch"
-                                                            >
-                                                                <input
-                                                                    type="checkbox"
-                                                                    id="show_time"
-                                                                    value=""
-                                                                />
-                                                                <span></span>
-                                                            </label>
-                                                            <label
-                                                                for="show_time"
-                                                                class="lbl-quiz"
-                                                                >Show
-                                                                Time</label
-                                                            >
-                                                        </div>
-                                                        <p>
-                                                            By enabling this
-                                                            option, quiz taker
-                                                            will show remaining
-                                                            time during attempt.
-                                                        </p>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-lg-4">
-                                                            <div
-                                                                class="form_group mt-30"
-                                                            >
-                                                                <label
-                                                                    class="label25"
-                                                                    >Time
-                                                                    Limit*</label
-                                                                >
-                                                                <div
-                                                                    class="input-group"
-                                                                >
-                                                                    <input
-                                                                        class="form_input_1 white-bg"
-                                                                        type="number"
-                                                                        placeholder=""
-                                                                    />
-                                                                    <div
-                                                                        class="input-group-append"
-                                                                    >
-                                                                        <span
-                                                                            class="input-group-text int4856"
-                                                                            >Minutes</span
-                                                                        >
-                                                                    </div>
-                                                                    <span
-                                                                        class="alt-text"
-                                                                        >Set
-                                                                        zero to
-                                                                        disable
-                                                                        time
-                                                                        limit.</span
-                                                                    >
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <div
-                                                                class="form_group mt-30"
-                                                            >
-                                                                <label
-                                                                    class="label25"
-                                                                    >Passing
-                                                                    Score(%)*</label
-                                                                >
-                                                                <input
-                                                                    class="form_input_1"
-                                                                    type="number"
-                                                                    placeholder=""
-                                                                />
-                                                                <span
-                                                                    class="alt-text"
-                                                                    >Student
-                                                                    have to
-                                                                    collect this
-                                                                    score in
-                                                                    percent for
-                                                                    the pass
-                                                                    this
-                                                                    quiz.</span
-                                                                >
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <div
-                                                                class="form_group mt-30"
-                                                            >
-                                                                <label
-                                                                    class="label25"
-                                                                    >Questions
-                                                                    Limit*</label
-                                                                >
-                                                                <input
-                                                                    class="form_input_1"
-                                                                    type="number"
-                                                                    placeholder=""
-                                                                />
-                                                                <span
-                                                                    class="alt-text"
-                                                                    >The number
-                                                                    of questions
-                                                                    student have
-                                                                    to answer in
-                                                                    this
-                                                                    quiz.</span
-                                                                >
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button
-                            type="button"
-                            class="main-btn cancel"
-                            data-dismiss="modal"
-                        >
-                            Close
-                        </button>
-                        <button type="button" class="main-btn" data-dismiss="modal"
-                            @click="addCurriculum('quiz','Quiz')">
-                            Add Quiz
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div
-            class="modal fade"
-            id="add_assignment_model"
-            tabindex="-1"
-            aria-labelledby="lectureModalLabel"
-            aria-hidden="true"
-        >
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="lectureModalLabel">
-                            Add Assignment
-                        </h5>
-                        <button
-                            type="button"
-                            class="close"
-                            data-dismiss="modal"
-                            aria-label="Close"
-                        >
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="new-section-block main-form">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="new-section">
-                                        <div class="form_group">
-                                            <label class="label25"
-                                                >Assignment Title*</label
-                                            >
-                                            <input
-                                                class="form_input_1"
-                                                type="text"
-                                                placeholder="Assignment title here"
-                                            />
-                                        </div>
-                                        <div class="form_group mt-30">
-                                            <label class="label25"
-                                                >Description*</label
-                                            >
-                                            <textarea
-                                                rows="5"
-                                                name="description"
-                                                placeholder="Add Description"
-                                                class="w-100"
-                                            ></textarea>
-                                        </div>
-                                        <div class="form_group">
-                                            <div class="row g-4">
-                                                <div class="col-lg-4 mt-30">
-                                                    <label class="label25"
-                                                        >Time Duration*</label
-                                                    >
-                                                    <div class="row no-gutters">
-                                                        <div class="col-6">
-                                                            <input
-                                                                class="form_input_1"
-                                                                type="number"
-                                                                value="0"
-                                                                placeholder=""
-                                                            />
-                                                        </div>
-                                                        <div class="col-6 pl-2">
-                                                            <select
-                                                                class="ui hj145 dropdown cntry152 assignment prompt srch_explore"
-                                                            >
-                                                                <option
-                                                                    value=""
-                                                                >
-                                                                    Select
-                                                                </option>
-                                                                <option>
-                                                                    Weeks
-                                                                </option>
-                                                                <option>
-                                                                    Days
-                                                                </option>
-                                                                <option>
-                                                                    Hours
-                                                                </option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <span class="alt-text"
-                                                        >Assignment time
-                                                        duration, set 0 for no
-                                                        limit.</span
-                                                    >
-                                                </div>
-                                                <div class="col-lg-4 mt-30">
-                                                    <label class="label25"
-                                                        >Total Number*</label
-                                                    >
-                                                    <input
-                                                        class="form_input_1"
-                                                        type="number"
-                                                        value="10"
-                                                        placeholder=""
-                                                    />
-                                                    <span class="alt-text"
-                                                        >Maximum points a
-                                                        student can score</span
-                                                    >
-                                                </div>
-                                                <div class="col-lg-4 mt-30">
-                                                    <label class="label25"
-                                                        >Minimum Pass
-                                                        Number*</label
-                                                    >
-                                                    <input
-                                                        class="form_input_1"
-                                                        type="number"
-                                                        value="5"
-                                                        placeholder=""
-                                                    />
-                                                    <span class="alt-text"
-                                                        >Minimum points required
-                                                        for the student to pass
-                                                        this assignment.</span
-                                                    >
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="assgn152 mt-30 pt-30">
-                                            <div class="row g-6">
-                                                <div class="col-lg-6 mt-30">
-                                                    <label class="label25"
-                                                        >Upload attachment
-                                                        limit*</label
-                                                    >
-                                                    <input
-                                                        class="form_input_1"
-                                                        type="text"
-                                                        value="1"
-                                                        placeholder=""
-                                                    />
-                                                    <span class="alt-text"
-                                                        >Maximum attachment size
-                                                        limit</span
-                                                    >
-                                                </div>
-                                                <div class="col-lg-6 mt-30">
-                                                    <label class="label25"
-                                                        >Maximum attachment size
-                                                        limit</label
-                                                    >
-                                                    <input
-                                                        class="form_input_1"
-                                                        type="text"
-                                                        value="10"
-                                                        placeholder=""
-                                                    />
-                                                    <span class="alt-text"
-                                                        >Define maximum
-                                                        attachment size in
-                                                        MB</span
-                                                    >
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="upload-file-dt mt-30">
-                                            <div class="upload-btn">
-                                                <input
-                                                    class="uploadBtn-main-input"
-                                                    type="file"
-                                                    id="AssignmentFile__input--source"
-                                                />
-                                                <label
-                                                    for="AssignmentFile__input--source"
-                                                    title="Zip"
-                                                    ><i
-                                                        class="far fa-plus-square mr-2"
-                                                    ></i
-                                                    >Attachment</label
-                                                >
-                                            </div>
-                                            <span class="uploadBtn-main-file"
-                                                >Supports: jpg, jpeg, png, pdf
-                                                or .zip</span
-                                            >
-                                            <div class="add-attachments-dt">
-                                                <!-- <div class="attachment-items">
-                                                    <div class="attachment_id">
-                                                        Uploaded ID: 5
-                                                    </div>
-                                                    <button
-                                                        class="cancel-btn"
-                                                        type="button"
-                                                    >
-                                                        <i
-                                                            class="fas fa-trash-alt"
-                                                        ></i>
-                                                    </button>
-                                                </div> -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button
-                            type="button"
-                            class="main-btn cancel"
-                            data-dismiss="modal"
-                        >
-                            Close
-                        </button>
-                        <button type="button" class="main-btn" data-dismiss="modal"
-                        @click="addCurriculum('assignment','Assignment')">
-                            Add Assignment
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Prompt
+            :type="'success'"
+            :message="'Your course has been created successfully'"
+            @btn-clicked="btnClicked"
+        ></Prompt>
     </span>
 </template>
 
 <script>
+import Basic from "./components/Basic.vue";
+import Curriculum from "./components/Curriculum.vue";
+import Media from "./components/Media.vue";
+import Prompt from "../modals/Prompt.vue";
 export default {
     name: "CreateVideo",
+    components: {
+        Basic,
+        Curriculum,
+        Media,
+        Prompt,
+    },
     data() {
         return {
-            question_type: 1,
-            question_option: [],
-            video_type: "mp4",
-            levelOptions: [
-                {
-                    text: "Beginner",
-                    value: "beginner",
-                },
-                {
-                    text: "Intermediate",
-                    value: "intermediate",
-                },
-                {
-                    text: "Expert",
-                    value: "expert",
-                },
-            ],
             level: null,
-            categoryOptions: [],
             category: null,
-            question_name: "",
-            question_time: {
-                mm: "",
-                ss: "",
-            },
-            question_score: "",
+            title: "",
+            descriptions: "",
+            objectives: "",
+            requirement: "",
+            start_date: "",
+            end_date: "",
+            steps: 1,
             questions: [],
-            steps: "",
-            showHour: false,
-            isEdit: false,
-            edit_key: -1,
             curriculum: [],
-            thumbnail:null,
-            validation:true,
+            lecture_title: "",
+            lecture_description: "",
+            lecture_file: null,
+            video_type: "mp4",
+            thumbnail_file: null,
+            video: null,
+            video_link: "",
+            validation: true,
         };
     },
     async mounted() {
-        try {
-            let response = await axios.get(
-                `${globalBaseUrl}instructor/get_categories`
-            );
-            let category = response.data.data;
-            this.categoryOptions = category.map((item) => {
-                return {
-                    text: item.name,
-                    value: item.id,
-                };
-            });
-        } catch (error) {
-            console.log(error);
-        }
         $(document).ready(function () {
             $(".ui.dropdown").dropdown();
-            this.steps = $("#add-course-tab").steps({
-                onFinish: function () {
-                    alert("Course Created");
-                    window.location.reload();
-                },
+            $("#add-course-tab").steps({
+                onFinish: function () {},
             });
 
             $(".sortable").sortable();
@@ -2013,97 +420,101 @@ export default {
         });
     },
     methods: {
-        addCurriculum(type,name){
-            let item_type = this.curriculum.map((item)=>{
-                return item.type;
-            });
-            if(!item_type.includes(type)){
-                this.curriculum.push({
-                    type:type,
-                    name:name
+        addCourse() {
+            this.$store.dispatch('toggleLoader',true);
+            axios
+                .post(`${globalBaseUrl}instructor/add_course`, {
+                    level: this.level,
+                    category: this.category,
+                    title: this.title,
+                    descriptions: this.descriptions,
+                    objectives: this.objectives,
+                    requirement: this.requirement,
+                    start_date: this.start_date,
+                    end_date: this.end_date,
+                    questions: this.questions,
+                    curriculum: this.curriculum,
+                    lecture_title: this.lecture_title,
+                    lecture_description: this.lecture_description,
+                    lecture_file: this.lecture_file,
+                    video_type: this.video_type,
+                    thumbnail_file: this.thumbnail_file,
+                    video: this.video,
+                    video_link: this.video_link,
+                })
+                .then((response) => {
+                    this.$store.dispatch('toggleLoader',false);
+                    if (response.data.status == 200) {
+                        $(".show-prompt").click();
+                    }
+                    if (response.data.status == 400) {
+                        Vue.$toast.open({
+                            message: response.data.message,
+                            type: "warning",
+                            position: "top-right",
+                        });
+                    }
+                })
+                .catch((e) => {
+                    this.$store.dispatch('toggleLoader',false);
+                    Vue.$toast.open({
+                        message: "Something Went Wrong",
+                        type: "error",
+                        position: "top-right",
+                    });
+                    console.log(e);
                 });
+        },
+        btnClicked(){
+            console.log('clicked');
+            window.location.reload();
+        },
+        nextStep() {
+            if (this.steps == 1) {
+                this.$refs.basic.addBasic();
+            } else if (this.steps == 2) {
+                this.$refs.curriculum.addRequestCurriculum();
+            } else if (this.steps == 3) {
+                this.$refs.media.addMedia();
             }
         },
-        deleteCurriculum(key){
-            this.curriculum.splice(key,1);
+        prevStep() {
+            this.steps--;
+            $(window).scrollTop(0);
+            $(".prev-btn").click();
         },
-        addOption() {
-            this.question_option.push({ name: "", isCorrect: false });
+        addBasic(request) {
+            this.level = request.level;
+            this.category = request.category;
+            this.title = request.title;
+            this.descriptions = request.descriptions;
+            this.objectives = request.objectives;
+            this.requirement = request.requirement;
+            this.start_date = request.start_date;
+            this.end_date = request.end_date;
+            this.steps++;
+            $(".next-btn").click();
+            $(window).scrollTop(0);
         },
-        deleteOption(index) {
-            this.question_option.splice(index, 1);
+        addCurriculum(request) {
+            this.questions = request.questions;
+            this.curriculum = request.curriculum;
+            this.lecture_title = request.lecture_title;
+            this.lecture_description = request.lecture_description;
+            this.lecture_file = request.lecture_file;
+            this.steps++;
+            $(".next-btn").click();
+            $(window).scrollTop(0);
         },
-        addQuestion() {
-            if (this.question_name == "") {
-                Vue.$toast.open({
-                    message: "Name requried",
-                    type: "error",
-                    position: "top-right",
-                });
-                return;
-            } else if (this.question_option.length == 0) {
-                Vue.$toast.open({
-                    message: "Options requried",
-                    type: "error",
-                    position: "top-right",
-                });
-                return;
-            }
-            if (this.isEdit) {
-                let key = this.edit_key;
-                this.questions[key].options = this.question_option;
-                this.questions[key].name = this.question_name;
-                this.questions[key].score = this.question_score;
-                this.questions[key].time = this.question_time;
-                this.isEdit = false;
-                this.edit_key = -1;
-            } else {
-                this.questions.push({
-                    name: this.question_name,
-                    options: this.question_option,
-                    time: this.question_time,
-                    score: this.question_score,
-                });
-            }
-            this.question_time = {
-                mm: "",
-                ss: "",
-            };
-            this.showHour = false;
-            (this.question_score = ""), (this.question_name = "");
-            this.question_type = 1;
-            this.question_option = [];
-        },
-        editQuestion(key) {
-            this.question_option = this.questions[key].options;
-            this.question_name = this.questions[key].name;
-            this.question_score = this.questions[key].score;
-            this.question_time = this.questions[key].time;
-            this.isEdit = true;
-            this.edit_key = key;
-        },
-        deleteQuestion(key) {
-            this.questions.splice(key, 1);
-        },
-        onThumbnailSelected(e){
-            const file = e.target.files[0];
-            this.thumbnail = URL.createObjectURL(file);
-        }
-    },
-    watch: {
-        showHour() {
-            if (this.showHour) {
-                this.question_time = {
-                    hh: "",
-                    mm: "",
-                    ss: "",
-                };
-            } else {
-                this.question_time = {
-                    mm: "",
-                    ss: "",
-                };
-            }
+        addMedia(request) {
+            this.video_type = request.video_type;
+            this.thumbnail = request.thumbnail;
+            this.thumbnail_file = request.thumbnail_file;
+            this.video = request.video;
+            this.video_link = request.video_link;
+            this.steps++;
+            $(".next-btn").click();
+            $(window).scrollTop(0);
         },
     },
 };

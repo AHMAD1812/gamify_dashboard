@@ -1,7 +1,6 @@
 <template>
     <span>
-        <FullScreenLoader :active="loading"></FullScreenLoader>
-        <Header @toggle-loader="toggleLoader" :user="user"></Header>
+        <Header></Header>
         <Sidebar></Sidebar>
         <div class="wrapper">
             <Dashboard v-if="$route.name == 'Dashboard'"></Dashboard>
@@ -12,11 +11,9 @@
             <Review v-if="$route.name == 'Review'"></Review>
             <Setting
                 v-if="$route.name == 'Setting'"
-                @toggle-loader="toggleLoader"
-                @profile-updated="profileUpdated"
             >
             </Setting>
-            <Profile v-if="$route.name == 'Profile'" :user="user"></Profile>
+            <Profile v-if="$route.name == 'Profile'"></Profile>
             <CourseDetail v-if="$route.name == 'CourseDetail'"></CourseDetail>
             <Feedback v-if="$route.name == 'Feedback'"></Feedback>
             <Footer></Footer>
@@ -58,7 +55,6 @@ export default {
     },
     data() {
         return {
-            loading: false,
             user: [],
         };
     },
@@ -72,18 +68,13 @@ export default {
                 let response = await axios.get(
                     `${globalBaseUrl}instructor/user_profile`
                 );
-                this.user = response.data.data;
+                // this.user = response.data.data;
+                this.$store.dispatch('setUser',response.data.data);
                 this.loading = false;
             } catch (e) {
                 this.loading = false;
                 console.log(e);
             }
-        },
-        profileUpdated(user) {
-            this.user = user;
-        },
-        toggleLoader() {
-            this.loading = !this.loading;
         },
     },
 };

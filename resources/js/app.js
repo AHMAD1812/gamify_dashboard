@@ -16,7 +16,8 @@ window.globalBaseUrl = config.SITE_URL;
 
 import VueRouter from "vue-router";
 import SuiVue from 'semantic-ui-vue';
-import VueTimepicker from 'vue2-timepicker'
+import VueTimepicker from 'vue2-timepicker';
+import { store } from "./store/store";
 // CSS
 import 'vue2-timepicker/dist/VueTimepicker.css';
 import Axios from "axios";
@@ -49,6 +50,12 @@ Vue.component('FullScreenLoader',Vue.extend(require('./components/layouts/FullSc
         active: Boolean,
     }
 });
+Vue.component('SpinnerLoader',Vue.extend(require('./components/layouts/SpinnerLoader.vue').default),{
+    props: {
+        loading: Boolean,
+        color: String,
+    }
+});
 
 Vue.mixin({
     data: function () {
@@ -73,6 +80,7 @@ Vue.mixin({
     //your script
     const app = new Vue({
         el: "#app",
+        store,
         router,
     });
 });

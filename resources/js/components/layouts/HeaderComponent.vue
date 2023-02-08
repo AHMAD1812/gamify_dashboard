@@ -159,9 +159,11 @@
 <script>
 export default {
     name: "Header",
-    props:[
-        'user',
-    ],
+    computed:{
+      user() {
+        return this.$store.state.user;
+      }
+    },
     mounted() {
         $(".new-dropdown").click(function () {
             if ($(".dropdown_account").css("display") == "none") {
@@ -219,11 +221,11 @@ export default {
     },
     methods:{
         signOut(){
-            this.$emit('toggle-loader');
+            this.$store.dispatch('toggleLoader',true);
             axios
                 .post(`${globalBaseUrl}instructor/logout`)
                 .then((response) => {
-                    this.$emit('toggle-loader');
+                    this.$store.dispatch('toggleLoader',false);
                     if (response.data.status == 200) {
                         Vue.$toast.open({
                             message: "Logout",
@@ -236,7 +238,7 @@ export default {
                     }
                 })
                 .catch((e) => {
-                    this.$emit('toggle-loader');
+                    this.$store.dispatch('toggleLoader',false);
                     Vue.$toast.open({
                         message: "Something Went Wrong",
                         type: "error",

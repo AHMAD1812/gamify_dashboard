@@ -17,7 +17,7 @@ class CategorySeeder extends Seeder
         DB::table('categories')->insert(
             [
                 'name' => 'Developement',
-                'image'=>'categories/developement.png'
+                'image'=>'categories/development.png'
             ] 
         );
         DB::table('categories')->insert(

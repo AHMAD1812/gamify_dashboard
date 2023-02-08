@@ -66,6 +66,44 @@
     border-radius: 100%;
 }
 
+.input-date{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e5e5e5 !important;
+    border-radius: 3px;
+}
+
+.modal-error-title{
+    color: rgba(255, 53, 40, 1);
+}
+
+.modal-success-title{
+    color: rgba(2, 193, 33, 1);
+}
+
+.modal-warning-title{
+    color: rgba(247, 132, 0, 1);
+}
+
+.modal-btn{
+    border-radius: 10px;
+    padding: 10px;
+    width: 50%;
+    color: #FFFFFF;
+    border: none !important;
+}
+
+.modal-btn-success{
+    background: rgba(2, 193, 33, 1);
+}
+
+.modal-btn-warning{
+    background: rgba(247, 132, 0, 1);
+}
+
+.modal-btn-error{
+    color: rgba(255, 53, 40, 1);
+}
 /*===================== TABLE OF CONTENT =======================
 /*
 Table Of Content

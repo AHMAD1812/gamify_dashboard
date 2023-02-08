@@ -1,5 +1,6 @@
 <template>
     <span>
+        <FullScreenLoader :active="loader"></FullScreenLoader>
         <Body v-if="
                 $route.name != 'Login' &&
                 $route.name != 'Register' &&
@@ -23,6 +24,11 @@ export default {
     components:{
         Body,
         Auth,
+    },
+    computed:{
+        loader(){
+            return this.$store.state.loader;
+        }
     }
 }
 </script>

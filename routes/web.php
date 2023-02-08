@@ -5,7 +5,9 @@ use App\Http\Controllers\AppController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CourseController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,8 +23,17 @@ Route::get('/', [AppController::class, 'index'])->name('app');
 Route::get('/about-us', [AppController::class, 'about'])->name('about');
 Route::get('/contact-us', [AppController::class, 'contact'])->name('contact');
 
-Route::prefix('instructor')->group(function () {
+Route::prefix('admin')->group(function (){
+    Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/teacher', [AdminController::class, 'teacher'])->name('admin.teacher');
+    Route::get('/student', [AdminController::class, 'student'])->name('admin.student');
+    Route::get('/login', [AdminController::class, 'login'])->name('admin.login');
+    Route::get('/register', [AdminController::class, 'register'])->name('admin.register');
+    Route::get('/forgot', [AdminController::class, 'forgot'])->name('admin.forgot');
+});
 
+
+Route::prefix('instructor')->group(function () {
 
     //Authentication Auth Api
     
@@ -33,6 +44,13 @@ Route::prefix('instructor')->group(function () {
     Route::post('/login_process', [AuthController::class, 'Login']);
     Route::post('/otp_verification', [AuthController::class, 'OtpVerification']);
     Route::get('/forgot_password', [PageController::class, 'index']);
+    Route::get('/courses', [PageController::class, 'index']);
+    Route::get('/create_video', [PageController::class, 'index']);
+    Route::get('/messages', [PageController::class, 'index']);
+    Route::get('/notification', [PageController::class, 'index']);
+    Route::get('/reviews', [PageController::class, 'index']);
+    Route::get('/profile', [PageController::class, 'index']);
+    
     Route::get('/otp_verification', [PageController::class, 'index']);
     Route::get('/is_user_login', [AuthController::class, 'islogin']);
     // Instructor Auth
@@ -49,7 +67,12 @@ Route::prefix('instructor')->group(function () {
         Route::get('/course_detail', [PageController::class, 'index']);
         Route::get('/feedback', [PageController::class, 'index']);
 
-        //API Doces
+        //API Docs
+        
+        //Course 
+        Route::post('/add_course', [CourseController::class, 'addCourse']);
+        Route::get('/get_courses', [CourseController::class, 'getCourses']);
+
         Route::post('/logout', [AuthController::class, 'logout']);
         Route::get('/user_profile', [UserController::class, 'getUser']);
         Route::post('/update_profile', [UserController::class, 'updateUser']);
