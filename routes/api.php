@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiControllers\AuthController;
 use App\Http\Controllers\ApiControllers\UserController;
+use App\Http\Controllers\ApiControllers\CourseController;
 use App\Http\Controllers\ApiControllers\CategoryController;
 
 /*
@@ -42,6 +43,10 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::post('add_categories', [CategoryController::class, 'addCategories']);
     Route::post('update_categories', [CategoryController::class, 'updateCategories']);
     
+    // Courses
+    Route::get('get_courses', [CourseController::class, 'getCourses']);
+    Route::post('get_course_detail', [CourseController::class, 'getCourseDetail']);
+
     //Chat Routes
     // Route::post('/create_chat', [ChatController::class, 'create_chat']);
     // Route::post('/add_message', [ChatController::class, 'add_message']);
