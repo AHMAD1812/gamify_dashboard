@@ -29,7 +29,7 @@ Route::post('verify_forgot_password_code', [AuthController::class, 'verifyForgot
 Route::post('resend_forgot_password_otp', [AuthController::class, 'resendForgotPasswordOtp']);
 Route::post('change_password', [AuthController::class, 'changePassword']);
 //Social Login API's
-Route::post('social_login', [AuthController::class, 'userSocialLogin']);
+Route::post('social_login', [AuthController::class, 'socialLogin']);
 
 Route::group(['middleware' => 'auth:api'], function () {
     Route::get('logout', [AuthController::class, 'logout']);

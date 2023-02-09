@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\ApiControllers;
 
 use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Http\Traits\CommonTrait;
@@ -24,7 +25,7 @@ class AuthController extends Controller
                 'min:8',
             ],
             'full_name' => 'required',
-            'profile_image' => 'sometimes'
+            'profile_image' => 'sometimes',
         ]);
         if ($validator->fails()) {
             return $this->sendError($validator->messages()->first(), null);
@@ -97,7 +98,7 @@ class AuthController extends Controller
                 $data['token_type'] = 'Bearer';
                 $data['expires_at'] = Carbon::parse($tokenResult->token->expires_at)->toDateTimeString();
                 $data['user'] = $user;
-                
+
                 return $this->sendSuccess('Login successfully', $data);
             } elseif ($user && $user->status == 'inactive') {
                 return $this->sendError('Please verify your email first', null);
@@ -306,7 +307,8 @@ class AuthController extends Controller
 
     }
 
-    public function resetPassword(Request $request){
+    public function resetPassword(Request $request)
+    {
         $validator = Validator::make($request->all(), [
             'password' => ['required'],
             'new_password' => ['required', 'min:8'],
@@ -337,145 +339,72 @@ class AuthController extends Controller
             'full_name' => 'sometimes',
             'email' => 'sometimes',
             'google_id' => 'sometimes',
-            'facebook_id' => 'sometimes',
-            'is_google' => 'sometimes',
-            'is_facebook' => 'sometimes',
-            'is_apple' => 'sometimes',
-            'apple_id' => 'sometimes',
             'avatar' => 'sometimes',
         ]);
         DB::beginTransaction();
         try {
-            if ($request->is_apple && $request->apple_id) {
-                $user = User::where('apple_id', $request->apple_id)->first();
-                if ($user) {
-                    if ($user->status == 'inactive') {
-                        return $this->sendError('Please verify your email to continue.', null);
-                    } else if ($user->status == 'pending') {
-                        return $this->sendError('Your account is pending approval from admin', null);
-                    } else if ($user->status == 'block') {
-                        return $this->sendError('Your account has been blocked.', null);
-                    }
-                    $tokenResult = $user->createToken('Personal Access Token');
-                    $token = $tokenResult->token;
-                    $token->save();
-                    $hashKey = hash_hmac('sha256', $user->email, env("ONESIGNAL_APP_ID"));
+            $user = User::where('email', $request->email)->first();
 
-                    $data['access_token'] = $tokenResult->accessToken;
-                    $data['token_type'] = 'Bearer';
-                    $data['expires_at'] = Carbon::parse($tokenResult->token->expires_at)->toDateTimeString();
-                    $data['user'] = $user;
-                    $data['oneSignalHash'] = $hashKey;
-                    DB::commit();
-                    return response()->json(['statusCode' => 200, 'Message' => 'User Login Successfully', 'Data' => $data]);
-                } else {
-                    $user = User::where('email', $request->email)->first();
-                    if ($user) {
-                        $user['apple_id'] = $request->apple_id;
-                        $user->update();
-                        $tokenResult = $user->createToken('Personal Access Token');
-                        $token = $tokenResult->token;
-                        $token->save();
-                        $hashKey = hash_hmac('sha256', $user->email, env("ONESIGNAL_APP_ID"));
-
-                        $data['access_token'] = $tokenResult->accessToken;
-                        $data['token_type'] = 'Bearer';
-                        $data['expires_at'] = Carbon::parse($tokenResult->token->expires_at)->toDateTimeString();
-                        $data['user'] = $user;
-                        $data['oneSignalHash'] = $hashKey;
-                        DB::commit();
-                        return response()->json(['statusCode' => 200, 'Message' => 'User Login Successfully', 'Data' => $data]);
-                    } else {
-                        $user_data['full_name'] = $request->full_name;
-                        $user_data['email'] = $request->email;
-                        $user_data['apple_id'] = $request->apple_id;
-                        $user_data['social_platform'] = 'apple';
-                        $user_data['status'] = 'active';
-
-                        $user = User::create($user_data);
-                        $hashKey = hash_hmac('sha256', $request->email, env("ONESIGNAL_APP_ID"));
-                        // -----Token After Registration
-                        $tokenResult = $user->createToken('Personal Access Token');
-                        $token = $tokenResult->token;
-                        $token->save();
-                        $data['access_token'] = $tokenResult->accessToken;
-                        $data['token_type'] = 'Bearer';
-                        $data['expires_at'] = Carbon::parse($tokenResult->token->expires_at)->toDateTimeString();
-                        $data['user'] = $user;
-                        $data['oneSignalHash'] = $hashKey;
-
-                        DB::commit();
-                        return response()->json(['statusCode' => 200, 'Message' => 'User Login Successfully', 'Data' => $data]);
-                    }
+            if ($user) {
+                if ($user->status == 'inactive') {
+                    return $this->sendError('Please verify your email to continue.', null);
+                } else if ($user->status == 'pending') {
+                    return $this->sendError('Your account is pending approval from admin', null);
+                } else if ($user->status == 'block') {
+                    return $this->sendError('Your account has been blocked.', null);
                 }
+                $tokenResult = $user->createToken('Personal Access Token');
+                $token = $tokenResult->token;
+                $token->save();
+                // $hashKey = hash_hmac('sha256', $user->email, env("ONESIGNAL_APP_ID"));
+
+                $data['access_token'] = $tokenResult->accessToken;
+                $data['token_type'] = 'Bearer';
+                $data['expires_at'] = Carbon::parse($tokenResult->token->expires_at)->toDateTimeString();
+                $data['user'] = $user;
+                // $data['oneSignalHash'] = $hashKey;
+                DB::commit();
+                return $this->sendSuccess('User Login Successfully', $data);
             } else {
-                $user = User::where('email', $request->email)->first();
-
-                if ($user) {
-                    if ($user->status == 'inactive') {
-                        return $this->sendError('Please verify your email to continue.', null);
-                    } else if ($user->status == 'pending') {
-                        return $this->sendError('Your account is pending approval from admin', null);
-                    } else if ($user->status == 'block') {
-                        return $this->sendError('Your account has been blocked.', null);
-                    }
-                    $tokenResult = $user->createToken('Personal Access Token');
-                    $token = $tokenResult->token;
-                    $token->save();
-                    $hashKey = hash_hmac('sha256', $user->email, env("ONESIGNAL_APP_ID"));
-
-                    $data['access_token'] = $tokenResult->accessToken;
-                    $data['token_type'] = 'Bearer';
-                    $data['expires_at'] = Carbon::parse($tokenResult->token->expires_at)->toDateTimeString();
-                    $data['user'] = $user;
-                    $data['oneSignalHash'] = $hashKey;
-                    DB::commit();
-                    return $this->sendSuccess('User Login Successfully', $data);
+                if ($request->has('avatar')) {
+                    $image = $request->file('avatar');
+                    $extension = $image->getClientOriginalExtension();
+                    $name = Str::random(5);
+                    $folder = 'uploads/profile/';
+                    $filePath = $folder . $name . '.' . $extension;
+                    $destinationPath = public_path($folder);
+                    $image->move($destinationPath, $name . '.' . $extension);
+                    $user_data['profile_img'] = $filePath;
                 } else {
-                    if ($request->has('avatar')) {
-                        $image = $request->file('avatar');
-                        $extension = $image->getClientOriginalExtension();
-                        $name = Str::random(15);
-                        $folder = 'uploads/profile/';
-                        $filePath = $folder . $name . '.' . $extension;
-                        $destinationPath = public_path($folder);
-                        $image->move($destinationPath, $name . '.' . $extension);
-                        $user_data['profile_img'] = $filePath;
-                    } else {
-                        $user_data['profile_img'] = null;
-                    }
-                    $user_data['full_name'] = $request->full_name;
-                    $user_data['email'] = $request->email;
-                    $user_data['status'] = 'active';
-                    if ($request->is_google) {
-                        $user_data['social_platform'] = 'google';
-                        $user_data['google_id'] = $request->google_id;
-                    } elseif ($request->is_facebook) {
-                        $user_data['social_platform'] = 'facebook';
-                        $user_data['facebook_id'] = $request->facebook_id;
-                    }
-                    $user = User::create($user_data);
-                    // ------Token after register
-                    $tokenResult = $user->createToken('Personal Access Token');
-                    $token = $tokenResult->token;
-                    $token->save();
-                    $hashKey = hash_hmac('sha256', $user->email, env("ONESIGNAL_APP_ID"));
-
-                    $data['access_token'] = $tokenResult->accessToken;
-                    $data['token_type'] = 'Bearer';
-                    $data['expires_at'] = Carbon::parse($tokenResult->token->expires_at)->toDateTimeString();
-                    $data['user'] = $user;
-                    $data['oneSignalHash'] = $hashKey;
-                    DB::commit();
-                    return response()->json(['statusCode' => 413, 'Message' => 'User not Found', 'Data' => null]);
+                    $user_data['profile_img'] = null;
                 }
+                $user_data['full_name'] = $request->full_name;
+                $user_data['email'] = $request->email;
+                $user_data['status'] = 'active';
+                $user_data['social_platform'] = 'google';
+                $user_data['google_id'] = $request->google_id;
+
+                $user = User::create($user_data);
+                // ------Token after register
+                $tokenResult = $user->createToken('Personal Access Token');
+                $token = $tokenResult->token;
+                $token->save();
+                // $hashKey = hash_hmac('sha256', $user->email, env("ONESIGNAL_APP_ID"));
+
+                $data['access_token'] = $tokenResult->accessToken;
+                $data['token_type'] = 'Bearer';
+                $data['expires_at'] = Carbon::parse($tokenResult->token->expires_at)->toDateTimeString();
+                $data['user'] = $user;
+                // $data['oneSignalHash'] = $hashKey;
+                DB::commit();
+                return $this->sendSuccess('User created', $data);
             }
         } catch (\Exception$exception) {
             DB::rollback();
             if (('APP_ENV') == 'local') {
                 dd($exception);
             } else {
-                return response()->json(['statusCode' => 500, 'Message' => 'Database Error Contact Support', 'Data' => '']);
+                return $this->sendError($exception->getMessage(), null);
             }
         }
     }
