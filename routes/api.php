@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiControllers\AuthController;
+use App\Http\Controllers\ApiControllers\ChatController;
 use App\Http\Controllers\ApiControllers\UserController;
 use App\Http\Controllers\ApiControllers\CourseController;
 use App\Http\Controllers\ApiControllers\CategoryController;
@@ -48,16 +49,18 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::post('get_course_detail', [CourseController::class, 'getCourseDetail']);
 
     //Chat Routes
-    // Route::post('/create_chat', [ChatController::class, 'create_chat']);
-    // Route::post('/add_message', [ChatController::class, 'add_message']);
-    // Route::post('/get_chat', [ChatController::class, 'get_chat']);
-    // Route::post('/seen_message', [ChatController::class, 'seen_message']);
-    // Route::post('/delete_message', [ChatController::class, 'delete_message']);
-    // Route::post('/delete_chat', [ChatController::class, 'delete_chat']);
-    // Route::post('/chat_search', [ChatController::class, 'chat_search']);
-    // Route::post('/find_chat', [ChatController::class, 'find_chat']);
-    // Route::post('/get_current_chats', [ChatController::class, 'get_current_chats']);
-    // Route::post('/get_unread_count', [ChatController::class, 'get_unread_count']);
-    // Route::post('/initiate_chat', [ChatController::class, 'initiate_chat']);
+    Route::post('/initiate_chat', [ChatController::class, 'initiate_chat']);
+    Route::post('/get_current_chats', [ChatController::class, 'get_current_chats']);
+    Route::post('/add_message', [ChatController::class, 'add_message']);
+    Route::post('/get_chat', [ChatController::class, 'get_chat']);
+    Route::post('/seen_all_messages', [ChatController::class, 'seen_all_messages']);
+    Route::post('/delete_message', [ChatController::class, 'delete_message']);
+    Route::post('/delete_chat', [ChatController::class, 'delete_chat']);
+    Route::post('/chat_search', [ChatController::class, 'chat_search']);
+    Route::post('/find_chat', [ChatController::class, 'find_chat']);
+    Route::post('/get_unread_count', [ChatController::class, 'get_unread_count']);
+
+    // chat unused route
+    Route::post('/create_chat', [ChatController::class, 'create_chat']);
 
 });
