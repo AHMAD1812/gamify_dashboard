@@ -183,7 +183,7 @@ export default {
             this.categoryOptions = category.map((item) => {
                 return {
                     text: item.name,
-                    value: item.id,
+                    value: item.name,
                 };
             });
         } catch (error) {

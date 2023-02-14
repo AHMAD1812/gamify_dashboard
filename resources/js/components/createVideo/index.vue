@@ -422,26 +422,69 @@ export default {
     methods: {
         addCourse() {
             this.$store.dispatch('toggleLoader',true);
+            const config = {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+            };
+
+            let formData = new FormData();
+            formData.append('level',this.level);
+            this.category.forEach((value, index) => {
+                formData.append(`category[${index}]`, value);
+            });
+            formData.append('title',this.title);
+            formData.append('descriptions',this.descriptions);
+            formData.append('objectives',this.objectives);
+            formData.append('requirement',this.requirement);
+            formData.append('start_date',this.start_date);
+            formData.append('end_date',this.end_date);
+            this.curriculum.forEach((value, index) => {
+                formData.append(`curriculum[${index}][name]`, value.name);
+                formData.append(`curriculum[${index}][type]`, value.type);
+            });
+            this.questions.forEach((value, index) => {
+                value.options.forEach((option,key)=>{
+                    formData.append(`questions[${index}][options][${key}][isCorrect]`, option.is_Correct);
+                    formData.append(`questions[${index}][options][${key}][name]`, option.name);
+                })    
+                formData.append(`questions[${index}][is_hour]`, value.is_hour);
+                formData.append(`questions[${index}][name]`, value.name);
+                formData.append(`questions[${index}][score]`, value.score);
+                if(value.is_hour){
+                    formData.append(`questions[${index}][time]`, `${value.time.hh}${value.time.mm}${value.time.ss}`);
+                }else{
+                    formData.append(`questions[${index}][time]`, `${value.time.mm}${value.time.ss}`);
+                }
+            });
+            formData.append('lecture_title',this.lecture_title);
+            formData.append('lecture_description',this.lecture_description);
+            formData.append('lecture_file',this.lecture_file);
+            formData.append('video_type',this.video_type);
+            formData.append('thumbnail_file',this.thumbnail_file);
+            formData.append('video',this.video);
+            formData.append('video_link',this.video_link);
+            // const postData = {
+            //         level: this.level,
+            //         category: this.category,
+            //         title: this.title,
+            //         descriptions: this.descriptions,
+            //         objectives: this.objectives,
+            //         requirement: this.requirement,
+            //         start_date: this.start_date,
+            //         end_date: this.end_date,
+            //         questions: this.questions,
+            //         curriculum: this.curriculum,
+            //         lecture_title: this.lecture_title,
+            //         lecture_description: this.lecture_description,
+            //         lecture_file: this.lecture_file,
+            //         video_type: this.video_type,
+            //         thumbnail_file: this.thumbnail_file,
+            //         video: this.video,
+            //         video_link: this.video_link,
+            //     };
             axios
-                .post(`${globalBaseUrl}instructor/add_course`, {
-                    level: this.level,
-                    category: this.category,
-                    title: this.title,
-                    descriptions: this.descriptions,
-                    objectives: this.objectives,
-                    requirement: this.requirement,
-                    start_date: this.start_date,
-                    end_date: this.end_date,
-                    questions: this.questions,
-                    curriculum: this.curriculum,
-                    lecture_title: this.lecture_title,
-                    lecture_description: this.lecture_description,
-                    lecture_file: this.lecture_file,
-                    video_type: this.video_type,
-                    thumbnail_file: this.thumbnail_file,
-                    video: this.video,
-                    video_link: this.video_link,
-                })
+                .post(`${globalBaseUrl}instructor/add_course`, formData, config)
                 .then((response) => {
                     this.$store.dispatch('toggleLoader',false);
                     if (response.data.status == 200) {
@@ -466,7 +509,6 @@ export default {
                 });
         },
         btnClicked(){
-            console.log('clicked');
             window.location.reload();
         },
         nextStep() {

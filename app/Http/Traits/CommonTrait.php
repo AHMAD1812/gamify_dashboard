@@ -2,10 +2,11 @@
 namespace App\Http\Traits;
 
 use App\Models\Card;
-use App\Models\Notification;
-use Illuminate\Support\Facades\Response;
-use Illuminate\Support\Str;
 use Twilio\Rest\Client;
+use Illuminate\Support\Str;
+use App\Models\Notification;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Response;
 
 trait CommonTrait
 {
@@ -40,6 +41,9 @@ trait CommonTrait
     {
         if ($file) {
             if ($file->getClientOriginalExtension() != 'exe') {
+                if(!File::exists($path)) {
+                    File::makeDirectory($path, 0777, true, true);
+                }
                 $type = $file->getClientMimeType();
                 $destination_path = $path;
                 $extension = $file->getClientOriginalExtension();

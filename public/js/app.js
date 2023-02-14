@@ -9311,7 +9311,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               _this.categoryOptions = category.map(function (item) {
                 return {
                   text: item.name,
-                  value: item.id
+                  value: item.name
                 };
               });
               _context.next = 11;
@@ -11182,25 +11182,67 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     addCourse: function addCourse() {
       var _this = this;
       this.$store.dispatch('toggleLoader', true);
-      axios.post("".concat(globalBaseUrl, "instructor/add_course"), {
-        level: this.level,
-        category: this.category,
-        title: this.title,
-        descriptions: this.descriptions,
-        objectives: this.objectives,
-        requirement: this.requirement,
-        start_date: this.start_date,
-        end_date: this.end_date,
-        questions: this.questions,
-        curriculum: this.curriculum,
-        lecture_title: this.lecture_title,
-        lecture_description: this.lecture_description,
-        lecture_file: this.lecture_file,
-        video_type: this.video_type,
-        thumbnail_file: this.thumbnail_file,
-        video: this.video,
-        video_link: this.video_link
-      }).then(function (response) {
+      var config = {
+        headers: {
+          "Content-Type": "multipart/form-data"
+        }
+      };
+      var formData = new FormData();
+      formData.append('level', this.level);
+      this.category.forEach(function (value, index) {
+        formData.append("category[".concat(index, "]"), value);
+      });
+      formData.append('title', this.title);
+      formData.append('descriptions', this.descriptions);
+      formData.append('objectives', this.objectives);
+      formData.append('requirement', this.requirement);
+      formData.append('start_date', this.start_date);
+      formData.append('end_date', this.end_date);
+      this.curriculum.forEach(function (value, index) {
+        formData.append("curriculum[".concat(index, "][name]"), value.name);
+        formData.append("curriculum[".concat(index, "][type]"), value.type);
+      });
+      this.questions.forEach(function (value, index) {
+        value.options.forEach(function (option, key) {
+          formData.append("questions[".concat(index, "][options][").concat(key, "][isCorrect]"), option.is_Correct);
+          formData.append("questions[".concat(index, "][options][").concat(key, "][name]"), option.name);
+        });
+        formData.append("questions[".concat(index, "][is_hour]"), value.is_hour);
+        formData.append("questions[".concat(index, "][name]"), value.name);
+        formData.append("questions[".concat(index, "][score]"), value.score);
+        if (value.is_hour) {
+          formData.append("questions[".concat(index, "][time]"), "".concat(value.time.hh).concat(value.time.mm).concat(value.time.ss));
+        } else {
+          formData.append("questions[".concat(index, "][time]"), "".concat(value.time.mm).concat(value.time.ss));
+        }
+      });
+      formData.append('lecture_title', this.lecture_title);
+      formData.append('lecture_description', this.lecture_description);
+      formData.append('lecture_file', this.lecture_file);
+      formData.append('video_type', this.video_type);
+      formData.append('thumbnail_file', this.thumbnail_file);
+      formData.append('video', this.video);
+      formData.append('video_link', this.video_link);
+      // const postData = {
+      //         level: this.level,
+      //         category: this.category,
+      //         title: this.title,
+      //         descriptions: this.descriptions,
+      //         objectives: this.objectives,
+      //         requirement: this.requirement,
+      //         start_date: this.start_date,
+      //         end_date: this.end_date,
+      //         questions: this.questions,
+      //         curriculum: this.curriculum,
+      //         lecture_title: this.lecture_title,
+      //         lecture_description: this.lecture_description,
+      //         lecture_file: this.lecture_file,
+      //         video_type: this.video_type,
+      //         thumbnail_file: this.thumbnail_file,
+      //         video: this.video,
+      //         video_link: this.video_link,
+      //     };
+      axios.post("".concat(globalBaseUrl, "instructor/add_course"), formData, config).then(function (response) {
         _this.$store.dispatch('toggleLoader', false);
         if (response.data.status == 200) {
           $(".show-prompt").click();
@@ -11223,7 +11265,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       });
     },
     btnClicked: function btnClicked() {
-      console.log('clicked');
       window.location.reload();
     },
     nextStep: function nextStep() {
