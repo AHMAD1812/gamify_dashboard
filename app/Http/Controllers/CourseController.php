@@ -24,7 +24,7 @@ class CourseController extends Controller
             'level' => 'required',
             'category' => 'required',
             'descriptions' => 'required',
-            'objectives' => 'required',
+            'objectives' => 'sometimes',
             'requirement' => 'required',
             'start_date' => 'required',
             'end_date' => 'required',
@@ -41,6 +41,7 @@ class CourseController extends Controller
         if ($validator->fails()) {
             return $this->sendError($validator->messages()->first(), null);
         }
+        info($request->all());
         try {
             DB::beginTransaction();
             $course = new Courses;
@@ -50,14 +51,29 @@ class CourseController extends Controller
             $course->requirement = $request->requirement;
             $course->course_level = $request->level;
             $course->categories = implode(',',$request->category);
-            $course->objectives = $request->objectives;
+            $course->objectives =  $request->objectives;
+            // $course->objectives =  'Finally';
             $course->code = mt_rand(100000, 999999);
             $course->start_date = $request->start_date;
             $course->end_date = $request->end_date;
             //Adding Thumbnail
-            $course->poster = $this->addFile($request->thumbnail,'uploads/courses');
+            $course->poster = $this->addFile($request->thumbnail_file,'uploads/courses/');
+            if($course->poster == false){
+                return $this->sendError($course->poster, null);
+            }
             //Adding Video
-            $course->video = $request->video_type == 'mp4' ? $this->addFile($request->video,'uploads/courses') : $request->video_link;
+            $course->video = $request->video_type == 'mp4' ? $this->addFile($request->video,'uploads/courses/') : $request->video_link;
+
+            if($course->video == false){
+                return $this->sendError('Error Uploading Video', null);
+            }
+
+            if($request->video_type == 'mp4'){
+                $getID3 = new \getID3();
+                $fileDuration = $getID3->analyze($course->video);
+                $course->playing_time = date('H:i:s', $fileDuration['playtime_seconds']);
+            }
+            
             $course->save();
 
             foreach($request->curriculum as $curriculum){
@@ -70,8 +86,8 @@ class CourseController extends Controller
                         $new_question = new Questions;
                         $new_question->quiz_id = $quiz->id;
                         $new_question->title=$question['name'];
-                        $new_question->time=($question['is_hour']?$question['time']['hh'].':':'').$question['time']['mm'].':'.$question['time']['ss'];
-                        $new_question->hour=$question['is_hour'];
+                        $new_question->time=$question['time'];
+                        $new_question->hour=$question['is_hour'] == 'true' ? true : false;
                         $new_question->score=$question['score'];
                         $new_question->save();
 
@@ -79,7 +95,7 @@ class CourseController extends Controller
                             $new_option = new Options;
                             $new_option->question_id = $new_question->id;
                             $new_option->title = $option['name'];
-                            $new_option->correct = $option['isCorrect'];
+                            $new_option->correct = $option['isCorrect'] == 'true' ? true : false;
                             $new_option->save();
                         }
                     }
@@ -88,7 +104,10 @@ class CourseController extends Controller
                     $lecture->course_id = $course->id;
                     $lecture->title = $request->lecture_title;
                     $lecture->description = $request->lecture_description;
-                    $lecture->file  = $this->addFile($request->lecture_file,'uploads/courses');
+                    $lecture->file  = $this->addFile($request->lecture_file,'uploads/courses/');
+                    if($lecture->file == false){
+                        return $this->sendError('Error Uploading Lecture file', null);
+                    }
                     $lecture->save();
                 }
             }

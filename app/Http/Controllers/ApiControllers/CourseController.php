@@ -20,7 +20,7 @@ class CourseController extends Controller
     public function getCourseDetail(Request $request){
         $courses = Courses::where('id',$request->course_id)->with('quiz','lecture','quiz.questions','quiz.questions.options')->first();
         $times = null;
-        if($courses->quiz){
+        if($courses && $courses->quiz){
             $times = Questions::where('quiz_id',$courses->quiz->id)->orderBy('time','asc')->pluck('time');
         }
 
