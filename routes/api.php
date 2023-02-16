@@ -50,6 +50,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::post('get_course_detail', [CourseController::class, 'getCourseDetail']);
 
     //favourite courses api
+    Route::get('get_favourite_courses', [FavouriteCourseController::class, 'getFavouriteCourses']);
     Route::post('add_favourite_course', [FavouriteCourseController::class, 'addCourseFavourite']);
     Route::post('remove_favourite_course', [FavouriteCourseController::class, 'removeCourseFavourite']);
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\ApiControllers;
 
+use App\Models\Courses;
 use Illuminate\Http\Request;
 use App\Models\FavouriteCourse;
 use App\Http\Traits\CommonTrait;
@@ -60,5 +61,10 @@ class FavouriteCourseController extends Controller
             DB::rollback();
             return $this->sendError($e->getMessage(), null);
         }
+    }
+
+    public function getFavouriteCourses(Request $request){
+        $courses = Courses::whereHas('favourite')->with('creator')->get();
+        return $this->sendSuccess('Favourite courses', $courses);
     }
 }
