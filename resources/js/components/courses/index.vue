@@ -136,8 +136,7 @@
                                                 </td>
                                                 <td>{{course.title}}</td>
                                                 <td class="text-center">
-                                                    06 April 2020 | 08:31
-
+                                                    {{ $moment(course.created_at).format('DD MMMM YYYY | hh:mm') }}
                                                 </td>
                                                 <td class="text-center">0</td>
                                                 <td class="text-center">0</td>
@@ -152,7 +151,7 @@
                                                 <td class="text-center">
                                                     <router-link
                                                         :to="{name : 'CourseDetail'}"
-                                                        title="Edit"
+                                                        title="View"
                                                         class="gray-s"
                                                         ><i
                                                             class="uil uil-eye"

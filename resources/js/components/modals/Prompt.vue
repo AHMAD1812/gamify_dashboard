@@ -5,6 +5,8 @@
         tabindex="-1"
         role="dialog"
         aria-hidden="true"
+        data-keyboard="false" 
+        data-backdrop="static"
     >
         <button type="button" class="d-none show-prompt" data-toggle="modal" data-target="#prompt_modal"></button>
         <div

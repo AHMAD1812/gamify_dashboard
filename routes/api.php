@@ -7,6 +7,7 @@ use App\Http\Controllers\ApiControllers\ChatController;
 use App\Http\Controllers\ApiControllers\UserController;
 use App\Http\Controllers\ApiControllers\CourseController;
 use App\Http\Controllers\ApiControllers\CategoryController;
+use App\Http\Controllers\ApiControllers\FavouriteCourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,10 @@ Route::group(['middleware' => 'auth:api'], function () {
     // Courses
     Route::get('get_courses', [CourseController::class, 'getCourses']);
     Route::post('get_course_detail', [CourseController::class, 'getCourseDetail']);
+
+    //favourite courses api
+    Route::post('add_favourite_course', [FavouriteCourseController::class, 'addCourseFavourite']);
+    Route::post('remove_favourite_course', [FavouriteCourseController::class, 'removeCourseFavourite']);
 
     //Chat Routes
     Route::post('/initiate_chat', [ChatController::class, 'initiate_chat']);

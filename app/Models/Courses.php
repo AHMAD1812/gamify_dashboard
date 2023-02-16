@@ -2,12 +2,18 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Courses extends Model
 {
     use HasFactory;
+
+    public function creator()
+   {
+       return $this->belongsTo(User::class, 'creator_id', 'id');
+   }
 
    public function quiz()
    {
@@ -17,5 +23,10 @@ class Courses extends Model
    public function lecture()
    {
        return $this->hasOne(Lectures::class, 'course_id', 'id');
+   }
+
+   public function favourite(){
+        return $this->hasOne(FavouriteCourse::class, 'course_id', 'id')
+        ->where('user_id',Auth::id());
    }
 }

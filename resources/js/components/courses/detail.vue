@@ -1307,7 +1307,7 @@
                                                             class="review_usr_dt"
                                                         >
                                                             <img
-                                                            :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`"
+                                                                :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`"
                                                                 alt=""
                                                             />
                                                             <div class="rv1458">
@@ -1404,7 +1404,7 @@
                                                             class="review_usr_dt"
                                                         >
                                                             <img
-                                                            :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`"
+                                                                :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`"
                                                                 alt=""
                                                             />
                                                             <div class="rv1458">
@@ -1500,7 +1500,7 @@
                                                             class="review_usr_dt"
                                                         >
                                                             <img
-                                                            :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`"
+                                                                :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`"
                                                                 alt=""
                                                             />
                                                             <div class="rv1458">
@@ -1596,7 +1596,7 @@
                                                             class="review_usr_dt"
                                                         >
                                                             <img
-                                                            :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`"
+                                                                :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`"
                                                                 alt=""
                                                             />
                                                             <div class="rv1458">
@@ -1727,11 +1727,10 @@
                                                                     <div
                                                                         class="u-text--small"
                                                                     >
-                                                                        Total Students
+                                                                        Total
+                                                                        Students
                                                                     </div>
-                                                                    <h2>
-                                                                        100
-                                                                    </h2>
+                                                                    <h2>100</h2>
                                                                 </div>
                                                                 <div
                                                                     class="u-text--right"
@@ -1739,7 +1738,8 @@
                                                                     <div
                                                                         class="u-text--small"
                                                                     >
-                                                                        Average Score
+                                                                        Average
+                                                                        Score
                                                                     </div>
                                                                     <h2>24</h2>
                                                                 </div>
@@ -1757,7 +1757,8 @@
                                                                 <div
                                                                     class="u-text-small u-text--medium u-mb--16"
                                                                 >
-                                                                    Highest Score
+                                                                    Highest
+                                                                    Score
                                                                 </div>
                                                                 <img
                                                                     class="c-avatar c-avatar--lg"
@@ -1781,7 +1782,9 @@
                                             </div>
                                             <div class="l-grid__item">
                                                 <div class="c-card">
-                                                    <div class="c-card__body pt-0">
+                                                    <div
+                                                        class="c-card__body pt-0"
+                                                    >
                                                         <ul
                                                             class="c-list"
                                                             id="list"
@@ -2309,6 +2312,38 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="modal vd_mdl fade"
+            id="videoModal"
+            tabindex="-1"
+            role="dialog"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                    >
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="modal-body">
+                        <!-- <video width="320" height="240" controls>
+                            <source :src="``" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video> -->
+                        <iframe
+                            src="https://www.youtube.com/embed/Ohe_JzKksvA"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
                     </div>
                 </div>
             </div>

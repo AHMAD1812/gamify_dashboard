@@ -151,7 +151,7 @@ export default {
     methods:{
         showStep(){
             if(this.validateData('first')){
-                this.$emit("toggle-loader");
+                this.$store.dispatch('toggleLoader',true);
                 axios
                     .post(globalBaseUrl + "instructor/is_email_available", {
                         email: this.email,
@@ -168,10 +168,10 @@ export default {
                                 position: "top-right",
                             });
                         }
-                        this.$emit("toggle-loader");
+                        this.$store.dispatch('toggleLoader',false);
                     })
                     .catch((e) => {
-                        this.$emit("toggle-loader");
+                        this.$store.dispatch('toggleLoader',false);
                         Vue.$toast.open({
                             message: "Something Went Wrong",
                             type: "error",
