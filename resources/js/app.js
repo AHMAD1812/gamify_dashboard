@@ -32,6 +32,7 @@ Vue.use(VueToast);
 Vue.use(SuiVue);
 Vue.use(VueRouter);
 Vue.use(VueAxios, Axios);
+Vue.use(require('vue-moment'));
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

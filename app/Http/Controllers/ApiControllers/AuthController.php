@@ -321,7 +321,7 @@ class AuthController extends Controller
             DB::beginTransaction();
             $user = User::find(Auth::id());
             if (Hash::check($request->password, $user->password)) {
-                $user->password = bcrypt($request->password);
+                $user->password = bcrypt($request->new_password);
                 $user->update();
                 DB::commit();
                 return $this->sendSuccess('Password changed', $user);
