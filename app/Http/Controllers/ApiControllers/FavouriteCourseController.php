@@ -47,6 +47,9 @@ class FavouriteCourseController extends Controller
         $validator = Validator::make($request->all(), [
             'course_id' => 'required|exists:courses,id',
         ]);
+        if ($validator->fails()) {
+            return $this->sendError($validator->messages()->first(), null);
+        }
         try {
             DB::beginTransaction();
             $favourite = FavouriteCourse::where('user_id', Auth::id())->where('course_id', $request->course_id)->first();

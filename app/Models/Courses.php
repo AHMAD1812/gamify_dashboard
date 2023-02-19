@@ -29,4 +29,8 @@ class Courses extends Model
         return $this->hasOne(FavouriteCourse::class, 'course_id', 'id')
         ->where('user_id',Auth::id());
    }
+
+   public function student_course(){
+        return $this->hasOne(StudentCourse::class, 'course_id', 'id');
+   }
 }

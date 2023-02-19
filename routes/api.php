@@ -54,6 +54,11 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::post('add_favourite_course', [FavouriteCourseController::class, 'addCourseFavourite']);
     Route::post('remove_favourite_course', [FavouriteCourseController::class, 'removeCourseFavourite']);
 
+    //Student Courses
+    Route::post('add_student_course', [CourseController::class, 'addStudentCourse']);
+    Route::post('get_student_course_detail', [CourseController::class, 'getStudentCourseDetail']);
+    Route::post('attempt_quiz_question', [CourseController::class, 'attemptQuizQuestion']);
+    
     //Chat Routes
     Route::post('/initiate_chat', [ChatController::class, 'initiate_chat']);
     Route::post('/get_current_chats', [ChatController::class, 'get_current_chats']);
