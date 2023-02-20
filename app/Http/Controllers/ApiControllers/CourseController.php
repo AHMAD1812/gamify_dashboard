@@ -5,6 +5,7 @@ namespace App\Http\Controllers\ApiControllers;
 use App\Http\Controllers\Controller;
 use App\Http\Traits\CommonTrait;
 use App\Models\AttemptedQuestions;
+use App\Models\CourseRating;
 use App\Models\Courses;
 use App\Models\Questions;
 use App\Models\StudentCourse;
@@ -61,8 +62,10 @@ class CourseController extends Controller
     public function getStudentCourses(Request $request)
     {
 
-        $courses = Courses::wherehas('student_course')->with('creator')->get();
-        return $this->sendSuccess('all courses', $courses);
+        $data['current_courses'] = Courses::wherehas('student_course_active')->with('creator')->get();
+
+        $data['previous_courses'] = Courses::wherehas('student_course_completed')->with('creator')->get();
+        return $this->sendSuccess('all courses', $data);
     }
 
     public function addStudentCourse(Request $request)
@@ -124,10 +127,10 @@ class CourseController extends Controller
                     ->with('options')->orderBy('time', 'asc')->get();
                 $times = array();
                 foreach ($questions as $question) {
-                    if($question->hour == 1){
+                    if ($question->hour == 1) {
                         array_push($times, $question->time);
-                    }else{
-                        array_push($times, '00:'.$question->time);
+                    } else {
+                        array_push($times, '00:' . $question->time);
                     }
                 }
             }
@@ -198,6 +201,41 @@ class CourseController extends Controller
         } catch (Exception $e) {
             DB::rollback();
             $this->sendError($e->getMessage(), null);
+        }
+    }
+
+    public function markCompleteCourse(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'course_id' => 'required|exists:courses,id',
+            'rating' => 'required',
+            'description' => 'sometimes',
+        ]);
+        if ($validator->fails()) {
+            return $this->sendError($validator->messages()->first(), null);
+        }
+        try {
+            DB::beginTransaction();
+            $student_course = StudentCourse::where('course_id', $request->course_id)->where('user_id', Auth::id())->first();
+            if (!$student_course) {
+                return $this->sendError('Not added to course', null);
+            }
+
+            $student_course->status = 'completed';
+            $student_course->update();
+
+            $rating = new CourseRating;
+            $rating->user_id = Auth::id();
+            $rating->course_id = $request->course_id;
+            $rating->rating = (double) $request->rating;
+            $rating->description = $request->description ? $request->description : null;
+            $rating->save();
+
+            DB::commit();
+            return $this->sendSuccess('Rating saved', $rating);
+        } catch (Exception $e) {
+            DB::rollback();
+            return $this->sendError($e->getMessage(), null);
         }
     }
 }
