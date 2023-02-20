@@ -33,4 +33,12 @@ class Courses extends Model
    public function student_course(){
         return $this->hasOne(StudentCourse::class, 'course_id', 'id');
    }
+
+   public function student_course_active(){
+        return $this->hasOne(StudentCourse::class, 'course_id', 'id')->where('status','active');
+    }
+
+    public function student_course_completed(){
+        return $this->hasOne(StudentCourse::class, 'course_id', 'id')->where('status','completed');
+    }
 }

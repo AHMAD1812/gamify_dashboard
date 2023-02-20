@@ -59,6 +59,8 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::post('add_student_course', [CourseController::class, 'addStudentCourse']);
     Route::post('get_student_course_detail', [CourseController::class, 'getStudentCourseDetail']);
     Route::post('attempt_quiz_question', [CourseController::class, 'attemptQuizQuestion']);
+    Route::post('mark_complete_course', [CourseController::class, 'markCompleteCourse']);
+
     
     //Chat Routes
     Route::post('/initiate_chat', [ChatController::class, 'initiate_chat']);
