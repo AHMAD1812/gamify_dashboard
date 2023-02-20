@@ -124,9 +124,15 @@ class CourseController extends Controller
                     ->with('options')->orderBy('time', 'asc')->get();
                 $times = array();
                 foreach ($questions as $question) {
-                    array_push($times, $question->time);
+                    if($question->hour == 1){
+                        array_push($times, $question->time);
+                    }else{
+                        array_push($times, '00:'.$question->time);
+                    }
                 }
             }
+
+            // dd($times);
 
             if ($courses && $courses->favourite) {
                 $favuorite = true;
