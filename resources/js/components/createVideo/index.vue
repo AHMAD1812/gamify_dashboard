@@ -452,9 +452,9 @@ export default {
                 formData.append(`questions[${index}][name]`, value.name);
                 formData.append(`questions[${index}][score]`, value.score);
                 if(value.is_hour){
-                    formData.append(`questions[${index}][time]`, `${value.time.hh}${value.time.mm}${value.time.ss}`);
+                    formData.append(`questions[${index}][time]`, `${value.time.hh}:${value.time.mm}:${value.time.ss}`);
                 }else{
-                    formData.append(`questions[${index}][time]`, `${value.time.mm}${value.time.ss}`);
+                    formData.append(`questions[${index}][time]`, `${value.time.mm}:${value.time.ss}`);
                 }
             });
             formData.append('lecture_title',this.lecture_title);
