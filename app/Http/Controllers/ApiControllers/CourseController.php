@@ -58,6 +58,13 @@ class CourseController extends Controller
 
     }
 
+    public function getStudentCourses(Request $request)
+    {
+
+        $courses = Courses::wherehas('student_course')->with('creator')->get();
+        return $this->sendSuccess('all courses', $courses);
+    }
+
     public function addStudentCourse(Request $request)
     {
         $validator = Validator::make($request->all(), [
