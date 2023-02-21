@@ -190,7 +190,7 @@ class CourseController extends Controller
             $student_course->questions_attempted += 1;
             if ($request->answered == 'true') {
                 $student_course->correct_answered += 1;
-            } else if ($request->answered == 'false') {
+            } else {
                 $student_course->wrong_answered += 1;
             }
             $student_course->score += (int) $request->score;
