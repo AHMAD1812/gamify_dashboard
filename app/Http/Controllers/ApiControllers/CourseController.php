@@ -185,12 +185,13 @@ class CourseController extends Controller
             $attempt = new AttemptedQuestions;
             $attempt->user_id = Auth::id();
             $attempt->question_id = $request->question_id;
+            $attempt->is_correct = $request->answered == 'true' ? true : false;
             $attempt->save();
 
             $student_course->questions_attempted += 1;
             if ($request->answered == 'true') {
                 $student_course->correct_answered += 1;
-            } else if ($request->answered == 'false') {
+            } else {
                 $student_course->wrong_answered += 1;
             }
             $student_course->score += (int) $request->score;

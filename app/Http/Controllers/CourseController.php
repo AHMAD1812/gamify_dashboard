@@ -41,7 +41,6 @@ class CourseController extends Controller
         if ($validator->fails()) {
             return $this->sendError($validator->messages()->first(), null);
         }
-        info($request->all());
         try {
             DB::beginTransaction();
             $course = new Courses;
