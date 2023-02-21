@@ -185,6 +185,7 @@ class CourseController extends Controller
             $attempt = new AttemptedQuestions;
             $attempt->user_id = Auth::id();
             $attempt->question_id = $request->question_id;
+            $attempt->is_correct = $request->answered == 'true' ? true : false;
             $attempt->save();
 
             $student_course->questions_attempted += 1;
