@@ -64,7 +64,7 @@ Route::prefix('instructor')->group(function () {
         Route::get('/reviews', [PageController::class, 'index']);
         Route::get('/profile', [PageController::class, 'index']);
         Route::get('/setting', [PageController::class, 'index']);
-        Route::get('/course_detail', [PageController::class, 'index']);
+        Route::get('/course_detail/{id}', [PageController::class, 'index']);
         Route::get('/feedback', [PageController::class, 'index']);
 
         //API Docs
@@ -72,6 +72,7 @@ Route::prefix('instructor')->group(function () {
         //Course 
         Route::post('/add_course', [CourseController::class, 'addCourse']);
         Route::get('/get_courses', [CourseController::class, 'getCourses']);
+        Route::get('/get_course_detail/{id}', [CourseController::class, 'getCourseDetail']);
 
         Route::post('/logout', [AuthController::class, 'logout']);
         Route::get('/user_profile', [UserController::class, 'getUser']);

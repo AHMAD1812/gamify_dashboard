@@ -31,14 +31,18 @@ class Courses extends Model
    }
 
    public function student_course(){
-        return $this->hasOne(StudentCourse::class, 'course_id', 'id');
+        return $this->hasOne(StudentCourse::class, 'course_id', 'id')->where('user_id',Auth::id());
    }
 
    public function student_course_active(){
-        return $this->hasOne(StudentCourse::class, 'course_id', 'id')->where('status','active');
+        return $this->hasOne(StudentCourse::class, 'course_id', 'id')
+        ->where('status','active')
+        ->where('user_id',Auth::id());
     }
 
     public function student_course_completed(){
-        return $this->hasOne(StudentCourse::class, 'course_id', 'id')->where('status','completed');
+        return $this->hasOne(StudentCourse::class, 'course_id', 'id')
+        ->where('status','completed')
+        ->where('user_id',Auth::id());
     }
 }

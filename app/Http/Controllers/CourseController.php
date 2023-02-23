@@ -125,8 +125,18 @@ class CourseController extends Controller
 
     public function getCourses(Request $request){
         try{
-            $courses = Courses::where('creator_id',Auth::id())->get();
+            $courses = Courses::where('creator_id',Auth::id())->latest()->get();
             return $this->sendSuccess('Courses', $courses);
+        }catch(Exception $e){
+            return $this->sendError($e->getMessage(), null);
+        }
+    }
+
+    public function getCourseDetail($id){
+        
+        try{
+            $course = Courses::where('id',$id)->first();
+            return $this->sendSuccess('Course detail', $course);
         }catch(Exception $e){
             return $this->sendError($e->getMessage(), null);
         }

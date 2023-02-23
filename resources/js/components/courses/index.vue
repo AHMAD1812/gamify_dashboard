@@ -150,7 +150,8 @@
                                                 </td>
                                                 <td class="text-center">
                                                     <router-link
-                                                        :to="{name : 'CourseDetail'}"
+                                                        :to="{name : 'CourseDetail',
+                                                        params:{id: course.id}}"
                                                         title="View"
                                                         class="gray-s"
                                                         ><i

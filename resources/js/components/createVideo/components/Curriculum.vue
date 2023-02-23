@@ -605,6 +605,7 @@
                                                                                                         option.isCorrect
                                                                                                     "
                                                                                                     name="correct_answer"
+                                                                                                    @change="correctSelected(index)"
                                                                                                 />
                                                                                                 <label
                                                                                                     :for="`check_${index}`"
@@ -1046,6 +1047,11 @@ export default {
         },
         deleteOption(index) {
             this.question_option.splice(index, 1);
+        },
+        correctSelected(index){
+            this.question_option.forEach((option,i)=>{
+                option.isCorrect = i == index ? true : false
+            });
         },
         addQuestion() {
             if (this.question_name == "") {
