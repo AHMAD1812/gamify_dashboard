@@ -445,7 +445,7 @@ export default {
             });
             this.questions.forEach((value, index) => {
                 value.options.forEach((option,key)=>{
-                    formData.append(`questions[${index}][options][${key}][isCorrect]`, option.is_Correct);
+                    formData.append(`questions[${index}][options][${key}][isCorrect]`, option.isCorrect);
                     formData.append(`questions[${index}][options][${key}][name]`, option.name);
                 })    
                 formData.append(`questions[${index}][is_hour]`, value.is_hour);
