@@ -25,6 +25,19 @@ import VueAxios from "vue-axios";
 import VueToast from "vue-toast-notification";
 import "vue-toast-notification/dist/theme-sugar.css";
 
+import { io } from "socket.io-client";
+
+window.socket = io(config.SOCKET_URL, {
+    // ca: fs.readFileSync("./cpas_certificates/9ccd2407dc3d95f8.crt"),
+    transports: ["websocket", "polling", "flashsocket"],
+});
+
+console.log(window.socket);
+
+socket.on("connect", function () {
+    console.log("Socket Connected");
+});
+
 window.csrfToken = document.querySelector('meta[name="csrf-token"]').content;
 Vue.prototype.axios = Axios;
 
@@ -55,6 +68,12 @@ Vue.component('SpinnerLoader',Vue.extend(require('./components/layouts/SpinnerLo
     props: {
         loading: Boolean,
         color: String,
+    }
+});
+
+Vue.component('UnavailableData',Vue.extend(require('./components/layouts/UnavailableData.vue').default),{
+    props: {
+        message: String,
     }
 });
 

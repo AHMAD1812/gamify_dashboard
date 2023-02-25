@@ -43,12 +43,12 @@
                                     <div class="_215b05">
                                         <div class="crse_reviews mr-2">
                                             <i class="uil uil-star"></i>
-                                            4.5
+                                            {{ total_ratings }}
                                         </div>
-                                        (81,665 ratings)
+                                        ({{reviews.length}} ratings)
                                     </div>
                                     <div class="_215b05">
-                                        114,521 students enrolled
+                                        {{leaderboard.length}} students enrolled
                                     </div>
                                     <div class="_215b06">
                                         <div class="_215b07">
@@ -78,19 +78,13 @@
                                     <li>
                                         <a href="#" class="lkcm152"
                                             ><i class="uil uil-eye"></i
-                                            ><span>1452</span></a
+                                            ><span>{{leaderboard.length}}</span></a
                                         >
                                     </li>
                                     <li>
                                         <a href="#" class="lkcm152"
-                                            ><i class="uil uil-thumbs-up"></i
-                                            ><span>100</span></a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a href="#" class="lkcm152"
-                                            ><i class="uil uil-thumbs-down"></i
-                                            ><span>20</span></a
+                                            ><i class="fa fa-heart-o" aria-hidden="true"></i>
+                                            <span>{{favourite_count}}</span></a
                                         >
                                     </li>
                                 </ul>
@@ -181,25 +175,9 @@
                                                     <h3>Student Feedback</h3>
                                                     <div class="total_rating">
                                                         <div class="_rate001">
-                                                            4.6
+                                                            {{ total_ratings }}
                                                         </div>
-                                                        <div class="rating-box">
-                                                            <span
-                                                                class="rating-star full-star"
-                                                            ></span>
-                                                            <span
-                                                                class="rating-star full-star"
-                                                            ></span>
-                                                            <span
-                                                                class="rating-star full-star"
-                                                            ></span>
-                                                            <span
-                                                                class="rating-star full-star"
-                                                            ></span>
-                                                            <span
-                                                                class="rating-star half-star"
-                                                            ></span>
-                                                        </div>
+                                                        <StarRating :rating="total_ratings"></StarRating>
                                                         <div class="_rate002">
                                                             Course Rating
                                                         </div>
@@ -210,11 +188,9 @@
                                                                 class="progress progress1"
                                                             >
                                                                 <div
-                                                                    class="progress-bar w-70"
+                                                                    class="progress-bar"
+                                                                    :style="{width: `${reviews.length == 0 ? 0 :(stars[0]/reviews.length)*100}%`}"
                                                                     role="progressbar"
-                                                                    aria-valuenow="70"
-                                                                    aria-valuemin="0"
-                                                                    aria-valuemax="100"
                                                                 ></div>
                                                             </div>
                                                             <div
@@ -239,7 +215,7 @@
                                                             <div
                                                                 class="_rate002"
                                                             >
-                                                                70%
+                                                            {{reviews.length == 0 ? 0 :(stars[0]/reviews.length)*100}}%
                                                             </div>
                                                         </div>
                                                         <div class="_rate004">
@@ -247,11 +223,9 @@
                                                                 class="progress progress1"
                                                             >
                                                                 <div
-                                                                    class="progress-bar w-30"
+                                                                    class="progress-bar"
+                                                                    :style="{width: `${reviews.length == 0 ? 0 :(stars[1]/reviews.length)*100}%`}"
                                                                     role="progressbar"
-                                                                    aria-valuenow="30"
-                                                                    aria-valuemin="0"
-                                                                    aria-valuemax="100"
                                                                 ></div>
                                                             </div>
                                                             <div
@@ -276,7 +250,7 @@
                                                             <div
                                                                 class="_rate002"
                                                             >
-                                                                40%
+                                                            {{reviews.length == 0 ? 0 : (stars[1]/reviews.length)*100}}%
                                                             </div>
                                                         </div>
                                                         <div class="_rate004">
@@ -284,11 +258,9 @@
                                                                 class="progress progress1"
                                                             >
                                                                 <div
-                                                                    class="progress-bar w-5"
+                                                                    class="progress-bar"
+                                                                    :style="{width: `${reviews.length == 0 ? 0 :(stars[2]/reviews.length)*100}%`}"
                                                                     role="progressbar"
-                                                                    aria-valuenow="10"
-                                                                    aria-valuemin="0"
-                                                                    aria-valuemax="100"
                                                                 ></div>
                                                             </div>
                                                             <div
@@ -313,7 +285,7 @@
                                                             <div
                                                                 class="_rate002"
                                                             >
-                                                                5%
+                                                            {{(reviews.length == 0 ? 0 :stars[2]/reviews.length)*100}}%
                                                             </div>
                                                         </div>
                                                         <div class="_rate004">
@@ -321,11 +293,9 @@
                                                                 class="progress progress1"
                                                             >
                                                                 <div
-                                                                    class="progress-bar w-2"
+                                                                    class="progress-bar"
+                                                                    :style="{width: `${reviews.length == 0 ? 0 :(stars[3]/reviews.length)*100}%`}"
                                                                     role="progressbar"
-                                                                    aria-valuenow="2"
-                                                                    aria-valuemin="0"
-                                                                    aria-valuemax="100"
                                                                 ></div>
                                                             </div>
                                                             <div
@@ -350,7 +320,7 @@
                                                             <div
                                                                 class="_rate002"
                                                             >
-                                                                1%
+                                                            {{reviews.length == 0 ? 0 :(stars[3]/reviews.length)*100}}%
                                                             </div>
                                                         </div>
                                                         <div class="_rate004">
@@ -358,11 +328,9 @@
                                                                 class="progress progress1"
                                                             >
                                                                 <div
-                                                                    class="progress-bar w-1"
+                                                                    class="progress-bar"
                                                                     role="progressbar"
-                                                                    aria-valuenow="0"
-                                                                    aria-valuemin="0"
-                                                                    aria-valuemax="100"
+                                                                    :style="{width: `${reviews.length == 0 ? 0 :(stars[4]/reviews.length)*100}%`}"
                                                                 ></div>
                                                             </div>
                                                             <div
@@ -387,7 +355,7 @@
                                                             <div
                                                                 class="_rate002"
                                                             >
-                                                                1%
+                                                            {{reviews.length == 0 ? 0 : (stars[2]/reviews.length)*100}}%
                                                             </div>
                                                         </div>
                                                     </div>
@@ -418,19 +386,20 @@
                                                     </div>
                                                 </div>
                                                 <div class="review_all120">
-                                                    <div class="review_item">
+                                                    <UnavailableData v-if="reviews.length == 0" :message="'No reviews found'"></UnavailableData>
+                                                    <div class="review_item" v-for="(review,key) in reviews" :key="`reviews_${key}`">
                                                         <div
                                                             class="review_usr_dt"
                                                         >
                                                             <img
-                                                                :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`"
+                                                                :src="`${globalBaseUrl}${review.user.profile_img ? review.user.profile_img :'images/left-imgs/img-1.jpg'}`"
                                                                 alt=""
                                                             />
                                                             <div class="rv1458">
                                                                 <h4
                                                                     class="tutor_name1"
                                                                 >
-                                                                    John Doe
+                                                                    {{review.user.full_name}}
                                                                 </h4>
                                                                 <span
                                                                     class="time_145"
@@ -440,472 +409,21 @@
                                                             </div>
                                                         </div>
                                                         <div
-                                                            class="rating-box mt-20"
+                                                            class="mt-20"
                                                         >
-                                                            <span
-                                                                class="rating-star full-star"
-                                                            ></span>
-                                                            <span
-                                                                class="rating-star full-star"
-                                                            ></span>
-                                                            <span
-                                                                class="rating-star full-star"
-                                                            ></span>
-                                                            <span
-                                                                class="rating-star full-star"
-                                                            ></span>
-                                                            <span
-                                                                class="rating-star half-star"
-                                                            ></span>
+                                                        <StarRating :rating="review.rating"></StarRating>
                                                         </div>
                                                         <p class="rvds10">
-                                                            Nam gravida elit a
-                                                            velit rutrum, eget
-                                                            dapibus ex
-                                                            elementum. Interdum
-                                                            et malesuada fames
-                                                            ac ante ipsum primis
-                                                            in faucibus. Fusce
-                                                            lacinia, nunc sit
-                                                            amet tincidunt
-                                                            venenatis.
+                                                            {{review.description}}
                                                         </p>
-                                                        <div class="rpt100">
-                                                            <span
-                                                                >Was this review
-                                                                helpful?</span
-                                                            >
-                                                            <div
-                                                                class="radio--group-inline-container"
-                                                            >
-                                                                <div
-                                                                    class="radio-item"
-                                                                >
-                                                                    <input
-                                                                        id="radio-1"
-                                                                        name="radio"
-                                                                        type="radio"
-                                                                    />
-                                                                    <label
-                                                                        for="radio-1"
-                                                                        class="radio-label"
-                                                                        >Yes</label
-                                                                    >
-                                                                </div>
-                                                                <div
-                                                                    class="radio-item"
-                                                                >
-                                                                    <input
-                                                                        id="radio-2"
-                                                                        name="radio"
-                                                                        type="radio"
-                                                                    />
-                                                                    <label
-                                                                        for="radio-2"
-                                                                        class="radio-label"
-                                                                        >No</label
-                                                                    >
-                                                                </div>
-                                                            </div>
-                                                            <a
-                                                                href="#"
-                                                                class="report145"
-                                                                >Report</a
-                                                            >
-                                                        </div>
                                                     </div>
-                                                    <div class="review_item">
-                                                        <div
-                                                            class="review_usr_dt"
-                                                        >
-                                                            <img
-                                                                :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`"
-                                                                alt=""
-                                                            />
-                                                            <div class="rv1458">
-                                                                <h4
-                                                                    class="tutor_name1"
-                                                                >
-                                                                    Jassica
-                                                                    William
-                                                                </h4>
-                                                                <span
-                                                                    class="time_145"
-                                                                    >12 hour
-                                                                    ago</span
-                                                                >
-                                                            </div>
-                                                        </div>
-                                                        <div
-                                                            class="rating-box mt-20"
-                                                        >
-                                                            <span
-                                                                class="rating-star full-star"
-                                                            ></span>
-                                                            <span
-                                                                class="rating-star full-star"
-                                                            ></span>
-                                                            <span
-                                                                class="rating-star full-star"
-                                                            ></span>
-                                                            <span
-                                                                class="rating-star full-star"
-                                                            ></span>
-                                                            <span
-                                                                class="rating-star empty-star"
-                                                            ></span>
-                                                        </div>
-                                                        <p class="rvds10">
-                                                            Nam gravida elit a
-                                                            velit rutrum, eget
-                                                            dapibus ex
-                                                            elementum. Interdum
-                                                            et malesuada fames
-                                                            ac ante ipsum primis
-                                                            in faucibus. Fusce
-                                                            lacinia, nunc sit
-                                                            amet tincidunt
-                                                            venenatis.
-                                                        </p>
-                                                        <div class="rpt100">
-                                                            <span
-                                                                >Was this review
-                                                                helpful?</span
-                                                            >
-                                                            <div
-                                                                class="radio--group-inline-container"
-                                                            >
-                                                                <div
-                                                                    class="radio-item"
-                                                                >
-                                                                    <input
-                                                                        id="radio-3"
-                                                                        name="radio1"
-                                                                        type="radio"
-                                                                    />
-                                                                    <label
-                                                                        for="radio-3"
-                                                                        class="radio-label"
-                                                                        >Yes</label
-                                                                    >
-                                                                </div>
-                                                                <div
-                                                                    class="radio-item"
-                                                                >
-                                                                    <input
-                                                                        id="radio-4"
-                                                                        name="radio1"
-                                                                        type="radio"
-                                                                    />
-                                                                    <label
-                                                                        for="radio-4"
-                                                                        class="radio-label"
-                                                                        >No</label
-                                                                    >
-                                                                </div>
-                                                            </div>
-                                                            <a
-                                                                href="#"
-                                                                class="report145"
-                                                                >Report</a
-                                                            >
-                                                        </div>
-                                                    </div>
-                                                    <div class="review_item">
-                                                        <div
-                                                            class="review_usr_dt"
-                                                        >
-                                                            <img
-                                                                :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`"
-                                                                alt=""
-                                                            />
-                                                            <div class="rv1458">
-                                                                <h4
-                                                                    class="tutor_name1"
-                                                                >
-                                                                    Albert Dua
-                                                                </h4>
-                                                                <span
-                                                                    class="time_145"
-                                                                    >5 days
-                                                                    ago</span
-                                                                >
-                                                            </div>
-                                                        </div>
-                                                        <div
-                                                            class="rating-box mt-20"
-                                                        >
-                                                            <span
-                                                                class="rating-star full-star"
-                                                            ></span>
-                                                            <span
-                                                                class="rating-star full-star"
-                                                            ></span>
-                                                            <span
-                                                                class="rating-star full-star"
-                                                            ></span>
-                                                            <span
-                                                                class="rating-star half-star"
-                                                            ></span>
-                                                            <span
-                                                                class="rating-star empty-star"
-                                                            ></span>
-                                                        </div>
-                                                        <p class="rvds10">
-                                                            Nam gravida elit a
-                                                            velit rutrum, eget
-                                                            dapibus ex
-                                                            elementum. Interdum
-                                                            et malesuada fames
-                                                            ac ante ipsum primis
-                                                            in faucibus. Fusce
-                                                            lacinia, nunc sit
-                                                            amet tincidunt
-                                                            venenatis.
-                                                        </p>
-                                                        <div class="rpt100">
-                                                            <span
-                                                                >Was this review
-                                                                helpful?</span
-                                                            >
-                                                            <div
-                                                                class="radio--group-inline-container"
-                                                            >
-                                                                <div
-                                                                    class="radio-item"
-                                                                >
-                                                                    <input
-                                                                        id="radio-5"
-                                                                        name="radio2"
-                                                                        type="radio"
-                                                                    />
-                                                                    <label
-                                                                        for="radio-5"
-                                                                        class="radio-label"
-                                                                        >Yes</label
-                                                                    >
-                                                                </div>
-                                                                <div
-                                                                    class="radio-item"
-                                                                >
-                                                                    <input
-                                                                        id="radio-6"
-                                                                        name="radio2"
-                                                                        type="radio"
-                                                                    />
-                                                                    <label
-                                                                        for="radio-6"
-                                                                        class="radio-label"
-                                                                        >No</label
-                                                                    >
-                                                                </div>
-                                                            </div>
-                                                            <a
-                                                                href="#"
-                                                                class="report145"
-                                                                >Report</a
-                                                            >
-                                                        </div>
-                                                    </div>
-                                                    <div class="review_item">
-                                                        <div
-                                                            class="review_usr_dt"
-                                                        >
-                                                            <img
-                                                                :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`"
-                                                                alt=""
-                                                            />
-                                                            <div class="rv1458">
-                                                                <h4
-                                                                    class="tutor_name1"
-                                                                >
-                                                                    Zoena Singh
-                                                                </h4>
-                                                                <span
-                                                                    class="time_145"
-                                                                    >15 days
-                                                                    ago</span
-                                                                >
-                                                            </div>
-                                                        </div>
-                                                        <div
-                                                            class="rating-box mt-20"
-                                                        >
-                                                            <span
-                                                                class="rating-star full-star"
-                                                            ></span>
-                                                            <span
-                                                                class="rating-star full-star"
-                                                            ></span>
-                                                            <span
-                                                                class="rating-star full-star"
-                                                            ></span>
-                                                            <span
-                                                                class="rating-star full-star"
-                                                            ></span>
-                                                            <span
-                                                                class="rating-star full-star"
-                                                            ></span>
-                                                        </div>
-                                                        <p class="rvds10">
-                                                            Nam gravida elit a
-                                                            velit rutrum, eget
-                                                            dapibus ex
-                                                            elementum. Interdum
-                                                            et malesuada fames
-                                                            ac ante ipsum primis
-                                                            in faucibus. Fusce
-                                                            lacinia, nunc sit
-                                                            amet tincidunt
-                                                            venenatis.
-                                                        </p>
-                                                        <div class="rpt100">
-                                                            <span
-                                                                >Was this review
-                                                                helpful?</span
-                                                            >
-                                                            <div
-                                                                class="radio--group-inline-container"
-                                                            >
-                                                                <div
-                                                                    class="radio-item"
-                                                                >
-                                                                    <input
-                                                                        id="radio-7"
-                                                                        name="radio3"
-                                                                        type="radio"
-                                                                    />
-                                                                    <label
-                                                                        for="radio-7"
-                                                                        class="radio-label"
-                                                                        >Yes</label
-                                                                    >
-                                                                </div>
-                                                                <div
-                                                                    class="radio-item"
-                                                                >
-                                                                    <input
-                                                                        id="radio-8"
-                                                                        name="radio3"
-                                                                        type="radio"
-                                                                    />
-                                                                    <label
-                                                                        for="radio-8"
-                                                                        class="radio-label"
-                                                                        >No</label
-                                                                    >
-                                                                </div>
-                                                            </div>
-                                                            <a
-                                                                href="#"
-                                                                class="report145"
-                                                                >Report</a
-                                                            >
-                                                        </div>
-                                                    </div>
-                                                    <div class="review_item">
-                                                        <div
-                                                            class="review_usr_dt"
-                                                        >
-                                                            <img
-                                                                :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`"
-                                                                alt=""
-                                                            />
-                                                            <div class="rv1458">
-                                                                <h4
-                                                                    class="tutor_name1"
-                                                                >
-                                                                    Joy Dua
-                                                                </h4>
-                                                                <span
-                                                                    class="time_145"
-                                                                    >20 days
-                                                                    ago</span
-                                                                >
-                                                            </div>
-                                                        </div>
-                                                        <div
-                                                            class="rating-box mt-20"
-                                                        >
-                                                            <span
-                                                                class="rating-star full-star"
-                                                            ></span>
-                                                            <span
-                                                                class="rating-star full-star"
-                                                            ></span>
-                                                            <span
-                                                                class="rating-star full-star"
-                                                            ></span>
-                                                            <span
-                                                                class="rating-star empty-star"
-                                                            ></span>
-                                                            <span
-                                                                class="rating-star empty-star"
-                                                            ></span>
-                                                        </div>
-                                                        <p class="rvds10">
-                                                            Nam gravida elit a
-                                                            velit rutrum, eget
-                                                            dapibus ex
-                                                            elementum. Interdum
-                                                            et malesuada fames
-                                                            ac ante ipsum primis
-                                                            in faucibus. Fusce
-                                                            lacinia, nunc sit
-                                                            amet tincidunt
-                                                            venenatis.
-                                                        </p>
-                                                        <div class="rpt100">
-                                                            <span
-                                                                >Was this review
-                                                                helpful?</span
-                                                            >
-                                                            <div
-                                                                class="radio--group-inline-container"
-                                                            >
-                                                                <div
-                                                                    class="radio-item"
-                                                                >
-                                                                    <input
-                                                                        id="radio-9"
-                                                                        name="radio4"
-                                                                        type="radio"
-                                                                    />
-                                                                    <label
-                                                                        for="radio-9"
-                                                                        class="radio-label"
-                                                                        >Yes</label
-                                                                    >
-                                                                </div>
-                                                                <div
-                                                                    class="radio-item"
-                                                                >
-                                                                    <input
-                                                                        id="radio-10"
-                                                                        name="radio4"
-                                                                        type="radio"
-                                                                    />
-                                                                    <label
-                                                                        for="radio-10"
-                                                                        class="radio-label"
-                                                                        >No</label
-                                                                    >
-                                                                </div>
-                                                            </div>
-                                                            <a
-                                                                href="#"
-                                                                class="report145"
-                                                                >Report</a
-                                                            >
-                                                        </div>
-                                                    </div>
-                                                    <div class="review_item">
+                                                    <!-- <div class="review_item">
                                                         <a
                                                             href="#"
                                                             class="more_reviews"
                                                             >See More Reviews</a
                                                         >
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -942,7 +460,7 @@
                                                                         Total
                                                                         Students
                                                                     </div>
-                                                                    <h2>100</h2>
+                                                                    <h2>{{leaderboard.length}}</h2>
                                                                 </div>
                                                                 <div
                                                                     class="u-text--right"
@@ -953,7 +471,7 @@
                                                                         Average
                                                                         Score
                                                                     </div>
-                                                                    <h2>24</h2>
+                                                                    <h2>{{ average_score }}</h2>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -961,6 +479,7 @@
                                                     <div class="c-card">
                                                         <div
                                                             class="c-card__body"
+                                                            v-if="leaderboard.length >= 1"
                                                         >
                                                             <div
                                                                 class="u-text--center"
@@ -974,18 +493,11 @@
                                                                 </div>
                                                                 <img
                                                                     class="c-avatar c-avatar--lg"
-                                                                    src="https://www.formula1.com/content/dam/fom-website/drivers/D/DANRIC01_Daniel_Ricciardo/danric01.png.transform/2col-retina/image.png"
+                                                                    :src="`${globalBaseUrl}${leaderboard[0].student.profile_img ? leaderboard[0].student.profile_img :'images/left-imgs/img-1.jpg'}`"
                                                                 />
                                                                 <h3
-                                                                    class="u-mt--16"
-                                                                >
-                                                                    Daniel
-                                                                    Ricciardo
-                                                                </h3>
-                                                                <span
                                                                     class="u-text--teal u-text--small"
-                                                                    >Daniel
-                                                                    Ricciardo</span
+                                                                    >{{leaderboard[0].student.full_name}}</h3
                                                                 >
                                                             </div>
                                                         </div>
@@ -997,7 +509,9 @@
                                                     <div
                                                         class="c-card__body pt-0"
                                                     >
+                                                        <UnavailableData v-if="leaderboard.length == 0" :message="'No score found'"></UnavailableData>
                                                         <ul
+                                                            v-if="leaderboard.length >= 1"
                                                             class="c-list"
                                                             id="list"
                                                         >
@@ -1026,6 +540,8 @@
                                                             </li>
                                                             <li
                                                                 class="c-list__item"
+                                                                v-for="(score,key) in leaderboard"
+                                                                :key="`score-${key}`"
                                                             >
                                                                 <div
                                                                     class="c-list__grid"
@@ -1033,14 +549,14 @@
                                                                     <div
                                                                         class="c-flag c-place u-bg--transparent u-text--dark u-bg--yellow"
                                                                     >
-                                                                        1
+                                                                        {{key+1}}
                                                                     </div>
                                                                     <div
                                                                         class="c-media"
                                                                     >
                                                                         <img
                                                                             class="c-avatar c-media__img"
-                                                                            src="https://www.formula1.com/content/dam/fom-website/drivers/L/LEWHAM01_Lewis_Hamilton/lewham01.png.transform/2col-retina/image.png"
+                                                                            :src="`${globalBaseUrl}${score.student.profile_img ? score.student.profile_img :'images/left-imgs/img-1.jpg'}`"
                                                                         />
                                                                         <div
                                                                             class="c-media__content"
@@ -1048,15 +564,14 @@
                                                                             <div
                                                                                 class="c-media__title"
                                                                             >
-                                                                                Lewis
-                                                                                Hamilton
+                                                                                {{score.student.full_name}}
                                                                             </div>
-                                                                            <a
+                                                                            <!-- <a
                                                                                 class="c-media__link u-text--small"
                                                                                 href="https://instagram.com/lewishamilton"
                                                                                 target="_blank"
-                                                                                >@lewishamilton</a
-                                                                            >
+                                                                                >@lewishamilton</a 
+                                                                            >-->
                                                                         </div>
                                                                     </div>
                                                                     <div
@@ -1066,14 +581,14 @@
                                                                             class="u-mt--8"
                                                                         >
                                                                             <strong
-                                                                                >36</strong
+                                                                                >{{score.score}}</strong
                                                                             >
                                                                             ⭐️
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </li>
-                                                            <li
+                                                            <!-- <li
                                                                 class="c-list__item"
                                                             >
                                                                 <div
@@ -1219,302 +734,8 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </li>
-                                                            <li
-                                                                class="c-list__item"
-                                                            >
-                                                                <div
-                                                                    class="c-list__grid"
-                                                                >
-                                                                    <div
-                                                                        class="c-flag c-place u-bg--transparent"
-                                                                    >
-                                                                        5
-                                                                    </div>
-                                                                    <div
-                                                                        class="c-media"
-                                                                    >
-                                                                        <img
-                                                                            class="c-avatar c-media__img"
-                                                                            src="https://www.formula1.com/content/dam/fom-website/drivers/L/LANNOR01_Lando_Norris/lannor01.png.transform/2col-retina/image.png"
-                                                                        />
-                                                                        <div
-                                                                            class="c-media__content"
-                                                                        >
-                                                                            <div
-                                                                                class="c-media__title"
-                                                                            >
-                                                                                Lando
-                                                                                Norris
-                                                                            </div>
-                                                                            <a
-                                                                                class="c-media__link u-text--small"
-                                                                                href="https://instagram.com/landonorris"
-                                                                                target="_blank"
-                                                                                >@landonorris</a
-                                                                            >
-                                                                        </div>
-                                                                    </div>
-                                                                    <div
-                                                                        class="u-text--right c-kudos"
-                                                                    >
-                                                                        <div
-                                                                            class="u-mt--8"
-                                                                        >
-                                                                            <strong
-                                                                                >18</strong
-                                                                            >
-                                                                            🔥
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            <li
-                                                                class="c-list__item"
-                                                            >
-                                                                <div
-                                                                    class="c-list__grid"
-                                                                >
-                                                                    <div
-                                                                        class="c-flag c-place u-bg--transparent"
-                                                                    >
-                                                                        6
-                                                                    </div>
-                                                                    <div
-                                                                        class="c-media"
-                                                                    >
-                                                                        <img
-                                                                            class="c-avatar c-media__img"
-                                                                            src="https://www.formula1.com/content/dam/fom-website/drivers/C/CHALEC01_Charles_Leclerc/chalec01.png.transform/2col-retina/image.png"
-                                                                        />
-                                                                        <div
-                                                                            class="c-media__content"
-                                                                        >
-                                                                            <div
-                                                                                class="c-media__title"
-                                                                            >
-                                                                                Charles
-                                                                                Leclerc
-                                                                            </div>
-                                                                            <a
-                                                                                class="c-media__link u-text--small"
-                                                                                href="https://instagram.com/charles_leclerc"
-                                                                                target="_blank"
-                                                                                >@charles_leclerc</a
-                                                                            >
-                                                                        </div>
-                                                                    </div>
-                                                                    <div
-                                                                        class="u-text--right c-kudos"
-                                                                    >
-                                                                        <div
-                                                                            class="u-mt--8"
-                                                                        >
-                                                                            <strong
-                                                                                >16</strong
-                                                                            >
-                                                                            🔥
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            <li
-                                                                class="c-list__item"
-                                                            >
-                                                                <div
-                                                                    class="c-list__grid"
-                                                                >
-                                                                    <div
-                                                                        class="c-flag c-place u-bg--transparent"
-                                                                    >
-                                                                        7
-                                                                    </div>
-                                                                    <div
-                                                                        class="c-media"
-                                                                    >
-                                                                        <img
-                                                                            class="c-avatar c-media__img"
-                                                                            src="https://www.formula1.com/content/dam/fom-website/drivers/G/GEORUS01_George_Russell/georus01.png.transform/2col-retina/image.png"
-                                                                        />
-                                                                        <div
-                                                                            class="c-media__content"
-                                                                        >
-                                                                            <div
-                                                                                class="c-media__title"
-                                                                            >
-                                                                                George
-                                                                                Russell
-                                                                            </div>
-                                                                            <a
-                                                                                class="c-media__link u-text--small"
-                                                                                href="https://instagram.com/georgerussell63"
-                                                                                target="_blank"
-                                                                                >@georgerussell63</a
-                                                                            >
-                                                                        </div>
-                                                                    </div>
-                                                                    <div
-                                                                        class="u-text--right c-kudos"
-                                                                    >
-                                                                        <div
-                                                                            class="u-mt--8"
-                                                                        >
-                                                                            <strong
-                                                                                >10</strong
-                                                                            >
-                                                                            💯
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            <li
-                                                                class="c-list__item"
-                                                            >
-                                                                <div
-                                                                    class="c-list__grid"
-                                                                >
-                                                                    <div
-                                                                        class="c-flag c-place u-bg--transparent"
-                                                                    >
-                                                                        8
-                                                                    </div>
-                                                                    <div
-                                                                        class="c-media"
-                                                                    >
-                                                                        <img
-                                                                            class="c-avatar c-media__img"
-                                                                            src="https://www.formula1.com/content/dam/fom-website/drivers/D/DANRIC01_Daniel_Ricciardo/danric01.png.transform/2col-retina/image.png"
-                                                                        />
-                                                                        <div
-                                                                            class="c-media__content"
-                                                                        >
-                                                                            <div
-                                                                                class="c-media__title"
-                                                                            >
-                                                                                Daniel
-                                                                                Ricciardo
-                                                                            </div>
-                                                                            <a
-                                                                                class="c-media__link u-text--small"
-                                                                                href="https://instagram.com/danielricciardo"
-                                                                                target="_blank"
-                                                                                >@danielricciardo</a
-                                                                            >
-                                                                        </div>
-                                                                    </div>
-                                                                    <div
-                                                                        class="u-text--right c-kudos"
-                                                                    >
-                                                                        <div
-                                                                            class="u-mt--8"
-                                                                        >
-                                                                            <strong
-                                                                                >7</strong
-                                                                            >
-                                                                            💯
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            <li
-                                                                class="c-list__item"
-                                                            >
-                                                                <div
-                                                                    class="c-list__grid"
-                                                                >
-                                                                    <div
-                                                                        class="c-flag c-place u-bg--transparent"
-                                                                    >
-                                                                        9
-                                                                    </div>
-                                                                    <div
-                                                                        class="c-media"
-                                                                    >
-                                                                        <img
-                                                                            class="c-avatar c-media__img"
-                                                                            src="https://www.formula1.com/content/dam/fom-website/drivers/A/ALEALB01_Alexander_Albon/alealb01.png.transform/2col-retina/image.png"
-                                                                        />
-                                                                        <div
-                                                                            class="c-media__content"
-                                                                        >
-                                                                            <div
-                                                                                class="c-media__title"
-                                                                            >
-                                                                                Alexander
-                                                                                Albon
-                                                                            </div>
-                                                                            <a
-                                                                                class="c-media__link u-text--small"
-                                                                                href="https://instagram.com/alex_albon"
-                                                                                target="_blank"
-                                                                                >@alex_albon</a
-                                                                            >
-                                                                        </div>
-                                                                    </div>
-                                                                    <div
-                                                                        class="u-text--right c-kudos"
-                                                                    >
-                                                                        <div
-                                                                            class="u-mt--8"
-                                                                        >
-                                                                            <strong
-                                                                                >4</strong
-                                                                            >
-                                                                            🏆
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            <li
-                                                                class="c-list__item"
-                                                            >
-                                                                <div
-                                                                    class="c-list__grid"
-                                                                >
-                                                                    <div
-                                                                        class="c-flag c-place u-bg--transparent"
-                                                                    >
-                                                                        10
-                                                                    </div>
-                                                                    <div
-                                                                        class="c-media"
-                                                                    >
-                                                                        <img
-                                                                            class="c-avatar c-media__img"
-                                                                            src="https://www.formula1.com/content/dam/fom-website/drivers/C/CARSAI01_Carlos_Sainz/carsai01.png.transform/2col-retina/image.png"
-                                                                        />
-                                                                        <div
-                                                                            class="c-media__content"
-                                                                        >
-                                                                            <div
-                                                                                class="c-media__title"
-                                                                            >
-                                                                                Carlos
-                                                                                Sainz
-                                                                                Jr.
-                                                                            </div>
-                                                                            <a
-                                                                                class="c-media__link u-text--small"
-                                                                                href="https://instagram.com/carlossainz55"
-                                                                                target="_blank"
-                                                                                >@carlossainz55</a
-                                                                            >
-                                                                        </div>
-                                                                    </div>
-                                                                    <div
-                                                                        class="u-text--right c-kudos"
-                                                                    >
-                                                                        <div
-                                                                            class="u-mt--8"
-                                                                        >
-                                                                            <strong
-                                                                                >1</strong
-                                                                            >
-                                                                            👍
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
+                                                            </li> -->
+                                                            
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -1564,13 +785,23 @@
 </template>
 
 <script>
+import StarRating from './rating';
 
 export default {
     name: "CourseDetail",
+    components:{
+        StarRating,
+    },
     data(){
         return {
             id:null,
             course:{},
+            leaderboard:[],
+            reviews:[],
+            stars:[0,0,0,0,0],
+            total_ratings:0,
+            average_score:0,
+            favourite_count:0,
         }
     },
     async created(){
@@ -1582,9 +813,46 @@ export default {
         }
         this.id = this.$route.params.id;
         let response  = await axios.get(`${globalBaseUrl}instructor/get_course_detail/${this.id}`)
-        this.course = response.data.data;
-        console.log(this.course);
+        response = response.data.data;
+        this.course = response.course;
+        if(this.course == null){
+            this.$router.push({
+                name: "Courses",
+            });
+            Vue.$toast.open({
+                message: "Invalid Id",
+                type: "error",
+                position: "top-right",
+            });
+        }
+        this.leaderboard = response.leaderboard;
+        this.reviews = response.reviews;
+        let ratings = 0;
+        this.favourite_count = response.favourite_count;
+        this.reviews.forEach((val)=>{
+            if(val.rating <= 1){
+                this.stars[4] += 1;
+            }else if(val.rating <= 2){
+                this.stars[3] += 1;
+            }else if(val.rating <= 3){
+                this.stars[2] += 1;
+            }else if(val.rating <= 4){
+                this.stars[1] += 1;
+            }else if(val.rating <= 5){
+                this.stars[0] += 1;
+            }
+            ratings += val.rating;
+        });
+        let scores = 0;
+        this.leaderboard.forEach((val)=>{
+            scores += val.score;
+        });
+        this.average_score = this.leaderboard == 0 ? 0 : scores/this.leaderboard.length;
+        this.total_ratings = this.reviews.length == 0 ? 0 : ratings/this.reviews.length;
         this.$store.dispatch('toggleLoader',false);
+    },
+    mounted(){
+        $(window).scrollTop(0);
     }
 };
 </script>

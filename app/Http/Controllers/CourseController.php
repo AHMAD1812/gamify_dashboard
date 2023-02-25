@@ -8,7 +8,10 @@ use App\Models\Courses;
 use App\Models\Options;
 use App\Models\Lectures;
 use App\Models\Questions;
+use App\Models\CourseRating;
 use Illuminate\Http\Request;
+use App\Models\StudentCourse;
+use App\Models\FavouriteCourse;
 use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -126,6 +129,7 @@ class CourseController extends Controller
     public function getCourses(Request $request){
         try{
             $courses = Courses::where('creator_id',Auth::id())->latest()->get();
+            
             return $this->sendSuccess('Courses', $courses);
         }catch(Exception $e){
             return $this->sendError($e->getMessage(), null);
@@ -135,8 +139,14 @@ class CourseController extends Controller
     public function getCourseDetail($id){
         
         try{
-            $course = Courses::where('id',$id)->first();
-            return $this->sendSuccess('Course detail', $course);
+            $data['course'] = Courses::where('id',$id)->first();
+            if(!$data['course']){
+                return $this->sendSuccess('Course detail', $data);
+            }
+            $data['leaderboard'] = StudentCourse::where('course_id',$data['course']->id)->with('student')->orderBy('score','desc')->get();
+            $data['reviews'] = CourseRating::where('course_id',$data['course']->id)->with('user')->latest()->get();
+            $data['favourite_count'] = FavouriteCourse::where('course_id',$data['course']->id)->count();
+            return $this->sendSuccess('Course detail', $data);
         }catch(Exception $e){
             return $this->sendError($e->getMessage(), null);
         }
