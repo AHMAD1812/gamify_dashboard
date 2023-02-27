@@ -13,9 +13,9 @@ var config = {
     // },
     development: {
         API_URL: "",
-        BASE_URL: "https://gamify.stackup.solutions/",
-        SITE_URL: "https://gamify.stackup.solutions/",
-        ASSET_URL: "https://gamify.stackup.solutions/",
+        BASE_URL: "http://163.172.62.21/",
+        SITE_URL: "http://163.172.62.21/",
+        ASSET_URL: "http://163.172.62.21/",
         SOCKET_URL: "http://163.172.62.21:9443/",
     },
     // development: {
