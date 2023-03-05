@@ -5,9 +5,10 @@ use App\Http\Controllers\AppController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\PageController;
-use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\ChatController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,6 +74,11 @@ Route::prefix('instructor')->group(function () {
         Route::post('/add_course', [CourseController::class, 'addCourse']);
         Route::get('/get_courses', [CourseController::class, 'getCourses']);
         Route::get('/get_course_detail/{id}', [CourseController::class, 'getCourseDetail']);
+
+        //Chat Controller
+        Route::post('/get_current_chats', [ChatController::class, 'get_current_chats']);
+        Route::post('/add_message', [ChatController::class, 'add_message']);
+        Route::post('/get_chat', [ChatController::class, 'get_chat']);
 
         Route::post('/logout', [AuthController::class, 'logout']);
         Route::get('/user_profile', [UserController::class, 'getUser']);

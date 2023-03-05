@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\ApiControllers;
+namespace App\Http\Controllers;
 
 use App\Models\Chat;
 use App\Models\ChatMessage;
@@ -284,10 +284,12 @@ class ChatController extends Controller
         $chat = Chat::where('id', $request->chat_id)->with('sender', 'receiver')->first();
 
         if ($chat) {
-            ChatMessage::where('chat_id', $request->chat_id)->where('receiver_id', Auth::id())->update(['is_read' => 1]);
+            ChatMessage::where('chat_id', $request->chat_id)
+            ->where('receiver_id', Auth::id())->update(['is_read' => 1]);
+            $data['chat'] = $chat;
             $data['message'] = ChatMessage::with('sender', 'receiver')->where('chat_id', $chat->id)
                 ->whereRaw("IF(`sender_id` = $user_id, `sender_deleted`, `receiver_deleted`)= 0")
-                ->latest()->paginate($per_page);
+                ->paginate($per_page);
 
             return $this->sendSuccess('Got message successfully.', $data);
         } else {
@@ -438,7 +440,7 @@ class ChatController extends Controller
         } else {
             if (!$request->type || $request->type == 'current') {
                 $chats = Chat::with('sender', 'receiver', 'last_message')
-                    ->withCount(['getMessages' => function ($query) {
+                    ->withCount(['getMessages' => function ($query) use ($user_id){
                         $query->where('receiver_id',$user_id)->where('is_read', 0);
                     }])
                     ->where(function ($query) use ($user_id) {
