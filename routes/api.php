@@ -36,6 +36,7 @@ Route::post('social_login', [AuthController::class, 'socialLogin']);
 Route::group(['middleware' => 'auth:api'], function () {
     Route::get('logout', [AuthController::class, 'logout']);
     Route::get('get_user', [UserController::class, 'getUser']);
+    Route::get('user_stats', [UserController::class, 'userStats']);
     Route::post('update_profile', [UserController::class, 'updateProfile']);
     Route::post('reset_password', [AuthController::class, 'resetPassword']);
 
@@ -60,6 +61,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::post('get_student_course_detail', [CourseController::class, 'getStudentCourseDetail']);
     Route::post('attempt_quiz_question', [CourseController::class, 'attemptQuizQuestion']);
     Route::post('mark_complete_course', [CourseController::class, 'markCompleteCourse']);
+    Route::post('student_course_leaderboard', [CourseController::class, 'studentCourseLeaderboard']);
 
     
     //Chat Routes

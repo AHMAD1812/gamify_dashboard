@@ -32,8 +32,6 @@ window.socket = io(config.SOCKET_URL, {
     transports: ["websocket", "polling", "flashsocket"],
 });
 
-console.log(window.socket);
-
 socket.on("connect", function () {
     console.log("Socket Connected");
 });

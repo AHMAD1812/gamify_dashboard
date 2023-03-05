@@ -239,4 +239,17 @@ class CourseController extends Controller
             return $this->sendError($e->getMessage(), null);
         }
     }
+
+    public function studentCourseLeaderboard(Request $request){
+        $validator = Validator::make($request->all(), [
+            'course_id' => 'required|exists:courses,id',
+        ]);
+        if ($validator->fails()) {
+            return $this->sendError($validator->messages()->first(), null);
+        }
+
+        $data['leaderboard'] = StudentCourse::where('course_id',$request->course_id)->with('student')->orderBy('score','desc')->get();
+
+        return $this->sendSuccess('Leaderboard',$data);
+    }
 }

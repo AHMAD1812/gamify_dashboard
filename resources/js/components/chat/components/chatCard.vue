@@ -1,21 +1,26 @@
 <template>
-    <div class="chat__message__dt" :class="[is_active ? 'active' : '']">
+    <div class="chat__message__dt" :class="[is_active ? 'active' : '']"
+        @click="$emit('getChat',chat)">
         <div class="user-status">
             <div class="user-avatar">
                 <img
-                    :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`"
-                    alt=""
+                    :src="`${globalBaseUrl}${chat.receiver.profile_img ? chat.receiver.profile_img : 'images/left-imgs/img-1.jpg'}`"
+                    v-if="user.id == chat.sender.id"
                 />
-                <div class="msg__badge">2</div>
+                <img
+                    :src="`${globalBaseUrl}${chat.sender.profile_img ? chat.sender.profile_img : 'images/left-imgs/img-1.jpg'}`"
+                    v-else
+                />
+                <div class="msg__badge">{{ chat.get_messages_count }}</div>
             </div>
             <p class="user-status-title">
-                <span class="bold">John Doe</span>
+                <span class="bold">
+                    {{ user.id == chat.sender.id ? chat.receiver.full_name : chat.sender.full_name}}</span>
             </p>
             <p class="user-status-text">
-                Hi! Sir, How are you. I ask you one thing please explain it this
-                video price.
+                {{ chat.last_message ? chat.last_message.message : '' }}
             </p>
-            <p class="user-status-time floaty">7 hours ago</p>
+            <p class="user-status-time floaty">{{$moment(String(chat.updated_at)).fromNow()}}</p>
         </div>
     </div>
 </template>
@@ -23,7 +28,12 @@
 <script>
 export default {
     name: "chatCard",
-    props:['is_active']
+    props:['chat','is_active'],
+    computed:{
+      user() {
+        return this.$store.state.user;
+      }
+    }
 };
 </script>
 
