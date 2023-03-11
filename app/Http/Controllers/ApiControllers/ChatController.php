@@ -438,7 +438,7 @@ class ChatController extends Controller
         } else {
             if (!$request->type || $request->type == 'current') {
                 $chats = Chat::with('sender', 'receiver', 'last_message')
-                    ->withCount(['getMessages' => function ($query) {
+                    ->withCount(['getMessages' => function ($query) use ($user_id) {
                         $query->where('receiver_id',$user_id)->where('is_read', 0);
                     }])
                     ->where(function ($query) use ($user_id) {
