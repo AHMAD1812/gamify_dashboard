@@ -74,19 +74,20 @@ trait CommonTrait
         return $message;
     }
 
-    function sendNotification($user_id, $type, $message, $profile_img, $mobile_type)
+    function sendNotification($user_from,$user_to,$type, $message)
     {
 
         $notification = new Notification;
-        $notification->user_id = $user_id;
+        $notification->user_from = $user_from;
+        $notification->user_to = $user_to;
         $notification->profile_image = $profile_img;
         $notification->type = $type;
-        $notification->description = $message;
-        $notification->mobile_notification=$mobile_type;
+        $notification->message = $message;
         $notification->save();
 
         return;
     }
+    
     function send_OneSignal_Notification($message, $data, $emails)
     {
         $content = array(

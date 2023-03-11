@@ -24,15 +24,15 @@
                                     <li>
                                         <a href="#tab_step2">
                                             <span class="number"></span>
-                                            <span class="step-name"
-                                                >Curriculum</span
-                                            >
+                                            <span class="step-name">Media</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#tab_step3">
                                             <span class="number"></span>
-                                            <span class="step-name">Media</span>
+                                            <span class="step-name"
+                                                >Curriculum</span
+                                            >
                                         </a>
                                     </li>
 
@@ -56,23 +56,24 @@
                                         ></Basic>
                                     </div>
                                     <div
-                                        class="step-tab-panel step-tab-gallery"
-                                        id="tab_step2"
-                                    >
-                                        <Curriculum
-                                            ref="curriculum"
-                                            @add-curriculum="addCurriculum"
-                                        ></Curriculum>
-                                    </div>
-                                    <div
                                         class="step-tab-panel step-tab-location"
-                                        id="tab_step3"
+                                        id="tab_step2"
                                     >
                                         <Media
                                             ref="media"
                                             @add-media="addMedia"
                                         >
                                         </Media>
+                                    </div>
+                                    
+                                    <div
+                                        class="step-tab-panel step-tab-gallery"
+                                        id="tab_step3"
+                                    >
+                                        <Curriculum
+                                            ref="curriculum"
+                                            @add-curriculum="addCurriculum"
+                                        ></Curriculum>
                                     </div>
                                     <div
                                         class="step-tab-panel step-tab-location"
@@ -514,11 +515,11 @@ export default {
         nextStep() {
             if (this.steps == 1) {
                 this.$refs.basic.addBasic();
-            } else if (this.steps == 2) {
-                this.$refs.curriculum.addRequestCurriculum();
-            } else if (this.steps == 3) {
+            }else if (this.steps == 2) {
                 this.$refs.media.addMedia();
-            }
+            } else if (this.steps == 3) {
+                this.$refs.curriculum.addRequestCurriculum();
+            } 
         },
         prevStep() {
             this.steps--;

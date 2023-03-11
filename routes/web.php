@@ -83,6 +83,8 @@ Route::prefix('instructor')->group(function () {
         Route::post('/logout', [AuthController::class, 'logout']);
         Route::get('/user_profile', [UserController::class, 'getUser']);
         Route::post('/update_profile', [UserController::class, 'updateUser']);
+
+        Route::get('/get_dashboard_data', [DataController::class, 'getDashabordData']);
     });
 
 

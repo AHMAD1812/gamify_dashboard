@@ -21,7 +21,8 @@
                                             <input
                                                 class="prompt srch_explore"
                                                 type="text"
-                                                placeholder="Search Messages..."
+                                                placeholder="Search Student..."
+                                                v-model="chat_search"
                                             />
                                             <i
                                                 class="uil uil-search-alt icon icon8"
@@ -30,9 +31,9 @@
                                     </div>
                                 </div>
                                 <div class="simplebar-content-wrapper">
-                                    <div class="group_messages" v-if="chats.length != 0">
+                                    <div class="group_messages" v-if="search_chats.length != 0">
                                         <chatCard
-                                            v-for="(chat, key) in chats"
+                                            v-for="(chat, key) in search_chats"
                                             :key="`chat_card_${key}`"
                                             :chat="chat"
                                             :is_active="current_chat.id == chat.id ? true : false"
@@ -40,10 +41,12 @@
                                         >
                                         </chatCard>
                                     </div>
+                                    <div class="mt-3" v-if="search_chats.length == 0 && !chat_loading">
+                                        <unavailable-data :message="'No Chat Found'"></unavailable-data>
+                                    </div>
                                     <div class="mt-3" v-if="chat_loading">
                                         <SpinnerLoader :loading="true" color="#3D54b4"></SpinnerLoader>
                                     </div>
-
                                 </div>
                             </div>
                             <div class="col-xl-8 col-lg-7 col-md-12">
@@ -67,7 +70,7 @@
                                             </p>
                                             <p class="user-status-tag">
                                                 {{
-                                                    current_chat_user.biography
+                                                    current_chat_user.biography && current_chat_user.biography != null
                                                         ? current_chat_user
                                                               .biography
                                                               .length > 25
@@ -212,10 +215,12 @@
 
 <script>
 import chatCard from "./components/chatCard.vue";
+import UnavailableData from '../layouts/UnavailableData.vue';
 export default {
     name: "Chat",
     components: {
         chatCard,
+        UnavailableData
     },
     data() {
         return {
@@ -227,6 +232,7 @@ export default {
             chat_loading:true,
             message_loading:true,
             sending:false,
+            chat_search:"",
         };
     },
     mounted() {
@@ -352,6 +358,15 @@ export default {
         user() {
             return this.$store.state.user;
         },
+        search_chats(){
+            let tempChat = this.chats;
+            if(this.chat_search && this.chat_search !=""){
+                tempChat = tempChat.filter((chat)=>{
+                    return chat.sender.full_name.toUpperCase().includes(this.chat_search.toUpperCase());
+                })
+            }
+            return tempChat;
+        }
     },
 };
 </script>

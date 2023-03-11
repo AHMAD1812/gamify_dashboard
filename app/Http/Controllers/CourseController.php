@@ -113,6 +113,9 @@ class CourseController extends Controller
                     $lecture->save();
                 }
             }
+            
+            $this->sendNotification(Auth::id(),Auth::id(),'notification', 'Hello '.Auth::user()->full_name.'! Your course has been successfully approved. It is now available for the students');
+
             DB::commit();
             return $this->sendSuccess('Course Created Successfully', null);
         } catch (\Exception $exception) {

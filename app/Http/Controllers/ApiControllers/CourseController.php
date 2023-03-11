@@ -93,6 +93,8 @@ class CourseController extends Controller
             }
             $student_course->save();
 
+            $this->sendNotification($course->creator_id,Auth::id(),'notification', 'Hello '.Auth::id()->full_name.'! Course is successfully added. Go to My Courses and take course.');
+
             DB::commit();
             return $this->sendSuccess('Applied to course', $student_course);
         } catch (Exception $e) {
@@ -232,7 +234,12 @@ class CourseController extends Controller
             $rating->description = $request->description ? $request->description : null;
             $rating->save();
 
+            $course = Courses::find($request->course_id);
+
+            $this->sendNotification($course->creator_id,Auth::id(),'notification', 'Hello '.Auth::id()->full_name.'! You have completed your course. See leaderboard for your points and rank.');
+
             DB::commit();
+            
             return $this->sendSuccess('Rating saved', $rating);
         } catch (Exception $e) {
             DB::rollback();

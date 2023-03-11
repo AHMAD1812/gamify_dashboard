@@ -117,6 +117,8 @@ class AuthController extends Controller
                 return $this->sendError("Invalid OTP", null);
             }
 
+            $this->sendNotification($user->id,$user->id,'notification', 'Hello '.$user->full_name.'! We are glad to have you here! Complete your profile, build your portfolio and connect your social accounts to start receiving new campaigns.');
+
             DB::commit();
 
             Auth::login($user);
