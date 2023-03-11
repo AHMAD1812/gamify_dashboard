@@ -20,6 +20,7 @@ class CreateNotificationsTable extends Migration
             $table->bigInteger('user_to')->unsigned();
             $table->foreign('user_to')->references('id')->on('users')->onDelete('cascade');
             $table->string('message');
+            $table->boolean('is_read')->default(false);
             $table->enum('type',['notification','my_courses','favorite','chat'])->default('notification');
             $table->timestamps();
         });

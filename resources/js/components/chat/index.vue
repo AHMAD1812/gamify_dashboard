@@ -115,9 +115,22 @@
                                     </div>
                                     <div
                                         class="messages-line simplebar-content-wrapper2 scrollstyle_4"
-                                        :class="messages.length != 0 && !message_loading ? 'scroll-bottom' : ''"
+                                        :class="messages.length != 0 && !message_loading && current_chat.chat_request == 'accepted' ? 'scroll-bottom' : ''"
                                     >
-                                        <ul v-if="messages.length != 0 && !message_loading">
+                                        <div class="chat-request-box" v-if="!message_loading && (current_chat.chat_request == 'rejected' || current_chat.chat_request == 'pending')">
+                                            <div class="block">
+                                                <div :class="current_chat.chat_request == 'rejected' ? 'text-decline' : 'text'">
+                                                    {{ current_chat.chat_request == 'rejected' ? 'Chat Request has been decline. (You can still chat with him)' : `${current_chat_user.full_name} has request to chat with you.`}}</div>
+                                                <div class="d-flex justify-content-center m-2">
+                                                    <button class="request-btn yes" @click="chatRequest('accepted')">Accept</button>
+                                                    <button class="request-btn no"  @click="chatRequest('rejected')" :disabled="current_chat.chat_request == 'rejected'">Reject</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-5" v-if="message_loading">
+                                            <SpinnerLoader :loading="true" color="#3D54b4"></SpinnerLoader>
+                                        </div>
+                                        <ul class="scroll-bottom" v-if="!message_loading && current_chat.chat_request == 'accepted' && messages.length != 0">
                                             <div
                                                 v-for="(
                                                     message, key
@@ -164,9 +177,6 @@
                                                 </div>
                                             </div> -->
                                         </ul>
-                                        <div class="mt-5" v-if="message_loading">
-                                            <SpinnerLoader :loading="true" color="#3D54b4"></SpinnerLoader>
-                                        </div>
                                     </div>
                                     <div class="message-send-area">
                                         <form @submit="addMessage">
@@ -185,6 +195,7 @@
                                                             v-model="
                                                                 text_message
                                                             "
+                                                            :readonly="current_chat.chat_request != 'accepted'"
                                                         />
                                                     </div>
                                                 </div>
@@ -256,6 +267,8 @@ export default {
                     this.chats = response.data.data.data;
                     if (this.chats.length > 0 && message) {
                         this.currentChatMessages(this.chats[0]);
+                    }else{
+                        this.message_loading = false;
                     }
                 } else {
                     Vue.$toast.open({
@@ -353,6 +366,35 @@ export default {
                     this.sending = false;
                 });
         },
+        chatRequest(type){
+            this.message_loading = true;
+            axios
+                .post(`${globalBaseUrl}instructor/chat_request`, {
+                    chat_id:this.current_chat.id,
+                    type: type,
+                })
+                .then((response) => {
+                    if (response.data.status == 200) {
+                        this.current_chat.chat_request = type;
+                    } else {
+                        Vue.$toast.open({
+                            message: "Error Occured",
+                            type: "warning",
+                            position: "top-right",
+                        });
+                    }
+                    this.message_loading = false;
+                })
+                .catch((e) => {
+                    console.log(e);
+                    Vue.$toast.open({
+                        message: "Someting went wrong",
+                        type: "error",
+                        position: "top-right",
+                    });
+                    this.message_loading = false;
+                });
+        }
     },
     computed: {
         user() {

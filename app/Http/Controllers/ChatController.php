@@ -289,6 +289,7 @@ class ChatController extends Controller
             $data['chat'] = $chat;
             $data['message'] = ChatMessage::with('sender', 'receiver')->where('chat_id', $chat->id)
                 ->whereRaw("IF(`sender_id` = $user_id, `sender_deleted`, `receiver_deleted`)= 0")
+                ->orderBy('id','desc')
                 ->paginate($per_page);
 
             return $this->sendSuccess('Got message successfully.', $data);
@@ -304,6 +305,20 @@ class ChatController extends Controller
         ]);
 
         return $this->sendSuccess('Messages read successfully', null);
+    }
+
+    public function chat_request(Request $request){
+        $chat = Chat::where('id',$request->chat_id)->first();
+        $chat->chat_request == $request->type;
+        $chat->update();
+
+        if($request->type == 'accepted'){
+            $this->sendNotification(Auth::id(),$chat->sender_id,'chat', 'Hello '.Auth::user()->full_name.'! Your chat request to '.Auth::user()->full_name.' is accepted. Now you can chat.');
+        }else if($request->type == 'rejected'){
+            $this->sendNotification(Auth::id(),$chat->sender_id,'chat', 'Hello '.Auth::user()->full_name.'! Unfortunately! Your chat request to '.Auth::user()->full_name.' is rejected.');
+        }
+        
+        return $this->sendSuccess('Request submitted', null);
     }
     
     public function delete_message(Request $request)

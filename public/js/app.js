@@ -6380,6 +6380,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -6423,6 +6434,8 @@ __webpack_require__.r(__webpack_exports__);
           _this2.chats = response.data.data.data;
           if (_this2.chats.length > 0 && message) {
             _this2.currentChatMessages(_this2.chats[0]);
+          } else {
+            _this2.message_loading = false;
           }
         } else {
           Vue.$toast.open({
@@ -6510,6 +6523,33 @@ __webpack_require__.r(__webpack_exports__);
         });
         _this4.sending = false;
       });
+    },
+    chatRequest: function chatRequest(type) {
+      var _this5 = this;
+      this.message_loading = true;
+      axios.post("".concat(globalBaseUrl, "instructor/chat_request"), {
+        chat_id: this.current_chat.id,
+        type: type
+      }).then(function (response) {
+        if (response.data.status == 200) {
+          _this5.current_chat.chat_request = type;
+        } else {
+          Vue.$toast.open({
+            message: "Error Occured",
+            type: "warning",
+            position: "top-right"
+          });
+        }
+        _this5.message_loading = false;
+      })["catch"](function (e) {
+        console.log(e);
+        Vue.$toast.open({
+          message: "Someting went wrong",
+          type: "error",
+          position: "top-right"
+        });
+        _this5.message_loading = false;
+      });
     }
   },
   computed: {
@@ -6517,11 +6557,11 @@ __webpack_require__.r(__webpack_exports__);
       return this.$store.state.user;
     },
     search_chats: function search_chats() {
-      var _this5 = this;
+      var _this6 = this;
       var tempChat = this.chats;
       if (this.chat_search && this.chat_search != "") {
         tempChat = tempChat.filter(function (chat) {
-          return chat.sender.full_name.toUpperCase().includes(_this5.chat_search.toUpperCase());
+          return chat.sender.full_name.toUpperCase().includes(_this6.chat_search.toUpperCase());
         });
       }
       return tempChat;
@@ -10537,7 +10577,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
 
 
 
@@ -11533,45 +11572,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; }, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) }), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; defineProperty(this, "_invoke", { value: function value(method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), defineProperty(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (val) { var object = Object(val), keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 //
 //
 //
@@ -11611,7 +11615,47 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "Notification"
+  name: "Notification",
+  data: function data() {
+    return {
+      notifications: []
+    };
+  },
+  created: function created() {
+    var _this = this;
+    return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      var response;
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.prev = 0;
+              _this.$store.dispatch('toggleLoader', true);
+              _context.next = 4;
+              return axios.get("".concat(globalBaseUrl, "instructor/get_notifications"));
+            case 4:
+              response = _context.sent;
+              _this.notifications = response.data.data;
+              _this.$store.dispatch('toggleLoader', false);
+              _context.next = 13;
+              break;
+            case 9:
+              _context.prev = 9;
+              _context.t0 = _context["catch"](0);
+              _this.$store.dispatch('toggleLoader', false);
+              Vue.$toast.open({
+                message: "Something went wrong",
+                type: "error",
+                position: "top-right"
+              });
+            case 13:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[0, 9]]);
+    }))();
+  }
 });
 
 /***/ }),
@@ -12397,6 +12441,96 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _courses_rating__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../courses/rating */ "./resources/js/components/courses/rating.vue");
+/* harmony import */ var _layouts_UnavailableData_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../layouts/UnavailableData.vue */ "./resources/js/components/layouts/UnavailableData.vue");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; }, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) }), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; defineProperty(this, "_invoke", { value: function value(method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), defineProperty(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (val) { var object = Object(val), keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -12629,8 +12763,63 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "Review"
+  name: "Review",
+  components: {
+    StarRating: _courses_rating__WEBPACK_IMPORTED_MODULE_0__["default"],
+    UnavailableData: _layouts_UnavailableData_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  data: function data() {
+    return {
+      reviews: [],
+      stars: [0, 0, 0, 0, 0],
+      total_ratings: 0
+    };
+  },
+  created: function created() {
+    var _this = this;
+    return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      var response, ratings;
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _this.$store.dispatch("toggleLoader", true);
+              _context.next = 3;
+              return axios.get("".concat(globalBaseUrl, "instructor/get_reviews"));
+            case 3:
+              response = _context.sent;
+              _this.reviews = response.data.data;
+              ratings = 0;
+              _this.reviews.forEach(function (val) {
+                if (val.rating <= 1) {
+                  _this.stars[4] += 1;
+                } else if (val.rating <= 2) {
+                  _this.stars[3] += 1;
+                } else if (val.rating <= 3) {
+                  _this.stars[2] += 1;
+                } else if (val.rating <= 4) {
+                  _this.stars[1] += 1;
+                } else if (val.rating <= 5) {
+                  _this.stars[0] += 1;
+                }
+                ratings += val.rating;
+              });
+              _this.total_ratings = _this.reviews.length == 0 ? 0 : ratings / _this.reviews.length;
+              _this.$store.dispatch("toggleLoader", false);
+            case 9:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }))();
+  },
+  mounted: function mounted() {
+    $(window).scrollTop(0);
+  }
 });
 
 /***/ }),
@@ -64110,14 +64299,102 @@ var render = function () {
                       staticClass:
                         "messages-line simplebar-content-wrapper2 scrollstyle_4",
                       class:
-                        _vm.messages.length != 0 && !_vm.message_loading
+                        _vm.messages.length != 0 &&
+                        !_vm.message_loading &&
+                        _vm.current_chat.chat_request == "accepted"
                           ? "scroll-bottom"
                           : "",
                     },
                     [
-                      _vm.messages.length != 0 && !_vm.message_loading
+                      !_vm.message_loading &&
+                      (_vm.current_chat.chat_request == "rejected" ||
+                        _vm.current_chat.chat_request == "pending")
+                        ? _c("div", { staticClass: "chat-request-box" }, [
+                            _c("div", { staticClass: "block" }, [
+                              _c(
+                                "div",
+                                {
+                                  class:
+                                    _vm.current_chat.chat_request == "rejected"
+                                      ? "text-decline"
+                                      : "text",
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                                " +
+                                      _vm._s(
+                                        _vm.current_chat.chat_request ==
+                                          "rejected"
+                                          ? "Chat Request has been decline. (You can still chat with him)"
+                                          : _vm.current_chat_user.full_name +
+                                              " has request to chat with you."
+                                      )
+                                  ),
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "d-flex justify-content-center m-2",
+                                },
+                                [
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass: "request-btn yes",
+                                      on: {
+                                        click: function ($event) {
+                                          return _vm.chatRequest("accepted")
+                                        },
+                                      },
+                                    },
+                                    [_vm._v("Accept")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass: "request-btn no",
+                                      attrs: {
+                                        disabled:
+                                          _vm.current_chat.chat_request ==
+                                          "rejected",
+                                      },
+                                      on: {
+                                        click: function ($event) {
+                                          return _vm.chatRequest("rejected")
+                                        },
+                                      },
+                                    },
+                                    [_vm._v("Reject")]
+                                  ),
+                                ]
+                              ),
+                            ]),
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.message_loading
+                        ? _c(
+                            "div",
+                            { staticClass: "mt-5" },
+                            [
+                              _c("SpinnerLoader", {
+                                attrs: { loading: true, color: "#3D54b4" },
+                              }),
+                            ],
+                            1
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      !_vm.message_loading &&
+                      _vm.current_chat.chat_request == "accepted" &&
+                      _vm.messages.length != 0
                         ? _c(
                             "ul",
+                            { staticClass: "scroll-bottom" },
                             _vm._l(_vm.messages, function (message, key) {
                               return _c(
                                 "div",
@@ -64175,19 +64452,6 @@ var render = function () {
                             0
                           )
                         : _vm._e(),
-                      _vm._v(" "),
-                      _vm.message_loading
-                        ? _c(
-                            "div",
-                            { staticClass: "mt-5" },
-                            [
-                              _c("SpinnerLoader", {
-                                attrs: { loading: true, color: "#3D54b4" },
-                              }),
-                            ],
-                            1
-                          )
-                        : _vm._e(),
                     ]
                   ),
                   _vm._v(" "),
@@ -64217,6 +64481,9 @@ var render = function () {
                                     type: "text",
                                     name: "chat_widget_message_text_2",
                                     placeholder: "Write a message...",
+                                    readonly:
+                                      _vm.current_chat.chat_request !=
+                                      "accepted",
                                   },
                                   domProps: { value: _vm.text_message },
                                   on: {
@@ -69249,7 +69516,6 @@ var render = function () {
                             nav: false,
                             dots: false,
                             autoplay: true,
-                            autoplaySpeed: 3000,
                           },
                         },
                         _vm._l(_vm.reviews, function (review, key) {
@@ -70891,83 +71157,101 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "sa4d25" }, [
-    _c("div", { staticClass: "container-fluid" }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c(
-          "div",
-          { staticClass: "col-12" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "setting_noti",
-                attrs: { to: { name: "Setting" } },
-              },
-              [_vm._v("Notification Setting")]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "all_msg_bg" }, [
-              _c("div", { staticClass: "channel_my item all__noti5" }, [
-                _c("div", { staticClass: "profile_link" }, [
-                  _c("img", {
-                    attrs: {
-                      src: _vm.globalBaseUrl + "images/left-imgs/img-1.jpg",
-                      alt: "",
-                    },
-                  }),
-                  _vm._v(" "),
-                  _vm._m(1),
-                ]),
-              ]),
+  return _c(
+    "div",
+    { staticClass: "sa4d25", staticStyle: { "min-height": "60vh" } },
+    [
+      _c("div", { staticClass: "container-fluid" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            { staticClass: "col-12" },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass: "setting_noti",
+                  attrs: { to: { name: "Setting" } },
+                },
+                [_vm._v("Notification Setting")]
+              ),
               _vm._v(" "),
-              _c("div", { staticClass: "channel_my item all__noti5" }, [
-                _c("div", { staticClass: "profile_link" }, [
-                  _c("img", {
-                    attrs: {
-                      src: _vm.globalBaseUrl + "images/left-imgs/img-1.jpg",
-                      alt: "",
+              _c(
+                "div",
+                { staticClass: "all_msg_bg" },
+                _vm._l(_vm.notifications, function (notification, key) {
+                  return _c(
+                    "div",
+                    {
+                      key: "notification_" + key,
+                      staticClass: "channel_my item all__noti5",
                     },
-                  }),
-                  _vm._v(" "),
-                  _vm._m(2),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "channel_my item all__noti5" }, [
-                _c("div", { staticClass: "profile_link" }, [
-                  _c("img", {
-                    attrs: {
-                      src: _vm.globalBaseUrl + "images/left-imgs/img-2.jpg",
-                      alt: "",
-                    },
-                  }),
-                  _vm._v(" "),
-                  _vm._m(3),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "channel_my item all__noti5" }, [
-                _c("div", { staticClass: "profile_link" }, [
-                  _c("img", {
-                    attrs: {
-                      src: _vm.globalBaseUrl + "images/left-imgs/img-3.jpg",
-                      alt: "",
-                    },
-                  }),
-                  _vm._v(" "),
-                  _vm._m(4),
-                ]),
-              ]),
-            ]),
-          ],
-          1
-        ),
+                    [
+                      _c("div", { staticClass: "profile_link" }, [
+                        notification.user_to == notification.user_from
+                          ? _c("img", {
+                              attrs: {
+                                src:
+                                  _vm.globalBaseUrl + "files/notification.png",
+                                alt: "",
+                              },
+                            })
+                          : _c("img", {
+                              attrs: {
+                                src:
+                                  "" +
+                                  _vm.globalBaseUrl +
+                                  (notification.user.profile_img
+                                    ? notification.user.profile_img
+                                    : "images/left-imgs/img-1.jpg"),
+                                alt: "",
+                              },
+                            }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pd_content" }, [
+                          _c("h6", [
+                            _vm._v(
+                              _vm._s(
+                                notification.user_to == notification.user_from
+                                  ? "Application"
+                                  : notification.user.full_name
+                              )
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "noti__text5" }, [
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(notification.message) +
+                                "\n                                "
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "nm_time" }, [
+                            _vm._v(
+                              _vm._s(
+                                _vm
+                                  .$moment(String(notification.created_at))
+                                  .fromNow()
+                              )
+                            ),
+                          ]),
+                        ]),
+                      ]),
+                    ]
+                  )
+                }),
+                0
+              ),
+            ],
+            1
+          ),
+        ]),
       ]),
-    ]),
-  ])
+    ]
+  )
 }
 var staticRenderFns = [
   function () {
@@ -70981,74 +71265,6 @@ var staticRenderFns = [
           _vm._v(" Notifications\n                "),
         ]),
       ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "pd_content" }, [
-      _c("h6", [_vm._v("Rock William")]),
-      _vm._v(" "),
-      _c("p", { staticClass: "noti__text5" }, [
-        _vm._v(
-          "\n                                    Like Your Comment On Video\n                                    "
-        ),
-        _c("strong", [_vm._v("How to create sidebar menu")]),
-        _vm._v(".\n                                "),
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "nm_time" }, [_vm._v("2 min ago")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "pd_content" }, [
-      _c("h6", [_vm._v("Jassica Smith")]),
-      _vm._v(" "),
-      _c("p", { staticClass: "noti__text5" }, [
-        _vm._v(
-          "\n                                    Added New Review In Video\n                                    "
-        ),
-        _c("strong", [_vm._v("Full Stack PHP Developer")]),
-        _vm._v(".\n                                "),
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "nm_time" }, [_vm._v("12 min ago")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "pd_content" }, [
-      _c("p", { staticClass: "noti__text5" }, [
-        _vm._v(
-          "\n                                    Your Membership Activated.\n                                "
-        ),
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "nm_time" }, [_vm._v("20 min ago")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "pd_content" }, [
-      _c("p", { staticClass: "noti__text5" }, [
-        _vm._v(
-          "\n                                    Your Course Approved Now.\n                                    "
-        ),
-        _c("a", { staticClass: "crse_bl", attrs: { href: "#" } }, [
-          _vm._v("How to create sidebar menu"),
-        ]),
-        _vm._v(".\n                                "),
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "nm_time" }, [_vm._v("20 min ago")]),
     ])
   },
 ]
@@ -72375,86 +72591,270 @@ var render = function () {
         _c("div", { staticClass: "col-12" }, [
           _c("div", { staticClass: "student_reviews" }, [
             _c("div", { staticClass: "row" }, [
-              _vm._m(1),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-7" }, [
-                _vm._m(2),
-                _vm._v(" "),
-                _c("div", { staticClass: "review_all120" }, [
-                  _vm._m(3),
+              _c("div", { staticClass: "col-lg-5" }, [
+                _c("div", { staticClass: "reviews_left" }, [
+                  _c("h3", [_vm._v("Student Feedback")]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "review_item" }, [
-                    _c("div", { staticClass: "review_usr_dt" }, [
-                      _c("img", {
-                        attrs: {
-                          src: _vm.globalBaseUrl + "images/left-imgs/img-1.jpg",
-                          alt: "",
-                        },
+                  _c(
+                    "div",
+                    { staticClass: "total_rating" },
+                    [
+                      _c("div", { staticClass: "_rate001" }, [
+                        _vm._v(
+                          "\n                                        " +
+                            _vm._s(_vm.total_ratings) +
+                            "\n                                    "
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("StarRating", {
+                        attrs: { rating: _vm.total_ratings },
                       }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "_rate002" }, [
+                        _vm._v(
+                          "\n                                        Course Rating\n                                    "
+                        ),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "_rate003" }, [
+                    _c("div", { staticClass: "_rate004" }, [
+                      _c("div", { staticClass: "progress progress1" }, [
+                        _c("div", {
+                          staticClass: "progress-bar",
+                          style: {
+                            width:
+                              (_vm.reviews.length == 0
+                                ? 0
+                                : (_vm.stars[0] / _vm.reviews.length) * 100) +
+                              "%",
+                          },
+                          attrs: { role: "progressbar" },
+                        }),
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(1),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "_rate002" }, [
+                        _vm._v(
+                          "\n                                            " +
+                            _vm._s(
+                              _vm.reviews.length == 0
+                                ? 0
+                                : (_vm.stars[0] / _vm.reviews.length) * 100
+                            ) +
+                            "%\n                                        "
+                        ),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "_rate004" }, [
+                      _c("div", { staticClass: "progress progress1" }, [
+                        _c("div", {
+                          staticClass: "progress-bar",
+                          style: {
+                            width:
+                              (_vm.reviews.length == 0
+                                ? 0
+                                : (_vm.stars[1] / _vm.reviews.length) * 100) +
+                              "%",
+                          },
+                          attrs: { role: "progressbar" },
+                        }),
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(2),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "_rate002" }, [
+                        _vm._v(
+                          "\n                                            " +
+                            _vm._s(
+                              _vm.reviews.length == 0
+                                ? 0
+                                : (_vm.stars[1] / _vm.reviews.length) * 100
+                            ) +
+                            "%\n                                        "
+                        ),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "_rate004" }, [
+                      _c("div", { staticClass: "progress progress1" }, [
+                        _c("div", {
+                          staticClass: "progress-bar",
+                          style: {
+                            width:
+                              (_vm.reviews.length == 0
+                                ? 0
+                                : (_vm.stars[2] / _vm.reviews.length) * 100) +
+                              "%",
+                          },
+                          attrs: { role: "progressbar" },
+                        }),
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(3),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "_rate002" }, [
+                        _vm._v(
+                          "\n                                            " +
+                            _vm._s(
+                              (_vm.reviews.length == 0
+                                ? 0
+                                : _vm.stars[2] / _vm.reviews.length) * 100
+                            ) +
+                            "%\n                                        "
+                        ),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "_rate004" }, [
+                      _c("div", { staticClass: "progress progress1" }, [
+                        _c("div", {
+                          staticClass: "progress-bar",
+                          style: {
+                            width:
+                              (_vm.reviews.length == 0
+                                ? 0
+                                : (_vm.stars[3] / _vm.reviews.length) * 100) +
+                              "%",
+                          },
+                          attrs: { role: "progressbar" },
+                        }),
+                      ]),
                       _vm._v(" "),
                       _vm._m(4),
-                    ]),
-                    _vm._v(" "),
-                    _vm._m(5),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "rvds10" }, [
-                      _vm._v(
-                        "\n                        Nam gravida elit a velit rutrum, eget dapibus ex\n                        elementum. Interdum et malesuada fames ac ante ipsum\n                        primis in faucibus. Fusce lacinia, nunc sit amet\n                        tincidunt venenatis.\n                      "
-                      ),
-                    ]),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "review_all120 mt-30" }, [
-                  _vm._m(6),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "review_item" }, [
-                    _c("div", { staticClass: "review_usr_dt" }, [
-                      _c("img", {
-                        attrs: {
-                          src: _vm.globalBaseUrl + "images/left-imgs/img-1.jpg",
-                          alt: "",
-                        },
-                      }),
                       _vm._v(" "),
-                      _vm._m(7),
+                      _c("div", { staticClass: "_rate002" }, [
+                        _vm._v(
+                          "\n                                            " +
+                            _vm._s(
+                              _vm.reviews.length == 0
+                                ? 0
+                                : (_vm.stars[3] / _vm.reviews.length) * 100
+                            ) +
+                            "%\n                                        "
+                        ),
+                      ]),
                     ]),
                     _vm._v(" "),
-                    _vm._m(8),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "rvds10" }, [
-                      _vm._v(
-                        "\n                        Nam gravida elit a velit rutrum, eget dapibus ex\n                        elementum. Interdum et malesuada fames ac ante ipsum\n                        primis in faucibus. Fusce lacinia, nunc sit amet\n                        tincidunt venenatis.\n                      "
-                      ),
-                    ]),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "review_all120 mt-30" }, [
-                  _vm._m(9),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "review_item" }, [
-                    _c("div", { staticClass: "review_usr_dt" }, [
-                      _c("img", {
-                        attrs: {
-                          src: _vm.globalBaseUrl + "images/left-imgs/img-1.jpg",
-                          alt: "",
-                        },
-                      }),
+                    _c("div", { staticClass: "_rate004" }, [
+                      _c("div", { staticClass: "progress progress1" }, [
+                        _c("div", {
+                          staticClass: "progress-bar",
+                          style: {
+                            width:
+                              (_vm.reviews.length == 0
+                                ? 0
+                                : (_vm.stars[4] / _vm.reviews.length) * 100) +
+                              "%",
+                          },
+                          attrs: { role: "progressbar" },
+                        }),
+                      ]),
                       _vm._v(" "),
-                      _vm._m(10),
-                    ]),
-                    _vm._v(" "),
-                    _vm._m(11),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "rvds10" }, [
-                      _vm._v(
-                        "\n                        Nam gravida elit a velit rutrum, eget dapibus ex\n                        elementum. Interdum et malesuada fames ac ante ipsum\n                        primis in faucibus. Fusce lacinia, nunc sit amet\n                        tincidunt venenatis.\n                      "
-                      ),
+                      _vm._m(5),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "_rate002" }, [
+                        _vm._v(
+                          "\n                                            " +
+                            _vm._s(
+                              _vm.reviews.length == 0
+                                ? 0
+                                : (_vm.stars[2] / _vm.reviews.length) * 100
+                            ) +
+                            "%\n                                        "
+                        ),
+                      ]),
                     ]),
                   ]),
                 ]),
               ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-lg-7" },
+                [
+                  _vm._m(6),
+                  _vm._v(" "),
+                  _vm.reviews.length == 0
+                    ? _c("UnavailableData", {
+                        attrs: { message: "No reviews found" },
+                      })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm._l(_vm.reviews, function (review, key) {
+                    return _c(
+                      "div",
+                      {
+                        key: "review_" + key,
+                        staticClass: "review_all120",
+                        class: key != 0 ? "mt-30" : "",
+                      },
+                      [
+                        _c("div", { staticClass: "review_item_course_title" }, [
+                          _c("a", { attrs: { href: "#" } }, [
+                            _vm._v(_vm._s(review.course.title)),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "review_item" }, [
+                          _c("div", { staticClass: "review_usr_dt" }, [
+                            _c("img", {
+                              attrs: {
+                                src:
+                                  "" +
+                                  _vm.globalBaseUrl +
+                                  (review.user.profile_img
+                                    ? review.user.profile_img
+                                    : "images/left-imgs/img-1.jpg"),
+                                alt: "",
+                              },
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "rv1458" }, [
+                              _c("h4", { staticClass: "tutor_name1" }, [
+                                _vm._v(
+                                  "\n                                                " +
+                                    _vm._s(review.user.full_name) +
+                                    "\n                                            "
+                                ),
+                              ]),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "time_145" }, [
+                                _vm._v("2 hour ago"),
+                              ]),
+                            ]),
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "mt-20" },
+                            [
+                              _c("StarRating", {
+                                attrs: { rating: review.rating },
+                              }),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "rvds10" }, [
+                            _vm._v(
+                              "\n                                        " +
+                                _vm._s(review.description) +
+                                "\n                                    "
+                            ),
+                          ]),
+                        ]),
+                      ]
+                    )
+                  }),
+                ],
+                2
+              ),
             ]),
           ]),
         ]),
@@ -72471,7 +72871,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "col-lg-12" }, [
         _c("h2", { staticClass: "st_title" }, [
           _c("i", { staticClass: "uil uil-star" }),
-          _vm._v(" All Review"),
+          _vm._v(" All Review\n                "),
         ]),
       ]),
     ])
@@ -72480,170 +72880,80 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-lg-5" }, [
-      _c("div", { staticClass: "reviews_left" }, [
-        _c("h3", [_vm._v("All Student Feedback")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "total_rating" }, [
-          _c("div", { staticClass: "_rate001" }, [_vm._v("4.6")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "rating-box" }, [
-            _c("span", { staticClass: "rating-star full-star" }),
-            _vm._v(" "),
-            _c("span", { staticClass: "rating-star full-star" }),
-            _vm._v(" "),
-            _c("span", { staticClass: "rating-star full-star" }),
-            _vm._v(" "),
-            _c("span", { staticClass: "rating-star full-star" }),
-            _vm._v(" "),
-            _c("span", { staticClass: "rating-star half-star" }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "_rate002" }, [_vm._v("All Rating")]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "_rate003" }, [
-          _c("div", { staticClass: "_rate004" }, [
-            _c("div", { staticClass: "progress progress1" }, [
-              _c("div", {
-                staticClass: "progress-bar w-70",
-                attrs: {
-                  role: "progressbar",
-                  "aria-valuenow": "70",
-                  "aria-valuemin": "0",
-                  "aria-valuemax": "100",
-                },
-              }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "rating-box" }, [
-              _c("span", { staticClass: "rating-star full-star" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "rating-star full-star" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "rating-star full-star" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "rating-star full-star" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "rating-star full-star" }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "_rate002" }, [_vm._v("70%")]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "_rate004" }, [
-            _c("div", { staticClass: "progress progress1" }, [
-              _c("div", {
-                staticClass: "progress-bar w-30",
-                attrs: {
-                  role: "progressbar",
-                  "aria-valuenow": "30",
-                  "aria-valuemin": "0",
-                  "aria-valuemax": "100",
-                },
-              }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "rating-box" }, [
-              _c("span", { staticClass: "rating-star full-star" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "rating-star full-star" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "rating-star full-star" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "rating-star full-star" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "rating-star empty-star" }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "_rate002" }, [_vm._v("40%")]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "_rate004" }, [
-            _c("div", { staticClass: "progress progress1" }, [
-              _c("div", {
-                staticClass: "progress-bar w-5",
-                attrs: {
-                  role: "progressbar",
-                  "aria-valuenow": "10",
-                  "aria-valuemin": "0",
-                  "aria-valuemax": "100",
-                },
-              }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "rating-box" }, [
-              _c("span", { staticClass: "rating-star full-star" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "rating-star full-star" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "rating-star full-star" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "rating-star empty-star" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "rating-star empty-star" }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "_rate002" }, [_vm._v("5%")]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "_rate004" }, [
-            _c("div", { staticClass: "progress progress1" }, [
-              _c("div", {
-                staticClass: "progress-bar w-2",
-                attrs: {
-                  role: "progressbar",
-                  "aria-valuenow": "2",
-                  "aria-valuemin": "0",
-                  "aria-valuemax": "100",
-                },
-              }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "rating-box" }, [
-              _c("span", { staticClass: "rating-star full-star" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "rating-star full-star" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "rating-star empty-star" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "rating-star empty-star" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "rating-star empty-star" }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "_rate002" }, [_vm._v("1%")]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "_rate004" }, [
-            _c("div", { staticClass: "progress progress1" }, [
-              _c("div", {
-                staticClass: "progress-bar w-1",
-                attrs: {
-                  role: "progressbar",
-                  "aria-valuenow": "0",
-                  "aria-valuemin": "0",
-                  "aria-valuemax": "100",
-                },
-              }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "rating-box" }, [
-              _c("span", { staticClass: "rating-star full-star" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "rating-star empty-star" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "rating-star empty-star" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "rating-star empty-star" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "rating-star empty-star" }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "_rate002" }, [_vm._v("1%")]),
-          ]),
-        ]),
-      ]),
+    return _c("div", { staticClass: "rating-box" }, [
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rating-box" }, [
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star empty-star" }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rating-box" }, [
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star empty-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star empty-star" }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rating-box" }, [
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star empty-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star empty-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star empty-star" }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "rating-box" }, [
+      _c("span", { staticClass: "rating-star full-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star empty-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star empty-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star empty-star" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "rating-star empty-star" }),
     ])
   },
   function () {
@@ -72665,108 +72975,6 @@ var staticRenderFns = [
           ]),
         ]),
       ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "review_item_course_title" }, [
-      _c("a", { attrs: { href: "#" } }, [_vm._v("Course Title Here")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "rv1458" }, [
-      _c("h4", { staticClass: "tutor_name1" }, [_vm._v("John Doe")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "time_145" }, [_vm._v("2 hour ago")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "rating-box mt-20" }, [
-      _c("span", { staticClass: "rating-star full-star" }),
-      _vm._v(" "),
-      _c("span", { staticClass: "rating-star full-star" }),
-      _vm._v(" "),
-      _c("span", { staticClass: "rating-star full-star" }),
-      _vm._v(" "),
-      _c("span", { staticClass: "rating-star full-star" }),
-      _vm._v(" "),
-      _c("span", { staticClass: "rating-star half-star" }),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "review_item_course_title" }, [
-      _c("a", { attrs: { href: "#" } }, [_vm._v("Course Title Here")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "rv1458" }, [
-      _c("h4", { staticClass: "tutor_name1" }, [_vm._v("Zoena Singh")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "time_145" }, [_vm._v("2 hour ago")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "rating-box mt-20" }, [
-      _c("span", { staticClass: "rating-star full-star" }),
-      _vm._v(" "),
-      _c("span", { staticClass: "rating-star full-star" }),
-      _vm._v(" "),
-      _c("span", { staticClass: "rating-star full-star" }),
-      _vm._v(" "),
-      _c("span", { staticClass: "rating-star full-star" }),
-      _vm._v(" "),
-      _c("span", { staticClass: "rating-star half-star" }),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "review_item_course_title" }, [
-      _c("a", { attrs: { href: "#" } }, [_vm._v("Course Title Here")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "rv1458" }, [
-      _c("h4", { staticClass: "tutor_name1" }, [_vm._v("Rock William")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "time_145" }, [_vm._v("5 hour ago")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "rating-box mt-20" }, [
-      _c("span", { staticClass: "rating-star full-star" }),
-      _vm._v(" "),
-      _c("span", { staticClass: "rating-star full-star" }),
-      _vm._v(" "),
-      _c("span", { staticClass: "rating-star full-star" }),
-      _vm._v(" "),
-      _c("span", { staticClass: "rating-star full-star" }),
-      _vm._v(" "),
-      _c("span", { staticClass: "rating-star half-star" }),
     ])
   },
 ]

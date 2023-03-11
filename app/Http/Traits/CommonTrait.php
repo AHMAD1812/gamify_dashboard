@@ -80,7 +80,6 @@ trait CommonTrait
         $notification = new Notification;
         $notification->user_from = $user_from;
         $notification->user_to = $user_to;
-        $notification->profile_image = $profile_img;
         $notification->type = $type;
         $notification->message = $message;
         $notification->save();

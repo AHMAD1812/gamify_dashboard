@@ -520,6 +520,9 @@ class ChatController extends Controller
                 $chat->sender_id = Auth::id();
                 $chat->receiver_id = $request->receiver_id;
                 $chat->save();
+
+                $this->sendNotification(Auth::id(),$request->receiver_id,'chat', 'Hi, "'.Auth::user()->full_name.'" has requested to chat with you. Go to Chats to accept or reject request.');
+                
                 DB::commit();
                 $data['chat'] = Chat::where('id', $chat->id)->first();
                 return $this->sendSuccess('Chat Created.', $data);

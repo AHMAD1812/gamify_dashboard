@@ -256,7 +256,6 @@
                                 :nav="false"
                                 :dots="false"
                                 :autoplay="true"
-                                :autoplaySpeed="3000"
                             >
                                 
                                 <div

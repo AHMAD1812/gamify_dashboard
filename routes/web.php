@@ -3,12 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\ChatController;
+use App\Http\Controllers\NotificationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -79,12 +81,18 @@ Route::prefix('instructor')->group(function () {
         Route::post('/get_current_chats', [ChatController::class, 'get_current_chats']);
         Route::post('/add_message', [ChatController::class, 'add_message']);
         Route::post('/get_chat', [ChatController::class, 'get_chat']);
+        Route::post('/chat_request', [ChatController::class, 'chat_request']);
 
         Route::post('/logout', [AuthController::class, 'logout']);
         Route::get('/user_profile', [UserController::class, 'getUser']);
         Route::post('/update_profile', [UserController::class, 'updateUser']);
 
         Route::get('/get_dashboard_data', [DataController::class, 'getDashabordData']);
+
+        Route::get('/get_notifications',[NotificationController::class, 'getNotifications']);
+
+        Route::get('/get_reviews',[ReviewController::class, 'getReviews']);
+        
     });
 
 

@@ -36,7 +36,7 @@ class FavouriteCourseController extends Controller
             }
 
             $course = Courses::find($request->course_id);
-            $this->sendNotification($course->creator_id,Auth::id(),'favorite', 'Hello '.Auth::id()->full_name.'! You have add a course into the favorite.');
+            $this->sendNotification($course->creator_id,Auth::id(),'favorite', 'Hello '.Auth::user()->full_name.'! You have add a course into the favorite.');
 
             return $this->sendError('Already in favourites', null);
         } catch (Exception $e) {
@@ -64,7 +64,7 @@ class FavouriteCourseController extends Controller
             
             $course = Courses::find($request->course_id);
             
-            $this->sendNotification($course->creator_id,Auth::id(),'favorite', 'Hello '.Auth::id()->full_name.'! Course has been removed from favorite.');
+            $this->sendNotification($course->creator_id,Auth::id(),'favorite', 'Hello '.Auth::user()->full_name.'! Course has been removed from favorite.');
 
             return $this->sendError('Not found', null);
         } catch (Exception $e) {

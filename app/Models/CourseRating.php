@@ -12,4 +12,8 @@ class CourseRating extends Model
     public function user(){
         return $this->belongsTo(User::class,'user_id','id');
     }
+
+    public function course(){
+        return $this->belongsTo(Courses::class,'course_id','id');
+    }
 }
