@@ -3,21 +3,21 @@ var env = process.env.NODE_ENV || "development";
 // var env = 'production';
 
 var config = {
-    development: {
-        API_URL: "",
-        BASE_URL: "http://localhost:8000/",
-        SITE_URL: "http://127.0.0.1:8000/",
-        ASSET_URL: "http://localhost:8000/",
-        SOCKET_URL: "http://127.0.0.1:9443/",
-        // SOCKET_URL: "http://54.159.224.249:8008/",
-    },
     // development: {
     //     API_URL: "",
-    //     BASE_URL: "http://163.172.62.21/",
-    //     SITE_URL: "http://163.172.62.21/",
-    //     ASSET_URL: "http://163.172.62.21/",
-    //     SOCKET_URL: "http://163.172.62.21:9443/",
+    //     BASE_URL: "http://localhost:8000/",
+    //     SITE_URL: "http://127.0.0.1:8000/",
+    //     ASSET_URL: "http://localhost:8000/",
+    //     SOCKET_URL: "http://127.0.0.1:9443/",
+    //     // SOCKET_URL: "http://54.159.224.249:8008/",
     // },
+    development: {
+        API_URL: "",
+        BASE_URL: "http://163.172.62.21/",
+        SITE_URL: "http://163.172.62.21/",
+        ASSET_URL: "http://163.172.62.21/",
+        SOCKET_URL: "http://163.172.62.21:9443/",
+    },
     // development: {
     //     API_URL: "",
     //     BASE_URL: "http://snapwork.biz/",
