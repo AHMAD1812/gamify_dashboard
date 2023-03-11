@@ -35,6 +35,9 @@ class FavouriteCourseController extends Controller
                 return $this->sendSuccess('Course Added to favourite', $favourite);
             }
 
+            $course = Courses::find($request->course_id);
+            $this->sendNotification($course->creator_id,Auth::id(),'favorite', 'Hello '.Auth::user()->full_name.'! You have add a course into the favorite.');
+
             return $this->sendError('Already in favourites', null);
         } catch (Exception $e) {
             DB::rollback();
@@ -58,6 +61,10 @@ class FavouriteCourseController extends Controller
                 DB::commit();
                 return $this->sendSuccess('Course remove from favourite', null);
             }
+            
+            $course = Courses::find($request->course_id);
+            
+            $this->sendNotification($course->creator_id,Auth::id(),'favorite', 'Hello '.Auth::user()->full_name.'! Course has been removed from favorite.');
 
             return $this->sendError('Not found', null);
         } catch (Exception $e) {

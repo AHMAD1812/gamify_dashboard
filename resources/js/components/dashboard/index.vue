@@ -164,12 +164,13 @@
                             </div>
                             <div class="live-content">
                                 <p>
-                                    Set up your video and share to your
-                                    students
+                                    Set up your video and share to your students
                                 </p>
                                 <button
                                     class="live_link"
-                                    @click="$router.push({name:'CreateVideo'})"
+                                    @click="
+                                        $router.push({ name: 'CreateVideo' })
+                                    "
                                 >
                                     Get Started
                                 </button>
@@ -234,127 +235,56 @@
             </div>
 
             <div class="row">
-                <div class="col-xl-12 col-lg-12">
+                <div class="col-xl-12 col-lg-12" v-if="reviews.length > 0">
                     <div class="section3125 mt-30">
                         <h4 class="item_title">Your Reviews</h4>
                         <div class="la5lo1">
-                            <div class="owl-carousel Student_says owl-theme">
-                                <div class="item">
+                            <carousel
+                                :responsive="{
+                                    0: {
+                                        items: 1,
+                                    },
+                                    600: {
+                                        items: 2,
+                                    },
+                                    1000: { items: 2 },
+                                    1200: { items: 3 },
+                                    1400: { items: 3 },
+                                }"
+                                :loop="false"
+                                :margin="30"
+                                :nav="false"
+                                :dots="false"
+                                :autoplay="true"
+                            >
+                                
+                                <div
+                                    class="item"
+                                    v-for="(review, key) in reviews"
+                                    :key="`review_${key}`"
+                                >
                                     <div class="fcrse_4 mb-20">
                                         <div class="say_content">
-                                            <p>
-                                                "Donec ac ex eu arcu euismod
-                                                feugiat. In venenatis bibendum
-                                                nisi, in placerat eros ultricies
-                                                vitae. Praesent pellentesque
-                                                blandit scelerisque. Suspendisse
-                                                potenti."
-                                            </p>
+                                            <p>"{{ review.description }}"</p>
                                         </div>
                                         <div class="st_group">
                                             <div class="stud_img">
                                                 <img
-                                                    :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`"
-                                                    alt=""
+                                                    :src="`${globalBaseUrl}${
+                                                        review.user.profile_img
+                                                            ? review.user
+                                                                  .profile_img
+                                                            : 'images/left-imgs/img-2.jpg'
+                                                    }`"
+                                                    alt="student image"
                                                 />
                                             </div>
-                                            <h4>Rida Fatima</h4>
+                                            <h4>{{ review.user.full_name }}</h4>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div class="fcrse_4 mb-20">
-                                        <div class="say_content">
-                                            <p>
-                                                "Cras id enim lectus. Fusce at
-                                                arcu tincidunt, iaculis libero
-                                                quis, vulputate mauris. Morbi
-                                                facilisis vitae ligula id
-                                                aliquam. Nunc consectetur
-                                                malesuada bibendum."
-                                            </p>
-                                        </div>
-                                        <div class="st_group">
-                                            <div class="stud_img">
-                                                <img
-                                                    :src="`${globalBaseUrl}images/left-imgs/img-2.jpg`"
-                                                    alt=""
-                                                />
-                                            </div>
-                                            <h4>David Martin</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="fcrse_4 mb-20">
-                                        <div class="say_content">
-                                            <p>
-                                                "Lorem ipsum dolor sit amet,
-                                                consectetur adipiscing elit.
-                                                Class aptent taciti sociosqu ad
-                                                litora torquent per conubia
-                                                nostra, per inceptos himenaeos
-                                                eros ac, sagittis orci."
-                                            </p>
-                                        </div>
-                                        <div class="st_group">
-                                            <div class="stud_img">
-                                                <img
-                                                    :src="`${globalBaseUrl}images/left-imgs/img-3.jpg`"
-                                                    alt=""
-                                                />
-                                            </div>
-                                            <h4>Aqeel Hameed</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="fcrse_4 mb-20">
-                                        <div class="say_content">
-                                            <p>
-                                                "Nulla bibendum lectus pharetra,
-                                                tempus eros ac, sagittis orci.
-                                                Suspendisse posuere dolor neque,
-                                                at finibus mauris lobortis in.
-                                                Pellentesque vitae laoreet
-                                                tortor."
-                                            </p>
-                                        </div>
-                                        <div class="st_group">
-                                            <div class="stud_img">
-                                                <img
-                                                    :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`"
-                                                    alt=""
-                                                />
-                                            </div>
-                                            <h4>Poonam Sharma</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="fcrse_4 mb-20">
-                                        <div class="say_content">
-                                            <p>
-                                                "Curabitur placerat justo ac
-                                                mauris condimentum ultricies. In
-                                                magna tellus, eleifend et
-                                                volutpat id, sagittis vitae est.
-                                                Pellentesque vitae laoreet
-                                                tortor."
-                                            </p>
-                                        </div>
-                                        <div class="st_group">
-                                            <div class="stud_img">
-                                                <img
-                                                    :src="`${globalBaseUrl}images/left-imgs/img-3.jpg`"
-                                                    alt=""
-                                                />
-                                            </div>
-                                            <h4>Davinder Singh</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                
+                            </carousel>
                         </div>
                     </div>
                 </div>
@@ -365,40 +295,58 @@
 
 <script>
 import Analytics from "./components/Analytics.vue";
+import carousel from "vue-owl-carousel";
+
 export default {
     name: "Dashboard",
     components: {
         Analytics,
+        carousel,
     },
-    mounted() {
-        $(".Student_says").owlCarousel({
-            items: 10,
-            loop: false,
-            margin: 30,
-            nav: true,
-            dots: false,
-            navText: [
-                "<i class='uil uil-angle-left'></i>",
-                "<i class='uil uil-angle-right'></i>",
-            ],
-            responsive: {
-                0: {
-                    items: 1,
-                },
-                600: {
-                    items: 2,
-                },
-                1000: {
-                    items: 2,
-                },
-                1200: {
-                    items: 3,
-                },
-                1400: {
-                    items: 3,
-                },
-            },
-        });
+    data() {
+        return {
+            reviews: [],
+        };
+    },
+    async mounted() {
+        this.$store.dispatch('toggleLoader',true);
+        await axios
+            .get(`${globalBaseUrl}instructor/get_dashboard_data`)
+            .then((response) => {
+                response = response.data.data;
+                this.reviews = response.reviews;
+
+                // $(".Student_says").owlCarousel({
+                //     items: 5,
+                //     loop: true,
+                //     margin: 30,
+                //     nav: true,
+                //     dots: false,
+                //     navText: [
+                //         "<i class='uil uil-angle-left'></i>",
+                //         "<i class='uil uil-angle-right'></i>",
+                //     ],
+                //     responsive: {
+                //         0: {
+                //             items: 1,
+                //         },
+                //         600: {
+                //             items: 2,
+                //         },
+                //         1000: {
+                //             items: 2,
+                //         },
+                //         1200: {
+                //             items: 3,
+                //         },
+                //         1400: {
+                //             items: 3,
+                //         },
+                //     },
+                // });
+            });
+        
+        this.$store.dispatch('toggleLoader',false);
         var activity = document.getElementById("activity");
         if (activity !== null) {
             var activityData = [

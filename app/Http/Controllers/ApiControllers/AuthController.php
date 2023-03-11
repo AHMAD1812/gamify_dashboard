@@ -47,6 +47,8 @@ class AuthController extends Controller
             }
             $user->save();
 
+            $this->sendNotification($user->id,$user->id,'notification', 'Hello '.$user->full_name.'!  We are glad to have you here! Enrolled in interactive courses');
+
             DB::commit();
 
             return $this->sendSuccess('User Registered', $user);

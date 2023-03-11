@@ -104,6 +104,52 @@
 .modal-btn-error{
     color: rgba(255, 53, 40, 1);
 }
+
+.chat-request-box{
+    display: flex;
+    justify-content: center;
+}
+
+.chat-request-box .block{
+    width: 400px;
+    border-radius: 5px;
+    margin: 30px;
+    padding:10px;
+}
+
+.chat-request-box .block .text{
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: #000000;
+}
+
+.chat-request-box .block .text-decline{
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: #FF3528;
+}
+
+
+.chat-request-box .block .request-btn{
+    font-weight: 500;
+    font-size: 16px;
+    color: #FFFFFF;
+    padding: 10px 30px;
+    margin: 10px;
+    border: none !important;
+    border-radius: 5px;
+}
+
+
+.chat-request-box .block .request-btn.no{
+    background: #B5B5B5;
+}
+
+.chat-request-box .block .request-btn.yes{
+    background: #02C121;
+}
 /*===================== TABLE OF CONTENT =======================
 /*
 Table Of Content

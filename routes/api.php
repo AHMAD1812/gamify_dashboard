@@ -7,6 +7,7 @@ use App\Http\Controllers\ApiControllers\ChatController;
 use App\Http\Controllers\ApiControllers\UserController;
 use App\Http\Controllers\ApiControllers\CourseController;
 use App\Http\Controllers\ApiControllers\CategoryController;
+use App\Http\Controllers\ApiControllers\NotificationController;
 use App\Http\Controllers\ApiControllers\FavouriteCourseController;
 
 /*
@@ -78,5 +79,8 @@ Route::group(['middleware' => 'auth:api'], function () {
 
     // chat unused route
     Route::post('/create_chat', [ChatController::class, 'create_chat']);
+
+    //Notification
+    Route::get('/get_notifications',[NotificationController::class, 'getNotifications']);
 
 });
