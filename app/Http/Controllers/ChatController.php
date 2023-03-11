@@ -289,6 +289,7 @@ class ChatController extends Controller
             $data['chat'] = $chat;
             $data['message'] = ChatMessage::with('sender', 'receiver')->where('chat_id', $chat->id)
                 ->whereRaw("IF(`sender_id` = $user_id, `sender_deleted`, `receiver_deleted`)= 0")
+                ->orderBy('id','desc')
                 ->paginate($per_page);
 
             return $this->sendSuccess('Got message successfully.', $data);
