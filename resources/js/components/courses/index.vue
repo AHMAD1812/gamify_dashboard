@@ -128,6 +128,13 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <tr v-if="!loading && courses.length == 0">
+                                                <td colspan="8">
+                                                    <UnavailableData
+                                                        :message="'No courses found'"
+                                                    ></UnavailableData>
+                                                </td>
+                                            </tr>
                                             <tr
                                                 v-for="(course,key) in courses"
                                                 :key="`courses_${key}`">
@@ -138,8 +145,8 @@
                                                 <td class="text-center">
                                                     {{ $moment(course.created_at).format('DD MMMM YYYY | hh:mm') }}
                                                 </td>
-                                                <td class="text-center">0</td>
-                                                <td class="text-center">0</td>
+                                                <td class="text-center">{{ course.enrolled_students_count }}</td>
+                                                <td class="text-center">{{ course.course_rating_avg_rating ?  course.course_rating_avg_rating : 0}}</td>
                                                 <td class="text-center">
                                                     {{ course.course_level }}
                                                 </td>
@@ -162,6 +169,7 @@
                                                         href="#"
                                                         title="Delete"
                                                         class="gray-s"
+                                                        @click="deleteCourse(course.id,key)"
                                                         ><i
                                                             class="uil uil-trash-alt"
                                                         ></i
@@ -190,21 +198,30 @@
                                                 >
                                                     Item No.
                                                 </th>
-                                                <th class="cell-ta">Title</th>
+                                                <th>Title</th>
                                                 <th
                                                     class="text-center"
                                                     scope="col"
                                                 >
-                                                    Thumbnail
+                                                    Publish Date
                                                 </th>
-                                                <th class="text-center">
-                                                    Category
+                                                <th
+                                                    class="text-center"
+                                                    scope="col"
+                                                >
+                                                    Total Students
                                                 </th>
-                                                <th class="text-center">
-                                                    Price
+                                                <th
+                                                    class="text-center"
+                                                    scope="col"
+                                                >
+                                                    Rating
                                                 </th>
-                                                <th class="text-center">
-                                                    Date
+                                                <th
+                                                    class="text-center"
+                                                    scope="col"
+                                                >
+                                                    Course Level
                                                 </th>
                                                 <th
                                                     class="text-center"
@@ -216,12 +233,19 @@
                                                     class="text-center"
                                                     scope="col"
                                                 >
-                                                    Actions
+                                                    Action
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
+                                                <td colspan="8">
+                                                    <UnavailableData
+                                                        :message="'No courses found'"
+                                                    ></UnavailableData>
+                                                </td>
+                                            </tr>
+                                            <!-- <tr>
                                                 <td class="text-center">01</td>
                                                 <td class="cell-ta">
                                                     Course Title Here
@@ -261,87 +285,8 @@
                                                         ></i
                                                     ></a>
                                                 </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">02</td>
-                                                <td class="cell-ta">
-                                                    Course Title Here
-                                                </td>
-                                                <td class="text-center">
-                                                    <a href="#">View</a>
-                                                </td>
-                                                <td class="text-center">
-                                                    <a href="#"
-                                                        >Graphic Design</a
-                                                    >
-                                                </td>
-                                                <td class="text-center">$12</td>
-                                                <td class="text-center">
-                                                    8 April 2020
-                                                </td>
-                                                <td class="text-center">
-                                                    <b class="course_active"
-                                                        >Pending</b
-                                                    >
-                                                </td>
-                                                <td class="text-center">
-                                                    <a
-                                                        href="#"
-                                                        title="Edit"
-                                                        class="gray-s"
-                                                        ><i
-                                                            class="uil uil-edit-alt"
-                                                        ></i
-                                                    ></a>
-                                                    <a
-                                                        href="#"
-                                                        title="Delete"
-                                                        class="gray-s"
-                                                        ><i
-                                                            class="uil uil-trash-alt"
-                                                        ></i
-                                                    ></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">03</td>
-                                                <td class="cell-ta">
-                                                    Course Title Here
-                                                </td>
-                                                <td class="text-center">
-                                                    <a href="#">View</a>
-                                                </td>
-                                                <td class="text-center">
-                                                    <a href="#">Photography</a>
-                                                </td>
-                                                <td class="text-center">$6</td>
-                                                <td class="text-center">
-                                                    7 April 2020
-                                                </td>
-                                                <td class="text-center">
-                                                    <b class="course_active"
-                                                        >Pending</b
-                                                    >
-                                                </td>
-                                                <td class="text-center">
-                                                    <a
-                                                        href="#"
-                                                        title="Edit"
-                                                        class="gray-s"
-                                                        ><i
-                                                            class="uil uil-edit-alt"
-                                                        ></i
-                                                    ></a>
-                                                    <a
-                                                        href="#"
-                                                        title="Delete"
-                                                        class="gray-s"
-                                                        ><i
-                                                            class="uil uil-trash-alt"
-                                                        ></i
-                                                    ></a>
-                                                </td>
-                                            </tr>
+                                            </tr> -->
+                                            
                                         </tbody>
                                     </table>
                                 </div>
@@ -373,8 +318,13 @@
 </template>
 
 <script>
+import UnavailableData from '../layouts/UnavailableData.vue';
+
 export default {
     name:"Courses",
+    components:{
+        UnavailableData,
+    },
     data(){
         return {
             courses:[],
@@ -400,6 +350,40 @@ export default {
         navigate(){
             this.$router.push({
                 name:'CreateVideo'
+            });
+        },
+        deleteCourse(course_id,key){
+            this.$store.dispatch('toggleLoader',true);
+            axios
+            .post(`${globalBaseUrl}instructor/delete_course`,{
+                course_id:course_id,
+            })
+            .then((response) => {
+                if (response.data.status == 200) {
+                    this.courses.splice(key,1);
+                    Vue.$toast.open({
+                      message: "Course Deleted",
+                      type: "success",
+                      position: "top-right",
+                    });
+                }
+                if (response.data.status == 400) {
+                    Vue.$toast.open({
+                        message: response.data.message,
+                        type: "warning",
+                        position: "top-right",
+                    });
+                }
+                this.$store.dispatch('toggleLoader',false);
+            })
+            .catch((e) => {
+              this.$store.dispatch('toggleLoader',false);
+                Vue.$toast.open({
+                    message: "Something Went Wrong",
+                    type: "error",
+                    position: "top-right",
+                });
+                console.log(e);
             });
         }
     },

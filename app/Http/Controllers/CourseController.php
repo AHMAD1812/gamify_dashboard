@@ -61,7 +61,7 @@ class CourseController extends Controller
             //Adding Thumbnail
             $course->poster = $this->addFile($request->thumbnail_file,'uploads/courses/');
             if($course->poster == false){
-                return $this->sendError($course->poster, null);
+                return $this->sendError('Invalid Poster', null);
             }
             //Adding Video
             $course->video = $request->video_type == 'mp4' ? $this->addFile($request->video,'uploads/courses/') : $request->video_link;
@@ -131,7 +131,7 @@ class CourseController extends Controller
 
     public function getCourses(Request $request){
         try{
-            $courses = Courses::where('creator_id',Auth::id())->latest()->get();
+            $courses = Courses::where('creator_id',Auth::id())->where('status','active')->withCount('enrolled_students')->withAvg('course_rating','rating')->latest()->get();
             
             return $this->sendSuccess('Courses', $courses);
         }catch(Exception $e){
@@ -146,10 +146,22 @@ class CourseController extends Controller
             if(!$data['course']){
                 return $this->sendSuccess('Course detail', $data);
             }
-            $data['leaderboard'] = StudentCourse::where('course_id',$data['course']->id)->with('student')->orderBy('score','desc')->get();
+            $data['leaderboard'] = StudentCourse::where('course_id',$data['course']->id)->where('score','>',0)->with('student')->orderBy('score','desc')->get();
             $data['reviews'] = CourseRating::where('course_id',$data['course']->id)->with('user')->latest()->get();
             $data['favourite_count'] = FavouriteCourse::where('course_id',$data['course']->id)->count();
             return $this->sendSuccess('Course detail', $data);
+        }catch(Exception $e){
+            return $this->sendError($e->getMessage(), null);
+        }
+    }
+
+    public function deleteCourse(Request $request){
+        try{
+            Courses::where('id',$request->course_id)->update([
+                'status'=>'deleted',
+            ]);
+            
+            return $this->sendSuccess('Courses', null);
         }catch(Exception $e){
             return $this->sendError($e->getMessage(), null);
         }

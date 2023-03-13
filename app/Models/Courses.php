@@ -30,6 +30,14 @@ class Courses extends Model
         ->where('user_id',Auth::id());
    }
 
+   public function enrolled_students(){
+    return $this->hasMany(StudentCourse::class, 'course_id', 'id');
+   }
+
+   public function course_rating(){
+    return $this->hasMany(CourseRating::class, 'course_id', 'id');
+   }
+
    public function student_course(){
         return $this->hasOne(StudentCourse::class, 'course_id', 'id')->where('user_id',Auth::id());
    }

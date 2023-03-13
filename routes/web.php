@@ -9,6 +9,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\NotificationController;
 /*
@@ -76,7 +77,8 @@ Route::prefix('instructor')->group(function () {
         Route::post('/add_course', [CourseController::class, 'addCourse']);
         Route::get('/get_courses', [CourseController::class, 'getCourses']);
         Route::get('/get_course_detail/{id}', [CourseController::class, 'getCourseDetail']);
-
+        Route::post('/delete_course', [CourseController::class, 'deleteCourse']);
+        
         //Chat Controller
         Route::post('/get_current_chats', [ChatController::class, 'get_current_chats']);
         Route::post('/add_message', [ChatController::class, 'add_message']);
@@ -92,6 +94,8 @@ Route::prefix('instructor')->group(function () {
         Route::get('/get_notifications',[NotificationController::class, 'getNotifications']);
 
         Route::get('/get_reviews',[ReviewController::class, 'getReviews']);
+
+        Route::post('/add_feedback',[FeedbackController::class, 'addFeedback']);
         
     });
 

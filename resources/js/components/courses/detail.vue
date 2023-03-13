@@ -36,8 +36,8 @@
                                 <div class="col-xl-8 col-lg-7 col-md-6">
                                     <div class="_215b03">
                                         <h2>{{course.title}}</h2>
-                                        <span class="_215b04">
-                                            {{course.description}}</span
+                                        <span class="_215b04" v-if="course.description">
+                                            {{course.description.length >= 50 ? `${course.description.substr(0,50)} ...` : course.description}}</span
                                         >
                                     </div>
                                     <div class="_215b05">
@@ -374,6 +374,7 @@
                                                                 class="rv_srch"
                                                                 type="text"
                                                                 placeholder="Search reviews..."
+                                                                v-model="review_search"
                                                             />
                                                             <button
                                                                 class="rvsrch_btn"
@@ -386,8 +387,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="review_all120">
-                                                    <UnavailableData v-if="reviews.length == 0" :message="'No reviews found'"></UnavailableData>
-                                                    <div class="review_item" v-for="(review,key) in reviews" :key="`reviews_${key}`">
+                                                    <UnavailableData v-if="getReviews.length == 0" :message="'No reviews found'"></UnavailableData>
+                                                    <div class="review_item" v-for="(review,key) in getReviews" :key="`reviews_${key}`">
                                                         <div
                                                             class="review_usr_dt"
                                                         >
@@ -403,8 +404,7 @@
                                                                 </h4>
                                                                 <span
                                                                     class="time_145"
-                                                                    >2 hour
-                                                                    ago</span
+                                                                    >{{$moment(String(review.created_at)).fromNow()}}</span
                                                                 >
                                                             </div>
                                                         </div>
@@ -802,6 +802,7 @@ export default {
             total_ratings:0,
             average_score:0,
             favourite_count:0,
+            review_search:""
         }
     },
     async created(){
@@ -853,6 +854,19 @@ export default {
     },
     mounted(){
         $(window).scrollTop(0);
+    },
+    computed:{
+        getReviews(){
+            let tempReview = this.reviews;
+
+            if(this.review_search && this.review_search != ""){
+                tempReview = tempReview.filter((review)=>{
+                    return review.description.toUpperCase().includes(this.review_search.toUpperCase());
+                });
+            }
+
+            return tempReview;
+        }
     }
 };
 </script>

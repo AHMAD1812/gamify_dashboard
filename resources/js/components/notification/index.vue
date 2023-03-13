@@ -13,6 +13,10 @@
                     <router-link :to="{name:'Setting'}" class="setting_noti"
                         >Notification Setting</router-link>
                     <div class="all_msg_bg">
+                        <UnavailableData
+                            v-if="notifications.length == 0"
+                            :message="'No notifications'"
+                        ></UnavailableData>
                         <div class="channel_my item all__noti5"
                         v-for="(notification,key) in notifications"
                         :key="`notification_${key}`">
@@ -36,8 +40,13 @@
 </template>
 
 <script>
+import UnavailableData from '../layouts/UnavailableData.vue';
+
 export default {
     name:"Notification",
+    components:{
+        UnavailableData
+    },
     data(){
         return {
             notifications:[],

@@ -4942,6 +4942,7 @@ html {
   }
   .c-media__title {
     margin-bottom: 0.4rem;
+    font-size: 16px;
   }
   @media screen and (max-width: 700px) {
     .c-media__title {

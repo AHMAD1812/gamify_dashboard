@@ -255,7 +255,7 @@ class CourseController extends Controller
             return $this->sendError($validator->messages()->first(), null);
         }
 
-        $data['leaderboard'] = StudentCourse::where('course_id',$request->course_id)->with('student')->orderBy('score','desc')->get();
+        $data['leaderboard'] = StudentCourse::where('course_id',$request->course_id)->where('score','>',0)->with('student')->orderBy('score','desc')->get();
 
         return $this->sendSuccess('Leaderboard',$data);
     }
