@@ -12,13 +12,11 @@
                                 <div class="ui left icon input swdh11 swdh19">
                                     <input
                                         class="prompt srch_explore"
-                                        type="email"
-                                        name="emailaddress"
+                                        type="text"
                                         value=""
-                                        id="id_email"
-                                        required=""
                                         maxlength="64"
-                                        placeholder="Email address"
+                                        placeholder="Title"
+                                        v-model="title"
                                     />
                                 </div>
                             </div>
@@ -30,6 +28,7 @@
                                             name="description"
                                             id="id_about"
                                             placeholder="Describe your issue or share your ideas"
+                                            v-model="description"
                                         ></textarea>
                                     </div>
                                 </div>
@@ -41,17 +40,19 @@
                                         class="file-upload-input"
                                         id="file5"
                                         type="file"
-                                        onchange="readURL(this);"
+                                        @change="addFile"
                                         accept="image/*"
                                     />
                                     <div class="drag-text">
                                         <i class="fas fa-cloud-upload-alt"></i>
                                         <h4>Select screenshots to upload</h4>
-                                        <p>or drag and drop screenshots</p>
+                                    </div>
+                                    <div class="text-success text-center my-3">
+                                        File Added
                                     </div>
                                 </div>
                             </div>
-                            <button class="save_btn" type="submit">
+                            <button class="save_btn" type="button" @click="addFeedback">
                                 Send Feedback
                             </button>
                         </div>
@@ -64,7 +65,73 @@
 
 <script>
 export default {
-    name:'Feedback'
+    name:'Feedback',
+    data(){
+        return {
+            title:"",
+            description:"",
+            file:null,
+        }
+    },
+    methods:{
+        addFile(e){
+            this.file = e.target.files[0];
+        },
+        addFeedback() {
+            if(this.title == "" || this.description == ""){
+                Vue.$toast.open({
+                    message: "Title & Description Required",
+                    type: "error",
+                    position: "top-right",
+                });
+                return;
+            }
+            this.$store.dispatch('toggleLoader',true);
+            const config = {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+            };
+
+            let formData = new FormData();
+            formData.append('title',this.title);
+            formData.append('description',this.description);
+            if(this.file){
+                formData.append('file',this.file);
+            }
+            axios
+                .post(`${globalBaseUrl}instructor/add_feedback`, formData, config)
+                .then((response) => {
+                    this.$store.dispatch('toggleLoader',false);
+                    if (response.data.status == 200) {
+                        Vue.$toast.open({
+                            message: 'Feedback Added',
+                            type: "success",
+                            position: "top-right",
+                        });
+                        this.title = "";
+                        this.description = "";
+                        this.file = null;
+                    }
+                    if (response.data.status == 400) {
+                        Vue.$toast.open({
+                            message: response.data.message,
+                            type: "warning",
+                            position: "top-right",
+                        });
+                    }
+                })
+                .catch((e) => {
+                    this.$store.dispatch('toggleLoader',false);
+                    Vue.$toast.open({
+                        message: "Something Went Wrong",
+                        type: "error",
+                        position: "top-right",
+                    });
+                    console.log(e);
+                });
+        },
+    }
 };
 </script>
 

@@ -253,6 +253,7 @@
                                                 class="rv_srch"
                                                 type="text"
                                                 placeholder="Search reviews..."
+                                                v-model="review_search"
                                             />
                                             <button class="rvsrch_btn">
                                                 <i class="uil uil-search"></i>
@@ -261,12 +262,12 @@
                                     </div>
                                 </div>
                                 <UnavailableData
-                                    v-if="reviews.length == 0"
+                                    v-if="getReviews.length == 0"
                                     :message="'No reviews found'"
                                 ></UnavailableData>
                                 <div
                                     class="review_all120"
-                                    v-for="(review, key) in reviews"
+                                    v-for="(review, key) in getReviews"
                                     :key="`review_${key}`"
                                     :class="key != 0 ? 'mt-30' : ''"
                                 >
@@ -290,7 +291,7 @@
                                                     {{ review.user.full_name }}
                                                 </h4>
                                                 <span class="time_145"
-                                                    >2 hour ago</span
+                                                    >{{$moment(String(review.created_at)).fromNow()}}</span
                                                 >
                                             </div>
                                         </div>
@@ -328,6 +329,7 @@ export default {
             reviews: [],
             stars: [0, 0, 0, 0, 0],
             total_ratings: 0,
+            review_search:""
         };
     },
     async created() {
@@ -358,6 +360,19 @@ export default {
     mounted() {
         $(window).scrollTop(0);
     },
+    computed:{
+        getReviews(){
+            let tempReview = this.reviews;
+
+            if(this.review_search && this.review_search != ""){
+                tempReview = tempReview.filter((review)=>{
+                    return review.description && review.description.toUpperCase().includes(this.review_search.toUpperCase());
+                });
+            }
+
+            return tempReview;
+        }
+    }
 };
 </script>
 
