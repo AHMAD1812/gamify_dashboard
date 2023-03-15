@@ -1,13 +1,35 @@
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Voler Admin Dashboard</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <link rel="stylesheet" href="{{asset('admin_files/css/bootstrap.css')}}">
+  <title>Dashboard - NiceAdmin Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-    <link rel="stylesheet" href="{{asset('admin_files/vendors/chartjs/Chart.min.css')}}">
+  <!-- Favicons -->
+  <link href="admin_files/img/favicon.png" rel="icon">
+  <link href="admin_files/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <link rel="stylesheet" href="{{asset('admin_files/vendors/perfect-scrollbar/perfect-scrollbar.css')}}">
-    <link rel="stylesheet" href="{{asset('admin_files/css/app.css')}}">
-    <link rel="shortcut icon" href="{{asset('admin_files/images/favicon.svg" type="image/x-icon')}}">
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendors CSS Files -->
+  <link href="{{asset('admin_files/vendors/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{asset('admin_files/vendors/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{asset('admin_files/vendors/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link href="{{asset('admin_files/vendors/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link href="{{asset('admin_files/vendors/quill/quill.snow.css')}}" rel="stylesheet">
+  <link href="{{asset('admin_files/vendors/quill/quill.bubble.css')}}" rel="stylesheet">
+  <link href="{{asset('admin_files/vendors/remixicon/remixicon.css')}}" rel="stylesheet">
+  <link href="{{asset('admin_files/vendors/simple-datatables/style.css')}}" rel="stylesheet">
+  <!-- Template Main CSS File -->
+  <link href="{{asset('admin_files/css/app.css')}}" rel="stylesheet">
+  
+  <!-- =======================================================
+  * Template Name: NiceAdmin - v2.5.0
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>

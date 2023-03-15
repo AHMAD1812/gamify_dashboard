@@ -1,11 +1,8 @@
-<footer>
-    <div class="footer clearfix mb-0 text-muted">
-        {{-- <div class="float-start">
-            <p>2020 &copy; Voler</p>
-        </div>
-        <div class="float-end">
-            <p>Crafted with <span class='text-danger'><i data-feather="heart"></i></span> by <a
-                    href="http://ahmadsaugi.com">Ahmad Saugi</a></p>
-        </div> --}}
+<footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>Gamify Us</span></strong>. All Rights Reserved
     </div>
-</footer>
+    
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
