@@ -30,4 +30,16 @@ class AdminController extends Controller
     public function forgot(){
         return view('admin.forgot.index');
     }
+
+    public function profile(){
+        return view('admin.profile.index');
+    }
+
+    public function courses(){
+        return view('admin.courses.index');
+    }
+    public function feedback(){
+        return view('admin.feedback.index');
+    }
+
 }

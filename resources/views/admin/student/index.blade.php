@@ -1,6 +1,7 @@
 @extends('admin.layouts.index')
 
 @section('content')
+<main id="main" class="main">
 <div class="main-content container-fluid">
                 <div class="page-title">
                     <div class="row">
@@ -279,5 +280,5 @@
                 </section>
             </div>
             <div class="clearfix"></div>
-
+            </main><!-- End #main -->
 @endsection

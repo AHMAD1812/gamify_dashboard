@@ -34,6 +34,9 @@ Route::prefix('admin')->group(function (){
     Route::get('/login', [AdminController::class, 'login'])->name('admin.login');
     Route::get('/register', [AdminController::class, 'register'])->name('admin.register');
     Route::get('/forgot', [AdminController::class, 'forgot'])->name('admin.forgot');
+    Route::get('/profile', [AdminController::class, 'profile'])->name('admin.profile');
+    Route::get('/courses', [AdminController::class, 'courses'])->name('admin.courses');
+    Route::get('/feedback', [AdminController::class, 'feedback'])->name('admin.feedback');
 });
 
 

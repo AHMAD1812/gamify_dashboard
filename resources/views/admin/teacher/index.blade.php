@@ -1,6 +1,7 @@
 @extends('admin.layouts.index')
 
 @section('content')
+<main id="main" class="main">
 <div class="main-content container-fluid">
                 <div class="page-title">
                     <div class="row">
@@ -43,7 +44,7 @@
                                         <td>OOP</td>
                                         <td>10</td>
                                         <td>
-                                            <span class="badge bg-success">View</span>
+                                            <span class="badge bg-success" href="{{ route('admin.profile') }}">View</span>
                                         </td>
                                     </tr>
                                     <tr>
@@ -61,7 +62,7 @@
                                         <td>Python</td>
                                         <td>12</td>
                                         <td>
-                                            <span class="badge bg-success">View</span>
+                                            <span class="badge bg-success" href="{{ route('admin.profile') }}">View</span>
                                         </td>
                                     </tr>
                                     <tr>
@@ -268,7 +269,7 @@
                                         <td>(016977) 8208</td>
                                         <td>Saint-Remy-Geest</td>
                                         <td>
-                                            <span class="badge bg-success">View</span>
+                                            <span class="badge bg-success"  href="{{ route('admin.profile') }}">View</span>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -279,5 +280,5 @@
                 </section>
             </div>
             <div class="clearfix"></div>
-
+            </main><!-- End #main -->
 @endsection
