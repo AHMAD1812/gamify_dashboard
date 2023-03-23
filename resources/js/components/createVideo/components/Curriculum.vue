@@ -978,6 +978,7 @@
 <script>
 export default {
     name: "Curriculum",
+    props:['video_duration'],
     data() {
         return {
             question_type: 1,
@@ -1019,7 +1020,6 @@ export default {
             });
             if(!item_type.includes(type)){
                 if(type == 'quiz' && this.questions.length == 0){
-                    event.preventDefault();
                     this.errorToast('Questions are required');
                     return;
                 }else if(type == 'lecture'){
@@ -1054,11 +1054,21 @@ export default {
             });
         },
         addQuestion() {
+            var seconds = 0;
+            if(this.showHour){
+                seconds = this.$moment.duration(`${this.question_time.hh}:${this.question_time.mm}:${this.question_time.ss}`).asSeconds();
+            }else{
+                seconds = this.$moment.duration(`${this.question_time.mm}:${this.question_time.ss}`).asSeconds();
+            }
+            
             if (this.question_name == "") {
                 this.errorToast("Name required");
                 return;
             } else if( this.question_time.mm == "" || this.question_time.ss == ""){
                 this.errorToast("Time required");
+                return;
+            } else if(this.video_duration < seconds){
+                this.errorToast("Question duration should be less than video duration");
                 return;
             } else if(this.question_score == ""){
                 this.errorToast("Score required");

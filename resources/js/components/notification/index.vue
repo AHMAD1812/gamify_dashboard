@@ -10,8 +10,8 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <router-link :to="{name:'Setting'}" class="setting_noti"
-                        >Notification Setting</router-link>
+                    <!-- <router-link :to="{name:'Setting'}" class="setting_noti"
+                        >Notification Setting</router-link> -->
                     <div class="all_msg_bg">
                         <UnavailableData
                             v-if="notifications.length == 0"

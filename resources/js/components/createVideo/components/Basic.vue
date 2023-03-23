@@ -171,23 +171,11 @@ export default {
                     value: "expert",
                 },
             ],
-            categoryOptions: [],
         }
     },
-    async created(){
-        try {
-            let response = await axios.get(
-                `${globalBaseUrl}instructor/get_categories`
-            );
-            let category = response.data.data;
-            this.categoryOptions = category.map((item) => {
-                return {
-                    text: item.name,
-                    value: item.name,
-                };
-            });
-        } catch (error) {
-            console.log(error);
+    computed:{
+        categoryOptions() {
+            return this.$store.state.categories;
         }
     },
     methods:{

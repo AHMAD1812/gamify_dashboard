@@ -137,6 +137,7 @@ export default {
                 thumbnail_file: null,
                 video: null,
                 video_link: "",
+                video_duration:0,
             },
         };
     },
@@ -148,6 +149,12 @@ export default {
         },
         addVideo(e) {
             this.request.video = e.target.files[0];
+            const video = document.createElement('video');
+            video.src = URL.createObjectURL(this.request.video);
+            video.onloadedmetadata = () => {
+                this.request.video_duration = video.duration * 60;
+                URL.revokeObjectURL(video.src);
+            };
         },
         onThumbnailSelected(e) {
             const file = e.target.files[0];

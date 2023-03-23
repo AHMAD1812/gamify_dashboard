@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers\ApiControllers;
 
-use App\Http\Controllers\Controller;
-use App\Http\Traits\CommonTrait;
-use App\Models\AttemptedQuestions;
-use App\Models\CourseRating;
 use App\Models\Courses;
 use App\Models\Questions;
-use App\Models\StudentCourse;
+use App\Models\CourseRating;
+use App\Models\UserCategory;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Models\StudentCourse;
+use App\Http\Traits\CommonTrait;
+use App\Models\AttemptedQuestions;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class CourseController extends Controller
@@ -19,8 +20,14 @@ class CourseController extends Controller
     use CommonTrait;
     public function getCourses(Request $request)
     {
-
-        $courses = Courses::whereDoesntHave('student_course')->with('creator')->get();
+        $categories = UserCategory::where('user_id',Auth::id())->with('category')->get();
+        $courses = Courses::where('status','active')->whereDoesntHave('student_course')
+        ->where(function ($query) use ($categories) {
+            foreach ($categories as $each) {
+                $query->orWhere('categories', 'like', '%' . $each->category->name . '%');
+            }
+        })
+        ->with('creator')->get();
         return $this->sendSuccess('all courses', $courses);
     }
 

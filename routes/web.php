@@ -6,12 +6,14 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\PageController;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\CourseController as AdminCourseController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\Admin\AdminUserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,12 +30,24 @@ Route::get('/about-us', [AppController::class, 'about'])->name('about');
 Route::get('/contact-us', [AppController::class, 'contact'])->name('contact');
 
 Route::prefix('admin')->group(function (){
-    Route::get('/', [AdminController::class, 'index'])->name('admin.index');
-    Route::get('/teacher', [AdminController::class, 'teacher'])->name('admin.teacher');
-    Route::get('/student', [AdminController::class, 'student'])->name('admin.student');
     Route::get('/login', [AdminController::class, 'login'])->name('admin.login');
-    Route::get('/register', [AdminController::class, 'register'])->name('admin.register');
-    Route::get('/forgot', [AdminController::class, 'forgot'])->name('admin.forgot');
+    Route::post('/login_process', [AdminController::class, 'loginProcess'])->name('admin.login_process');
+
+    Route::group(['middleware' => ['auth.admin']], function () {
+        Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+        Route::get('/instructor', [AdminUserController::class, 'instructor'])->name('admin.instructor');
+        Route::get('/student', [AdminUserController::class, 'student'])->name('admin.student');
+
+        Route::get('/courses', [AdminCourseController::class, 'index'])->name('admin.courses');
+
+        Route::get('/logout', [AdminController::class, 'logout']);
+
+        Route::get('/register', [AdminController::class, 'register'])->name('admin.register');
+        Route::get('/forgot', [AdminController::class, 'forgot'])->name('admin.forgot');
+        Route::get('/profile', [AdminController::class, 'profile'])->name('admin.profile');
+        
+        Route::get('/feedback', [AdminController::class, 'feedback'])->name('admin.feedback');
+    });
 });
 
 

@@ -72,6 +72,7 @@
                                     >
                                         <Curriculum
                                             ref="curriculum"
+                                            :video_duration="video_duration"
                                             @add-curriculum="addCurriculum"
                                         ></Curriculum>
                                     </div>
@@ -407,6 +408,7 @@ export default {
             video: null,
             video_link: "",
             validation: true,
+            video_duration: 0,
         };
     },
     async mounted() {
@@ -555,6 +557,7 @@ export default {
             this.thumbnail_file = request.thumbnail_file;
             this.video = request.video;
             this.video_link = request.video_link;
+            this.video_duration = request.video_duration;
             this.steps++;
             $(".next-btn").click();
             $(window).scrollTop(0);
