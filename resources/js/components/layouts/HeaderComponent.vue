@@ -64,7 +64,7 @@
                         title="Create New Course"
                         >Create New Video</router-link>
                 </li>
-                <li class="ui dropdown">
+                <!-- <li class="ui dropdown">
                     <a href="#" class="option_links notification-dropdown" title="Notifications"
                         ><i class="uil uil-bell"></i
                         ><span class="noti_count">3</span></a
@@ -115,7 +115,7 @@
                             >View All <i class="uil uil-arrow-right"></i
                         ></router-link>
                     </div>
-                </li>
+                </li> -->
                 <li class="ui dropdown">
                     <div class="opts_account new-dropdown" title="Account">
                         <img :src="user.profile_img == null ? `${globalBaseUrl}images/avatar.png` : `${globalBaseUrl}${user.profile_img}`" alt="" />
@@ -142,7 +142,6 @@
                         <router-link :to="{name : 'Setting'}" class="item channel_item">
                             Setting
                         </router-link>
-                        <a href="help.html" class="item channel_item">Help</a>
                         <router-link :to="{name : 'Feedback'}" class="item channel_item"
                             >Send Feedback</router-link
                         >

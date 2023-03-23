@@ -18,18 +18,6 @@
   <link href="{{asset('admin_files/vendors/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
   <link href="{{asset('admin_files/vendors/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
   <link href="{{asset('admin_files/vendors/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
-  <link href="{{asset('admin_files/vendors/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
-  <link href="{{asset('admin_files/vendors/quill/quill.snow.css')}}" rel="stylesheet">
-  <link href="{{asset('admin_files/vendors/quill/quill.bubble.css')}}" rel="stylesheet">
-  <link href="{{asset('admin_files/vendors/remixicon/remixicon.css')}}" rel="stylesheet">
-  <link href="{{asset('admin_files/vendors/simple-datatables/style.css')}}" rel="stylesheet">
-  <!-- Template Main CSS File -->
+  <link href="{{asset('admin_files/vendors/boxicons/css/boxicons.min.css')}}" rel="stylesheet">  <!-- Template Main CSS File -->
   <link href="{{asset('admin_files/css/app.css')}}" rel="stylesheet">
-  
-  <!-- =======================================================
-  * Template Name: NiceAdmin - v2.5.0
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>

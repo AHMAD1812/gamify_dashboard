@@ -70,6 +70,19 @@ export default {
                 );
                 // this.user = response.data.data;
                 this.$store.dispatch('setUser',response.data.data);
+                
+                response = await axios.get(
+                    `${globalBaseUrl}instructor/get_categories`
+                );
+                let category = response.data.data;
+                category = category.map((item) => {
+                    return {
+                        text: item.name,
+                        value: item.name,
+                    };
+                });
+
+                this.$store.dispatch('setCategories',category);
                 this.loading = false;
             } catch (e) {
                 this.loading = false;

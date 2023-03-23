@@ -17,7 +17,7 @@
                       >Account</a
                     >
                   </li>
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                     <a
                       class="nav-link"
                       id="pills-notification-tab"
@@ -38,7 +38,7 @@
                       aria-selected="false"
                       >Privacy</a
                     >
-                  </li>
+                  </li> -->
                   <li class="nav-item">
                     <a
                       class="nav-link"

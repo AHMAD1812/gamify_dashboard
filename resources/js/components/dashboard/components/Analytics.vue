@@ -8,9 +8,9 @@
         <div class="col-xl-3 col-lg-6 col-md-6">
             <div class="card_dash">
                 <div class="card_dash_left">
-                    <h5>Total Sales</h5>
-                    <h2>$350</h2>
-                    <span class="crdbg_1">New $50</span>
+                    <h5>Total Courses</h5>
+                    <h2>{{stats.courses}}</h2>
+                    <!-- <span class="crdbg_1">New $50</span> -->
                 </div>
                 <div class="card_dash_right">
                     <img :src="`${globalBaseUrl}images/dashboard/achievement.svg`" alt="" />
@@ -20,9 +20,9 @@
         <div class="col-xl-3 col-lg-6 col-md-6">
             <div class="card_dash">
                 <div class="card_dash_left">
-                    <h5>Total Enroll</h5>
-                    <h2>1500</h2>
-                    <span class="crdbg_2">New 125</span>
+                    <h5>Total Students Enrolled</h5>
+                    <h2>{{stats.enrolled}}</h2>
+                    <!-- <span class="crdbg_2">New 125</span> -->
                 </div>
                 <div class="card_dash_right">
                     <img :src="`${globalBaseUrl}images/dashboard/graduation-cap.svg`" alt="" />
@@ -32,9 +32,9 @@
         <div class="col-xl-3 col-lg-6 col-md-6">
             <div class="card_dash">
                 <div class="card_dash_left">
-                    <h5>Total Courses</h5>
-                    <h2>130</h2>
-                    <span class="crdbg_3">New 5</span>
+                    <h5>Total Question Attempted</h5>
+                    <h2>{{stats.attempted_question}}</h2>
+                    <!-- <span class="crdbg_3">New 5</span> -->
                 </div>
                 <div class="card_dash_right">
                     <img :src="`${globalBaseUrl}images/dashboard/online-course.svg`" alt="" />
@@ -44,9 +44,9 @@
         <div class="col-xl-3 col-lg-6 col-md-6">
             <div class="card_dash">
                 <div class="card_dash_left">
-                    <h5>Total Students</h5>
-                    <h2>2650</h2>
-                    <span class="crdbg_4">New 245</span>
+                    <h5>Student Score Average</h5>
+                    <h2>{{stats.average_score}}</h2>
+                    <!-- <span class="crdbg_4">New 245</span> -->
                 </div>
                 <div class="card_dash_right">
                     <img :src="`${globalBaseUrl}images/dashboard/knowledge.svg`" alt="" />
@@ -74,7 +74,8 @@
 
 <script>
 export default {
-    name:"Analytics"
+    name:"Analytics",
+    props:['stats']
 };
 </script>
 

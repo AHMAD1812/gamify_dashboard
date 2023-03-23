@@ -119,7 +119,7 @@
                                     >
                                         <div class="chat-request-box" v-if="!message_loading && (current_chat.chat_request == 'rejected' || current_chat.chat_request == 'pending')">
                                             <div class="block">
-                                                <div :class="current_chat.chat_request == 'rejected' ? 'text-decline' : 'text'">
+                                                <div :class="current_chat.chat_request == 'rejected' ? 'text-decline' : 'text'" class="mt-2">
                                                     {{ current_chat.chat_request == 'rejected' ? 'Chat Request has been decline. (You can still chat with him)' : `${current_chat_user.full_name} has request to chat with you.`}}</div>
                                                 <div class="d-flex justify-content-center m-2">
                                                     <button class="request-btn yes" @click="chatRequest('accepted')">Accept</button>
