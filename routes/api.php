@@ -49,6 +49,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     
     // Courses
     Route::get('get_courses', [CourseController::class, 'getCourses']);
+    Route::post('search_courses', [CourseController::class, 'searchCourses']);
     Route::post('get_course_detail', [CourseController::class, 'getCourseDetail']);
 
     //favourite courses api
