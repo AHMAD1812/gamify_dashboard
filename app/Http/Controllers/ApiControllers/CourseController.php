@@ -31,6 +31,27 @@ class CourseController extends Controller
         return $this->sendSuccess('all courses', $courses);
     }
 
+    public function searchCourses(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'search' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return $this->sendError($validator->messages()->first(), null);
+        }
+
+        $categories = UserCategory::where('user_id',Auth::id())->with('category')->get();
+        $courses = Courses::where('status','active')->whereDoesntHave('student_course')
+        ->where(function ($query) use ($categories) {
+            foreach ($categories as $each) {
+                $query->orWhere('categories', 'like', '%' . $each->category->name . '%');
+            }
+        })
+        ->where('title','like','%'.$request->search.'%')
+        ->with('creator')->get();
+        return $this->sendSuccess('all courses', $courses);
+    }
+
     public function getCourseDetail(Request $request)
     {
         $validator = Validator::make($request->all(), [
