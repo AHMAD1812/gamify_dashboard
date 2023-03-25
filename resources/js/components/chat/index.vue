@@ -248,11 +248,11 @@ export default {
     },
     mounted() {
        this.getCurrentChats(true);
-        socket.on("message_send", (data) => {
-            console.log(data);
+        socket.on("message_receive", (data) => {
+            console.log("socket",data);
             if (data.data.chat.id == this.current_chat.id) {
                 this.getCurrentChats(false);
-                this.messages.push(data.data.message);
+                this.messages.unshift(data.data.message);
             }
         });
     },
@@ -345,7 +345,7 @@ export default {
                 .then((response) => {
                     if (response.data.status == 200) {
                         this.text_message = "";
-                        socket.emit("message_send", response.data.data);
+                        socket.emit("message_receive", response.data.data);
                         // this.messages.push(response.message);
                     } else {
                         Vue.$toast.open({

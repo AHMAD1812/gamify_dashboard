@@ -34,4 +34,10 @@ io.on("connection", function (socket) {
         });
     });
 
+    socket.on("message_receive", function (data) {
+        io.emit("message_receive", {
+            data: data,
+        });
+    });
+
 });

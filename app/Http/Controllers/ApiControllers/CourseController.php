@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers\ApiControllers;
 
-use App\Models\Courses;
-use App\Models\Questions;
-use App\Models\CourseRating;
-use App\Models\UserCategory;
-use Illuminate\Http\Request;
-use App\Models\StudentCourse;
+use App\Http\Controllers\Controller;
 use App\Http\Traits\CommonTrait;
 use App\Models\AttemptedQuestions;
-use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
+use App\Models\CourseRating;
+use App\Models\Courses;
+use App\Models\Questions;
+use App\Models\StudentCourse;
+use App\Models\UserCategory;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class CourseController extends Controller
@@ -20,14 +20,14 @@ class CourseController extends Controller
     use CommonTrait;
     public function getCourses(Request $request)
     {
-        $categories = UserCategory::where('user_id',Auth::id())->with('category')->get();
-        $courses = Courses::where('status','active')->whereDoesntHave('student_course')
-        ->where(function ($query) use ($categories) {
-            foreach ($categories as $each) {
-                $query->orWhere('categories', 'like', '%' . $each->category->name . '%');
-            }
-        })
-        ->with('creator')->get();
+        $categories = UserCategory::where('user_id', Auth::id())->with('category')->get();
+        $courses = Courses::where('status', 'active')->whereDoesntHave('student_course')
+            ->where(function ($query) use ($categories) {
+                foreach ($categories as $each) {
+                    $query->orWhere('categories', 'like', '%' . $each->category->name . '%');
+                }
+            })
+            ->with('creator')->get();
         return $this->sendSuccess('all courses', $courses);
     }
 
@@ -40,15 +40,15 @@ class CourseController extends Controller
             return $this->sendError($validator->messages()->first(), null);
         }
 
-        $categories = UserCategory::where('user_id',Auth::id())->with('category')->get();
-        $courses = Courses::where('status','active')->whereDoesntHave('student_course')
-        ->where(function ($query) use ($categories) {
-            foreach ($categories as $each) {
-                $query->orWhere('categories', 'like', '%' . $each->category->name . '%');
-            }
-        })
-        ->where('title','like','%'.$request->search.'%')
-        ->with('creator')->get();
+        $categories = UserCategory::where('user_id', Auth::id())->with('category')->get();
+        $courses = Courses::where('status', 'active')->whereDoesntHave('student_course')
+            ->where(function ($query) use ($categories) {
+                foreach ($categories as $each) {
+                    $query->orWhere('categories', 'like', '%' . $each->category->name . '%');
+                }
+            })
+            ->where('title', 'like', '%' . $request->search . '%')
+            ->with('creator')->get();
         return $this->sendSuccess('all courses', $courses);
     }
 
@@ -121,7 +121,7 @@ class CourseController extends Controller
             }
             $student_course->save();
 
-            $this->sendNotification($course->creator_id,Auth::id(),'notification', 'Hello '.Auth::user()->full_name.'! Course is successfully added. Go to My Courses and take course.');
+            $this->sendNotification($course->creator_id, Auth::id(), 'notification', 'Hello ' . Auth::user()->full_name . '! Course is successfully added. Go to My Courses and take course.');
 
             DB::commit();
             return $this->sendSuccess('Applied to course', $student_course);
@@ -255,19 +255,23 @@ class CourseController extends Controller
             $student_course->status = 'completed';
             $student_course->update();
 
-            $rating = new CourseRating;
-            $rating->user_id = Auth::id();
-            $rating->course_id = $request->course_id;
+            $rating = CourseRating::where('user_id', Auth::id())->where('course_id', $request->course)->first();
+            if (!$rating) {
+
+                $rating = new CourseRating;
+                $rating->user_id = Auth::id();
+                $rating->course_id = $request->course_id;
+            }
             $rating->rating = (double) $request->rating;
             $rating->description = $request->description ? $request->description : null;
             $rating->save();
 
             $course = Courses::find($request->course_id);
 
-            $this->sendNotification($course->creator_id,Auth::id(),'notification', 'Hello '.Auth::user()->full_name.'! You have completed your course. See leaderboard for your points and rank.');
+            $this->sendNotification($course->creator_id, Auth::id(), 'notification', 'Hello ' . Auth::user()->full_name . '! You have completed your course. See leaderboard for your points and rank.');
 
             DB::commit();
-            
+
             return $this->sendSuccess('Rating saved', $rating);
         } catch (Exception $e) {
             DB::rollback();
@@ -275,7 +279,8 @@ class CourseController extends Controller
         }
     }
 
-    public function studentCourseLeaderboard(Request $request){
+    public function studentCourseLeaderboard(Request $request)
+    {
         $validator = Validator::make($request->all(), [
             'course_id' => 'required|exists:courses,id',
         ]);
@@ -283,8 +288,8 @@ class CourseController extends Controller
             return $this->sendError($validator->messages()->first(), null);
         }
 
-        $data['leaderboard'] = StudentCourse::where('course_id',$request->course_id)->where('score','>',0)->with('student')->orderBy('score','desc')->get();
+        $data['leaderboard'] = StudentCourse::where('course_id', $request->course_id)->where('score', '>', 0)->with('student')->orderBy('score', 'desc')->get();
 
-        return $this->sendSuccess('Leaderboard',$data);
+        return $this->sendSuccess('Leaderboard', $data);
     }
 }
