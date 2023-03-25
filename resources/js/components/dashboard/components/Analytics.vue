@@ -45,7 +45,7 @@
             <div class="card_dash">
                 <div class="card_dash_left">
                     <h5>Student Score Average</h5>
-                    <h2>{{stats.average_score}}</h2>
+                    <h2>{{stats.average_score ? stats.average_score : '0'}}</h2>
                     <!-- <span class="crdbg_4">New 245</span> -->
                 </div>
                 <div class="card_dash_right">

@@ -163,7 +163,6 @@ export default {
             .get(`${globalBaseUrl}instructor/get_dashboard_data`)
             .then((response) => {
                 response = response.data.data;
-                console.log(response);
                 this.reviews = response.reviews;
                 this.stats.courses = response.total_courses;
                 this.stats.enrolled = response.stats.total_enrolled;
@@ -227,7 +226,7 @@ export default {
                                             // callback: function(tick, index, array) {
                                             //   return (index % 2) ? "" : tick;
                                             // }
-                                            stepSize: 5,
+                                            stepSize: 1,
                                             fontColor: "#686f7a",
                                             fontFamily: "Roboto, sans-serif",
                                         },

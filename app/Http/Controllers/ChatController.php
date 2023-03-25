@@ -309,7 +309,7 @@ class ChatController extends Controller
 
     public function chat_request(Request $request){
         $chat = Chat::where('id',$request->chat_id)->first();
-        $chat->chat_request == $request->type;
+        $chat->chat_request = $request->type;
         $chat->update();
 
         if($request->type == 'accepted'){
