@@ -36,7 +36,7 @@ class CreateUsersTable extends Migration
             $table->string('password')->nullable();
             $table->string('reset_password')->nullable();
             $table->string('google_id')->nullable();
-            $table->enum('status', ['inactive', 'pending', 'active', 'block'])->default('inactive');
+            $table->enum('status', ['inactive', 'pending', 'active', 'block','deleted'])->default('inactive');
             $table->string('social_platform')->nullable();            
             $table->rememberToken();
             $table->timestamps();

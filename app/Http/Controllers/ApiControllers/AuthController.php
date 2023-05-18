@@ -4,6 +4,7 @@ namespace App\Http\Controllers\ApiControllers;
 
 use App\Models\User;
 use Illuminate\Support\Str;
+use Laravel\Passport\Token;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Http\Traits\CommonTrait;
@@ -633,49 +634,25 @@ class AuthController extends Controller
         }
     }
 
-    public function deleteUserOTP(Request $request)
-    {
-        try {
-
-            DB::beginTransaction();
-            $user = Auth::user();
-            $code = mt_rand(100000, 999999);
-            $user->otp = $code;
-            $user->update();
-            $data['phone'] = $user->phone;
-            $data['full_name'] = $user->full_name;
-            $data['msg'] = 'Welcome to Snapwork: Verify your phone using this code: ' . $code . ' . Please do not share this code to anyone.';
-            $this->sendSms($data['msg'], $data['phone']);
-            DB::commit();
-            return $this->sendSuccess('OTP Code Sent', $data);
-        } catch (\Exception$e) {
-            DB::rollback();
-            return $this->sendError($e->getMessage(), null);
-        }
-    }
-
-    public function deleteUser(Request $request)
+    public function deleteAccount(Request $request)
     {
         DB::beginTransaction();
         try {
             $user = Auth::user();
 
-            if ($user->otp == $request->otp) {
+            Token::where('user_id', Auth::id())->where('name', 'Personal Access Token')
+                ->update(['revoked' => true]);
 
-                Token::where('user_id', Auth::id())->where('name', 'Personal Access Token')
-                    ->update(['revoked' => true]);
+            $user->email = Str::random(5).'_'.$user->email;
+            $user->status = 'deleted';
+            $user->update();
 
-                $user->status = 'deleted';
-                $user->update();
+            DB::commit();
 
-                DB::commit();
-                return $this->sendSuccess("User Deleted", null);
-            }
-
-            return $this->sendError('Incorrect Otp', null);
+            return $this->sendSuccess("User Deleted", null);
         } catch (\Exception$e) {
             DB::rollback();
-            return $this->sendError('No User Found', null);
+            return $this->sendError($e->getMessage(), null);
         }
     }
 

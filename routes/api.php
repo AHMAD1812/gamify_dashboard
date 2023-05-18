@@ -6,6 +6,7 @@ use App\Http\Controllers\ApiControllers\AuthController;
 use App\Http\Controllers\ApiControllers\ChatController;
 use App\Http\Controllers\ApiControllers\UserController;
 use App\Http\Controllers\ApiControllers\CourseController;
+use App\Http\Controllers\ApiControllers\SupportController;
 use App\Http\Controllers\ApiControllers\CategoryController;
 use App\Http\Controllers\ApiControllers\NotificationController;
 use App\Http\Controllers\ApiControllers\FavouriteCourseController;
@@ -40,6 +41,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('user_stats', [UserController::class, 'userStats']);
     Route::post('update_profile', [UserController::class, 'updateProfile']);
     Route::post('reset_password', [AuthController::class, 'resetPassword']);
+    Route::get('delete_account', [AuthController::class, 'deleteAccount']);
 
     //Categories
     Route::get('get_categories', [CategoryController::class, 'getAllCategories']);
@@ -83,5 +85,8 @@ Route::group(['middleware' => 'auth:api'], function () {
 
     //Notification
     Route::get('/get_notifications',[NotificationController::class, 'getNotifications']);
+    Route::post('/delete_notification',[NotificationController::class, 'deleteNotification']);
 
+    //Support
+    Route::post('/add_support',[SupportController::class, 'create']);
 });

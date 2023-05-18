@@ -84,7 +84,7 @@
             <div class="col-lg-7 col-md-8">
                 <div class="sec-heading center">
                     <h2>Explore Interactive <span class="theme-cl">Videos</span></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    <p>Discover a new way of learning with our cutting-edge interactive courses. Whether you're a student, a professional looking to upgrade your skills, or someone passionate about a particular subject, our platform offers a diverse range of courses designed to engage, challenge, and inspire you. Here's what you can expect from our website.</p>
                 </div>
             </div>
         </div>
@@ -249,7 +249,7 @@
         
         <div class="row justify-content-center">
             <div class="col-lg-7 col-md-8 mt-2">
-                <div class="text-center"><a href="grid-layout-with-sidebar-5.html" class="btn btn-md theme-bg-light theme-cl">Explore More Cources</a></div>
+                <div class="text-center"><a href="{{route('instructor.login')}}" class="btn btn-md theme-bg-light theme-cl">Explore More Cources</a></div>
             </div>
         </div>
         
@@ -599,7 +599,7 @@
 <!-- ============================ Categories End ================================== -->
 
 <!-- ============================ Top Instructor Start ================================== -->
-<section>
+{{-- <section>
     <div class="container">
     
         <div class="row justify-content-center">
@@ -726,7 +726,7 @@
         </div>
         
     </div>
-</section>
+</section> --}}
 <!-- ============================ Top Instructor End ================================== -->
 
 <div class="clearfix"></div>

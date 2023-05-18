@@ -23,19 +23,19 @@
                       <li>
                         <div class="_ttl121">
                           <div class="_ttl122">Enroll Students</div>
-                          <div class="_ttl123">612K</div>
+                          <div class="_ttl123">{{enrolled_students}}</div>
                         </div>
                       </li>
                       <li>
                         <div class="_ttl121">
                           <div class="_ttl122">Videos</div>
-                          <div class="_ttl123">8</div>
+                          <div class="_ttl123">{{ courses.length }}</div>
                         </div>
                       </li>
                       <li>
                         <div class="_ttl121">
                           <div class="_ttl122">Reviews</div>
-                          <div class="_ttl123">11K</div>
+                          <div class="_ttl123">{{ reviews_count }}</div>
                         </div>
                       </li>
                     </ul>
@@ -149,16 +149,22 @@
                   </div>
                   <div class="tab-pane fade" id="nav-courses" role="tabpanel">
                     <div class="crse_content">
-                      <h3>My videos (8)</h3>
+                      <h3>My videos ({{ courses.length }})</h3>
                       <div class="_14d25">
+                        <div class="w-100 text-center" v-if="courses.length == 0">
+                          <UnavailableData
+                              :message="'No courses found'"
+                          ></UnavailableData>
+                        </div>
                         <div class="row">
-                          <div class="col-lg-3 col-md-4">
+                          <div class="col-lg-3 col-md-4" v-for="(course,key) in courses" :key="key">
                             <div class="fcrse_1 mt-30">
-                              <a
-                                href="course_detail_view.html"
+                              <router-link
+                                :to="{name : 'CourseDetail',
+                                params:{id: course.id}}"
                                 class="fcrse_img"
                               >
-                                <img :src="`${globalBaseUrl}images/courses/img-1.jpg`" alt="" />
+                                <img :src="`${globalBaseUrl}${course.poster}`" alt="" />
                                 <div class="course-overlay">
                                   <div class="badge_seller">Bestseller</div>
                                   <div class="crse_reviews">
@@ -167,448 +173,22 @@
                                   <span class="play_btn1"
                                     ><i class="uil uil-play"></i
                                   ></span>
-                                  <div class="crse_timer">25 hours</div>
+                                  <div class="crse_timer">{{course.playing_time}}</div>
                                 </div>
-                              </a>
+                              </router-link>
                               <div class="fcrse_content">
-                                <div class="eps_dots more_dropdown">
-                                  <a href="#"
-                                    ><i class="uil uil-ellipsis-v"></i
-                                  ></a>
-                                  <div class="dropdown-content">
-                                    <span
-                                      ><i class="uil uil-share-alt"></i
-                                      >Share</span
-                                    >
-                                    <span
-                                      ><i class="uil uil-edit-alt"></i
-                                      >Edit</span
-                                    >
-                                  </div>
-                                </div>
-                                <div class="vdtodt">
-                                  <span class="vdt14">109k views</span>
-                                  <span class="vdt14">15 days ago</span>
-                                </div>
                                 <a
                                   href="course_detail_view.html"
                                   class="crse14s"
-                                  >Complete Python Bootcamp: Go from zero to
-                                  hero in Python 3</a
+                                  >{{course.title}}</a
                                 >
                                 <a href="#" class="crse-cate"
-                                  >Web Development | Python</a
+                                  >{{course.categories}}</a
                                 >
                                 <div class="auth1lnkprce">
                                   <p class="cr1fot">
-                                    By <a href="#">John Doe</a>
+                                    By <a href="#">{{user.full_name}}</a>
                                   </p>
-                                  <!-- <div class="prce142">$10</div> -->
-                                  <button class="shrt-cart-btn" title="cart">
-                                    <i class="uil uil-shopping-cart-alt"></i>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-3 col-md-4">
-                            <div class="fcrse_1 mt-30">
-                              <a
-                                href="course_detail_view.html"
-                                class="fcrse_img"
-                              >
-                                <img :src="`${globalBaseUrl}images/courses/img-2.jpg`" alt="" />
-                                <div class="course-overlay">
-                                  <div class="badge_seller">Bestseller</div>
-                                  <div class="crse_reviews">
-                                    <i class="uil uil-star"></i>4.5
-                                  </div>
-                                  <span class="play_btn1"
-                                    ><i class="uil uil-play"></i
-                                  ></span>
-                                  <div class="crse_timer">28 hours</div>
-                                </div>
-                              </a>
-                              <div class="fcrse_content">
-                                <div class="eps_dots more_dropdown">
-                                  <a href="#"
-                                    ><i class="uil uil-ellipsis-v"></i
-                                  ></a>
-                                  <div class="dropdown-content">
-                                    <span
-                                      ><i class="uil uil-share-alt"></i
-                                      >Share</span
-                                    >
-                                    <span
-                                      ><i class="uil uil-edit-alt"></i
-                                      >Edit</span
-                                    >
-                                  </div>
-                                </div>
-                                <div class="vdtodt">
-                                  <span class="vdt14">5M views</span>
-                                  <span class="vdt14">15 days ago</span>
-                                </div>
-                                <a
-                                  href="course_detail_view.html"
-                                  class="crse14s"
-                                  >The Complete JavaScript Course 2020: Build
-                                  Real Projects!</a
-                                >
-                                <a href="#" class="crse-cate"
-                                  >Development | JavaScript</a
-                                >
-                                <div class="auth1lnkprce">
-                                  <p class="cr1fot">
-                                    By <a href="#">John Doe</a>
-                                  </p>
-                                  <!-- <div class="prce142">$5</div> -->
-                                  <button class="shrt-cart-btn" title="cart">
-                                    <i class="uil uil-shopping-cart-alt"></i>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-3 col-md-4">
-                            <div class="fcrse_1 mt-30">
-                              <a
-                                href="course_detail_view.html"
-                                class="fcrse_img"
-                              >
-                                <img :src="`${globalBaseUrl}images/courses/img-20.jpg`" alt="" />
-                                <div class="course-overlay">
-                                  <div class="crse_reviews">
-                                    <i class="uil uil-star"></i>5.0
-                                  </div>
-                                  <span class="play_btn1"
-                                    ><i class="uil uil-play"></i
-                                  ></span>
-                                  <div class="crse_timer">21 hours</div>
-                                </div>
-                              </a>
-                              <div class="fcrse_content">
-                                <div class="eps_dots more_dropdown">
-                                  <a href="#"
-                                    ><i class="uil uil-ellipsis-v"></i
-                                  ></a>
-                                  <div class="dropdown-content">
-                                    <span
-                                      ><i class="uil uil-share-alt"></i
-                                      >Share</span
-                                    >
-                                    <span
-                                      ><i class="uil uil-edit-alt"></i
-                                      >Edit</span
-                                    >
-                                  </div>
-                                </div>
-                                <div class="vdtodt">
-                                  <span class="vdt14">200 Views</span>
-                                  <span class="vdt14">4 days ago</span>
-                                </div>
-                                <a
-                                  href="course_detail_view.html"
-                                  class="crse14s"
-                                  >WordPress Development - Themes, Plugins &amp;
-                                  Gutenberg</a
-                                >
-                                <a href="#" class="crse-cate"
-                                  >Design | Wordpress</a
-                                >
-                                <div class="auth1lnkprce">
-                                  <p class="cr1fot">
-                                    By <a href="#">John Doe</a>
-                                  </p>
-                                  <!-- <div class="prce142">$14</div> -->
-                                  <button class="shrt-cart-btn" title="cart">
-                                    <i class="uil uil-shopping-cart-alt"></i>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-3 col-md-4">
-                            <div class="fcrse_1 mt-30">
-                              <a
-                                href="course_detail_view.html"
-                                class="fcrse_img"
-                              >
-                                <img :src="`${globalBaseUrl}images/courses/img-4.jpg`" alt="" />
-                                <div class="course-overlay">
-                                  <div class="badge_seller">Bestseller</div>
-                                  <div class="crse_reviews">
-                                    <i class="uil uil-star"></i>5.0
-                                  </div>
-                                  <span class="play_btn1"
-                                    ><i class="uil uil-play"></i
-                                  ></span>
-                                  <div class="crse_timer">1 hour</div>
-                                </div>
-                              </a>
-                              <div class="fcrse_content">
-                                <div class="eps_dots more_dropdown">
-                                  <a href="#"
-                                    ><i class="uil uil-ellipsis-v"></i
-                                  ></a>
-                                  <div class="dropdown-content">
-                                    <span
-                                      ><i class="uil uil-share-alt"></i
-                                      >Share</span
-                                    >
-                                    <span
-                                      ><i class="uil uil-edit-alt"></i
-                                      >Edit</span
-                                    >
-                                  </div>
-                                </div>
-                                <div class="vdtodt">
-                                  <span class="vdt14">153k views</span>
-                                  <span class="vdt14">3 months ago</span>
-                                </div>
-                                <a
-                                  href="course_detail_view.html"
-                                  class="crse14s"
-                                  >The Complete Digital Marketing Course - 12
-                                  Courses in 1</a
-                                >
-                                <a href="#" class="crse-cate"
-                                  >Digital Marketing | Marketing</a
-                                >
-                                <div class="auth1lnkprce">
-                                  <p class="cr1fot">
-                                    By <a href="#">John Doe</a>
-                                  </p>
-                                  <!-- <div class="prce142">$12</div> -->
-                                  <button class="shrt-cart-btn" title="cart">
-                                    <i class="uil uil-shopping-cart-alt"></i>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-3 col-md-4">
-                            <div class="fcrse_1 mt-30">
-                              <a
-                                href="course_detail_view.html"
-                                class="fcrse_img"
-                              >
-                                <img :src="`${globalBaseUrl}images/courses/img-13.jpg`" alt="" />
-                                <div class="course-overlay">
-                                  <span class="play_btn1"
-                                    ><i class="uil uil-play"></i
-                                  ></span>
-                                  <div class="crse_timer">30 hours</div>
-                                </div>
-                              </a>
-                              <div class="fcrse_content">
-                                <div class="eps_dots more_dropdown">
-                                  <a href="#"
-                                    ><i class="uil uil-ellipsis-v"></i
-                                  ></a>
-                                  <div class="dropdown-content">
-                                    <span
-                                      ><i class="uil uil-share-alt"></i
-                                      >Share</span
-                                    >
-                                    <span
-                                      ><i class="uil uil-edit-alt"></i
-                                      >Edit</span
-                                    >
-                                  </div>
-                                </div>
-                                <div class="vdtodt">
-                                  <span class="vdt14">20 Views</span>
-                                  <span class="vdt14">1 day ago</span>
-                                </div>
-                                <a
-                                  href="course_detail_view.html"
-                                  class="crse14s"
-                                  >The Complete Node.js Developer Course (3rd
-                                  Edition)</a
-                                >
-                                <a href="#" class="crse-cate"
-                                  >Development | Node.js</a
-                                >
-                                <div class="auth1lnkprce">
-                                  <p class="cr1fot">
-                                    By <a href="#">John Doe</a>
-                                  </p>
-                                  <!-- <div class="prce142">$3</div> -->
-                                  <button class="shrt-cart-btn" title="cart">
-                                    <i class="uil uil-shopping-cart-alt"></i>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-3 col-md-4">
-                            <div class="fcrse_1 mt-30">
-                              <a
-                                href="course_detail_view.html"
-                                class="fcrse_img"
-                              >
-                                <img :src="`${globalBaseUrl}images/courses/img-7.jpg`" alt="" />
-                                <div class="course-overlay">
-                                  <div class="badge_seller">Bestseller</div>
-                                  <div class="crse_reviews">
-                                    <i class="uil uil-star"></i>5.0
-                                  </div>
-                                  <span class="play_btn1"
-                                    ><i class="uil uil-play"></i
-                                  ></span>
-                                  <div class="crse_timer">5.4 hours</div>
-                                </div>
-                              </a>
-                              <div class="fcrse_content">
-                                <div class="eps_dots more_dropdown">
-                                  <a href="#"
-                                    ><i class="uil uil-ellipsis-v"></i
-                                  ></a>
-                                  <div class="dropdown-content">
-                                    <span
-                                      ><i class="uil uil-share-alt"></i
-                                      >Share</span
-                                    >
-                                    <span
-                                      ><i class="uil uil-edit-alt"></i
-                                      >Edit</span
-                                    >
-                                  </div>
-                                </div>
-                                <div class="vdtodt">
-                                  <span class="vdt14">109k views</span>
-                                  <span class="vdt14">15 days ago</span>
-                                </div>
-                                <a
-                                  href="course_detail_view.html"
-                                  class="crse14s"
-                                  >WordPress for Beginners: Create a Website
-                                  Step by Step</a
-                                >
-                                <a href="#" class="crse-cate"
-                                  >Design | Wordpress</a
-                                >
-                                <div class="auth1lnkprce">
-                                  <p class="cr1fot">
-                                    By <a href="#">John Doe</a>
-                                  </p>
-                                  <!-- <div class="prce142">$18</div> -->
-                                  <button class="shrt-cart-btn" title="cart">
-                                    <i class="uil uil-shopping-cart-alt"></i>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-3 col-md-4">
-                            <div class="fcrse_1 mt-30">
-                              <a
-                                href="course_detail_view.html"
-                                class="fcrse_img"
-                              >
-                                <img :src="`${globalBaseUrl}images/courses/img-8.jpg`" alt="" />
-                                <div class="course-overlay">
-                                  <div class="badge_seller">Bestseller</div>
-                                  <div class="crse_reviews">
-                                    <i class="uil uil-star"></i>4.0
-                                  </div>
-                                  <span class="play_btn1"
-                                    ><i class="uil uil-play"></i
-                                  ></span>
-                                  <div class="crse_timer">23 hours</div>
-                                </div>
-                              </a>
-                              <div class="fcrse_content">
-                                <div class="eps_dots more_dropdown">
-                                  <a href="#"
-                                    ><i class="uil uil-ellipsis-v"></i
-                                  ></a>
-                                  <div class="dropdown-content">
-                                    <span
-                                      ><i class="uil uil-share-alt"></i
-                                      >Share</span
-                                    >
-                                    <span
-                                      ><i class="uil uil-edit-alt"></i
-                                      >Edit</span
-                                    >
-                                  </div>
-                                </div>
-                                <div class="vdtodt">
-                                  <span class="vdt14">196k views</span>
-                                  <span class="vdt14">1 month ago</span>
-                                </div>
-                                <a
-                                  href="course_detail_view.html"
-                                  class="crse14s"
-                                  >CSS - The Complete Guide 2020 (incl. Flexbox,
-                                  Grid &amp; Sass)</a
-                                >
-                                <a href="#" class="crse-cate">Design | CSS</a>
-                                <div class="auth1lnkprce">
-                                  <p class="cr1fot">
-                                    By <a href="#">John Doe</a>
-                                  </p>
-                                  <!-- <div class="prce142">$10</div> -->
-                                  <button class="shrt-cart-btn" title="cart">
-                                    <i class="uil uil-shopping-cart-alt"></i>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-3 col-md-4">
-                            <div class="fcrse_1 mt-30">
-                              <a
-                                href="course_detail_view.html"
-                                class="fcrse_img"
-                              >
-                                <img :src="`${globalBaseUrl}images/courses/img-16.jpg`" alt="" />
-                                <div class="course-overlay">
-                                  <span class="play_btn1"
-                                    ><i class="uil uil-play"></i
-                                  ></span>
-                                  <div class="crse_timer">22 hours</div>
-                                </div>
-                              </a>
-                              <div class="fcrse_content">
-                                <div class="eps_dots more_dropdown">
-                                  <a href="#"
-                                    ><i class="uil uil-ellipsis-v"></i
-                                  ></a>
-                                  <div class="dropdown-content">
-                                    <span
-                                      ><i class="uil uil-share-alt"></i
-                                      >Share</span
-                                    >
-                                    <span
-                                      ><i class="uil uil-edit-alt"></i
-                                      >Edit</span
-                                    >
-                                  </div>
-                                </div>
-                                <div class="vdtodt">
-                                  <span class="vdt14">11 Views</span>
-                                  <span class="vdt14">5 Days ago</span>
-                                </div>
-                                <a
-                                  href="course_detail_view.html"
-                                  class="crse14s"
-                                  >Vue JS 2 - The Complete Guide (incl. Vue
-                                  Router &amp; Vuex)</a
-                                >
-                                <a href="#" class="crse-cate"
-                                  >Development | Vue JS</a
-                                >
-                                <div class="auth1lnkprce">
-                                  <p class="cr1fot">
-                                    By <a href="#">John Doe</a>
-                                  </p>
-                                  <!-- <div class="prce142">$10</div> -->
-                                  <button class="shrt-cart-btn" title="cart">
-                                    <i class="uil uil-shopping-cart-alt"></i>
-                                  </button>
                                 </div>
                               </div>
                             </div>
@@ -625,104 +205,25 @@
                     <div class="_htg451">
                       <div class="_htg452">
                         <h3>Students</h3>
+                        <div class="w-100 text-center" v-if="students.length == 0">
+                          <UnavailableData
+                              :message="'No students found'"
+                          ></UnavailableData>
+                        </div>
                         <div class="row">
-                          <div class="col-lg-3 col-md-4">
+                          <div class="col-lg-3 col-md-4" v-for="(student,key) in students" :key="`student_${key}`">
                             <div class="fcrse_1 mt-30">
                               <div class="tutor_img">
                                 <a href="#"
-                                  ><img :src="`${globalBaseUrl}images/left-imgs/img-1.jpg`" alt=""
+                                  ><img :src="`${globalBaseUrl}${student.profile_img ? student.profile_img : 'images/left-imgs/img-1.jpg'}`" alt=""
                                 /></a>
                               </div>
                               <div class="tutor_content_dt">
                                 <div class="tutor150">
-                                  <a href="#" class="tutor_name">John Doe</a>
+                                  <a href="#" class="tutor_name">{{ student.full_name }}</a>
                                   <div class="mef78" title="Verify">
                                     <i class="uil uil-check-circle"></i>
                                   </div>
-                                </div>
-                                <div class="tutor_cate">
-                                  Wordpress &amp; Plugin Tutor
-                                </div>
-                                <ul class="tutor_social_links">
-                                  <li>
-                                    <button class="sbbc145">Subscribed</button>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-3 col-md-4">
-                            <div class="fcrse_1 mt-30">
-                              <div class="tutor_img">
-                                <a href="#"
-                                  ><img :src="`${globalBaseUrl}images/left-imgs/img-2.jpg`" alt=""
-                                /></a>
-                              </div>
-                              <div class="tutor_content_dt">
-                                <div class="tutor150">
-                                  <a href="#" class="tutor_name"
-                                    >Kerstin Cable</a
-                                  >
-                                  <div class="mef78" title="Verify">
-                                    <i class="uil uil-check-circle"></i>
-                                  </div>
-                                </div>
-                                <div class="tutor_cate">
-                                  Language Learning Coach, Writer, Online Tutor
-                                </div>
-                                <ul class="tutor_social_links">
-                                  <li>
-                                    <button class="sbbc145">Subscribed</button>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-3 col-md-4">
-                            <div class="fcrse_1 mt-30">
-                              <div class="tutor_img">
-                                <a href="#"
-                                  ><img :src="`${globalBaseUrl}images/left-imgs/img-3.jpg`" alt=""
-                                /></a>
-                              </div>
-                              <div class="tutor_content_dt">
-                                <div class="tutor150">
-                                  <a href="#" class="tutor_name"
-                                    >Jose Portilla</a
-                                  >
-                                  <div class="mef78" title="Verify">
-                                    <i class="uil uil-check-circle"></i>
-                                  </div>
-                                </div>
-                                <div class="tutor_cate">
-                                  Head of Data Science, Pierian Data Inc.
-                                </div>
-                                <ul class="tutor_social_links">
-                                  <li>
-                                    <button class="sbbc145">Subscribed</button>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-3 col-md-4">
-                            <div class="fcrse_1 mt-30">
-                              <div class="tutor_img">
-                                <a href="#"
-                                  ><img :src="`${globalBaseUrl}images/left-imgs/img-3.jpg`" alt=""
-                                /></a>
-                              </div>
-                              <div class="tutor_content_dt">
-                                <div class="tutor150">
-                                  <a href="#" class="tutor_name"
-                                    >Jose Portilla</a
-                                  >
-                                  <div class="mef78" title="Verify">
-                                    <i class="uil uil-check-circle"></i>
-                                  </div>
-                                </div>
-                                <div class="tutor_cate">
-                                  Head of Data Science, Pierian Data Inc.
                                 </div>
                                 <ul class="tutor_social_links">
                                   <li>
@@ -746,8 +247,36 @@
 </template>
 
 <script>
+import UnavailableData from '../layouts/UnavailableData.vue';
 export default {
     name:"Profile",
+    components:{
+      UnavailableData
+    },
+    data(){
+      return {
+        courses:[],
+        students:[],
+        reviews_count:0,
+        enrolled_students:0,
+      }
+    },
+    async mounted() {
+        this.$store.dispatch("toggleLoader", true);
+        await axios
+            .get(`${globalBaseUrl}instructor/profile_data`)
+            .then((response) => {
+              console.log(response);
+              response = response.data.data;
+              this.courses = response.courses;
+              this.students = response.students;
+              this.enrolled_students = response.enrolled_student;
+              this.reviews_count = response.reviews_count;
+              this.$store.dispatch("toggleLoader", false);
+            }).catch((e)=>{
+              this.$store.dispatch("toggleLoader", false);
+            });
+    },
     computed:{
       user() {
         return this.$store.state.user;

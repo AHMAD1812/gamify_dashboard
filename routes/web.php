@@ -110,6 +110,8 @@ Route::prefix('instructor')->group(function () {
         Route::get('/get_reviews',[ReviewController::class, 'getReviews']);
 
         Route::post('/add_feedback',[FeedbackController::class, 'addFeedback']);
+
+        Route::get('profile_data', [UserController::class, 'profileData']);
         
     });
 
