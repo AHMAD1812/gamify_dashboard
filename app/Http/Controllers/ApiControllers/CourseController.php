@@ -27,7 +27,7 @@ class CourseController extends Controller
                     $query->orWhere('categories', 'like', '%' . $each->category->name . '%');
                 }
             })
-            ->with('creator')->latest()->get();
+            ->with('creator')->withAvg('course_rating','rating')->latest()->get();
         return $this->sendSuccess('all courses', $courses);
     }
 
@@ -48,7 +48,7 @@ class CourseController extends Controller
                 }
             })
             ->where('title', 'like', '%' . $request->search . '%')
-            ->with('creator')->get();
+            ->with('creator')->withAvg('course_rating','rating')->get();
         return $this->sendSuccess('all courses', $courses);
     }
 
@@ -90,9 +90,9 @@ class CourseController extends Controller
     public function getStudentCourses(Request $request)
     {
 
-        $data['current_courses'] = Courses::wherehas('student_course_active')->with('creator')->latest()->get();
+        $data['current_courses'] = Courses::wherehas('student_course_active')->withAvg('course_rating','rating')->with('creator')->latest()->get();
 
-        $data['previous_courses'] = Courses::wherehas('student_course_completed')->with('creator')->get();
+        $data['previous_courses'] = Courses::wherehas('student_course_completed')->withAvg('course_rating','rating')->with('creator')->get();
         return $this->sendSuccess('all courses', $data);
     }
 

@@ -6,7 +6,7 @@
     <meta name="author" content="Gambolthemes" />
     <title>Gamify US - Dashboard</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" type="image/png" href="{{asset('images/favicon-svg.svg')}}" />
+    <link rel="icon" type="image/png" href="{{asset('images/gamify-favicon.png')}}" />
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,600,700,500" rel="stylesheet" />
     <link href="{{asset('vendor/unicons-2.0.1/css/unicons.css')}}" rel="stylesheet" />

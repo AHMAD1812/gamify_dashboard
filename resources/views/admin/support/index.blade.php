@@ -9,7 +9,7 @@
                         <nav aria-label="breadcrumb" class='breadcrumb-header'>
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Dashboard</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Instructor</li>
+                                <li class="breadcrumb-item active" aria-current="page">Support</li>
                             </ol>
                         </nav>
                     </div>
@@ -18,30 +18,26 @@
             <section class="section">
                 <div class="card">
                     <div class="card-header">
-                        Instructor
+                        Support Queries
                     </div>
                     <div class="card-body">
                         <table class='table table-striped' id="table1">
                             <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Categories</th>
-                                    <th>Courses</th>
+                                    <th>Title</th>
+                                    <th>Description</th>
                                     {{-- <th>View Profile</th> --}}
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($instructors as $instructor)
+                                @foreach ($supports as $support)
                                     <tr>
-                                        <td>{{$instructor->full_name}}</td>
-                                        <td>{{$instructor->email}}</td>
+                                        <td>{{$support->user->full_name}}</td>
+                                        <td>{{$support->title}}</td>
                                         <td>
-                                            @foreach ($instructor->categories as $key => $category)
-                                                {{$category->name}} {{$key != count($instructor->categories)-1 ? ',' : ''}}
-                                            @endforeach
+                                            {{$support->description}}
                                         </td>
-                                        <td>{{$instructor->courses_count}}</td>
                                         {{-- <td>
                                             <span class="badge bg-success" href="{{ route('admin.profile') }}">View</span>
                                         </td> --}}

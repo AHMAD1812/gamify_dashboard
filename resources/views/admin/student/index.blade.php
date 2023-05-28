@@ -28,7 +28,7 @@
                                     <th>Email</th>
                                     <th>Categories</th>
                                     <th>Courses Enrolled</th>
-                                    <th>View Profile</th>
+                                    {{-- <th>View Profile</th> --}}
                                 </tr>
                             </thead>
                             <tbody>
@@ -42,9 +42,9 @@
                                             @endforeach
                                         </td>
                                         <td>{{ $student->student_courses_count }}</td>
-                                        <td>
+                                        {{-- <td>
                                             <span class="badge bg-success" href="{{ route('admin.profile') }}">View</span>
-                                        </td>
+                                        </td> --}}
                                     </tr>
                                 @endforeach
                             </tbody>

@@ -34,19 +34,21 @@ Route::prefix('admin')->group(function (){
     Route::post('/login_process', [AdminController::class, 'loginProcess'])->name('admin.login_process');
 
     Route::group(['middleware' => ['auth.admin']], function () {
+        Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout');    
+
         Route::get('/', [AdminController::class, 'index'])->name('admin.index');
         Route::get('/instructor', [AdminUserController::class, 'instructor'])->name('admin.instructor');
         Route::get('/student', [AdminUserController::class, 'student'])->name('admin.student');
 
         Route::get('/courses', [AdminCourseController::class, 'index'])->name('admin.courses');
 
-        Route::get('/logout', [AdminController::class, 'logout']);
-
         Route::get('/register', [AdminController::class, 'register'])->name('admin.register');
         Route::get('/forgot', [AdminController::class, 'forgot'])->name('admin.forgot');
         Route::get('/profile', [AdminController::class, 'profile'])->name('admin.profile');
         
         Route::get('/feedback', [AdminController::class, 'feedback'])->name('admin.feedback');
+
+        Route::get('/support', [AdminController::class, 'support'])->name('admin.support');
     });
 });
 
