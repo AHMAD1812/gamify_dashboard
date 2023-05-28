@@ -45,7 +45,7 @@
                                 <div class="dro_141 de"><i class="fa fa-journal-whills"></i></div>
                                 <div class="dro_142">
                                     <h6>200+ Cources</h6>
-                                    <p>Duis aute irure dolor in voluptate velit esse cillum labore .</p>
+                                    <p>Interactive courses for more learning and user interaction.</p>
                                 </div>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                                 <div class="dro_141 de"><i class="fa fa-business-time"></i></div>
                                 <div class="dro_142">
                                     <h6>Lifetime Access</h6>
-                                    <p>Duis aute irure dolor in voluptate velit esse cillum labore .</p>
+                                    <p>Access to interactive intructor or student dashboard.</p>
                                 </div>
                             </div>
                         </div>
@@ -62,8 +62,8 @@
                             <div class="dro_140">
                                 <div class="dro_141 de"><i class="fa fa-user-shield"></i></div>
                                 <div class="dro_142">
-                                    <h6>800k+ Enrolled</h6>
-                                    <p>Duis aute irure dolor in voluptate velit esse cillum labore .</p>
+                                    <h6>100+ Enrolled</h6>
+                                    <p>Start enrolling and experience best interactive service.</p>
                                 </div>
                             </div>
                         </div>

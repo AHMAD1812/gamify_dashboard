@@ -27,7 +27,7 @@ class CourseController extends Controller
                     $query->orWhere('categories', 'like', '%' . $each->category->name . '%');
                 }
             })
-            ->with('creator')->get();
+            ->with('creator')->latest()->get();
         return $this->sendSuccess('all courses', $courses);
     }
 
@@ -90,7 +90,7 @@ class CourseController extends Controller
     public function getStudentCourses(Request $request)
     {
 
-        $data['current_courses'] = Courses::wherehas('student_course_active')->with('creator')->get();
+        $data['current_courses'] = Courses::wherehas('student_course_active')->with('creator')->latest()->get();
 
         $data['previous_courses'] = Courses::wherehas('student_course_completed')->with('creator')->get();
         return $this->sendSuccess('all courses', $data);
