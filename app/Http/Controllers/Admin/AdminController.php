@@ -19,7 +19,7 @@ class AdminController extends Controller
     public function index()
     {
         if (Auth::guard('admin')->user()) {
-            $students = User::where('role','user')->count();
+            $students = User::where('role','student')->count();
             $instructors = User::where('role','instructor')->count();
 
             $courses = Courses::count();
@@ -38,7 +38,7 @@ class AdminController extends Controller
             for ($i = 1; $i <= $months; $i++) {
                 $instructorCount = User::whereMonth('created_at', $MonthFirstDate)->whereYear('created_at',$thisyear->format('Y'))->where('role','instructor')->count();
                 $courseCount = Courses::whereMonth('created_at', $MonthFirstDate)->whereYear('created_at',$thisyear->format('Y'))->count();
-                $userCount = User::whereMonth('created_at', $MonthFirstDate)->whereYear('created_at',$thisyear->format('Y'))->where('role','user')->count();
+                $userCount = User::whereMonth('created_at', $MonthFirstDate)->whereYear('created_at',$thisyear->format('Y'))->where('role','student')->count();
                 array_push($all_months,$MonthFirstDate->format('Y/m/d'));
                 array_push($all_instructors,$instructorCount);
                 array_push($all_courses,$courseCount);
