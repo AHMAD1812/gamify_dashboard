@@ -47,8 +47,10 @@ class CourseController extends Controller
                     $query->orWhere('categories', 'like', '%' . $each->category->name . '%');
                 }
             })
-            ->where('title', 'like', '%' . $request->search . '%')
-            ->orWhere('categories','like','%' . $request->search . '%')
+            ->where(function($query) use ($request){
+                $query->where('title', 'like', '%' . $request->search . '%')
+                ->orWhere('categories','like','%' . $request->search . '%');
+            })
             ->with('creator')->withAvg('course_rating','rating')->get();
         return $this->sendSuccess('all courses', $courses);
     }
