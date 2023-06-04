@@ -74,7 +74,7 @@ class FavouriteCourseController extends Controller
     }
 
     public function getFavouriteCourses(Request $request){
-        $courses = Courses::whereHas('favourite')->with('creator')->get();
+        $courses = Courses::whereHas('favourite')->with('creator')->withAvg('course_rating','rating')->get();
         return $this->sendSuccess('Favourite courses', $courses);
     }
 }
