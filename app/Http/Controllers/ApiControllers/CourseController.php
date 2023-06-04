@@ -48,6 +48,7 @@ class CourseController extends Controller
                 }
             })
             ->where('title', 'like', '%' . $request->search . '%')
+            ->orWhere('categories','like','%' . $request->search . '%')
             ->with('creator')->withAvg('course_rating','rating')->get();
         return $this->sendSuccess('all courses', $courses);
     }
