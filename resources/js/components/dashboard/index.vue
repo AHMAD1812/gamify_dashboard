@@ -168,7 +168,7 @@ export default {
                 this.stats.enrolled = response.stats.total_enrolled;
                 this.stats.average_score = response.stats.average;
                 this.stats.question_answered =
-                    response.stats.attempted_question;
+                    response.stats.question_answered;
 
                 var activity = document.getElementById("activity");
                 if (activity !== null) {

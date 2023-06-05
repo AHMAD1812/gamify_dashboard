@@ -33,7 +33,7 @@
             <div class="card_dash">
                 <div class="card_dash_left">
                     <h5>Total Question Attempted</h5>
-                    <h2>{{stats.attempted_question}}</h2>
+                    <h2>{{stats.question_answered}}</h2>
                     <!-- <span class="crdbg_3">New 5</span> -->
                 </div>
                 <div class="card_dash_right">
