@@ -370,7 +370,7 @@ class AuthController extends Controller
                 return $this->sendSuccess('User Login Successfully', $data);
             } else {
                 if ($request->has('avatar')) {
-                    $image = $request->file('avatar');
+                    $image = $request->avatar;
                     $extension = $image->getClientOriginalExtension();
                     $name = Str::random(5);
                     $folder = 'uploads/profile/';
